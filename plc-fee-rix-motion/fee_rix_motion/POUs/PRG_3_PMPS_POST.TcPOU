@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_3_PMPS_POST" Id="{6348b781-a8fd-4677-a2ee-052bc68113cf}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_3_PMPS_POST
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
