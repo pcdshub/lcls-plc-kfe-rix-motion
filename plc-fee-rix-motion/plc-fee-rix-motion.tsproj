@@ -12,7 +12,7 @@
 			<Project File="fee_rix_motion.xti"/>
 		</Plc>
 		<Io>
-			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
+			<Device File="PLC Rail (EtherCAT).xti" Id="1"/>
 		</Io>
 	</Project>
 </TcSmProject>
