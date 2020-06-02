@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_ST1K1_ZOS" Id="{ddf40798-9a4a-4d46-9d44-fa3eb642a3fd}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_ST1K1_ZOS
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

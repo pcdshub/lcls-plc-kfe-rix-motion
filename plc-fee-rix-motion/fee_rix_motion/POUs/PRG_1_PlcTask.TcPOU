@@ -8,7 +8,9 @@ END_VAR
     <Implementation>
       <ST><![CDATA[PRG_2_PMPS_PRE();
 
-// STUFF HERE
+PRG_IM1K1_PPM();
+PRG_IM2K1_PPM();
+PRG_ST1K1_ZOS();
 
 PRG_3_PMPS_POST();]]></ST>
     </Implementation>

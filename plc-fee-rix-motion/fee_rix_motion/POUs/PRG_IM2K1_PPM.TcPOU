@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_IM2K1_PPM" Id="{da6fce9c-eeb0-4159-ad2e-cab6da7c6426}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_IM2K1_PPM
+VAR
+    {attribute 'pytmc' := '
+        pv: IM2K1:PPM
+        io: io
+    '}
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
+                              .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
+                              .fbYagThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbYagThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
+    fbIM2K1: FB_PPM;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbIM2K1(
+    stYStage := Main.M2,
+    fPolished := -72.19,
+    fFrosted := -98.2, // Actually a second polished yag
+    fPower := -48.19,
+    fOut := -9.09);
+    ]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
