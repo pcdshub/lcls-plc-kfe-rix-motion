@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{c31f67cf-3f03-4f49-935f-2494fcdda958}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
-    <Name>fee_rix_motion</Name>
+    <Name>kfe_rix_motion</Name>
     <ProgramVersion>3.1.4022.7</ProgramVersion>
     <Application>{a93b91df-8b4a-4a20-aa82-223e0b9e6979}</Application>
     <TypeSystem>{f0a48cc8-173f-427f-89f3-8b6b2ca1aeea}</TypeSystem>
@@ -85,15 +85,15 @@
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <None Include="fee_rix_motion.tmc">
+    <None Include="kfe_rix_motion.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -120,13 +120,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

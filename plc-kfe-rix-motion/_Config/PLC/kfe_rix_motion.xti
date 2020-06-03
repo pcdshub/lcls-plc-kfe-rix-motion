@@ -897,16 +897,16 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="fee_rix_motion" PrjFilePath="..\..\fee_rix_motion\fee_rix_motion.plcproj" TmcFilePath="..\..\fee_rix_motion\fee_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
-			<Name>fee_rix_motion Instance</Name>
+	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc">
+			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
 					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+						<![CDATA[AMS Net ID used for FB_EcatDiag, among others]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
@@ -982,14 +982,14 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this input to the terminal]]>
+						<![CDATA[Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this input to the terminal]]>
+						<![CDATA[Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1085,14 +1085,14 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this input to the terminal]]>
+						<![CDATA[Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this input to the terminal]]>
+						<![CDATA[Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1168,28 +1168,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHome</Name>
 					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
+						<![CDATA[NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1245,28 +1245,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHome</Name>
 					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
+						<![CDATA[NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1322,28 +1322,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHome</Name>
 					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
+						<![CDATA[NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1365,7 +1365,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this output to the terminal]]>
+						<![CDATA[Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1384,7 +1384,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[ Connect this output to the terminal]]>
+						<![CDATA[Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1395,7 +1395,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+						<![CDATA[NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1406,7 +1406,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+						<![CDATA[NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1417,7 +1417,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+						<![CDATA[NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1428,7 +1428,7 @@ External Setpoint Generation:
 		</Instance>
 	</Project>
 	<Mappings>
-		<OwnerA Name="fee_rix_motion Instance">
+		<OwnerA Name="kfe_rix_motion Instance">
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL2004">
 				<Link VarA="PlcTask Outputs^Main.M1.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM1K1_PPM.fbIM1K1.fbGige.bGigePower" VarB="Channel 2^Output" AutoLink="true"/>

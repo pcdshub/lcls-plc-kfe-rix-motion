@@ -5,7 +5,7 @@ python: 3.7
 
 env:
   global:
-    # Doctr deploy key for pcdshub/lcls-plc-fee-rix-motion
+    # Doctr deploy key for pcdshub/lcls-plc-kfe-rix-motion
     - secure: ""
 
 jobs:

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "plc-fee-rix-motion", "plc-fee-rix-motion\plc-fee-rix-motion.tsproj", "{06EDD21A-F81F-4EDE-B8E8-8DF2C1260331}"
+Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "plc-kfe-rix-motion", "plc-kfe-rix-motion\plc-kfe-rix-motion.tsproj", "{06EDD21A-F81F-4EDE-B8E8-8DF2C1260331}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

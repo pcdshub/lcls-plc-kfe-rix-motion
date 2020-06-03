@@ -18649,7 +18649,7 @@ External Setpoint Generation:
   </DataTypes>
   <Modules>
     <Module GUID="{A93B91DF-8B4A-4A20-AA82-223E0B9E6979}" TcSmClass="TComPlcObjDef">
-      <Name>fee_rix_motion</Name>
+      <Name>kfe_rix_motion</Name>
       <CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
       <Licenses>
         <License>
