@@ -1,63 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{21824A32-5994-3D8C-696E-28CDBB6E576F}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{9DFC562E-0478-657D-A811-E863A7993FE7}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
-    <DataType>
-      <Name GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}" TcBaseType="true">ST_LibVersion</Name>
-      <BitSize>288</BitSize>
-      <SubItem>
-        <Name>iMajor</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iMinor</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>16</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iBuild</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iRevision</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>48</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nFlags</Name>
-        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>64</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>sVersion</Name>
-        <Type GUID="{18071995-0000-0000-0000-000100000017}">STRING(23)</Type>
-        <BitSize>192</BitSize>
-        <BitOffs>96</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="Tc2_System">E_WATCHDOG_TIME_CONFIG</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>eWATCHDOG_TIME_DISABLED</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>eWATCHDOG_TIME_SECONDS</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>eWATCHDOG_TIME_MINUTES</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-    </DataType>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
       <BitSize>48</BitSize>
@@ -272,31 +215,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>809104</GetCodeOffs>
+        <GetCodeOffs>815840</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>809168</GetCodeOffs>
+        <GetCodeOffs>815904</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>809184</GetCodeOffs>
+        <GetCodeOffs>815920</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>809152</GetCodeOffs>
+        <GetCodeOffs>815888</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>809176</GetCodeOffs>
+        <GetCodeOffs>815912</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1467,15 +1410,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>808984</GetCodeOffs>
-        <SetCodeOffs>809032</SetCodeOffs>
+        <GetCodeOffs>815720</GetCodeOffs>
+        <SetCodeOffs>815768</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>809064</GetCodeOffs>
-        <SetCodeOffs>809088</SetCodeOffs>
+        <GetCodeOffs>815800</GetCodeOffs>
+        <SetCodeOffs>815824</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -1738,31 +1681,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>809280</GetCodeOffs>
+        <GetCodeOffs>816016</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>809240</GetCodeOffs>
+        <GetCodeOffs>815976</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>809408</GetCodeOffs>
+        <GetCodeOffs>816144</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>809328</GetCodeOffs>
+        <GetCodeOffs>816064</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>809416</GetCodeOffs>
+        <GetCodeOffs>816152</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2326,7 +2269,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>809464</GetCodeOffs>
+        <GetCodeOffs>816200</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -2503,7 +2446,7 @@
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General">FB_LogMessage</Name>
-      <BitSize>75520</BitSize>
+      <BitSize>129472</BitSize>
       <SubItem>
         <Name>sMsg</Name>
         <Type Namespace="Tc2_System">T_MaxString</Type>
@@ -2547,9 +2490,9 @@
       </SubItem>
       <SubItem>
         <Name>sJson</Name>
-        <Type Namespace="Tc2_System">T_MaxString</Type>
+        <Type>STRING(7000)</Type>
         <Comment> JSON to add to the message</Comment>
-        <BitSize>2048</BitSize>
+        <BitSize>56008</BitSize>
         <BitOffs>2144</BitOffs>
         <Default>
           <String>{}</String>
@@ -2565,7 +2508,7 @@
         <Name>bInitialized</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>4192</BitOffs>
+        <BitOffs>58152</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -2574,7 +2517,7 @@
         <Name>bInitFailed</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>4200</BitOffs>
+        <BitOffs>58160</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -2583,13 +2526,13 @@
         <Name>sSubsystemSource</Name>
         <Type>STRING(80)</Type>
         <BitSize>648</BitSize>
-        <BitOffs>4208</BitOffs>
+        <BitOffs>58168</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbMessage</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcMessage</Type>
         <BitSize>64</BitSize>
-        <BitOffs>4864</BitOffs>
+        <BitOffs>58816</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbMessages</Name>
@@ -2599,37 +2542,37 @@
           <Elements>5</Elements>
         </ArrayInfo>
         <BitSize>61440</BitSize>
-        <BitOffs>4928</BitOffs>
+        <BitOffs>58880</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbSource</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">FB_TcSourceInfo</Type>
         <BitSize>6912</BitSize>
-        <BitOffs>66368</BitOffs>
+        <BitOffs>120320</BitOffs>
       </SubItem>
       <SubItem>
         <Name>ipResultMessage</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcMessage</Type>
         <BitSize>64</BitSize>
-        <BitOffs>73280</BitOffs>
+        <BitOffs>127232</BitOffs>
       </SubItem>
       <SubItem>
         <Name>hr</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <BitOffs>73344</BitOffs>
+        <BitOffs>127296</BitOffs>
       </SubItem>
       <SubItem>
         <Name>hrLastInternalError</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <BitOffs>73376</BitOffs>
+        <BitOffs>127328</BitOffs>
       </SubItem>
       <SubItem>
         <Name>eTraceLevel</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <BitOffs>73408</BitOffs>
+        <BitOffs>127360</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -2638,7 +2581,7 @@
         <Name>sPath</Name>
         <Type Namespace="Tc2_System">T_MaxString</Type>
         <BitSize>2048</BitSize>
-        <BitOffs>73424</BitOffs>
+        <BitOffs>127376</BitOffs>
         <Properties>
           <Property>
             <Name>instance-path</Name>
@@ -2657,6 +2600,63 @@
           <Name>reflection</Name>
         </Property>
       </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{6F5942ED-BFA1-497D-8225-23C6DAAD0A09}" TcBaseType="true">ST_LibVersion</Name>
+      <BitSize>288</BitSize>
+      <SubItem>
+        <Name>iMajor</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iMinor</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>16</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iBuild</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iRevision</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>48</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nFlags</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>64</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sVersion</Name>
+        <Type GUID="{18071995-0000-0000-0000-000100000017}">STRING(23)</Type>
+        <BitSize>192</BitSize>
+        <BitOffs>96</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="Tc2_System">E_WATCHDOG_TIME_CONFIG</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>eWATCHDOG_TIME_DISABLED</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>eWATCHDOG_TIME_SECONDS</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>eWATCHDOG_TIME_MINUTES</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General.Tc2_Utilities">E_HashPrefixTypes</Name>
@@ -18193,44 +18193,6 @@ External Setpoint Generation:
       </SubItem>
     </DataType>
     <DataType>
-      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
-      <DisplayName TxtId="">Log event</DisplayName>
-      <EventId>
-        <Name Id="0">Critical</Name>
-        <DisplayName TxtId="">Critical</DisplayName>
-        <Severity>Critical</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="1">Error</Name>
-        <DisplayName TxtId="">Error</DisplayName>
-        <Severity>Error</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="2">Warning</Name>
-        <DisplayName TxtId="">Warning</DisplayName>
-        <Severity>Warning</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="3">Info</Name>
-        <DisplayName TxtId="">Info</DisplayName>
-        <Severity>Info</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="4">Verbose</Name>
-        <DisplayName TxtId="">Verbose</DisplayName>
-        <Severity>Verbose</Severity>
-      </EventId>
-      <Hides>
-        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
-        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
-        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
-        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
-        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
-        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
-        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
-      </Hides>
-    </DataType>
-    <DataType>
       <Name GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}" Namespace="PLC" TcBaseType="true">PlcAppSystemInfo</Name>
       <BitSize>2048</BitSize>
       <SubItem>
@@ -18646,6 +18608,44 @@ External Setpoint Generation:
         </Property>
       </Properties>
     </DataType>
+    <DataType>
+      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
+      <DisplayName TxtId="">Log event</DisplayName>
+      <EventId>
+        <Name Id="0">Critical</Name>
+        <DisplayName TxtId="">Critical</DisplayName>
+        <Severity>Critical</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="1">Error</Name>
+        <DisplayName TxtId="">Error</DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="2">Warning</Name>
+        <DisplayName TxtId="">Warning</DisplayName>
+        <Severity>Warning</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="3">Info</Name>
+        <DisplayName TxtId="">Info</DisplayName>
+        <Severity>Info</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="4">Verbose</Name>
+        <DisplayName TxtId="">Verbose</DisplayName>
+        <Severity>Verbose</Severity>
+      </EventId>
+      <Hides>
+        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
+        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
+        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
+        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
+        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
+        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
+        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
+      </Hides>
+    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{A93B91DF-8B4A-4A20-AA82-223E0B9E6979}" TcSmClass="TComPlcObjDef">
@@ -18688,7 +18688,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4100968</BitOffs>
+            <BitOffs>4096040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -18700,7 +18700,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4435072</BitOffs>
+            <BitOffs>4489024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.iVoltageINT</Name>
@@ -18712,7 +18712,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4630336</BitOffs>
+            <BitOffs>4684288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bError</Name>
@@ -18731,7 +18731,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4822792</BitOffs>
+            <BitOffs>4876744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bUnderrange</Name>
@@ -18743,7 +18743,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4822800</BitOffs>
+            <BitOffs>4876752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bOverrange</Name>
@@ -18755,7 +18755,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4822808</BitOffs>
+            <BitOffs>4876760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.iRaw</Name>
@@ -18767,7 +18767,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4822816</BitOffs>
+            <BitOffs>4876768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
@@ -18780,7 +18780,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>4823104</BitOffs>
+            <BitOffs>4877056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbGetIllPercent.iRaw</Name>
@@ -18793,7 +18793,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5209792</BitOffs>
+            <BitOffs>5263744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbFlowMeter.fRaw</Name>
@@ -18812,7 +18812,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5210816</BitOffs>
+            <BitOffs>5264768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bError</Name>
@@ -18831,7 +18831,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5211144</BitOffs>
+            <BitOffs>5265096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bUnderrange</Name>
@@ -18843,7 +18843,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5211152</BitOffs>
+            <BitOffs>5265104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bOverrange</Name>
@@ -18855,7 +18855,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5211160</BitOffs>
+            <BitOffs>5265112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.iRaw</Name>
@@ -18867,7 +18867,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5211168</BitOffs>
+            <BitOffs>5265120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -18879,7 +18879,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5214208</BitOffs>
+            <BitOffs>5268160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.iVoltageINT</Name>
@@ -18891,7 +18891,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5409472</BitOffs>
+            <BitOffs>5463424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bError</Name>
@@ -18910,7 +18910,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5601928</BitOffs>
+            <BitOffs>5655880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bUnderrange</Name>
@@ -18922,7 +18922,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5601936</BitOffs>
+            <BitOffs>5655888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bOverrange</Name>
@@ -18934,7 +18934,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5601944</BitOffs>
+            <BitOffs>5655896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.iRaw</Name>
@@ -18946,7 +18946,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5601952</BitOffs>
+            <BitOffs>5655904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
@@ -18959,7 +18959,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5602240</BitOffs>
+            <BitOffs>5656192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbGetIllPercent.iRaw</Name>
@@ -18972,7 +18972,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5988928</BitOffs>
+            <BitOffs>6042880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbFlowMeter.fRaw</Name>
@@ -18991,7 +18991,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5989952</BitOffs>
+            <BitOffs>6043904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bError</Name>
@@ -19010,7 +19010,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5990280</BitOffs>
+            <BitOffs>6044232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bUnderrange</Name>
@@ -19022,7 +19022,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5990288</BitOffs>
+            <BitOffs>6044240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bOverrange</Name>
@@ -19034,7 +19034,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5990296</BitOffs>
+            <BitOffs>6044248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.iRaw</Name>
@@ -19046,7 +19046,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5990304</BitOffs>
+            <BitOffs>6044256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
@@ -19058,7 +19058,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>5992448</BitOffs>
+            <BitOffs>6046400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitForwardEnable</Name>
@@ -19081,7 +19081,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6000384</BitOffs>
+            <BitOffs>6054336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitBackwardEnable</Name>
@@ -19104,7 +19104,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6000392</BitOffs>
+            <BitOffs>6054344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHome</Name>
@@ -19127,7 +19127,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6000400</BitOffs>
+            <BitOffs>6054352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHardwareEnable</Name>
@@ -19150,7 +19150,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6000416</BitOffs>
+            <BitOffs>6054368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.NcToPlc</Name>
@@ -19162,7 +19162,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6003712</BitOffs>
+            <BitOffs>6057664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitForwardEnable</Name>
@@ -19185,7 +19185,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6011648</BitOffs>
+            <BitOffs>6065600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitBackwardEnable</Name>
@@ -19208,7 +19208,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6011656</BitOffs>
+            <BitOffs>6065608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHome</Name>
@@ -19231,7 +19231,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6011664</BitOffs>
+            <BitOffs>6065616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHardwareEnable</Name>
@@ -19254,7 +19254,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6011680</BitOffs>
+            <BitOffs>6065632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.NcToPlc</Name>
@@ -19266,7 +19266,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6014976</BitOffs>
+            <BitOffs>6068928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitForwardEnable</Name>
@@ -19289,7 +19289,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6022912</BitOffs>
+            <BitOffs>6076864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitBackwardEnable</Name>
@@ -19312,7 +19312,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6022920</BitOffs>
+            <BitOffs>6076872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHome</Name>
@@ -19335,7 +19335,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6022928</BitOffs>
+            <BitOffs>6076880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHardwareEnable</Name>
@@ -19358,7 +19358,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>6022944</BitOffs>
+            <BitOffs>6076896</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -19376,7 +19376,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>4434048</BitOffs>
+            <BitOffs>4488000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.iIlluminatorINT</Name>
@@ -19388,7 +19388,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5209600</BitOffs>
+            <BitOffs>5263552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.bGigePower</Name>
@@ -19408,7 +19408,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5209616</BitOffs>
+            <BitOffs>5263568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbSetIllPercent.iRaw</Name>
@@ -19421,7 +19421,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5210560</BitOffs>
+            <BitOffs>5264512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -19433,7 +19433,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5213184</BitOffs>
+            <BitOffs>5267136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.iIlluminatorINT</Name>
@@ -19445,7 +19445,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5988736</BitOffs>
+            <BitOffs>6042688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.bGigePower</Name>
@@ -19465,7 +19465,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5988752</BitOffs>
+            <BitOffs>6042704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbSetIllPercent.iRaw</Name>
@@ -19478,7 +19478,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5989696</BitOffs>
+            <BitOffs>6043648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
@@ -19490,7 +19490,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>5991424</BitOffs>
+            <BitOffs>6045376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bBrakeRelease</Name>
@@ -19513,7 +19513,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>6000408</BitOffs>
+            <BitOffs>6054360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.PlcToNc</Name>
@@ -19525,7 +19525,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>6002688</BitOffs>
+            <BitOffs>6056640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bBrakeRelease</Name>
@@ -19548,7 +19548,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>6011672</BitOffs>
+            <BitOffs>6065624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.PlcToNc</Name>
@@ -19560,7 +19560,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>6013952</BitOffs>
+            <BitOffs>6067904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bBrakeRelease</Name>
@@ -19583,7 +19583,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>6022936</BitOffs>
+            <BitOffs>6076888</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -19591,6 +19591,200 @@ External Setpoint Generation:
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
           <ByteSize>1310720</ByteSize>
+          <Symbol>
+            <Name>DefaultGlobals.stSys</Name>
+            <Comment>Included for you</Comment>
+            <BitSize>88</BitSize>
+            <BaseType Namespace="LCLS_General">ST_System</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.BOOTDATAFLAGS_RETAIN_LOADED</Name>
+            <Comment> Retain data loaded </Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BYTE</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096088</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.iLogPort</Name>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>54321</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+		pv: @(PREFIX)LCLSGeneral:LogPort
+		io: io
+		field: DESC The log host UDP port
+	</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096096</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.AMSPORT_LOGGER</Name>
+            <Comment> Logger </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>100</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096112</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>DefaultGlobals.fTimeStamp</Name>
+            <BitSize>64</BitSize>
+            <BaseType>LREAL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096128</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.cLogHost</Name>
+            <Comment>
+	Using the IP address directly avoids DNS configuration issues.
+	While we may want to address this in the future, for now the static IP
+	will suffice:
+
+	$ nslookup ctl-logsrv01
+	Name:   ctl-logsrv01.pcdsn
+	Address: 172.21.32.36
+	</Comment>
+            <BitSize>128</BitSize>
+            <BaseType>STRING(15)</BaseType>
+            <Default>
+              <String>172.21.32.36</String>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+		pv: @(PREFIX)LCLSGeneral:LogHost
+		io: io
+		field: DESC The log host IP address
+	</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096192</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.sIpTidbit</Name>
+            <BitSize>56</BitSize>
+            <BaseType>STRING(6)</BaseType>
+            <Default>
+              <String>172.21</String>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.sPlcHostname</Name>
+            <BitSize>648</BitSize>
+            <BaseType>STRING(80)</BaseType>
+            <Default>
+              <String>unknown</String>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4096376</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.TCPADS_MAXUDP_BUFFSIZE</Name>
+            <Comment> Ref: https://infosys.beckhoff.com/english.php?content=../content/1033/tcpipserver/html/TcPlcLibTcpIp_FB_SocketUdpSendTo.htm
+		TODO: Activate the "Replace constants" option in the
+		TwinCAT PLC Control-&gt;"Project-&gt;Options...-&gt;Build" dialog window. 
+	</Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>10000</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4097024</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.AMSPORT_EVENTLOG</Name>
+            <Comment> Event logger </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>110</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4097056</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.AMSPORT_R0_RTIME</Name>
+            <Comment> R0 Real time </Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>200</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4097072</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Logger.fbRootLogger</Name>
+            <Comment>Instantiated here to be used everywhere</Comment>
+            <BitSize>129472</BitSize>
+            <BaseType Namespace="LCLS_General">FB_LogMessage</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4097088</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc2_System</Name>
             <BitSize>288</BitSize>
@@ -19625,52 +19819,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096000</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.AMSPORT_LOGGER</Name>
-            <Comment> Logger </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>100</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096288</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.AMSPORT_EVENTLOG</Name>
-            <Comment> Event logger </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>110</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.AMSPORT_R0_RTIME</Name>
-            <Comment> R0 Real time </Comment>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>200</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096320</BitOffs>
+            <BitOffs>4226560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_IO</Name>
@@ -19685,7 +19834,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096336</BitOffs>
+            <BitOffs>4226848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_NC</Name>
@@ -19699,7 +19848,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096352</BitOffs>
+            <BitOffs>4226864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_NCSAF</Name>
@@ -19713,7 +19862,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096368</BitOffs>
+            <BitOffs>4226880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_NCSVB</Name>
@@ -19727,7 +19876,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096384</BitOffs>
+            <BitOffs>4226896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_ISG</Name>
@@ -19741,7 +19890,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096400</BitOffs>
+            <BitOffs>4226912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_CNC</Name>
@@ -19755,7 +19904,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096416</BitOffs>
+            <BitOffs>4226928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_LINE</Name>
@@ -19769,7 +19918,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096432</BitOffs>
+            <BitOffs>4226944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_PLC</Name>
@@ -19783,7 +19932,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096448</BitOffs>
+            <BitOffs>4226960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_PLC_RTS1</Name>
@@ -19798,7 +19947,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096464</BitOffs>
+            <BitOffs>4226976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_PLC_RTS2</Name>
@@ -19813,7 +19962,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096480</BitOffs>
+            <BitOffs>4226992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_PLC_RTS3</Name>
@@ -19828,7 +19977,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096496</BitOffs>
+            <BitOffs>4227008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_PLC_RTS4</Name>
@@ -19843,7 +19992,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096512</BitOffs>
+            <BitOffs>4227024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_CAM</Name>
@@ -19857,7 +20006,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096528</BitOffs>
+            <BitOffs>4227040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R0_CAMTOOL</Name>
@@ -19872,7 +20021,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096544</BitOffs>
+            <BitOffs>4227056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R3_SYSSERV</Name>
@@ -19887,7 +20036,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096560</BitOffs>
+            <BitOffs>4227072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_R3_SCOPESERVER</Name>
@@ -19902,7 +20051,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096576</BitOffs>
+            <BitOffs>4227088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_INVALID</Name>
@@ -19917,7 +20066,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096592</BitOffs>
+            <BitOffs>4227104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_IDLE</Name>
@@ -19931,7 +20080,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096608</BitOffs>
+            <BitOffs>4227120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_RESET</Name>
@@ -19945,7 +20094,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096624</BitOffs>
+            <BitOffs>4227136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_INIT</Name>
@@ -19959,7 +20108,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096640</BitOffs>
+            <BitOffs>4227152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_START</Name>
@@ -19973,7 +20122,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096656</BitOffs>
+            <BitOffs>4227168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_RUN</Name>
@@ -19987,7 +20136,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096672</BitOffs>
+            <BitOffs>4227184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_STOP</Name>
@@ -20001,7 +20150,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096688</BitOffs>
+            <BitOffs>4227200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_SAVECFG</Name>
@@ -20015,7 +20164,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096704</BitOffs>
+            <BitOffs>4227216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_LOADCFG</Name>
@@ -20029,7 +20178,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096720</BitOffs>
+            <BitOffs>4227232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_POWERFAILURE</Name>
@@ -20043,7 +20192,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096736</BitOffs>
+            <BitOffs>4227248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_POWERGOOD</Name>
@@ -20057,7 +20206,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096752</BitOffs>
+            <BitOffs>4227264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_ERROR</Name>
@@ -20071,7 +20220,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096768</BitOffs>
+            <BitOffs>4227280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_SHUTDOWN</Name>
@@ -20085,7 +20234,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096784</BitOffs>
+            <BitOffs>4227296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_SUSPEND</Name>
@@ -20099,7 +20248,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096800</BitOffs>
+            <BitOffs>4227312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_RESUME</Name>
@@ -20113,7 +20262,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096816</BitOffs>
+            <BitOffs>4227328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_CONFIG</Name>
@@ -20128,7 +20277,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096832</BitOffs>
+            <BitOffs>4227344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_RECONFIG</Name>
@@ -20143,7 +20292,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096848</BitOffs>
+            <BitOffs>4227360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_STOPPING</Name>
@@ -20157,7 +20306,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096864</BitOffs>
+            <BitOffs>4227376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_INCOMPATIBLE</Name>
@@ -20171,7 +20320,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096880</BitOffs>
+            <BitOffs>4227392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_EXCEPTION</Name>
@@ -20185,7 +20334,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096896</BitOffs>
+            <BitOffs>4227408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ADSSTATE_MAXSTATES</Name>
@@ -20200,931 +20349,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4096912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYMTAB</Name>
-            <Comment> Symbol table </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61440</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096928</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYMNAME</Name>
-            <Comment> Symbol name </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61441</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096960</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYMVAL</Name>
-            <Comment> Symbol value </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61442</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4096992</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_HNDBYNAME</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61443</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097024</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_VALBYNAME</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61444</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097056</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_VALBYHND</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61445</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097088</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_RELEASEHND</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61446</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097120</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_INFOBYNAME</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61447</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097152</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_VERSION</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61448</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097184</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_INFOBYNAMEEX</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61449</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097216</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_DOWNLOAD</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61450</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097248</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_UPLOAD</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61451</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097280</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYM_UPLOADINFO</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61452</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097312</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_SYMNOTE</Name>
-            <Comment> Notification of named handle </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61456</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097344</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIB</Name>
-            <Comment> Read/write input BYTE(S) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61472</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097376</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIX</Name>
-            <Comment> Read/write input bit </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61473</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097408</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RISIZE</Name>
-            <Comment> Read input size (in BYTE) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61477</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097440</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWOB</Name>
-            <Comment> Read/write output BYTE(S) </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61488</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097472</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWOX</Name>
-            <Comment> Read/write output bit </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61489</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097504</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_ROSIZE</Name>
-            <Comment> Read/write output bit </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61493</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097536</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_CLEARI</Name>
-            <Comment> Write inputs TO null </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61504</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_CLEARO</Name>
-            <Comment> Write outputs TO null </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61520</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097600</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIOB</Name>
-            <Comment> Read input AND write output BYTE(S)  ADS-READWRITE </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61536</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097632</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIGRP_DEVICE_DATA</Name>
-            <Comment> State, name, etc... </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>61696</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097664</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIOFFS_DEVDATA_ADSSTATE</Name>
-            <Comment> Ads state OF device </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097696</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSIOFFS_DEVDATA_DEVSTATE</Name>
-            <Comment> Device state </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>2</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097728</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_OPENCREATE</Name>
-            <Comment> Open and if not existing create </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>100</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097760</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_OPENREAD</Name>
-            <Comment> Open existing for read access </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>101</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_OPENWRITE</Name>
-            <Comment> Open existing for write access </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>102</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097824</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_CREATEFILE</Name>
-            <Comment> Create </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>110</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097856</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_CLOSEHANDLE</Name>
-            <Comment> Close </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>111</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097888</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FOPEN</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>120</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097920</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FCLOSE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>121</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097952</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FREAD</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>122</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4097984</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FWRITE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>123</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FSEEK</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>124</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098048</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FTELL</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>125</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098080</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FGETS</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>126</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098112</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FPUTS</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>127</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098144</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FSCANF</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>128</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098176</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FPRINTF</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>129</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098208</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FEOF</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>130</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098240</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FDELETE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>131</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098272</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_FRENAME</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>132</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_MKDIR</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>138</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098336</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_RMDIR</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>139</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098368</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>200</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098400</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_SENDEMAIL</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>300</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098432</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_TIMESERVICES</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>400</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098464</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_STARTPROCESS</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>500</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098496</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.SYSTEMSERVICE_CHANGENETID</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>600</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098528</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_DATEANDTIME</Name>
-            <Comment> Date/time </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_SYSTEMTIMES</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>2</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098592</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_RTCTIMEDIFF</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>3</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_ADJUSTTIMETORTC</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>4</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098656</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.TIMESERVICE_TIMEZONINFORMATION</Name>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>6</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098688</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_HINT</Name>
-            <Comment> Hint icon </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098720</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_WARN</Name>
-            <Comment> Warning icon </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>2</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098752</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_ERROR</Name>
-            <Comment> Error icon </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>4</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098784</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_LOG</Name>
-            <Comment> Write message to log file </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>16</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098816</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_MSGBOX</Name>
-            <Comment> View message in message box </Comment>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>32</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098848</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_RESOURCE</Name>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>64</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098880</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.ADSLOG_MSGTYPE_STRING</Name>
-            <BitSize>32</BitSize>
-            <BaseType>DWORD</BaseType>
-            <Default>
-              <Value>128</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.BOOTDATAFLAGS_RETAIN_LOADED</Name>
-            <Comment> Retain data loaded </Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BYTE</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4098944</BitOffs>
+            <BitOffs>4227424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.BOOTDATAFLAGS_RETAIN_INVALID</Name>
@@ -21139,7 +20364,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098952</BitOffs>
+            <BitOffs>4227440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.BOOTDATAFLAGS_RETAIN_REQUESTED</Name>
@@ -21153,7 +20378,916 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098960</BitOffs>
+            <BitOffs>4227448</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYMTAB</Name>
+            <Comment> Symbol table </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61440</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227456</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYMNAME</Name>
+            <Comment> Symbol name </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61441</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227488</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYMVAL</Name>
+            <Comment> Symbol value </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61442</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227520</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_HNDBYNAME</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61443</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227552</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_VALBYNAME</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61444</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227584</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_VALBYHND</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61445</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227616</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_RELEASEHND</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61446</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_INFOBYNAME</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61447</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227680</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_VERSION</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61448</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227712</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_INFOBYNAMEEX</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61449</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227744</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_DOWNLOAD</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61450</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227776</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_UPLOAD</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61451</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYM_UPLOADINFO</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61452</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_SYMNOTE</Name>
+            <Comment> Notification of named handle </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61456</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227872</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIB</Name>
+            <Comment> Read/write input BYTE(S) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61472</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227904</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIX</Name>
+            <Comment> Read/write input bit </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61473</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227936</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RISIZE</Name>
+            <Comment> Read input size (in BYTE) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61477</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4227968</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWOB</Name>
+            <Comment> Read/write output BYTE(S) </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61488</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWOX</Name>
+            <Comment> Read/write output bit </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61489</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228032</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_ROSIZE</Name>
+            <Comment> Read/write output bit </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61493</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_CLEARI</Name>
+            <Comment> Write inputs TO null </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61504</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228096</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_CLEARO</Name>
+            <Comment> Write outputs TO null </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61520</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228128</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_IOIMAGE_RWIOB</Name>
+            <Comment> Read input AND write output BYTE(S)  ADS-READWRITE </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61536</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228160</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIGRP_DEVICE_DATA</Name>
+            <Comment> State, name, etc... </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>61696</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228192</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIOFFS_DEVDATA_ADSSTATE</Name>
+            <Comment> Ads state OF device </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228224</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSIOFFS_DEVDATA_DEVSTATE</Name>
+            <Comment> Device state </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>2</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228256</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_OPENCREATE</Name>
+            <Comment> Open and if not existing create </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>100</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228288</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_OPENREAD</Name>
+            <Comment> Open existing for read access </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>101</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_OPENWRITE</Name>
+            <Comment> Open existing for write access </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>102</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228352</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_CREATEFILE</Name>
+            <Comment> Create </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>110</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228384</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_CLOSEHANDLE</Name>
+            <Comment> Close </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>111</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228416</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FOPEN</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>120</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228448</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FCLOSE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>121</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228480</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FREAD</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>122</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228512</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FWRITE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>123</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228544</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FSEEK</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>124</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FTELL</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>125</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228608</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FGETS</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>126</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228640</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FPUTS</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>127</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228672</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FSCANF</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>128</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228704</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FPRINTF</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>129</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228736</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FEOF</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>130</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228768</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FDELETE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>131</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228800</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_FRENAME</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>132</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_MKDIR</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>138</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228864</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_RMDIR</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>139</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228896</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>200</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228928</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_SENDEMAIL</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>300</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228960</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_TIMESERVICES</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>400</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4228992</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_STARTPROCESS</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>500</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229024</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.SYSTEMSERVICE_CHANGENETID</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>600</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229056</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_DATEANDTIME</Name>
+            <Comment> Date/time </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229088</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_SYSTEMTIMES</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>2</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229120</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_RTCTIMEDIFF</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>3</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229152</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_ADJUSTTIMETORTC</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>4</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229184</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.TIMESERVICE_TIMEZONINFORMATION</Name>
+            <BitSize>32</BitSize>
+            <BaseType>UDINT</BaseType>
+            <Default>
+              <Value>6</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229216</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_HINT</Name>
+            <Comment> Hint icon </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229248</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_WARN</Name>
+            <Comment> Warning icon </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>2</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229280</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_ERROR</Name>
+            <Comment> Error icon </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>4</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229312</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_LOG</Name>
+            <Comment> Write message to log file </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>16</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_MSGBOX</Name>
+            <Comment> View message in message box </Comment>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>32</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229376</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_RESOURCE</Name>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>64</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229408</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.ADSLOG_MSGTYPE_STRING</Name>
+            <BitSize>32</BitSize>
+            <BaseType>DWORD</BaseType>
+            <Default>
+              <Value>128</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4229440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.BOOTDATAFLAGS_PERSISTENT_LOADED</Name>
@@ -21168,7 +21302,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098968</BitOffs>
+            <BitOffs>4229472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.BOOTDATAFLAGS_PERSISTENT_INVALID</Name>
@@ -21183,7 +21317,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098976</BitOffs>
+            <BitOffs>4229480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSTATEFLAGS_BSOD</Name>
@@ -21198,7 +21332,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098984</BitOffs>
+            <BitOffs>4229488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSTATEFLAGS_RTVIOLATION</Name>
@@ -21213,19 +21347,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4098992</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Global_Variables.nWatchdogTime</Name>
-            <Comment> Watchdog time. Depending of g_WatchdogConfig : seconds or minutes </Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BYTE</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4099000</BitOffs>
+            <BitOffs>4229496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODEREAD</Name>
@@ -21240,7 +21362,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099008</BitOffs>
+            <BitOffs>4229504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODEWRITE</Name>
@@ -21255,7 +21377,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099040</BitOffs>
+            <BitOffs>4229536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODEAPPEND</Name>
@@ -21270,7 +21392,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099072</BitOffs>
+            <BitOffs>4229568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODEPLUS</Name>
@@ -21285,7 +21407,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099104</BitOffs>
+            <BitOffs>4229600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODEBINARY</Name>
@@ -21300,7 +21422,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099136</BitOffs>
+            <BitOffs>4229632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FOPEN_MODETEXT</Name>
@@ -21315,7 +21437,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099168</BitOffs>
+            <BitOffs>4229664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_PRIOCLASS</Name>
@@ -21330,7 +21452,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099424</BitOffs>
+            <BitOffs>4229920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_FMTSELF</Name>
@@ -21345,7 +21467,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099440</BitOffs>
+            <BitOffs>4229936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_LOG</Name>
@@ -21360,7 +21482,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099456</BitOffs>
+            <BitOffs>4229952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_MSGBOX</Name>
@@ -21375,7 +21497,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099472</BitOffs>
+            <BitOffs>4229968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_SRCID</Name>
@@ -21390,7 +21512,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099488</BitOffs>
+            <BitOffs>4229984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTFLAG_AUTOFMTALL</Name>
@@ -21404,7 +21526,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099504</BitOffs>
+            <BitOffs>4230000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTSTATE_INVALID</Name>
@@ -21419,7 +21541,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099520</BitOffs>
+            <BitOffs>4230016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTSTATE_SIGNALED</Name>
@@ -21434,7 +21556,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099536</BitOffs>
+            <BitOffs>4230032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTSTATE_RESET</Name>
@@ -21449,7 +21571,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099552</BitOffs>
+            <BitOffs>4230048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTSTATE_CONFIRMED</Name>
@@ -21464,7 +21586,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099568</BitOffs>
+            <BitOffs>4230064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENTSTATE_RESETCON</Name>
@@ -21479,7 +21601,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099584</BitOffs>
+            <BitOffs>4230080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENT_SRCNAMESIZE</Name>
@@ -21493,7 +21615,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099600</BitOffs>
+            <BitOffs>4230096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TCEVENT_FMTPRGSIZE</Name>
@@ -21507,7 +21629,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099616</BitOffs>
+            <BitOffs>4230112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.eWatchdogConfig</Name>
@@ -21521,7 +21643,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099632</BitOffs>
+            <BitOffs>4230128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.PI</Name>
@@ -21535,7 +21657,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099648</BitOffs>
+            <BitOffs>4230144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_ADS_TIMEOUT</Name>
@@ -21550,7 +21672,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099712</BitOffs>
+            <BitOffs>4230208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_STRING_LENGTH</Name>
@@ -21565,7 +21687,19 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4099744</BitOffs>
+            <BitOffs>4230240</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Global_Variables.nWatchdogTime</Name>
+            <Comment> Watchdog time. Depending of g_WatchdogConfig : seconds or minutes </Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BYTE</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>4230784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc3_Module</Name>
@@ -21601,129 +21735,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4100288</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>DefaultGlobals.stSys</Name>
-            <Comment>Included for you</Comment>
-            <BitSize>88</BitSize>
-            <BaseType Namespace="LCLS_General">ST_System</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4100928</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.iLogPort</Name>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Default>
-              <Value>54321</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-		pv: @(PREFIX)LCLSGeneral:LogPort
-		io: io
-		field: DESC The log host UDP port
-	</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101024</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>DefaultGlobals.fTimeStamp</Name>
-            <BitSize>64</BitSize>
-            <BaseType>LREAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101056</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.cLogHost</Name>
-            <Comment>
-	Using the IP address directly avoids DNS configuration issues.
-	While we may want to address this in the future, for now the static IP
-	will suffice:
-
-	$ nslookup ctl-logsrv01
-	Name:   ctl-logsrv01.pcdsn
-	Address: 172.21.32.36
-	</Comment>
-            <BitSize>128</BitSize>
-            <BaseType>STRING(15)</BaseType>
-            <Default>
-              <String>172.21.32.36</String>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-		pv: @(PREFIX)LCLSGeneral:LogHost
-		io: io
-		field: DESC The log host IP address
-	</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101120</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.sIpTidbit</Name>
-            <BitSize>56</BitSize>
-            <BaseType>STRING(6)</BaseType>
-            <Default>
-              <String>172.21</String>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101248</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.sPlcHostname</Name>
-            <BitSize>648</BitSize>
-            <BaseType>STRING(80)</BaseType>
-            <Default>
-              <String>unknown</String>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.TCPADS_MAXUDP_BUFFSIZE</Name>
-            <Comment> Ref: https://infosys.beckhoff.com/english.php?content=../content/1033/tcpipserver/html/TcPlcLibTcpIp_FB_SocketUdpSendTo.htm
-		TODO: Activate the "Replace constants" option in the
-		TwinCAT PLC Control-&gt;"Project-&gt;Options...-&gt;Build" dialog window. 
-	</Comment>
-            <BitSize>32</BitSize>
-            <BaseType>UDINT</BaseType>
-            <Default>
-              <Value>10000</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4101952</BitOffs>
+            <BitOffs>4230816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_AVERAGE_MEASURES</Name>
@@ -21746,19 +21758,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4102000</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Logger.fbRootLogger</Name>
-            <Comment>Instantiated here to be used everywhere</Comment>
-            <BitSize>75520</BitSize>
-            <BaseType Namespace="LCLS_General">FB_LogMessage</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>4102016</BitOffs>
+            <BitOffs>4231408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc2_Utilities</Name>
@@ -21794,7 +21794,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177536</BitOffs>
+            <BitOffs>4231488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE</Name>
@@ -21809,7 +21809,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177888</BitOffs>
+            <BitOffs>4231840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.GLOBAL_SBCS_TABLE</Name>
@@ -21824,7 +21824,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177904</BitOffs>
+            <BitOffs>4231856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.GLOBAL_DCF77_PULSE_SPLIT</Name>
@@ -21839,7 +21839,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177920</BitOffs>
+            <BitOffs>4231872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.GLOBAL_DCF77_SEQUENCE_CHECK</Name>
@@ -21854,7 +21854,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177952</BitOffs>
+            <BitOffs>4231904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_CSV_FIELD_SEP</Name>
@@ -21869,7 +21869,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177960</BitOffs>
+            <BitOffs>4231912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_REMOTE_PCS</Name>
@@ -21884,7 +21884,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4177968</BitOffs>
+            <BitOffs>4231920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ADAPTER_NAME_LENGTH</Name>
@@ -21899,7 +21899,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239456</BitOffs>
+            <BitOffs>4293408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH</Name>
@@ -21914,7 +21914,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239488</BitOffs>
+            <BitOffs>4293440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH</Name>
@@ -21929,7 +21929,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239520</BitOffs>
+            <BitOffs>4293472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_IPHELPERAPI</Name>
@@ -21944,7 +21944,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239552</BitOffs>
+            <BitOffs>4293504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_IPHOSTNAME</Name>
@@ -21959,7 +21959,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239584</BitOffs>
+            <BitOffs>4293536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.IPHELPERAPI_ADAPTERSINFO</Name>
@@ -21974,7 +21974,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239616</BitOffs>
+            <BitOffs>4293568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.IPHELPERAPI_IPADDRBYHOSTNAME</Name>
@@ -21989,7 +21989,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239648</BitOffs>
+            <BitOffs>4293600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_LOCAL_ADAPTERS</Name>
@@ -22004,7 +22004,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239680</BitOffs>
+            <BitOffs>4293632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_ADDREMOTE</Name>
@@ -22019,7 +22019,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239712</BitOffs>
+            <BitOffs>4293664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_DELREMOTE</Name>
@@ -22034,7 +22034,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239744</BitOffs>
+            <BitOffs>4293696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_ENUMREMOTE</Name>
@@ -22049,7 +22049,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239776</BitOffs>
+            <BitOffs>4293728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ROUTE_FLAG_TEMPORARY</Name>
@@ -22064,7 +22064,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239808</BitOffs>
+            <BitOffs>4293760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ROUTE_FLAG_DYNAMIC</Name>
@@ -22079,7 +22079,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239840</BitOffs>
+            <BitOffs>4293792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.ROUTE_FLAG_NOOVERRIDE</Name>
@@ -22094,7 +22094,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239872</BitOffs>
+            <BitOffs>4293824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ROUTE_NAME_LEN</Name>
@@ -22109,7 +22109,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239904</BitOffs>
+            <BitOffs>4293856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ROUTE_ADDR_LEN</Name>
@@ -22124,7 +22124,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239912</BitOffs>
+            <BitOffs>4293864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MIN_ROUTE_TRANSPORT</Name>
@@ -22139,7 +22139,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239920</BitOffs>
+            <BitOffs>4293872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.MAX_ROUTE_TRANSPORT</Name>
@@ -22154,7 +22154,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239928</BitOffs>
+            <BitOffs>4293880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_ROUTE_ENTRY</Name>
@@ -22188,7 +22188,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4239936</BitOffs>
+            <BitOffs>4293888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMSERVICE_FFILEFIND</Name>
@@ -22203,7 +22203,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241120</BitOffs>
+            <BitOffs>4295072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.HKEY_MAX_BINARY_DATA_SIZE</Name>
@@ -22218,7 +22218,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241152</BitOffs>
+            <BitOffs>4295104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSLOGGER_IGR_GENERAL</Name>
@@ -22233,7 +22233,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241184</BitOffs>
+            <BitOffs>4295136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSLOGGER_IOF_MODE</Name>
@@ -22248,7 +22248,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241216</BitOffs>
+            <BitOffs>4295168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.AMSPORT_AMSLOGGER</Name>
@@ -22263,7 +22263,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241248</BitOffs>
+            <BitOffs>4295200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FORMAT_MAX_ARGS</Name>
@@ -22278,7 +22278,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241264</BitOffs>
+            <BitOffs>4295216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FLOATREC_EXP_IS_NAN</Name>
@@ -22293,7 +22293,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241280</BitOffs>
+            <BitOffs>4295232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FLOATREC_EXP_IS_INF</Name>
@@ -22308,7 +22308,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241296</BitOffs>
+            <BitOffs>4295248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FLOATREC_MAX_DIGITS</Name>
@@ -22323,7 +22323,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241312</BitOffs>
+            <BitOffs>4295264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FLOATREC_MAX_PRECISION</Name>
@@ -22338,7 +22338,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241328</BitOffs>
+            <BitOffs>4295280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FLOATREC_MIN_PRECISION</Name>
@@ -22353,7 +22353,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241344</BitOffs>
+            <BitOffs>4295296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_NOERROR</Name>
@@ -22368,7 +22368,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241376</BitOffs>
+            <BitOffs>4295328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_PERCENTSIGNPOSITION</Name>
@@ -22383,7 +22383,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241408</BitOffs>
+            <BitOffs>4295360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_ASTERISKPOSITION</Name>
@@ -22398,7 +22398,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241440</BitOffs>
+            <BitOffs>4295392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_WIDTHVALUE</Name>
@@ -22413,7 +22413,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241472</BitOffs>
+            <BitOffs>4295424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_PRECISIONVALUE</Name>
@@ -22428,7 +22428,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241504</BitOffs>
+            <BitOffs>4295456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_FLAGPOSITION</Name>
@@ -22443,7 +22443,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241536</BitOffs>
+            <BitOffs>4295488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_WIDTHPRECISIONVALPOS</Name>
@@ -22458,7 +22458,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241568</BitOffs>
+            <BitOffs>4295520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_PRECISIONDOTPOSITION</Name>
@@ -22473,7 +22473,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241600</BitOffs>
+            <BitOffs>4295552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_TYPEFIELDVALUE</Name>
@@ -22488,7 +22488,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241632</BitOffs>
+            <BitOffs>4295584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_ARGTYPEINVALID</Name>
@@ -22503,7 +22503,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241664</BitOffs>
+            <BitOffs>4295616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_UNACCEPTEDPARAMETER</Name>
@@ -22518,7 +22518,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241696</BitOffs>
+            <BitOffs>4295648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_INSUFFICIENTARGS</Name>
@@ -22533,7 +22533,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241728</BitOffs>
+            <BitOffs>4295680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_DESTBUFFOVERFLOW</Name>
@@ -22548,7 +22548,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241760</BitOffs>
+            <BitOffs>4295712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FMTERR_INVALIDPOINTERINPUT</Name>
@@ -22563,7 +22563,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241792</BitOffs>
+            <BitOffs>4295744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET</Name>
@@ -22578,7 +22578,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241824</BitOffs>
+            <BitOffs>4295776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_ARG_VALUE</Name>
@@ -22604,7 +22604,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241856</BitOffs>
+            <BitOffs>4295808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FORMAT_HEXASC_CODES</Name>
@@ -22753,7 +22753,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4241984</BitOffs>
+            <BitOffs>4295936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.FORMAT_DECASC_CODES</Name>
@@ -22811,7 +22811,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4242240</BitOffs>
+            <BitOffs>4296192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_MAX_MONTHDAYS</Name>
@@ -22928,7 +22928,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4247728</BitOffs>
+            <BitOffs>4301680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_MAX_YEARSDAY</Name>
@@ -23061,7 +23061,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248112</BitOffs>
+            <BitOffs>4302064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERMSEC</Name>
@@ -23083,7 +23083,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248576</BitOffs>
+            <BitOffs>4302528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERSEC</Name>
@@ -23105,7 +23105,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248640</BitOffs>
+            <BitOffs>4302592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERDAY</Name>
@@ -23127,7 +23127,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248704</BitOffs>
+            <BitOffs>4302656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN</Name>
@@ -23149,7 +23149,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248768</BitOffs>
+            <BitOffs>4302720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX</Name>
@@ -23171,7 +23171,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248832</BitOffs>
+            <BitOffs>4302784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERMSEC64</Name>
@@ -23186,7 +23186,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248896</BitOffs>
+            <BitOffs>4302848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERSEC64</Name>
@@ -23201,7 +23201,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4248960</BitOffs>
+            <BitOffs>4302912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_TICKSPERDAY64</Name>
@@ -23216,7 +23216,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4249024</BitOffs>
+            <BitOffs>4302976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN64</Name>
@@ -23231,7 +23231,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4249088</BitOffs>
+            <BitOffs>4303040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX64</Name>
@@ -23246,7 +23246,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4249152</BitOffs>
+            <BitOffs>4303104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.WEST_EUROPE_TZI</Name>
@@ -23319,7 +23319,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4249216</BitOffs>
+            <BitOffs>4303168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DATE_AND_TIME_SECPERDAY</Name>
@@ -23334,7 +23334,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4254176</BitOffs>
+            <BitOffs>4308128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DATE_AND_TIME_SECPERWEEK</Name>
@@ -23349,7 +23349,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4254208</BitOffs>
+            <BitOffs>4308160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DBG_OUTPUT_NONE</Name>
@@ -23364,7 +23364,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4260416</BitOffs>
+            <BitOffs>4314368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DBG_OUTPUT_LOG</Name>
@@ -23379,7 +23379,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4260448</BitOffs>
+            <BitOffs>4314400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DBG_OUTPUT_FILE</Name>
@@ -23394,7 +23394,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4260480</BitOffs>
+            <BitOffs>4314432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DBG_OUTPUT_VISU</Name>
@@ -23409,7 +23409,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4260512</BitOffs>
+            <BitOffs>4314464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_CSV_FIELD_DOUBLE_QUOTE</Name>
@@ -23424,7 +23424,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4379280</BitOffs>
+            <BitOffs>4433232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_CSV_RECORD_SEP_CR</Name>
@@ -23439,7 +23439,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4379288</BitOffs>
+            <BitOffs>4433240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_CSV_RECORD_SEP_LF</Name>
@@ -23454,7 +23454,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4380240</BitOffs>
+            <BitOffs>4434192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Constants.EMPTY_SEVERITY</Name>
@@ -23468,7 +23468,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4380272</BitOffs>
+            <BitOffs>4434224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_GUID_STRUCT</Name>
@@ -23525,7 +23525,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4381984</BitOffs>
+            <BitOffs>4435936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_GUID_STRING</Name>
@@ -23539,7 +23539,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382112</BitOffs>
+            <BitOffs>4436064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.EMPTY_GUID_REGSTRING</Name>
@@ -23553,7 +23553,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382408</BitOffs>
+            <BitOffs>4436360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>.TCPADS_MAXUDP_BUFFSIZE</Name>
@@ -23567,7 +23567,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382720</BitOffs>
+            <BitOffs>4436672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Constants.EMPTY_EVENT_CLASS</Name>
@@ -23624,7 +23624,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382752</BitOffs>
+            <BitOffs>4436704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Constants.EMPTY_EVENT_ID</Name>
@@ -23638,7 +23638,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382880</BitOffs>
+            <BitOffs>4436832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Constants.SUCCESS_EVENT</Name>
@@ -23703,7 +23703,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4382912</BitOffs>
+            <BitOffs>4436864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.nLangId_OnlineMonitoring</Name>
@@ -23718,7 +23718,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383104</BitOffs>
+            <BitOffs>4437056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>ParameterList.cSourceNameSize</Name>
@@ -23741,7 +23741,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383136</BitOffs>
+            <BitOffs>4437088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc3_EventLogger</Name>
@@ -23781,7 +23781,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383168</BitOffs>
+            <BitOffs>4437120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_INTERNAL.UNINITIALIZED_CLASS_GUID</Name>
@@ -23839,7 +23839,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383456</BitOffs>
+            <BitOffs>4437408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc3_JsonXml</Name>
@@ -23875,7 +23875,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383584</BitOffs>
+            <BitOffs>4437536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Version.stLibVersion_Tc2_MC2</Name>
@@ -23915,7 +23915,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4383872</BitOffs>
+            <BitOffs>4437824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bLittleEndian</Name>
@@ -23930,7 +23930,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4384160</BitOffs>
+            <BitOffs>4438112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bSimulationMode</Name>
@@ -23945,7 +23945,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4384168</BitOffs>
+            <BitOffs>4438120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -23960,7 +23960,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4384176</BitOffs>
+            <BitOffs>4438128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.TcMcGlobal</Name>
@@ -23971,7 +23971,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4384192</BitOffs>
+            <BitOffs>4438144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_HOME_POSITION</Name>
@@ -23985,7 +23985,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4391296</BitOffs>
+            <BitOffs>4445248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Global_Variables.DEFAULT_BACKLASHVALUE</Name>
@@ -23999,7 +23999,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>4391360</BitOffs>
+            <BitOffs>4445312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1</Name>
@@ -24028,7 +24028,7 @@ External Setpoint Generation:
                               .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
-            <BitOffs>4432064</BitOffs>
+            <BitOffs>4486016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM2K1_PPM.fbIM2K1</Name>
@@ -24057,7 +24057,7 @@ External Setpoint Generation:
                               .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
-            <BitOffs>5211200</BitOffs>
+            <BitOffs>5265152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1</Name>
@@ -24072,14 +24072,14 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable  := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 1;
-	                          .bLimitBackwardEnable := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 2;
-	                          .bBrakeRelease        := TIIB[IM1K1-EL2004]^Channel 1^Output</Value>
+                              .bLimitBackwardEnable := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[IM1K1-EL2004]^Channel 1^Output</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>5991360</BitOffs>
+            <BitOffs>6045312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2</Name>
@@ -24094,14 +24094,14 @@ External Setpoint Generation:
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable  := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 1;
-	                          .bLimitBackwardEnable := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 2;
-	                          .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output</Value>
+                              .bLimitBackwardEnable := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6002624</BitOffs>
+            <BitOffs>6056576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3</Name>
@@ -24113,7 +24113,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6013888</BitOffs>
+            <BitOffs>6067840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -24143,7 +24143,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025152</BitOffs>
+            <BitOffs>6079104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -24173,7 +24173,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025216</BitOffs>
+            <BitOffs>6079168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nPackMode</Name>
@@ -24188,7 +24188,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025280</BitOffs>
+            <BitOffs>6079232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bFPUSupport</Name>
@@ -24202,7 +24202,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025296</BitOffs>
+            <BitOffs>6079248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -24216,7 +24216,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025312</BitOffs>
+            <BitOffs>6079264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersionNumeric</Name>
@@ -24230,7 +24230,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025344</BitOffs>
+            <BitOffs>6079296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_LicenseInfoVarList._LicenseInfo</Name>
@@ -24299,7 +24299,88 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6025376</BitOffs>
+            <BitOffs>6079328</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
+            <BitSize>32</BitSize>
+            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+            <Properties>
+              <Property>
+                <Name>no_init</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>6080352</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}">PlcAppSystemInfo</BaseType>
+            <Properties>
+              <Property>
+                <Name>no_init</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>6080384</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{56294066-FFF7-46F3-8206-FA06A30B13BA}">PlcTaskSystemInfo</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>1</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>no_init</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>6082432</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
+            <BitSize>32</BitSize>
+            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+            <Properties>
+              <Property>
+                <Name>no_init</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>6083456</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
+            <BitSize>896</BitSize>
+            <BaseType>_Implicit_Task_Info</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.dwVersion</Name>
+                <Value>2</Value>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcContextName</Name>
+                <Value>PlcTask</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>6083520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -24322,88 +24403,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>6393184</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
-            <BitSize>32</BitSize>
-            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-            <Properties>
-              <Property>
-                <Name>no_init</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>6394912</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}">PlcAppSystemInfo</BaseType>
-            <Properties>
-              <Property>
-                <Name>no_init</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>6394944</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{56294066-FFF7-46F3-8206-FA06A30B13BA}">PlcTaskSystemInfo</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>1</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>no_init</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>6396992</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
-            <BitSize>32</BitSize>
-            <BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-            <Properties>
-              <Property>
-                <Name>no_init</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>6398016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
-            <BitSize>896</BitSize>
-            <BaseType>_Implicit_Task_Info</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.dwVersion</Name>
-                <Value>2</Value>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcContextName</Name>
-                <Value>PlcTask</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>6398080</BitOffs>
+            <BitOffs>6452992</BitOffs>
           </Symbol>
         </DataArea>
       </DataAreas>
@@ -24420,7 +24420,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2020-06-01T17:52:11</Value>
+          <Value>2020-06-02T18:22:18</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
@@ -24428,7 +24428,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>303104</Value>
+          <Value>307200</Value>
         </Property>
       </Properties>
     </Module>
