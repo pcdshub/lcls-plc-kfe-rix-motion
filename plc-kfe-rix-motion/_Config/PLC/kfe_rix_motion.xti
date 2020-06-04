@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.29" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -906,7 +906,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 					<Comment>
-						<![CDATA[AMS Net ID used for FB_EcatDiag, among others]]>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
@@ -982,14 +982,14 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1085,14 +1085,14 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbGetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this input to the terminal]]>
+						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1168,28 +1168,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1245,28 +1245,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1322,28 +1322,28 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bLimitForwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Forward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bLimitBackwardEnable</Name>
 					<Comment>
-						<![CDATA[NC Backward Limit Switch: TRUE if ok to move]]>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHome</Name>
 					<Comment>
-						<![CDATA[NO Home Switch: TRUE if at home]]>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1365,7 +1365,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this output to the terminal]]>
+						<![CDATA[ Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1384,7 +1384,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_IM2K1_PPM.fbIM2K1.fbGige.fbSetIllPercent.iRaw</Name>
 					<Comment>
-						<![CDATA[Connect this output to the terminal]]>
+						<![CDATA[ Connect this output to the terminal]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
@@ -1395,7 +1395,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M1.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1406,7 +1406,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M2.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1417,7 +1417,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.M3.bBrakeRelease</Name>
 					<Comment>
-						<![CDATA[NC Brake Output: TRUE to release brake]]>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
