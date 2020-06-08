@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="Main" Id="{fff0648d-526a-4895-b18d-41e28b717bbc}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+    // IM1K1-PPM-MMS
+    {attribute 'pytmc' := 'pv: IM1K1:PPM:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[IM1K1-EL2004]^Channel 1^Output'}
+    M1: DUT_MotionStage;
+
+    // IM2K1-PPM-MMS
+    {attribute 'pytmc' := 'pv: IM2K1:PPM:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output'}
+    M2: DUT_MotionStage;
+
+    // ST1K1-ZOS-MMS
+    M3: DUT_MotionStage;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
