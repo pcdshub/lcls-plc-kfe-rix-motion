@@ -1,4 +1,5 @@
-IOC_TOP = /reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.3
+# IOC_TOP = /reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.4
+IOC_TOP = /reg/g/pcds/epics-dev/zlentz/ads-ioc
 IOC_INSTANCE_PATH := $(shell pwd)
 
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
