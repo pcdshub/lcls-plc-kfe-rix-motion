@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{A0907F50-1672-C7E8-5C72-D7398E0666A1}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{288A496C-4AF1-021C-5AB3-6520F46580F9}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -204,31 +204,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>1292224</GetCodeOffs>
+        <GetCodeOffs>1311296</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>1292256</GetCodeOffs>
+        <GetCodeOffs>1311328</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>1292264</GetCodeOffs>
+        <GetCodeOffs>1311336</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>1292248</GetCodeOffs>
+        <GetCodeOffs>1311320</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>1292260</GetCodeOffs>
+        <GetCodeOffs>1311332</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1421,15 +1421,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>1292168</GetCodeOffs>
-        <SetCodeOffs>1292192</SetCodeOffs>
+        <GetCodeOffs>1311240</GetCodeOffs>
+        <SetCodeOffs>1311264</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>1292204</GetCodeOffs>
-        <SetCodeOffs>1292216</SetCodeOffs>
+        <GetCodeOffs>1311276</GetCodeOffs>
+        <SetCodeOffs>1311288</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -1697,31 +1697,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>1292312</GetCodeOffs>
+        <GetCodeOffs>1311384</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>1292292</GetCodeOffs>
+        <GetCodeOffs>1311364</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>1292380</GetCodeOffs>
+        <GetCodeOffs>1311452</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>1292340</GetCodeOffs>
+        <GetCodeOffs>1311412</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>1292384</GetCodeOffs>
+        <GetCodeOffs>1311456</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2294,7 +2294,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>1292408</GetCodeOffs>
+        <GetCodeOffs>1311480</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -6189,6 +6189,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -6321,6 +6326,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -6480,6 +6490,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetNumberOfSuccessfulTests</Name>
@@ -6586,6 +6601,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -6719,6 +6739,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7184,6 +7209,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7928,6 +7958,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -8306,6 +8341,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -8397,6 +8437,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8524,6 +8569,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -8625,6 +8675,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8929,6 +8984,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -9093,6 +9153,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9277,6 +9342,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -9374,6 +9444,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -25253,7 +25328,7 @@ External Setpoint Generation:
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>1835008</ByteSize>
+          <ByteSize>1769472</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -25630,6 +25705,18 @@ External Setpoint Generation:
             <BitOffs>10182240</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_ST1K1_ZOS.fbZOS.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10184768</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
             <BitSize>2048</BitSize>
             <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
@@ -25639,7 +25726,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10183872</BitOffs>
+            <BitOffs>10336448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitForwardEnable</Name>
@@ -25662,7 +25749,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10191808</BitOffs>
+            <BitOffs>10344384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitBackwardEnable</Name>
@@ -25685,7 +25772,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10191816</BitOffs>
+            <BitOffs>10344392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHome</Name>
@@ -25708,7 +25795,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10191824</BitOffs>
+            <BitOffs>10344400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHardwareEnable</Name>
@@ -25731,7 +25818,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10191840</BitOffs>
+            <BitOffs>10344416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.NcToPlc</Name>
@@ -25743,7 +25830,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10195136</BitOffs>
+            <BitOffs>10347712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitForwardEnable</Name>
@@ -25766,7 +25853,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10203072</BitOffs>
+            <BitOffs>10355648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitBackwardEnable</Name>
@@ -25789,7 +25876,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10203080</BitOffs>
+            <BitOffs>10355656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHome</Name>
@@ -25812,7 +25899,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10203088</BitOffs>
+            <BitOffs>10355664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHardwareEnable</Name>
@@ -25835,7 +25922,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10203104</BitOffs>
+            <BitOffs>10355680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.NcToPlc</Name>
@@ -25847,7 +25934,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10206400</BitOffs>
+            <BitOffs>10358976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitForwardEnable</Name>
@@ -25870,7 +25957,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10214336</BitOffs>
+            <BitOffs>10366912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitBackwardEnable</Name>
@@ -25893,7 +25980,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10214344</BitOffs>
+            <BitOffs>10366920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHome</Name>
@@ -25916,7 +26003,7 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10214352</BitOffs>
+            <BitOffs>10366928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHardwareEnable</Name>
@@ -25939,26 +26026,14 @@ External Setpoint Generation:
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>10214368</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_ST1K1_ZOS.fbZOS.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>13548352</BitOffs>
+            <BitOffs>10366944</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>1835008</ByteSize>
+          <ByteSize>1769472</ByteSize>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -26074,6 +26149,18 @@ External Setpoint Generation:
             <BitOffs>10181760</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_ST1K1_ZOS.fbZOS.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>10183744</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
             <BitSize>1024</BitSize>
             <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
@@ -26083,7 +26170,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10182848</BitOffs>
+            <BitOffs>10335424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bBrakeRelease</Name>
@@ -26106,7 +26193,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10191832</BitOffs>
+            <BitOffs>10344408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.PlcToNc</Name>
@@ -26118,7 +26205,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10194112</BitOffs>
+            <BitOffs>10346688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bBrakeRelease</Name>
@@ -26141,7 +26228,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10203096</BitOffs>
+            <BitOffs>10355672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.PlcToNc</Name>
@@ -26153,7 +26240,7 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10205376</BitOffs>
+            <BitOffs>10357952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bBrakeRelease</Name>
@@ -26176,26 +26263,14 @@ External Setpoint Generation:
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>10214360</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_ST1K1_ZOS.fbZOS.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>13547328</BitOffs>
+            <BitOffs>10366936</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>1835008</ByteSize>
+          <ByteSize>1769472</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -31325,6 +31400,12 @@ External Setpoint Generation:
             <BitOffs>9420864</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_ST1K1_ZOS.fbZOS</Name>
+            <BitSize>152576</BitSize>
+            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
+            <BitOffs>10182272</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Main.M1</Name>
             <Comment> IM1K1-PPM-MMS</Comment>
             <BitSize>11264</BitSize>
@@ -31344,7 +31425,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10182784</BitOffs>
+            <BitOffs>10335360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2</Name>
@@ -31366,7 +31447,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10194048</BitOffs>
+            <BitOffs>10346624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3</Name>
@@ -31388,7 +31469,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10205312</BitOffs>
+            <BitOffs>10357888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -31418,7 +31499,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216576</BitOffs>
+            <BitOffs>10369152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -31448,7 +31529,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216640</BitOffs>
+            <BitOffs>10369216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -31463,7 +31544,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216704</BitOffs>
+            <BitOffs>10369280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nPackMode</Name>
@@ -31478,7 +31559,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216720</BitOffs>
+            <BitOffs>10369296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bFPUSupport</Name>
@@ -31492,7 +31573,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216736</BitOffs>
+            <BitOffs>10369312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -31506,7 +31587,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216768</BitOffs>
+            <BitOffs>10369344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersionNumeric</Name>
@@ -31520,7 +31601,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216800</BitOffs>
+            <BitOffs>10369376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_LicenseInfoVarList._LicenseInfo</Name>
@@ -31589,7 +31670,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10216832</BitOffs>
+            <BitOffs>10369408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
@@ -31603,7 +31684,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10217856</BitOffs>
+            <BitOffs>10370432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -31621,7 +31702,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10219904</BitOffs>
+            <BitOffs>10372480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
@@ -31635,7 +31716,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10220928</BitOffs>
+            <BitOffs>10373504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
@@ -31649,7 +31730,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10220960</BitOffs>
+            <BitOffs>10373536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -31670,7 +31751,7 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10220992</BitOffs>
+            <BitOffs>10373568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -31693,20 +31774,14 @@ External Setpoint Generation:
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>10265088</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_ST1K1_ZOS.fbZOS</Name>
-            <BitSize>152576</BitSize>
-            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>13545856</BitOffs>
+            <BitOffs>10417664</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>1835008</ByteSize>
+          <ByteSize>1769472</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -31760,7 +31835,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2020-06-23T11:03:04</Value>
+          <Value>2020-06-23T12:34:59</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
