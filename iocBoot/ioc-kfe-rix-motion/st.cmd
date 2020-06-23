@@ -119,8 +119,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "3")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:RIX:MOTION:")
-epicsEnvSet("MOTOR_NAME",      "Axis:3:ST1K1-ZOS-MMS")
+epicsEnvSet("MOTOR_PREFIX",    "ST1K1:ZOS:")
+epicsEnvSet("MOTOR_NAME",      "MMS")
 epicsEnvSet("DESC",            "Main.M3 / Axis 3 ST1K1-ZOS-MMS")
 epicsEnvSet("EGU",             "mm")
 epicsEnvSet("PREC",            "3")
