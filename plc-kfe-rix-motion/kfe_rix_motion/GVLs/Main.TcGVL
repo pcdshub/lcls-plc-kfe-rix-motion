@@ -18,6 +18,10 @@ VAR_GLOBAL
     M2: DUT_MotionStage;
 
     // ST1K1-ZOS-MMS
+    {attribute 'pytmc' := 'pv: ST1K1:ZOS:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[ST1K1-EL2008]^Channel 1^Output'}
     M3: DUT_MotionStage;
 END_VAR]]></Declaration>
   </GVL>
