@@ -1,30 +1,47 @@
 language: python
-os: linux
-dist: xenial
 python: 3.7
 
 env:
   global:
-    # Doctr deploy key for pcdshub/lcls-plc-kfe-rix-motion
-    - secure: ""
+    # doctr generated secure variable for documentation upload
+    - secure: "fdQT7XCxR34ofcT4j8Od+ezXb3S6023wTQbCa+iKLaN+Ysg/QLrhW5jMyIGGeWvpawLdVIqki3B33pJ/PGfZdRwms9xvo4SjQF06LpdIW5BY3SB1oybNTb0RM95CWRxJ2rrVfJdPR7ztxZSgFDh+834dYP4MaxG7f8Knl1RFyya6pKTZo6wB8MKpJzJt1uI+owuWV8FYkUHb48jIBo2S8LZX3vEhzHYaJ5PJudW/pcWZPSj9RT11/GwAafMKHW4UeRiu41p4hYmumUfCv+nnYFtGaLVGbbM/zRjjTk9iXF3kkJO/oFCd8XVKEZI6qcnyY7VwsQnJ80XX3G4PE1TZ+/ccH69Enzp3zKbshO5h229pqxzLdOx8PFxxJZeusBK3tCJOuP7gx7baNcWyN4PQnmlfXZ5Rnw7BnIXswu6vrGDuHBz/qWRyXHHazn5aEe+gciR4EW2CaAjHKqupIeHPAdnXyetnxY0J0tLkaLhrlRDzEDqMXQXNhmz3PBY0bvSZqKMk5v2/hPO/eKoCnndXvks4Eva4lFlsKrnhJVt2hb9bRLk2n2ODZiHc1jqGMYde3MAiCePlbrHUvoNTB93ELyn1jQIzzkdz8QtbxelpZ/Ey93dBp9nxeaeJhkaSsYeSN/PxP5OIHj7IOVVRpb+dtqdGHzh5vPnaWufK9NPctHU="
+    - TWINCAT_STYLE_EXCLUDE=
+    # If using a custom version of the CI helpers, change the following in
+    # addition to the `import` block elow:
+    # - CI_HELPER_URL=https://github.com/klauer/pcds-ci-helpers
+    # - CI_HELPER_BRANCH=twincat_shared_configs
 
-jobs:
-  include:
-    - name: Project summary
-      env: TWINCAT_SUMMARY=1
-    - name: Pragma linting
-      env: TWINCAT_PRAGMALINT=1
-    - name: Documentation building
-      env: TWINCAT_BUILD_DOCS=1
-    - name: Twincat Style
-      env:
-      - TWINCAT_STYLE=1
-      - TWINCAT_STYLE_EXCLUDE=tc_mca_std_lib
-    - name: Pre-commit Checks
-      env: PRE_COMMIT=1
+# Uncomment this block if you would like to make a test an allowed failure
+#jobs:
+#  allow_failures:
+#    - name: "Style Check"
+#    - name: "Pre-commit Checks"
 
-install:
-  # Import the helper scripts
-  - git clone --depth 1 git://github.com/pcdshub/pcds-ci-helpers.git
-  # Start the helper-script initialization + run based on environment variables
-  - source pcds-ci-helpers/travis/init.sh
+import:
+  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml
+
+# If not using the standard-python-conda above please uncomment the required
+# (language, os, dist and stages) and optional (import statements) entries from
+# the blocks below.
+#
+#language: python
+#os: linux
+#dist: xenial
+#
+#stages:
+#  - build
+#  - test
+#  - name: deploy
+#    if: (branch = master OR tag IS present) AND type != pull_request
+#
+#import:
+#  # Build stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/setup.yml
+#  # Test stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/docs-build.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/pragmalint.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/pre-commit.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/style.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/summary.yml
+#  # Deploy stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/doctr-upload.yml
