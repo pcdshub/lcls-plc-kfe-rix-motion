@@ -1,0 +1,123 @@
+
+Links
+-----
+
+.. csv-table::
+    :header: Owner A, Item A, Owner B, Item B
+    :align: center
+
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Warning
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, WcState^WcState
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Control^Control^Reset
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Velocity^Velocity
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, WcState^WcState
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL5042, FB Inputs Channel 1^Status^Warning
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K1-PPM-MMS, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M1.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M1.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M2.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 2 IM2K1-PPM-MMS, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M2.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M2.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M3.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 3 ST1K1-ZOS-MMS, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M3.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M3.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL7041, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bError, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 1^Status^Error
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bOverrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 1^Status^Overrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bUnderrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 1^Status^Underrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.iRaw, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 1^Value
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.iVoltageINT, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3062, AI Standard Channel 1^Value
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bError, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 2^Status^Error
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bOverrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 2^Status^Overrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bUnderrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 2^Status^Underrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.iRaw, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314, TC Inputs Channel 2^Value
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bError, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 1^Status^Error
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bOverrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 1^Status^Overrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bUnderrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 1^Status^Underrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.iRaw, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 1^Value
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.iVoltageINT, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3062, AI Standard Channel 1^Value
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bError, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 2^Status^Error
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bOverrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 2^Status^Overrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bUnderrange, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 2^Status^Underrange
+        kfe_rix_motion Instance, PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.iRaw, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314, TC Inputs Channel 2^Value
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K1-PPM-MMS, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M1.bBrakeRelease, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL2004, Channel 1^Output
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M2.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 2 IM2K1-PPM-MMS, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M2.bBrakeRelease, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL2004, Channel 1^Output
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M3.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 3 ST1K1-ZOS-MMS, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M3.bBrakeRelease, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E2 (EK1122)^X1 ST1K1-ZOS (EK1100)^ST1K1-EL2008, Channel 1^Output
+        kfe_rix_motion Instance, PlcTask Outputs^PRG_IM1K1_PPM.fbIM1K1.fbGige.bGigePower, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL2004, Channel 2^Output
+        kfe_rix_motion Instance, PlcTask Outputs^PRG_IM1K1_PPM.fbIM1K1.fbGige.iIlluminatorINT, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL4004, AO Outputs Channel 1^Analog output
+        kfe_rix_motion Instance, PlcTask Outputs^PRG_IM2K1_PPM.fbIM2K1.fbGige.bGigePower, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL2004, Channel 2^Output
+        kfe_rix_motion Instance, PlcTask Outputs^PRG_IM2K1_PPM.fbIM2K1.fbGige.iIlluminatorINT, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL4004, AO Outputs Channel 1^Analog output

@@ -1,0 +1,172 @@
+
+
+DUTs
+----
+
+
+GVLs
+----
+
+
+Main
+^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+        // IM1K1-PPM-MMS
+        {attribute 'pytmc' := 'pv: IM1K1:PPM:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[IM1K1-EL2004]^Channel 1^Output'}
+        M1: DUT_MotionStage;
+
+        // IM2K1-PPM-MMS
+        {attribute 'pytmc' := 'pv: IM2K1:PPM:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output'}
+        M2: DUT_MotionStage;
+
+        // ST1K1-ZOS-MMS
+        {attribute 'pytmc' := 'pv: ST1K1:ZOS:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[ST1K1-EL2008]^Channel 1^Output'}
+        M3: DUT_MotionStage;
+    END_VAR
+
+
+POUs
+----
+
+
+PRG_1_PlcTask
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_1_PlcTask
+    VAR
+    END_VAR
+    PRG_2_PMPS_PRE();
+
+    PRG_IM1K1_PPM();
+    PRG_IM2K1_PPM();
+    PRG_ST1K1_ZOS();
+
+    PRG_3_PMPS_POST();
+
+    END_PROGRAM
+
+
+PRG_2_PMPS_PRE
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_2_PMPS_PRE
+    VAR
+    END_VAR
+
+
+    END_PROGRAM
+
+
+PRG_3_PMPS_POST
+^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_3_PMPS_POST
+    VAR
+    END_VAR
+
+
+    END_PROGRAM
+
+
+PRG_IM1K1_PPM
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_IM1K1_PPM
+    VAR
+        {attribute 'pytmc' := '
+            pv: IM1K1:PPM
+            io: io
+        '}
+        {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K1-EL4004]^AO Outputs Channel 1^Analog output;
+                                  .fbGige.bGigePower := TIIB[IM1K1-EL2004]^Channel 2^Output;
+                                  .fbPowerMeter.iVoltageINT := TIIB[IM1K1-EL3062]^AI Standard Channel 1^Value;
+                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Value;
+                                  .fbYagThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value'}
+        fbIM1K1: FB_PPM;
+    END_VAR
+    fbIM1K1(
+        stYStage := Main.M1,
+        fPolished := -71.92,
+        fFrosted := -97.93, // Actually a second polished yag
+        fPower := -47.92,
+        fOut := -8.82);
+
+    END_PROGRAM
+
+
+PRG_IM2K1_PPM
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_IM2K1_PPM
+    VAR
+        {attribute 'pytmc' := '
+            pv: IM2K1:PPM
+            io: io
+        '}
+        {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
+                                  .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
+                                  .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
+                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
+                                  .fbYagThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
+        fbIM2K1: FB_PPM;
+    END_VAR
+    fbIM2K1(
+        stYStage := Main.M2,
+        fPolished := -72.19,
+        fFrosted := -98.2, // Actually a second polished yag
+        fPower := -48.19,
+        fOut := -9.09);
+
+    END_PROGRAM
+
+
+PRG_ST1K1_ZOS
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_ST1K1_ZOS
+    VAR
+        fbZOS: FB_MotionStage;
+    END_VAR
+    Main.M3.bPowerSelf := TRUE;
+    Main.M3.bHardwareEnable := TRUE;
+    fbZOS(stMotionStage:=Main.M3);
+
+    END_PROGRAM
+
