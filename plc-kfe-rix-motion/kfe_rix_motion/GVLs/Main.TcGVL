@@ -23,6 +23,13 @@ VAR_GLOBAL
                               .bLimitBackwardEnable := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        := TIIB[ST1K1-EL2008]^Channel 1^Output'}
     M3: DUT_MotionStage;
+
+    // IM1K2-PPM-MMS
+    {attribute 'pytmc' := 'pv: IM1K2:PPM:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K2-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[IM1K2-EL7041]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[IM1K2-EL2004]^Channel 1^Output'}
+    M4: DUT_MotionStage;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

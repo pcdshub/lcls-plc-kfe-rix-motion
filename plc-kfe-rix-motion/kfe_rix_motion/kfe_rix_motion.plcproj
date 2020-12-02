@@ -37,6 +37,9 @@
     <Compile Include="POUs\PRG_IM2K1_PPM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_IM1K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_ST1K1_ZOS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
