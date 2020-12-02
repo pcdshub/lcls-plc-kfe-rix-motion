@@ -22,12 +22,37 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM1K1(
-    stYStage := Main.M1,
-    fPolished := -71.92,
-    fFrosted := -97.93, // Actually a second polished yag
-    fPower := -47.92,
-    fOut := -8.82);]]></ST>
+      <ST><![CDATA[fbIM1K1.nTransitionAssertionID := 16#2110;
+fbIM1K1.nUnknownAssertionID := 16#2119;
+
+fbIM1K1.stOut.fPosition := -8.82;
+fbIM1K1.stOut.bUseRawCounts := FALSE;
+fbIM1K1.stOut.nRequestAssertionID := 16#2111;
+fbIM1K1.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K1.stOut.bValid := TRUE;
+
+fbIM1K1.stPower.fPosition := -47.92;
+fbIM1K1.stPower.bUseRawCounts := FALSE;
+fbIM1K1.stPower.nRequestAssertionID := 16#2112;
+fbIM1K1.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K1.stPower.bValid := TRUE;
+
+fbIM1K1.stYag1.fPosition := -71.92;
+fbIM1K1.stYag1.bUseRawCounts := FALSE;
+fbIM1K1.stYag1.nRequestAssertionID := 16#2113;
+fbIM1K1.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K1.stYag1.bValid := TRUE;
+
+fbIM1K1.stYag2.fPosition := -97.93;
+fbIM1K1.stYag2.bUseRawCounts := FALSE;
+fbIM1K1.stYag2.nRequestAssertionID := 16#2114;
+fbIM1K1.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K1.stYag2.bValid := TRUE;
+
+fbIM1K1(
+    fbArbiter := GVL.fbArbiter,
+    fbFFHWO := GVL.fbFastFaultOutput1,
+    stYStage := Main.M1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
