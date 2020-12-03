@@ -16,8 +16,11 @@
 		<Box File="PMPS_PRE.xti" Id="4">
 			<EtherCAT PortABoxInfo="#x01000003"/>
 		</Box>
-		<Box File="PLC End Coupler (EK1110).xti" Id="5">
+		<Box File="Fiber Coupler (EK1521-0010).xti" Id="33">
 			<EtherCAT PortABoxInfo="#x01000004"/>
+		</Box>
+		<Box File="PLC End Coupler (EK1110).xti" Id="5">
+			<EtherCAT PortABoxInfo="#x02000021"/>
 		</Box>
 	</Box>
 </TcSmItem>

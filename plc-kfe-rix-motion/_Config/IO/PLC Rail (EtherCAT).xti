@@ -47,6 +47,6 @@
 		<Box File="EtherCAT Panel (EK1100).xti" Id="6">
 			<EtherCAT PortABoxInfo="#x01000005"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140"/>
 	</Device>
 </TcSmItem>
