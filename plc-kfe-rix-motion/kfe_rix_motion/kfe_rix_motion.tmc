@@ -32978,7 +32978,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>schema</Name>
         <Type GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</Type>
-        <Comment> 
+        <Comment>
 		Message or Alarm{Cleared,Confirmed,Raised} event information
 
 		Note that elements here do not follow the usual Hungarian notation / 
