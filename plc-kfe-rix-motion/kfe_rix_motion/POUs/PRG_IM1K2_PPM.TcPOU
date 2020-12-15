@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_IM1K2_PPM" Id="{635ae739-7fa6-4647-8f31-b68b17e0ed28}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_IM1K2_PPM
+VAR
+    {attribute 'pytmc' := '
+        pv: IM1K2:PPM
+        io: io
+    '}
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004]^AO Outputs Channel 1^Analog output;
+                              .fbGige.bGigePower := TIIB[IM1K2-EL2004]^Channel 2^Output;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Value;
+                              .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Value'}
+    fbIM1K2: FB_PPM;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbIM1K2.nTransitionAssertionID := 16#2120;
+fbIM1K2.nUnknownAssertionID := 16#2129;
+
+fbIM1K2.stOut.fPosition := -9.82;
+fbIM1K2.stOut.bUseRawCounts := FALSE;
+fbIM1K2.stOut.nRequestAssertionID := 16#2121;
+fbIM1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K2.stOut.bValid := TRUE;
+
+fbIM1K2.stPower.fPosition := -48.92;
+fbIM1K2.stPower.bUseRawCounts := FALSE;
+fbIM1K2.stPower.nRequestAssertionID := 16#2122;
+fbIM1K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K2.stPower.bValid := TRUE;
+
+fbIM1K2.stYag1.fPosition := -72.92;
+fbIM1K2.stYag1.bUseRawCounts := FALSE;
+fbIM1K2.stYag1.nRequestAssertionID := 16#2123;
+fbIM1K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K2.stYag1.bValid := TRUE;
+
+fbIM1K2.stYag2.fPosition := -98.93;
+fbIM1K2.stYag2.bUseRawCounts := FALSE;
+fbIM1K2.stYag2.nRequestAssertionID := 16#2124;
+fbIM1K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
+fbIM1K2.stYag2.bValid := TRUE;
+
+fbIM1K2(
+    fbArbiter := GVL.fbArbiter,
+    fbFFHWO := GVL.fbFastFaultOutput1,
+    stYStage := Main.M4);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
