@@ -15,7 +15,7 @@ fbArbiterIO(
     i_bVeto:=bMR1K1_Veto,
     Arbiter:=GVL.fbArbiter,
     fbFFHWO:=GVL.fbFastFaultOutput1);
-    
+
 GVL.fbFastFaultOutput1.Execute(i_xVeto:=bMR1K1_Veto);
 GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto);]]></ST>
     </Implementation>
