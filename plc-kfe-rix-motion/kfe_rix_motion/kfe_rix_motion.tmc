@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{60365DF5-4684-A2E2-D931-069DD68EC9CD}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{645F8142-DC01-4208-1311-E534C897503E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -32978,13 +32978,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>schema</Name>
         <Type GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</Type>
-        <Comment>
-		Message or Alarm{Cleared,Confirmed,Raised} event information
+        <Comment>Message or Alarm{Cleared,Confirmed,Raised} event information
 
 		Note that elements here do not follow the usual Hungarian notation / 
 		variable-type-prefixing naming convention due to the member names being
-		used directly in the generation of the JSON document.
-	</Comment>
+		used directly in the generation of the JSON document.</Comment>
         <BitSize>648</BitSize>
         <BitOffs>0</BitOffs>
         <Default>
@@ -33089,7 +33087,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>source</Name>
         <Type GUID="{18071995-0000-0000-0000-0001000000FF}">STRING(255)</Type>
-        <Comment> This is actually: T_MaxString
+        <Comment>This is actually: T_MaxString
  which has been expanded due to requirements for pinning global data types.</Comment>
         <BitSize>2048</BitSize>
         <BitOffs>4168</BitOffs>
@@ -33104,7 +33102,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>event_type</Name>
         <Type GUID="{A81A482A-E7CE-49D8-A4DD-8280773A6946}">E_LogEventType</Type>
-        <Comment> This is actually: STRING(Tc3_EventLogger.ParameterList.cSourceNameSize - 1)
+        <Comment>This is actually: STRING(Tc3_EventLogger.ParameterList.cSourceNameSize - 1)
  which has been expanded due to requirements for pinning global data types.</Comment>
         <BitSize>16</BitSize>
         <BitOffs>6224</BitOffs>
@@ -45197,27 +45195,18 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>8551776</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_3_PMPS_POST.bMR1K1_Veto</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <BitOffs>8558760</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>Constants.bLittleEndian</Name>
             <Comment> Does the target support an FPU</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
             <Default>
               <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>8558768</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Constants.bSimulationMode</Name>
-            <Comment> Does the target support an FPU</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>0</Value>
             </Default>
             <Properties>
               <Property>
@@ -45291,12 +45280,12 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>8558912</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Constants.nRegisterSize</Name>
+            <Name>Constants.bSimulationMode</Name>
             <Comment> Does the target support an FPU</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>WORD</BaseType>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
             <Default>
-              <Value>32</Value>
+              <Value>0</Value>
             </Default>
             <Properties>
               <Property>
@@ -45306,12 +45295,26 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>8593376</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Constants.nPackMode</Name>
+            <Name>Constants.bFPUSupport</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>8593384</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Constants.nRegisterSize</Name>
             <Comment> Does the target support an FPU</Comment>
             <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
+            <BaseType>WORD</BaseType>
             <Default>
-              <Value>8</Value>
+              <Value>32</Value>
             </Default>
             <Properties>
               <Property>
@@ -45414,11 +45417,12 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>11111488</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Constants.bFPUSupport</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
+            <Name>Constants.nPackMode</Name>
+            <Comment> Does the target support an FPU</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
             <Default>
-              <Value>1</Value>
+              <Value>8</Value>
             </Default>
             <Properties>
               <Property>
@@ -46368,7 +46372,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2020-12-03T11:44:41</Value>
+          <Value>2020-12-14T17:40:53</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
