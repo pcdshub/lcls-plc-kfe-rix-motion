@@ -9,6 +9,7 @@ NC Settings
         1, Axis 1 IM1K1-PPM-MMS
         2, Axis 2 IM2K1-PPM-MMS
         3, Axis 3 ST1K1-ZOS-MMS
+        4, Axis 4 IM1K2-PPM-MMS
 
 
 
@@ -114,5 +115,41 @@ Axis 3: Axis 3 ST1K1-ZOS-MMS
     Velo:RefSearch, 0.1
     Velo:RefSync, 0.1
     Velo:SlowManual, 0.1
+
+
+
+Axis 4: Axis 4 IM1K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 4
+    Name, Axis 4 IM1K2-PPM-MMS
+    AxisFolder, IM1K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, -9
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -101
+    Id, 4
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
 
 

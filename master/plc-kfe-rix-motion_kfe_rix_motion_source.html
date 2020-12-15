@@ -99,6 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#database-records">Database Records</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#gvls">GVLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gvl">GVL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
 </ul>
 </li>
@@ -106,7 +107,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-1-plctask">PRG_1_PlcTask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-2-pmps-pre">PRG_2_PMPS_PRE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-3-pmps-post">PRG_3_PMPS_POST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-4-log">PRG_4_LOG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k1-ppm">PRG_IM1K1_PPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-im1k2-ppm">PRG_IM1K2_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im2k1-ppm">PRG_IM2K1_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-st1k1-zos">PRG_ST1K1_ZOS</a></li>
 </ul>
@@ -181,6 +184,24 @@
 </div>
 <div class="section" id="gvls">
 <h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gvl">
+<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:ARB&#39;</span><span class="p">}</span>
+    <span class="n">fbArbiter</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:FFO:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput1</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:FFO:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput2</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="main">
 <h2>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
@@ -190,21 +211,28 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K1</span><span class="o">-</span><span class="n">EL7041</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K1</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
-    <span class="n">M1</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
+    <span class="n">M1</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;IM1K1:PPM:MMS&#39;</span><span class="p">);</span>
 
     <span class="o">//</span> <span class="n">IM2K1</span><span class="o">-</span><span class="n">PPM</span><span class="o">-</span><span class="n">MMS</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM2K1:PPM:MMS&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM2K1</span><span class="o">-</span><span class="n">EL7041</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM2K1</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
-    <span class="n">M2</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
+    <span class="n">M2</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;IM2K1:PPM:MMS&#39;</span><span class="p">);</span>
 
     <span class="o">//</span> <span class="n">ST1K1</span><span class="o">-</span><span class="n">ZOS</span><span class="o">-</span><span class="n">MMS</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: ST1K1:ZOS:MMS&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K1</span><span class="o">-</span><span class="n">EL7041</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">ST1K1</span><span class="o">-</span><span class="n">EL2008</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
-    <span class="n">M3</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
+    <span class="n">M3</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;ST1K1:ZOS:MMS&#39;</span><span class="p">);</span>
+
+    <span class="o">//</span> <span class="n">IM1K2</span><span class="o">-</span><span class="n">PPM</span><span class="o">-</span><span class="n">MMS</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM1K2:PPM:MMS&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[IM1K2-EL7041]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL7041</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">M4</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;IM1K2:PPM:MMS&#39;</span><span class="p">);</span>
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
@@ -222,8 +250,10 @@
 <span class="n">PRG_IM1K1_PPM</span><span class="p">();</span>
 <span class="n">PRG_IM2K1_PPM</span><span class="p">();</span>
 <span class="n">PRG_ST1K1_ZOS</span><span class="p">();</span>
+<span class="n">PRG_IM1K2_PPM</span><span class="p">();</span>
 
 <span class="n">PRG_3_PMPS_POST</span><span class="p">();</span>
+<span class="n">PRG_4_LOG</span><span class="p">();</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -244,8 +274,26 @@
 <h2>PRG_3_PMPS_POST<a class="headerlink" href="#prg-3-pmps-post" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_3_PMPS_POST</span>
 <span class="n">VAR</span>
+    <span class="n">fbArbiterIO</span><span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
 <span class="n">END_VAR</span>
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
 
+<span class="n">fbArbiterIO</span><span class="p">(</span>
+    <span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prg-4-log">
+<h2>PRG_4_LOG<a class="headerlink" href="#prg-4-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_4_LOG</span>
+<span class="n">VAR</span>
+    <span class="n">fbLogHandler</span><span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">fbLogHandler</span><span class="p">();</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -272,12 +320,94 @@
                               <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K1</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
     <span class="n">fbIM1K1</span><span class="p">:</span> <span class="n">FB_PPM</span><span class="p">;</span>
 <span class="n">END_VAR</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">nTransitionAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2110;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">nUnknownAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2119;</span>
+
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">8.82</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2111;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">47.92</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2112;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">71.92</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2113;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">97.93</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2114;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
 <span class="n">fbIM1K1</span><span class="p">(</span>
-    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M1</span><span class="p">,</span>
-    <span class="n">fPolished</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">71.92</span><span class="p">,</span>
-    <span class="n">fFrosted</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">97.93</span><span class="p">,</span> <span class="o">//</span> <span class="n">Actually</span> <span class="n">a</span> <span class="n">second</span> <span class="n">polished</span> <span class="n">yag</span>
-    <span class="n">fPower</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">47.92</span><span class="p">,</span>
-    <span class="n">fOut</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">8.82</span><span class="p">);</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M1</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prg-im1k2-ppm">
+<h2>PRG_IM1K2_PPM<a class="headerlink" href="#prg-im1k2-ppm" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM1K2_PPM</span>
+<span class="n">VAR</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">IM1K2</span><span class="p">:</span><span class="n">PPM</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004]^AO Outputs Channel 1^Analog output;</span>
+                              <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL2004</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3062</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Standard</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
+    <span class="n">fbIM1K2</span><span class="p">:</span> <span class="n">FB_PPM</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">nTransitionAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2120;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">nUnknownAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2129;</span>
+
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">9.82</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2121;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">48.92</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2122;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">72.92</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2123;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">98.93</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2124;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM1K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM1K2</span><span class="p">(</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M4</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -304,12 +434,37 @@
                               <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM2K1</span><span class="o">-</span><span class="n">EL3314</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
     <span class="n">fbIM2K1</span><span class="p">:</span> <span class="n">FB_PPM</span><span class="p">;</span>
 <span class="n">END_VAR</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">nTransitionAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2210;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">nUnknownAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2219;</span>
+
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">9.09</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2211;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">48.19</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2212;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stPower</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">72.19</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2213;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">98.2</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2214;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+<span class="n">fbIM2K1</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
 <span class="n">fbIM2K1</span><span class="p">(</span>
-    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M2</span><span class="p">,</span>
-    <span class="n">fPolished</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">72.19</span><span class="p">,</span>
-    <span class="n">fFrosted</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">98.2</span><span class="p">,</span> <span class="o">//</span> <span class="n">Actually</span> <span class="n">a</span> <span class="n">second</span> <span class="n">polished</span> <span class="n">yag</span>
-    <span class="n">fPower</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">48.19</span><span class="p">,</span>
-    <span class="n">fOut</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">9.09</span><span class="p">);</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M2</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
