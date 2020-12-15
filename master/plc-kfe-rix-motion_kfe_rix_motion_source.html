@@ -275,13 +275,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_3_PMPS_POST</span>
 <span class="n">VAR</span>
     <span class="n">fbArbiterIO</span><span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
+    <span class="n">bMR1K1_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
-<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
-<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
+<span class="n">bMR1K1_Veto</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aStoppers</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aStoppers</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">];</span>
 
 <span class="n">fbArbiterIO</span><span class="p">(</span>
+    <span class="n">i_bVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">,</span>
     <span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">);</span>
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>

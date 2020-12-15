@@ -39,7 +39,7 @@ Libraries
         LCLS General, SLAC, Unset, 2.4.2
         lcls-twincat-motion, SLAC, Unset, 1.4.0
         lcls2-cc-lib, SLAC, Unset, 1.1.2
-        PMPS, SLAC - LCLS, Unset, 0.16.0
+        PMPS, SLAC - LCLS, Unset, 0.17.0
         Tc2_Standard, Beckhoff Automation GmbH, Unset, 
         Tc2_System, Beckhoff Automation GmbH, Unset, 
         Tc3_Module, Beckhoff Automation GmbH, Unset, 
@@ -65,13 +65,13 @@ Constants
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Constants.bFPUSupport, BOOL, 12271392 (8)
-        Constants.bLittleEndian, BOOL, 8558768 (8)
-        Constants.bSimulationMode, BOOL, 8558776 (8)
+        Constants.bFPUSupport, BOOL, 8593384 (8)
+        Constants.bLittleEndian, BOOL, 8558776 (8)
+        Constants.bSimulationMode, BOOL, 8593376 (8)
         Constants.CompilerVersion, VERSION, 19588608 (64)
         Constants.CompilerVersionNumeric, DWORD, 19588672 (32)
-        Constants.nPackMode, UINT, 8593392 (16)
-        Constants.nRegisterSize, WORD, 8593376 (16)
+        Constants.nPackMode, UINT, 12271392 (16)
+        Constants.nRegisterSize, WORD, 8593392 (16)
         Constants.RuntimeVersion, VERSION, 19588544 (64)
         Constants.RuntimeVersionNumeric, DWORD, 12411616 (32)
 
@@ -622,6 +622,7 @@ PRG_3_PMPS_POST
     :header: Symbol, Type, Offset/Size
     :align: center
 
+        PRG_3_PMPS_POST.bMR1K1_Veto, BOOL, 8558760 (8)
         PRG_3_PMPS_POST.fbArbiterIO, FB_SubSysToArbiter_IO, 12271424 (136704)
         PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP, ST_BeamParams_IO, 12272224 (1216)
         PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP, ST_BeamParams_IO, 12273440 (1216)
