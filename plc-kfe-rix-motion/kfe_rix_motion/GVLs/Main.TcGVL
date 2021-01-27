@@ -30,6 +30,18 @@ VAR_GLOBAL
                               .bLimitBackwardEnable := TIIB[IM1K2-EL7041]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        := TIIB[IM1K2-EL2004]^Channel 1^Output'}
     M4: DUT_MotionStage := (sName := 'IM1K2:PPM:MMS');
+
+    // TM1K2: 2 Axes
+    {attribute 'pytmc' := 'pv: TM1K2:ATM:MMS:Y'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[TM1K2-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[TM1K2-EL7041-E1]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[TM1K2-EL2004-E4]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[TM1K2-EL5042-E3]^FB Inputs Channel 1^Position'}
+    M5: DUT_MotionStage := (sName := 'TM1K2:ATM:MMS:Y');
+    {attribute 'pytmc' := 'pv: TM1K2:ATM:MMS:X'}
+    {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[TM1K2-EL5042-E3]^FB Inputs Channel 2^Position'}
+    M6: DUT_MotionStage := (sName := 'TM1K2:ATM:MMS:X');
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
