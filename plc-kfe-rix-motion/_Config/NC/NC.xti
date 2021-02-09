@@ -20,9 +20,12 @@
 		<AxisFolder Name="IM2K1-PPM"/>
 		<AxisFolder Name="ST1K1-ZOS"/>
 		<AxisFolder Name="IM1K2-PPM"/>
+		<AxisFolder Name="TM1K2"/>
 		<Axis File="Axis 1 IM1K1-PPM-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM2K1-PPM-MMS.xti" Id="2"/>
 		<Axis File="Axis 3 ST1K1-ZOS-MMS.xti" Id="3"/>
 		<Axis File="Axis 4 IM1K2-PPM-MMS.xti" Id="4"/>
+		<Axis File="Axis 5 TM1K2-MMS-Y.xti" Id="5"/>
+		<Axis File="Axis 6 TM1K2-MMS-X.xti" Id="6"/>
 	</NC>
 </TcSmItem>
