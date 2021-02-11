@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="PRG_TM1K2_ATM" Id="{c02e8350-6bfd-4c3f-8509-cf01c04221fa}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TM1K2_ATM
 VAR
@@ -57,9 +57,13 @@ fbTM1K2.stTarget5.bValid := TRUE;
 fbTM1K2(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
-    stYStage := Main.M5,
-    stXStage := Main.M6);
+    stYStage := Main.M6,
+    stXStage := Main.M7);
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_TM1K2_ATM">
+      <LineId Id="3" Count="43" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

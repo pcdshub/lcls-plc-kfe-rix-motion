@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CDevEtherCATDef" SubType="111">
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.4" ClassName="CDevEtherCATDef" SubType="111">
 	<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="172.21.92.65.2.1" RemoteName="PLC Rail (EtherCAT)">
 		<Name>__FILENAME__</Name>
 		<AddressInfo>
@@ -47,6 +47,8 @@
 		<Box File="EtherCAT Panel (EK1100).xti" Id="6">
 			<EtherCAT PortABoxInfo="#x01000005"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140"/>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140">
+			<SuNamePreDef>IM2K2</SuNamePreDef>
+		</EtherCAT>
 	</Device>
 </TcSmItem>
