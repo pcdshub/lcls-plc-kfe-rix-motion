@@ -22,12 +22,18 @@
 		<AxisFolder Name="IM1K2-PPM"/>
 		<AxisFolder Name="TM1K2"/>
 		<AxisFolder Name="IM2K2-PPM"/>
+		<AxisFolder Name="IM3K2-PPM"/>
+		<AxisFolder Name="IM4K2-PPM"/>
+		<AxisFolder Name="IM5K2-PPM"/>
 		<Axis File="Axis 1 IM1K1-PPM-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM2K1-PPM-MMS.xti" Id="2"/>
 		<Axis File="Axis 3 ST1K1-ZOS-MMS.xti" Id="3"/>
 		<Axis File="Axis 4 IM1K2-PPM-MMS.xti" Id="4"/>
-		<Axis File="Axis 6 TM1K2-MMS-Y.xti" Id="6"/>
-		<Axis File="Axis 7 TM1K2-MMS-X.xti" Id="7"/>
+		<Axis File="Axis 8 TM1K2-MMS-Y.xti" Id="8"/>
+		<Axis File="Axis 9 TM1K2-MMS-X.xti" Id="9"/>
 		<Axis File="Axis 5 IM2K2-PPM-MMS.xti" Id="5"/>
+		<Axis File="Axis 6 IM3K2-PPM-MMS.xti" Id="6"/>
+		<Axis File="Axis 7 IM4K2-PPM-MMS.xti" Id="7"/>
+		<Axis File="Axis 10 IM5K2-PPM-MMS.xti" Id="10"/>
 	</NC>
 </TcSmItem>
