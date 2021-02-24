@@ -7,7 +7,10 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04622c52" RevisionNo="#x00120000" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1122 2 port EtherCAT junction" Desc="EK1122"/>
-		<Box File="Term 132 (EK1100).xti" Id="132">
+		<Box File="LI2K2-K2A_OUT  (EK1100).xti" Id="132">
+			<EtherCAT PortABoxInfo="#x03000083"/>
+		</Box>
+		<Box File="PF1K2-WFS (EK1100).xti" Id="179">
 			<EtherCAT PortABoxInfo="#x01000083"/>
 		</Box>
 	</Box>

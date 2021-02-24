@@ -57,8 +57,8 @@ fbTM1K2.stTarget5.bValid := TRUE;
 fbTM1K2(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput1,
-    stYStage := Main.M8,
-    stXStage := Main.M9);
+    stYStage := Main.M9,
+    stXStage := Main.M10);
 ]]></ST>
     </Implementation>
     <LineIds Name="PRG_TM1K2_ATM">

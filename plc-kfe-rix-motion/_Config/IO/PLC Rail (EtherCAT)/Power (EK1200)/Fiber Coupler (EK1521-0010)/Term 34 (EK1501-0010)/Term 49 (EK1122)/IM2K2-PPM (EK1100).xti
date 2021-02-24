@@ -7,28 +7,28 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100"/>
-		<Box File="IM2K2-EL7041.xti" Id="53">
+		<Box File="IM2K2-EL7041-E1.xti" Id="53">
 			<EtherCAT PortABoxInfo="#x01000034"/>
 		</Box>
-		<Box File="IM2K2-EL5042.xti" Id="54">
+		<Box File="IM2K2-EL5042-E2.xti" Id="54">
 			<EtherCAT PortABoxInfo="#x01000035"/>
 		</Box>
-		<Box File="IM2K2-EL2004.xti" Id="55">
+		<Box File="IM2K2-EL2004-E3.xti" Id="55">
 			<EtherCAT PortABoxInfo="#x01000036"/>
 		</Box>
-		<Box File="IM2K2-EL3314.xti" Id="56">
+		<Box File="IM2K2-EL3314-E4.xti" Id="56">
 			<EtherCAT PortABoxInfo="#x01000037"/>
 		</Box>
-		<Box File="IM2K2-EL3052.xti" Id="57">
+		<Box File="IM2K2-EL3052-E5.xti" Id="57">
 			<EtherCAT PortABoxInfo="#x01000038"/>
 		</Box>
-		<Box File="IM2K2-EL3062.xti" Id="58">
+		<Box File="IM2K2-EL3062-E6.xti" Id="58">
 			<EtherCAT PortABoxInfo="#x01000039"/>
 		</Box>
-		<Box File="IM2K2-EL4004.xti" Id="59">
+		<Box File="IM2K2-EL4004-E7.xti" Id="59">
 			<EtherCAT PortABoxInfo="#x0100003a"/>
 		</Box>
-		<Box File="IM2K2-EL9011.xti" Id="60">
+		<Box File="IM2K2-EL9011-E8.xti" Id="60">
 			<EtherCAT PortABoxInfo="#x0100003b"/>
 		</Box>
 	</Box>
