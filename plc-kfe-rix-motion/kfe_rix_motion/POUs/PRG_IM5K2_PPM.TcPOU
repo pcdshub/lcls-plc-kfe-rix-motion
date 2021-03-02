@@ -22,30 +22,30 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM5K2.nTransitionAssertionID := 16#2120;
-fbIM5K2.nUnknownAssertionID := 16#2129;
+      <ST><![CDATA[fbIM5K2.nTransitionAssertionID := 16#2520;
+fbIM5K2.nUnknownAssertionID := 16#2529;
 
 fbIM5K2.stOut.fPosition := -9.82;
 fbIM5K2.stOut.bUseRawCounts := FALSE;
-fbIM5K2.stOut.nRequestAssertionID := 16#2121;
+fbIM5K2.stOut.nRequestAssertionID := 16#2521;
 fbIM5K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM5K2.stOut.bValid := TRUE;
 
 fbIM5K2.stPower.fPosition := -48.92;
 fbIM5K2.stPower.bUseRawCounts := FALSE;
-fbIM5K2.stPower.nRequestAssertionID := 16#2122;
+fbIM5K2.stPower.nRequestAssertionID := 16#2522;
 fbIM5K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM5K2.stPower.bValid := TRUE;
 
 fbIM5K2.stYag1.fPosition := -72.92;
 fbIM5K2.stYag1.bUseRawCounts := FALSE;
-fbIM5K2.stYag1.nRequestAssertionID := 16#2123;
+fbIM5K2.stYag1.nRequestAssertionID := 16#2523;
 fbIM5K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM5K2.stYag1.bValid := TRUE;
 
 fbIM5K2.stYag2.fPosition := -98.93;
 fbIM5K2.stYag2.bUseRawCounts := FALSE;
-fbIM5K2.stYag2.nRequestAssertionID := 16#2124;
+fbIM5K2.stYag2.nRequestAssertionID := 16#2524;
 fbIM5K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM5K2.stYag2.bValid := TRUE;
 
@@ -54,9 +54,5 @@ fbIM5K2(
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M14);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_IM5K2_PPM">
-      <LineId Id="3" Count="29" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -28,30 +28,30 @@ stSiBP.nTran := 20;
 // Drop transmission to 10%
 stFoilBP.nTran := 10;
 
-fbLI2K2.nTransitionAssertionID := 16#4140;
-fbLI2K2.nUnknownAssertionID := 16#4149;
+fbLI2K2.nTransitionAssertionID := 16#4220;
+fbLI2K2.nUnknownAssertionID := 16#4229;
 
 fbLI2K2.stOut.fPosition := 0.118;
 fbLI2K2.stOut.bUseRawCounts := FALSE;
-fbLI2K2.stOut.nRequestAssertionID := 16#4141;
+fbLI2K2.stOut.nRequestAssertionID := 16#4221;
 fbLI2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stOut.bValid := TRUE;
 
 fbLI2K2.stMirror1.fPosition := -36.38;
 fbLI2K2.stMirror1.bUseRawCounts := FALSE;
-fbLI2K2.stMirror1.nRequestAssertionID := 16#4142;
+fbLI2K2.stMirror1.nRequestAssertionID := 16#4222;
 fbLI2K2.stMirror1.stBeamParams := stSiBP;
 fbLI2K2.stMirror1.bValid := TRUE;
 
 fbLI2K2.stMirror2.fPosition := -70.38;
 fbLI2K2.stMirror2.bUseRawCounts := FALSE;
-fbLI2K2.stMirror2.nRequestAssertionID := 16#4143;
+fbLI2K2.stMirror2.nRequestAssertionID := 16#4223;
 fbLI2K2.stMirror2.stBeamParams := stSiBP;
 fbLI2K2.stMirror2.bValid := TRUE;
 
 fbLI2K2.stTarget1.fPosition := -102.38;
 fbLI2K2.stTarget1.bUseRawCounts := FALSE;
-fbLI2K2.stTarget1.nRequestAssertionID := 16#4144;
+fbLI2K2.stTarget1.nRequestAssertionID := 16#4224;
 fbLI2K2.stTarget1.stBeamParams := stSiBP;
 fbLI2K2.stTarget1.bValid := TRUE;
 
@@ -60,11 +60,5 @@ fbLI2K2(
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M11);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_LI2K2_K2A">
-      <LineId Id="115" Count="28" />
-      <LineId Id="160" Count="0" />
-      <LineId Id="145" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

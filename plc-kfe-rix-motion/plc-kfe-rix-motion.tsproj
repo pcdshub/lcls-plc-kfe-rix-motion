@@ -17,6 +17,10 @@
 		<Io>
 			<Device File="PLC Rail (EtherCAT).xti" Id="1"/>
 		</Io>
+		<SymbolWatch>
+			<Variable>TINC^NC-Task 1 SAF^Axes^Axis 15 TM2K2-MMS-Y^Outputs^ToPlc^ActPos</Variable>
+			<Variable>TINC^NC-Task 1 SAF^Axes^Axis 16 TM2K2-MMS-X^Outputs^ToPlc^ActPos</Variable>
+		</SymbolWatch>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{08502001-0010-0304-0020-500810000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>

@@ -15,42 +15,42 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbTM2K2.nTransitionAssertionID := 16#5120;
-fbTM2K2.nUnknownAssertionID := 16#5129;
+      <ST><![CDATA[fbTM2K2.nTransitionAssertionID := 16#5220;
+fbTM2K2.nUnknownAssertionID := 16#5229;
 
 fbTM2K2.stOut.fPosition := -15;
 fbTM2K2.stOut.bUseRawCounts := FALSE;
-fbTM2K2.stOut.nRequestAssertionID := 16#5121;
+fbTM2K2.stOut.nRequestAssertionID := 16#5221;
 fbTM2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stOut.bValid := TRUE;
 
 fbTM2K2.stTarget1.fPosition := -39.124;
 fbTM2K2.stTarget1.bUseRawCounts := FALSE;
-fbTM2K2.stTarget1.nRequestAssertionID := 16#5122;
+fbTM2K2.stTarget1.nRequestAssertionID := 16#5222;
 fbTM2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget1.bValid := TRUE;
 
 fbTM2K2.stTarget2.fPosition := -53.5;
 fbTM2K2.stTarget2.bUseRawCounts := FALSE;
-fbTM2K2.stTarget2.nRequestAssertionID := 16#5123;
+fbTM2K2.stTarget2.nRequestAssertionID := 16#5223;
 fbTM2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget2.bValid := TRUE;
 
 fbTM2K2.stTarget3.fPosition := -67.874;
 fbTM2K2.stTarget3.bUseRawCounts := FALSE;
-fbTM2K2.stTarget3.nRequestAssertionID := 16#5124;
+fbTM2K2.stTarget3.nRequestAssertionID := 16#5224;
 fbTM2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget3.bValid := TRUE;
 
 fbTM2K2.stTarget4.fPosition := -82.25;
 fbTM2K2.stTarget4.bUseRawCounts := FALSE;
-fbTM2K2.stTarget4.nRequestAssertionID := 16#5125;
+fbTM2K2.stTarget4.nRequestAssertionID := 16#5225;
 fbTM2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget4.bValid := TRUE;
 
 fbTM2K2.stTarget5.fPosition := -96.623;
 fbTM2K2.stTarget5.bUseRawCounts := FALSE;
-fbTM2K2.stTarget5.nRequestAssertionID := 16#5126;
+fbTM2K2.stTarget5.nRequestAssertionID := 16#5226;
 fbTM2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget5.bValid := TRUE;
 
@@ -61,11 +61,5 @@ fbTM2K2(
     stXStage := Main.M16);
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_TM2K2_ATM">
-      <LineId Id="3" Count="37" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="42" Count="4" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

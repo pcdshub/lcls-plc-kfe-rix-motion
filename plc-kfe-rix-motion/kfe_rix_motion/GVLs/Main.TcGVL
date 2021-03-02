@@ -75,8 +75,8 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: LI2K2:K2A:MMS'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[LI2K2-EL7041-E1]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[LI2K2-EL7041-E1]^STM Status^Status^Digital input 2;
-                              .bBrakeRelease        := TIIB[LI2K2-EL2004-E3]^Channel 1^Output;
-                              .nRawEncoderULINT     := TIIB[LI2K2-EL5042-E2]^FB Inputs Channel 1^Position'}
+                              .bBrakeRelease        := TIIB[LI2K2-EL2004-E2]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[LI2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
     M11: DUT_MotionStage := (sName := 'LI2K2:K2A:MMS');   
     
     // PF1K2-WFS: 2 Axes
