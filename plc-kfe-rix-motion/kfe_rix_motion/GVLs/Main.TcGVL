@@ -107,6 +107,34 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: TM2K2:ATM:MMS:X'}
     {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[TM2K2-EL5042-E3]^FB Inputs Channel 2^Position'}
     M16: DUT_MotionStage := (sName := 'TM2K2:ATM:MMS:X');
+	
+	//AT2K2: 4 Axes
+	M17: DUT_MotionStage;
+	M18: DUT_MotionStage; 
+	M19: DUT_MotionStage;
+	M20: DUT_MotionStage;
+	
+	
+	//LI3K2: 1 Axis
+	M21: DUT_MotionStage;
+	
+	//LI4K2_OUT: 1 Axis
+	M22: DUT_MotionStage;
+	
+	
+    //PF2K2: 2 Axes
+	M23: DUT_MotionStage;
+	M24: DUT_MotionStage;
+	
+	//IM6K2: 1 Axis
+	M25: DUT_MotionStage;
+	
+	//ST3K2: 1 Axis
+	M26: DUT_MotionStage;
+
+	
+	
+
 
 END_VAR]]></Declaration>
   </GVL>

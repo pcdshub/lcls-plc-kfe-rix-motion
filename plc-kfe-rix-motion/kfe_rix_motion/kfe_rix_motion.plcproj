@@ -39,6 +39,9 @@
     <Compile Include="POUs\PRG_4_LOG.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_IM6K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_PF1K2_WFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_IM5K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PF2K2_WFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_ST1K1_ZOS.TcPOU">
