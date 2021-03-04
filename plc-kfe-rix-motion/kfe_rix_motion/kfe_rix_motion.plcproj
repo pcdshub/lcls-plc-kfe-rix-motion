@@ -14,6 +14,10 @@
     <Implicit_Jitter_Distribution>{10a75cdc-09ba-4018-8b57-a1fd721ecfa2}</Implicit_Jitter_Distribution>
     <LibraryReferences>{44490845-86ba-4150-87d4-9b25594c44f5}</LibraryReferences>
     <CompilerDefines>K</CompilerDefines>
+    <Company>SLAC</Company>
+    <Released>false</Released>
+    <Title>plc-kfe-rix-motion</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL.TcGVL">
