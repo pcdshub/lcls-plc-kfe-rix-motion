@@ -42,7 +42,7 @@
 		<Axis File="Axis 8 IM4K2-PPM-MMS.xti" Id="8"/>
 		<Axis File="Axis 14 IM5K2-PPM-MMS.xti" Id="14"/>
 		<Axis File="Axis 5 AL1K2-L2SI-MMS.xti" Id="5"/>
-		<Axis File="Axis 11 LI1K2-K2A_OUT-MMS.xti" Id="11"/>
+		<Axis File="Axis 11 LI2K2-K2A_OUT-MMS.xti" Id="11"/>
 		<Axis File="Axis 12 PF1K2-WFS-MMS-Y.xti" Id="12"/>
 		<Axis File="Axis 13 PF1K2-WFS-MMS-Z.xti" Id="13"/>
 		<Axis File="Axis 15 TM2K2-MMS-Y.xti" Id="15"/>

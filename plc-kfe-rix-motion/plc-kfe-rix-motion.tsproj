@@ -18,8 +18,7 @@
 			<Device File="PLC Rail (EtherCAT).xti" Id="1"/>
 		</Io>
 		<SymbolWatch>
-			<Variable>TINC^NC-Task 1 SAF^Axes^Axis 15 TM2K2-MMS-Y^Outputs^ToPlc^ActPos</Variable>
-			<Variable>TINC^NC-Task 1 SAF^Axes^Axis 16 TM2K2-MMS-X^Outputs^ToPlc^ActPos</Variable>
+			<Variable>TINC^NC-Task 1 SAF^Axes^Axis 11 LI2K2-K2A_OUT-MMS^Outputs^ToPlc^ActPos</Variable>
 		</SymbolWatch>
 	</Project>
 	<Mappings>
