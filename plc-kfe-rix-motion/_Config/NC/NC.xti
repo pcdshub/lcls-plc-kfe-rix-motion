@@ -29,8 +29,6 @@
 		<AxisFolder Name="LI2K2-K2A_OUT"/>
 		<AxisFolder Name="PF1K2-WFS"/>
 		<AxisFolder Name="TM2K2-K2B"/>
-		<AxisFolder Name="PF2K2-WFS"/>
-		<AxisFolder Name="IM6K2-PPM"/>
 		<Axis File="Axis 1 IM1K1-PPM-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM2K1-PPM-MMS.xti" Id="2"/>
 		<Axis File="Axis 3 ST1K1-ZOS-MMS.xti" Id="3"/>
@@ -47,8 +45,5 @@
 		<Axis File="Axis 13 PF1K2-WFS-MMS-Z.xti" Id="13"/>
 		<Axis File="Axis 15 TM2K2-MMS-Y.xti" Id="15"/>
 		<Axis File="Axis 16 TM2K2-MMS-X.xti" Id="16"/>
-		<Axis File="Axis 23 PF2K2-WFS-MMS-Y.xti" Id="23"/>
-		<Axis File="Axis 24 PF2K2-WFS-MMS-Z.xti" Id="24"/>
-		<Axis File="Axis 25 IM6K2-PPM-MMS.xti" Id="25"/>
 	</NC>
 </TcSmItem>
