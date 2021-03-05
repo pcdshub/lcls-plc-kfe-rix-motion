@@ -14,6 +14,10 @@
     <Implicit_Jitter_Distribution>{10a75cdc-09ba-4018-8b57-a1fd721ecfa2}</Implicit_Jitter_Distribution>
     <LibraryReferences>{44490845-86ba-4150-87d4-9b25594c44f5}</LibraryReferences>
     <CompilerDefines>K</CompilerDefines>
+    <Company>SLAC</Company>
+    <Released>false</Released>
+    <Title>plc-kfe-rix-motion</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL.TcGVL">
@@ -39,7 +43,22 @@
     <Compile Include="POUs\PRG_4_LOG.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_IM6K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PF1K2_WFS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_LI2K2_K2A.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_IM1K1_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_AL1K2_L2SI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_IM2K2_PPM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_IM2K1_PPM.TcPOU">
@@ -48,10 +67,25 @@
     <Compile Include="POUs\PRG_IM1K2_PPM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_IM3K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_IM4K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_IM5K2_PPM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PF2K2_WFS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_ST1K1_ZOS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_TM1K2_ATM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_TM2K2_ATM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

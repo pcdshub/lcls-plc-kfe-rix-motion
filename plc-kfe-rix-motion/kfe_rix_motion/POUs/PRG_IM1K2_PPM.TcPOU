@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="PRG_IM1K2_PPM" Id="{635ae739-7fa6-4647-8f31-b68b17e0ed28}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM1K2_PPM
 VAR
@@ -7,17 +7,17 @@ VAR
         pv: IM1K2:PPM
         io: io
     '}
-    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004]^AO Outputs Channel 1^Analog output;
-                              .fbGige.bGigePower := TIIB[IM1K2-EL2004]^Channel 2^Output;
-                              .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K2-EL3314]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314]^TC Inputs Channel 2^Value'}
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
+                              .fbGige.bGigePower := TIIB[IM1K2-EL2004-E3]^Channel 2^Output;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062-E6]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value'}
     fbIM1K2: FB_PPM;
 END_VAR
 ]]></Declaration>
@@ -54,5 +54,9 @@ fbIM1K2(
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M4);]]></ST>
     </Implementation>
+    <LineIds Name="PRG_IM1K2_PPM">
+      <LineId Id="3" Count="29" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
