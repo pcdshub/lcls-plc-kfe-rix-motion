@@ -123,18 +123,16 @@ VAR_GLOBAL
 	
 	
     //PF2K2: 2 Axes
-	M23: DUT_MotionStage;
-	M24: DUT_MotionStage;
+	//M23: DUT_MotionStage;
+	//M24: DUT_MotionStage;
 	
 	//IM6K2: 1 Axis
-	M25: DUT_MotionStage;
+	//M25: DUT_MotionStage;
 	
 	//ST3K2: 1 Axis
-	M26: DUT_MotionStage;
-
+	//M26: DUT_MotionStage;
 	
 	
-
 
 END_VAR]]></Declaration>
   </GVL>
