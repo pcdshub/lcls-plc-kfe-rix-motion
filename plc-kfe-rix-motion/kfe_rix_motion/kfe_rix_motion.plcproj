@@ -111,6 +111,16 @@
     <PlaceholderReference Include="PMPS">
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
       <Namespace>PMPS</Namespace>
+      <Parameters>
+        <Parameter>
+          <Key>MAX_FAST_FAULTS</Key>
+          <Value>100</Value>
+        </Parameter>
+        <Parameter>
+          <Key>MAX_ASSERTIONS</Key>
+          <Value>50</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -130,7 +140,7 @@
       <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 1.4.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 1.4.4 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls2-cc-lib">
       <Resolution>lcls2-cc-lib, 1.1.2 (SLAC)</Resolution>
