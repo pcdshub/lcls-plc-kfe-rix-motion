@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_1_PlcTask" Id="{9c76104d-f8df-400f-b9a4-81d3480ca015}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_1_PlcTask
 VAR
+    bDebug: BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[PRG_2_PMPS_PRE();
+
+// Temporarily disable motors by setting bHardwareEnable to FALSE prior to running motion FB
+Main.M5.bHardwareEnable := bDebug;
+Main.M6.bHardwareEnable := bDebug;
+Main.M7.bHardwareEnable := bDebug;
+Main.M8.bHardwareEnable := bDebug;
+Main.M9.bHardwareEnable := bDebug;
+Main.M10.bHardwareEnable := bDebug;
+Main.M11.bHardwareEnable := bDebug;
+Main.M12.bHardwareEnable := bDebug;
+Main.M13.bHardwareEnable := bDebug;
+Main.M14.bHardwareEnable := bDebug;
+Main.M15.bHardwareEnable := bDebug;
+Main.M16.bHardwareEnable := bDebug;
 
 PRG_IM1K1_PPM();
 PRG_IM2K1_PPM();
@@ -22,21 +37,8 @@ PRG_PF1K2_WFS();
 PRG_IM5K2_PPM();
 PRG_TM2K2_ATM();
 
-
 PRG_3_PMPS_POST();
 PRG_4_LOG();]]></ST>
     </Implementation>
-    <LineIds Name="PRG_1_PlcTask">
-      <LineId Id="3" Count="5" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="20" Count="2" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="28" Count="1" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="10" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
