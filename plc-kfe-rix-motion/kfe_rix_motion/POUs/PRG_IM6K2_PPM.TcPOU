@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_IM6K2_PPM" Id="{b5662f22-bf30-4831-ae62-848249eb31cc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM6K2_PPM
 VAR
@@ -52,7 +52,7 @@ fbIM6K2.stYag2.bValid := TRUE;
 
 fbIM6K2(
     fbArbiter := GVL.fbArbiter,
-    fbFFHWO := GVL.fbFastFaultOutput1,
+    fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M25);]]></ST>
     </Implementation>
   </POU>

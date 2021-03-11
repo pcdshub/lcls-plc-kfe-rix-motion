@@ -5,11 +5,14 @@
 VAR
     fbArbiterIO: FB_SubSysToArbiter_IO;
     bMR1K1_Veto: BOOL;
+    bST1K2_Veto: BOOL;
+    bST1K2_Veto_Override: BOOL := FALSE;
 END_VAR
 
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
+bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST1K2];
 
 fbArbiterIO(
     i_bVeto:=bMR1K1_Veto,
@@ -17,7 +20,7 @@ fbArbiterIO(
     fbFFHWO:=GVL.fbFastFaultOutput1);
 
 GVL.fbFastFaultOutput1.Execute(i_xVeto:=bMR1K1_Veto);
-GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto);]]></ST>
+GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
