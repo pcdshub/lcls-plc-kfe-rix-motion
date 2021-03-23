@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="Main" Id="{fff0648d-526a-4895-b18d-41e28b717bbc}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -17,12 +17,8 @@ VAR_GLOBAL
                               .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output'}
     M2: DUT_MotionStage := (sName := 'IM2K1:PPM:MMS');
 
-    // ST1K1-ZOS-MMS
-    {attribute 'pytmc' := 'pv: ST1K1:ZOS:MMS'}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIIB[ST1K1-EL7041]^STM Status^Status^Digital input 2;
-                              .bBrakeRelease        := TIIB[ST1K1-EL2008]^Channel 1^Output'}
-    M3: DUT_MotionStage := (sName := 'ST1K1:ZOS:MMS');
+    // SPARE (Previously ZOS)
+    M3: DUT_MotionStage;
 
     // IM1K2-PPM-MMS
     {attribute 'pytmc' := 'pv: IM1K2:PPM:MMS'}
