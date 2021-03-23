@@ -17,9 +17,9 @@ VAR
                               .fbYagThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                               .fbYagThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                               .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}                           
+                              .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
     fbIM6K2: FB_PPM;
-	fbIM66K2: INT;
+    fbIM66K2: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
