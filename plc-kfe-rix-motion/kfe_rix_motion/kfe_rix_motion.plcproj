@@ -79,9 +79,6 @@
     <Compile Include="POUs\PRG_PF2K2_WFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_ST1K1_ZOS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_TM1K2_ATM.TcPOU">
       <SubType>Code</SubType>
     </Compile>

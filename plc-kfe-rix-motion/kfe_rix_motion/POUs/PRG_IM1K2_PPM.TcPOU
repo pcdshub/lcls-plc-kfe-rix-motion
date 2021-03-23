@@ -54,9 +54,5 @@ fbIM1K2(
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M4);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_IM1K2_PPM">
-      <LineId Id="3" Count="29" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

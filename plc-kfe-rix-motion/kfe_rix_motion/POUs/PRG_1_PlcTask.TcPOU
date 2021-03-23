@@ -25,7 +25,6 @@ Main.M16.bHardwareEnable := bDebug;
 
 PRG_IM1K1_PPM();
 PRG_IM2K1_PPM();
-PRG_ST1K1_ZOS();
 PRG_IM1K2_PPM();
 PRG_AL1K2_L2SI();
 PRG_IM2K2_PPM();
