@@ -8,8 +8,20 @@ NC Settings
 
         1, Axis 1 IM1K1-PPM-MMS
         2, Axis 2 IM2K1-PPM-MMS
-        3, Axis 3 ST1K1-ZOS-MMS
+        3, Axis 3 SPARE
         4, Axis 4 IM1K2-PPM-MMS
+        5, Axis 5 AL1K2-L2SI-MMS
+        6, Axis 6 IM2K2-PPM-MMS
+        7, Axis 7 IM3K2-PPM-MMS
+        8, Axis 8 IM4K2-PPM-MMS
+        9, Axis 9 TM1K2-MMS-Y
+        10, Axis 10 TM1K2-MMS-X
+        11, Axis 11 LI2K2-K2A_OUT-MMS
+        12, Axis 12 PF1K2-WFS-MMS-Y
+        13, Axis 13 PF1K2-WFS-MMS-Z
+        14, Axis 14 IM5K2-PPM-MMS
+        15, Axis 15 TM2K2-MMS-Y
+        16, Axis 16 TM2K2-MMS-X
 
 
 
@@ -85,16 +97,16 @@ Axis 2: Axis 2 IM2K1-PPM-MMS
 
 
 
-Axis 3: Axis 3 ST1K1-ZOS-MMS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Axis 3: Axis 3 SPARE
+^^^^^^^^^^^^^^^^^^^^
 
 .. csv-table::
     :header: Setting, Value
     :align: center
 
     Axis ID, 3
-    Name, Axis 3 ST1K1-ZOS-MMS
-    AxisFolder, ST1K1-ZOS
+    Name, Axis 3 SPARE
+    AxisFolder, SPARE
     AxisType, 1
     CreateSymbols, true
     Enc:EncType, 29
@@ -151,5 +163,401 @@ Axis 4: Axis 4 IM1K2-PPM-MMS
     TargetPosControl:Range, 0.002
     TargetPosControl:Time, 2
     Velo:Maximum, 65
+
+
+
+Axis 5: Axis 5 AL1K2-L2SI-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 5
+    Name, Axis 5 AL1K2-L2SI-MMS
+    AxisFolder, AL1K2-L2S1
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -33.49
+    Enc:SoftEndMinControl:Range, -108.74
+    Id, 5
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 10
+
+
+
+Axis 6: Axis 6 IM2K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 6
+    Name, Axis 6 IM2K2-PPM-MMS
+    AxisFolder, IM2K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -8.82
+    Enc:SoftEndMinControl:Range, -100
+    Id, 6
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 7: Axis 7 IM3K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 7
+    Name, Axis 7 IM3K2-PPM-MMS
+    AxisFolder, IM3K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -8.82
+    Enc:SoftEndMinControl:Range, -100
+    Id, 7
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 8: Axis 8 IM4K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 8
+    Name, Axis 8 IM4K2-PPM-MMS
+    AxisFolder, IM4K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -8.82
+    Enc:SoftEndMinControl:Range, -100
+    Id, 8
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 9: Axis 9 TM1K2-MMS-Y
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 9
+    Name, Axis 9 TM1K2-MMS-Y
+    AxisFolder, TM1K2-K2A
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214601
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 1.41
+    Enc:SoftEndMinControl:Range, -102.55
+    Id, 9
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 20
+
+
+
+Axis 10: Axis 10 TM1K2-MMS-X
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 10
+    Name, Axis 10 TM1K2-MMS-X
+    AxisFolder, TM1K2-K2A
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 50
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 12.5
+    Enc:SoftEndMinControl:Range, 8.1
+    Id, 10
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 5
+
+
+
+Axis 11: Axis 11 LI2K2-K2A_OUT-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 11
+    Name, Axis 11 LI2K2-K2A_OUT-MMS
+    AxisFolder, LI2K2-K2A_OUT
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214593
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 1.35
+    Enc:SoftEndMinControl:Range, -107.43
+    Id, 11
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 12: Axis 12 PF1K2-WFS-MMS-Y
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 12
+    Name, Axis 12 PF1K2-WFS-MMS-Y
+    AxisFolder, PF1K2-WFS
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -6871827
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -9.71
+    Enc:SoftEndMinControl:Range, -99.33
+    Id, 12
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 20
+
+
+
+Axis 13: Axis 13 PF1K2-WFS-MMS-Z
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 13
+    Name, Axis 13 PF1K2-WFS-MMS-Z
+    AxisFolder, PF1K2-WFS
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 50
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 56
+    Enc:SoftEndMinControl:Range, 6.5
+    Id, 13
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 5
+
+
+
+Axis 14: Axis 14 IM5K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 14
+    Name, Axis 14 IM5K2-PPM-MMS
+    AxisFolder, IM5K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -8.82
+    Enc:SoftEndMinControl:Range, -100
+    Id, 14
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 15: Axis 15 TM2K2-MMS-Y
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 15
+    Name, Axis 15 TM2K2-MMS-Y
+    AxisFolder, TM2K2-K2B
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214570.0066
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 1.41
+    Enc:SoftEndMinControl:Range, -102.55
+    Id, 15
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 20
+
+
+
+Axis 16: Axis 16 TM2K2-MMS-X
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 16
+    Name, Axis 16 TM2K2-MMS-X
+    AxisFolder, TM2K2-K2B
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 50
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ReferenceSystem, 1
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 12.5
+    Enc:SoftEndMinControl:Range, 8.1
+    Id, 16
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 5
 
 
