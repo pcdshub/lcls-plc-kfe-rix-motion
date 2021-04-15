@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SXR_SATT_Stage" Id="{7fb611c7-2215-4e8f-8a28-e51a98acae9a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SXR_SATT_Stage
+VAR_IN_OUT
+    stAxis : DUT_MotionStage;
+    fbFFHWO: FB_HardwareFFOutput;
+END_VAR
+VAR_INPUT
+    nEnableMode : ENUM_StageEnableMode;
+
+    stOut		: DUT_PositionState;
+    stFilter1	: DUT_PositionState;
+    stFilter2	: DUT_PositionState;
+    stFilter3	: DUT_PositionState;
+    stFilter4	: DUT_PositionState;
+    stFilter5	: DUT_PositionState;
+    stFilter6	: DUT_PositionState;
+    stFilter7	: DUT_PositionState;
+    stFilter8	: DUT_PositionState;
+END_VAR
+VAR_OUTPUT
+    // stExtra : DUT_MotionStage_Extras;
+    fTemp1 : LREAL;
+    fTemp2 : LREAL;
+    bIsStationary : BOOL;
+END_VAR
+VAR
+    fbMotion: FB_MotionStage;
+
+    {attribute 'pytmc' := '
+         pv: STATE
+    '}
+    fbState 	: FB_SXR_SATT_PositionState;
+
+    bInitialized: BOOL := FALSE;
+
+    (* EL3202-0020: 0.01 °C per digit *)
+    {attribute 'pytmc' := 'pv: RTD:1'}
+    fbRTD_1: FB_TempSensor := ( fResolution:=0.01 );
+    {attribute 'pytmc' := 'pv: RTD:2'}
+    fbRTD_2: FB_TempSensor := ( fResolution:=0.01 );
+
+    fbFF: FB_FastFault := (i_Desc := 'Device is moving',
+                           i_TypeCode := 16#2100,
+                           i_xAutoReset := TRUE);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    (* Defaults for DUT_MotionStage *)
+    stAxis.bHardwareEnable      := TRUE;
+    stAxis.bLimitBackwardEnable := TRUE;
+    stAxis.bLimitForwardEnable  := TRUE;
+    stAxis.bPowerSelf           := TRUE;
+    stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+
+    (* Defaults for visualization *)
+    // stExtra.fVisuStep			:= 0.1;
+
+END_IF
+
+fbRTD_1();
+fTemp1 := fbRTD_1.fTemp;
+
+fbRTD_2();
+fTemp2 := fbRTD_2.fTemp;
+
+stAxis.nEnableMode := nEnableMode;
+fbMotion(stMotionStage:=stAxis);
+fbState(
+    bEnable:=TRUE,
+    bReset:=FALSE,
+    stMotionStage:=stAxis,
+    stOut:=stOut,
+    stFilter1:=stFilter1,
+    stFilter2:=stFilter2,
+    stFilter3:=stFilter3,
+    stFilter4:=stFilter4,
+    stFilter5:=stFilter5,
+    stFilter6:=stFilter6,
+    stFilter7:=stFilter7,
+    stFilter8:=stFilter8
+);
+
+bIsStationary := NOT stAxis.Axis.Status.Moving;
+fbFF(
+    i_DevName:=stAxis.sName,
+    i_xOK:=bIsStationary AND fbState.enumGet <> ENUM_SXR_SATT_Position.UNKNOWN,
+    io_fbFFHWO := fbFFHWO
+);
+
+// stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
+// stExtra.bVisuLowLim := NOT stAxis.bAllBackwardEnable;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
