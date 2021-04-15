@@ -20,6 +20,9 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -29,6 +32,12 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT2K2\FB_SXR_SATT_PositionState.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT2K2\FB_SXR_SATT_Stage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
@@ -41,6 +50,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_4_LOG.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_AT2K2_SOLID.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_IM6K2_PPM.TcPOU">
@@ -89,6 +101,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\AT2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
