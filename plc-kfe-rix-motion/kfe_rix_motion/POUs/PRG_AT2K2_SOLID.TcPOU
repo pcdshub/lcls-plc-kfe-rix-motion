@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_AT2K2_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259467}" SpecialFunc="None">
+  <POU Name="PRG_AT2K2_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259999}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AT2K2_SOLID
 VAR
-    (* TODO: use FALSE for simulation and production *)
-    (* TODO: use TRUE when relying on visualization + actual hardware *)
+    (* NOTE: use FALSE for simulation and production *)
+    (* NOTE: use TRUE when relying on visualization + actual hardware *)
     bDebug : BOOL := FALSE;
 
     nEnableMode : ENUM_StageEnableMode;
