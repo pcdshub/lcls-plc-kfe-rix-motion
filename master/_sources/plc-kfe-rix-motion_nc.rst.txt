@@ -22,6 +22,10 @@ NC Settings
         14, Axis 14 IM5K2-PPM-MMS
         15, Axis 15 TM2K2-MMS-Y
         16, Axis 16 TM2K2-MMS-X
+        17, Axis 17 AT2K2-SOLID-MMS-01
+        18, Axis 18 AT2K2-SOLID-MMS-02
+        19, Axis 19 AT2K2-SOLID-MMS-03
+        20, Axis 20 AT2K2-SOLID-MMS-04
 
 
 
@@ -559,5 +563,141 @@ Axis 16: Axis 16 TM2K2-MMS-X
     Id, 16
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 5
+
+
+
+Axis 17: Axis 17 AT2K2-SOLID-MMS-01
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 17
+    Name, Axis 17 AT2K2-SOLID-MMS-01
+    AxisFolder, AT2K2-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 152.5
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 16.5
+    Id, 17
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 10
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
+
+
+
+Axis 18: Axis 18 AT2K2-SOLID-MMS-02
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 18
+    Name, Axis 18 AT2K2-SOLID-MMS-02
+    AxisFolder, AT2K2-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 152.5
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 17.5
+    Id, 18
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 5
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
+
+
+
+Axis 19: Axis 19 AT2K2-SOLID-MMS-03
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 19
+    Name, Axis 19 AT2K2-SOLID-MMS-03
+    AxisFolder, AT2K2-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 152.5
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 16.5
+    Id, 19
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 10
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
+
+
+
+Axis 20: Axis 20 AT2K2-SOLID-MMS-04
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 20
+    Name, Axis 20 AT2K2-SOLID-MMS-04
+    AxisFolder, AT2K2-SOLID
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 152.5
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 17.8
+    Id, 20
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 10
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
 
 

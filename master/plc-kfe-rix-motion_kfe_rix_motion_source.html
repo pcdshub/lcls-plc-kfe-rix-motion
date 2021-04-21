@@ -99,18 +99,24 @@
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_summary.html#symbols">Symbols</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html">Data Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#database-records">Database Records</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#enum-sxr-satt-position">ENUM_SXR_SATT_Position</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="#gvls">GVLs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gvl">GVL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fb-sxr-satt-positionstate">FB_SXR_SATT_PositionState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-sxr-satt-stage">FB_SXR_SATT_Stage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-1-plctask">PRG_1_PlcTask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-2-pmps-pre">PRG_2_PMPS_PRE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-3-pmps-post">PRG_3_PMPS_POST</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-4-log">PRG_4_LOG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-al1k2-l2si">PRG_AL1K2_L2SI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-at2k2-solid">PRG_AT2K2_SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k1-ppm">PRG_IM1K1_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k2-ppm">PRG_IM1K2_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im2k1-ppm">PRG_IM2K1_PPM</a></li>
@@ -195,6 +201,26 @@
             
   <div class="section" id="duts">
 <h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="enum-sxr-satt-position">
+<h2>ENUM_SXR_SATT_Position<a class="headerlink" href="#enum-sxr-satt-position" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">TYPE</span> <span class="n">ENUM_SXR_SATT_Position</span> <span class="p">:</span>
+<span class="p">(</span>
+    <span class="n">UNKNOWN</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">UNKNOWN</span> <span class="n">must</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">slot</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">FB</span> <span class="n">breaks</span>
+    <span class="n">OUT</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">//</span> <span class="n">OUT</span> <span class="n">at</span> <span class="n">slot</span> <span class="mi">1</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">convention</span>
+    <span class="n">FILTER1</span> <span class="o">:=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">FILTER2</span> <span class="o">:=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">FILTER3</span> <span class="o">:=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">FILTER4</span> <span class="o">:=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">FILTER5</span> <span class="o">:=</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="n">FILTER6</span> <span class="o">:=</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="n">FILTER7</span> <span class="o">:=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">FILTER8</span> <span class="o">:=</span> <span class="mi">9</span>
+<span class="p">);</span>
+<span class="n">END_TYPE</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="gvls">
 <h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this headline">¶</a></h1>
@@ -324,11 +350,49 @@
     <span class="n">M16</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM:MMS:X&#39;</span><span class="p">);</span>
 
     <span class="o">//</span><span class="n">AT2K2</span><span class="p">:</span> <span class="mi">4</span> <span class="n">Axes</span>
-    <span class="o">//</span><span class="n">M17</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
-    <span class="o">//</span><span class="n">M18</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
-    <span class="o">//</span><span class="n">M19</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
-    <span class="o">//</span><span class="n">M20</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
+<span class="p">(</span><span class="o">*</span>
 
+    <span class="n">AT2K2</span> <span class="n">Solid</span> <span class="n">Attenuator</span> <span class="n">notes</span> <span class="p">(</span><span class="n">JJ</span><span class="o">-</span><span class="n">xray</span> <span class="n">SN</span><span class="o">-</span><span class="mi">11343</span><span class="p">)</span>
+
+    <span class="n">JJ</span>    <span class="n">Label</span>   <span class="n">EPICS</span>    <span class="n">Stage</span>     <span class="n">NC</span>   <span class="n">Location</span>
+
+    <span class="mi">1087</span>      <span class="mi">1</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">01</span>   <span class="n">fbStage1</span>  <span class="n">M17</span>  <span class="n">Upstream</span><span class="o">-</span><span class="n">most</span>
+    <span class="mi">1088</span>      <span class="mi">2</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">02</span>   <span class="n">fbStage2</span>  <span class="n">M18</span>
+    <span class="mi">1086</span>      <span class="mi">3</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">03</span>   <span class="n">fbStage3</span>  <span class="n">M19</span>
+    <span class="mi">1089</span>      <span class="mi">4</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">04</span>   <span class="n">fbStage4</span>  <span class="n">M20</span>  <span class="n">Downstream</span><span class="o">-</span><span class="n">most</span>
+
+<span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M17</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT2K2:L2SI:MMS:01&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M18</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT2K2:L2SI:MMS:02&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:03&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M19</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT2K2:L2SI:MMS:03&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:04&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M20</span><span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT2K2:L2SI:MMS:04&#39;</span><span class="p">);</span>
 
     <span class="o">//</span><span class="n">LI3K2</span><span class="p">:</span> <span class="mi">1</span> <span class="n">Axis</span>
     <span class="o">//</span><span class="n">M21</span><span class="p">:</span> <span class="n">DUT_MotionStage</span><span class="p">;</span>
@@ -356,45 +420,207 @@
 </div>
 <div class="section" id="pous">
 <h1>POUs<a class="headerlink" href="#pous" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fb-sxr-satt-positionstate">
+<h2>FB_SXR_SATT_PositionState<a class="headerlink" href="#fb-sxr-satt-positionstate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_SXR_SATT_PositionState</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase</span>
+<span class="n">VAR_INPUT</span>
+     <span class="o">//</span> <span class="n">The</span> <span class="n">enum</span> <span class="n">position</span> <span class="n">to</span> <span class="n">move</span> <span class="n">to</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+         <span class="n">pv</span><span class="p">:</span> <span class="n">SET</span>
+         <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+     <span class="s1">&#39;}</span>
+     <span class="n">enumSet</span><span class="p">:</span> <span class="n">ENUM_SXR_SATT_Position</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">pragma</span> <span class="n">these</span><span class="p">,</span> <span class="n">let</span> <span class="n">it</span> <span class="n">happen</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">manager</span><span class="o">.</span>
+     <span class="o">//</span> <span class="n">Information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">OUT</span> <span class="n">position</span>
+     <span class="n">stOut</span>          <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter1</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter2</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter3</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter4</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter5</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter6</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter7</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+     <span class="n">stFilter8</span>      <span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+
+<span class="n">END_VAR</span>
+<span class="n">VAR_OUTPUT</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">enum</span> <span class="n">state</span> <span class="n">readback</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">GET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">enumGet</span><span class="p">:</span> <span class="n">ENUM_SXR_SATT_Position</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+    <span class="n">bInitialized</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">IF</span> <span class="n">NOT</span> <span class="n">bInitialized</span> <span class="n">THEN</span>
+    <span class="n">bInitialized</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stOut</span><span class="p">;</span>
+
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter3</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter4</span><span class="p">;</span>
+
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter5</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter6</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter7</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stFilter8</span><span class="p">;</span>
+
+<span class="n">END_IF</span>
+<span class="n">setState</span> <span class="o">:=</span> <span class="n">enumSet</span><span class="p">;</span>
+<span class="n">Exec</span><span class="p">();</span>
+<span class="n">enumGet</span> <span class="o">:=</span> <span class="n">getState</span><span class="p">;</span>
+<span class="n">enumSet</span> <span class="o">:=</span> <span class="n">setState</span><span class="p">;</span>
+
+<span class="n">END_FUNCTION_BLOCK</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fb-sxr-satt-stage">
+<h2>FB_SXR_SATT_Stage<a class="headerlink" href="#fb-sxr-satt-stage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_SXR_SATT_Stage
+VAR_IN_OUT
+    stAxis : DUT_MotionStage;
+    fbFFHWO: FB_HardwareFFOutput;
+END_VAR
+VAR_INPUT
+    nEnableMode : ENUM_StageEnableMode;
+
+    stOut           : DUT_PositionState;
+    stFilter1       : DUT_PositionState;
+    stFilter2       : DUT_PositionState;
+    stFilter3       : DUT_PositionState;
+    stFilter4       : DUT_PositionState;
+    stFilter5       : DUT_PositionState;
+    stFilter6       : DUT_PositionState;
+    stFilter7       : DUT_PositionState;
+    stFilter8       : DUT_PositionState;
+END_VAR
+VAR_OUTPUT
+    // stExtra : DUT_MotionStage_Extras;
+    fTemp1 : LREAL;
+    fTemp2 : LREAL;
+    bIsStationary : BOOL;
+END_VAR
+VAR
+    fbMotion: FB_MotionStage;
+
+    {attribute &#39;pytmc&#39; := &#39;
+         pv: STATE
+    &#39;}
+    fbState         : FB_SXR_SATT_PositionState;
+
+    bInitialized: BOOL := FALSE;
+
+    (* EL3202-0020: 0.01 °C per digit *)
+    {attribute &#39;pytmc&#39; := &#39;pv: RTD:1&#39;}
+    fbRTD_1: FB_TempSensor := ( fResolution:=0.01 );
+    {attribute &#39;pytmc&#39; := &#39;pv: RTD:2&#39;}
+    fbRTD_2: FB_TempSensor := ( fResolution:=0.01 );
+
+    fbFF: FB_FastFault := (i_Desc := &#39;Device is moving&#39;,
+                           i_TypeCode := 16#2100,
+                           i_xAutoReset := TRUE);
+END_VAR
+IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    (* Defaults for DUT_MotionStage *)
+    stAxis.bHardwareEnable      := TRUE;
+    stAxis.bLimitBackwardEnable := TRUE;
+    stAxis.bLimitForwardEnable  := TRUE;
+    stAxis.bPowerSelf           := TRUE;
+    stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+
+    (* Defaults for visualization *)
+    // stExtra.fVisuStep                    := 0.1;
+
+END_IF
+
+fbRTD_1();
+fTemp1 := fbRTD_1.fTemp;
+
+fbRTD_2();
+fTemp2 := fbRTD_2.fTemp;
+
+stAxis.nEnableMode := nEnableMode;
+fbMotion(stMotionStage:=stAxis);
+fbState(
+    bEnable:=TRUE,
+    bReset:=FALSE,
+    stMotionStage:=stAxis,
+    stOut:=stOut,
+    stFilter1:=stFilter1,
+    stFilter2:=stFilter2,
+    stFilter3:=stFilter3,
+    stFilter4:=stFilter4,
+    stFilter5:=stFilter5,
+    stFilter6:=stFilter6,
+    stFilter7:=stFilter7,
+    stFilter8:=stFilter8
+);
+
+bIsStationary := NOT stAxis.Axis.Status.Moving;
+fbFF(
+    i_DevName:=stAxis.sName,
+    i_xOK:=bIsStationary AND fbState.enumGet &lt;&gt; ENUM_SXR_SATT_Position.UNKNOWN,
+    io_fbFFHWO := fbFFHWO
+);
+
+// stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
+// stExtra.bVisuLowLim := NOT stAxis.bAllBackwardEnable;
+
+END_FUNCTION_BLOCK
+</pre></div>
+</div>
+</div>
 <div class="section" id="prg-1-plctask">
 <h2>PRG_1_PlcTask<a class="headerlink" href="#prg-1-plctask" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_1_PlcTask</span>
-<span class="n">VAR</span>
-    <span class="n">bDebug</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">PRG_2_PMPS_PRE</span><span class="p">();</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_1_PlcTask
+VAR
+    bDebug: BOOL := FALSE;
+END_VAR
+PRG_2_PMPS_PRE();
 
-<span class="o">//</span> <span class="n">Temporarily</span> <span class="n">disable</span> <span class="n">motors</span> <span class="n">by</span> <span class="n">setting</span> <span class="n">bHardwareEnable</span> <span class="n">to</span> <span class="n">FALSE</span> <span class="n">prior</span> <span class="n">to</span> <span class="n">running</span> <span class="n">motion</span> <span class="n">FB</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M5</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M10</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M11</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M12</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M13</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M14</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M15</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M16</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bDebug</span><span class="p">;</span>
+// Temporarily disable motors by setting bHardwareEnable to FALSE prior to running motion FB
+Main.M5.bHardwareEnable := bDebug;
+Main.M6.bHardwareEnable := bDebug;
+Main.M7.bHardwareEnable := bDebug;
+Main.M8.bHardwareEnable := bDebug;
+Main.M9.bHardwareEnable := bDebug;
+Main.M10.bHardwareEnable := bDebug;
+Main.M11.bHardwareEnable := bDebug;
+Main.M12.bHardwareEnable := bDebug;
+Main.M13.bHardwareEnable := bDebug;
+Main.M14.bHardwareEnable := bDebug;
+Main.M15.bHardwareEnable := bDebug;
+Main.M16.bHardwareEnable := bDebug;
+// Note: AT2K2 has its own built-in debugging interface; see PRG_AT2K2_SOLID
+// and its ``bDebug`` variable.
 
-<span class="n">PRG_IM1K1_PPM</span><span class="p">();</span>
-<span class="n">PRG_IM2K1_PPM</span><span class="p">();</span>
-<span class="n">PRG_IM1K2_PPM</span><span class="p">();</span>
-<span class="n">PRG_AL1K2_L2SI</span><span class="p">();</span>
-<span class="n">PRG_IM2K2_PPM</span><span class="p">();</span>
-<span class="n">PRG_IM3K2_PPM</span><span class="p">();</span>
-<span class="n">PRG_IM4K2_PPM</span><span class="p">();</span>
-<span class="n">PRG_TM1K2_ATM</span><span class="p">();</span>
-<span class="n">PRG_LI2K2_K2A</span><span class="p">();</span>
-<span class="n">PRG_PF1K2_WFS</span><span class="p">();</span>
-<span class="n">PRG_IM5K2_PPM</span><span class="p">();</span>
-<span class="n">PRG_TM2K2_ATM</span><span class="p">();</span>
+PRG_IM1K1_PPM();
+PRG_IM2K1_PPM();
+PRG_IM1K2_PPM();
+PRG_AL1K2_L2SI();
+PRG_IM2K2_PPM();
+PRG_IM3K2_PPM();
+PRG_IM4K2_PPM();
+PRG_TM1K2_ATM();
+PRG_LI2K2_K2A();
+PRG_PF1K2_WFS();
+PRG_IM5K2_PPM();
+PRG_TM2K2_ATM();
+PRG_AT2K2_SOLID();
 
-<span class="n">PRG_3_PMPS_POST</span><span class="p">();</span>
-<span class="n">PRG_4_LOG</span><span class="p">();</span>
+PRG_3_PMPS_POST();
+PRG_4_LOG();
 
-<span class="n">END_PROGRAM</span>
+END_PROGRAM
 </pre></div>
 </div>
 </div>
@@ -476,6 +702,383 @@
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M5</span><span class="p">,</span>
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prg-at2k2-solid">
+<h2>PRG_AT2K2_SOLID<a class="headerlink" href="#prg-at2k2-solid" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AT2K2_SOLID</span>
+<span class="n">VAR</span>
+    <span class="p">(</span><span class="o">*</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">use</span> <span class="n">FALSE</span> <span class="k">for</span> <span class="n">simulation</span> <span class="ow">and</span> <span class="n">production</span> <span class="o">*</span><span class="p">)</span>
+    <span class="p">(</span><span class="o">*</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">use</span> <span class="n">TRUE</span> <span class="n">when</span> <span class="n">relying</span> <span class="n">on</span> <span class="n">visualization</span> <span class="o">+</span> <span class="n">actual</span> <span class="n">hardware</span> <span class="o">*</span><span class="p">)</span>
+    <span class="n">bDebug</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+    <span class="n">nEnableMode</span> <span class="p">:</span> <span class="n">ENUM_StageEnableMode</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">04</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+    <span class="s1">&#39;}</span>
+    <span class="n">fbStage1</span><span class="p">:</span> <span class="n">FB_SXR_SATT_Stage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">03</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+    <span class="s1">&#39;}</span>
+    <span class="n">fbStage2</span><span class="p">:</span> <span class="n">FB_SXR_SATT_Stage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:03&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">02</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbStage3</span><span class="p">:</span> <span class="n">FB_SXR_SATT_Stage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT2K2:L2SI:MMS:04&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_1</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">fbRTD_2</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AT2K2</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">01</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbStage4</span><span class="p">:</span> <span class="n">FB_SXR_SATT_Stage</span><span class="p">;</span>
+
+<span class="n">END_VAR</span>
+<span class="n">VAR</span> <span class="n">CONSTANT</span>
+    <span class="n">DEFAULT_VELOCITY</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">IF</span> <span class="n">bDebug</span> <span class="n">THEN</span>
+    <span class="o">//</span> <span class="n">NEVER</span><span class="p">:</span> <span class="n">checkouts</span> <span class="k">with</span> <span class="n">the</span> <span class="n">TwinCAT</span> <span class="n">NC</span> <span class="n">GUI</span><span class="o">.</span>
+    <span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">NEVER</span><span class="p">;</span>
+<span class="n">ELSE</span>
+    <span class="o">//</span> <span class="n">ALWAYS</span><span class="p">:</span> <span class="n">want</span> <span class="n">active</span> <span class="n">position</span> <span class="n">correction</span> <span class="n">at</span> <span class="nb">all</span> <span class="n">times</span>
+    <span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="p">(</span><span class="o">*</span>
+
+    <span class="n">Solid</span> <span class="n">Attenuator</span> <span class="n">notes</span>
+
+    <span class="n">AT2K2</span> <span class="ow">is</span> <span class="n">JJ</span><span class="o">-</span><span class="n">xray</span> <span class="n">SN</span><span class="o">-</span><span class="mf">11343.</span>
+
+    <span class="n">JJ</span>    <span class="n">Label</span>   <span class="n">EPICS</span>    <span class="n">Stage</span>     <span class="n">NC</span>   <span class="n">Location</span>
+
+    <span class="mi">1087</span>      <span class="mi">1</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">01</span>   <span class="n">fbStage1</span>  <span class="n">M17</span>  <span class="n">Upstream</span><span class="o">-</span><span class="n">most</span>
+    <span class="mi">1088</span>      <span class="mi">2</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">02</span>   <span class="n">fbStage2</span>  <span class="n">M18</span>
+    <span class="mi">1086</span>      <span class="mi">3</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">03</span>   <span class="n">fbStage3</span>  <span class="n">M19</span>
+    <span class="mi">1089</span>      <span class="mi">4</span>   <span class="n">MMS</span><span class="p">:</span><span class="mi">04</span>   <span class="n">fbStage4</span>  <span class="n">M20</span>  <span class="n">Downstream</span><span class="o">-</span><span class="n">most</span>
+
+    <span class="n">TODO</span><span class="p">:</span> <span class="n">Filter</span> <span class="n">position</span> <span class="n">information</span> <span class="n">must</span> <span class="n">be</span> <span class="n">added</span> <span class="n">after</span> <span class="n">inspection</span> <span class="n">during</span>
+    <span class="n">beamtime</span><span class="o">.</span>
+
+<span class="o">*</span><span class="p">)</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">1</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">Upstream</span><span class="o">-</span><span class="n">most</span> <span class="n">MMS</span><span class="p">:</span><span class="mi">01</span> <span class="o">-</span> <span class="n">TRAVELER</span> <span class="n">AXIS</span> <span class="mi">1</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">sName</span>         <span class="o">:=</span> <span class="s1">&#39;Out&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span>     <span class="o">:=</span> <span class="mf">27.00</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="n">TODO</span><span class="p">:</span> <span class="n">need</span> <span class="n">out</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">traveler</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fDelta</span>        <span class="o">:=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fVelocity</span>     <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span>        <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bMoveOk</span>       <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 1&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 2&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 3&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 4&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 5&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 6&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 7&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 8&#39;</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage1</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M17</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">2</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">MMS</span><span class="p">:</span><span class="mi">02</span> <span class="o">-</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">upstream</span><span class="o">-</span><span class="n">most</span> <span class="o">-</span> <span class="n">TRAVELER</span> <span class="n">AXIS</span> <span class="mi">2</span> <span class="o">*</span><span class="p">)</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">sName</span>         <span class="o">:=</span> <span class="s1">&#39;Out&#39;</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="n">TODO</span><span class="p">:</span> <span class="n">need</span> <span class="n">out</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">traveler</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span>     <span class="o">:=</span> <span class="mf">27.72</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fDelta</span>        <span class="o">:=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fVelocity</span>     <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span>        <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bMoveOk</span>       <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 1&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 2&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 3&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 4&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 5&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 6&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 7&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 8&#39;</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage2</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M18</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">3</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">MMS</span><span class="p">:</span><span class="mi">03</span> <span class="o">-</span> <span class="mi">2</span><span class="n">nd</span> <span class="n">to</span> <span class="n">downstream</span><span class="o">-</span><span class="n">most</span> <span class="o">-</span> <span class="n">TRAVELER</span> <span class="n">AXIS</span> <span class="mi">3</span> <span class="o">*</span><span class="p">)</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">sName</span>         <span class="o">:=</span> <span class="s1">&#39;Out&#39;</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="n">TODO</span><span class="p">:</span> <span class="n">need</span> <span class="n">out</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">traveler</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span>     <span class="o">:=</span> <span class="mf">27.00</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fDelta</span>        <span class="o">:=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fVelocity</span>     <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span>        <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bMoveOk</span>       <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 1&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 2&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 3&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 4&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 5&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 6&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 7&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 8&#39;</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage3</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage3</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M19</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">4</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">MMS</span><span class="p">:</span><span class="mi">04</span> <span class="o">-</span> <span class="n">downstream</span><span class="o">-</span><span class="n">most</span> <span class="o">-</span> <span class="n">TRAVELER</span> <span class="n">AXIS</span> <span class="mi">4</span> <span class="o">*</span><span class="p">)</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">sName</span>         <span class="o">:=</span> <span class="s1">&#39;Out&#39;</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="n">TODO</span><span class="p">:</span> <span class="n">need</span> <span class="n">out</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">traveler</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span>     <span class="o">:=</span> <span class="mf">28.03</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fDelta</span>        <span class="o">:=</span> <span class="mf">0.2</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fVelocity</span>     <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span>        <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bMoveOk</span>       <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 1&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter1</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 2&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter2</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 3&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter3</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 4&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter4</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 5&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter5</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 6&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter6</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 7&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter7</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">sName</span>     <span class="o">:=</span> <span class="s1">&#39;Filter 8&#39;</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">500.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fDelta</span>    <span class="o">:=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">DEFAULT_VELOCITY</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bValid</span>    <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbStage4</span><span class="o">.</span><span class="n">stFilter8</span><span class="o">.</span><span class="n">bMoveOk</span>   <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+<span class="n">fbStage4</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M20</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
