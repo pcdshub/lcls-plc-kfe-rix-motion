@@ -22,6 +22,8 @@ Main.M13.bHardwareEnable := bDebug;
 Main.M14.bHardwareEnable := bDebug;
 Main.M15.bHardwareEnable := bDebug;
 Main.M16.bHardwareEnable := bDebug;
+// Note: AT2K2 has its own built-in debugging interface; see PRG_AT2K2_SOLID
+// and its ``bDebug`` variable.
 
 PRG_IM1K1_PPM();
 PRG_IM2K1_PPM();
