@@ -1,12 +1,12 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.3.1/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.4.1/bin/rhel7-x86_64/adsIoc
 ###### AUTO-GENERATED DO NOT EDIT ##############
 
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "zlentz" )
-epicsEnvSet("LOCATION", "PLC:KFE:RIX:MOTION" )
+epicsEnvSet("ENGINEER", "klauer" )
+epicsEnvSet("LOCATION", "PLC:RIX:MOTION" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
@@ -56,8 +56,8 @@ cd "$(ADS_IOC_TOP)/db"
 
 
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PLC:KFE:RIX:MOTION:")
-epicsEnvSet("NUMAXES",        "16")
+epicsEnvSet("PREFIX",         "PLC:RIX:MOTION:")
+epicsEnvSet("NUMAXES",        "20")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
 
@@ -119,7 +119,7 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 epicsEnvSet("AXIS_NO",         "3")
-epicsEnvSet("MOTOR_PREFIX",    "PLC:KFE:RIX:MOTION:")
+epicsEnvSet("MOTOR_PREFIX",    "PLC:RIX:MOTION:")
 epicsEnvSet("MOTOR_NAME",      "Axis:3:SPARE")
 epicsEnvSet("DESC",            "Main.M3 / Axis 3 SPARE")
 epicsEnvSet("EGU",             "mm")
@@ -328,14 +328,74 @@ dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR
 dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
+epicsEnvSet("AXIS_NO",         "17")
+epicsEnvSet("MOTOR_PREFIX",    "AT2K2:L2SI:MMS:")
+epicsEnvSet("MOTOR_NAME",      "01")
+epicsEnvSet("DESC",            "Main.M17 / Axis 17 AT2K2-SOLID-MMS-01")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:KFE:RIX:MOTION")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:KFE:RIX:MOTION:")
+EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
+dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
+dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
+dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
+
+epicsEnvSet("AXIS_NO",         "18")
+epicsEnvSet("MOTOR_PREFIX",    "AT2K2:L2SI:MMS:")
+epicsEnvSet("MOTOR_NAME",      "02")
+epicsEnvSet("DESC",            "Main.M18 / Axis 18 AT2K2-SOLID-MMS-02")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+
+EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
+dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
+dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
+dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
+
+epicsEnvSet("AXIS_NO",         "19")
+epicsEnvSet("MOTOR_PREFIX",    "AT2K2:L2SI:MMS:")
+epicsEnvSet("MOTOR_NAME",      "03")
+epicsEnvSet("DESC",            "Main.M19 / Axis 19 AT2K2-SOLID-MMS-03")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+
+EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
+dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
+dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
+dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
+
+epicsEnvSet("AXIS_NO",         "20")
+epicsEnvSet("MOTOR_PREFIX",    "AT2K2:L2SI:MMS:")
+epicsEnvSet("MOTOR_NAME",      "04")
+epicsEnvSet("DESC",            "Main.M20 / Axis 20 AT2K2-SOLID-MMS-04")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+
+EthercatMCCreateAxis("$(MOTOR_PORT)", "$(AXIS_NO)", "$(AMPLIFIER_FLAGS)", "$(AXISCONFIG)")
+dbLoadRecords("EthercatMC.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC), EGU=$(EGU) $(ECAXISFIELDINIT)")
+dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), R=$(MOTOR_NAME)-, MOTOR_PORT=$(MOTOR_PORT), ASYN_PORT=$(ASYN_PORT), AXIS_NO=$(AXIS_NO), DESC=$(DESC), PREC=$(PREC) ")
+dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
+
+
+dbLoadRecords("iocSoft.db", "IOC=PLC:RIX:MOTION")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:RIX:MOTION:")
 dbLoadRecords("caPutLog.db", "IOC=${IOC}")
 
 ## TwinCat System Databse files ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:KFE:RIX:MOTION")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:KFE:RIX:MOTION")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:RIX:MOTION")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:RIX:MOTION")
 
 cd "$(IOC_TOP)"
 
@@ -347,7 +407,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PLC:KFE:RIX:MOTION:" )
+save_restoreSet_status_prefix( "PLC:RIX:MOTION:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )
