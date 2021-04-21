@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_SXR_SATT_PositionState" Id="{505e7173-edee-4a83-bc1f-4aae51a3b3f5}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SXR_SATT_PositionState EXTENDS FB_PositionStateBase
+VAR_INPUT
+     // The enum position to move to
+     {attribute 'pytmc' := '
+         pv: SET
+         io: io
+     '}
+     enumSet: ENUM_SXR_SATT_Position;
+
+    // NOTE: Do not pragma these, let it happen in the manager.
+     // Information about the OUT position
+     stOut		: DUT_PositionState;
+     stFilter1	: DUT_PositionState;
+     stFilter2	: DUT_PositionState;
+     stFilter3	: DUT_PositionState;
+     stFilter4	: DUT_PositionState;
+     stFilter5	: DUT_PositionState;
+     stFilter6	: DUT_PositionState;
+     stFilter7	: DUT_PositionState;
+     stFilter8	: DUT_PositionState;
+
+END_VAR
+VAR_OUTPUT
+    // The enum state readback
+    {attribute 'pytmc' := '
+        pv: GET
+        io: i
+    '}
+    enumGet: ENUM_SXR_SATT_Position;
+END_VAR
+VAR
+    bInitialized: BOOL := FALSE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    arrStates[1] := stOut;
+
+    arrStates[2] := stFilter1;
+    arrStates[3] := stFilter2;
+    arrStates[4] := stFilter3;
+    arrStates[5] := stFilter4;
+
+    arrStates[6] := stFilter5;
+    arrStates[7] := stFilter6;
+    arrStates[8] := stFilter7;
+    arrStates[9] := stFilter8;
+
+END_IF
+setState := enumSet;
+Exec();
+enumGet := getState;
+enumSet := setState;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

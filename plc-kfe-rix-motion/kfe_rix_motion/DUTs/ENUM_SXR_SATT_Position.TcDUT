@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ENUM_SXR_SATT_Position" Id="{0178489f-2243-469a-8a93-925603227d2c}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+TYPE ENUM_SXR_SATT_Position :
+(
+    UNKNOWN := 0, // UNKNOWN must be in slot 0 or the FB breaks
+    OUT := 1, // OUT at slot 1 is a convention
+    FILTER1 := 2,
+    FILTER2 := 3,
+    FILTER3 := 4,
+    FILTER4 := 5,
+    FILTER5 := 6,
+    FILTER6 := 7,
+    FILTER7 := 8,
+    FILTER8 := 9
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

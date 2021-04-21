@@ -105,11 +105,49 @@ VAR_GLOBAL
     M16: DUT_MotionStage := (sName := 'TM2K2:ATM:MMS:X');
 
     //AT2K2: 4 Axes
-    //M17: DUT_MotionStage;
-    //M18: DUT_MotionStage;
-    //M19: DUT_MotionStage;
-    //M20: DUT_MotionStage;
+(*
 
+    AT2K2 Solid Attenuator notes (JJ-xray SN-11343)
+
+    JJ    Label   EPICS    Stage     NC   Location
+
+    1087      1   MMS:01   fbStage1  M17  Upstream-most
+    1088      2   MMS:02   fbStage2  M18
+    1086      3   MMS:03   fbStage3  M19
+    1089      4   MMS:04   fbStage4  M20  Downstream-most
+
+*)
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT2K2-EL7047-01]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT2K2-EL7047-01]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 1^Position;
+    '}
+    M17: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:01');
+
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT2K2-EL7047-02]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT2K2-EL7047-02]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 2^Position;
+    '}
+    M18: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:02');
+
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:03'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT2K2-EL7047-03]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT2K2-EL7047-03]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 1^Position;
+    '}
+    M19: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:03');
+
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:04'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT2K2-EL7047-04]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT2K2-EL7047-04]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 2^Position;
+    '}
+    M20: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
 
     //LI3K2: 1 Axis
     //M21: DUT_MotionStage;
