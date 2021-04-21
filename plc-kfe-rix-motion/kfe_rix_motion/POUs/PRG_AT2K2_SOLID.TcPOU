@@ -76,7 +76,7 @@ VAR CONSTANT
     DEFAULT_VELOCITY : LREAL := 10;
 END_VAR]]></Declaration>
     <Implementation>
-        <ST><![CDATA[
+      <ST><![CDATA[
 
 IF bDebug THEN
     // NEVER: checkouts with the TwinCAT NC GUI.
@@ -107,7 +107,7 @@ END_IF
 (* State setup - stage 1 *)
 (* Upstream-most MMS:01 - TRAVELER AXIS 1 *)
 fbStage1.stOut.sName         := 'Out';
-fbStage1.stOut.fPosition     := 20.0; (* TODO: need out positions from traveler *)
+fbStage1.stOut.fPosition     := 27.00; (* TODO: need out positions from traveler *)
 fbStage1.stOut.fDelta        := 0.2;
 fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage1.stOut.bValid        := TRUE;
@@ -175,7 +175,7 @@ fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 (* MMS:02 - 2nd upstream-most - TRAVELER AXIS 2 *)
 
 fbStage2.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
-fbStage2.stOut.fPosition     := 20.0;
+fbStage2.stOut.fPosition     := 27.72;
 fbStage2.stOut.fDelta        := 0.2;
 fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage2.stOut.bValid        := TRUE;
@@ -243,7 +243,7 @@ fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 (* MMS:03 - 2nd to downstream-most - TRAVELER AXIS 3 *)
 
 fbStage3.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
-fbStage3.stOut.fPosition     := 20.0;
+fbStage3.stOut.fPosition     := 27.00;
 fbStage3.stOut.fDelta        := 0.2;
 fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stOut.bValid        := TRUE;
@@ -311,7 +311,7 @@ fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 (* MMS:04 - downstream-most - TRAVELER AXIS 4 *)
 
 fbStage4.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
-fbStage4.stOut.fPosition     := 20.0;
+fbStage4.stOut.fPosition     := 28.03;
 fbStage4.stOut.fDelta        := 0.2;
 fbStage4.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage4.stOut.bValid        := TRUE;
