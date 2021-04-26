@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_LI3K2_K2B" Id="{2a0870d4-376e-46af-943a-d045301a70c9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_LI3K2_K2B
+VAR
+    {attribute 'pytmc' := '
+        pv: LI3K2:K2B
+        io: io
+    '}
+    fbLI3K2: FB_LIC;
+
+    stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+   Avoid damage peak between 3.2 keV and 1.6 keV
+   Boundaries are upper boundary of eV range
+   2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
+   1.15E3, 850,    540,    450,    400,    350,    270,    250
+   0       0       0       0      0       1       1       1
+   1       1       1       1      1       1       1       1
+*)
+stSiBP.neVRange := 2#0000_0111_1111_1111;
+// Drop transmission to 20%
+stSiBP.nTran := 20;
+
+// Drop transmission to 10%
+stFoilBP.nTran := 10;
+
+fbLI3K2.nTransitionAssertionID := 16#4320;
+fbLI3K2.nUnknownAssertionID := 16#4329;
+
+fbLI3K2.stOut.fPosition := 0.118;
+fbLI3K2.stOut.bUseRawCounts := FALSE;
+fbLI3K2.stOut.nRequestAssertionID := 16#4321;
+fbLI3K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
+fbLI3K2.stOut.bValid := TRUE;
+
+fbLI3K2.stMirror1.fPosition := -36.38;
+fbLI3K2.stMirror1.bUseRawCounts := FALSE;
+fbLI3K2.stMirror1.nRequestAssertionID := 16#4322;
+fbLI3K2.stMirror1.stBeamParams := stSiBP;
+fbLI3K2.stMirror1.bValid := TRUE;
+
+fbLI3K2.stMirror2.fPosition := -70.38;
+fbLI3K2.stMirror2.bUseRawCounts := FALSE;
+fbLI3K2.stMirror2.nRequestAssertionID := 16#4323;
+fbLI3K2.stMirror2.stBeamParams := stSiBP;
+fbLI3K2.stMirror2.bValid := TRUE;
+
+fbLI3K2.stTarget1.fPosition := -102.38;
+fbLI3K2.stTarget1.bUseRawCounts := FALSE;
+fbLI3K2.stTarget1.nRequestAssertionID := 16#4324;
+fbLI3K2.stTarget1.stBeamParams := stSiBP;
+fbLI3K2.stTarget1.bValid := TRUE;
+
+fbLI3K2(
+    fbArbiter := GVL.fbArbiter,
+    fbFFHWO := GVL.fbFastFaultOutput2,
+    stYStage := Main.M21);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1341,7 +1341,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="11" CreateSymbols="true" AxisType="1" AxisFolder="LI2K2-K2A_OUT" GroupId="12">
+	<Axis Id="24" CreateSymbols="true" AxisType="1" AxisFolder="IM6K2">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="200" Deceleration="200" Jerk="500" DelayTime="0.004"/>
@@ -1350,17 +1350,18 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="-214593" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Range="-107.43"/>
-				<SoftEndMaxControl Range="1.35"/>
+			<EncPara ScaleFactorNumerator="5e-05" Offset="-214686.941" MaxCount="#xffffffff" ReferenceSystem="1">
+				<SoftEndMinControl Range="-100"/>
+				<SoftEndMaxControl Range="-8.82"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
+				<ParameterChanged>21</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
 				<Var>
 					<Name>In</Name>
 					<Type GUID="{9ED17BA1-BC38-47CA-9DD2-F96861AB0266}" Namespace="MC">NCENCODERSTRUCT_IN3</Type>
-					<BitOffs>22848</BitOffs>
+					<BitOffs>46656</BitOffs>
 					<SubVar>
 						<Name>nState1</Name>
 						<Comment><![CDATA[Encoder State 1 (automatically linked):
@@ -1386,13 +1387,13 @@ External Setpoint Generation:
 				<Var>
 					<Name>Out</Name>
 					<Type GUID="{4AA66E19-7B91-4A09-817D-0357681B7869}" Namespace="MC">NCENCODERSTRUCT_OUT3</Type>
-					<BitOffs>35136</BitOffs>
+					<BitOffs>71232</BitOffs>
 				</Var>
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog VeloReferenz="100" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="100" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1400,7 +1401,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>In</Name>
 					<Type GUID="{F95C7C69-0C87-46C4-9559-1285CCA5B23A}" Namespace="MC">NCDRIVESTRUCT_IN2</Type>
-					<BitOffs>23488</BitOffs>
+					<BitOffs>47296</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataIn1</Name>
 					</SubVar>
@@ -1426,7 +1427,7 @@ External Setpoint Generation:
 				<Var>
 					<Name>Out</Name>
 					<Type GUID="{644DC4BD-3D15-4DCB-94C7-24F3A5D579AA}" Namespace="MC">NCDRIVESTRUCT_OUT2</Type>
-					<BitOffs>35776</BitOffs>
+					<BitOffs>71872</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataOut1</Name>
 					</SubVar>
@@ -1476,7 +1477,7 @@ External Setpoint Generation:
 			<Var>
 				<Name>FromPlc</Name>
 				<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				<BitOffs>21824</BitOffs>
+				<BitOffs>45632</BitOffs>
 			</Var>
 		</Vars>
 		<Vars VarGrpType="2" InsertType="1">
@@ -1484,42 +1485,8 @@ External Setpoint Generation:
 			<Var>
 				<Name>ToPlc</Name>
 				<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				<BitOffs>33088</BitOffs>
+				<BitOffs>69184</BitOffs>
 			</Var>
 		</Vars>
 	</Axis>
-	<Mappings>
-		<OwnerA>
-			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 131 (EK1122)^LI2K2-K2A_OUT  (EK1100)^LI2K2-EL5042-E3">
-				<Link VarA="Enc^Inputs^In^nComState" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nComState" VarB="WcState^WcState" Size="1"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="FB Inputs Channel 1^Position"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^Diag" Size="1" OffsA="12"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^Error" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^Input cycle counter" Size="2" OffsA="14"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^Ready" Size="1" OffsA="2"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^TxPDO State" Size="1" OffsA="13"/>
-				<Link VarA="Enc^Inputs^In^nState1" VarB="FB Inputs Channel 1^Status^Warning" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 131 (EK1122)^LI2K2-K2A_OUT  (EK1100)^LI2K2-EL7041-E1">
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready to enable" Size="1"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Torque reduced" Size="1" OffsA="6"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Warning" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 2" Size="1" OffsA="4"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Sync error" Size="1" OffsA="5"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState" Size="1"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Enable" Size="1"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reduce torque" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="STM Control^Control^Reset" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut2[0]" VarB="STM Velocity^Velocity"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>

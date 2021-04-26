@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.12" ClassName="CFlbTermDef" SubType="9099">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
@@ -37,6 +37,7 @@
 			<Fmmu>0000000000000000801100010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 			<BootStrapData>0010f400f410f400</BootStrapData>
+			<SuName>AT2K2</SuName>
 			<MBoxUserCmdData>0200030022000000000000000000000000000000000000000000000000000000300080011a000000240400000000010000000000000000000000ffff00000200000000</MBoxUserCmdData>
 			<MBoxUserCmdData>0200030022000000000000000000000000000000000000000000000000000000301080011a000000040400000000010000000000000000000000ffff00000200000000</MBoxUserCmdData>
 			<Pdo Name="RTD Inputs Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="3">
