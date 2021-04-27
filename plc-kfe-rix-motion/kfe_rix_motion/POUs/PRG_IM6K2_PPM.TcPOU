@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="PRG_IM6K2_PPM" Id="{b5662f22-bf30-4831-ae62-848249eb31cc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM6K2_PPM
 VAR
@@ -19,7 +19,6 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
     fbIM6K2: FB_PPM;
-    fbIM66K2: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -53,7 +52,7 @@ fbIM6K2.stYag2.bValid := TRUE;
 fbIM6K2(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    stYStage := Main.M25);]]></ST>
+    stYStage := Main.M24);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

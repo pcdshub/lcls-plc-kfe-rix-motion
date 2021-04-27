@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_PF2K2_WFS" Id="{e443567e-cf8b-49d1-bdca-a5884362d234}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF2K2_WFS
 VAR
@@ -74,8 +74,8 @@ fbPF2K2.stTarget5.bValid := TRUE;
 fbPF2K2(
     fbArbiter := GVL.fbArbiter,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    stYStage := Main.M23,
-    stZStage := Main.M24);
+    stYStage := Main.M22,
+    stZStage := Main.M23);
 ]]></ST>
     </Implementation>
   </POU>
