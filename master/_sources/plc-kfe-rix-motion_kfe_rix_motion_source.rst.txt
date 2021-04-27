@@ -205,19 +205,32 @@ Main
         '}
         M20: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
 
-        //LI3K2: 1 Axis
-        //M21: DUT_MotionStage;
-
-        //LI4K2_OUT: 1 Axis
-        //M22: DUT_MotionStage;
-
+        //LI3K2-K2B: 1 Axis
+    	{attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[LI3K2-EL2004-E3]^Channel 1^Output;
+                                  .nRawEncoderULINT     := TIIB[LI3K2-EL5042-E2]^FB Inputs Channel 1^Position'}
+        M21: DUT_MotionStage := (sName := 'LI3K2:K2B:MMS');
 
         //PF2K2: 2 Axes
-        //M23: DUT_MotionStage;
-        //M24: DUT_MotionStage;
+        {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Y'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PF2K2-EL7041-E1]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PF2K2-EL7041-E1]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[PF2K2-EL2004-E4]^Channel 1^Output;
+                                  .nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 2^Position'}
+        M22: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Y');
+        {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Z'}
+        {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
+        M23: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Z');
+    	
 
         //IM6K2: 1 Axis
-        //M25: DUT_MotionStage;
+        {attribute 'pytmc' := 'pv: IM6K2:PPM:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM6K2-EL7041-E1]^STM Status^Status^Digital input 1;
+                                 .bLimitBackwardEnable := TIIB[IM6K2-EL7041-E1]^STM Status^Status^Digital input 2;
+                                 .bBrakeRelease        := TIIB[IM6K2-EL2004-E3]^Channel 1^Output'}
+        M24: DUT_MotionStage := (sName := 'IM6K2:PPM:MMS');
 
         //ST3K2: 1 Axis
         //M26: DUT_MotionStage;
@@ -434,6 +447,9 @@ PRG_1_PlcTask
     PRG_IM5K2_PPM();
     PRG_TM2K2_ATM();
     PRG_AT2K2_SOLID();
+    PRG_LI3K2_K2B();
+    PRG_PF2K2_WFS();
+    PRG_IM6K2_PPM();
 
     PRG_3_PMPS_POST();
     PRG_4_LOG();
@@ -1347,7 +1363,6 @@ PRG_IM6K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM6K2: FB_PPM;
-        fbIM66K2: INT;
     END_VAR
     fbIM6K2.nTransitionAssertionID := 16#2620;
     fbIM6K2.nUnknownAssertionID := 16#2629;
@@ -1379,7 +1394,7 @@ PRG_IM6K2_PPM
     fbIM6K2(
         fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M25);
+        stYStage := Main.M24);
 
     END_PROGRAM
 
@@ -1446,6 +1461,72 @@ PRG_LI2K2_K2A
         fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M11);
+
+    END_PROGRAM
+
+
+PRG_LI3K2_K2B
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_LI3K2_K2B
+    VAR
+        {attribute 'pytmc' := '
+            pv: LI3K2:K2B
+            io: io
+        '}
+        fbLI3K2: FB_LIC;
+
+        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    END_VAR
+    (*
+       Avoid damage peak between 3.2 keV and 1.6 keV
+       Boundaries are upper boundary of eV range
+       2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
+       1.15E3, 850,    540,    450,    400,    350,    270,    250
+       0       0       0       0      0       1       1       1
+       1       1       1       1      1       1       1       1
+    *)
+    stSiBP.neVRange := 2#0000_0111_1111_1111;
+    // Drop transmission to 20%
+    stSiBP.nTran := 20;
+
+    // Drop transmission to 10%
+    stFoilBP.nTran := 10;
+
+    fbLI3K2.nTransitionAssertionID := 16#4320;
+    fbLI3K2.nUnknownAssertionID := 16#4329;
+
+    fbLI3K2.stOut.fPosition := 0.118;
+    fbLI3K2.stOut.bUseRawCounts := FALSE;
+    fbLI3K2.stOut.nRequestAssertionID := 16#4321;
+    fbLI3K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
+    fbLI3K2.stOut.bValid := TRUE;
+
+    fbLI3K2.stMirror1.fPosition := -36.38;
+    fbLI3K2.stMirror1.bUseRawCounts := FALSE;
+    fbLI3K2.stMirror1.nRequestAssertionID := 16#4322;
+    fbLI3K2.stMirror1.stBeamParams := stSiBP;
+    fbLI3K2.stMirror1.bValid := TRUE;
+
+    fbLI3K2.stMirror2.fPosition := -70.38;
+    fbLI3K2.stMirror2.bUseRawCounts := FALSE;
+    fbLI3K2.stMirror2.nRequestAssertionID := 16#4323;
+    fbLI3K2.stMirror2.stBeamParams := stSiBP;
+    fbLI3K2.stMirror2.bValid := TRUE;
+
+    fbLI3K2.stTarget1.fPosition := -102.38;
+    fbLI3K2.stTarget1.bUseRawCounts := FALSE;
+    fbLI3K2.stTarget1.nRequestAssertionID := 16#4324;
+    fbLI3K2.stTarget1.stBeamParams := stSiBP;
+    fbLI3K2.stTarget1.bValid := TRUE;
+
+    fbLI3K2(
+        fbArbiter := GVL.fbArbiter,
+        fbFFHWO := GVL.fbFastFaultOutput2,
+        stYStage := Main.M21);
 
     END_PROGRAM
 
@@ -1610,8 +1691,8 @@ PRG_PF2K2_WFS
     fbPF2K2(
         fbArbiter := GVL.fbArbiter,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M23,
-        stZStage := Main.M24);
+        stYStage := Main.M22,
+        stZStage := Main.M23);
 
     END_PROGRAM
 

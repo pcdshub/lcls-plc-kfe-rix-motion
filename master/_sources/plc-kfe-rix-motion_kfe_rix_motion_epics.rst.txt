@@ -13778,7 +13778,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-                                                           
+                                                                   
 lcls_twincat_motion.DUT_MotionStage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -55076,6 +55076,1643 @@ Database Records
       - | io: input
 
 
+    * - IM6K2:PPM:CAM:CIL:PCT
+      - ao
+      - PRG_IM6K2_PPM.fbIM6K2.fbGige.fIlluminatorPercent
+      - | EGU: %
+        | io: output
+
+
+    * - IM6K2:PPM:CAM:CIL:PCT_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbGige.fIlluminatorPercent
+      - | EGU: %
+        | io: output
+
+
+    * - IM6K2:PPM:CAM:PWR
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbGige.bGigePower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM6K2:PPM:CAM:PWR_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbGige.bGigePower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bHomed_RBV
+      - bi
+      - TRUE if the motor has been homed
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bMoveCmd
+      - bo
+      - Start a move
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bMoveCmd_RBV
+      - bi
+      - Start a move
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:07:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:08:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:09:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:BUSY_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bBusy
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:DONE_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bDone
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:ERR_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:ERRID_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.nErrorId
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.sErrorMessage
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:GET_RBV
+      - mbbi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.enumGet
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:PMPS:MAINT
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:RESET
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:RESET_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:SET
+      - mbbo
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.enumSet
+      - | io: output
+
+
+    * - IM6K2:PPM:MMS:STATE:SET_RBV
+      - mbbi
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.enumSet
+      - | io: output
+
+
+    * - IM6K2:PPM:SFM:FLOW_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbFlowMeter.fFlowRate
+      - | io: input
+
+
+    * - IM6K2:PPM:SFM:MA_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbFlowMeter.fRaw
+      - | io: input
+
+
+    * - IM6K2:PPM:SPM:CALIB:MJ_RATIO
+      - ao
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB:OFFSET
+      - ao
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB:OFFSET_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB:RATIO
+      - ao
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB:RATIO_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:CALIB_BUFFER_RBV
+      - waveform
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibBaseBuffer
+      - | io: input
+
+
+    * - IM6K2:PPM:SPM:CALIB_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibBase
+      - | io: input
+
+
+    * - IM6K2:PPM:SPM:MJ_BUFFER_RBV
+      - waveform
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJBuffer
+      - | field: EGU mJ
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:MJ_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJ
+      - | field: EGU mJ
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:STC:CONN_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:STC:ERR_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bError
+      - | io: input
+
+
+    * - IM6K2:PPM:SPM:STC:TEMP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.fTemp
+      - | io: input
+
+
+    * - IM6K2:PPM:SPM:VOLT_BUFFER_RBV
+      - waveform
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fVoltageBuffer
+      - | field: EGU mV
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:VOLT_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fVoltage
+      - | field: EGU mV
+        | io: input
+
+
+    * - IM6K2:PPM:YAG:STC:CONN_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - IM6K2:PPM:YAG:STC:ERR_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bError
+      - | io: input
+
+
+    * - IM6K2:PPM:YAG:STC:TEMP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.fTemp
+      - | io: input
+
+
     * - LI2K2:K2A:MMS:PLC:bAllBackwardEnable_RBV
       - bi
       - Summary of axis permission to move backward
@@ -56552,6 +58189,1485 @@ Database Records
     * - LI2K2:K2A:MMS:STATE:SET_RBV
       - mbbi
       - PRG_LI2K2_K2A.fbLI2K2.fbStates.enumSet
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bHomed_RBV
+      - bi
+      - TRUE if the motor has been homed
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bMoveCmd
+      - bo
+      - Start a move
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bMoveCmd_RBV
+      - bi
+      - Start a move
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:07:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:08:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:09:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:BUSY_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bBusy
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:DONE_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bDone
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:ERR_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:ERRID_RBV
+      - longin
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.nErrorId
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.sErrorMessage
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:GET_RBV
+      - mbbi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.enumGet
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:MAINT
+      - bo
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:RESET
+      - bo
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:RESET_RBV
+      - bi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:SET
+      - mbbo
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.enumSet
+      - | io: output
+
+
+    * - LI3K2:K2B:MMS:STATE:SET_RBV
+      - mbbi
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.enumSet
       - | io: output
 
 
@@ -58445,6 +61561,1901 @@ Database Records
     * - PF1K2:WFS:STC:02:TEMP_RBV
       - ai
       - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:07:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:08:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:09:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:BUSY_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bBusy
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:DONE_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bDone
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:ERR_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:ERRID_RBV
+      - longin
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.nErrorId
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.sErrorMessage
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:GET_RBV
+      - mbbi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.enumGet
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bArbiterEnabled
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:PMPS:MAINT
+      - bo
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:RESET
+      - bo
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:RESET_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:SET
+      - mbbo
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.enumSet
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:STATE:SET_RBV
+      - mbbi
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.enumSet
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bHomed_RBV
+      - bi
+      - TRUE if the motor has been homed
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bMoveCmd
+      - bo
+      - Start a move
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bMoveCmd_RBV
+      - bi
+      - Start a move
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bAllBackwardEnable_RBV
+      - bi
+      - Summary of axis permission to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bAllEnable_RBV
+      - bi
+      - Summary of axis permission to have power
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bAllForwardEnable_RBV
+      - bi
+      - Summary of axis permission to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bBrakeRelease_RBV
+      - bi
+      - TRUE if brake released
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bBusy_RBV
+      - bi
+      - TRUE if in the middle of a command
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bDone_RBV
+      - bi
+      - TRUE if command finished successfully
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bEnable
+      - bo
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bEnable_RBV
+      - bi
+      - Used internally to request enables
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bEnableDone_RBV
+      - bi
+      - TRUE if done enabling
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bError_RBV
+      - bi
+      - TRUE if we
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bExecute
+      - bo
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bExecute_RBV
+      - bi
+      - Used internally and by the IOC to start or stop
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bGantryAxis_RBV
+      - bi
+      - TRUE if gantry EPS active
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bGantryBackwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move backward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bGantryForwardEnable_RBV
+      - bi
+      - TRUE if gantry ok to move forward
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bHome_RBV
+      - bi
+      - TRUE if at homing switch
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bHomed_RBV
+      - bi
+      - TRUE if the motor has been homed
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bLimitBackwardEnable_RBV
+      - bi
+      - FALSE if reverse limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bLimitForwardEnable_RBV
+      - bi
+      - FALSE if forward limit hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bMoveCmd
+      - bo
+      - Start a move
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bMoveCmd_RBV
+      - bi
+      - Start a move
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bPowerSelf_RBV
+      - bi
+      - FALSE if axis is in PMPS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bSafetyReady_RBV
+      - bi
+      - TRUE if safe to start a move
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fAcceleration
+      - ao
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fAcceleration_RBV
+      - ai
+      - Used internally and by the IOC to set acceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fDeceleration
+      - ao
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fDeceleration_RBV
+      - ai
+      - Used internally and by the IOC to set deceleration
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fPosition
+      - ao
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fPosition_RBV
+      - ai
+      - Used internally and by the IOC as the set position
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fVelocity
+      - ao
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:fVelocity_RBV
+      - ai
+      - Used internally and by the IOC to set velocity
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nBrakeMode_RBV
+      - mbbi
+      - Describes when the brake will be released
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nCmdData
+      - longout
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nCmdData_RBV
+      - longin
+      - Used internally and by the IOC to pass extra args
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nCommand
+      - longout
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nCommand_RBV
+      - longin
+      - Used internally and by the IOC to pick move type
+      - | io: output
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nEnableMode_RBV
+      - mbbi
+      - Describes when the axis will automatically get power
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nHomingMode_RBV
+      - mbbi
+      - Describes our homing strategy
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:nMotionAxisID_RBV
+      - longin
+      - Unique ID assigned to each axis in the NC
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:sName_RBV
+      - waveform
+      - PLC program name
+      - | io: input
+
+
+    * - PF2K2:WFS:STC:01:CONN_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - PF2K2:WFS:STC:01:ERR_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:STC:01:TEMP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF2K2:WFS:STC:02:CONN_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - PF2K2:WFS:STC:02:ERR_RBV
+      - bi
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:STC:02:TEMP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.fTemp
       - | field: EGU C
         | field: PREC 2
         | io: input

@@ -26,6 +26,10 @@ NC Settings
         18, Axis 18 AT2K2-SOLID-MMS-02
         19, Axis 19 AT2K2-SOLID-MMS-03
         20, Axis 20 AT2K2-SOLID-MMS-04
+        21, Axis 21 LI3K2-K2B-MMS
+        22, Axis 22 PF2K2-WFS-MMS-Y
+        23, Axis 23 PF2K2-WFS-MMS-Z
+        24, Axis 24 IM6K2-PPM-MMS
 
 
 
@@ -396,6 +400,7 @@ Axis 11: Axis 11 LI2K2-K2A_OUT-MMS
     Enc:ScaleFactorNumerator, 5e-05
     Enc:SoftEndMaxControl:Range, 1.35
     Enc:SoftEndMinControl:Range, -107.43
+    GroupId, 12
     Id, 11
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
@@ -430,6 +435,7 @@ Axis 12: Axis 12 PF1K2-WFS-MMS-Y
     Enc:ScaleFactorNumerator, 5e-05
     Enc:SoftEndMaxControl:Range, -9.71
     Enc:SoftEndMinControl:Range, -99.33
+    GroupId, 13
     Id, 12
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
@@ -699,5 +705,133 @@ Axis 20: Axis 20 AT2K2-SOLID-MMS-04
     Velo:FastManual, 10
     Velo:Maximum, 80
     Velo:SlowManual, 1
+
+
+
+Axis 21: Axis 21 LI3K2-K2B-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 21
+    Name, Axis 21 LI3K2-K2B-MMS
+    AxisFolder, LI3K2-K2B
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214593
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 1.35
+    Enc:SoftEndMinControl:Range, -107.43
+    Id, 21
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
+
+
+
+Axis 22: Axis 22 PF2K2-WFS-MMS-Y
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 22
+    Name, Axis 22 PF2K2-WFS-MMS-Y
+    AxisFolder, PF2K2-WFS
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214556
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -9.71
+    Enc:SoftEndMinControl:Range, -99.33
+    Id, 22
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 20
+
+
+
+Axis 23: Axis 23 PF2K2-WFS-MMS-Z
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 23
+    Name, Axis 23 PF2K2-WFS-MMS-Z
+    AxisFolder, PF2K2-WFS
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 50
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, 56
+    Enc:SoftEndMinControl:Range, 6.5
+    Id, 23
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 5
+
+
+
+Axis 24: Axis 24 IM6K2-PPM-MMS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 24
+    Name, Axis 24 IM6K2-PPM-MMS
+    AxisFolder, IM6K2-PPM
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:AccelerationMaximum, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DecelerationMaximum, 200
+    Dynamic:DelayTime, 0.004
+    Dynamic:Jerk, 500
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -214686.941
+    Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Range, -8.82
+    Enc:SoftEndMinControl:Range, -100
+    Id, 24
+    OtherSettings:AllowMotionCmdToSlave, true
+    TargetPosControl:Range, 0.002
+    TargetPosControl:Time, 2
+    Velo:Maximum, 65
 
 
