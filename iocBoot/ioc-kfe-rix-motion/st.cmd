@@ -5,7 +5,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "klauer" )
+epicsEnvSet("ENGINEER", "sfsyunus" )
 epicsEnvSet("LOCATION", "PLC:RIX:MOTION" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -18,8 +18,8 @@ dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
-epicsEnvSet("IPADDR",           "172.21.92.65")
-epicsEnvSet("AMSID",            "172.21.92.65.1.1")
+epicsEnvSet("IPADDR",           "172.21.140.70")
+epicsEnvSet("AMSID",            "172.21.140.70.1.1")
 epicsEnvSet("AMS_PORT",         "851")
 epicsEnvSet("ADS_MAX_PARAMS",   "10000")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
