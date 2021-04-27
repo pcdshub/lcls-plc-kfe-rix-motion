@@ -10,5 +10,8 @@
 		<Box File="AT2K2-SOLID (EK1100).xti" Id="120">
 			<EtherCAT PortABoxInfo="#x0300009b"/>
 		</Box>
+		<Box File="LI3K2-K2B (EK1100).xti" Id="230">
+			<EtherCAT PortABoxInfo="#x0100009b"/>
+		</Box>
 	</Box>
 </TcSmItem>

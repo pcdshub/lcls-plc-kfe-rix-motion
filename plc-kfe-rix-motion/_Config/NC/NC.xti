@@ -30,6 +30,9 @@
 		<AxisFolder Name="PF1K2-WFS"/>
 		<AxisFolder Name="TM2K2-K2B"/>
 		<AxisFolder Name="AT2K2-SOLID"/>
+		<AxisFolder Name="LI3K2-K2B"/>
+		<AxisFolder Name="PF2K2-WFS"/>
+		<AxisFolder Name="IM6K2-PPM"/>
 		<Axis File="Axis 1 IM1K1-PPM-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM2K1-PPM-MMS.xti" Id="2"/>
 		<Axis File="Axis 3 SPARE.xti" Id="3"/>
@@ -50,5 +53,9 @@
 		<Axis File="Axis 18 AT2K2-SOLID-MMS-02.xti" Id="18"/>
 		<Axis File="Axis 19 AT2K2-SOLID-MMS-03.xti" Id="19"/>
 		<Axis File="Axis 20 AT2K2-SOLID-MMS-04.xti" Id="20"/>
+		<Axis File="Axis 21 LI3K2-K2B-MMS.xti" Id="21"/>
+		<Axis File="Axis 22 PF2K2-WFS-MMS-Y.xti" Id="22"/>
+		<Axis File="Axis 23 PF2K2-WFS-MMS-Z.xti" Id="23"/>
+		<Axis File="Axis 24 IM6K2-PPM-MMS.xti" Id="24"/>
 	</NC>
 </TcSmItem>
