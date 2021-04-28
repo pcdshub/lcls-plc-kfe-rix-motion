@@ -25,25 +25,25 @@ END_VAR
       <ST><![CDATA[fbIM3K2.nTransitionAssertionID := 16#2320;
 fbIM3K2.nUnknownAssertionID := 16#2329;
 
-fbIM3K2.stOut.fPosition := -9.82;
+fbIM3K2.stOut.fPosition := -9.61;
 fbIM3K2.stOut.bUseRawCounts := FALSE;
 fbIM3K2.stOut.nRequestAssertionID := 16#2321;
 fbIM3K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM3K2.stOut.bValid := TRUE;
 
-fbIM3K2.stPower.fPosition := -48.92;
+fbIM3K2.stPower.fPosition := -48.71;
 fbIM3K2.stPower.bUseRawCounts := FALSE;
 fbIM3K2.stPower.nRequestAssertionID := 16#2322;
 fbIM3K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM3K2.stPower.bValid := TRUE;
 
-fbIM3K2.stYag1.fPosition := -72.92;
+fbIM3K2.stYag1.fPosition := -72.71;
 fbIM3K2.stYag1.bUseRawCounts := FALSE;
 fbIM3K2.stYag1.nRequestAssertionID := 16#2323;
 fbIM3K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM3K2.stYag1.bValid := TRUE;
 
-fbIM3K2.stYag2.fPosition := -98.93;
+fbIM3K2.stYag2.fPosition := -98.72;
 fbIM3K2.stYag2.bUseRawCounts := FALSE;
 fbIM3K2.stYag2.nRequestAssertionID := 16#2324;
 fbIM3K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
