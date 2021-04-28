@@ -10,10 +10,10 @@ Settings
       - Value
       - Description
     * - AMS Net ID
-      - 172.21.92.65.1.1
+      - 172.21.140.70.1.1
       -
     * - Target IP address
-      - 172.21.92.65
+      - 172.21.140.70
       - Based on AMS Net ID by convention
     * - AMS Port
       - 851
@@ -40,9 +40,9 @@ Libraries
         lcls-twincat-motion, SLAC, Unset, 1.5.0
         lcls2-cc-lib, SLAC, Unset, 1.1.2
         PMPS, SLAC - LCLS, Unset, 0.17.0
-        Tc2_Standard, Beckhoff Automation GmbH, Unset, 
-        Tc2_System, Beckhoff Automation GmbH, Unset, 
-        Tc3_Module, Beckhoff Automation GmbH, Unset, 
+        Tc2_Standard, Beckhoff Automation GmbH, Unset, Unset
+        Tc2_System, Beckhoff Automation GmbH, Unset, Unset
+        Tc3_Module, Beckhoff Automation GmbH, Unset, Unset
 
 Symbols
 -------
