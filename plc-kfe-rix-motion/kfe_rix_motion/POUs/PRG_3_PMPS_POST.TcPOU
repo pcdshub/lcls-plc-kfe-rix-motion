@@ -11,8 +11,8 @@ END_VAR
 
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
-bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST1K2];
+      <ST><![CDATA[bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
+bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2];
 
 fbArbiterIO(
     i_bVeto:=bMR1K1_Veto,
