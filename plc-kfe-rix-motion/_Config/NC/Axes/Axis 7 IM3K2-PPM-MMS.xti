@@ -1348,7 +1348,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="7" CreateSymbols="true" AxisType="1" AxisFolder="IM3K2-PPM">
-		<Name>__FILENAME__</Name>
+		<Name>Axis 7 IM3K2-PPM-MMS</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="200" Deceleration="200" Jerk="500" DelayTime="0.004"/>
 			<Velo Maximum="65"/>
@@ -1357,7 +1357,7 @@ External Setpoint Generation:
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="5e-05" Offset="-214686.941" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Enable="true" Range="-109"/>
+				<SoftEndMinControl Enable="true" Range="-108"/>
 				<SoftEndMaxControl Enable="true" Range="-8"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>

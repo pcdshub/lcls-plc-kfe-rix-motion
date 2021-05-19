@@ -2958,6 +2958,17 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>PRG_ST3K2_TERM.ST3K2.i_xInsertedLS</Name>
+					<Comment>
+						<![CDATA[IO]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_ST3K2_TERM.ST3K2.i_xRetractedLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
 					<SubVar>
@@ -5672,6 +5683,14 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>PRG_ST3K2_TERM.ST3K2.q_xInsert_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_ST3K2_TERM.ST3K2.q_xRetract_DO</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP</Name>
 					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
 					<SubVar>
@@ -6348,6 +6367,11 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL7041-E1">
 				<Link VarA="PlcTask Inputs^Main.M22.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M22.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^ST3K2-TERM (EP2338-0002)">
+				<Link VarA="PlcTask Inputs^PRG_ST3K2_TERM.ST3K2.i_xInsertedLS" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^PRG_ST3K2_TERM.ST3K2.i_xRetractedLS" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Outputs^PRG_ST3K2_TERM.ST3K2.q_xRetract_DO" VarB="Channel 9^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^AL1K2-L2SI (EK1100)^AL1K2-EL2004-E3">
 				<Link VarA="PlcTask Outputs^Main.M5.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
