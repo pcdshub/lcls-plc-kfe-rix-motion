@@ -1,0 +1,29 @@
+lcls-plc-kfe-rix-motion
+-----------------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: plc-kfe-rix-motion
+
+    plc-kfe-rix-motion_pragmas
+    plc-kfe-rix-motion_nc
+    plc-kfe-rix-motion_boxes
+    plc-kfe-rix-motion_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: kfe_rix_motion
+
+    plc-kfe-rix-motion_kfe_rix_motion_summary
+    plc-kfe-rix-motion_kfe_rix_motion_epics
+    plc-kfe-rix-motion_kfe_rix_motion_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
