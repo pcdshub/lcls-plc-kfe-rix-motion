@@ -43,12 +43,12 @@ GVL
         // For devices between the mirror and the stopper
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE);
+        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
 
         // For devices after the stopper
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE);
+        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
     END_VAR
 
 
@@ -450,6 +450,7 @@ PRG_1_PlcTask
     PRG_LI3K2_K2B();
     PRG_PF2K2_WFS();
     PRG_IM6K2_PPM();
+    PRG_ST3K2_TERM();
 
     PRG_3_PMPS_POST();
     PRG_4_LOG();
@@ -482,8 +483,8 @@ PRG_3_PMPS_POST
         bST1K2_Veto: BOOL;
         bST1K2_Veto_Override: BOOL := FALSE;
     END_VAR
-    bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_IN];
-    bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.ST1K2];
+    bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
+    bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2];
 
     fbArbiterIO(
         i_bVeto:=bMR1K1_Veto,
@@ -1417,18 +1418,13 @@ PRG_LI2K2_K2A
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
-       Boundaries are upper boundary of eV range
-       2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
-       1.15E3, 850,    540,    450,    400,    350,    270,    250
-       0       0       0       0      0       1       1       1
-       1       1       1       1      1       1       1       1
     *)
-    stSiBP.neVRange := 2#0000_0111_1111_1111;
+    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 20;
+    stSiBP.nTran := 0.2;
 
     // Drop transmission to 10%
-    stFoilBP.nTran := 10;
+    stFoilBP.nTran := 0.1;
 
     fbLI2K2.nTransitionAssertionID := 16#4220;
     fbLI2K2.nUnknownAssertionID := 16#4229;
@@ -1483,18 +1479,13 @@ PRG_LI3K2_K2B
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
-       Boundaries are upper boundary of eV range
-       2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
-       1.15E3, 850,    540,    450,    400,    350,    270,    250
-       0       0       0       0      0       1       1       1
-       1       1       1       1      1       1       1       1
     *)
-    stSiBP.neVRange := 2#0000_0111_1111_1111;
+    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 20;
+    stSiBP.nTran := 0.2;
 
     // Drop transmission to 10%
-    stFoilBP.nTran := 10;
+    stFoilBP.nTran := 0.1;
 
     fbLI3K2.nTransitionAssertionID := 16#4320;
     fbLI3K2.nUnknownAssertionID := 16#4329;
@@ -1556,15 +1547,10 @@ PRG_PF1K2_WFS
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
-       Boundaries are upper boundary of eV range
-       2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
-       1.15E3, 850,    540,    450,    400,    350,    270,    250
-       0       0       0       0      0       1       1       1
-       1       1       1       1      1       1       1       1
     *)
-    stSiBP.neVRange := 2#0000_0111_1111_1111;
+    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 20;
+    stSiBP.nTran := 0.2;
 
     fbPF1K2.nTransitionAssertionID := 16#3120;
     fbPF1K2.nUnknownAssertionID := 16#3129;
@@ -1639,15 +1625,10 @@ PRG_PF2K2_WFS
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
-       Boundaries are upper boundary of eV range
-       2.3E3,  2.0E3,  1.82E3, 1.75E3, 1.65E3, 1.55E3, 1.45E3, 1.25E3,
-       1.15E3, 850,    540,    450,    400,    350,    270,    250
-       0       0       0       0      0       1       1       1
-       1       1       1       1      1       1       1       1
     *)
-    stSiBP.neVRange := 2#0000_0111_1111_1111;
+    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 20;
+    stSiBP.nTran := 0.2;
 
     fbPF2K2.nTransitionAssertionID := 16#3220;
     fbPF2K2.nUnknownAssertionID := 16#3229;
@@ -1693,6 +1674,36 @@ PRG_PF2K2_WFS
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M22,
         stZStage := Main.M23);
+
+    END_PROGRAM
+
+
+PRG_ST3K2_TERM
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_ST3K2_TERM
+    VAR
+        {attribute 'pytmc' := 'pv: ST3K2:TERM'}
+        {attribute 'TcLinkTo' := 	'.i_xInsertedLS	:=	TIIB[ST3K2-TERM (EP2338-0001)]^Channel 4^Input;
+                                     .i_xRetractedLS:=	TIIB[ST3K2-TERM (EP2338-0001)]^Channel 3^Input;
+                                     .q_xRetract_DO	:=	TIIB[ST3K2-TERM (EP2338-0001)]^Channel 9^Output
+        '}
+        ST3K2: FB_MotionPneumaticActuator;
+        ibPMPS_OK : BOOL;	
+    END_VAR
+    ST3K2(
+        ibInsertOK:= TRUE,
+        ibRetractOK:= TRUE,
+        ibPMPS_OK:= ibPMPS_OK,
+        ibSingleCntrl:= TRUE ,
+        ibCntrlHold:= TRUE,
+        ibOverrideInterlock:= ,
+        i_xReset:= ,
+        stPneumaticActuator=> ,
+        xMPS_OK=>  ,
+        io_fbFFHWO:= GVL.fbFastFaultOutput2  );
 
     END_PROGRAM
 
