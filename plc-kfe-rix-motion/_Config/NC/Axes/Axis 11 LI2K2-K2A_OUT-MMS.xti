@@ -1348,7 +1348,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="11" CreateSymbols="true" AxisType="1" AxisFolder="LI2K2-K2A_OUT">
-		<Name>Axis 11 LI2K2-K2A_OUT-MMS</Name>
+		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="200" Deceleration="200" Jerk="500" DelayTime="0.004"/>
 			<Velo Maximum="65"/>
@@ -1356,7 +1356,7 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="-214680" MaxCount="#xffffffff" ReferenceSystem="1">
+			<EncPara ScaleFactorNumerator="5e-05" Offset="-214593" MaxCount="#xffffffff" ReferenceSystem="1">
 				<SoftEndMinControl Range="-107.43"/>
 				<SoftEndMaxControl Range="1.35"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
