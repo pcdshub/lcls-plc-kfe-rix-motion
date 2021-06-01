@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="PRG_3_PMPS_POST" Id="{6348b781-a8fd-4677-a2ee-052bc68113cf}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_3_PMPS_POST
 VAR
@@ -7,6 +7,7 @@ VAR
     bMR1K1_Veto: BOOL;
     bST1K2_Veto: BOOL;
     bST1K2_Veto_Override: BOOL := FALSE;
+	ff2_ff1_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF2 to FF1 Link', i_Desc := 'This is virtual FF2 fault', i_TypeCode := 16#FFFF);
 END_VAR
 
 ]]></Declaration>
@@ -20,7 +21,11 @@ fbArbiterIO(
     fbFFHWO:=GVL.fbFastFaultOutput1);
 
 GVL.fbFastFaultOutput1.Execute(i_xVeto:=bMR1K1_Veto);
-GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);]]></ST>
+GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);
+ff2_ff1_link(
+	io_fbFFHWO := GVL.fbFastFaultOutput1,
+    i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
