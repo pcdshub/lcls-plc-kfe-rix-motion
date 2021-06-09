@@ -67,7 +67,7 @@ fbPF1K2.stTarget5.stBeamParams := stSiBP;
 fbPF1K2.stTarget5.bValid := TRUE;
 
 fbPF1K2(
-    fbArbiter := GVL.fbArbiter,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M12,
     stZStage := Main.M13);

@@ -3,8 +3,10 @@
   <GVL Name="GVL" Id="{4e3a33fd-2c1d-4689-9132-04dc3cd973dd}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-    {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB'}
-    fbArbiter: FB_Arbiter(1);
+    {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:01'}
+    fbArbiter1: FB_Arbiter(1);
+	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
+    fbArbiter2: FB_Arbiter(2);
 
     // For devices between the mirror and the stopper
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
@@ -15,6 +17,8 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+	
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

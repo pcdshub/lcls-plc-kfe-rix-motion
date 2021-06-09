@@ -1348,7 +1348,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="12" CreateSymbols="true" AxisType="1" AxisFolder="PF1K2-WFS">
-		<Name>__FILENAME__</Name>
+		<Name>Axis 12 PF1K2-WFS-MMS-Y</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="10" Deceleration="10" Jerk="500" DelayTime="0.004"/>
 			<Velo Maximum="20"/>
@@ -1356,9 +1356,9 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="5e-05" Offset="-6871827" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Range="-99.33"/>
-				<SoftEndMaxControl Range="-9.71"/>
+			<EncPara ScaleFactorNumerator="5e-05" Offset="-214679" MaxCount="#xffffffff" ReferenceSystem="1">
+				<SoftEndMinControl Enable="true" Range="-99.33"/>
+				<SoftEndMaxControl Enable="true" Range="-9.71"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
