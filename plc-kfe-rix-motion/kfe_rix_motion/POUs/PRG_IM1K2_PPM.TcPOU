@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_IM1K2_PPM" Id="{635ae739-7fa6-4647-8f31-b68b17e0ed28}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM1K2_PPM
 VAR
@@ -50,7 +50,7 @@ fbIM1K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM1K2.stYag2.bValid := TRUE;
 
 fbIM1K2(
-    fbArbiter := GVL.fbArbiter,
+    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M4);]]></ST>
     </Implementation>

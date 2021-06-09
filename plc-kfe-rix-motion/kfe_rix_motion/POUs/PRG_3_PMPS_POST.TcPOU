@@ -7,6 +7,8 @@ VAR
     bMR1K1_Veto: BOOL;
     bST1K2_Veto: BOOL;
     bST1K2_Veto_Override: BOOL := FALSE;
+	fb_vetoArbiter: FB_VetoArbiter; 
+	ff2_ff1_link_motion: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF2 to FF1 Link Motion', i_Desc := 'This is virtual FF2 fault, Please check faulting motion devices', i_TypeCode := 16#FFFF);
 END_VAR
 
 ]]></Declaration>
@@ -16,11 +18,21 @@ bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aVetoDev
 
 fbArbiterIO(
     i_bVeto:=bMR1K1_Veto,
-    Arbiter:=GVL.fbArbiter,
+    Arbiter:=GVL.fbArbiter1,
     fbFFHWO:=GVL.fbFastFaultOutput1);
 
 GVL.fbFastFaultOutput1.Execute(i_xVeto:=bMR1K1_Veto);
-GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);]]></ST>
+GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);
+
+fb_vetoArbiter(bVeto:= bST1K2_Veto, 
+                HigherAuthority := GVL.fbArbiter1,
+				LowerAuthority := GVL.fbArbiter2,
+                FFO := GVL.fbFastFaultOutput2);
+
+ff2_ff1_link_motion(
+	io_fbFFHWO := GVL.fbFastFaultOutput1,
+    i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

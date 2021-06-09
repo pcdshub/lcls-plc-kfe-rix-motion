@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="PRG_AT2K2_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259999}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AT2K2_SOLID
 VAR
@@ -373,7 +373,7 @@ fbStage4.stFilter8.fVelocity := DEFAULT_VELOCITY;
 fbStage4.stFilter8.bValid    := FALSE;
 fbStage4.stFilter8.bMoveOk   := FALSE;
 
-fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);]]></ST>
+fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

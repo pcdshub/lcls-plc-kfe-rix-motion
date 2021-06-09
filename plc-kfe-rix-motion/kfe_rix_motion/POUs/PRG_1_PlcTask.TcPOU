@@ -10,18 +10,18 @@ END_VAR
       <ST><![CDATA[PRG_2_PMPS_PRE();
 
 // Temporarily disable motors by setting bHardwareEnable to FALSE prior to running motion FB
-Main.M5.bHardwareEnable := bDebug;
-Main.M6.bHardwareEnable := bDebug;
-Main.M7.bHardwareEnable := bDebug;
-Main.M8.bHardwareEnable := bDebug;
-Main.M9.bHardwareEnable := bDebug;
-Main.M10.bHardwareEnable := bDebug;
-Main.M11.bHardwareEnable := bDebug;
-Main.M12.bHardwareEnable := bDebug;
-Main.M13.bHardwareEnable := bDebug;
-Main.M14.bHardwareEnable := bDebug;
-Main.M15.bHardwareEnable := bDebug;
-Main.M16.bHardwareEnable := bDebug;
+//Main.M5.bHardwareEnable := bDebug;
+//Main.M6.bHardwareEnable := bDebug;
+//Main.M7.bHardwareEnable := bDebug;
+//Main.M8.bHardwareEnable := bDebug;
+//Main.M9.bHardwareEnable := bDebug;
+//Main.M10.bHardwareEnable := bDebug;
+//Main.M11.bHardwareEnable := bDebug;
+//Main.M12.bHardwareEnable := bDebug;
+//Main.M13.bHardwareEnable := bDebug;
+//Main.M14.bHardwareEnable := bDebug;
+//Main.M15.bHardwareEnable := bDebug;
+//Main.M16.bHardwareEnable := bDebug;
 // Note: AT2K2 has its own built-in debugging interface; see PRG_AT2K2_SOLID
 // and its ``bDebug`` variable.
 
