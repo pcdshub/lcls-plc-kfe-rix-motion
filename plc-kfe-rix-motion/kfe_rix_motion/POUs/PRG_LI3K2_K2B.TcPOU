@@ -51,7 +51,7 @@ fbLI3K2.stTarget1.stBeamParams := stSiBP;
 fbLI3K2.stTarget1.bValid := TRUE;
 
 fbLI3K2(
-    fbArbiter := GVL.fbArbiter2,
+    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M21);]]></ST>
     </Implementation>

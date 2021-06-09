@@ -29,7 +29,7 @@ fbAL1K2.stIn.bValid := TRUE;
 
 fbAL1K2(
     stYStage := Main.M5,
-    fbArbiter := GVL.fbArbiter2,
+    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2);]]></ST>
     </Implementation>
   </POU>
