@@ -669,8 +669,8 @@ END_PROGRAM
     <span class="n">bMR1K1_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
     <span class="n">bST1K2_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
     <span class="n">bST1K2_Veto_Override</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="n">fb_vetoArbiter</span><span class="p">:</span> <span class="n">FB_VetoArbiter</span><span class="p">;</span>
-    <span class="n">ff2_ff1_link_motion</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;FF2 to FF1 Link Motion&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;This is virtual FF2 fault, Please check faulting motion devices&#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FFFF);</span>
+    <span class="o">//</span><span class="n">fb_vetoArbiter</span><span class="p">:</span> <span class="n">FB_VetoArbiter</span><span class="p">;</span>
+    <span class="n">ff2_ff1_link_motion</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;FF2 to FF1 Link Motion&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Please DONT BYPASS ME!! This is virtual FF2 fault, Please check faulting motion devices&#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FFFF);</span>
 <span class="n">END_VAR</span>
 <span class="n">bMR1K1_Veto</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">];</span>
 <span class="n">bST1K2_Veto</span> <span class="o">:=</span> <span class="n">bST1K2_Veto_Override</span> <span class="n">OR</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST1K2</span><span class="p">];</span>
@@ -683,10 +683,10 @@ END_PROGRAM
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">);</span>
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span> <span class="n">OR</span> <span class="n">bST1K2_Veto</span><span class="p">);</span>
 
-<span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span> <span class="n">bST1K2_Veto</span><span class="p">,</span>
-                <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
-                            <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
-                <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
+<span class="o">//</span><span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span> <span class="n">bST1K2_Veto</span><span class="p">,</span>
+<span class="o">//</span>                <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+<span class="o">//</span>                          <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+<span class="o">//</span>                <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 <span class="n">ff2_ff1_link_motion</span><span class="p">(</span>
     <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
@@ -737,7 +737,7 @@ END_PROGRAM
 
 <span class="n">fbAL1K2</span><span class="p">(</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M5</span><span class="p">,</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -1341,7 +1341,7 @@ END_PROGRAM
 <span class="n">fbIM2K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbIM2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="p">);</span>
 
@@ -1398,7 +1398,7 @@ END_PROGRAM
 <span class="n">fbIM3K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbIM3K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="p">);</span>
 
@@ -1455,7 +1455,7 @@ END_PROGRAM
 <span class="n">fbIM4K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbIM4K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="p">);</span>
 
@@ -1512,7 +1512,7 @@ END_PROGRAM
 <span class="n">fbIM5K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbIM5K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M14</span><span class="p">);</span>
 
@@ -1569,7 +1569,7 @@ END_PROGRAM
 <span class="n">fbIM6K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbIM6K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M24</span><span class="p">);</span>
 
@@ -1628,7 +1628,7 @@ END_PROGRAM
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M11</span><span class="p">);</span>
 
@@ -1687,7 +1687,7 @@ END_PROGRAM
 <span class="n">fbLI3K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbLI3K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M21</span><span class="p">);</span>
 
@@ -1762,7 +1762,7 @@ END_PROGRAM
 <span class="n">fbPF1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbPF1K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M12</span><span class="p">,</span>
     <span class="n">stZStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M13</span><span class="p">);</span>
@@ -1838,7 +1838,7 @@ END_PROGRAM
 <span class="n">fbPF2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbPF2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M22</span><span class="p">,</span>
     <span class="n">stZStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M23</span><span class="p">);</span>
@@ -1929,7 +1929,7 @@ END_PROGRAM
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M10</span><span class="p">);</span>
@@ -1992,7 +1992,7 @@ END_PROGRAM
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M15</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M16</span><span class="p">);</span>
