@@ -308,6 +308,7 @@ Axis 8: Axis 8 IM4K2-PPM-MMS
     Enc:SoftEndMaxControl:Range, -10
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
+    GroupId, 9
     Id, 8
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
@@ -337,11 +338,13 @@ Axis 9: Axis 9 TM1K2-MMS-Y
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -214601
+    Enc:Offset, -214702
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
-    Enc:SoftEndMaxControl:Range, 1.41
-    Enc:SoftEndMinControl:Range, -102.55
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, -16
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -100
     Id, 9
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
@@ -401,7 +404,7 @@ Axis 11: Axis 11 LI2K2-K2A_OUT-MMS
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -214593
+    Enc:Offset, -214680
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
     Enc:SoftEndMaxControl:Range, 1.35
@@ -435,10 +438,12 @@ Axis 12: Axis 12 PF1K2-WFS-MMS-Y
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -6871827
+    Enc:Offset, -214679
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, -9.71
+    Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -99.33
     Id, 12
     OtherSettings:AllowMotionCmdToSlave, true
@@ -535,11 +540,13 @@ Axis 15: Axis 15 TM2K2-MMS-Y
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -214570.0066
+    Enc:Offset, -214682
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
-    Enc:SoftEndMaxControl:Range, 1.41
-    Enc:SoftEndMinControl:Range, -102.55
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, -16
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -100
     Id, 15
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
@@ -735,10 +742,12 @@ Axis 21: Axis 21 LI3K2-K2B-MMS
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -214593
+    Enc:Offset, -214687
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 1.35
+    Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -107.43
     Id, 21
     OtherSettings:AllowMotionCmdToSlave, true
@@ -769,10 +778,12 @@ Axis 22: Axis 22 PF2K2-WFS-MMS-Y
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -214556
+    Enc:Offset, -214687
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
+    Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, -9.71
+    Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -99.33
     Id, 22
     OtherSettings:AllowMotionCmdToSlave, true

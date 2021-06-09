@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`kfe_rix_motion <kfe_rix_motion_overview_pragmas>`, 97, 0
+    :ref:`kfe_rix_motion <kfe_rix_motion_overview_pragmas>`, 98, 0
 
 
 .. _kfe_rix_motion_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 kfe_rix_motion
 ^^^^^^^^^^^^^^
 
-Total pragmas found: 97
+Total pragmas found: 98
 Total linter errors: 0
 
 

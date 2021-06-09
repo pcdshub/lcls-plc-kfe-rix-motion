@@ -37,8 +37,10 @@ GVL
 
     {attribute 'qualified_only'}
     VAR_GLOBAL
-        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB'}
-        fbArbiter: FB_Arbiter(1);
+        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:01'}
+        fbArbiter1: FB_Arbiter(1);
+    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
+        fbArbiter2: FB_Arbiter(2);
 
         // For devices between the mirror and the stopper
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
@@ -49,6 +51,8 @@ GVL
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
         fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+    	
+    	
     END_VAR
 
 
@@ -419,18 +423,18 @@ PRG_1_PlcTask
     PRG_2_PMPS_PRE();
 
     // Temporarily disable motors by setting bHardwareEnable to FALSE prior to running motion FB
-    Main.M5.bHardwareEnable := bDebug;
-    Main.M6.bHardwareEnable := bDebug;
-    Main.M7.bHardwareEnable := bDebug;
-    Main.M8.bHardwareEnable := bDebug;
-    Main.M9.bHardwareEnable := bDebug;
-    Main.M10.bHardwareEnable := bDebug;
-    Main.M11.bHardwareEnable := bDebug;
-    Main.M12.bHardwareEnable := bDebug;
-    Main.M13.bHardwareEnable := bDebug;
-    Main.M14.bHardwareEnable := bDebug;
-    Main.M15.bHardwareEnable := bDebug;
-    Main.M16.bHardwareEnable := bDebug;
+    //Main.M5.bHardwareEnable := bDebug;
+    //Main.M6.bHardwareEnable := bDebug;
+    //Main.M7.bHardwareEnable := bDebug;
+    //Main.M8.bHardwareEnable := bDebug;
+    //Main.M9.bHardwareEnable := bDebug;
+    //Main.M10.bHardwareEnable := bDebug;
+    //Main.M11.bHardwareEnable := bDebug;
+    //Main.M12.bHardwareEnable := bDebug;
+    //Main.M13.bHardwareEnable := bDebug;
+    //Main.M14.bHardwareEnable := bDebug;
+    //Main.M15.bHardwareEnable := bDebug;
+    //Main.M16.bHardwareEnable := bDebug;
     // Note: AT2K2 has its own built-in debugging interface; see PRG_AT2K2_SOLID
     // and its ``bDebug`` variable.
 
@@ -482,17 +486,28 @@ PRG_3_PMPS_POST
         bMR1K1_Veto: BOOL;
         bST1K2_Veto: BOOL;
         bST1K2_Veto_Override: BOOL := FALSE;
+    	fb_vetoArbiter: FB_VetoArbiter; 
+    	ff2_ff1_link_motion: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF2 to FF1 Link Motion', i_Desc := 'This is virtual FF2 fault, Please check faulting motion devices', i_TypeCode := 16#FFFF);
     END_VAR
     bMR1K1_Veto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN];
     bST1K2_Veto := bST1K2_Veto_Override OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST1K2];
 
     fbArbiterIO(
         i_bVeto:=bMR1K1_Veto,
-        Arbiter:=GVL.fbArbiter,
+        Arbiter:=GVL.fbArbiter1,
         fbFFHWO:=GVL.fbFastFaultOutput1);
 
     GVL.fbFastFaultOutput1.Execute(i_xVeto:=bMR1K1_Veto);
     GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);
+
+    fb_vetoArbiter(bVeto:= bST1K2_Veto, 
+                    HigherAuthority := GVL.fbArbiter1,
+    				LowerAuthority := GVL.fbArbiter2,
+                    FFO := GVL.fbFastFaultOutput2);
+
+    ff2_ff1_link_motion(
+    	io_fbFFHWO := GVL.fbFastFaultOutput1,
+        i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
 
     END_PROGRAM
 
@@ -543,7 +558,7 @@ PRG_AL1K2_L2SI
 
     fbAL1K2(
         stYStage := Main.M5,
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2);
 
     END_PROGRAM
@@ -923,7 +938,7 @@ PRG_AT2K2_SOLID
     fbStage4.stFilter8.bValid    := FALSE;
     fbStage4.stFilter8.bMoveOk   := FALSE;
 
-    fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+    fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
     END_PROGRAM
 
@@ -980,7 +995,7 @@ PRG_IM1K1_PPM
     fbIM1K1.stYag2.bValid := TRUE;
 
     fbIM1K1(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
         stYStage := Main.M1);
 
@@ -1039,7 +1054,7 @@ PRG_IM1K2_PPM
     fbIM1K2.stYag2.bValid := TRUE;
 
     fbIM1K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
         stYStage := Main.M4);
 
@@ -1098,7 +1113,7 @@ PRG_IM2K1_PPM
     fbIM2K1.stYag2.bValid := TRUE;
 
     fbIM2K1(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
         stYStage := Main.M2);
 
@@ -1157,7 +1172,7 @@ PRG_IM2K2_PPM
     fbIM2K2.stYag2.bValid := TRUE;
 
     fbIM2K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M6);
 
@@ -1216,7 +1231,7 @@ PRG_IM3K2_PPM
     fbIM3K2.stYag2.bValid := TRUE;
 
     fbIM3K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M7);
 
@@ -1275,7 +1290,7 @@ PRG_IM4K2_PPM
     fbIM4K2.stYag2.bValid := TRUE;
 
     fbIM4K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M8);
 
@@ -1334,7 +1349,7 @@ PRG_IM5K2_PPM
     fbIM5K2.stYag2.bValid := TRUE;
 
     fbIM5K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M14);
 
@@ -1393,7 +1408,7 @@ PRG_IM6K2_PPM
     fbIM6K2.stYag2.bValid := TRUE;
 
     fbIM6K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M24);
 
@@ -1454,7 +1469,7 @@ PRG_LI2K2_K2A
     fbLI2K2.stTarget1.bValid := TRUE;
 
     fbLI2K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M11);
 
@@ -1515,7 +1530,7 @@ PRG_LI3K2_K2B
     fbLI3K2.stTarget1.bValid := TRUE;
 
     fbLI3K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M21);
 
@@ -1592,7 +1607,7 @@ PRG_PF1K2_WFS
     fbPF1K2.stTarget5.bValid := TRUE;
 
     fbPF1K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M12,
         stZStage := Main.M13);
@@ -1670,7 +1685,7 @@ PRG_PF2K2_WFS
     fbPF2K2.stTarget5.bValid := TRUE;
 
     fbPF2K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M22,
         stZStage := Main.M23);
@@ -1765,7 +1780,7 @@ PRG_TM1K2_ATM
     fbTM1K2.stTarget5.bValid := TRUE;
 
     fbTM1K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M9,
         stXStage := Main.M10);
@@ -1830,7 +1845,7 @@ PRG_TM2K2_ATM
     fbTM2K2.stTarget5.bValid := TRUE;
 
     fbTM2K2(
-        fbArbiter := GVL.fbArbiter,
+        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M15,
         stXStage := Main.M16);

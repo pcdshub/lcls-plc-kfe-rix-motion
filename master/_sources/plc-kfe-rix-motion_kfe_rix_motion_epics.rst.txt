@@ -66302,45 +66302,45 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66349,57 +66349,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:001:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:001:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66408,57 +66408,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:002:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:002:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66467,57 +66467,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:003:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:003:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66526,57 +66526,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:004:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:004:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66585,57 +66585,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:005:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:005:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66644,57 +66644,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:006:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:006:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66703,57 +66703,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:007:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:007:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66762,57 +66762,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:008:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:008:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66821,57 +66821,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:009:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:009:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66880,57 +66880,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:010:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:010:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66939,57 +66939,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:011:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:011:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -66998,57 +66998,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:012:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:012:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67057,57 +67057,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:013:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:013:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67116,57 +67116,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:014:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:014:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67175,57 +67175,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:015:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:015:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67234,57 +67234,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:016:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:016:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67293,57 +67293,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:017:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:017:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67352,57 +67352,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:018:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:018:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67411,57 +67411,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:019:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:019:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67470,57 +67470,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:020:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:020:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67529,57 +67529,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:021:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:021:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67588,57 +67588,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:022:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:022:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67647,57 +67647,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:023:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:023:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67706,57 +67706,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:024:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:024:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67765,57 +67765,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:025:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:025:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67824,57 +67824,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:026:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:026:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67883,57 +67883,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:027:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:027:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -67942,57 +67942,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:028:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:028:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68001,57 +68001,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:029:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:029:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68060,57 +68060,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:030:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:030:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68119,57 +68119,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:031:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:031:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68178,57 +68178,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:032:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:032:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68237,57 +68237,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:033:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:033:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68296,57 +68296,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:034:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:034:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68355,57 +68355,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:035:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:035:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68414,57 +68414,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:036:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:036:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68473,57 +68473,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:037:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:037:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68532,57 +68532,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:038:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:038:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68591,57 +68591,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:039:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:039:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68650,57 +68650,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:040:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:040:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68709,57 +68709,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:041:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:041:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68768,57 +68768,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:042:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:042:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68827,57 +68827,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:043:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:043:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68886,57 +68886,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:044:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:044:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -68945,57 +68945,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:045:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:045:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -69004,57 +69004,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:046:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:046:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -69063,57 +69063,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:047:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:047:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -69122,57 +69122,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:048:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:048:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -69181,57 +69181,57 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:049:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:049:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Device_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Device_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:ID_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:ID_RBV
       - longin
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Live_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Live_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:PhotonEnergyRanges_RBV
       - longin
       - Assertion Pool
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Rate_RBV
       - longin
       - Assertion Pool
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Transmission_RBV
       - ai
       - Assertion Pool
       - | field: HOPR 1
@@ -69240,45 +69240,45 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Valid_RBV
       - bi
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:AP:Entry:050:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:AP:Entry:050:Veto_RBV
       - waveform
       - Assertion Pool
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbiterID_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbiterID_RBV
       - longin
       - Arbiter ID for elev. req.
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:Cohort_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:PhotonEnergyRanges_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:PhotonEnergyRanges_RBV
       - longin
       - Arbitrated BP
       - | field: EGU eV
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:Rate_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:Rate_RBV
       - longin
       - Arbitrated BP
       - | field: EGU Hz
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:Transmission_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:Transmission_RBV
       - ai
       - Arbitrated BP
       - | field: HOPR 1
@@ -69287,19 +69287,3022 @@ Database Records
         | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:Valid_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:Valid_RBV
       - bi
       - Arbitrated BP
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:ArbitratedBP:Veto_RBV
+    * - PLC:RIX:MOTION:ARB:01:ArbitratedBP:Veto_RBV
       - waveform
       - Arbitrated BP
       - | io: input
 
 
-    * - PLC:RIX:MOTION:ARB:CohortCounter_RBV
+    * - PLC:RIX:MOTION:ARB:01:CohortCounter_RBV
+      - longin
+      - Intrnl cohort counter
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:001:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:002:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:003:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:004:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:005:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:006:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:007:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:008:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:009:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:010:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:011:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:012:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:013:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:014:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:015:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:016:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:017:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:018:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:019:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:020:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:021:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:022:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:023:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:024:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:025:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:026:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:027:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:028:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:029:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:030:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:031:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:032:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:033:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:034:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:035:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:036:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:037:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:038:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:039:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:040:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:041:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:042:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:043:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:044:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:045:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:046:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:047:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:048:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:049:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Device_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:ID_RBV
+      - longin
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Live_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:PhotonEnergyRanges_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Rate_RBV
+      - longin
+      - Assertion Pool
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Transmission_RBV
+      - ai
+      - Assertion Pool
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Valid_RBV
+      - bi
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:AP:Entry:050:Veto_RBV
+      - waveform
+      - Assertion Pool
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbiterID_RBV
+      - longin
+      - Arbiter ID for elev. req.
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:PhotonEnergyRanges_RBV
+      - longin
+      - Arbitrated BP
+      - | field: EGU eV
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:Rate_RBV
+      - longin
+      - Arbitrated BP
+      - | field: EGU Hz
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:Transmission_RBV
+      - ai
+      - Arbitrated BP
+      - | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:Valid_RBV
+      - bi
+      - Arbitrated BP
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:ArbitratedBP:Veto_RBV
+      - waveform
+      - Arbitrated BP
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:ARB:02:CohortCounter_RBV
       - longin
       - Intrnl cohort counter
       - | io: input
