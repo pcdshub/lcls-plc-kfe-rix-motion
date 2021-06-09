@@ -50,7 +50,7 @@ fbIM2K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM2K2.stYag2.bValid := TRUE;
 
 fbIM2K2(
-    fbArbiter := GVL.fbArbiter2,
+    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M6);]]></ST>
     </Implementation>

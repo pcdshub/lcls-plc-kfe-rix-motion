@@ -55,7 +55,7 @@ fbTM2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
 fbTM2K2.stTarget5.bValid := TRUE;
 
 fbTM2K2(
-    fbArbiter := GVL.fbArbiter2,
+    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M15,
     stXStage := Main.M16);
