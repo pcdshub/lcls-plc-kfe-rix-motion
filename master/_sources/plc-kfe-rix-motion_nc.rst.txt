@@ -543,9 +543,7 @@ Axis 15: Axis 15 TM2K2-MMS-Y
     Enc:Offset, -214682
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
-    Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, -16
-    Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 15
     OtherSettings:AllowMotionCmdToSlave, true
