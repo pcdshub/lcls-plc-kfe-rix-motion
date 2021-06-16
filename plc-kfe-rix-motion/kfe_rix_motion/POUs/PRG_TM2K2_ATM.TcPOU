@@ -18,7 +18,7 @@ END_VAR
       <ST><![CDATA[fbTM2K2.nTransitionAssertionID := 16#5220;
 fbTM2K2.nUnknownAssertionID := 16#5229;
 
-fbTM2K2.stOut.fPosition := -15;
+fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
 fbTM2K2.stOut.bUseRawCounts := FALSE;
 fbTM2K2.stOut.nRequestAssertionID := 16#5221;
 fbTM2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
