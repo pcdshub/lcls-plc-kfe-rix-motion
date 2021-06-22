@@ -575,8 +575,10 @@ Axis 16: Axis 16 TM2K2-MMS-X
     Enc:MaxCount, #xffffffff
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
-    Enc:SoftEndMaxControl:Range, 12.5
-    Enc:SoftEndMinControl:Range, 8.1
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 21
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 16.5
     Id, 16
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 5
