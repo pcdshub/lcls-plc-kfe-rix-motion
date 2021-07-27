@@ -663,15 +663,12 @@ PRG_AT2K2_SOLID
         1086      3   MMS:03   fbStage3  M19
         1089      4   MMS:04   fbStage4  M20  Downstream-most
 
-        TODO: Filter position information must be added after inspection during
-        beamtime.
-
     *)
 
     (* State setup - stage 1 *)
     (* Upstream-most MMS:01 - TRAVELER AXIS 1 *)
     fbStage1.stOut.sName         := 'Out';
-    fbStage1.stOut.fPosition     := 27.00; (* TODO: need out positions from traveler *)
+    fbStage1.stOut.fPosition     := 27.00;
     fbStage1.stOut.fDelta        := 0.2;
     fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
     fbStage1.stOut.bValid        := TRUE;
@@ -706,39 +703,39 @@ PRG_AT2K2_SOLID
     fbStage1.stFilter4.bMoveOk   := FALSE;
 
     fbStage1.stFilter5.sName     := 'Filter 5';
-    fbStage1.stFilter5.fPosition := 500.0;
-    fbStage1.stFilter5.fDelta    := 0.0;
+    fbStage1.stFilter5.fPosition := 103.0;
+    fbStage1.stFilter5.fDelta    := 0.2;
     fbStage1.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter5.bValid    := FALSE;
-    fbStage1.stFilter5.bMoveOk   := FALSE;
+    fbStage1.stFilter5.bValid    := TRUE;
+    fbStage1.stFilter5.bMoveOk   := TRUE;
 
     fbStage1.stFilter6.sName     := 'Filter 6';
-    fbStage1.stFilter6.fPosition := 500.0;
-    fbStage1.stFilter6.fDelta    := 0.0;
+    fbStage1.stFilter6.fPosition := 119.0;
+    fbStage1.stFilter6.fDelta    := 0.2;
     fbStage1.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter6.bValid    := FALSE;
-    fbStage1.stFilter6.bMoveOk   := FALSE;
+    fbStage1.stFilter6.bValid    := TRUE;
+    fbStage1.stFilter6.bMoveOk   := TRUE;
 
     fbStage1.stFilter7.sName     := 'Filter 7';
-    fbStage1.stFilter7.fPosition := 500.0;
-    fbStage1.stFilter7.fDelta    := 0.0;
+    fbStage1.stFilter7.fPosition := 135.0;
+    fbStage1.stFilter7.fDelta    := 0.2;
     fbStage1.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter7.bValid    := FALSE;
-    fbStage1.stFilter7.bMoveOk   := FALSE;
+    fbStage1.stFilter7.bValid    := TRUE;
+    fbStage1.stFilter7.bMoveOk   := TRUE;
 
     fbStage1.stFilter8.sName     := 'Filter 8';
-    fbStage1.stFilter8.fPosition := 500.0;
-    fbStage1.stFilter8.fDelta    := 0.0;
+    fbStage1.stFilter8.fPosition := 150.0;
+    fbStage1.stFilter8.fDelta    := 0.2;
     fbStage1.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter8.bValid    := FALSE;
-    fbStage1.stFilter8.bMoveOk   := FALSE;
+    fbStage1.stFilter8.bValid    := TRUE;
+    fbStage1.stFilter8.bMoveOk   := TRUE;
 
     fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
     (* State setup - stage 2 *)
     (* MMS:02 - 2nd upstream-most - TRAVELER AXIS 2 *)
 
-    fbStage2.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
+    fbStage2.stOut.sName         := 'Out';
     fbStage2.stOut.fPosition     := 27.72;
     fbStage2.stOut.fDelta        := 0.2;
     fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
@@ -774,39 +771,39 @@ PRG_AT2K2_SOLID
     fbStage2.stFilter4.bMoveOk   := FALSE;
 
     fbStage2.stFilter5.sName     := 'Filter 5';
-    fbStage2.stFilter5.fPosition := 500.0;
-    fbStage2.stFilter5.fDelta    := 0.0;
+    fbStage2.stFilter5.fPosition := 103.0;
+    fbStage2.stFilter5.fDelta    := 0.2;
     fbStage2.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter5.bValid    := FALSE;
-    fbStage2.stFilter5.bMoveOk   := FALSE;
+    fbStage2.stFilter5.bValid    := TRUE;
+    fbStage2.stFilter5.bMoveOk   := TRUE;
 
     fbStage2.stFilter6.sName     := 'Filter 6';
-    fbStage2.stFilter6.fPosition := 500.0;
-    fbStage2.stFilter6.fDelta    := 0.0;
+    fbStage2.stFilter6.fPosition := 119.0;
+    fbStage2.stFilter6.fDelta    := 0.2;
     fbStage2.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter6.bValid    := FALSE;
-    fbStage2.stFilter6.bMoveOk   := FALSE;
+    fbStage2.stFilter6.bValid    := TRUE;
+    fbStage2.stFilter6.bMoveOk   := TRUE;
 
     fbStage2.stFilter7.sName     := 'Filter 7';
-    fbStage2.stFilter7.fPosition := 500.0;
-    fbStage2.stFilter7.fDelta    := 0.0;
+    fbStage2.stFilter7.fPosition := 135.0;
+    fbStage2.stFilter7.fDelta    := 0.2;
     fbStage2.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter7.bValid    := FALSE;
-    fbStage2.stFilter7.bMoveOk   := FALSE;
+    fbStage2.stFilter7.bValid    := TRUE;
+    fbStage2.stFilter7.bMoveOk   := TRUE;
 
     fbStage2.stFilter8.sName     := 'Filter 8';
-    fbStage2.stFilter8.fPosition := 500.0;
-    fbStage2.stFilter8.fDelta    := 0.0;
+    fbStage2.stFilter8.fPosition := 150.0;
+    fbStage2.stFilter8.fDelta    := 0.2;
     fbStage2.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter8.bValid    := FALSE;
-    fbStage2.stFilter8.bMoveOk   := FALSE;
+    fbStage2.stFilter8.bValid    := TRUE;
+    fbStage2.stFilter8.bMoveOk   := TRUE;
 
     fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
     (* State setup - stage 3 *)
     (* MMS:03 - 2nd to downstream-most - TRAVELER AXIS 3 *)
 
-    fbStage3.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
+    fbStage3.stOut.sName         := 'Out';
     fbStage3.stOut.fPosition     := 27.00;
     fbStage3.stOut.fDelta        := 0.2;
     fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
@@ -842,39 +839,39 @@ PRG_AT2K2_SOLID
     fbStage3.stFilter4.bMoveOk   := FALSE;
 
     fbStage3.stFilter5.sName     := 'Filter 5';
-    fbStage3.stFilter5.fPosition := 500.0;
-    fbStage3.stFilter5.fDelta    := 0.0;
+    fbStage3.stFilter5.fPosition := 103.0;
+    fbStage3.stFilter5.fDelta    := 0.2;
     fbStage3.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter5.bValid    := FALSE;
-    fbStage3.stFilter5.bMoveOk   := FALSE;
+    fbStage3.stFilter5.bValid    := TRUE;
+    fbStage3.stFilter5.bMoveOk   := TRUE;
 
     fbStage3.stFilter6.sName     := 'Filter 6';
-    fbStage3.stFilter6.fPosition := 500.0;
-    fbStage3.stFilter6.fDelta    := 0.0;
+    fbStage3.stFilter6.fPosition := 119.0;
+    fbStage3.stFilter6.fDelta    := 0.2;
     fbStage3.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter6.bValid    := FALSE;
-    fbStage3.stFilter6.bMoveOk   := FALSE;
+    fbStage3.stFilter6.bValid    := TRUE;
+    fbStage3.stFilter6.bMoveOk   := TRUE;
 
     fbStage3.stFilter7.sName     := 'Filter 7';
-    fbStage3.stFilter7.fPosition := 500.0;
-    fbStage3.stFilter7.fDelta    := 0.0;
+    fbStage3.stFilter7.fPosition := 135.0;
+    fbStage3.stFilter7.fDelta    := 0.2;
     fbStage3.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter7.bValid    := FALSE;
-    fbStage3.stFilter7.bMoveOk   := FALSE;
+    fbStage3.stFilter7.bValid    := TRUE;
+    fbStage3.stFilter7.bMoveOk   := TRUE;
 
     fbStage3.stFilter8.sName     := 'Filter 8';
-    fbStage3.stFilter8.fPosition := 500.0;
-    fbStage3.stFilter8.fDelta    := 0.0;
+    fbStage3.stFilter8.fPosition := 150.0;
+    fbStage3.stFilter8.fDelta    := 0.2;
     fbStage3.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter8.bValid    := FALSE;
-    fbStage3.stFilter8.bMoveOk   := FALSE;
+    fbStage3.stFilter8.bValid    := TRUE;
+    fbStage3.stFilter8.bMoveOk   := TRUE;
 
     fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
     (* State setup - stage 4 *)
     (* MMS:04 - downstream-most - TRAVELER AXIS 4 *)
 
-    fbStage4.stOut.sName         := 'Out'; (* TODO: need out positions from traveler *)
+    fbStage4.stOut.sName         := 'Out';
     fbStage4.stOut.fPosition     := 28.03;
     fbStage4.stOut.fDelta        := 0.2;
     fbStage4.stOut.fVelocity     := DEFAULT_VELOCITY;
@@ -910,32 +907,32 @@ PRG_AT2K2_SOLID
     fbStage4.stFilter4.bMoveOk   := FALSE;
 
     fbStage4.stFilter5.sName     := 'Filter 5';
-    fbStage4.stFilter5.fPosition := 500.0;
-    fbStage4.stFilter5.fDelta    := 0.0;
+    fbStage4.stFilter5.fPosition := 103.0;
+    fbStage4.stFilter5.fDelta    := 0.2;
     fbStage4.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter5.bValid    := FALSE;
-    fbStage4.stFilter5.bMoveOk   := FALSE;
+    fbStage4.stFilter5.bValid    := TRUE;
+    fbStage4.stFilter5.bMoveOk   := TRUE;
 
     fbStage4.stFilter6.sName     := 'Filter 6';
-    fbStage4.stFilter6.fPosition := 500.0;
-    fbStage4.stFilter6.fDelta    := 0.0;
+    fbStage4.stFilter6.fPosition := 119.0;
+    fbStage4.stFilter6.fDelta    := 0.2;
     fbStage4.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter6.bValid    := FALSE;
-    fbStage4.stFilter6.bMoveOk   := FALSE;
+    fbStage4.stFilter6.bValid    := TRUE;
+    fbStage4.stFilter6.bMoveOk   := TRUE;
 
     fbStage4.stFilter7.sName     := 'Filter 7';
-    fbStage4.stFilter7.fPosition := 500.0;
-    fbStage4.stFilter7.fDelta    := 0.0;
+    fbStage4.stFilter7.fPosition := 135.0;
+    fbStage4.stFilter7.fDelta    := 0.2;
     fbStage4.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter7.bValid    := FALSE;
-    fbStage4.stFilter7.bMoveOk   := FALSE;
+    fbStage4.stFilter7.bValid    := TRUE;
+    fbStage4.stFilter7.bMoveOk   := TRUE;
 
     fbStage4.stFilter8.sName     := 'Filter 8';
-    fbStage4.stFilter8.fPosition := 500.0;
-    fbStage4.stFilter8.fDelta    := 0.0;
+    fbStage4.stFilter8.fPosition := 150.0;
+    fbStage4.stFilter8.fDelta    := 0.2;
     fbStage4.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter8.bValid    := FALSE;
-    fbStage4.stFilter8.bMoveOk   := FALSE;
+    fbStage4.stFilter8.bValid    := TRUE;
+    fbStage4.stFilter8.bMoveOk   := TRUE;
 
     fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
