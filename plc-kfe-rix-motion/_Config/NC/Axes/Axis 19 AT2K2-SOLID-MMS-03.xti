@@ -1440,8 +1440,11 @@ External Setpoint Generation:
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="0.2"/>
-				<PID PosKp="20" PosExtKp="1" PosExtVelo="0.1"/>
+				<PID PosKp="20" PosExtKp="20" PosExtVelo="0.1" DeadBandPosition="0.01"/>
 				<Observer BandWidth="20"/>
+				<ParameterChanged>269</ParameterChanged>
+				<ParameterChanged>262</ParameterChanged>
+				<ParameterChanged>18</ParameterChanged>
 			</CtrPara>
 		</Controller>
 		<Vars VarGrpType="1" InsertType="1">
