@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TM2K2" Id="{2f5a266c-a319-48e1-b797-55a7489c8358}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TM2K2
+(*
+    Adapted from FB_ATM to:
+    - Add stTarget6 to the inputs
+    - Change the arrStates.array pragma from 1..6 to 1..7 (out and 6 in states, up from 5)
+    - Swap out FB_ATM_States for FB_TM2K2_States
+*)
+VAR_IN_OUT
+    stYStage: DUT_MotionStage;
+    stXStage: DUT_MotionStage;
+    fbArbiter: FB_Arbiter;
+    fbFFHWO: FB_HardwareFFOutput;
+END_VAR
+VAR_INPUT
+    stOut: DUT_PositionState;
+    stTarget1: DUT_PositionState;
+    stTarget2: DUT_PositionState;
+    stTarget3: DUT_PositionState;
+    stTarget4: DUT_PositionState;
+    stTarget5: DUT_PositionState;
+    stTarget6: DUT_PositionState;
+    nTransitionAssertionID: UDINT;
+    nUnknownAssertionID: UDINT;
+END_VAR
+VAR
+    fbYStage: FB_MotionStage;
+    fbXStage: FB_MotionStage;
+
+    {attribute 'pytmc' := '
+        pv: MMS:STATE
+        io: i
+        arrStates.array: 1..7
+    '}
+    fbStates: FB_TM2K2_States;
+
+    {attribute 'pytmc' := '
+        pv: STC:01
+        io: input
+    '}
+    fbThermoCouple1: FB_TempSensor;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbYStage(stMotionStage:=stYStage);
+stYStage.bHardwareEnable := TRUE;
+stYStage.bPowerSelf := FALSE;
+stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+fbXStage(stMotionStage:=stXStage);
+stXStage.bLimitForwardEnable := TRUE;
+stXStage.bLimitBackwardEnable := TRUE;
+stXStage.bHardwareEnable := TRUE;
+stXStage.bPowerSelf := TRUE;
+stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+fbStates(
+    fbArbiter:=fbArbiter,
+    fbFFHWO:=fbFFHWO,
+    nTransitionAssertionID:=nTransitionAssertionID,
+    nUnknownAssertionID:=nUnknownAssertionID,
+    stMotionStage:=stYStage,
+    bEnable := TRUE,
+    stOut:=stOut,
+    stTarget1:=stTarget1,
+    stTarget2:=stTarget2,
+    stTarget3:=stTarget3,
+    stTarget4:=stTarget4,
+    stTarget5:=stTarget5,
+    stTarget6:=stTarget6);
+
+fbThermoCouple1();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
