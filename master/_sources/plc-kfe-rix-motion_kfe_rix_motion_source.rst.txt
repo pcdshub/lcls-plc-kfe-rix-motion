@@ -26,6 +26,33 @@ ENUM_SXR_SATT_Position
     END_TYPE
 
 
+Related:
+    * `ENUM_SXR_SATT_Position`_
+
+
+ENUM_TM2K2_States
+^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    TYPE ENUM_TM2K2_States :
+    // Adapted from ENUM_ATM_States to add TARGET6
+    (
+        Unknown := 0,
+        OUT := 1,
+        TARGET1 := 2,
+        TARGET2 := 3,
+        TARGET3 := 4,
+        TARGET4 := 5,
+        TARGET5 := 6,
+        TARGET6 := 7
+    );
+    END_TYPE
+
+
+
+
 GVLs
 ----
 
@@ -54,6 +81,8 @@ GVL
     	
     	
     END_VAR
+
+
 
 
 Main
@@ -244,6 +273,8 @@ Main
     END_VAR
 
 
+
+
 POUs
 ----
 
@@ -308,6 +339,10 @@ FB_SXR_SATT_PositionState
     enumSet := setState;
 
     END_FUNCTION_BLOCK
+
+
+Related:
+    * `ENUM_SXR_SATT_Position`_
 
 
 FB_SXR_SATT_Stage
@@ -410,6 +445,208 @@ FB_SXR_SATT_Stage
     END_FUNCTION_BLOCK
 
 
+Related:
+    * `ENUM_SXR_SATT_Position`_
+    * `FB_SXR_SATT_PositionState`_
+
+
+FB_TM2K2
+^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TM2K2
+    (*
+        Adapted from FB_ATM to:
+        - Add stTarget6 to the inputs
+        - Change the arrStates.array pragma from 1..6 to 1..7 (out and 6 in states, up from 5)
+        - Swap out FB_ATM_States for FB_TM2K2_States
+    *)
+    VAR_IN_OUT
+        stYStage: DUT_MotionStage;
+        stXStage: DUT_MotionStage;
+        fbArbiter: FB_Arbiter;
+        fbFFHWO: FB_HardwareFFOutput;
+    END_VAR
+    VAR_INPUT
+        stOut: DUT_PositionState;
+        stTarget1: DUT_PositionState;
+        stTarget2: DUT_PositionState;
+        stTarget3: DUT_PositionState;
+        stTarget4: DUT_PositionState;
+        stTarget5: DUT_PositionState;
+        stTarget6: DUT_PositionState;
+        nTransitionAssertionID: UDINT;
+        nUnknownAssertionID: UDINT;
+    END_VAR
+    VAR
+        fbYStage: FB_MotionStage;
+        fbXStage: FB_MotionStage;
+
+        {attribute 'pytmc' := '
+            pv: MMS:STATE
+            io: i
+            arrStates.array: 1..7
+        '}
+        fbStates: FB_TM2K2_States;
+
+        {attribute 'pytmc' := '
+            pv: STC:01
+            io: input
+        '}
+        fbThermoCouple1: FB_TempSensor;
+    END_VAR
+    fbYStage(stMotionStage:=stYStage);
+    stYStage.bHardwareEnable := TRUE;
+    stYStage.bPowerSelf := FALSE;
+    stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    fbXStage(stMotionStage:=stXStage);
+    stXStage.bLimitForwardEnable := TRUE;
+    stXStage.bLimitBackwardEnable := TRUE;
+    stXStage.bHardwareEnable := TRUE;
+    stXStage.bPowerSelf := TRUE;
+    stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    fbStates(
+        fbArbiter:=fbArbiter,
+        fbFFHWO:=fbFFHWO,
+        nTransitionAssertionID:=nTransitionAssertionID,
+        nUnknownAssertionID:=nUnknownAssertionID,
+        stMotionStage:=stYStage,
+        bEnable := TRUE,
+        stOut:=stOut,
+        stTarget1:=stTarget1,
+        stTarget2:=stTarget2,
+        stTarget3:=stTarget3,
+        stTarget4:=stTarget4,
+        stTarget5:=stTarget5,
+        stTarget6:=stTarget6);
+
+    fbThermoCouple1();
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_TM2K2_States`_
+
+
+FB_TM2K2_States
+^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TM2K2_States EXTENDS FB_PositionStateBase_WithPMPS
+    // Adapted from TB_ATM_States to add TARGET6 and to switch the enumSet and enumGet ENUM types
+    VAR_INPUT
+        {attribute 'pytmc' := '
+            pv: SET
+            io: io
+        '}
+        enumSet: ENUM_TM2K2_states;
+
+        stOut: DUT_PositionState;
+        stTarget1: DUT_PositionState;
+        stTarget2: DUT_PositionState;
+        stTarget3: DUT_PositionState;
+        stTarget4: DUT_PositionState;
+        stTarget5: DUT_PositionState;
+        stTarget6: DUT_PositionState;
+
+        bStatesLock: BOOL;
+    END_VAR
+    VAR_OUTPUT
+        {attribute 'pytmc' := '
+            pv: GET
+            io: i
+        '}
+        enumGet: ENUM_TM2K2_States;
+    END_VAR
+    VAR
+        bATMInit: BOOL;
+    END_VAR
+    VAR CONSTANT
+        fInDelta: LREAL := 2;
+        fOutDelta: LREAL := 2;
+        fInVelocity: LREAL := 5;
+        fOutVelocity: LREAL := 5;
+        fAccel: LREAL := 200;
+        fOutDecel: LREAL := 25;
+    END_VAR
+    IF NOT bATMInit THEN
+        bATMInit := TRUE;
+
+        stOut.sName := 'OUT';
+        stOut.fVelocity := fOutVelocity;
+        stOut.fDelta := fOutDelta;
+        stOut.fAccel := fAccel;
+        stOut.fDecel := fOutDecel;
+        stOut.bMoveOk := TRUE;
+
+        stTarget1.sName := 'TARGET1';
+        stTarget1.fVelocity := fInVelocity;
+        stTarget1.fDelta := fInDelta;
+        stTarget1.fAccel := fAccel;
+        stTarget1.fDecel := fAccel;
+        stTarget1.bMoveOk := TRUE;
+
+        stTarget2.sName := 'TARGET2';
+        stTarget2.fVelocity := fInVelocity;
+        stTarget2.fDelta := fInDelta;
+        stTarget2.fAccel := fAccel;
+        stTarget2.fDecel := fAccel;
+        stTarget2.bMoveOk := TRUE;
+
+        stTarget3.sName := 'TARGET3';
+        stTarget3.fVelocity := fInVelocity;
+        stTarget3.fDelta := fInDelta;
+        stTarget3.fAccel := fAccel;
+        stTarget3.fDecel := fAccel;
+        stTarget3.bMoveOk := TRUE;
+
+        stTarget4.sName := 'TARGET4';
+        stTarget4.fVelocity := fInVelocity;
+        stTarget4.fDelta := fInDelta;
+        stTarget4.fAccel := fAccel;
+        stTarget4.fDecel := fAccel;
+        stTarget4.bMoveOk := TRUE;
+
+        stTarget5.sName := 'TARGET5';
+        stTarget5.fVelocity := fInVelocity;
+        stTarget5.fDelta := fInDelta;
+        stTarget5.fAccel := fAccel;
+        stTarget5.fDecel := fAccel;
+        stTarget5.bMoveOk := TRUE;
+
+        stTarget6.sName := 'TARGET6';
+        stTarget6.fVelocity := fInVelocity;
+        stTarget6.fDelta := fInDelta;
+        stTarget6.fAccel := fAccel;
+        stTarget6.fDecel := fAccel;
+        stTarget6.bMoveOk := TRUE;
+
+        arrStates[1] := stOut;
+        arrStates[2] := stTarget1;
+        arrStates[3] := stTarget2;
+        arrStates[4] := stTarget3;
+        arrStates[5] := stTarget4;
+        arrStates[6] := stTarget5;
+        arrStates[7] := stTarget6;
+    END_IF
+
+    setState := enumSet;
+    Exec();
+    enumGet := getState;
+    enumSet := setState;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ENUM_TM2K2_States`_
+
+
 PRG_1_PlcTask
 ^^^^^^^^^^^^^
 
@@ -461,6 +698,30 @@ PRG_1_PlcTask
     END_PROGRAM
 
 
+Related:
+    * `Main`_
+    * `PRG_2_PMPS_PRE`_
+    * `PRG_3_PMPS_POST`_
+    * `PRG_4_LOG`_
+    * `PRG_AL1K2_L2SI`_
+    * `PRG_AT2K2_SOLID`_
+    * `PRG_IM1K1_PPM`_
+    * `PRG_IM1K2_PPM`_
+    * `PRG_IM2K1_PPM`_
+    * `PRG_IM2K2_PPM`_
+    * `PRG_IM3K2_PPM`_
+    * `PRG_IM4K2_PPM`_
+    * `PRG_IM5K2_PPM`_
+    * `PRG_IM6K2_PPM`_
+    * `PRG_LI2K2_K2A`_
+    * `PRG_LI3K2_K2B`_
+    * `PRG_PF1K2_WFS`_
+    * `PRG_PF2K2_WFS`_
+    * `PRG_ST3K2_TERM`_
+    * `PRG_TM1K2_ATM`_
+    * `PRG_TM2K2_ATM`_
+
+
 PRG_2_PMPS_PRE
 ^^^^^^^^^^^^^^
 
@@ -472,6 +733,8 @@ PRG_2_PMPS_PRE
 
 
     END_PROGRAM
+
+
 
 
 PRG_3_PMPS_POST
@@ -511,6 +774,10 @@ PRG_3_PMPS_POST
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+
+
 PRG_4_LOG
 ^^^^^^^^^
 
@@ -523,6 +790,8 @@ PRG_4_LOG
     fbLogHandler();
 
     END_PROGRAM
+
+
 
 
 PRG_AL1K2_L2SI
@@ -561,6 +830,11 @@ PRG_AL1K2_L2SI
         fbFFHWO := GVL.fbFastFaultOutput2);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_AT2K2_SOLID
@@ -939,6 +1213,12 @@ PRG_AT2K2_SOLID
     END_PROGRAM
 
 
+Related:
+    * `FB_SXR_SATT_Stage`_
+    * `GVL`_
+    * `Main`_
+
+
 PRG_IM1K1_PPM
 ^^^^^^^^^^^^^
 
@@ -996,6 +1276,11 @@ PRG_IM1K1_PPM
         stYStage := Main.M1);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM1K2_PPM
@@ -1057,6 +1342,11 @@ PRG_IM1K2_PPM
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_IM2K1_PPM
 ^^^^^^^^^^^^^
 
@@ -1114,6 +1404,11 @@ PRG_IM2K1_PPM
         stYStage := Main.M2);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM2K2_PPM
@@ -1175,6 +1470,11 @@ PRG_IM2K2_PPM
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_IM3K2_PPM
 ^^^^^^^^^^^^^
 
@@ -1232,6 +1532,11 @@ PRG_IM3K2_PPM
         stYStage := Main.M7);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_IM4K2_PPM
@@ -1293,6 +1598,11 @@ PRG_IM4K2_PPM
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_IM5K2_PPM
 ^^^^^^^^^^^^^
 
@@ -1352,6 +1662,11 @@ PRG_IM5K2_PPM
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_IM6K2_PPM
 ^^^^^^^^^^^^^
 
@@ -1409,6 +1724,11 @@ PRG_IM6K2_PPM
         stYStage := Main.M24);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_LI2K2_K2A
@@ -1472,6 +1792,11 @@ PRG_LI2K2_K2A
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_LI3K2_K2B
 ^^^^^^^^^^^^^
 
@@ -1531,6 +1856,11 @@ PRG_LI3K2_K2B
         stYStage := Main.M21);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `Main`_
 
 
 PRG_PF1K2_WFS
@@ -1611,6 +1941,11 @@ PRG_PF1K2_WFS
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_PF2K2_WFS
 ^^^^^^^^^^^^^
 
@@ -1689,6 +2024,11 @@ PRG_PF2K2_WFS
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_ST3K2_TERM
 ^^^^^^^^^^^^^^
 
@@ -1717,6 +2057,10 @@ PRG_ST3K2_TERM
         io_fbFFHWO:= GVL.fbFastFaultOutput2  );
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
 
 
 PRG_TM1K2_ATM
@@ -1784,6 +2128,11 @@ PRG_TM1K2_ATM
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+    * `Main`_
+
+
 PRG_TM2K2_ATM
 ^^^^^^^^^^^^^
 
@@ -1799,7 +2148,7 @@ PRG_TM2K2_ATM
                                   .fbThermoCouple1.bUnderrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
                                   .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value'}
-        fbTM2K2: FB_ATM;
+        fbTM2K2: FB_TM2K2;
     END_VAR
     fbTM2K2.nTransitionAssertionID := 16#5220;
     fbTM2K2.nUnknownAssertionID := 16#5229;
@@ -1810,35 +2159,41 @@ PRG_TM2K2_ATM
     fbTM2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stOut.bValid := TRUE;
 
-    fbTM2K2.stTarget1.fPosition := -39.124;
+    fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
     fbTM2K2.stTarget1.bUseRawCounts := FALSE;
     fbTM2K2.stTarget1.nRequestAssertionID := 16#5222;
     fbTM2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget1.bValid := TRUE;
 
-    fbTM2K2.stTarget2.fPosition := -53.5;
+    fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
     fbTM2K2.stTarget2.bUseRawCounts := FALSE;
     fbTM2K2.stTarget2.nRequestAssertionID := 16#5223;
     fbTM2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget2.bValid := TRUE;
 
-    fbTM2K2.stTarget3.fPosition := -67.874;
+    fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
     fbTM2K2.stTarget3.bUseRawCounts := FALSE;
     fbTM2K2.stTarget3.nRequestAssertionID := 16#5224;
     fbTM2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget3.bValid := TRUE;
 
-    fbTM2K2.stTarget4.fPosition := -82.25;
+    fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
     fbTM2K2.stTarget4.bUseRawCounts := FALSE;
     fbTM2K2.stTarget4.nRequestAssertionID := 16#5225;
     fbTM2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget4.bValid := TRUE;
 
-    fbTM2K2.stTarget5.fPosition := -96.623;
+    fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
     fbTM2K2.stTarget5.bUseRawCounts := FALSE;
     fbTM2K2.stTarget5.nRequestAssertionID := 16#5226;
     fbTM2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget5.bValid := TRUE;
+
+    fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
+    fbTM2K2.stTarget6.bUseRawCounts := FALSE;
+    fbTM2K2.stTarget6.nRequestAssertionID := 16#5227;
+    fbTM2K2.stTarget6.stBeamParams := PMPS_GVL.cstFullBeam;
+    fbTM2K2.stTarget6.bValid := TRUE;
 
     fbTM2K2(
         fbArbiter := GVL.fbArbiter1,
@@ -1847,4 +2202,10 @@ PRG_TM2K2_ATM
         stXStage := Main.M16);
 
     END_PROGRAM
+
+
+Related:
+    * `FB_TM2K2`_
+    * `GVL`_
+    * `Main`_
 

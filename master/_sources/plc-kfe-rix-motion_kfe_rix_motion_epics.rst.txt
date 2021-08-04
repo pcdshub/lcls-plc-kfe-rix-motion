@@ -2249,6 +2249,2274 @@ FB_SXR_SATT_Stage
       - | io: output
 
 
+ 
+FB_TM2K2
+^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):MMS:STATE:01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:BUSY_RBV
+      - bi
+      - $(SYMBOL).fbStates.bBusy
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:DONE_RBV
+      - bi
+      - $(SYMBOL).fbStates.bDone
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERR_RBV
+      - bi
+      - $(SYMBOL).fbStates.bError
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRID_RBV
+      - longin
+      - $(SYMBOL).fbStates.nErrorId
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRMSG_RBV
+      - waveform
+      - $(SYMBOL).fbStates.sErrorMessage
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:GET_RBV
+      - mbbi
+      - $(SYMBOL).fbStates.enumGet
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - $(SYMBOL).fbStates.bArbiterEnabled
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - $(SYMBOL).fbStates.bArbiterEnabled
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT
+      - bo
+      - $(SYMBOL).fbStates.fbStatePMPS.bMaintMode
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - $(SYMBOL).fbStates.fbStatePMPS.bMaintMode
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:RESET
+      - bo
+      - $(SYMBOL).fbStates.bReset
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:RESET_RBV
+      - bi
+      - $(SYMBOL).fbStates.bReset
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET
+      - mbbo
+      - $(SYMBOL).fbStates.enumSet
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET_RBV
+      - mbbi
+      - $(SYMBOL).fbStates.enumSet
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):STC:01:CONN_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):STC:01:ERR_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):STC:01:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+ 
+FB_TM2K2_States
+^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):01:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):01:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):01:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):02:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):02:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):03:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):03:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):04:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):04:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):05:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):05:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):06:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):06:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):07:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):07:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):08:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):08:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:ACCL
+      - ao
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:ACCL_RBV
+      - ai
+      - Acceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:DCCL
+      - ao
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:DCCL_RBV
+      - ai
+      - Deceleration to use for moves to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:DELTA
+      - ao
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):09:DELTA_RBV
+      - ai
+      - Max deviation from position at this state
+      - | expand: %.2d
+        | field: DRVL 0.0
+        | io: output
+
+
+    * - $(PREFIX):09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):09:LOCKED_RBV
+      - bi
+      - TRUE if state is immutable
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | expand: %.2d
+        | io: input
+
+
+    * - $(PREFIX):09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:VALID_RBV
+      - bi
+      - TRUE if this is a real state
+      - | expand: %.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | expand: %.2d
+        | io: output
+
+
+    * - $(PREFIX):BUSY_RBV
+      - bi
+      - $(SYMBOL).bBusy
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):DONE_RBV
+      - bi
+      - $(SYMBOL).bDone
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):ERR_RBV
+      - bi
+      - $(SYMBOL).bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):ERRID_RBV
+      - longin
+      - $(SYMBOL).nErrorId
+      - | io: input
+
+
+    * - $(PREFIX):ERRMSG_RBV
+      - waveform
+      - $(SYMBOL).sErrorMessage
+      - | io: input
+
+
+    * - $(PREFIX):GET_RBV
+      - mbbi
+      - $(SYMBOL).enumGet
+      - | io: input
+
+
+    * - $(PREFIX):PMPS:ARB:ENABLE
+      - bo
+      - $(SYMBOL).bArbiterEnabled
+      - | io: output
+
+
+    * - $(PREFIX):PMPS:ARB:ENABLE_RBV
+      - bi
+      - $(SYMBOL).bArbiterEnabled
+      - | io: output
+
+
+    * - $(PREFIX):PMPS:MAINT
+      - bo
+      - $(SYMBOL).fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - $(PREFIX):PMPS:MAINT_RBV
+      - bi
+      - $(SYMBOL).fbStatePMPS.bMaintMode
+      - | io: output
+
+
+    * - $(PREFIX):RESET
+      - bo
+      - $(SYMBOL).bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):RESET_RBV
+      - bi
+      - $(SYMBOL).bReset
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):SET
+      - mbbo
+      - $(SYMBOL).enumSet
+      - | io: output
+
+
+    * - $(PREFIX):SET_RBV
+      - mbbi
+      - $(SYMBOL).enumSet
+      - | io: output
+
+
   
 lcls2_cc_lib.FB_ATM
 ^^^^^^^^^^^^^^^^^^^
@@ -102049,35 +104317,45 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102085,7 +104363,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102093,14 +104373,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:01:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102109,7 +104393,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102118,28 +104404,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:01:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102148,49 +104442,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:01:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:01:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102198,7 +104506,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:02:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102206,14 +104516,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:02:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:02:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102222,7 +104536,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:02:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102231,28 +104547,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:02:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:02:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102261,49 +104585,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:02:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:02:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102311,7 +104649,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:03:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102319,14 +104659,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:03:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:03:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102335,7 +104679,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:03:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102344,28 +104690,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:03:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:03:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102374,49 +104728,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:03:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:03:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102424,7 +104792,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:04:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102432,14 +104802,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:04:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:04:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102448,7 +104822,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:04:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102457,28 +104833,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:04:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:04:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102487,49 +104871,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:04:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:04:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102537,7 +104935,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:05:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102545,14 +104945,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:05:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:05:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102561,7 +104965,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:05:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102570,28 +104976,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:05:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:05:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102600,49 +105014,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:05:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:05:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102650,7 +105078,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:06:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102658,14 +105088,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:06:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:06:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102674,7 +105108,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:06:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102683,28 +105119,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:06:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:06:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102713,49 +105157,63 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:06:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:06:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:ACCL
       - ao
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:ACCL_RBV
       - ai
       - Acceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:DCCL
       - ao
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:DCCL_RBV
       - ai
       - Deceleration to use for moves to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:DELTA
       - ao
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102763,7 +105221,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:07:DELTA_RBV
       - ai
       - Max deviation from position at this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: DRVL 0.0
         | io: output
 
@@ -102771,14 +105231,18 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:07:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:07:LOCKED_RBV
       - bi
       - TRUE if state is immutable
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102787,7 +105251,9 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:07:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102796,28 +105262,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:07:NAME_RBV
       - waveform
       - Name of this position state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:07:SETPOINT
       - ao
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:VALID_RBV
       - bi
       - TRUE if this is a real state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
         | io: input
@@ -102826,247 +105300,26 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:07:VELO
       - ao
       - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:07:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:ACCL
-      - ao
-      - Acceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:ACCL_RBV
-      - ai
-      - Acceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:DCCL
-      - ao
-      - Deceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:DCCL_RBV
-      - ai
-      - Deceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:DELTA
-      - ao
-      - Max deviation from position at this state
-      - | expand: %.2d
-        | field: DRVL 0.0
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:DELTA_RBV
-      - ai
-      - Max deviation from position at this state
-      - | expand: %.2d
-        | field: DRVL 0.0
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | expand: %.2d
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:08:LOCKED_RBV
-      - bi
-      - TRUE if state is immutable
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:08:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:08:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | expand: %.2d
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:08:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:VALID_RBV
-      - bi
-      - TRUE if this is a real state
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:08:VELO
-      - ao
-      - Speed at which to move to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:08:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:ACCL
-      - ao
-      - Acceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:ACCL_RBV
-      - ai
-      - Acceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:DCCL
-      - ao
-      - Deceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:DCCL_RBV
-      - ai
-      - Deceleration to use for moves to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:DELTA
-      - ao
-      - Max deviation from position at this state
-      - | expand: %.2d
-        | field: DRVL 0.0
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:DELTA_RBV
-      - ai
-      - Max deviation from position at this state
-      - | expand: %.2d
-        | field: DRVL 0.0
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | expand: %.2d
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:09:LOCKED_RBV
-      - bi
-      - TRUE if state is immutable
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:09:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:09:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | expand: %.2d
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:09:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:VALID_RBV
-      - bi
-      - TRUE if this is a real state
-      - | expand: %.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - TM2K2:ATM:MMS:STATE:09:VELO
-      - ao
-      - Speed at which to move to this state
-      - | expand: %.2d
-        | io: output
-
-
-    * - TM2K2:ATM:MMS:STATE:09:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | expand: %.2d
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: %.2d
         | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bBusy
-      - | field: ONAM True
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
         | field: ZNAM False
         | io: input
 
@@ -103074,7 +105327,8 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:DONE_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bDone
-      - | field: ONAM True
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
         | field: ZNAM False
         | io: input
 
@@ -103082,7 +105336,8 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:ERR_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bError
-      - | field: ONAM True
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
         | field: ZNAM False
         | io: input
 
@@ -103090,49 +105345,57 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:ERRID_RBV
       - longin
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.nErrorId
-      - | io: input
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:ERRMSG_RBV
       - waveform
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.sErrorMessage
-      - | io: input
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:GET_RBV
       - mbbi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.enumGet
-      - | io: input
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: input
 
 
     * - TM2K2:ATM:MMS:STATE:PMPS:ARB:ENABLE
       - bo
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bArbiterEnabled
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:PMPS:ARB:ENABLE_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bArbiterEnabled
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:PMPS:MAINT
       - bo
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.fbStatePMPS.bMaintMode
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:PMPS:MAINT_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.fbStatePMPS.bMaintMode
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:RESET
       - bo
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bReset
-      - | field: ONAM True
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
         | field: ZNAM False
         | io: output
 
@@ -103140,7 +105403,8 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:RESET_RBV
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.bReset
-      - | field: ONAM True
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
         | field: ZNAM False
         | io: output
 
@@ -103148,13 +105412,15 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:SET
       - mbbo
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.enumSet
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:STATE:SET_RBV
       - mbbi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.enumSet
-      - | io: output
+      - | _subitem_: {'arrStates': {'_pragma_': [('array', '1..7')]}}
+        | io: output
 
 
     * - TM2K2:ATM:MMS:X:PLC:bAllBackwardEnable_RBV

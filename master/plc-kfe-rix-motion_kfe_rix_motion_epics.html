@@ -104,6 +104,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data Types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fb-sxr-satt-positionstate">FB_SXR_SATT_PositionState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-sxr-satt-stage">FB_SXR_SATT_Stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-tm2k2">FB_TM2K2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-tm2k2-states">FB_TM2K2_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls2-cc-lib-fb-atm">lcls2_cc_lib.FB_ATM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls2-cc-lib-fb-atm-states">lcls2_cc_lib.FB_ATM_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls2-cc-lib-fb-l2si-flowmeter">lcls2_cc_lib.FB_L2SI_Flowmeter</a></li>
@@ -3068,6 +3070,2832 @@
 <tr class="row-even"><td><p>$(PREFIX):STATE:SET_RBV</p></td>
 <td><p>mbbi</p></td>
 <td><p>$(SYMBOL).fbState.enumSet</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fb-tm2k2">
+<h2>FB_TM2K2<a class="headerlink" href="#fb-tm2k2" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:01:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:01:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:02:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:02:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:03:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:03:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:04:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:04:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:05:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:05:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:06:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:06:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:07:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:07:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:BUSY_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.bBusy</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:DONE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.bDone</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:ERR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.bError</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:ERRID_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).fbStates.nErrorId</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:ERRMSG_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).fbStates.sErrorMessage</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:GET_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).fbStates.enumGet</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.bArbiterEnabled</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:PMPS:MAINT</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbStates.fbStatePMPS.bMaintMode</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:PMPS:MAINT_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.fbStatePMPS.bMaintMode</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:RESET</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbStates.bReset</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:RESET_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStates.bReset</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):MMS:STATE:SET</p></td>
+<td><p>mbbo</p></td>
+<td><p>$(SYMBOL).fbStates.enumSet</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):MMS:STATE:SET_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).fbStates.enumSet</p></td>
+<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STC:01:CONN_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbThermoCouple1.bConnected</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM Connected</div>
+<div class="line">field: ZNAM Disconnected</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STC:01:ERR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbThermoCouple1.bError</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STC:01:TEMP_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fbThermoCouple1.fTemp</p></td>
+<td><div class="line-block">
+<div class="line">field: EGU C</div>
+<div class="line">field: PREC 2</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fb-tm2k2-states">
+<h2>FB_TM2K2_States<a class="headerlink" href="#fb-tm2k2-states" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):01:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):01:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):01:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):02:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):02:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):03:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):03:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):04:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):04:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):05:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):05:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):06:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):06:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):07:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):07:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):08:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):08:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:ACCL</p></td>
+<td><p>ao</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:ACCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Acceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:DCCL</p></td>
+<td><p>ao</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:DCCL_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Deceleration to use for moves to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:DELTA</p></td>
+<td><p>ao</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:DELTA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Max deviation from position at this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: DRVL 0.0</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:ENCODER_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>Encoder count associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:LOCKED_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if state is immutable</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:MOVE_OK_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if the move would be safe</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:NAME_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Name of this position state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:SETPOINT</p></td>
+<td><p>ao</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:SETPOINT_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Axis position associated with this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>TRUE if this is a real state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">field: ONAM TRUE</div>
+<div class="line">field: ZNAM FALSE</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):09:VELO</p></td>
+<td><p>ao</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):09:VELO_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Speed at which to move to this state</p></td>
+<td><div class="line-block">
+<div class="line">expand: %.2d</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):BUSY_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bBusy</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):DONE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bDone</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ERR_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bError</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):ERRID_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).nErrorId</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):ERRMSG_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).sErrorMessage</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):GET_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).enumGet</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PMPS:ARB:ENABLE</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PMPS:ARB:ENABLE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bArbiterEnabled</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):PMPS:MAINT</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).fbStatePMPS.bMaintMode</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):PMPS:MAINT_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).fbStatePMPS.bMaintMode</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):RESET</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bReset</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):RESET_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bReset</p></td>
+<td><div class="line-block">
+<div class="line">field: ONAM True</div>
+<div class="line">field: ZNAM False</div>
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):SET</p></td>
+<td><p>mbbo</p></td>
+<td><p>$(SYMBOL).enumSet</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):SET_RBV</p></td>
+<td><p>mbbi</p></td>
+<td><p>$(SYMBOL).enumSet</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
 </div>
@@ -133281,6 +136109,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133290,6 +136120,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133299,6 +136131,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133308,6 +136142,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133317,6 +136153,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133327,6 +136165,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133337,6 +136177,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133346,6 +136188,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133357,6 +136201,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133368,6 +136214,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133377,6 +136225,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133386,6 +136236,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133395,6 +136247,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133406,6 +136260,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133415,6 +136271,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133424,6 +136282,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133433,6 +136293,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133442,6 +136304,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133451,6 +136315,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133460,6 +136326,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133470,6 +136338,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133480,6 +136350,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133489,6 +136361,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133500,6 +136374,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133511,6 +136387,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133520,6 +136398,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133529,6 +136409,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133538,6 +136420,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133549,6 +136433,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133558,6 +136444,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133567,6 +136455,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133576,6 +136466,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133585,6 +136477,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133594,6 +136488,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133603,6 +136499,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133613,6 +136511,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133623,6 +136523,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133632,6 +136534,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133643,6 +136547,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133654,6 +136560,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133663,6 +136571,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133672,6 +136582,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133681,6 +136593,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133692,6 +136606,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133701,6 +136617,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133710,6 +136628,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133719,6 +136639,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133728,6 +136650,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133737,6 +136661,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133746,6 +136672,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133756,6 +136684,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133766,6 +136696,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133775,6 +136707,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133786,6 +136720,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133797,6 +136733,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133806,6 +136744,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133815,6 +136755,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133824,6 +136766,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133835,6 +136779,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133844,6 +136790,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133853,6 +136801,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133862,6 +136812,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133871,6 +136823,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133880,6 +136834,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133889,6 +136845,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133899,6 +136857,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -133909,6 +136869,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133918,6 +136880,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133929,6 +136893,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133940,6 +136906,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -133949,6 +136917,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133958,6 +136928,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133967,6 +136939,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -133978,6 +136952,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133987,6 +136963,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -133996,6 +136974,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134005,6 +136985,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134014,6 +136996,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134023,6 +137007,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134032,6 +137018,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -134042,6 +137030,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -134052,6 +137042,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -134061,6 +137053,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134072,6 +137066,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134083,6 +137079,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -134092,6 +137090,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134101,6 +137101,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134110,6 +137112,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134121,6 +137125,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134130,6 +137136,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134139,6 +137147,8 @@
 <td><p>ao</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134148,6 +137158,8 @@
 <td><p>ai</p></td>
 <td><p>Acceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134157,6 +137169,8 @@
 <td><p>ao</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134166,6 +137180,8 @@
 <td><p>ai</p></td>
 <td><p>Deceleration to use for moves to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134175,6 +137191,8 @@
 <td><p>ao</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -134185,6 +137203,8 @@
 <td><p>ai</p></td>
 <td><p>Max deviation from position at this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: DRVL 0.0</div>
 <div class="line">io: output</div>
@@ -134195,6 +137215,8 @@
 <td><p>longin</p></td>
 <td><p>Encoder count associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -134204,6 +137226,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if state is immutable</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134215,6 +137239,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if the move would be safe</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134226,6 +137252,8 @@
 <td><p>waveform</p></td>
 <td><p>Name of this position state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: input</div>
 </div>
@@ -134235,6 +137263,8 @@
 <td><p>ao</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134244,6 +137274,8 @@
 <td><p>ai</p></td>
 <td><p>Axis position associated with this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134253,6 +137285,8 @@
 <td><p>bi</p></td>
 <td><p>TRUE if this is a real state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
@@ -134264,6 +137298,8 @@
 <td><p>ao</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134273,292 +137309,8 @@
 <td><p>ai</p></td>
 <td><p>Speed at which to move to this state</p></td>
 <td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:ACCL</p></td>
-<td><p>ao</p></td>
-<td><p>Acceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:ACCL_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Acceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:DCCL</p></td>
-<td><p>ao</p></td>
-<td><p>Deceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:DCCL_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Deceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:DELTA</p></td>
-<td><p>ao</p></td>
-<td><p>Max deviation from position at this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: DRVL 0.0</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:DELTA_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Max deviation from position at this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: DRVL 0.0</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:ENCODER_RBV</p></td>
-<td><p>longin</p></td>
-<td><p>Encoder count associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:LOCKED_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if state is immutable</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:MOVE_OK_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if the move would be safe</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:NAME_RBV</p></td>
-<td><p>waveform</p></td>
-<td><p>Name of this position state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:SETPOINT</p></td>
-<td><p>ao</p></td>
-<td><p>Axis position associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:SETPOINT_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Axis position associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:VALID_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if this is a real state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:08:VELO</p></td>
-<td><p>ao</p></td>
-<td><p>Speed at which to move to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:08:VELO_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Speed at which to move to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:ACCL</p></td>
-<td><p>ao</p></td>
-<td><p>Acceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:ACCL_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Acceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:DCCL</p></td>
-<td><p>ao</p></td>
-<td><p>Deceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:DCCL_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Deceleration to use for moves to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:DELTA</p></td>
-<td><p>ao</p></td>
-<td><p>Max deviation from position at this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: DRVL 0.0</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:DELTA_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Max deviation from position at this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: DRVL 0.0</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:ENCODER_RBV</p></td>
-<td><p>longin</p></td>
-<td><p>Encoder count associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:LOCKED_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if state is immutable</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:MOVE_OK_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if the move would be safe</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:NAME_RBV</p></td>
-<td><p>waveform</p></td>
-<td><p>Name of this position state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:SETPOINT</p></td>
-<td><p>ao</p></td>
-<td><p>Axis position associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:SETPOINT_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Axis position associated with this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:VALID_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>TRUE if this is a real state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">field: ONAM TRUE</div>
-<div class="line">field: ZNAM FALSE</div>
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>TM2K2:ATM:MMS:STATE:09:VELO</p></td>
-<td><p>ao</p></td>
-<td><p>Speed at which to move to this state</p></td>
-<td><div class="line-block">
-<div class="line">expand: %.2d</div>
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>TM2K2:ATM:MMS:STATE:09:VELO_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>Speed at which to move to this state</p></td>
-<td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
+<div class="line">array: 1..7</div>
 <div class="line">expand: %.2d</div>
 <div class="line">io: output</div>
 </div>
@@ -134568,6 +137320,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bBusy</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">field: ONAM True</div>
 <div class="line">field: ZNAM False</div>
 <div class="line">io: input</div>
@@ -134578,6 +137331,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bDone</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">field: ONAM True</div>
 <div class="line">field: ZNAM False</div>
 <div class="line">io: input</div>
@@ -134588,6 +137342,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bError</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">field: ONAM True</div>
 <div class="line">field: ZNAM False</div>
 <div class="line">io: input</div>
@@ -134598,6 +137353,7 @@
 <td><p>longin</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.nErrorId</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -134606,6 +137362,7 @@
 <td><p>waveform</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.sErrorMessage</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -134614,6 +137371,7 @@
 <td><p>mbbi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.enumGet</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -134622,6 +137380,7 @@
 <td><p>bo</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -134630,6 +137389,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bArbiterEnabled</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -134638,6 +137398,7 @@
 <td><p>bo</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.fbStatePMPS.bMaintMode</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -134646,6 +137407,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.fbStatePMPS.bMaintMode</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -134654,6 +137416,7 @@
 <td><p>bo</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bReset</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">field: ONAM True</div>
 <div class="line">field: ZNAM False</div>
 <div class="line">io: output</div>
@@ -134664,6 +137427,7 @@
 <td><p>bi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.bReset</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">field: ONAM True</div>
 <div class="line">field: ZNAM False</div>
 <div class="line">io: output</div>
@@ -134674,6 +137438,7 @@
 <td><p>mbbo</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.enumSet</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
@@ -134682,6 +137447,7 @@
 <td><p>mbbi</p></td>
 <td><p>PRG_TM2K2_ATM.fbTM2K2.fbStates.enumSet</p></td>
 <td><div class="line-block">
+<div class="line">_subitem_: {‘arrStates’: {‘_pragma_’: [(‘array’, ‘1..7’)]}}</div>
 <div class="line">io: output</div>
 </div>
 </td>
