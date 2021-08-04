@@ -103,11 +103,21 @@
     <Compile Include="POUs\PRG_ST3K2_TERM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TM2K2\ENUM_TM2K2_States.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TM2K2\FB_TM2K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TM2K2\FB_TM2K2_States.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\AT2K2" />
+    <Folder Include="POUs\TM2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
