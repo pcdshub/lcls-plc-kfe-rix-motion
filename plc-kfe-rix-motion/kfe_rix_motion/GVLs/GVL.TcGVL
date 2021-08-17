@@ -18,7 +18,13 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
 	
+	fbAtomicMass : FB_AtomicMass;
+	fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 	
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	iFiltersPerSATTBlade : INT := 8;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -20,6 +20,9 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\DUT_SATT_Filter.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ENUM_SXR_SATT_Position.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AT2K2\FB_AttenuatorElementDensity.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\AT2K2\FB_SXR_SATT_PositionState.TcPOU">
@@ -130,6 +136,10 @@
       <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_motion</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="lcls-twincat-physics">
+      <DefaultResolution>lcls-twincat-physics, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_physics</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="lcls2-cc-lib">
       <DefaultResolution>lcls2-cc-lib, * (SLAC)</DefaultResolution>
       <Namespace>lcls2_cc_lib</Namespace>
@@ -167,6 +177,9 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 1.5.1 (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="lcls-twincat-physics">
+      <Resolution>lcls-twincat-physics, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls2-cc-lib">
       <Resolution>lcls2-cc-lib, 1.1.2 (SLAC)</Resolution>

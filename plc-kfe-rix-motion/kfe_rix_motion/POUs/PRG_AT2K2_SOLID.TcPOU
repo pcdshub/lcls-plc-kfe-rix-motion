@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_AT2K2_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259999}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AT2K2_SOLID
 VAR
@@ -71,6 +71,15 @@ VAR
     '}
     fbStage4: FB_SXR_SATT_Stage;
 
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01:FILTERS'}
+	arrStage1Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02:FILTERS'}
+	arrStage2Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:03:FILTERS'}
+	arrStage3Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:04:FILTERS'}
+	arrStage4Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+
 END_VAR
 VAR CONSTANT
     DEFAULT_VELOCITY : LREAL := 10;
@@ -116,6 +125,8 @@ fbStage1.stFilter1.fDelta    := 0.0;
 fbStage1.stFilter1.fVelocity := DEFAULT_VELOCITY;
 fbStage1.stFilter1.bValid    := FALSE;
 fbStage1.stFilter1.bMoveOk   := FALSE;
+arrStage1Filters[1].fFilterThickness_um := 0.0;
+arrStage1Filters[1].sFilterMaterial := 'Si';
 
 fbStage1.stFilter2.sName     := 'Filter 2';
 fbStage1.stFilter2.fPosition := 500.0;
