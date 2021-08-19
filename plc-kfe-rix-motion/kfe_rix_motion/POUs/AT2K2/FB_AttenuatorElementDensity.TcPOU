@@ -16,7 +16,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF sName = 'C' THEN
-	(* Special case diamond here *)
+	(* Special-case diamond here *)
 	fDensity := 3.51E6;  (* C (Diamond) g/m^3 *)
 ELSE
 	fbElementDensity(sName:=sName);
