@@ -102,7 +102,7 @@ fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilter
 
 fAbsorptionConstant := F_CalculateAbsorptionConstant(
     sElement:=sActiveFilterMaterial,
-    fEnergyEV:=10000, (* TODO *)
+    fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
     fDensity_gm3:=fActiveFilterDensity,  (* C (Diamond) g/m^3 *)
     fAtomicWeight:=fActiveFilterAtomicMass,
     bError=>bError,

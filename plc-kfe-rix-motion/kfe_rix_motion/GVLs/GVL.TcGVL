@@ -21,6 +21,9 @@ VAR_GLOBAL
 	fbAtomicMass : FB_AtomicMass;
 	fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 	
+	(* TODO: Link K-line photon energy *)
+	fPhotonEnergy_eV AT %I* : LREAL;
+	
 END_VAR
 
 VAR_GLOBAL CONSTANT
