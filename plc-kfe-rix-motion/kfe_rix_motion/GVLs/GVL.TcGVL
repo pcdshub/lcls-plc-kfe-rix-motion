@@ -21,8 +21,8 @@ VAR_GLOBAL
 	fbAtomicMass : FB_AtomicMass;
 	fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 	
-	(* TODO: Link K-line photon energy *)
-	fPhotonEnergy_eV AT %I* : LREAL;
+	(* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
+	fPhotonEnergy_eV AT %I* : REAL;
 	
 END_VAR
 

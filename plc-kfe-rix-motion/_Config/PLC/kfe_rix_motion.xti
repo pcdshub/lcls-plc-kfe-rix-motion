@@ -1168,6 +1168,13 @@ External Setpoint Generation:
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
+					<Name>GVL.fPhotonEnergy_eV</Name>
+					<Comment>
+						<![CDATA[ Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) ]]>
+					</Comment>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -6488,6 +6495,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL.fbFastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_PRE">
+				<Link VarA="PlcTask Inputs^GVL.fPhotonEnergy_eV" VarB="IO Inputs^rPhotonEnergy"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
