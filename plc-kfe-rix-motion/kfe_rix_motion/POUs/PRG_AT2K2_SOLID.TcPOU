@@ -71,14 +71,14 @@ VAR
     '}
     fbStage4: FB_SXR_SATT_Stage;
 
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01:FILTERS'}
-	arrStage1Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02:FILTERS'}
-	arrStage2Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:03:FILTERS'}
-	arrStage3Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:04:FILTERS'}
-	arrStage4Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01:FILTERS'}
+    arrStage1Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02:FILTERS'}
+    arrStage2Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:03:FILTERS'}
+    arrStage3Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
+    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:04:FILTERS'}
+    arrStage4Filters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
 
 END_VAR
 VAR CONSTANT

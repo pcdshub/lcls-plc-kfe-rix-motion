@@ -18,9 +18,9 @@ VAR_INPUT
     stFilter6	: DUT_PositionState;
     stFilter7	: DUT_PositionState;
     stFilter8	: DUT_PositionState;
-	
-	arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
-	
+
+    arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
+
 END_VAR
 VAR_OUTPUT
     // stExtra : DUT_MotionStage_Extras;
@@ -87,7 +87,7 @@ fbState(
     stFilter6:=stFilter6,
     stFilter7:=stFilter7,
     stFilter8:=stFilter8,
-	arrFilters:=arrFilters
+    arrFilters:=arrFilters
 );
 
 bIsStationary := NOT stAxis.Axis.Status.Moving;

@@ -3,20 +3,20 @@
   <DUT Name="DUT_SATT_Filter" Id="{68d60308-d3fc-48e7-91aa-27000d9d0fef}">
     <Declaration><![CDATA[TYPE DUT_SATT_Filter :
 STRUCT
-	{attribute 'pytmc' := '
+    {attribute 'pytmc' := '
         pv: MATERIAL
         io: input
         field: DESC Filter material name
     '}
-	sFilterMaterial : STRING;
-	
-	{attribute 'pytmc' := '
+    sFilterMaterial : STRING;
+
+    {attribute 'pytmc' := '
         pv: THICKNESS
         io: input
         field: DESC Filter material thickness
         field: EGU um
     '}
-	fFilterThickness_um : LREAL;
+    fFilterThickness_um : LREAL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
