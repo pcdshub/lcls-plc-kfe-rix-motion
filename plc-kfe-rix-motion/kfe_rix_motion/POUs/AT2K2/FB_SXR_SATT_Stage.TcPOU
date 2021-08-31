@@ -19,6 +19,7 @@ VAR_INPUT
     stFilter7	: DUT_PositionState;
     stFilter8	: DUT_PositionState;
 
+	{attribute 'pytmc' := 'pv: FILTERS'}
     arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
 
 END_VAR
