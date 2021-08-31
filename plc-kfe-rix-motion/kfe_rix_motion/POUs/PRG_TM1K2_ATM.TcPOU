@@ -18,7 +18,7 @@ END_VAR
       <ST><![CDATA[fbTM1K2.nTransitionAssertionID := 16#5120;
 fbTM1K2.nUnknownAssertionID := 16#5129;
 
-fbTM1K2.stOut.fPosition := -15;
+fbTM1K2.stOut.fPosition := -16;
 fbTM1K2.stOut.bUseRawCounts := FALSE;
 fbTM1K2.stOut.nRequestAssertionID := 16#5121;
 fbTM1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
