@@ -9,7 +9,10 @@ VAR
 
     nEnableMode : ENUM_StageEnableMode;
 
-    {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01'}
+    {attribute 'pytmc' := '
+        pv: AT2K2:L2SI:MMS:01
+
+    '}
     {attribute 'TcLinkTo' := '
 
         .fbRTD_1.iRaw := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 1^Value;

@@ -3,8 +3,6 @@
   <POU Name="FB_SXR_SATT_PositionState" Id="{505e7173-edee-4a83-bc1f-4aae51a3b3f5}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SXR_SATT_PositionState EXTENDS FB_PositionStateBase
 VAR_INPUT
-     arrFilters: ARRAY[1..GVL.iFiltersPerSATTBlade] OF DUT_SATT_Filter;
-
      // The enum position to move to
      {attribute 'pytmc' := '
          pv: SET
@@ -33,36 +31,9 @@ VAR_OUTPUT
     '}
     enumGet: ENUM_SXR_SATT_Position;
 
-    {attribute 'pytmc' := '
-        pv: FILTER:MATERIAL
-        io: i
-    '}
-    sActiveFilterMaterial : STRING;
-
-    {attribute 'pytmc' := '
-        pv: FILTER:THICKNESS
-        io: i
-        field: EGU um
-    '}
-    fActiveFilterThickness_um : LREAL;
-
-    {attribute 'pytmc' := '
-        pv: FILTER:Transmission
-        io: i
-        field: DESC Filter transmission
-    '}
-    fTransmission : LREAL;
-
-    fActiveFilterDensity : LREAL;
-    fActiveFilterAtomicMass : LREAL;
-    fbAtomicMass : FB_AtomicMass;
-    fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
-    fAbsorptionConstant : LREAL;
-
 END_VAR
 VAR
     bInitialized: BOOL := FALSE;
-    iFilterIndex: INT := 0;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bInitialized THEN
@@ -84,33 +55,7 @@ END_IF
 setState := enumSet;
 Exec();
 enumGet := getState;
-enumSet := setState;
-
-(* Filter indices are off by one due to "Out" being in position 1. *)
-iFilterIndex := enumGet - 1;
-
-IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
-    sActiveFilterMaterial := arrFilters[iFilterIndex].sFilterMaterial;
-    fActiveFilterThickness_um := arrFilters[iFilterIndex].fFilterThickness_um;
-ELSE
-    sActiveFilterMaterial := '';
-    fActiveFilterThickness_um := 0.0;
-END_IF
-
-fbAtomicMass(sName:=sActiveFilterMaterial, fValue=>fActiveFilterAtomicMass);
-fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilterDensity);
-
-fAbsorptionConstant := F_CalculateAbsorptionConstant(
-    sElement:=sActiveFilterMaterial,
-    fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
-    fDensity_gm3:=fActiveFilterDensity,
-    fAtomicWeight:=fActiveFilterAtomicMass,
-    bError=>bError,
-);
-fTransmission := F_CalculateTransmission(
-    fAbsorptionConstant:=fAbsorptionConstant,
-    fThickness_in_m:=fActiveFilterThickness_um * 1.0E-6
-);]]></ST>
+enumSet := setState;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{807DC2FE-D815-8665-EDB0-CE8BD7D8DBB9}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{123B0A3D-EB57-2CF2-10ED-8F56335AD8D6}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
@@ -209,31 +209,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>82834648</GetCodeOffs>
+        <GetCodeOffs>82828536</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>82834680</GetCodeOffs>
+        <GetCodeOffs>82828568</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82834688</GetCodeOffs>
+        <GetCodeOffs>82828576</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82834672</GetCodeOffs>
+        <GetCodeOffs>82828560</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>82834684</GetCodeOffs>
+        <GetCodeOffs>82828572</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1442,15 +1442,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82834592</GetCodeOffs>
-        <SetCodeOffs>82834616</SetCodeOffs>
+        <GetCodeOffs>82828480</GetCodeOffs>
+        <SetCodeOffs>82828504</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>82834628</GetCodeOffs>
-        <SetCodeOffs>82834640</SetCodeOffs>
+        <GetCodeOffs>82828516</GetCodeOffs>
+        <SetCodeOffs>82828528</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -1718,31 +1718,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>82834736</GetCodeOffs>
+        <GetCodeOffs>82828624</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82834716</GetCodeOffs>
+        <GetCodeOffs>82828604</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82834804</GetCodeOffs>
+        <GetCodeOffs>82828692</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>82834764</GetCodeOffs>
+        <GetCodeOffs>82828652</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>82834808</GetCodeOffs>
+        <GetCodeOffs>82828696</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2315,7 +2315,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>82834832</GetCodeOffs>
+        <GetCodeOffs>82828720</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -37367,6 +37367,176 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       </EnumInfo>
     </DataType>
     <DataType>
+      <Name>FB_SXR_SATT_PositionState</Name>
+      <BitSize>167360</BitSize>
+      <ExtendsType Namespace="lcls_twincat_motion">FB_PositionStateBase</ExtendsType>
+      <SubItem>
+        <Name>enumSet</Name>
+        <Type>ENUM_SXR_SATT_Position</Type>
+        <Comment> The enum position to move to</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>141312</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+         pv: SET
+         io: io
+     </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stOut</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <Comment> NOTE: Do not pragma these, let it happen in the manager.
+ Information about the OUT position</Comment>
+        <BitSize>2880</BitSize>
+        <BitOffs>141376</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter1</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>144256</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter2</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>147136</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter3</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>150016</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter4</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>152896</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter5</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>155776</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter6</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>158656</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter7</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>161536</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stFilter8</Name>
+        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
+        <BitSize>2880</BitSize>
+        <BitOffs>164416</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>enumGet</Name>
+        <Type>ENUM_SXR_SATT_Position</Type>
+        <Comment> The enum state readback</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>167296</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: GET
+        io: i
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bInitialized</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>167312</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
       <Name Namespace="lcls_twincat_physics">FB_AtomicMass</Name>
       <Comment> WARNING: This file is auto-generated. Do not modify it.</Comment>
       <BitSize>2816</BitSize>
@@ -37615,322 +37785,8 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       </Properties>
     </DataType>
     <DataType>
-      <Name>FB_SXR_SATT_PositionState</Name>
-      <BitSize>181056</BitSize>
-      <ExtendsType Namespace="lcls_twincat_motion">FB_PositionStateBase</ExtendsType>
-      <SubItem>
-        <Name>arrFilters</Name>
-        <Type>DUT_SATT_Filter</Type>
-        <ArrayInfo>
-          <LBound>1</LBound>
-          <Elements>8</Elements>
-        </ArrayInfo>
-        <BitSize>6144</BitSize>
-        <BitOffs>141312</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>enumSet</Name>
-        <Type>ENUM_SXR_SATT_Position</Type>
-        <Comment> The enum position to move to</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>147456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-         pv: SET
-         io: io
-     </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stOut</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <Comment> NOTE: Do not pragma these, let it happen in the manager.
- Information about the OUT position</Comment>
-        <BitSize>2880</BitSize>
-        <BitOffs>147520</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter1</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>150400</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter2</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>153280</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter3</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>156160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter4</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>159040</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter5</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>161920</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter6</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>164800</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter7</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>167680</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stFilter8</Name>
-        <Type Namespace="lcls_twincat_motion">DUT_PositionState</Type>
-        <BitSize>2880</BitSize>
-        <BitOffs>170560</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>enumGet</Name>
-        <Type>ENUM_SXR_SATT_Position</Type>
-        <Comment> The enum state readback</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>173440</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: GET
-        io: i
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>sActiveFilterMaterial</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>173456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FILTER:MATERIAL
-        io: i
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fActiveFilterThickness_um</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>174144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FILTER:THICKNESS
-        io: i
-        field: EGU um
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fTransmission</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>174208</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FILTER:Transmission
-        io: i
-        field: DESC Filter transmission
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fActiveFilterDensity</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>174272</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fActiveFilterAtomicMass</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>174336</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbAtomicMass</Name>
-        <Type Namespace="lcls_twincat_physics">FB_AtomicMass</Type>
-        <BitSize>2816</BitSize>
-        <BitOffs>174400</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbAttenuatorElementDensity</Name>
-        <Type>FB_AttenuatorElementDensity</Type>
-        <BitSize>3712</BitSize>
-        <BitOffs>177216</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fAbsorptionConstant</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>180928</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bInitialized</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>180992</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>iFilterIndex</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>181008</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
       <Name>FB_SXR_SATT_Stage</Name>
-      <BitSize>453952</BitSize>
+      <BitSize>447808</BitSize>
       <SubItem>
         <Name>stAxis</Name>
         <Type Namespace="lcls_twincat_motion" ReferenceTo="true">DUT_MotionStage</Type>
@@ -38089,6 +37945,10 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Name>ItemType</Name>
             <Value>Input</Value>
           </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: FILTERS</Value>
+          </Property>
         </Properties>
       </SubItem>
       <SubItem>
@@ -38129,6 +37989,18 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Properties>
       </SubItem>
       <SubItem>
+        <Name>bError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32328</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
         <Name>fbMotion</Name>
         <Type Namespace="lcls_twincat_motion">FB_MotionStage</Type>
         <BitSize>214848</BitSize>
@@ -38137,7 +38009,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>fbState</Name>
         <Type>FB_SXR_SATT_PositionState</Type>
-        <BitSize>181056</BitSize>
+        <BitSize>167360</BitSize>
         <BitOffs>247232</BitOffs>
         <Properties>
           <Property>
@@ -38152,7 +38024,93 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>bInitialized</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>428288</BitOffs>
+        <BitOffs>414592</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>sActiveFilterMaterial</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>414600</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Material
+        io: i
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fActiveFilterThickness_um</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>415296</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Thickness
+        io: i
+        field: EGU um
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fTransmission</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>415360</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Transmission
+        io: i
+        field: DESC Filter transmission
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fActiveFilterDensity</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>415424</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fActiveFilterAtomicMass</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>415488</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbAtomicMass</Name>
+        <Type Namespace="lcls_twincat_physics">FB_AtomicMass</Type>
+        <BitSize>2816</BitSize>
+        <BitOffs>415552</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbAttenuatorElementDensity</Name>
+        <Type>FB_AttenuatorElementDensity</Type>
+        <BitSize>3712</BitSize>
+        <BitOffs>418368</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fAbsorptionConstant</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>422080</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iFilterIndex</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>422144</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -38162,7 +38120,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Type Namespace="LCLS_General">FB_TempSensor</Type>
         <Comment> EL3202-0020: 0.01 °C per digit </Comment>
         <BitSize>256</BitSize>
-        <BitOffs>428352</BitOffs>
+        <BitOffs>422208</BitOffs>
         <Default>
           <SubItem>
             <Name>.fResolution</Name>
@@ -38180,7 +38138,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>fbRTD_2</Name>
         <Type Namespace="LCLS_General">FB_TempSensor</Type>
         <BitSize>256</BitSize>
-        <BitOffs>428608</BitOffs>
+        <BitOffs>422464</BitOffs>
         <Default>
           <SubItem>
             <Name>.fResolution</Name>
@@ -38198,7 +38156,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>fbFF</Name>
         <Type Namespace="PMPS">FB_FastFault</Type>
         <BitSize>25088</BitSize>
-        <BitOffs>428864</BitOffs>
+        <BitOffs>422720</BitOffs>
         <Default>
           <SubItem>
             <Name>.i_Desc</Name>
@@ -39602,8 +39560,8 @@ Digital outputs</Comment>
         <Name>nTimestamp</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>82839516</GetCodeOffs>
-        <SetCodeOffs>82839524</SetCodeOffs>
+        <GetCodeOffs>82833404</GetCodeOffs>
+        <SetCodeOffs>82833412</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="44">__getnTimestamp</Name>
@@ -40897,31 +40855,31 @@ Digital outputs</Comment>
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>82839124</GetCodeOffs>
+        <GetCodeOffs>82833012</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>82839156</GetCodeOffs>
+        <GetCodeOffs>82833044</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82839160</GetCodeOffs>
+        <GetCodeOffs>82833048</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>82839148</GetCodeOffs>
+        <GetCodeOffs>82833036</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>82839168</GetCodeOffs>
+        <GetCodeOffs>82833056</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -44618,7 +44576,7 @@ Digital outputs</Comment>
       </EventId>
       <EventId>
         <Name Id="7">TargetMachineNotFound</Name>
-        <DisplayName TxtId="">Target computer not found – AMS route was not found. </DisplayName>
+        <DisplayName TxtId="">Target computer not found – AMS route was not found.</DisplayName>
         <Severity>Error</Severity>
       </EventId>
       <EventId>
@@ -45138,6 +45096,10 @@ Digital outputs</Comment>
             <BitSize>32</BitSize>
             <BaseType>REAL</BaseType>
             <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:PhotonEnergy</Value>
+              </Property>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
@@ -46784,7 +46746,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648609736</BitOffs>
+            <BitOffs>648603592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_1.bUnderrange</Name>
@@ -46796,7 +46758,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648609744</BitOffs>
+            <BitOffs>648603600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_1.bOverrange</Name>
@@ -46808,7 +46770,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648609752</BitOffs>
+            <BitOffs>648603608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_1.iRaw</Name>
@@ -46820,7 +46782,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648609760</BitOffs>
+            <BitOffs>648603616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bError</Name>
@@ -46844,7 +46806,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648609992</BitOffs>
+            <BitOffs>648603848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bUnderrange</Name>
@@ -46856,7 +46818,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648610000</BitOffs>
+            <BitOffs>648603856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bOverrange</Name>
@@ -46868,7 +46830,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648610008</BitOffs>
+            <BitOffs>648603864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1.fbRTD_2.iRaw</Name>
@@ -46880,7 +46842,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648610016</BitOffs>
+            <BitOffs>648603872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -46892,7 +46854,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648670016</BitOffs>
+            <BitOffs>648663872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bError</Name>
@@ -46916,7 +46878,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063688</BitOffs>
+            <BitOffs>649051400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bUnderrange</Name>
@@ -46928,7 +46890,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063696</BitOffs>
+            <BitOffs>649051408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bOverrange</Name>
@@ -46940,7 +46902,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063704</BitOffs>
+            <BitOffs>649051416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_1.iRaw</Name>
@@ -46952,7 +46914,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063712</BitOffs>
+            <BitOffs>649051424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bError</Name>
@@ -46976,7 +46938,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063944</BitOffs>
+            <BitOffs>649051656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bUnderrange</Name>
@@ -46988,7 +46950,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063952</BitOffs>
+            <BitOffs>649051664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bOverrange</Name>
@@ -47000,7 +46962,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063960</BitOffs>
+            <BitOffs>649051672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2.fbRTD_2.iRaw</Name>
@@ -47012,7 +46974,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649063968</BitOffs>
+            <BitOffs>649051680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47024,7 +46986,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649123968</BitOffs>
+            <BitOffs>649111680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bError</Name>
@@ -47048,7 +47010,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517640</BitOffs>
+            <BitOffs>649499208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bUnderrange</Name>
@@ -47060,7 +47022,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517648</BitOffs>
+            <BitOffs>649499216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bOverrange</Name>
@@ -47072,7 +47034,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517656</BitOffs>
+            <BitOffs>649499224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_1.iRaw</Name>
@@ -47084,7 +47046,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517664</BitOffs>
+            <BitOffs>649499232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bError</Name>
@@ -47108,7 +47070,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517896</BitOffs>
+            <BitOffs>649499464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bUnderrange</Name>
@@ -47120,7 +47082,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517904</BitOffs>
+            <BitOffs>649499472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bOverrange</Name>
@@ -47132,7 +47094,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517912</BitOffs>
+            <BitOffs>649499480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbRTD_2.iRaw</Name>
@@ -47144,7 +47106,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649517920</BitOffs>
+            <BitOffs>649499488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47156,7 +47118,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649577920</BitOffs>
+            <BitOffs>649559488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bError</Name>
@@ -47180,7 +47142,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971592</BitOffs>
+            <BitOffs>649947016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bUnderrange</Name>
@@ -47192,7 +47154,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971600</BitOffs>
+            <BitOffs>649947024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bOverrange</Name>
@@ -47204,7 +47166,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971608</BitOffs>
+            <BitOffs>649947032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_1.iRaw</Name>
@@ -47216,7 +47178,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971616</BitOffs>
+            <BitOffs>649947040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bError</Name>
@@ -47240,7 +47202,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971848</BitOffs>
+            <BitOffs>649947272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bUnderrange</Name>
@@ -47252,7 +47214,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971856</BitOffs>
+            <BitOffs>649947280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bOverrange</Name>
@@ -47264,7 +47226,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971864</BitOffs>
+            <BitOffs>649947288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbRTD_2.iRaw</Name>
@@ -47276,7 +47238,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649971872</BitOffs>
+            <BitOffs>649947296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI3K2_K2B.fbLI3K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47288,7 +47250,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>650035840</BitOffs>
+            <BitOffs>649986688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47300,7 +47262,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>650659520</BitOffs>
+            <BitOffs>650610368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbZStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47312,7 +47274,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>650874368</BitOffs>
+            <BitOffs>650825216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bError</Name>
@@ -47336,7 +47298,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480584</BitOffs>
+            <BitOffs>651431432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bUnderrange</Name>
@@ -47348,7 +47310,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480592</BitOffs>
+            <BitOffs>651431440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bOverrange</Name>
@@ -47360,7 +47322,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480600</BitOffs>
+            <BitOffs>651431448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.iRaw</Name>
@@ -47372,7 +47334,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480608</BitOffs>
+            <BitOffs>651431456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bError</Name>
@@ -47396,7 +47358,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480840</BitOffs>
+            <BitOffs>651431688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bUnderrange</Name>
@@ -47408,7 +47370,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480848</BitOffs>
+            <BitOffs>651431696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bOverrange</Name>
@@ -47420,7 +47382,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480856</BitOffs>
+            <BitOffs>651431704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.iRaw</Name>
@@ -47432,7 +47394,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651480864</BitOffs>
+            <BitOffs>651431712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -47444,7 +47406,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>651496832</BitOffs>
+            <BitOffs>651447680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.iVoltageINT</Name>
@@ -47456,7 +47418,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652097120</BitOffs>
+            <BitOffs>652047968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bError</Name>
@@ -47475,7 +47437,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652289480</BitOffs>
+            <BitOffs>652240328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bUnderrange</Name>
@@ -47487,7 +47449,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652289488</BitOffs>
+            <BitOffs>652240336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bOverrange</Name>
@@ -47499,7 +47461,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652289496</BitOffs>
+            <BitOffs>652240344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.iRaw</Name>
@@ -47511,7 +47473,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652289504</BitOffs>
+            <BitOffs>652240352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbGetPMVoltage.iRaw</Name>
@@ -47524,7 +47486,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652289760</BitOffs>
+            <BitOffs>652240608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbGige.fbGetIllPercent.iRaw</Name>
@@ -47537,7 +47499,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652675744</BitOffs>
+            <BitOffs>652626592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbFlowMeter.fRaw</Name>
@@ -47556,7 +47518,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652676704</BitOffs>
+            <BitOffs>652627552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bError</Name>
@@ -47575,7 +47537,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652676936</BitOffs>
+            <BitOffs>652627784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bUnderrange</Name>
@@ -47587,7 +47549,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652676944</BitOffs>
+            <BitOffs>652627792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bOverrange</Name>
@@ -47599,7 +47561,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652676952</BitOffs>
+            <BitOffs>652627800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.iRaw</Name>
@@ -47611,7 +47573,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652676960</BitOffs>
+            <BitOffs>652627808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ST3K2_TERM.ST3K2.i_xInsertedLS</Name>
@@ -47624,7 +47586,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652786144</BitOffs>
+            <BitOffs>652736992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ST3K2_TERM.ST3K2.i_xRetractedLS</Name>
@@ -47636,7 +47598,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652786152</BitOffs>
+            <BitOffs>652737000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP</Name>
@@ -47652,7 +47614,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652787616</BitOffs>
+            <BitOffs>652738464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle</Name>
@@ -47673,7 +47635,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652791008</BitOffs>
+            <BitOffs>652741856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state</Name>
@@ -47694,7 +47656,30 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>652791009</BitOffs>
+            <BitOffs>652741857</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.rReqTrans</Name>
+            <BitSize>128</BitSize>
+            <BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:PMPS:ReqTrans</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661977536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
@@ -47706,7 +47691,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658743296</BitOffs>
+            <BitOffs>661978880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitForwardEnable</Name>
@@ -47729,7 +47714,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751232</BitOffs>
+            <BitOffs>661986816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bLimitBackwardEnable</Name>
@@ -47752,7 +47737,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751240</BitOffs>
+            <BitOffs>661986824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHome</Name>
@@ -47775,7 +47760,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751248</BitOffs>
+            <BitOffs>661986832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bHardwareEnable</Name>
@@ -47798,7 +47783,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751264</BitOffs>
+            <BitOffs>661986848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderULINT</Name>
@@ -47811,7 +47796,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751296</BitOffs>
+            <BitOffs>661986880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderUINT</Name>
@@ -47824,7 +47809,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751360</BitOffs>
+            <BitOffs>661986944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.nRawEncoderINT</Name>
@@ -47837,7 +47822,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658751376</BitOffs>
+            <BitOffs>661986960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.NcToPlc</Name>
@@ -47849,7 +47834,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658764480</BitOffs>
+            <BitOffs>662000064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitForwardEnable</Name>
@@ -47872,7 +47857,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772416</BitOffs>
+            <BitOffs>662008000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bLimitBackwardEnable</Name>
@@ -47895,7 +47880,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772424</BitOffs>
+            <BitOffs>662008008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHome</Name>
@@ -47918,7 +47903,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772432</BitOffs>
+            <BitOffs>662008016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bHardwareEnable</Name>
@@ -47941,7 +47926,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772448</BitOffs>
+            <BitOffs>662008032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderULINT</Name>
@@ -47954,7 +47939,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772480</BitOffs>
+            <BitOffs>662008064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderUINT</Name>
@@ -47967,7 +47952,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772544</BitOffs>
+            <BitOffs>662008128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.nRawEncoderINT</Name>
@@ -47980,7 +47965,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658772560</BitOffs>
+            <BitOffs>662008144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.NcToPlc</Name>
@@ -47992,7 +47977,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658785664</BitOffs>
+            <BitOffs>662021248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitForwardEnable</Name>
@@ -48015,7 +48000,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793600</BitOffs>
+            <BitOffs>662029184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bLimitBackwardEnable</Name>
@@ -48038,7 +48023,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793608</BitOffs>
+            <BitOffs>662029192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHome</Name>
@@ -48061,7 +48046,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793616</BitOffs>
+            <BitOffs>662029200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bHardwareEnable</Name>
@@ -48084,7 +48069,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793632</BitOffs>
+            <BitOffs>662029216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderULINT</Name>
@@ -48097,7 +48082,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793664</BitOffs>
+            <BitOffs>662029248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderUINT</Name>
@@ -48110,7 +48095,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793728</BitOffs>
+            <BitOffs>662029312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.nRawEncoderINT</Name>
@@ -48123,7 +48108,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658793744</BitOffs>
+            <BitOffs>662029328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.NcToPlc</Name>
@@ -48135,7 +48120,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658806848</BitOffs>
+            <BitOffs>662042432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitForwardEnable</Name>
@@ -48158,7 +48143,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814784</BitOffs>
+            <BitOffs>662050368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bLimitBackwardEnable</Name>
@@ -48181,7 +48166,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814792</BitOffs>
+            <BitOffs>662050376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHome</Name>
@@ -48204,7 +48189,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814800</BitOffs>
+            <BitOffs>662050384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bHardwareEnable</Name>
@@ -48227,7 +48212,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814816</BitOffs>
+            <BitOffs>662050400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderULINT</Name>
@@ -48240,7 +48225,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814848</BitOffs>
+            <BitOffs>662050432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderUINT</Name>
@@ -48253,7 +48238,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814912</BitOffs>
+            <BitOffs>662050496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.nRawEncoderINT</Name>
@@ -48266,7 +48251,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658814928</BitOffs>
+            <BitOffs>662050512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.NcToPlc</Name>
@@ -48278,7 +48263,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658828032</BitOffs>
+            <BitOffs>662063616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitForwardEnable</Name>
@@ -48301,7 +48286,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658835968</BitOffs>
+            <BitOffs>662071552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bLimitBackwardEnable</Name>
@@ -48324,7 +48309,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658835976</BitOffs>
+            <BitOffs>662071560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHome</Name>
@@ -48347,7 +48332,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658835984</BitOffs>
+            <BitOffs>662071568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bHardwareEnable</Name>
@@ -48370,7 +48355,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658836000</BitOffs>
+            <BitOffs>662071584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderULINT</Name>
@@ -48383,7 +48368,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658836032</BitOffs>
+            <BitOffs>662071616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderUINT</Name>
@@ -48396,7 +48381,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658836096</BitOffs>
+            <BitOffs>662071680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.nRawEncoderINT</Name>
@@ -48409,7 +48394,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658836112</BitOffs>
+            <BitOffs>662071696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.NcToPlc</Name>
@@ -48421,7 +48406,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658849216</BitOffs>
+            <BitOffs>662084800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitForwardEnable</Name>
@@ -48444,7 +48429,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857152</BitOffs>
+            <BitOffs>662092736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bLimitBackwardEnable</Name>
@@ -48467,7 +48452,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857160</BitOffs>
+            <BitOffs>662092744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHome</Name>
@@ -48490,7 +48475,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857168</BitOffs>
+            <BitOffs>662092752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bHardwareEnable</Name>
@@ -48513,7 +48498,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857184</BitOffs>
+            <BitOffs>662092768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderULINT</Name>
@@ -48526,7 +48511,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857216</BitOffs>
+            <BitOffs>662092800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderUINT</Name>
@@ -48539,7 +48524,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857280</BitOffs>
+            <BitOffs>662092864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.nRawEncoderINT</Name>
@@ -48552,7 +48537,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658857296</BitOffs>
+            <BitOffs>662092880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.NcToPlc</Name>
@@ -48564,7 +48549,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658870400</BitOffs>
+            <BitOffs>662105984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitForwardEnable</Name>
@@ -48587,7 +48572,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878336</BitOffs>
+            <BitOffs>662113920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bLimitBackwardEnable</Name>
@@ -48610,7 +48595,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878344</BitOffs>
+            <BitOffs>662113928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHome</Name>
@@ -48633,7 +48618,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878352</BitOffs>
+            <BitOffs>662113936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bHardwareEnable</Name>
@@ -48656,7 +48641,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878368</BitOffs>
+            <BitOffs>662113952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderULINT</Name>
@@ -48669,7 +48654,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878400</BitOffs>
+            <BitOffs>662113984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderUINT</Name>
@@ -48682,7 +48667,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878464</BitOffs>
+            <BitOffs>662114048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.nRawEncoderINT</Name>
@@ -48695,7 +48680,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658878480</BitOffs>
+            <BitOffs>662114064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.NcToPlc</Name>
@@ -48707,7 +48692,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658891584</BitOffs>
+            <BitOffs>662127168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitForwardEnable</Name>
@@ -48730,7 +48715,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899520</BitOffs>
+            <BitOffs>662135104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bLimitBackwardEnable</Name>
@@ -48753,7 +48738,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899528</BitOffs>
+            <BitOffs>662135112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHome</Name>
@@ -48776,7 +48761,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899536</BitOffs>
+            <BitOffs>662135120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bHardwareEnable</Name>
@@ -48799,7 +48784,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899552</BitOffs>
+            <BitOffs>662135136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderULINT</Name>
@@ -48812,7 +48797,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899584</BitOffs>
+            <BitOffs>662135168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderUINT</Name>
@@ -48825,7 +48810,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899648</BitOffs>
+            <BitOffs>662135232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.nRawEncoderINT</Name>
@@ -48838,7 +48823,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658899664</BitOffs>
+            <BitOffs>662135248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.NcToPlc</Name>
@@ -48850,7 +48835,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658912768</BitOffs>
+            <BitOffs>662148352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitForwardEnable</Name>
@@ -48873,7 +48858,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920704</BitOffs>
+            <BitOffs>662156288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bLimitBackwardEnable</Name>
@@ -48896,7 +48881,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920712</BitOffs>
+            <BitOffs>662156296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHome</Name>
@@ -48919,7 +48904,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920720</BitOffs>
+            <BitOffs>662156304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bHardwareEnable</Name>
@@ -48942,7 +48927,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920736</BitOffs>
+            <BitOffs>662156320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderULINT</Name>
@@ -48955,7 +48940,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920768</BitOffs>
+            <BitOffs>662156352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderUINT</Name>
@@ -48968,7 +48953,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920832</BitOffs>
+            <BitOffs>662156416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.nRawEncoderINT</Name>
@@ -48981,7 +48966,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658920848</BitOffs>
+            <BitOffs>662156432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.Axis.NcToPlc</Name>
@@ -48993,7 +48978,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658933952</BitOffs>
+            <BitOffs>662169536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bLimitForwardEnable</Name>
@@ -49016,7 +49001,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658941888</BitOffs>
+            <BitOffs>662177472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bLimitBackwardEnable</Name>
@@ -49039,7 +49024,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658941896</BitOffs>
+            <BitOffs>662177480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bHome</Name>
@@ -49062,7 +49047,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658941904</BitOffs>
+            <BitOffs>662177488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bHardwareEnable</Name>
@@ -49085,7 +49070,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658941920</BitOffs>
+            <BitOffs>662177504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderULINT</Name>
@@ -49098,7 +49083,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658941952</BitOffs>
+            <BitOffs>662177536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderUINT</Name>
@@ -49111,7 +49096,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658942016</BitOffs>
+            <BitOffs>662177600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.nRawEncoderINT</Name>
@@ -49124,7 +49109,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658942032</BitOffs>
+            <BitOffs>662177616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.Axis.NcToPlc</Name>
@@ -49136,7 +49121,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658955136</BitOffs>
+            <BitOffs>662190720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bLimitForwardEnable</Name>
@@ -49159,7 +49144,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963072</BitOffs>
+            <BitOffs>662198656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bLimitBackwardEnable</Name>
@@ -49182,7 +49167,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963080</BitOffs>
+            <BitOffs>662198664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bHome</Name>
@@ -49205,7 +49190,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963088</BitOffs>
+            <BitOffs>662198672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bHardwareEnable</Name>
@@ -49228,7 +49213,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963104</BitOffs>
+            <BitOffs>662198688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderULINT</Name>
@@ -49241,7 +49226,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963136</BitOffs>
+            <BitOffs>662198720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderUINT</Name>
@@ -49254,7 +49239,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963200</BitOffs>
+            <BitOffs>662198784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.nRawEncoderINT</Name>
@@ -49267,7 +49252,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658963216</BitOffs>
+            <BitOffs>662198800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.Axis.NcToPlc</Name>
@@ -49279,7 +49264,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658976320</BitOffs>
+            <BitOffs>662211904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bLimitForwardEnable</Name>
@@ -49302,7 +49287,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984256</BitOffs>
+            <BitOffs>662219840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bLimitBackwardEnable</Name>
@@ -49325,7 +49310,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984264</BitOffs>
+            <BitOffs>662219848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bHome</Name>
@@ -49348,7 +49333,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984272</BitOffs>
+            <BitOffs>662219856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bHardwareEnable</Name>
@@ -49371,7 +49356,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984288</BitOffs>
+            <BitOffs>662219872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderULINT</Name>
@@ -49384,7 +49369,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984320</BitOffs>
+            <BitOffs>662219904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderUINT</Name>
@@ -49397,7 +49382,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984384</BitOffs>
+            <BitOffs>662219968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.nRawEncoderINT</Name>
@@ -49410,7 +49395,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658984400</BitOffs>
+            <BitOffs>662219984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.Axis.NcToPlc</Name>
@@ -49422,7 +49407,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>658997504</BitOffs>
+            <BitOffs>662233088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bLimitForwardEnable</Name>
@@ -49445,7 +49430,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005440</BitOffs>
+            <BitOffs>662241024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bLimitBackwardEnable</Name>
@@ -49468,7 +49453,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005448</BitOffs>
+            <BitOffs>662241032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bHome</Name>
@@ -49491,7 +49476,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005456</BitOffs>
+            <BitOffs>662241040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bHardwareEnable</Name>
@@ -49514,7 +49499,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005472</BitOffs>
+            <BitOffs>662241056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderULINT</Name>
@@ -49527,7 +49512,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005504</BitOffs>
+            <BitOffs>662241088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderUINT</Name>
@@ -49540,7 +49525,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005568</BitOffs>
+            <BitOffs>662241152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.nRawEncoderINT</Name>
@@ -49553,7 +49538,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659005584</BitOffs>
+            <BitOffs>662241168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.NcToPlc</Name>
@@ -49565,7 +49550,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659018688</BitOffs>
+            <BitOffs>662254272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitForwardEnable</Name>
@@ -49588,7 +49573,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026624</BitOffs>
+            <BitOffs>662262208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bLimitBackwardEnable</Name>
@@ -49611,7 +49596,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026632</BitOffs>
+            <BitOffs>662262216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHome</Name>
@@ -49634,7 +49619,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026640</BitOffs>
+            <BitOffs>662262224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bHardwareEnable</Name>
@@ -49657,7 +49642,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026656</BitOffs>
+            <BitOffs>662262240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderULINT</Name>
@@ -49670,7 +49655,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026688</BitOffs>
+            <BitOffs>662262272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderUINT</Name>
@@ -49683,7 +49668,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026752</BitOffs>
+            <BitOffs>662262336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.nRawEncoderINT</Name>
@@ -49696,7 +49681,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659026768</BitOffs>
+            <BitOffs>662262352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.NcToPlc</Name>
@@ -49708,7 +49693,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659039872</BitOffs>
+            <BitOffs>662275456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitForwardEnable</Name>
@@ -49731,7 +49716,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047808</BitOffs>
+            <BitOffs>662283392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bLimitBackwardEnable</Name>
@@ -49754,7 +49739,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047816</BitOffs>
+            <BitOffs>662283400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHome</Name>
@@ -49777,7 +49762,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047824</BitOffs>
+            <BitOffs>662283408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bHardwareEnable</Name>
@@ -49800,7 +49785,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047840</BitOffs>
+            <BitOffs>662283424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderULINT</Name>
@@ -49813,7 +49798,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047872</BitOffs>
+            <BitOffs>662283456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderUINT</Name>
@@ -49826,7 +49811,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047936</BitOffs>
+            <BitOffs>662283520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.nRawEncoderINT</Name>
@@ -49839,7 +49824,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659047952</BitOffs>
+            <BitOffs>662283536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.NcToPlc</Name>
@@ -49851,7 +49836,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659061056</BitOffs>
+            <BitOffs>662296640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitForwardEnable</Name>
@@ -49874,7 +49859,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659068992</BitOffs>
+            <BitOffs>662304576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bLimitBackwardEnable</Name>
@@ -49897,7 +49882,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069000</BitOffs>
+            <BitOffs>662304584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHome</Name>
@@ -49920,7 +49905,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069008</BitOffs>
+            <BitOffs>662304592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bHardwareEnable</Name>
@@ -49943,7 +49928,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069024</BitOffs>
+            <BitOffs>662304608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderULINT</Name>
@@ -49956,7 +49941,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069056</BitOffs>
+            <BitOffs>662304640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderUINT</Name>
@@ -49969,7 +49954,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069120</BitOffs>
+            <BitOffs>662304704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.nRawEncoderINT</Name>
@@ -49982,7 +49967,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659069136</BitOffs>
+            <BitOffs>662304720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.Axis.NcToPlc</Name>
@@ -49994,7 +49979,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659082240</BitOffs>
+            <BitOffs>662317824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bLimitForwardEnable</Name>
@@ -50017,7 +50002,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090176</BitOffs>
+            <BitOffs>662325760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bLimitBackwardEnable</Name>
@@ -50040,7 +50025,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090184</BitOffs>
+            <BitOffs>662325768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bHome</Name>
@@ -50063,7 +50048,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090192</BitOffs>
+            <BitOffs>662325776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bHardwareEnable</Name>
@@ -50086,7 +50071,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090208</BitOffs>
+            <BitOffs>662325792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderULINT</Name>
@@ -50099,7 +50084,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090240</BitOffs>
+            <BitOffs>662325824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderUINT</Name>
@@ -50112,7 +50097,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090304</BitOffs>
+            <BitOffs>662325888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.nRawEncoderINT</Name>
@@ -50125,7 +50110,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659090320</BitOffs>
+            <BitOffs>662325904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.Axis.NcToPlc</Name>
@@ -50137,7 +50122,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659103424</BitOffs>
+            <BitOffs>662339008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bLimitForwardEnable</Name>
@@ -50160,7 +50145,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111360</BitOffs>
+            <BitOffs>662346944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bLimitBackwardEnable</Name>
@@ -50183,7 +50168,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111368</BitOffs>
+            <BitOffs>662346952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bHome</Name>
@@ -50206,7 +50191,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111376</BitOffs>
+            <BitOffs>662346960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bHardwareEnable</Name>
@@ -50229,7 +50214,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111392</BitOffs>
+            <BitOffs>662346976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderULINT</Name>
@@ -50242,7 +50227,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111424</BitOffs>
+            <BitOffs>662347008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderUINT</Name>
@@ -50255,7 +50240,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111488</BitOffs>
+            <BitOffs>662347072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.nRawEncoderINT</Name>
@@ -50268,7 +50253,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659111504</BitOffs>
+            <BitOffs>662347088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.Axis.NcToPlc</Name>
@@ -50280,7 +50265,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659124608</BitOffs>
+            <BitOffs>662360192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bLimitForwardEnable</Name>
@@ -50303,7 +50288,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132544</BitOffs>
+            <BitOffs>662368128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bLimitBackwardEnable</Name>
@@ -50326,7 +50311,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132552</BitOffs>
+            <BitOffs>662368136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bHome</Name>
@@ -50349,7 +50334,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132560</BitOffs>
+            <BitOffs>662368144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bHardwareEnable</Name>
@@ -50372,7 +50357,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132576</BitOffs>
+            <BitOffs>662368160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderULINT</Name>
@@ -50385,7 +50370,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132608</BitOffs>
+            <BitOffs>662368192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderUINT</Name>
@@ -50398,7 +50383,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132672</BitOffs>
+            <BitOffs>662368256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.nRawEncoderINT</Name>
@@ -50411,7 +50396,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659132688</BitOffs>
+            <BitOffs>662368272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.Axis.NcToPlc</Name>
@@ -50423,7 +50408,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659145792</BitOffs>
+            <BitOffs>662381376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bLimitForwardEnable</Name>
@@ -50446,7 +50431,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153728</BitOffs>
+            <BitOffs>662389312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bLimitBackwardEnable</Name>
@@ -50469,7 +50454,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153736</BitOffs>
+            <BitOffs>662389320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bHome</Name>
@@ -50492,7 +50477,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153744</BitOffs>
+            <BitOffs>662389328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bHardwareEnable</Name>
@@ -50515,7 +50500,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153760</BitOffs>
+            <BitOffs>662389344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderULINT</Name>
@@ -50528,7 +50513,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153792</BitOffs>
+            <BitOffs>662389376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderUINT</Name>
@@ -50541,7 +50526,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153856</BitOffs>
+            <BitOffs>662389440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.nRawEncoderINT</Name>
@@ -50554,7 +50539,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659153872</BitOffs>
+            <BitOffs>662389456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.Axis.NcToPlc</Name>
@@ -50566,7 +50551,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659166976</BitOffs>
+            <BitOffs>662402560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bLimitForwardEnable</Name>
@@ -50589,7 +50574,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659174912</BitOffs>
+            <BitOffs>662410496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bLimitBackwardEnable</Name>
@@ -50612,7 +50597,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659174920</BitOffs>
+            <BitOffs>662410504</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bHome</Name>
@@ -50635,7 +50620,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659174928</BitOffs>
+            <BitOffs>662410512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bHardwareEnable</Name>
@@ -50658,7 +50643,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659174944</BitOffs>
+            <BitOffs>662410528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderULINT</Name>
@@ -50671,7 +50656,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659174976</BitOffs>
+            <BitOffs>662410560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderUINT</Name>
@@ -50684,7 +50669,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659175040</BitOffs>
+            <BitOffs>662410624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.nRawEncoderINT</Name>
@@ -50697,7 +50682,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659175056</BitOffs>
+            <BitOffs>662410640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.Axis.NcToPlc</Name>
@@ -50709,7 +50694,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659188160</BitOffs>
+            <BitOffs>662423744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bLimitForwardEnable</Name>
@@ -50732,7 +50717,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196096</BitOffs>
+            <BitOffs>662431680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bLimitBackwardEnable</Name>
@@ -50755,7 +50740,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196104</BitOffs>
+            <BitOffs>662431688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bHome</Name>
@@ -50778,7 +50763,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196112</BitOffs>
+            <BitOffs>662431696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bHardwareEnable</Name>
@@ -50801,7 +50786,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196128</BitOffs>
+            <BitOffs>662431712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderULINT</Name>
@@ -50814,7 +50799,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196160</BitOffs>
+            <BitOffs>662431744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderUINT</Name>
@@ -50827,7 +50812,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196224</BitOffs>
+            <BitOffs>662431808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.nRawEncoderINT</Name>
@@ -50840,7 +50825,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659196240</BitOffs>
+            <BitOffs>662431824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.Axis.NcToPlc</Name>
@@ -50852,7 +50837,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659209344</BitOffs>
+            <BitOffs>662444928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bLimitForwardEnable</Name>
@@ -50875,7 +50860,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217280</BitOffs>
+            <BitOffs>662452864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bLimitBackwardEnable</Name>
@@ -50898,7 +50883,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217288</BitOffs>
+            <BitOffs>662452872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bHome</Name>
@@ -50921,7 +50906,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217296</BitOffs>
+            <BitOffs>662452880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bHardwareEnable</Name>
@@ -50944,7 +50929,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217312</BitOffs>
+            <BitOffs>662452896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderULINT</Name>
@@ -50957,7 +50942,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217344</BitOffs>
+            <BitOffs>662452928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderUINT</Name>
@@ -50970,7 +50955,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217408</BitOffs>
+            <BitOffs>662452992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.nRawEncoderINT</Name>
@@ -50983,7 +50968,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659217424</BitOffs>
+            <BitOffs>662453008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.Axis.NcToPlc</Name>
@@ -50995,7 +50980,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659230528</BitOffs>
+            <BitOffs>662466112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bLimitForwardEnable</Name>
@@ -51018,7 +51003,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238464</BitOffs>
+            <BitOffs>662474048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bLimitBackwardEnable</Name>
@@ -51041,7 +51026,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238472</BitOffs>
+            <BitOffs>662474056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bHome</Name>
@@ -51064,7 +51049,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238480</BitOffs>
+            <BitOffs>662474064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bHardwareEnable</Name>
@@ -51087,7 +51072,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238496</BitOffs>
+            <BitOffs>662474080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderULINT</Name>
@@ -51100,7 +51085,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238528</BitOffs>
+            <BitOffs>662474112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderUINT</Name>
@@ -51113,7 +51098,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238592</BitOffs>
+            <BitOffs>662474176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.nRawEncoderINT</Name>
@@ -51126,7 +51111,7 @@ Digital outputs</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>659238608</BitOffs>
+            <BitOffs>662474192</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -51688,7 +51673,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648668992</BitOffs>
+            <BitOffs>648662848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51700,7 +51685,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649122944</BitOffs>
+            <BitOffs>649110656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51712,7 +51697,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649576896</BitOffs>
+            <BitOffs>649558464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI3K2_K2B.fbLI3K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51724,7 +51709,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>650034816</BitOffs>
+            <BitOffs>649985664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51736,7 +51721,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>650658496</BitOffs>
+            <BitOffs>650609344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2.fbZStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51748,7 +51733,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>650873344</BitOffs>
+            <BitOffs>650824192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -51760,7 +51745,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>651495808</BitOffs>
+            <BitOffs>651446656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbGige.iIlluminatorINT</Name>
@@ -51772,7 +51757,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652675616</BitOffs>
+            <BitOffs>652626464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbGige.bGigePower</Name>
@@ -51792,7 +51777,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652675632</BitOffs>
+            <BitOffs>652626480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2.fbGige.fbSetIllPercent.iRaw</Name>
@@ -51805,7 +51790,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652676480</BitOffs>
+            <BitOffs>652627328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ST3K2_TERM.ST3K2.q_xInsert_DO</Name>
@@ -51817,7 +51802,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652786160</BitOffs>
+            <BitOffs>652737008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ST3K2_TERM.ST3K2.q_xRetract_DO</Name>
@@ -51829,7 +51814,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652786168</BitOffs>
+            <BitOffs>652737016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP</Name>
@@ -51845,7 +51830,70 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>652789312</BitOffs>
+            <BitOffs>652740160</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput1.q_xFastFaultOut</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FaultHWO
+        io: i
+        field: DESC Hardware Output Status
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>660213448</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FaultHWO
+        io: i
+        field: DESC Hardware Output Status
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661092360</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.rCurTrans</Name>
+            <BitSize>128</BitSize>
+            <BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:PMPS:CurTrans</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661977664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
@@ -51857,7 +51905,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658742272</BitOffs>
+            <BitOffs>661977856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.bBrakeRelease</Name>
@@ -51880,7 +51928,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658751256</BitOffs>
+            <BitOffs>661986840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.Axis.PlcToNc</Name>
@@ -51892,7 +51940,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658763456</BitOffs>
+            <BitOffs>661999040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2.bBrakeRelease</Name>
@@ -51915,7 +51963,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658772440</BitOffs>
+            <BitOffs>662008024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.Axis.PlcToNc</Name>
@@ -51927,7 +51975,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658784640</BitOffs>
+            <BitOffs>662020224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3.bBrakeRelease</Name>
@@ -51950,7 +51998,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658793624</BitOffs>
+            <BitOffs>662029208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.Axis.PlcToNc</Name>
@@ -51962,7 +52010,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658805824</BitOffs>
+            <BitOffs>662041408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4.bBrakeRelease</Name>
@@ -51985,7 +52033,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658814808</BitOffs>
+            <BitOffs>662050392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.Axis.PlcToNc</Name>
@@ -51997,7 +52045,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658827008</BitOffs>
+            <BitOffs>662062592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5.bBrakeRelease</Name>
@@ -52020,7 +52068,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658835992</BitOffs>
+            <BitOffs>662071576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.Axis.PlcToNc</Name>
@@ -52032,7 +52080,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658848192</BitOffs>
+            <BitOffs>662083776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6.bBrakeRelease</Name>
@@ -52055,7 +52103,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658857176</BitOffs>
+            <BitOffs>662092760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.Axis.PlcToNc</Name>
@@ -52067,7 +52115,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658869376</BitOffs>
+            <BitOffs>662104960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7.bBrakeRelease</Name>
@@ -52090,7 +52138,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658878360</BitOffs>
+            <BitOffs>662113944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.Axis.PlcToNc</Name>
@@ -52102,7 +52150,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658890560</BitOffs>
+            <BitOffs>662126144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8.bBrakeRelease</Name>
@@ -52125,7 +52173,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658899544</BitOffs>
+            <BitOffs>662135128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.Axis.PlcToNc</Name>
@@ -52137,7 +52185,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658911744</BitOffs>
+            <BitOffs>662147328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9.bBrakeRelease</Name>
@@ -52160,7 +52208,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658920728</BitOffs>
+            <BitOffs>662156312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.Axis.PlcToNc</Name>
@@ -52172,7 +52220,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658932928</BitOffs>
+            <BitOffs>662168512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10.bBrakeRelease</Name>
@@ -52195,7 +52243,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658941912</BitOffs>
+            <BitOffs>662177496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.Axis.PlcToNc</Name>
@@ -52207,7 +52255,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658954112</BitOffs>
+            <BitOffs>662189696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11.bBrakeRelease</Name>
@@ -52230,7 +52278,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658963096</BitOffs>
+            <BitOffs>662198680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.Axis.PlcToNc</Name>
@@ -52242,7 +52290,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658975296</BitOffs>
+            <BitOffs>662210880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12.bBrakeRelease</Name>
@@ -52265,7 +52313,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658984280</BitOffs>
+            <BitOffs>662219864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.Axis.PlcToNc</Name>
@@ -52277,7 +52325,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>658996480</BitOffs>
+            <BitOffs>662232064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13.bBrakeRelease</Name>
@@ -52300,7 +52348,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659005464</BitOffs>
+            <BitOffs>662241048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.Axis.PlcToNc</Name>
@@ -52312,7 +52360,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659017664</BitOffs>
+            <BitOffs>662253248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14.bBrakeRelease</Name>
@@ -52335,7 +52383,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659026648</BitOffs>
+            <BitOffs>662262232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.Axis.PlcToNc</Name>
@@ -52347,7 +52395,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659038848</BitOffs>
+            <BitOffs>662274432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15.bBrakeRelease</Name>
@@ -52370,7 +52418,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659047832</BitOffs>
+            <BitOffs>662283416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.Axis.PlcToNc</Name>
@@ -52382,7 +52430,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659060032</BitOffs>
+            <BitOffs>662295616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16.bBrakeRelease</Name>
@@ -52405,7 +52453,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659069016</BitOffs>
+            <BitOffs>662304600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.Axis.PlcToNc</Name>
@@ -52417,7 +52465,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659081216</BitOffs>
+            <BitOffs>662316800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17.bBrakeRelease</Name>
@@ -52440,7 +52488,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659090200</BitOffs>
+            <BitOffs>662325784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.Axis.PlcToNc</Name>
@@ -52452,7 +52500,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659102400</BitOffs>
+            <BitOffs>662337984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18.bBrakeRelease</Name>
@@ -52475,7 +52523,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659111384</BitOffs>
+            <BitOffs>662346968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.Axis.PlcToNc</Name>
@@ -52487,7 +52535,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659123584</BitOffs>
+            <BitOffs>662359168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19.bBrakeRelease</Name>
@@ -52510,7 +52558,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659132568</BitOffs>
+            <BitOffs>662368152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.Axis.PlcToNc</Name>
@@ -52522,7 +52570,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659144768</BitOffs>
+            <BitOffs>662380352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20.bBrakeRelease</Name>
@@ -52545,7 +52593,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659153752</BitOffs>
+            <BitOffs>662389336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.Axis.PlcToNc</Name>
@@ -52557,7 +52605,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659165952</BitOffs>
+            <BitOffs>662401536</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21.bBrakeRelease</Name>
@@ -52580,7 +52628,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659174936</BitOffs>
+            <BitOffs>662410520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.Axis.PlcToNc</Name>
@@ -52592,7 +52640,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659187136</BitOffs>
+            <BitOffs>662422720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22.bBrakeRelease</Name>
@@ -52615,7 +52663,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659196120</BitOffs>
+            <BitOffs>662431704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.Axis.PlcToNc</Name>
@@ -52627,7 +52675,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659208320</BitOffs>
+            <BitOffs>662443904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23.bBrakeRelease</Name>
@@ -52650,7 +52698,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659217304</BitOffs>
+            <BitOffs>662452888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.Axis.PlcToNc</Name>
@@ -52662,7 +52710,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659229504</BitOffs>
+            <BitOffs>662465088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24.bBrakeRelease</Name>
@@ -52685,47 +52733,7 @@ Digital outputs</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>659238488</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput1.q_xFastFaultOut</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FaultHWO
-        io: i
-        field: DESC Hardware Output Status
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>660771016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FaultHWO
-        io: i
-        field: DESC Hardware Output Status
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>661649928</BitOffs>
+            <BitOffs>662474072</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -76161,12 +76169,15 @@ Digital outputs</Comment>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage1</Name>
-            <BitSize>453952</BitSize>
+            <BitSize>447808</BitSize>
             <BaseType>FB_SXR_SATT_Stage</BaseType>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: AT2K2:L2SI:MMS:01</Value>
+                <Value>
+        pv: AT2K2:L2SI:MMS:01
+        
+    </Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
@@ -76189,7 +76200,7 @@ Digital outputs</Comment>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage2</Name>
-            <BitSize>453952</BitSize>
+            <BitSize>447808</BitSize>
             <BaseType>FB_SXR_SATT_Stage</BaseType>
             <Properties>
               <Property>
@@ -76213,11 +76224,11 @@ Digital outputs</Comment>
     </Value>
               </Property>
             </Properties>
-            <BitOffs>648635136</BitOffs>
+            <BitOffs>648628992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage3</Name>
-            <BitSize>453952</BitSize>
+            <BitSize>447808</BitSize>
             <BaseType>FB_SXR_SATT_Stage</BaseType>
             <Properties>
               <Property>
@@ -76240,11 +76251,11 @@ Digital outputs</Comment>
     </Value>
               </Property>
             </Properties>
-            <BitOffs>649089088</BitOffs>
+            <BitOffs>649076800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.fbStage4</Name>
-            <BitSize>453952</BitSize>
+            <BitSize>447808</BitSize>
             <BaseType>FB_SXR_SATT_Stage</BaseType>
             <Properties>
               <Property>
@@ -76267,80 +76278,16 @@ Digital outputs</Comment>
     </Value>
               </Property>
             </Properties>
-            <BitOffs>649543040</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_AT2K2_SOLID.arrStage1Filters</Name>
-            <BitSize>6144</BitSize>
-            <BaseType>DUT_SATT_Filter</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>8</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: AT2K2:L2SI:MMS:01:FILTERS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>649996992</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_AT2K2_SOLID.arrStage2Filters</Name>
-            <BitSize>6144</BitSize>
-            <BaseType>DUT_SATT_Filter</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>8</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: AT2K2:L2SI:MMS:02:FILTERS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650003136</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_AT2K2_SOLID.arrStage3Filters</Name>
-            <BitSize>6144</BitSize>
-            <BaseType>DUT_SATT_Filter</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>8</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: AT2K2:L2SI:MMS:03:FILTERS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650009280</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_AT2K2_SOLID.arrStage4Filters</Name>
-            <BitSize>6144</BitSize>
-            <BaseType>DUT_SATT_Filter</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>8</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: AT2K2:L2SI:MMS:04:FILTERS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650015424</BitOffs>
+            <BitOffs>649524608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_AT2K2_SOLID.DEFAULT_VELOCITY</Name>
             <BitSize>64</BitSize>
             <BaseType>LREAL</BaseType>
             <Default>
-              <Value>10</Value>
+              <Value>1</Value>
             </Default>
-            <BitOffs>650021568</BitOffs>
+            <BitOffs>649972416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI3K2_K2B.fbLI3K2</Name>
@@ -76355,7 +76302,7 @@ Digital outputs</Comment>
     </Value>
               </Property>
             </Properties>
-            <BitOffs>650021632</BitOffs>
+            <BitOffs>649972480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI3K2_K2B.stSiBP</Name>
@@ -76407,7 +76354,7 @@ Digital outputs</Comment>
                 <Value>1000</Value>
               </SubItem>
             </Default>
-            <BitOffs>650636096</BitOffs>
+            <BitOffs>650586944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI3K2_K2B.stFoilBP</Name>
@@ -76459,7 +76406,7 @@ Digital outputs</Comment>
                 <Value>1000</Value>
               </SubItem>
             </Default>
-            <BitOffs>650637792</BitOffs>
+            <BitOffs>650588640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.fbPF2K2</Name>
@@ -76485,7 +76432,7 @@ Digital outputs</Comment>
                               .fbThermoCouple2.iRaw 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
-            <BitOffs>650639488</BitOffs>
+            <BitOffs>650590336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_PF2K2_WFS.stSiBP</Name>
@@ -76537,7 +76484,7 @@ Digital outputs</Comment>
                 <Value>1000</Value>
               </SubItem>
             </Default>
-            <BitOffs>651480896</BitOffs>
+            <BitOffs>651431744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_IM6K2_PPM.fbIM6K2</Name>
@@ -76566,7 +76513,7 @@ Digital outputs</Comment>
                               .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
-            <BitOffs>651482624</BitOffs>
+            <BitOffs>651433472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ST3K2_TERM.ST3K2</Name>
@@ -76585,17 +76532,17 @@ Digital outputs</Comment>
     </Value>
               </Property>
             </Properties>
-            <BitOffs>652677248</BitOffs>
+            <BitOffs>652628096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.fbArbiterIO</Name>
             <BitSize>138176</BitSize>
             <BaseType Namespace="PMPS">FB_SubSysToArbiter_IO</BaseType>
-            <BitOffs>652786816</BitOffs>
+            <BitOffs>652737664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_3_PMPS_POST.ff2_ff1_link_motion</Name>
-            <Comment>fb_vetoArbiter: FB_VetoArbiter; </Comment>
+            <Comment>fb_vetoArbiter: FB_VetoArbiter;</Comment>
             <BitSize>25088</BitSize>
             <BaseType Namespace="PMPS">FB_FastFault</BaseType>
             <Default>
@@ -76616,13 +76563,131 @@ Digital outputs</Comment>
                 <Value>65535</Value>
               </SubItem>
             </Default>
-            <BitOffs>652924992</BitOffs>
+            <BitOffs>652875840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_4_LOG.fbLogHandler</Name>
             <BitSize>5785856</BitSize>
             <BaseType Namespace="LCLS_General">FB_LogHandler</BaseType>
-            <BitOffs>652953472</BitOffs>
+            <BitOffs>652904320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbArbiter1</Name>
+            <BitSize>760064</BitSize>
+            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:ARB:01</Value>
+              </Property>
+              <Property>
+                <Name>old_input_assignments</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>658693056</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbArbiter2</Name>
+            <BitSize>760064</BitSize>
+            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:ARB:02</Value>
+              </Property>
+              <Property>
+                <Name>old_input_assignments</Name>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>659453120</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput1</Name>
+            <Comment> For devices between the mirror and the stopper</Comment>
+            <BitSize>878912</BitSize>
+            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.bAutoReset</Name>
+                <Value>1</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.i_sNetID</Name>
+                <String>172.21.92.73.1.1</String>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:FFO:01</Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>660213184</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput2</Name>
+            <Comment> For devices after the stopper</Comment>
+            <BitSize>878912</BitSize>
+            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.bAutoReset</Name>
+                <Value>1</Value>
+              </SubItem>
+              <SubItem>
+                <Name>.i_sNetID</Name>
+                <String>172.21.92.73.1.1</String>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: PLC:RIX:MOTION:FFO:02</Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661092096</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbAtomicMass</Name>
+            <BitSize>2816</BitSize>
+            <BaseType Namespace="lcls_twincat_physics">FB_AtomicMass</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661971008</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.fbAttenuatorElementDensity</Name>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_AttenuatorElementDensity</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661973824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1</Name>
@@ -76650,7 +76715,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658742208</BitOffs>
+            <BitOffs>661977792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M2</Name>
@@ -76678,7 +76743,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658763392</BitOffs>
+            <BitOffs>661998976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M3</Name>
@@ -76690,7 +76755,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658784576</BitOffs>
+            <BitOffs>662020160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M4</Name>
@@ -76718,7 +76783,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658805760</BitOffs>
+            <BitOffs>662041344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M5</Name>
@@ -76747,7 +76812,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658826944</BitOffs>
+            <BitOffs>662062528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M6</Name>
@@ -76775,7 +76840,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658848128</BitOffs>
+            <BitOffs>662083712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M7</Name>
@@ -76803,7 +76868,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658869312</BitOffs>
+            <BitOffs>662104896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M8</Name>
@@ -76831,7 +76896,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658890496</BitOffs>
+            <BitOffs>662126080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M9</Name>
@@ -76860,7 +76925,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658911680</BitOffs>
+            <BitOffs>662147264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M10</Name>
@@ -76885,7 +76950,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658932864</BitOffs>
+            <BitOffs>662168448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M11</Name>
@@ -76914,7 +76979,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658954048</BitOffs>
+            <BitOffs>662189632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M12</Name>
@@ -76943,7 +77008,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658975232</BitOffs>
+            <BitOffs>662210816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M13</Name>
@@ -76968,7 +77033,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>658996416</BitOffs>
+            <BitOffs>662232000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M14</Name>
@@ -76996,7 +77061,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659017600</BitOffs>
+            <BitOffs>662253184</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M15</Name>
@@ -77025,7 +77090,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659038784</BitOffs>
+            <BitOffs>662274368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M16</Name>
@@ -77050,7 +77115,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659059968</BitOffs>
+            <BitOffs>662295552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M17</Name>
@@ -77092,7 +77157,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659081152</BitOffs>
+            <BitOffs>662316736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M18</Name>
@@ -77121,7 +77186,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659102336</BitOffs>
+            <BitOffs>662337920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M19</Name>
@@ -77150,7 +77215,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659123520</BitOffs>
+            <BitOffs>662359104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M20</Name>
@@ -77179,7 +77244,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659144704</BitOffs>
+            <BitOffs>662380288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M21</Name>
@@ -77208,7 +77273,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659165888</BitOffs>
+            <BitOffs>662401472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M22</Name>
@@ -77237,7 +77302,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659187072</BitOffs>
+            <BitOffs>662422656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M23</Name>
@@ -77262,7 +77327,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659208256</BitOffs>
+            <BitOffs>662443840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M24</Name>
@@ -77290,125 +77355,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>659229440</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbArbiter1</Name>
-            <BitSize>760064</BitSize>
-            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PLC:RIX:MOTION:ARB:01</Value>
-              </Property>
-              <Property>
-                <Name>old_input_assignments</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>659250624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbArbiter2</Name>
-            <BitSize>760064</BitSize>
-            <BaseType Namespace="PMPS">FB_Arbiter</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PLC:RIX:MOTION:ARB:02</Value>
-              </Property>
-              <Property>
-                <Name>old_input_assignments</Name>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>660010688</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput1</Name>
-            <Comment> For devices between the mirror and the stopper</Comment>
-            <BitSize>878912</BitSize>
-            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.bAutoReset</Name>
-                <Value>1</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.i_sNetID</Name>
-                <String>172.21.92.73.1.1</String>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PLC:RIX:MOTION:FFO:01</Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>660770752</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput2</Name>
-            <Comment> For devices after the stopper</Comment>
-            <BitSize>878912</BitSize>
-            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.bAutoReset</Name>
-                <Value>1</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.i_sNetID</Name>
-                <String>172.21.92.73.1.1</String>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: PLC:RIX:MOTION:FFO:02</Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>661649664</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbAtomicMass</Name>
-            <BitSize>2816</BitSize>
-            <BaseType Namespace="lcls_twincat_physics">FB_AtomicMass</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>662528576</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbAttenuatorElementDensity</Name>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_AttenuatorElementDensity</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>662531392</BitOffs>
+            <BitOffs>662465024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -77438,7 +77385,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662535104</BitOffs>
+            <BitOffs>662486208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -77468,7 +77415,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662535168</BitOffs>
+            <BitOffs>662486272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
@@ -77482,7 +77429,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662535232</BitOffs>
+            <BitOffs>662486336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -77500,7 +77447,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662537280</BitOffs>
+            <BitOffs>662488384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -77521,7 +77468,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662538304</BitOffs>
+            <BitOffs>662489408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -77544,7 +77491,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662570496</BitOffs>
+            <BitOffs>662521600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcGeneralAdsEventClass</Name>
@@ -77613,7 +77560,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591040</BitOffs>
+            <BitOffs>662542144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.Win32EventClass</Name>
@@ -77682,7 +77629,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591168</BitOffs>
+            <BitOffs>662542272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.LCLSGeneralEventClass</Name>
@@ -77751,7 +77698,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591296</BitOffs>
+            <BitOffs>662542400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcSystemEventClass</Name>
@@ -77820,7 +77767,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591424</BitOffs>
+            <BitOffs>662542528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRouterEventClass</Name>
@@ -77889,7 +77836,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591552</BitOffs>
+            <BitOffs>662542656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRTimeEventClass</Name>
@@ -77958,7 +77905,7 @@ Digital outputs</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>662591680</BitOffs>
+            <BitOffs>662542784</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -78034,7 +77981,7 @@ Digital outputs</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2021-08-23T10:52:07</Value>
+          <Value>2021-09-02T09:50:32</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
@@ -78042,7 +77989,7 @@ Digital outputs</Comment>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>82391040</Value>
+          <Value>82382848</Value>
         </Property>
       </Properties>
     </Module>
