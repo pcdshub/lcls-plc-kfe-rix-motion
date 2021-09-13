@@ -435,7 +435,16 @@ fbStage4.stFilter8.bMoveOk                 := TRUE;
 fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
 fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);]]></ST>
+fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+
+
+GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+	fbStage1.fTransmission * 
+	fbStage2.fTransmission * 
+	fbStage3.fTransmission * 
+	fbStage4.fTransmission
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

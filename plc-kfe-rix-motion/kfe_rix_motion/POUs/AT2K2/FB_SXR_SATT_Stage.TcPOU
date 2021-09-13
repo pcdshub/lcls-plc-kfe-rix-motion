@@ -29,16 +29,6 @@ VAR_OUTPUT
     fTemp2 : LREAL;
     bIsStationary : BOOL;
     bError : BOOL;
-END_VAR
-VAR
-    fbMotion: FB_MotionStage;
-
-    {attribute 'pytmc' := '
-         pv: STATE
-    '}
-    fbState 	: FB_SXR_SATT_PositionState;
-
-    bInitialized: BOOL := FALSE;
 
     {attribute 'pytmc' := '
         pv: Material
@@ -59,14 +49,25 @@ VAR
         field: DESC Filter transmission
     '}
     fTransmission : LREAL;
-
     fActiveFilterDensity : LREAL;
     fActiveFilterAtomicMass : LREAL;
-    fbAtomicMass : FB_AtomicMass;
-    fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
     fAbsorptionConstant : LREAL;
 
     iFilterIndex: INT := 0;
+	
+END_VAR
+VAR
+    fbMotion: FB_MotionStage;
+
+    {attribute 'pytmc' := '
+         pv: STATE
+    '}
+    fbState 	: FB_SXR_SATT_PositionState;
+
+    bInitialized: BOOL := FALSE;
+
+    fbAtomicMass : FB_AtomicMass;
+    fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 
     (* EL3202-0020: 0.01 °C per digit *)
     {attribute 'pytmc' := 'pv: RTD:1'}
@@ -124,26 +125,32 @@ iFilterIndex := fbState.enumGet - 1;
 
 IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
     sActiveFilterMaterial := arrFilters[iFilterIndex].sFilterMaterial;
-    fActiveFilterThickness_um := arrFilters[iFilterIndex].fFilterThickness_um;
+    fActiveFilterThickness_um := arrFilters[iFilterIndex].fFilterThickness_um;	
+	
+	fbAtomicMass(sName:=sActiveFilterMaterial, fValue=>fActiveFilterAtomicMass);
+	fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilterDensity);
+	
+	fAbsorptionConstant := F_CalculateAbsorptionConstant(
+		sElement:=sActiveFilterMaterial,
+		fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+		fDensity_gm3:=fActiveFilterDensity,
+		fAtomicWeight:=fActiveFilterAtomicMass,
+		bError=>bError,
+	);
+	fTransmission := F_CalculateTransmission(
+		fAbsorptionConstant:=fAbsorptionConstant,
+		fThickness_in_m:=fActiveFilterThickness_um * 1.0E-6
+	);
 ELSE
     sActiveFilterMaterial := '';
     fActiveFilterThickness_um := 0.0;
+	fAbsorptionConstant := 0.0;
+	fActiveFilterDensity := 0.0;
+	fActiveFilterAtomicMass := 0.0;
+	fTransmission := 1.0;
 END_IF
-
-fbAtomicMass(sName:=sActiveFilterMaterial, fValue=>fActiveFilterAtomicMass);
-fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilterDensity);
-
-fAbsorptionConstant := F_CalculateAbsorptionConstant(
-    sElement:=sActiveFilterMaterial,
-    fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
-    fDensity_gm3:=fActiveFilterDensity,
-    fAtomicWeight:=fActiveFilterAtomicMass,
-    bError=>bError,
-);
-fTransmission := F_CalculateTransmission(
-    fAbsorptionConstant:=fAbsorptionConstant,
-    fThickness_in_m:=fActiveFilterThickness_um * 1.0E-6
-);
+	
+	
 bIsStationary := NOT stAxis.Axis.Status.Moving;
 fbFF(
     i_DevName:=stAxis.sName,
