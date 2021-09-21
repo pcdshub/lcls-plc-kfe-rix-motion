@@ -30,6 +30,7 @@ VAR_OUTPUT
         io: i
     '}
     enumGet: ENUM_SXR_SATT_Position;
+
 END_VAR
 VAR
     bInitialized: BOOL := FALSE;

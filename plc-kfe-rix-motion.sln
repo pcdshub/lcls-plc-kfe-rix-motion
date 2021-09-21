@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# TcXaeShell Solution File, Format Version 11.00
+VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "plc-kfe-rix-motion", "plc-kfe-rix-motion\plc-kfe-rix-motion.tsproj", "{06EDD21A-F81F-4EDE-B8E8-8DF2C1260331}"
 EndProject
@@ -54,6 +54,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6B38C42F-B31B-44DE-8A1E-9C654C581C3B}
+		        SolutionGuid = {7D016B3A-675E-4280-8DCD-67E05877D2EE}
+		                        SolutionGuid = {6B38C42F-B31B-44DE-8A1E-9C654C581C3B}
+		                SolutionGuid = {7FFAF8B1-CA94-4868-9C57-AA89EA7FFBE1}
+		SolutionGuid = {AEA271D4-2D02-4CD8-B77B-30B30163486A}
 	EndGlobalSection
 EndGlobal

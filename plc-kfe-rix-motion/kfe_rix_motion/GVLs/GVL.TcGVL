@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL" Id="{4e3a33fd-2c1d-4689-9132-04dc3cd973dd}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+    <Declaration><![CDATA[
+{attribute 'qualified_only'}
 VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:01'}
     fbArbiter1: FB_Arbiter(1);
-	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
+    {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
     fbArbiter2: FB_Arbiter(2);
 
     // For devices between the mirror and the stopper
@@ -17,8 +18,22 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+
+    fbAtomicMass : FB_AtomicMass;
+    fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
+
+    (* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
+	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PhotonEnergy'}
+    fPhotonEnergy_eV AT %I* : REAL;
+	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:ReqTrans'}
+	rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
+	rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
 	
-	
+END_VAR
+
+VAR_GLOBAL CONSTANT
+    iFiltersPerSATTBlade : INT := 8;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
