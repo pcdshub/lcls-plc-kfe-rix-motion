@@ -612,6 +612,8 @@ Links
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^Ready
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^TxPDO State
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^Warning
+        kfe_rix_motion Instance, PlcTask Inputs^GVL.fPhotonEnergy_eV, TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_PRE, IO Inputs^rPhotonEnergy
+        kfe_rix_motion Instance, PlcTask Inputs^GVL.rReqTrans, TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_PRE, IO Inputs^SattArrayReq
         kfe_rix_motion Instance, PlcTask Inputs^Main.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K1-PPM-MMS, Outputs^ToPlc
         kfe_rix_motion Instance, PlcTask Inputs^Main.M1.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 2
         kfe_rix_motion Instance, PlcTask Inputs^Main.M1.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 1
@@ -823,6 +825,7 @@ Links
         kfe_rix_motion Instance, PlcTask Inputs^PRG_TM2K2_ATM.fbTM2K2.fbThermoCouple1.iRaw, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^TM2K2-K2B (EK1100)^TM2K2-EL3314-E5, TC Inputs Channel 1^Value
         kfe_rix_motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput1.q_xFastFaultOut, TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_FFO, Channel 1^Output
         kfe_rix_motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput2.q_xFastFaultOut, TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_FFO, Channel 2^Output
+        kfe_rix_motion Instance, PlcTask Outputs^GVL.rCurTrans, TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_PRE, IO Outputs^SattArrayStatus
         kfe_rix_motion Instance, PlcTask Outputs^Main.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K1-PPM-MMS, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M1.bBrakeRelease, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL2004, Channel 1^Output
         kfe_rix_motion Instance, PlcTask Outputs^Main.M10.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 10 TM1K2-MMS-X, Inputs^FromPlc

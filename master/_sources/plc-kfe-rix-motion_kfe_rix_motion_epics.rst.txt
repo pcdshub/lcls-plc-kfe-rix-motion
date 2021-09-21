@@ -4,6 +4,31 @@ Data Types
 
 
    
+DUT_SATT_Filter
+^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+  
 FB_SXR_SATT_PositionState
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1114,6 +1139,116 @@ FB_SXR_SATT_Stage
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - $(PREFIX):FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):MATERIAL_RBV
+      - waveform
+      - $(SYMBOL).sActiveFilterMaterial
+      - | io: input
+
+
     * - $(PREFIX):RTD:1:CONN_RBV
       - bi
       - $(SYMBOL).fbRTD_1.bConnected
@@ -2247,6 +2382,19 @@ FB_SXR_SATT_Stage
       - mbbi
       - $(SYMBOL).fbState.enumSet
       - | io: output
+
+
+    * - $(PREFIX):THICKNESS_RBV
+      - ai
+      - $(SYMBOL).fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - $(PREFIX):TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
 
 
  
@@ -20417,7 +20565,7 @@ lcls_twincat_motion.FB_PositionStatePMPS_Base
       - | io: output
 
 
-                   
+                      
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -42714,6 +42862,116 @@ Database Records
       - | io: output
 
 
+    * - AT2K2:L2SI:MMS:01:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:MATERIAL_RBV
+      - waveform
+      - PRG_AT2K2_SOLID.fbStage1.sActiveFilterMaterial
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:01:PLC:bAllBackwardEnable_RBV
       - bi
       - Summary of axis permission to move backward
@@ -44215,6 +44473,129 @@ Database Records
       - mbbi
       - PRG_AT2K2_SOLID.fbStage1.fbState.enumSet
       - | io: output
+
+
+    * - AT2K2:L2SI:MMS:01:THICKNESS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage1.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:MATERIAL_RBV
+      - waveform
+      - PRG_AT2K2_SOLID.fbStage2.sActiveFilterMaterial
+      - | io: input
 
 
     * - AT2K2:L2SI:MMS:02:PLC:bAllBackwardEnable_RBV
@@ -45720,6 +46101,129 @@ Database Records
       - | io: output
 
 
+    * - AT2K2:L2SI:MMS:02:THICKNESS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage2.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:MATERIAL_RBV
+      - waveform
+      - PRG_AT2K2_SOLID.fbStage3.sActiveFilterMaterial
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:03:PLC:bAllBackwardEnable_RBV
       - bi
       - Summary of axis permission to move backward
@@ -47223,6 +47727,129 @@ Database Records
       - | io: output
 
 
+    * - AT2K2:L2SI:MMS:03:THICKNESS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage3.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:MATERIAL_RBV
+      - waveform
+      - PRG_AT2K2_SOLID.fbStage4.sActiveFilterMaterial
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:04:PLC:bAllBackwardEnable_RBV
       - bi
       - Summary of axis permission to move backward
@@ -48724,6 +49351,19 @@ Database Records
       - mbbi
       - PRG_AT2K2_SOLID.fbStage4.fbState.enumSet
       - | io: output
+
+
+    * - AT2K2:L2SI:MMS:04:THICKNESS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage4.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
 
 
     * - IM1K1:PPM:CAM:CIL:PCT
@@ -102269,6 +102909,18 @@ Database Records
     * - PLC:RIX:MOTION:FFO:02:RegistrationFailure_RBV
       - bi
       - GVL.fbFastFaultOutput2.xFastFaultRegFail
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:PhotonEnergy
+      - ao
+      - GVL.fPhotonEnergy_eV
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:PhotonEnergy_RBV
+      - ai
+      - GVL.fPhotonEnergy_eV
       - | io: output
 
 

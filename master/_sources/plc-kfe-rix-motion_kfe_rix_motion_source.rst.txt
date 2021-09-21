@@ -4,6 +4,35 @@ DUTs
 ----
 
 
+DUT_SATT_Filter
+^^^^^^^^^^^^^^^
+
+::
+
+    TYPE DUT_SATT_Filter :
+    STRUCT
+        {attribute 'pytmc' := '
+            pv: MATERIAL
+            io: input
+            field: DESC Filter material name
+        '}
+        sFilterMaterial : STRING;
+
+        {attribute 'pytmc' := '
+            pv: THICKNESS
+            io: input
+            field: DESC Filter material thickness
+            field: EGU um
+        '}
+        fFilterThickness_um : LREAL;
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `DUT_SATT_Filter`_
+
+
 ENUM_SXR_SATT_Position
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -26,8 +55,6 @@ ENUM_SXR_SATT_Position
     END_TYPE
 
 
-Related:
-    * `ENUM_SXR_SATT_Position`_
 
 
 ENUM_TM2K2_States
@@ -66,7 +93,7 @@ GVL
     VAR_GLOBAL
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:01'}
         fbArbiter1: FB_Arbiter(1);
-    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
+        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
         fbArbiter2: FB_Arbiter(2);
 
         // For devices between the mirror and the stopper
@@ -78,11 +105,27 @@ GVL
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
         fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
-    	
+
+        fbAtomicMass : FB_AtomicMass;
+        fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
+
+        (* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
+    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PhotonEnergy'}
+        fPhotonEnergy_eV AT %I* : REAL;
+    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:ReqTrans'}
+    	rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
+    	rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
     	
     END_VAR
 
+    VAR_GLOBAL CONSTANT
+        iFiltersPerSATTBlade : INT := 8;
+    END_VAR
 
+
+Related:
+    * `FB_AttenuatorElementDensity`_
 
 
 Main
@@ -239,7 +282,7 @@ Main
         M20: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
 
         //LI3K2-K2B: 1 Axis
-    	{attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
+        {attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[LI3K2-EL2004-E3]^Channel 1^Output;
@@ -256,7 +299,7 @@ Main
         {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Z'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
         M23: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Z');
-    	
+
 
         //IM6K2: 1 Axis
         {attribute 'pytmc' := 'pv: IM6K2:PPM:MMS'}
@@ -277,6 +320,40 @@ Main
 
 POUs
 ----
+
+
+FB_AttenuatorElementDensity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_AttenuatorElementDensity
+    VAR_INPUT
+        sName : STRING;
+    END_VAR
+    VAR_OUTPUT
+        fDensity : LREAL;
+        bFound : BOOL;
+    END_VAR
+    VAR
+        fbElementDensity : FB_ElementDensity;
+        fDensity_gm3 : LREAL;
+    END_VAR
+    IF sName = 'C' THEN
+        (* Special-case diamond here *)
+        fDensity := 3.51E6;  (* C (Diamond) g/m^3 *)
+    ELSE
+        fbElementDensity(sName:=sName);
+        IF fbElementDensity.bFound THEN
+            fDensity := fbElementDensity.fValue * 1.0E6; (* g/cm^3 -> g/m^3 *)
+        ELSE
+            fDensity := 0.0;
+        END_IF
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+
 
 
 FB_SXR_SATT_PositionState
@@ -313,6 +390,7 @@ FB_SXR_SATT_PositionState
             io: i
         '}
         enumGet: ENUM_SXR_SATT_Position;
+
     END_VAR
     VAR
         bInitialized: BOOL := FALSE;
@@ -367,12 +445,43 @@ FB_SXR_SATT_Stage
         stFilter6	: DUT_PositionState;
         stFilter7	: DUT_PositionState;
         stFilter8	: DUT_PositionState;
+
+        {attribute 'pytmc' := 'pv: FILTERS'}
+        arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
+
     END_VAR
     VAR_OUTPUT
         // stExtra : DUT_MotionStage_Extras;
         fTemp1 : LREAL;
         fTemp2 : LREAL;
         bIsStationary : BOOL;
+        bError : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: MATERIAL
+            io: i
+        '}
+        sActiveFilterMaterial : STRING;
+
+        {attribute 'pytmc' := '
+            pv: THICKNESS
+            io: i
+            field: EGU um
+        '}
+        fActiveFilterThickness_um : LREAL;
+
+        {attribute 'pytmc' := '
+            pv: TRANSMISSION
+            io: i
+            field: DESC Filter transmission
+        '}
+        fTransmission : LREAL;
+        fActiveFilterDensity : LREAL;
+        fActiveFilterAtomicMass : LREAL;
+        fAbsorptionConstant : LREAL;
+
+        iFilterIndex: INT := 0;
+
     END_VAR
     VAR
         fbMotion: FB_MotionStage;
@@ -383,6 +492,9 @@ FB_SXR_SATT_Stage
         fbState 	: FB_SXR_SATT_PositionState;
 
         bInitialized: BOOL := FALSE;
+
+        fbAtomicMass : FB_AtomicMass;
+        fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 
         (* EL3202-0020: 0.01 °C per digit *)
         {attribute 'pytmc' := 'pv: RTD:1'}
@@ -429,8 +541,39 @@ FB_SXR_SATT_Stage
         stFilter5:=stFilter5,
         stFilter6:=stFilter6,
         stFilter7:=stFilter7,
-        stFilter8:=stFilter8
+        stFilter8:=stFilter8,
     );
+
+    (* Filter indices are off by one due to "Out" being in position 1. *)
+    iFilterIndex := fbState.enumGet - 1;
+
+    IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
+        sActiveFilterMaterial := arrFilters[iFilterIndex].sFilterMaterial;
+        fActiveFilterThickness_um := arrFilters[iFilterIndex].fFilterThickness_um;
+
+        fbAtomicMass(sName:=sActiveFilterMaterial, fValue=>fActiveFilterAtomicMass);
+        fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilterDensity);
+
+        fAbsorptionConstant := F_CalculateAbsorptionConstant(
+            sElement:=sActiveFilterMaterial,
+            fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+            fDensity_gm3:=fActiveFilterDensity,
+            fAtomicWeight:=fActiveFilterAtomicMass,
+            bError=>bError,
+        );
+        fTransmission := F_CalculateTransmission(
+            fAbsorptionConstant:=fAbsorptionConstant,
+            fThickness_in_m:=fActiveFilterThickness_um * 1.0E-6
+        );
+    ELSE
+        sActiveFilterMaterial := '';
+        fActiveFilterThickness_um := 0.0;
+        fAbsorptionConstant := 0.0;
+        fActiveFilterDensity := 0.0;
+        fActiveFilterAtomicMass := 0.0;
+        fTransmission := 1.0;
+    END_IF
+
 
     bIsStationary := NOT stAxis.Axis.Status.Moving;
     fbFF(
@@ -446,8 +589,11 @@ FB_SXR_SATT_Stage
 
 
 Related:
+    * `DUT_SATT_Filter`_
     * `ENUM_SXR_SATT_Position`_
+    * `FB_AttenuatorElementDensity`_
     * `FB_SXR_SATT_PositionState`_
+    * `GVL`_
 
 
 FB_TM2K2
@@ -850,7 +996,10 @@ PRG_AT2K2_SOLID
 
         nEnableMode : ENUM_StageEnableMode;
 
-        {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01'}
+        {attribute 'pytmc' := '
+            pv: AT2K2:L2SI:MMS:01
+
+        '}
         {attribute 'TcLinkTo' := '
 
             .fbRTD_1.iRaw := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 1^Value;
@@ -914,7 +1063,7 @@ PRG_AT2K2_SOLID
 
     END_VAR
     VAR CONSTANT
-        DEFAULT_VELOCITY : LREAL := 10;
+        DEFAULT_VELOCITY : LREAL := 1;
     END_VAR
     IF bDebug THEN
         // NEVER: checkouts with the TwinCAT NC GUI.
@@ -939,8 +1088,9 @@ PRG_AT2K2_SOLID
 
     *)
 
+
+
     (* State setup - stage 1 *)
-    (* Upstream-most MMS:01 - TRAVELER AXIS 1 *)
     fbStage1.stOut.sName         := 'Out';
     fbStage1.stOut.fPosition     := 27.00;
     fbStage1.stOut.fDelta        := 0.2;
@@ -948,67 +1098,82 @@ PRG_AT2K2_SOLID
     fbStage1.stOut.bValid        := TRUE;
     fbStage1.stOut.bMoveOk       := TRUE;
 
-    fbStage1.stFilter1.sName     := 'Filter 1';
-    fbStage1.stFilter1.fPosition := 500.0;
-    fbStage1.stFilter1.fDelta    := 0.0;
-    fbStage1.stFilter1.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter1.bValid    := FALSE;
-    fbStage1.stFilter1.bMoveOk   := FALSE;
+    fbStage1.stFilter1.sName                   := 'Filter 1';
+    fbStage1.stFilter1.fPosition               := 500.0;
+    fbStage1.stFilter1.fDelta                  := 0.2;
+    fbStage1.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter1.bValid                  := FALSE;
+    fbStage1.stFilter1.bMoveOk                 := FALSE;
+    fbStage1.arrFilters[1].fFilterThickness_um := 0;
+    fbStage1.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage1.stFilter2.sName     := 'Filter 2';
-    fbStage1.stFilter2.fPosition := 500.0;
-    fbStage1.stFilter2.fDelta    := 0.0;
-    fbStage1.stFilter2.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter2.bValid    := FALSE;
-    fbStage1.stFilter2.bMoveOk   := FALSE;
+    fbStage1.stFilter2.sName                   := 'Filter 2';
+    fbStage1.stFilter2.fPosition               := 500.0;
+    fbStage1.stFilter2.fDelta                  := 0.2;
+    fbStage1.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter2.bValid                  := FALSE;
+    fbStage1.stFilter2.bMoveOk                 := FALSE;
+    fbStage1.arrFilters[2].fFilterThickness_um := 0;
+    fbStage1.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage1.stFilter3.sName     := 'Filter 3';
-    fbStage1.stFilter3.fPosition := 500.0;
-    fbStage1.stFilter3.fDelta    := 0.0;
-    fbStage1.stFilter3.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter3.bValid    := FALSE;
-    fbStage1.stFilter3.bMoveOk   := FALSE;
+    fbStage1.stFilter3.sName                   := 'Filter 3';
+    fbStage1.stFilter3.fPosition               := 500.0;
+    fbStage1.stFilter3.fDelta                  := 0.2;
+    fbStage1.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter3.bValid                  := FALSE;
+    fbStage1.stFilter3.bMoveOk                 := FALSE;
+    fbStage1.arrFilters[3].fFilterThickness_um := 0;
+    fbStage1.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage1.stFilter4.sName     := 'Filter 4';
-    fbStage1.stFilter4.fPosition := 500.0;
-    fbStage1.stFilter4.fDelta    := 0.0;
-    fbStage1.stFilter4.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter4.bValid    := FALSE;
-    fbStage1.stFilter4.bMoveOk   := FALSE;
+    fbStage1.stFilter4.sName                   := 'Filter 4';
+    fbStage1.stFilter4.fPosition               := 500.0;
+    fbStage1.stFilter4.fDelta                  := 0.2;
+    fbStage1.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter4.bValid                  := FALSE;
+    fbStage1.stFilter4.bMoveOk                 := FALSE;
+    fbStage1.arrFilters[4].fFilterThickness_um := 0;
+    fbStage1.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage1.stFilter5.sName     := 'Filter 5';
-    fbStage1.stFilter5.fPosition := 103.0;
-    fbStage1.stFilter5.fDelta    := 0.2;
-    fbStage1.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter5.bValid    := TRUE;
-    fbStage1.stFilter5.bMoveOk   := TRUE;
+    fbStage1.stFilter5.sName                   := '(5) 11.5 um Al';
+    fbStage1.stFilter5.fPosition               := 103.0;
+    fbStage1.stFilter5.fDelta                  := 0.2;
+    fbStage1.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter5.bValid                  := TRUE;
+    fbStage1.stFilter5.bMoveOk                 := TRUE;
+    fbStage1.arrFilters[5].fFilterThickness_um := 11.5;
+    fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter6.sName     := 'Filter 6';
-    fbStage1.stFilter6.fPosition := 119.0;
-    fbStage1.stFilter6.fDelta    := 0.2;
-    fbStage1.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter6.bValid    := TRUE;
-    fbStage1.stFilter6.bMoveOk   := TRUE;
+    fbStage1.stFilter6.sName                   := '(6) 6.18 um Al';
+    fbStage1.stFilter6.fPosition               := 119.0;
+    fbStage1.stFilter6.fDelta                  := 0.2;
+    fbStage1.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter6.bValid                  := TRUE;
+    fbStage1.stFilter6.bMoveOk                 := TRUE;
+    fbStage1.arrFilters[6].fFilterThickness_um := 6.18;
+    fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter7.sName     := 'Filter 7';
-    fbStage1.stFilter7.fPosition := 135.0;
-    fbStage1.stFilter7.fDelta    := 0.2;
-    fbStage1.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter7.bValid    := TRUE;
-    fbStage1.stFilter7.bMoveOk   := TRUE;
+    fbStage1.stFilter7.sName                   := '(7) 2.85 um Al';
+    fbStage1.stFilter7.fPosition               := 135.0;
+    fbStage1.stFilter7.fDelta                  := 0.2;
+    fbStage1.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter7.bValid                  := TRUE;
+    fbStage1.stFilter7.bMoveOk                 := TRUE;
+    fbStage1.arrFilters[7].fFilterThickness_um := 2.85;
+    fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter8.sName     := 'Filter 8';
-    fbStage1.stFilter8.fPosition := 150.0;
-    fbStage1.stFilter8.fDelta    := 0.2;
-    fbStage1.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage1.stFilter8.bValid    := TRUE;
-    fbStage1.stFilter8.bMoveOk   := TRUE;
+    fbStage1.stFilter8.sName                   := '(8) 1.52 um Al';
+    fbStage1.stFilter8.fPosition               := 150.0;
+    fbStage1.stFilter8.fDelta                  := 0.2;
+    fbStage1.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+    fbStage1.stFilter8.bValid                  := TRUE;
+    fbStage1.stFilter8.bMoveOk                 := TRUE;
+    fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
+    fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
     fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
-    (* State setup - stage 2 *)
-    (* MMS:02 - 2nd upstream-most - TRAVELER AXIS 2 *)
 
+    (* State setup - stage 2 *)
     fbStage2.stOut.sName         := 'Out';
     fbStage2.stOut.fPosition     := 27.72;
     fbStage2.stOut.fDelta        := 0.2;
@@ -1016,67 +1181,82 @@ PRG_AT2K2_SOLID
     fbStage2.stOut.bValid        := TRUE;
     fbStage2.stOut.bMoveOk       := TRUE;
 
-    fbStage2.stFilter1.sName     := 'Filter 1';
-    fbStage2.stFilter1.fPosition := 500.0;
-    fbStage2.stFilter1.fDelta    := 0.0;
-    fbStage2.stFilter1.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter1.bValid    := FALSE;
-    fbStage2.stFilter1.bMoveOk   := FALSE;
+    fbStage2.stFilter1.sName                   := 'Filter 1';
+    fbStage2.stFilter1.fPosition               := 500.0;
+    fbStage2.stFilter1.fDelta                  := 0.2;
+    fbStage2.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter1.bValid                  := FALSE;
+    fbStage2.stFilter1.bMoveOk                 := FALSE;
+    fbStage2.arrFilters[1].fFilterThickness_um := 0;
+    fbStage2.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage2.stFilter2.sName     := 'Filter 2';
-    fbStage2.stFilter2.fPosition := 500.0;
-    fbStage2.stFilter2.fDelta    := 0.0;
-    fbStage2.stFilter2.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter2.bValid    := FALSE;
-    fbStage2.stFilter2.bMoveOk   := FALSE;
+    fbStage2.stFilter2.sName                   := 'Filter 2';
+    fbStage2.stFilter2.fPosition               := 500.0;
+    fbStage2.stFilter2.fDelta                  := 0.2;
+    fbStage2.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter2.bValid                  := FALSE;
+    fbStage2.stFilter2.bMoveOk                 := FALSE;
+    fbStage2.arrFilters[2].fFilterThickness_um := 0;
+    fbStage2.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage2.stFilter3.sName     := 'Filter 3';
-    fbStage2.stFilter3.fPosition := 500.0;
-    fbStage2.stFilter3.fDelta    := 0.0;
-    fbStage2.stFilter3.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter3.bValid    := FALSE;
-    fbStage2.stFilter3.bMoveOk   := FALSE;
+    fbStage2.stFilter3.sName                   := 'Filter 3';
+    fbStage2.stFilter3.fPosition               := 500.0;
+    fbStage2.stFilter3.fDelta                  := 0.2;
+    fbStage2.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter3.bValid                  := FALSE;
+    fbStage2.stFilter3.bMoveOk                 := FALSE;
+    fbStage2.arrFilters[3].fFilterThickness_um := 0;
+    fbStage2.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage2.stFilter4.sName     := 'Filter 4';
-    fbStage2.stFilter4.fPosition := 500.0;
-    fbStage2.stFilter4.fDelta    := 0.0;
-    fbStage2.stFilter4.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter4.bValid    := FALSE;
-    fbStage2.stFilter4.bMoveOk   := FALSE;
+    fbStage2.stFilter4.sName                   := 'Filter 4';
+    fbStage2.stFilter4.fPosition               := 500.0;
+    fbStage2.stFilter4.fDelta                  := 0.2;
+    fbStage2.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter4.bValid                  := FALSE;
+    fbStage2.stFilter4.bMoveOk                 := FALSE;
+    fbStage2.arrFilters[4].fFilterThickness_um := 0;
+    fbStage2.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage2.stFilter5.sName     := 'Filter 5';
-    fbStage2.stFilter5.fPosition := 103.0;
-    fbStage2.stFilter5.fDelta    := 0.2;
-    fbStage2.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter5.bValid    := TRUE;
-    fbStage2.stFilter5.bMoveOk   := TRUE;
+    fbStage2.stFilter5.sName                   := '(5) 6.18 um Al';
+    fbStage2.stFilter5.fPosition               := 103.0;
+    fbStage2.stFilter5.fDelta                  := 0.2;
+    fbStage2.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter5.bValid                  := TRUE;
+    fbStage2.stFilter5.bMoveOk                 := TRUE;
+    fbStage2.arrFilters[5].fFilterThickness_um := 6.18;
+    fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter6.sName     := 'Filter 6';
-    fbStage2.stFilter6.fPosition := 119.0;
-    fbStage2.stFilter6.fDelta    := 0.2;
-    fbStage2.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter6.bValid    := TRUE;
-    fbStage2.stFilter6.bMoveOk   := TRUE;
+    fbStage2.stFilter6.sName                   := '(6) 2.85 um Al';
+    fbStage2.stFilter6.fPosition               := 119.0;
+    fbStage2.stFilter6.fDelta                  := 0.2;
+    fbStage2.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter6.bValid                  := TRUE;
+    fbStage2.stFilter6.bMoveOk                 := TRUE;
+    fbStage2.arrFilters[6].fFilterThickness_um := 2.85;
+    fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter7.sName     := 'Filter 7';
-    fbStage2.stFilter7.fPosition := 135.0;
-    fbStage2.stFilter7.fDelta    := 0.2;
-    fbStage2.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter7.bValid    := TRUE;
-    fbStage2.stFilter7.bMoveOk   := TRUE;
+    fbStage2.stFilter7.sName                   := '(7) 1.52 um Al';
+    fbStage2.stFilter7.fPosition               := 135.0;
+    fbStage2.stFilter7.fDelta                  := 0.2;
+    fbStage2.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter7.bValid                  := TRUE;
+    fbStage2.stFilter7.bMoveOk                 := TRUE;
+    fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
+    fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter8.sName     := 'Filter 8';
-    fbStage2.stFilter8.fPosition := 150.0;
-    fbStage2.stFilter8.fDelta    := 0.2;
-    fbStage2.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage2.stFilter8.bValid    := TRUE;
-    fbStage2.stFilter8.bMoveOk   := TRUE;
+    fbStage2.stFilter8.sName                   := '(8) 0.78 um Al';
+    fbStage2.stFilter8.fPosition               := 150.0;
+    fbStage2.stFilter8.fDelta                  := 0.2;
+    fbStage2.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+    fbStage2.stFilter8.bValid                  := TRUE;
+    fbStage2.stFilter8.bMoveOk                 := TRUE;
+    fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
+    fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
     fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
-    (* State setup - stage 3 *)
-    (* MMS:03 - 2nd to downstream-most - TRAVELER AXIS 3 *)
 
+    (* State setup - stage 3 *)
     fbStage3.stOut.sName         := 'Out';
     fbStage3.stOut.fPosition     := 27.00;
     fbStage3.stOut.fDelta        := 0.2;
@@ -1084,67 +1264,82 @@ PRG_AT2K2_SOLID
     fbStage3.stOut.bValid        := TRUE;
     fbStage3.stOut.bMoveOk       := TRUE;
 
-    fbStage3.stFilter1.sName     := 'Filter 1';
-    fbStage3.stFilter1.fPosition := 500.0;
-    fbStage3.stFilter1.fDelta    := 0.0;
-    fbStage3.stFilter1.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter1.bValid    := FALSE;
-    fbStage3.stFilter1.bMoveOk   := FALSE;
+    fbStage3.stFilter1.sName                   := 'Filter 1';
+    fbStage3.stFilter1.fPosition               := 500.0;
+    fbStage3.stFilter1.fDelta                  := 0.2;
+    fbStage3.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter1.bValid                  := FALSE;
+    fbStage3.stFilter1.bMoveOk                 := FALSE;
+    fbStage3.arrFilters[1].fFilterThickness_um := 0;
+    fbStage3.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage3.stFilter2.sName     := 'Filter 2';
-    fbStage3.stFilter2.fPosition := 500.0;
-    fbStage3.stFilter2.fDelta    := 0.0;
-    fbStage3.stFilter2.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter2.bValid    := FALSE;
-    fbStage3.stFilter2.bMoveOk   := FALSE;
+    fbStage3.stFilter2.sName                   := 'Filter 2';
+    fbStage3.stFilter2.fPosition               := 500.0;
+    fbStage3.stFilter2.fDelta                  := 0.2;
+    fbStage3.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter2.bValid                  := FALSE;
+    fbStage3.stFilter2.bMoveOk                 := FALSE;
+    fbStage3.arrFilters[2].fFilterThickness_um := 0;
+    fbStage3.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage3.stFilter3.sName     := 'Filter 3';
-    fbStage3.stFilter3.fPosition := 500.0;
-    fbStage3.stFilter3.fDelta    := 0.0;
-    fbStage3.stFilter3.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter3.bValid    := FALSE;
-    fbStage3.stFilter3.bMoveOk   := FALSE;
+    fbStage3.stFilter3.sName                   := 'Filter 3';
+    fbStage3.stFilter3.fPosition               := 500.0;
+    fbStage3.stFilter3.fDelta                  := 0.2;
+    fbStage3.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter3.bValid                  := FALSE;
+    fbStage3.stFilter3.bMoveOk                 := FALSE;
+    fbStage3.arrFilters[3].fFilterThickness_um := 0;
+    fbStage3.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage3.stFilter4.sName     := 'Filter 4';
-    fbStage3.stFilter4.fPosition := 500.0;
-    fbStage3.stFilter4.fDelta    := 0.0;
-    fbStage3.stFilter4.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter4.bValid    := FALSE;
-    fbStage3.stFilter4.bMoveOk   := FALSE;
+    fbStage3.stFilter4.sName                   := 'Filter 4';
+    fbStage3.stFilter4.fPosition               := 500.0;
+    fbStage3.stFilter4.fDelta                  := 0.2;
+    fbStage3.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter4.bValid                  := FALSE;
+    fbStage3.stFilter4.bMoveOk                 := FALSE;
+    fbStage3.arrFilters[4].fFilterThickness_um := 0;
+    fbStage3.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage3.stFilter5.sName     := 'Filter 5';
-    fbStage3.stFilter5.fPosition := 103.0;
-    fbStage3.stFilter5.fDelta    := 0.2;
-    fbStage3.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter5.bValid    := TRUE;
-    fbStage3.stFilter5.bMoveOk   := TRUE;
+    fbStage3.stFilter5.sName                   := '(5) 2.85 um Al';
+    fbStage3.stFilter5.fPosition               := 103.0;
+    fbStage3.stFilter5.fDelta                  := 0.2;
+    fbStage3.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter5.bValid                  := TRUE;
+    fbStage3.stFilter5.bMoveOk                 := TRUE;
+    fbStage3.arrFilters[5].fFilterThickness_um := 2.85;
+    fbStage3.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter6.sName     := 'Filter 6';
-    fbStage3.stFilter6.fPosition := 119.0;
-    fbStage3.stFilter6.fDelta    := 0.2;
-    fbStage3.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter6.bValid    := TRUE;
-    fbStage3.stFilter6.bMoveOk   := TRUE;
+    fbStage3.stFilter6.sName                   := '(6) 1.52 um Al';
+    fbStage3.stFilter6.fPosition               := 119.0;
+    fbStage3.stFilter6.fDelta                  := 0.2;
+    fbStage3.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter6.bValid                  := TRUE;
+    fbStage3.stFilter6.bMoveOk                 := TRUE;
+    fbStage3.arrFilters[6].fFilterThickness_um := 1.52;
+    fbStage3.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter7.sName     := 'Filter 7';
-    fbStage3.stFilter7.fPosition := 135.0;
-    fbStage3.stFilter7.fDelta    := 0.2;
-    fbStage3.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter7.bValid    := TRUE;
-    fbStage3.stFilter7.bMoveOk   := TRUE;
+    fbStage3.stFilter7.sName                   := '(7) 0.78 um Al';
+    fbStage3.stFilter7.fPosition               := 135.0;
+    fbStage3.stFilter7.fDelta                  := 0.2;
+    fbStage3.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter7.bValid                  := TRUE;
+    fbStage3.stFilter7.bMoveOk                 := TRUE;
+    fbStage3.arrFilters[7].fFilterThickness_um := 0.78;
+    fbStage3.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter8.sName     := 'Filter 8';
-    fbStage3.stFilter8.fPosition := 150.0;
-    fbStage3.stFilter8.fDelta    := 0.2;
-    fbStage3.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage3.stFilter8.bValid    := TRUE;
-    fbStage3.stFilter8.bMoveOk   := TRUE;
+    fbStage3.stFilter8.sName                   := '(8) 0.39 um Al';
+    fbStage3.stFilter8.fPosition               := 150.0;
+    fbStage3.stFilter8.fDelta                  := 0.2;
+    fbStage3.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+    fbStage3.stFilter8.bValid                  := TRUE;
+    fbStage3.stFilter8.bMoveOk                 := TRUE;
+    fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
+    fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
 
     fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
 
-    (* State setup - stage 4 *)
-    (* MMS:04 - downstream-most - TRAVELER AXIS 4 *)
 
+    (* State setup - stage 4 *)
     fbStage4.stOut.sName         := 'Out';
     fbStage4.stOut.fPosition     := 28.03;
     fbStage4.stOut.fDelta        := 0.2;
@@ -1152,63 +1347,87 @@ PRG_AT2K2_SOLID
     fbStage4.stOut.bValid        := TRUE;
     fbStage4.stOut.bMoveOk       := TRUE;
 
-    fbStage4.stFilter1.sName     := 'Filter 1';
-    fbStage4.stFilter1.fPosition := 500.0;
-    fbStage4.stFilter1.fDelta    := 0.0;
-    fbStage4.stFilter1.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter1.bValid    := FALSE;
-    fbStage4.stFilter1.bMoveOk   := FALSE;
+    fbStage4.stFilter1.sName                   := 'Filter 1';
+    fbStage4.stFilter1.fPosition               := 500.0;
+    fbStage4.stFilter1.fDelta                  := 0.2;
+    fbStage4.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter1.bValid                  := FALSE;
+    fbStage4.stFilter1.bMoveOk                 := FALSE;
+    fbStage4.arrFilters[1].fFilterThickness_um := 0;
+    fbStage4.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage4.stFilter2.sName     := 'Filter 2';
-    fbStage4.stFilter2.fPosition := 500.0;
-    fbStage4.stFilter2.fDelta    := 0.0;
-    fbStage4.stFilter2.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter2.bValid    := FALSE;
-    fbStage4.stFilter2.bMoveOk   := FALSE;
+    fbStage4.stFilter2.sName                   := 'Filter 2';
+    fbStage4.stFilter2.fPosition               := 500.0;
+    fbStage4.stFilter2.fDelta                  := 0.2;
+    fbStage4.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter2.bValid                  := FALSE;
+    fbStage4.stFilter2.bMoveOk                 := FALSE;
+    fbStage4.arrFilters[2].fFilterThickness_um := 0;
+    fbStage4.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage4.stFilter3.sName     := 'Filter 3';
-    fbStage4.stFilter3.fPosition := 500.0;
-    fbStage4.stFilter3.fDelta    := 0.0;
-    fbStage4.stFilter3.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter3.bValid    := FALSE;
-    fbStage4.stFilter3.bMoveOk   := FALSE;
+    fbStage4.stFilter3.sName                   := 'Filter 3';
+    fbStage4.stFilter3.fPosition               := 500.0;
+    fbStage4.stFilter3.fDelta                  := 0.2;
+    fbStage4.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter3.bValid                  := FALSE;
+    fbStage4.stFilter3.bMoveOk                 := FALSE;
+    fbStage4.arrFilters[3].fFilterThickness_um := 0;
+    fbStage4.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage4.stFilter4.sName     := 'Filter 4';
-    fbStage4.stFilter4.fPosition := 500.0;
-    fbStage4.stFilter4.fDelta    := 0.0;
-    fbStage4.stFilter4.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter4.bValid    := FALSE;
-    fbStage4.stFilter4.bMoveOk   := FALSE;
+    fbStage4.stFilter4.sName                   := 'Filter 4';
+    fbStage4.stFilter4.fPosition               := 500.0;
+    fbStage4.stFilter4.fDelta                  := 0.2;
+    fbStage4.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter4.bValid                  := FALSE;
+    fbStage4.stFilter4.bMoveOk                 := FALSE;
+    fbStage4.arrFilters[4].fFilterThickness_um := 0;
+    fbStage4.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage4.stFilter5.sName     := 'Filter 5';
-    fbStage4.stFilter5.fPosition := 103.0;
-    fbStage4.stFilter5.fDelta    := 0.2;
-    fbStage4.stFilter5.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter5.bValid    := TRUE;
-    fbStage4.stFilter5.bMoveOk   := TRUE;
+    fbStage4.stFilter5.sName                   := '(5) 1.52 um Al';
+    fbStage4.stFilter5.fPosition               := 103.0;
+    fbStage4.stFilter5.fDelta                  := 0.2;
+    fbStage4.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter5.bValid                  := TRUE;
+    fbStage4.stFilter5.bMoveOk                 := TRUE;
+    fbStage4.arrFilters[5].fFilterThickness_um := 1.52;
+    fbStage4.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter6.sName     := 'Filter 6';
-    fbStage4.stFilter6.fPosition := 119.0;
-    fbStage4.stFilter6.fDelta    := 0.2;
-    fbStage4.stFilter6.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter6.bValid    := TRUE;
-    fbStage4.stFilter6.bMoveOk   := TRUE;
+    fbStage4.stFilter6.sName                   := '(6) 0.78 um Al';
+    fbStage4.stFilter6.fPosition               := 119.0;
+    fbStage4.stFilter6.fDelta                  := 0.2;
+    fbStage4.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter6.bValid                  := TRUE;
+    fbStage4.stFilter6.bMoveOk                 := TRUE;
+    fbStage4.arrFilters[6].fFilterThickness_um := 0.78;
+    fbStage4.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter7.sName     := 'Filter 7';
-    fbStage4.stFilter7.fPosition := 135.0;
-    fbStage4.stFilter7.fDelta    := 0.2;
-    fbStage4.stFilter7.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter7.bValid    := TRUE;
-    fbStage4.stFilter7.bMoveOk   := TRUE;
+    fbStage4.stFilter7.sName                   := '(7) 0.39 um Al';
+    fbStage4.stFilter7.fPosition               := 135.0;
+    fbStage4.stFilter7.fDelta                  := 0.2;
+    fbStage4.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter7.bValid                  := TRUE;
+    fbStage4.stFilter7.bMoveOk                 := TRUE;
+    fbStage4.arrFilters[7].fFilterThickness_um := 0.39;
+    fbStage4.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter8.sName     := 'Filter 8';
-    fbStage4.stFilter8.fPosition := 150.0;
-    fbStage4.stFilter8.fDelta    := 0.2;
-    fbStage4.stFilter8.fVelocity := DEFAULT_VELOCITY;
-    fbStage4.stFilter8.bValid    := TRUE;
-    fbStage4.stFilter8.bMoveOk   := TRUE;
+    fbStage4.stFilter8.sName                   := '(8) 0.20 um Al';
+    fbStage4.stFilter8.fPosition               := 150.0;
+    fbStage4.stFilter8.fDelta                  := 0.2;
+    fbStage4.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+    fbStage4.stFilter8.bValid                  := TRUE;
+    fbStage4.stFilter8.bMoveOk                 := TRUE;
+    fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
+    fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
     fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+
+
+    GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+    	fbStage1.fTransmission * 
+    	fbStage2.fTransmission * 
+    	fbStage3.fTransmission * 
+    	fbStage4.fTransmission
+    );
 
     END_PROGRAM
 
