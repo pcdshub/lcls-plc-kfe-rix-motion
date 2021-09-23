@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="DUT_SATT_Filter" Id="{68d60308-d3fc-48e7-91aa-27000d9d0fef}">
+    <Declaration><![CDATA[TYPE DUT_SATT_Filter :
+STRUCT
+    {attribute 'pytmc' := '
+        pv: MATERIAL
+        io: input
+        field: DESC Filter material name
+    '}
+    sFilterMaterial : STRING;
+
+    {attribute 'pytmc' := '
+        pv: THICKNESS
+        io: input
+        field: DESC Filter material thickness
+        field: EGU um
+    '}
+    fFilterThickness_um : LREAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

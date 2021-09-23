@@ -976,6 +976,15 @@ External Setpoint Generation:
 			</Hides>
 		</DataType>
 		<DataType>
+			<Name GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
+			<BitSize>1024</BitSize>
+			<BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>16</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
@@ -1166,6 +1175,13 @@ External Setpoint Generation:
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>GVL.fPhotonEnergy_eV</Name>
+					<Comment>
+						<![CDATA[ Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) ]]>
+					</Comment>
+					<Type>REAL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -3099,6 +3115,10 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state</Name>
 					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>GVL.rReqTrans</Name>
+					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.Axis.NcToPlc</Name>
@@ -5823,6 +5843,10 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL.rCurTrans</Name>
+					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
 					<Name>Main.M1.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -6488,9 +6512,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL.fbFastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^PMPS_PRE">
+				<Link VarA="PlcTask Inputs^GVL.fPhotonEnergy_eV" VarB="IO Inputs^rPhotonEnergy"/>
+				<Link VarA="PlcTask Inputs^GVL.rReqTrans" VarB="IO Inputs^SattArrayReq"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL.rCurTrans" VarB="IO Outputs^SattArrayStatus"/>
 				<Link VarA="PlcTask Outputs^PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1 IM1K1-PPM-MMS">

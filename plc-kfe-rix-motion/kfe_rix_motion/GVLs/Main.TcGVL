@@ -150,7 +150,7 @@ VAR_GLOBAL
     M20: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
 
     //LI3K2-K2B: 1 Axis
-	{attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
+    {attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 2;
                               .bBrakeRelease        := TIIB[LI3K2-EL2004-E3]^Channel 1^Output;
@@ -167,7 +167,7 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Z'}
     {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
     M23: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Z');
-	
+
 
     //IM6K2: 1 Axis
     {attribute 'pytmc' := 'pv: IM6K2:PPM:MMS'}
