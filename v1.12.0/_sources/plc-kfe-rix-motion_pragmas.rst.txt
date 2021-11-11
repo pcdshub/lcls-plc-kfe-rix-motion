@@ -1,0 +1,21 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`kfe_rix_motion <kfe_rix_motion_overview_pragmas>`, 115, 0
+
+
+.. _kfe_rix_motion_overview_pragmas:
+
+
+kfe_rix_motion
+^^^^^^^^^^^^^^
+
+Total pragmas found: 115
+Total linter errors: 0
+
+
