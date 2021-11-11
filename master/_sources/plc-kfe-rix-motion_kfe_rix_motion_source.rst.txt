@@ -1986,19 +1986,19 @@ PRG_LI2K2_K2A
     fbLI2K2.stMirror1.fPosition := -35.3;
     fbLI2K2.stMirror1.bUseRawCounts := FALSE;
     fbLI2K2.stMirror1.nRequestAssertionID := 16#4222;
-    fbLI2K2.stMirror1.stBeamParams := stSiBP;
+    fbLI2K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stMirror1.bValid := TRUE;
 
     fbLI2K2.stMirror2.fPosition := -69.3;
     fbLI2K2.stMirror2.bUseRawCounts := FALSE;
     fbLI2K2.stMirror2.nRequestAssertionID := 16#4223;
-    fbLI2K2.stMirror2.stBeamParams := stSiBP;
+    fbLI2K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stMirror2.bValid := TRUE;
 
     fbLI2K2.stTarget1.fPosition := -101.3;
     fbLI2K2.stTarget1.bUseRawCounts := FALSE;
     fbLI2K2.stTarget1.nRequestAssertionID := 16#4224;
-    fbLI2K2.stTarget1.stBeamParams := stSiBP;
+    fbLI2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stTarget1.bValid := TRUE;
 
     fbLI2K2(
@@ -2052,19 +2052,19 @@ PRG_LI3K2_K2B
     fbLI3K2.stMirror1.fPosition := -36.38;
     fbLI3K2.stMirror1.bUseRawCounts := FALSE;
     fbLI3K2.stMirror1.nRequestAssertionID := 16#4322;
-    fbLI3K2.stMirror1.stBeamParams := stSiBP;
+    fbLI3K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stMirror1.bValid := TRUE;
 
     fbLI3K2.stMirror2.fPosition := -70.38;
     fbLI3K2.stMirror2.bUseRawCounts := FALSE;
     fbLI3K2.stMirror2.nRequestAssertionID := 16#4323;
-    fbLI3K2.stMirror2.stBeamParams := stSiBP;
+    fbLI3K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stMirror2.bValid := TRUE;
 
     fbLI3K2.stTarget1.fPosition := -102.38;
     fbLI3K2.stTarget1.bUseRawCounts := FALSE;
     fbLI3K2.stTarget1.nRequestAssertionID := 16#4324;
-    fbLI3K2.stTarget1.stBeamParams := stSiBP;
+    fbLI3K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stTarget1.bValid := TRUE;
 
     fbLI3K2(
@@ -2122,31 +2122,31 @@ PRG_PF1K2_WFS
     fbPF1K2.stTarget1.fPosition := -97.13;
     fbPF1K2.stTarget1.bUseRawCounts := FALSE;
     fbPF1K2.stTarget1.nRequestAssertionID := 16#3122;
-    fbPF1K2.stTarget1.stBeamParams := stSiBP;
+    fbPF1K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget1.bValid := TRUE;
 
     fbPF1K2.stTarget2.fPosition := -82.755;
     fbPF1K2.stTarget2.bUseRawCounts := FALSE;
     fbPF1K2.stTarget2.nRequestAssertionID := 16#3123;
-    fbPF1K2.stTarget2.stBeamParams := stSiBP;
+    fbPF1K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF1K2.stTarget2.bValid := TRUE;
 
     fbPF1K2.stTarget3.fPosition := -68.38;
     fbPF1K2.stTarget3.bUseRawCounts := FALSE;
     fbPF1K2.stTarget3.nRequestAssertionID := 16#3124;
-    fbPF1K2.stTarget3.stBeamParams := stSiBP;
+    fbPF1K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF1K2.stTarget3.bValid := TRUE;
 
     fbPF1K2.stTarget4.fPosition := -54.004;
     fbPF1K2.stTarget4.bUseRawCounts := FALSE;
     fbPF1K2.stTarget4.nRequestAssertionID := 16#3125;
-    fbPF1K2.stTarget4.stBeamParams := stSiBP;
+    fbPF1K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget4.bValid := TRUE;
 
     fbPF1K2.stTarget5.fPosition := -39.629;
     fbPF1K2.stTarget5.bUseRawCounts := FALSE;
     fbPF1K2.stTarget5.nRequestAssertionID := 16#3126;
-    fbPF1K2.stTarget5.stBeamParams := stSiBP;
+    fbPF1K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget5.bValid := TRUE;
 
     fbPF1K2(
@@ -2205,31 +2205,31 @@ PRG_PF2K2_WFS
     fbPF2K2.stTarget1.fPosition := -97.789;
     fbPF2K2.stTarget1.bUseRawCounts := FALSE;
     fbPF2K2.stTarget1.nRequestAssertionID := 16#3222;
-    fbPF2K2.stTarget1.stBeamParams := stSiBP;
+    fbPF2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget1.bValid := TRUE;
 
     fbPF2K2.stTarget2.fPosition := -83.416;
     fbPF2K2.stTarget2.bUseRawCounts := FALSE;
     fbPF2K2.stTarget2.nRequestAssertionID := 16#3223;
-    fbPF2K2.stTarget2.stBeamParams := stSiBP;
+    fbPF2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF2K2.stTarget2.bValid := TRUE;
 
     fbPF2K2.stTarget3.fPosition := -69.043;
     fbPF2K2.stTarget3.bUseRawCounts := FALSE;
     fbPF2K2.stTarget3.nRequestAssertionID := 16#3224;
-    fbPF2K2.stTarget3.stBeamParams := stSiBP;
+    fbPF2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF2K2.stTarget3.bValid := TRUE;
 
     fbPF2K2.stTarget4.fPosition := -54.669;
     fbPF2K2.stTarget4.bUseRawCounts := FALSE;
     fbPF2K2.stTarget4.nRequestAssertionID := 16#3225;
-    fbPF2K2.stTarget4.stBeamParams := stSiBP;
+    fbPF2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget4.bValid := TRUE;
 
     fbPF2K2.stTarget5.fPosition := -40.296;
     fbPF2K2.stTarget5.bUseRawCounts := FALSE;
     fbPF2K2.stTarget5.nRequestAssertionID := 16#3226;
-    fbPF2K2.stTarget5.stBeamParams := stSiBP;
+    fbPF2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget5.bValid := TRUE;
 
     fbPF2K2(
