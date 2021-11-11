@@ -35,19 +35,19 @@ fbLI2K2.stOut.bValid := TRUE;
 fbLI2K2.stMirror1.fPosition := -35.3;
 fbLI2K2.stMirror1.bUseRawCounts := FALSE;
 fbLI2K2.stMirror1.nRequestAssertionID := 16#4222;
-fbLI2K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam; //stSiBP;
+fbLI2K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stMirror1.bValid := TRUE;
 
 fbLI2K2.stMirror2.fPosition := -69.3;
 fbLI2K2.stMirror2.bUseRawCounts := FALSE;
 fbLI2K2.stMirror2.nRequestAssertionID := 16#4223;
-fbLI2K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam; //stSiBP;
+fbLI2K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stMirror2.bValid := TRUE;
 
 fbLI2K2.stTarget1.fPosition := -101.3;
 fbLI2K2.stTarget1.bUseRawCounts := FALSE;
 fbLI2K2.stTarget1.nRequestAssertionID := 16#4224;
-fbLI2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam; //stSiBP;
+fbLI2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stTarget1.bValid := TRUE;
 
 fbLI2K2(
