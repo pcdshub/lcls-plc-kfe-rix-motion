@@ -203,12 +203,12 @@ VAR_GLOBAL
     // For devices between the mirror and the stopper
     {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:FFO:01&#39;}
     {attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;}
-    fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.92.73.1.1&#39;);
+    fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.42.126.1.1&#39;);
 
     // For devices after the stopper
     {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:FFO:02&#39;}
     {attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;}
-    fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.92.73.1.1&#39;);
+    fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.42.126.1.1&#39;);
 
     fbAtomicMass : FB_AtomicMass;
     fbAttenuatorElementDensity : FB_AttenuatorElementDensity;

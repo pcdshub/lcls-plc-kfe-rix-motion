@@ -99,12 +99,12 @@ GVL
         // For devices between the mirror and the stopper
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
         // For devices after the stopper
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.92.73.1.1');
+        fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
         fbAtomicMass : FB_AtomicMass;
         fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
