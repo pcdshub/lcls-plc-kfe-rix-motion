@@ -297,7 +297,7 @@ Axis 8: Axis 8 IM4K2-PPM-MMS
     Dynamic:Deceleration, 200
     Dynamic:DecelerationMaximum, 200
     Dynamic:DelayTime, 0.004
-    Dynamic:Jerk, 500
+    Dynamic:Jerk, 1000
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
@@ -308,11 +308,13 @@ Axis 8: Axis 8 IM4K2-PPM-MMS
     Enc:SoftEndMaxControl:Range, -10
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
-    GroupId, 9
     Id, 8
+    MotionControl:Enable, true
+    MotionControl:Range, 0.0005
+    MotionControl:Time, 1
     OtherSettings:AllowMotionCmdToSlave, true
-    TargetPosControl:Range, 0.002
-    TargetPosControl:Time, 2
+    TargetPosControl:Range, 0.01
+    TargetPosControl:Time, 1
     Velo:Maximum, 65
 
 
@@ -500,7 +502,7 @@ Axis 14: Axis 14 IM5K2-PPM-MMS
     Dynamic:Deceleration, 200
     Dynamic:DecelerationMaximum, 200
     Dynamic:DelayTime, 0.004
-    Dynamic:Jerk, 500
+    Dynamic:Jerk, 1000
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
@@ -512,9 +514,12 @@ Axis 14: Axis 14 IM5K2-PPM-MMS
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 14
+    MotionControl:Enable, true
+    MotionControl:Range, 0.0005
+    MotionControl:Time, 1
     OtherSettings:AllowMotionCmdToSlave, true
-    TargetPosControl:Range, 0.002
-    TargetPosControl:Time, 2
+    TargetPosControl:Range, 0.01
+    TargetPosControl:Time, 1
     Velo:Maximum, 65
 
 
@@ -840,7 +845,7 @@ Axis 24: Axis 24 IM6K2-PPM-MMS
     Dynamic:Deceleration, 200
     Dynamic:DecelerationMaximum, 200
     Dynamic:DelayTime, 0.004
-    Dynamic:Jerk, 500
+    Dynamic:Jerk, 1000
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
@@ -852,9 +857,12 @@ Axis 24: Axis 24 IM6K2-PPM-MMS
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 24
+    MotionControl:Enable, true
+    MotionControl:Range, 0.0005
+    MotionControl:Time, 1
     OtherSettings:AllowMotionCmdToSlave, true
-    TargetPosControl:Range, 0.002
-    TargetPosControl:Time, 2
+    TargetPosControl:Range, 0.01
+    TargetPosControl:Time, 1
     Velo:Maximum, 65
 
 
