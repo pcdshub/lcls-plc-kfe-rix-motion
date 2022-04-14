@@ -1348,11 +1348,12 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="24" CreateSymbols="true" AxisType="1" AxisFolder="IM6K2-PPM">
-		<Name>Axis 24 IM6K2-PPM-MMS</Name>
+		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="200" Deceleration="200" Jerk="500" DelayTime="0.004"/>
+			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="200" Deceleration="200" Jerk="1000" DelayTime="0.004"/>
 			<Velo Maximum="65"/>
-			<TargetPosControl Range="0.002" Time="2"/>
+			<MotionControl Enable="true" Range="0.0005" Time="1"/>
+			<TargetPosControl Range="0.01" Time="1"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
@@ -1492,8 +1493,8 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="1"/>
-				<PID PosKp="20" PosExtKp="1" PosExtVelo="0.1" DeadBandPosition="0.002"/>
+				<PosDiffControl Range="10" Time="0.1"/>
+				<PID PosKp="10" PosExtKp="0.01" PosExtVelo="0.0005" DeadBandPosition="0.0001"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
