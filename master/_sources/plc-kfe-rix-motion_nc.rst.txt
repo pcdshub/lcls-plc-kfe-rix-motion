@@ -50,7 +50,7 @@ Axis 1: Axis 1 IM1K1-PPM-MMS
     Dynamic:Deceleration, 200
     Dynamic:DecelerationMaximum, 200
     Dynamic:DelayTime, 0.004
-    Dynamic:Jerk, 500
+    Dynamic:Jerk, 1000
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
@@ -62,9 +62,12 @@ Axis 1: Axis 1 IM1K1-PPM-MMS
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 1
+    MotionControl:Enable, true
+    MotionControl:Range, 0.0005
+    MotionControl:Time, 1
     OtherSettings:AllowMotionCmdToSlave, true
-    TargetPosControl:Range, 0.002
-    TargetPosControl:Time, 2
+    TargetPosControl:Range, 0.01
+    TargetPosControl:Time, 1
     Velo:Maximum, 65
 
 
@@ -86,7 +89,7 @@ Axis 2: Axis 2 IM2K1-PPM-MMS
     Dynamic:Deceleration, 200
     Dynamic:DecelerationMaximum, 200
     Dynamic:DelayTime, 0.004
-    Dynamic:Jerk, 500
+    Dynamic:Jerk, 1000
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
@@ -98,9 +101,12 @@ Axis 2: Axis 2 IM2K1-PPM-MMS
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 2
+    MotionControl:Enable, true
+    MotionControl:Range, 0.0005
+    MotionControl:Time, 1
     OtherSettings:AllowMotionCmdToSlave, true
-    TargetPosControl:Range, 0.002
-    TargetPosControl:Time, 2
+    TargetPosControl:Range, 0.01
+    TargetPosControl:Time, 1
     Velo:Maximum, 65
 
 
