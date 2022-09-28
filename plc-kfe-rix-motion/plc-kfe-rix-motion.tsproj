@@ -3,8 +3,15 @@
 	<Project ProjectGUID="{06EDD21A-F81F-4EDE-B8E8-8DF2C1260331}" TargetNetId="172.21.140.70.1.1" ShowHideConfigurations="#x306">
 		<System>
 			<Licenses CacheOrCheckLicensesOnStartup="true">
-				<Target>
+				<Target BkhfOrder="00928681">
+					<CustomComment>
+						<![CDATA[2022_09 license ]]>
+					</CustomComment>
 					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
+					<TargetSelect TargetId="2">{520DE751-9DB6-47CB-8240-BD5C466E7E64}</TargetSelect>
+					<TargetSelect TargetId="2">{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</TargetSelect>
+					<TargetSelect TargetId="2">{66689887-CCBD-452C-AC9A-039D997C6E66}</TargetSelect>
+					<TargetSelect TargetId="2">{BF78CFC7-2E63-42C3-8C07-BB6C346BFB8B}</TargetSelect>
 					<LicenseDevice DongleHardwareId="2" DongleDevice="#x03020002" DongleSystemId="{CBBB2953-6251-050D-F24B-D23248A8B21C}"/>
 				</Target>
 			</Licenses>
