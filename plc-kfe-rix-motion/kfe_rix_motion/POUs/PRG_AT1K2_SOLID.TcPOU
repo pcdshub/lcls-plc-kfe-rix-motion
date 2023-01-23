@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_AT1K2_SOLID" Id="{51ac20ea-82fa-49be-8d38-263aded91896}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_AT1K2_SOLID
+VAR
+    (* NOTE: use FALSE for simulation and production *)
+    (* NOTE: use TRUE when relying on visualization + actual hardware *)
+    bDebug : BOOL := FALSE;
+
+    nEnableMode : ENUM_StageEnableMode;
+
+    {attribute 'pytmc' := '
+        pv: AT1K2:L2SI:MMS:01
+
+    '}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+
+    '}
+    fbStage1: FB_SXR_SATT_Stage;
+
+    {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
+		 
+        .fbRTD_2.iRaw := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+    '}
+    fbStage2: FB_SXR_SATT_Stage;
+
+    {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
+    {attribute 'TcLinkTo' := '
+    '}
+    fbStage3: FB_SXR_SATT_Stage;
+
+END_VAR
+VAR CONSTANT
+    DEFAULT_VELOCITY : LREAL := 1;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bDebug THEN
+    // NEVER: checkouts with the TwinCAT NC GUI.
+    nEnableMode := ENUM_StageEnableMode.NEVER;
+ELSE
+    // ALWAYS: want active position correction at all times
+    nEnableMode := ENUM_StageEnableMode.ALWAYS;
+END_IF
+
+(*
+
+    Solid Attenuator notes
+
+    AT1K2 is JJ-xray SN-11343.
+
+    JJ    Label   EPICS    Stage     NC   Location
+
+    10XX      1   MMS:01   fbStage1  M25  Upstream-most
+    10XX      2   MMS:02   fbStage2  M26  Downstream-most
+    10XX      3   MMS:03   fbStage3  M27  Mirror Insertion Stage
+
+*)
+(* State setup - stage 1 *)
+fbStage1.stOut.sName         := 'Out';
+fbStage1.stOut.fPosition     := 66.00;
+fbStage1.stOut.fDelta        := 0.2;
+fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
+fbStage1.stOut.bValid        := TRUE;
+fbStage1.stOut.bMoveOk       := TRUE;
+
+fbStage1.stFilter1.sName                   := 'Filter 1';
+fbStage1.stFilter1.fPosition               := 500.0;
+fbStage1.stFilter1.fDelta                  := 0.2;
+fbStage1.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter1.bValid                  := FALSE;
+fbStage1.stFilter1.bMoveOk                 := FALSE;
+fbStage1.arrFilters[1].fFilterThickness_um := 0;
+fbStage1.arrFilters[1].sFilterMaterial     := '';
+
+fbStage1.stFilter2.sName                   := 'Filter 2';
+fbStage1.stFilter2.fPosition               := 500.0;
+fbStage1.stFilter2.fDelta                  := 0.2;
+fbStage1.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter2.bValid                  := FALSE;
+fbStage1.stFilter2.bMoveOk                 := FALSE;
+fbStage1.arrFilters[2].fFilterThickness_um := 0;
+fbStage1.arrFilters[2].sFilterMaterial     := '';
+
+fbStage1.stFilter3.sName                   := '(3) 11.5 um Al';
+fbStage1.stFilter3.fPosition               := 75.0;
+fbStage1.stFilter3.fDelta                  := 0.2;
+fbStage1.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter3.bValid                  := TRUE;
+fbStage1.stFilter3.bMoveOk                 := TRUE;
+fbStage1.arrFilters[3].fFilterThickness_um := 11.5;
+fbStage1.arrFilters[3].sFilterMaterial     := 'Al';
+
+fbStage1.stFilter4.sName                   := '(4) 6.18 um Al';
+fbStage1.stFilter4.fPosition               := 90.5;
+fbStage1.stFilter4.fDelta                  := 0.2;
+fbStage1.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter4.bValid                  := TRUE;
+fbStage1.stFilter4.bMoveOk                 := TRUE;
+fbStage1.arrFilters[4].fFilterThickness_um := 6.18;
+fbStage1.arrFilters[4].sFilterMaterial     := 'Al';
+
+fbStage1.stFilter5.sName                   := '(5) 2.85 um Al';
+fbStage1.stFilter5.fPosition               := 105.5;
+fbStage1.stFilter5.fDelta                  := 0.2;
+fbStage1.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter5.bValid                  := TRUE;
+fbStage1.stFilter5.bMoveOk                 := TRUE;
+fbStage1.arrFilters[5].fFilterThickness_um := 2.85;
+fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStage1.stFilter6.sName                   := '(6) 1.52 um Al';
+fbStage1.stFilter6.fPosition               := 122.0;
+fbStage1.stFilter6.fDelta                  := 0.2;
+fbStage1.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter6.bValid                  := TRUE;
+fbStage1.stFilter6.bMoveOk                 := TRUE;
+fbStage1.arrFilters[6].fFilterThickness_um := 1.52;
+fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStage1.stFilter7.sName                   := '(7) 0.78 um Al';
+fbStage1.stFilter7.fPosition               := 136.5;
+fbStage1.stFilter7.fDelta                  := 0.2;
+fbStage1.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter7.bValid                  := TRUE;
+fbStage1.stFilter7.bMoveOk                 := TRUE;
+fbStage1.arrFilters[7].fFilterThickness_um := 0.78;
+fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStage1.stFilter8.sName                   := '(8) 0.39 um Al';
+fbStage1.stFilter8.fPosition               := 152.2;
+fbStage1.stFilter8.fDelta                  := 0.2;
+fbStage1.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage1.stFilter8.bValid                  := TRUE;
+fbStage1.stFilter8.bMoveOk                 := TRUE;
+fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
+fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+
+
+(* State setup - stage 2 *)
+fbStage2.stOut.sName         := 'Out';
+fbStage2.stOut.fPosition     := 66.00;
+fbStage2.stOut.fDelta        := 0.2;
+fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
+fbStage2.stOut.bValid        := TRUE;
+fbStage2.stOut.bMoveOk       := TRUE;
+
+fbStage2.stFilter1.sName                   := 'Filter 1';
+fbStage2.stFilter1.fPosition               := 500.0;
+fbStage2.stFilter1.fDelta                  := 0.2;
+fbStage2.stFilter1.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter1.bValid                  := FALSE;
+fbStage2.stFilter1.bMoveOk                 := FALSE;
+fbStage2.arrFilters[1].fFilterThickness_um := 0;
+fbStage2.arrFilters[1].sFilterMaterial     := '';
+
+fbStage2.stFilter2.sName                   := 'Filter 2';
+fbStage2.stFilter2.fPosition               := 500.0;
+fbStage2.stFilter2.fDelta                  := 0.2;
+fbStage2.stFilter2.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter2.bValid                  := FALSE;
+fbStage2.stFilter2.bMoveOk                 := FALSE;
+fbStage2.arrFilters[2].fFilterThickness_um := 0;
+fbStage2.arrFilters[2].sFilterMaterial     := '';
+
+fbStage2.stFilter3.sName                   := '(3) 11.5 um Al';
+fbStage2.stFilter3.fPosition               := 75.0;
+fbStage2.stFilter3.fDelta                  := 0.2;
+fbStage2.stFilter3.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter3.bValid                  := TRUE;
+fbStage2.stFilter3.bMoveOk                 := TRUE;
+fbStage2.arrFilters[3].fFilterThickness_um := 11.5;
+fbStage2.arrFilters[3].sFilterMaterial     := 'Al';
+
+fbStage2.stFilter4.sName                   := '(4) 6.18 um Al';
+fbStage2.stFilter4.fPosition               := 90.5;
+fbStage2.stFilter4.fDelta                  := 0.2;
+fbStage2.stFilter4.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter4.bValid                  := TRUE;
+fbStage2.stFilter4.bMoveOk                 := TRUE;
+fbStage2.arrFilters[4].fFilterThickness_um := 6.18;
+fbStage2.arrFilters[4].sFilterMaterial     := 'Al';
+
+fbStage2.stFilter5.sName                   := '(5) 1.52 um Al';
+fbStage2.stFilter5.fPosition               := 105.5;
+fbStage2.stFilter5.fDelta                  := 0.2;
+fbStage2.stFilter5.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter5.bValid                  := TRUE;
+fbStage2.stFilter5.bMoveOk                 := TRUE;
+fbStage2.arrFilters[5].fFilterThickness_um := 1.52;
+fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStage2.stFilter6.sName                   := '(6) 0.78 um Al';
+fbStage2.stFilter6.fPosition               := 122.0;
+fbStage2.stFilter6.fDelta                  := 0.2;
+fbStage2.stFilter6.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter6.bValid                  := TRUE;
+fbStage2.stFilter6.bMoveOk                 := TRUE;
+fbStage2.arrFilters[6].fFilterThickness_um := 0.78;
+fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStage2.stFilter7.sName                   := '(7) 0.39 um Al';
+fbStage2.stFilter7.fPosition               := 136.5;
+fbStage2.stFilter7.fDelta                  := 0.2;
+fbStage2.stFilter7.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter7.bValid                  := TRUE;
+fbStage2.stFilter7.bMoveOk                 := TRUE;
+fbStage2.arrFilters[7].fFilterThickness_um := 0.39;
+fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStage2.stFilter8.sName                   := '(8) 0.2 um Al';
+fbStage2.stFilter8.fPosition               := 152.2;
+fbStage2.stFilter8.fDelta                  := 0.2;
+fbStage2.stFilter8.fVelocity               := DEFAULT_VELOCITY;
+fbStage2.stFilter8.bValid                  := TRUE;
+fbStage2.stFilter8.bMoveOk                 := TRUE;
+fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
+fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+
+
+
+(* State setup - stage 3 *)
+fbStage3.stOut.sName         := 'Out';
+fbStage3.stOut.fPosition     := 20.00;
+fbStage3.stOut.fDelta        := 0.2;
+fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
+fbStage3.stOut.bValid        := TRUE;
+fbStage3.stOut.bMoveOk       := TRUE;
+
+fbStage3.stOut.sName         := 'In';
+fbStage3.stOut.fPosition     := 30.00;
+fbStage3.stOut.fDelta        := 0.2;
+fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
+fbStage3.stOut.bValid        := TRUE;
+fbStage3.stOut.bMoveOk       := TRUE;
+
+fbStage3(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+
+
+
+GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
+	fbStage1.fTransmission * 
+	fbStage2.fTransmission *
+	fbStage3.fTransmission
+);
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_AT1K2_SOLID">
+      <LineId Id="52" Count="19" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="494" Count="79" />
+      <LineId Id="75" Count="72" />
+      <LineId Id="493" Count="0" />
+      <LineId Id="149" Count="9" />
+      <LineId Id="241" Count="10" />
+      <LineId Id="593" Count="4" />
+      <LineId Id="322" Count="2" />
+      <LineId Id="407" Count="5" />
+      <LineId Id="600" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="599" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="Main" Id="{fff0648d-526a-4895-b18d-41e28b717bbc}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -177,8 +177,38 @@ VAR_GLOBAL
     M24: DUT_MotionStage := (sName := 'IM6K2:PPM:MMS');
 
     //ST3K2: 1 Axis
-    //M26: DUT_MotionStage;
+    
+	//AT1K2: 3 Axis
+	
+	//Blade Axes:
+    //M25: DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:01'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K2-EL7047-01]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K2-EL7047-01]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K2-EL5042-01]^FB Inputs Channel 1^Position';
+    ;}
+    M25: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:01');
+	
+	//M26: DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K2-EL7047-02]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K2-EL7047-02]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K2-EL5042-01]^FB Inputs Channel 2^Position';
+    ;}
+    M26: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:02');
 
+	//Mirror Axis:
+    //M27: DUT_MotionStage;
+	
+	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
+    {attribute 'TcLinkTo' := '
+        .nRawEncoderULINT     := TIIB[AT1K2-EL5042-02]^FB Inputs Channel 1^Position';
+    ;}
+    M27: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:03');
 
 
 END_VAR]]></Declaration>
