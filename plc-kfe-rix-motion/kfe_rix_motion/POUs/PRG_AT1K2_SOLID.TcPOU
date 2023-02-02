@@ -46,7 +46,7 @@ VAR
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
     {attribute 'TcLinkTo' := '
     '}
-    fbStage3: FB_SXR_SATT_Stage;
+    fbStage3: FB_PositionStateInOut_WithPMPS;
 
 END_VAR
 VAR CONSTANT
@@ -257,31 +257,15 @@ fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stOut.bValid        := TRUE;
 fbStage3.stOut.bMoveOk       := TRUE;
 
-fbStage3(stAxis:=Main.M27, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage3(stMotionStage:=Main.M27, fbArbiter := GVL.fbArbiter1, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
 	fbStage1.fTransmission * 
-	fbStage2.fTransmission *
-	fbStage3.fTransmission
+	fbStage2.fTransmission 
 );
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_AT1K2_SOLID">
-      <LineId Id="52" Count="19" />
-      <LineId Id="73" Count="1" />
-      <LineId Id="494" Count="79" />
-      <LineId Id="75" Count="72" />
-      <LineId Id="493" Count="0" />
-      <LineId Id="149" Count="9" />
-      <LineId Id="241" Count="10" />
-      <LineId Id="593" Count="4" />
-      <LineId Id="322" Count="2" />
-      <LineId Id="407" Count="5" />
-      <LineId Id="600" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="599" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

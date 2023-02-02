@@ -37,6 +37,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\AT1K2\FB_PositionStateInOut_AT1K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\AT2K2\FB_AttenuatorElementDensity.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -126,6 +129,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\AT2K2" />
+    <Folder Include="POUs\AT1K2" />
     <Folder Include="POUs\TM2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
