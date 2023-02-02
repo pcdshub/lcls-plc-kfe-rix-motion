@@ -44,9 +44,8 @@ VAR
     fbStage2: FB_SXR_SATT_Stage;
 
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
-    {attribute 'TcLinkTo' := '
-    '}
-    fbStage3: FB_PositionStateInOut_WithPMPS;
+    
+    fbStage3: FB_AT1K2;
 
 END_VAR
 VAR CONSTANT
@@ -155,7 +154,7 @@ fbStage1.stFilter8.bMoveOk                 := TRUE;
 fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 (* State setup - stage 2 *)
@@ -238,7 +237,7 @@ fbStage2.stFilter8.bMoveOk                 := TRUE;
 fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 
@@ -250,12 +249,12 @@ fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stOut.bValid        := TRUE;
 fbStage3.stOut.bMoveOk       := TRUE;
 
-fbStage3.stOut.sName         := 'In';
-fbStage3.stOut.fPosition     := 30.00;
-fbStage3.stOut.fDelta        := 0.2;
-fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
-fbStage3.stOut.bValid        := TRUE;
-fbStage3.stOut.bMoveOk       := TRUE;
+fbStage3.stIn.sName         := 'In';
+fbStage3.stIn.fPosition     := 30.00;
+fbStage3.stIn.fDelta        := 0.2;
+fbStage3.stIn.fVelocity     := DEFAULT_VELOCITY;
+fbStage3.stIn.bValid        := TRUE;
+fbStage3.stIn.bMoveOk       := TRUE;
 
 fbStage3(stMotionStage:=Main.M27, fbArbiter := GVL.fbArbiter1, fbFFHWO:=GVL.fbFastFaultOutput2);
 
@@ -263,7 +262,9 @@ fbStage3(stMotionStage:=Main.M27, fbArbiter := GVL.fbArbiter1, fbFFHWO:=GVL.fbFa
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
 	fbStage1.fTransmission * 
-	fbStage2.fTransmission 
+	fbStage2.fTransmission *
+	fbStage3.fTransmission
+	
 );
 ]]></ST>
     </Implementation>
