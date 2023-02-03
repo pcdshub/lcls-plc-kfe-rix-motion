@@ -9,7 +9,7 @@ VAR_OUTPUT
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[iPosIndex := enumGet - 1;
-// If Mirror is in, fTransmission of mirror is 0. If out, fTtransmission is 1
+// If Mirror is in, fTransmission of mirror is 0. If out, fTransmission is 1
 IF iPosIndex = 0 THEN
 	fTransmission := 1;
 ELSIF iPosIndex = 1 THEN
