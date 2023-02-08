@@ -1,20 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_AT1K2" Id="{cace7966-0dee-4bbd-98d5-70ac7ceb0c89}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_AT1K2 EXTENDS FB_PositionStateInOut_WithPMPS
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AT1K2 EXTENDS FB_PositionStateInOut
+VAR_IN_OUT
+	fbFFHWO: FB_HardwareFFOutput;
+END_VAR
 VAR_OUTPUT
 	fTransmission : LREAL;
-	
+	bMirrorOut : BOOL;
 	iPosIndex: INT := 0;
+END_VAR
+VAR
+	fbFF: FB_FastFault := (i_Desc := 'Device is moving',
+					   i_TypeCode := 16#2100,
+					   i_xAutoReset := TRUE);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[iPosIndex := enumGet - 1;
 // If Mirror is in, fTransmission of mirror is 0. If out, fTransmission is 1
 IF iPosIndex = 0 THEN
-	fTransmission := 1;
+	fTransmission := 1.0;
 ELSIF iPosIndex = 1 THEN
-	fTransmission := 0;
-END_IF]]></ST>
+	fTransmission := 0.0;
+ELSIF iPosIndex = -1 THEN
+	fTransmission := 1.0;
+END_IF
+
+bMirrorOut := (iPosIndex = 0);
+fbFF(
+    i_DevName:=stMotionStage.sName,
+    i_xOK:=bMirrorOut AND iPosIndex <> -1,
+    io_fbFFHWO := fbFFHWO
+);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
