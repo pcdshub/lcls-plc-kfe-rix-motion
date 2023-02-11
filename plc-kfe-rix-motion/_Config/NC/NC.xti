@@ -1810,9 +1810,10 @@ External Setpoint Generation:
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
 				<EncPara ScaleFactorNumerator="5e-05" MaxCount="#xffffffff">
-					<SoftEndMinControl Range="16.5"/>
-					<SoftEndMaxControl Range="45"/>
+					<SoftEndMinControl Enable="true" Range="23"/>
+					<SoftEndMaxControl Enable="true" Range="67"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>14</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -1946,7 +1947,7 @@ Drive Status 4 (manually linked):
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
 					<PosDiffControl Range="0.2"/>
-					<PID PosKp="20" PosExtKp="20" PosExtVelo="0.1" DeadBandPosition="0.1"/>
+					<PID PosKp="5" PosExtKp="5" PosExtVelo="0.1" DeadBandPosition="0.001"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
 			</Controller>

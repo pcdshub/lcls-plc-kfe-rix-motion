@@ -243,14 +243,14 @@ fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 
 (* State setup - stage 3 *)
 fbStage3.stOut.sName         := 'Out';
-fbStage3.stOut.fPosition     := 20.00;
+fbStage3.stOut.fPosition     := 65.00;
 fbStage3.stOut.fDelta        := 0.2;
 fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stOut.bValid        := TRUE;
 fbStage3.stOut.bMoveOk       := TRUE;
 
 fbStage3.stIn.sName         := 'In';
-fbStage3.stIn.fPosition     := 30.00;
+fbStage3.stIn.fPosition     := 25.00;
 fbStage3.stIn.fDelta        := 0.2;
 fbStage3.stIn.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stIn.bValid        := TRUE;
