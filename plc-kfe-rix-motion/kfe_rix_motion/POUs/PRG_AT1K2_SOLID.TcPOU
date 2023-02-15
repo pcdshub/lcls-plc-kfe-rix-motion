@@ -256,7 +256,7 @@ fbStage3.stIn.fVelocity     := DEFAULT_VELOCITY;
 fbStage3.stIn.bValid        := TRUE;
 fbStage3.stIn.bMoveOk       := TRUE;
 
-fbStage3(stMotionStage:=Main.M27, fbFFHWO:=GVL.fbFastFaultOutput2);
+fbStage3(stAxis:=Main.M27, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 

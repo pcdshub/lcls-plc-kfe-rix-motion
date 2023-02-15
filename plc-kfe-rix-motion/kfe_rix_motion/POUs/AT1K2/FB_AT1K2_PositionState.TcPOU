@@ -2,28 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_AT1K2_PositionState" Id="{7d06e279-8ae9-4efc-8581-65b6fed1a960}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_AT1K2_PositionState EXTENDS FB_PositionStateInOut
-VAR_INPUT
-     // The enum position to move to
-     {attribute 'pytmc' := '
-         pv: SET
-         io: io
-     '}
-     enumSet: ENUM_EpicsInOut;
 
-     stOut		: DUT_PositionState;
-     stIn   	: DUT_PositionState;
-
-
-END_VAR
-VAR_OUTPUT
-    // The enum state readback
-    {attribute 'pytmc' := '
-        pv: GET
-        io: i
-    '}
-    enumGet: ENUM_EpicsInOut;
-
-END_VAR
 VAR
     bInitialized: BOOL := FALSE;
 END_VAR
@@ -33,7 +12,6 @@ END_VAR
     bInitialized := TRUE;
 
     arrStates[1] := stOut;
-
     arrStates[2] := stIn;
 	
 END_IF

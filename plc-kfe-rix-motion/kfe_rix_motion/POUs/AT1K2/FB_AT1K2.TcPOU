@@ -19,8 +19,9 @@ VAR_OUTPUT
 	
 END_VAR
 VAR
-	fbMotion: FB_MotionStage;
-	{attribute 'pytmc' := '
+    fbMotion: FB_MotionStage;
+
+    {attribute 'pytmc' := '
          pv: STATE
     '}
     fbState 	: FB_AT1K2_PositionState;
@@ -32,7 +33,30 @@ VAR
 					   i_xAutoReset := TRUE);
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[bMirrorOut := fbState.enumGet = ENUM_EpicsInOut.OUT;
+      <ST><![CDATA[
+IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    (* Defaults for DUT_MotionStage *)
+    stAxis.bHardwareEnable      := TRUE;
+    stAxis.bLimitBackwardEnable := TRUE;
+    stAxis.bLimitForwardEnable  := TRUE;
+    stAxis.bPowerSelf           := TRUE;
+    stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+
+END_IF
+
+stAxis.nEnableMode := nEnableMode;
+fbMotion(stMotionStage:=stAxis);
+fbState(
+    bEnable:=TRUE,
+    stMotionStage:=stAxis,
+    stOut:=stOut,
+    stIn:=stIn,
+);
+
+bMirrorOut := fbState.enumGet = ENUM_EpicsInOut.OUT;
 // If Mirror is in, fTransmission of mirror is 0. If out, fTransmission is 1
 IF bMirrorOut THEN
 	fTransmission := 1.0;
@@ -40,7 +64,7 @@ ELSE
 	fTransmission := 0.0;
 END_IF
 
-fbMotion(stMotionStage:=stAxis);
+
 fbFF(
     i_DevName:=stAxis.sName,
     i_xOK:= fbState.enumGet = ENUM_EpicsInOut.OUT,

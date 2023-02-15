@@ -176,12 +176,9 @@ VAR_GLOBAL
                              .bBrakeRelease        := TIIB[IM6K2-EL2004-E3]^Channel 1^Output'}
     M24: DUT_MotionStage := (sName := 'IM6K2:PPM:MMS');
 
-    //ST3K2: 1 Axis
     
-	//AT1K2: 3 Axis
-	
-	//Blade Axes:
-    //M25: DUT_MotionStage;
+	//AT1K2: Blade 1
+
 	
 	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:01'}
     {attribute 'TcLinkTo' := '
@@ -191,7 +188,7 @@ VAR_GLOBAL
     ;}
     M25: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:01');
 	
-	//M26: DUT_MotionStage;
+	//AT1K2: Blade 2
 	
 	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:02'}
     {attribute 'TcLinkTo' := '
@@ -201,8 +198,7 @@ VAR_GLOBAL
     ;}
     M26: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:02');
 
-	//Mirror Axis:
-    //M27: DUT_MotionStage;
+    //AT1K2: Mirror
 	
 	{attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
     {attribute 'TcLinkTo' := '
