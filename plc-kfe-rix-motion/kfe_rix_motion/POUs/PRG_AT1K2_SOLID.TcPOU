@@ -43,7 +43,7 @@ VAR
     '}
     fbStage2: FB_SXR_SATT_Stage;
 
-    {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
+    {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03:STATE'}
     
     fbStage3: FB_AT1K2;
 
