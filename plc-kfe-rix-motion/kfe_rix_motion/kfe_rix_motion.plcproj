@@ -40,6 +40,9 @@
     <Compile Include="POUs\AT1K2\FB_AT1K2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\AT1K2\FB_AT1K2_PositionState.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\AT2K2\FB_AttenuatorElementDensity.TcPOU">
       <SubType>Code</SubType>
     </Compile>
