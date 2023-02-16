@@ -20,6 +20,10 @@ VAR_OUTPUT
 END_VAR
 VAR
     fbMotion: FB_MotionStage;
+ 
+    {attribute 'pytmc' := '
+         pv: STATE
+    '}
 
     fbState: FB_PositionStateInOut;
 	
