@@ -21,7 +21,7 @@ END_VAR
 VAR
     fbMotion: FB_MotionStage;
 
-    fbState 	: FB_AT1K2_PositionState;
+    fbState: FB_PositionStateInOut;
 	
 	bInitialized: BOOL := FALSE;
 	
