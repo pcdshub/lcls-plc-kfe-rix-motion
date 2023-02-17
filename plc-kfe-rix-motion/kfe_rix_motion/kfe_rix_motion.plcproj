@@ -37,6 +37,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\AT1K2\FB_AT1K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\AT2K2\FB_AttenuatorElementDensity.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -56,6 +59,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_4_LOG.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_AT1K2_SOLID.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_AT2K2_SOLID.TcPOU">
@@ -123,6 +129,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\AT2K2" />
+    <Folder Include="POUs\AT1K2" />
     <Folder Include="POUs\TM2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -173,7 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.4.2 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 1.5.1 (SLAC)</Resolution>

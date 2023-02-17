@@ -161,5 +161,9 @@ fbFF(
 // stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
 // stExtra.bVisuLowLim := NOT stAxis.bAllBackwardEnable;]]></ST>
     </Implementation>
+    <LineIds Name="FB_SXR_SATT_Stage">
+      <LineId Id="3" Count="77" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

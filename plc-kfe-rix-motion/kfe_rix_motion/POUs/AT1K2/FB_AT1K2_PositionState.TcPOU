@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_AT1K2_PositionState" Id="{7d06e279-8ae9-4efc-8581-65b6fed1a960}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AT1K2_PositionState EXTENDS FB_PositionStateInOut
+
+VAR
+    bInitialized: BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    arrStates[1] := stOut;
+    arrStates[2] := stIn;
+	
+END_IF
+setState := enumSet;
+Exec();
+enumGet := getState;
+enumSet := setState;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

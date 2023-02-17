@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_AT1K2" Id="{cace7966-0dee-4bbd-98d5-70ac7ceb0c89}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AT1K2
+VAR_IN_OUT
+	fbFFHWO: FB_HardwareFFOutput;
+	stAxis: DUT_MotionStage;
+END_VAR
+VAR_INPUT
+	nEnableMode : ENUM_StageEnableMode;
+
+    stOut		: DUT_PositionState;
+	stIn        : DUT_PositionState;
+	
+END_VAR
+VAR_OUTPUT
+	fTransmission : LREAL;
+	bMirrorOut : BOOL;
+	
+END_VAR
+VAR
+    fbMotion: FB_MotionStage;
+ 
+    {attribute 'pytmc' := '
+         pv: STATE
+    '}
+
+    fbState: FB_PositionStateInOut;
+	
+	bInitialized: BOOL := FALSE;
+	
+	fbFF: FB_FastFault := (i_Desc := 'Device is moving',
+					   i_TypeCode := 16#2100,
+					   i_xAutoReset := TRUE);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF NOT bInitialized THEN
+    bInitialized := TRUE;
+
+    (* Defaults for DUT_MotionStage *)
+    stAxis.bHardwareEnable      := TRUE;
+    stAxis.bLimitBackwardEnable := TRUE;
+    stAxis.bLimitForwardEnable  := TRUE;
+    stAxis.bPowerSelf           := TRUE;
+    stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+
+END_IF
+
+stAxis.nEnableMode := nEnableMode;
+fbMotion(stMotionStage:=stAxis);
+fbState(
+    bEnable:=TRUE,
+    stMotionStage:=stAxis,
+    stOut:=stOut,
+    stIn:=stIn,
+);
+
+bMirrorOut := fbState.enumGet = ENUM_EpicsInOut.OUT;
+// If Mirror is in, fTransmission of mirror is 0. If out, fTransmission is 1
+IF bMirrorOut THEN
+	fTransmission := 1.0;
+ELSE 
+	fTransmission := 0.0;
+END_IF
+
+
+fbFF(
+    i_DevName:=stAxis.sName,
+    i_xOK:= fbState.enumGet = ENUM_EpicsInOut.OUT,
+    io_fbFFHWO := fbFFHWO
+);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -49,6 +49,7 @@
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="3" MaxSwitchFrames="140">
 			<SuNamePreDef>IM2K2</SuNamePreDef>
+			<SyncUnit Name="AT1K2" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
