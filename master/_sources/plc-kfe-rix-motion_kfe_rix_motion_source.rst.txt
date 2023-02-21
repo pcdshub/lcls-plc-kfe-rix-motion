@@ -109,14 +109,11 @@ GVL
         fbAtomicMass : FB_AtomicMass;
         fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
 
-        (* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
-    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PhotonEnergy'}
-        fPhotonEnergy_eV AT %I* : REAL;
-    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:ReqTrans'}
-    	rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
-    	{attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
-    	rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
-    	
+        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:ReqTrans'}
+        rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
+        rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+
     END_VAR
 
     VAR_GLOBAL CONSTANT
@@ -661,7 +658,7 @@ FB_SXR_SATT_Stage
 
         fAbsorptionConstant := F_CalculateAbsorptionConstant(
             sElement:=sActiveFilterMaterial,
-            fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+            fEnergyEV:=PMPS_GVL.stCurrentBeamParameters.neV,
             fDensity_gm3:=fActiveFilterDensity,
             fAtomicWeight:=fActiveFilterAtomicMass,
             bError=>bError,

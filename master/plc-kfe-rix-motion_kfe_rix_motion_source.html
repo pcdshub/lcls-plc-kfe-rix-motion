@@ -201,39 +201,36 @@
 <h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
 <section id="gvl">
 <h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;qualified_only&#39;}
-VAR_GLOBAL
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:ARB:01&#39;}
-    fbArbiter1: FB_Arbiter(1);
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:ARB:02&#39;}
-    fbArbiter2: FB_Arbiter(2);
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:ARB:01&#39;</span><span class="p">}</span>
+    <span class="n">fbArbiter1</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:ARB:02&#39;</span><span class="p">}</span>
+    <span class="n">fbArbiter2</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
-    // For devices between the mirror and the stopper
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:FFO:01&#39;}
-    {attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;}
-    fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.42.126.1.1&#39;);
+    <span class="o">//</span> <span class="n">For</span> <span class="n">devices</span> <span class="n">between</span> <span class="n">the</span> <span class="n">mirror</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">stopper</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:FFO:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput1</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.42.126.1.1&#39;</span><span class="p">);</span>
 
-    // For devices after the stopper
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:FFO:02&#39;}
-    {attribute &#39;TcLinkTo&#39; := &#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;}
-    fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:=&#39;172.21.42.126.1.1&#39;);
+    <span class="o">//</span> <span class="n">For</span> <span class="n">devices</span> <span class="n">after</span> <span class="n">the</span> <span class="n">stopper</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:FFO:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput2</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.42.126.1.1&#39;</span><span class="p">);</span>
 
-    fbAtomicMass : FB_AtomicMass;
-    fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
+    <span class="n">fbAtomicMass</span> <span class="p">:</span> <span class="n">FB_AtomicMass</span><span class="p">;</span>
+    <span class="n">fbAttenuatorElementDensity</span> <span class="p">:</span> <span class="n">FB_AttenuatorElementDensity</span><span class="p">;</span>
 
-    (* Photon energy comes from the arbiter (see PMPS_PRE.IO Inputs.rPhotonEnergy!) *)
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:PhotonEnergy&#39;}
-    fPhotonEnergy_eV AT %I* : REAL;
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:PMPS:ReqTrans&#39;}
-    rReqTrans AT %I*                : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
-    {attribute &#39;pytmc&#39; := &#39;pv: PLC:RIX:MOTION:PMPS:CurTrans&#39;}
-    rCurTrans AT %Q*                : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:PMPS:ReqTrans&#39;</span><span class="p">}</span>
+    <span class="n">rReqTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:PMPS:CurTrans&#39;</span><span class="p">}</span>
+    <span class="n">rCurTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
 
-END_VAR
+<span class="n">END_VAR</span>
 
-VAR_GLOBAL CONSTANT
-    iFiltersPerSATTBlade : INT := 8;
-END_VAR
+<span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
+    <span class="n">iFiltersPerSATTBlade</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">END_VAR</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -760,7 +757,7 @@ IF iFilterIndex &gt;= 1 AND iFilterIndex &lt;= GVL.iFiltersPerSATTBlade THEN
 
     fAbsorptionConstant := F_CalculateAbsorptionConstant(
         sElement:=sActiveFilterMaterial,
-        fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+        fEnergyEV:=PMPS_GVL.stCurrentBeamParameters.neV,
         fDensity_gm3:=fActiveFilterDensity,
         fAtomicWeight:=fActiveFilterAtomicMass,
         bError=&gt;bError,
