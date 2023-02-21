@@ -132,7 +132,7 @@ IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
 
     fAbsorptionConstant := F_CalculateAbsorptionConstant(
         sElement:=sActiveFilterMaterial,
-        fEnergyEV:=GVL.fPhotonEnergy_eV, (* TODO double-check link *)
+        fEnergyEV:=PMPS_GVL.stCurrentBeamParameters.neV,
         fDensity_gm3:=fActiveFilterDensity,
         fAtomicWeight:=fActiveFilterAtomicMass,
         bError=>bError,
@@ -161,9 +161,5 @@ fbFF(
 // stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
 // stExtra.bVisuLowLim := NOT stAxis.bAllBackwardEnable;]]></ST>
     </Implementation>
-    <LineIds Name="FB_SXR_SATT_Stage">
-      <LineId Id="3" Count="77" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
