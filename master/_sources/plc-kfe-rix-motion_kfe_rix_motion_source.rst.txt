@@ -724,8 +724,8 @@ FB_TM2K2
         stTarget4: DUT_PositionState;
         stTarget5: DUT_PositionState;
         stTarget6: DUT_PositionState;
-        nTransitionAssertionID: UDINT;
-        nUnknownAssertionID: UDINT;
+        sPmpsDeviceName: STRING;
+        sTransitionKey: STRING;
     END_VAR
     VAR
         fbYStage: FB_MotionStage;
@@ -759,8 +759,6 @@ FB_TM2K2
     fbStates(
         fbArbiter:=fbArbiter,
         fbFFHWO:=fbFFHWO,
-        nTransitionAssertionID:=nTransitionAssertionID,
-        nUnknownAssertionID:=nUnknownAssertionID,
         stMotionStage:=stYStage,
         bEnable := TRUE,
         stOut:=stOut,
@@ -769,7 +767,9 @@ FB_TM2K2
         stTarget3:=stTarget3,
         stTarget4:=stTarget4,
         stTarget5:=stTarget5,
-        stTarget6:=stTarget6);
+        stTarget6:=stTarget6,
+        sPmpsDeviceName:=sPmpsDeviceName,
+        sTransitionKey:=sTransitionKey);
 
     fbThermoCouple1();
 
@@ -1019,6 +1019,13 @@ PRG_3_PMPS_POST
     	io_fbFFHWO := GVL.fbFastFaultOutput1,
         i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
 
+
+    MOTION_GVL.fbStandardPMPSDB(
+        io_fbFFHWO:=GVL.fbFastFaultOutput1,
+        bEnable:=TRUE,
+        sPLCName:='plc-kfe-rix-motion',
+    );
+
     END_PROGRAM
 
 
@@ -1057,25 +1064,23 @@ PRG_AL1K2_L2SI
                                   .fbLaser.iShutdownINT := TIIB[AL1K2-EL4004-E4]^AO Outputs Channel 2^Analog output'}
         fbAL1K2: FB_REF;
     END_VAR
-    fbAL1K2.nTransitionAssertionID := 16#6120;
-    fbAL1K2.nUnknownAssertionID := 16#6129;
-
     fbAL1K2.stOut.fPosition := -33.5; // Upper limit
     fbAL1K2.stOut.bUseRawCounts := FALSE;
-    fbAL1K2.stOut.nRequestAssertionID := 16#6121;
-    fbAL1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbAL1K2.stOut.bValid := TRUE;
+    fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2-OUT';
 
     fbAL1K2.stIn.fPosition := -75; // Current position at time of edit
     fbAL1K2.stIn.bUseRawCounts := FALSE;
-    fbAL1K2.stIn.nRequestAssertionID := 16#6122;
-    fbAL1K2.stIn.stBeamParams := PMPS_GVL.cst0RateBeam;
     fbAL1K2.stIn.bValid := TRUE;
+    fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2-IN';
 
     fbAL1K2(
         stYStage := Main.M5,
         fbArbiter := GVL.fbArbiter1,
-        fbFFHWO := GVL.fbFastFaultOutput2);
+        fbFFHWO := GVL.fbFastFaultOutput2,
+        sPmpsDeviceName := 'AL1K2', 
+    	sTransitionKey := 'AL1K2-TRANSITION', 
+    );
 
     END_PROGRAM
 
@@ -1843,37 +1848,33 @@ PRG_IM1K1_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM1K1: FB_PPM;
     END_VAR
-    fbIM1K1.nTransitionAssertionID := 16#2110;
-    fbIM1K1.nUnknownAssertionID := 16#2119;
-
     fbIM1K1.stOut.fPosition := -8.82;
     fbIM1K1.stOut.bUseRawCounts := FALSE;
-    fbIM1K1.stOut.nRequestAssertionID := 16#2111;
-    fbIM1K1.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K1.stOut.bValid := TRUE;
+    fbIM1K1.stOut.stPMPS.sPmpsState := 'IM1K1:PPM-OUT';
 
     fbIM1K1.stPower.fPosition := -47.92;
     fbIM1K1.stPower.bUseRawCounts := FALSE;
-    fbIM1K1.stPower.nRequestAssertionID := 16#2112;
-    fbIM1K1.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K1.stPower.bValid := TRUE;
+    fbIM1K1.stPower.stPMPS.sPmpsState := 'IM1K1:PPM-POWERMETER';
 
     fbIM1K1.stYag1.fPosition := -71.92;
     fbIM1K1.stYag1.bUseRawCounts := FALSE;
-    fbIM1K1.stYag1.nRequestAssertionID := 16#2113;
-    fbIM1K1.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K1.stYag1.bValid := TRUE;
+    fbIM1K1.stYag1.stPMPS.sPmpsState := 'IM1K1:PPM-YAG1';
 
     fbIM1K1.stYag2.fPosition := -97.93;
     fbIM1K1.stYag2.bUseRawCounts := FALSE;
-    fbIM1K1.stYag2.nRequestAssertionID := 16#2114;
-    fbIM1K1.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K1.stYag2.bValid := TRUE;
+    fbIM1K1.stYag2.stPMPS.sPmpsState := 'IM1K1:PPM-YAG2';
 
     fbIM1K1(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
-        stYStage := Main.M1);
+        stYStage := Main.M1,
+        sPmpsDeviceName := 'IM1K1:PPM', 
+    	sTransitionKey := 'IM1K1:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -1907,37 +1908,33 @@ PRG_IM1K2_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM1K2: FB_PPM;
     END_VAR
-    fbIM1K2.nTransitionAssertionID := 16#2120;
-    fbIM1K2.nUnknownAssertionID := 16#2129;
-
     fbIM1K2.stOut.fPosition := -9.82;
     fbIM1K2.stOut.bUseRawCounts := FALSE;
-    fbIM1K2.stOut.nRequestAssertionID := 16#2121;
-    fbIM1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K2.stOut.bValid := TRUE;
+    fbIM1K2.stOut.stPMPS.sPmpsState := 'IM1K2:PPM-OUT';
 
     fbIM1K2.stPower.fPosition := -48.92;
     fbIM1K2.stPower.bUseRawCounts := FALSE;
-    fbIM1K2.stPower.nRequestAssertionID := 16#2122;
-    fbIM1K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K2.stPower.bValid := TRUE;
+    fbIM1K2.stPower.stPMPS.sPmpsState := 'IM1K2:PPM-POWERMETER';
 
     fbIM1K2.stYag1.fPosition := -72.92;
     fbIM1K2.stYag1.bUseRawCounts := FALSE;
-    fbIM1K2.stYag1.nRequestAssertionID := 16#2123;
-    fbIM1K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K2.stYag1.bValid := TRUE;
+    fbIM1K2.stYag1.stPMPS.sPmpsState := 'IM1K2:PPM-YAG1';
 
     fbIM1K2.stYag2.fPosition := -98.93;
     fbIM1K2.stYag2.bUseRawCounts := FALSE;
-    fbIM1K2.stYag2.nRequestAssertionID := 16#2124;
-    fbIM1K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM1K2.stYag2.bValid := TRUE;
+    fbIM1K2.stYag2.stPMPS.sPmpsState := 'IM1K2:PPM-YAG2';
 
     fbIM1K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
-        stYStage := Main.M4);
+        stYStage := Main.M4,
+        sPmpsDeviceName := 'IM1K2:PPM', 
+    	sTransitionKey := 'IM1K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -1971,37 +1968,33 @@ PRG_IM2K1_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM2K1: FB_PPM;
     END_VAR
-    fbIM2K1.nTransitionAssertionID := 16#2210;
-    fbIM2K1.nUnknownAssertionID := 16#2219;
-
     fbIM2K1.stOut.fPosition := -9.09;
     fbIM2K1.stOut.bUseRawCounts := FALSE;
-    fbIM2K1.stOut.nRequestAssertionID := 16#2211;
-    fbIM2K1.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K1.stOut.bValid := TRUE;
+    fbIM2K1.stOut.stPMPS.sPmpsState := 'IM2K1:PPM-OUT';
 
     fbIM2K1.stPower.fPosition := -48.19;
     fbIM2K1.stPower.bUseRawCounts := FALSE;
-    fbIM2K1.stPower.nRequestAssertionID := 16#2212;
-    fbIM2K1.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K1.stPower.bValid := TRUE;
+    fbIM2K1.stPower.stPMPS.sPmpsState := 'IM2K1:PPM-POWERMETER';
 
     fbIM2K1.stYag1.fPosition := -72.19;
     fbIM2K1.stYag1.bUseRawCounts := FALSE;
-    fbIM2K1.stYag1.nRequestAssertionID := 16#2213;
-    fbIM2K1.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K1.stYag1.bValid := TRUE;
+    fbIM2K1.stYag1.stPMPS.sPmpsState := 'IM2K1:PPM-YAG1';
 
     fbIM2K1.stYag2.fPosition := -98.2;
     fbIM2K1.stYag2.bUseRawCounts := FALSE;
-    fbIM2K1.stYag2.nRequestAssertionID := 16#2214;
-    fbIM2K1.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K1.stYag2.bValid := TRUE;
+    fbIM2K1.stYag2.stPMPS.sPmpsState := 'IM2K1:PPM-YAG2';
 
     fbIM2K1(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
-        stYStage := Main.M2);
+        stYStage := Main.M2,
+        sPmpsDeviceName := 'IM2K1:PPM', 
+    	sTransitionKey := 'IM2K1:PPM-TRANSITION', 
+    );
 
     END_PROGRAM
 
@@ -2035,37 +2028,33 @@ PRG_IM2K2_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM2K2: FB_PPM;
     END_VAR
-    fbIM2K2.nTransitionAssertionID := 16#2220;
-    fbIM2K2.nUnknownAssertionID := 16#22229;
-
     fbIM2K2.stOut.fPosition := -8.49;
     fbIM2K2.stOut.bUseRawCounts := FALSE;
-    fbIM2K2.stOut.nRequestAssertionID := 16#2221;
-    fbIM2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K2.stOut.bValid := TRUE;
+    fbIM2K2.stOut.stPMPS.sPmpsState := 'IM2K2:PPM-OUT';
 
     fbIM2K2.stPower.fPosition := -47.59;
     fbIM2K2.stPower.bUseRawCounts := FALSE;
-    fbIM2K2.stPower.nRequestAssertionID := 16#2222;
-    fbIM2K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K2.stPower.bValid := TRUE;
+    fbIM2K2.stPower.stPMPS.sPmpsState := 'IM2K2:PPM-POWERMETER';
 
     fbIM2K2.stYag1.fPosition := -71.59;
     fbIM2K2.stYag1.bUseRawCounts := FALSE;
-    fbIM2K2.stYag1.nRequestAssertionID := 16#2223;
-    fbIM2K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K2.stYag1.bValid := TRUE;
+    fbIM2K2.stYag1.stPMPS.sPmpsState := 'IM2K2:PPM-YAG1';
 
     fbIM2K2.stYag2.fPosition := -97.60;
     fbIM2K2.stYag2.bUseRawCounts := FALSE;
-    fbIM2K2.stYag2.nRequestAssertionID := 16#2224;
-    fbIM2K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM2K2.stYag2.bValid := TRUE;
+    fbIM2K2.stYag2.stPMPS.sPmpsState := 'IM2K2:PPM-YAG2';
 
     fbIM2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M6);
+        stYStage := Main.M6,
+        sPmpsDeviceName := 'IM2K2:PPM', 
+    	sTransitionKey := 'IM2K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2099,37 +2088,33 @@ PRG_IM3K2_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM3K2: FB_PPM;
     END_VAR
-    fbIM3K2.nTransitionAssertionID := 16#2320;
-    fbIM3K2.nUnknownAssertionID := 16#2329;
-
     fbIM3K2.stOut.fPosition := -9.61;
     fbIM3K2.stOut.bUseRawCounts := FALSE;
-    fbIM3K2.stOut.nRequestAssertionID := 16#2321;
-    fbIM3K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM3K2.stOut.bValid := TRUE;
+    fbIM3K2.stOut.stPMPS.sPmpsState := 'IM3K2:PPM-OUT';
 
     fbIM3K2.stPower.fPosition := -48.71;
     fbIM3K2.stPower.bUseRawCounts := FALSE;
-    fbIM3K2.stPower.nRequestAssertionID := 16#2322;
-    fbIM3K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM3K2.stPower.bValid := TRUE;
+    fbIM3K2.stPower.stPMPS.sPmpsState := 'IM3K2:PPM-POWERMETER';
 
     fbIM3K2.stYag1.fPosition := -72.71;
     fbIM3K2.stYag1.bUseRawCounts := FALSE;
-    fbIM3K2.stYag1.nRequestAssertionID := 16#2323;
-    fbIM3K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM3K2.stYag1.bValid := TRUE;
+    fbIM3K2.stYag1.stPMPS.sPmpsState := 'IM3K2:PPM-YAG1';
 
     fbIM3K2.stYag2.fPosition := -98.72;
     fbIM3K2.stYag2.bUseRawCounts := FALSE;
-    fbIM3K2.stYag2.nRequestAssertionID := 16#2324;
-    fbIM3K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM3K2.stYag2.bValid := TRUE;
+    fbIM3K2.stYag2.stPMPS.sPmpsState := 'IM3K2:PPM-YAG2';
 
     fbIM3K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M7);
+        stYStage := Main.M7,
+        sPmpsDeviceName := 'IM3K2:PPM', 
+    	sTransitionKey := 'IM3K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2163,37 +2148,33 @@ PRG_IM4K2_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM4K2: FB_PPM;
     END_VAR
-    fbIM4K2.nTransitionAssertionID := 16#2420;
-    fbIM4K2.nUnknownAssertionID := 16#2429;
-
     fbIM4K2.stOut.fPosition := -10.80;
     fbIM4K2.stOut.bUseRawCounts := FALSE;
-    fbIM4K2.stOut.nRequestAssertionID := 16#2421;
-    fbIM4K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM4K2.stOut.bValid := TRUE;
+    fbIM4K2.stOut.stPMPS.sPmpsState := 'IM4K2:PPM-OUT';
 
     fbIM4K2.stPower.fPosition := -49.90;
     fbIM4K2.stPower.bUseRawCounts := FALSE;
-    fbIM4K2.stPower.nRequestAssertionID := 16#2422;
-    fbIM4K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM4K2.stPower.bValid := TRUE;
+    fbIM4K2.stPower.stPMPS.sPmpsState := 'IM4K2:PPM-POWERMETER';
 
     fbIM4K2.stYag1.fPosition := -73.90;
     fbIM4K2.stYag1.bUseRawCounts := FALSE;
-    fbIM4K2.stYag1.nRequestAssertionID := 16#2423;
-    fbIM4K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM4K2.stYag1.bValid := TRUE;
+    fbIM4K2.stYag1.stPMPS.sPmpsState := 'IM4K2:PPM-YAG1';
 
     fbIM4K2.stYag2.fPosition := -99.91;
     fbIM4K2.stYag2.bUseRawCounts := FALSE;
-    fbIM4K2.stYag2.nRequestAssertionID := 16#2424;
-    fbIM4K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM4K2.stYag2.bValid := TRUE;
+    fbIM4K2.stYag2.stPMPS.sPmpsState := 'IM4K2:PPM-YAG2';
 
     fbIM4K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M8);
+        stYStage := Main.M8,
+        sPmpsDeviceName := 'IM4K2:PPM', 
+    	sTransitionKey := 'IM4K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2227,37 +2208,33 @@ PRG_IM5K2_PPM
                                   .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM5K2: FB_PPM;
     END_VAR
-    fbIM5K2.nTransitionAssertionID := 16#2520;
-    fbIM5K2.nUnknownAssertionID := 16#2529;
-
     fbIM5K2.stOut.fPosition := -8.92;
     fbIM5K2.stOut.bUseRawCounts := FALSE;
-    fbIM5K2.stOut.nRequestAssertionID := 16#2521;
-    fbIM5K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM5K2.stOut.bValid := TRUE;
+    fbIM5K2.stOut.stPMPS.sPmpsState := 'IM5K2:PPM-OUT';
 
     fbIM5K2.stPower.fPosition := -48.02;
     fbIM5K2.stPower.bUseRawCounts := FALSE;
-    fbIM5K2.stPower.nRequestAssertionID := 16#2522;
-    fbIM5K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM5K2.stPower.bValid := TRUE;
+    fbIM5K2.stPower.stPMPS.sPmpsState := 'IM5K2:PPM-POWERMETER';
 
     fbIM5K2.stYag1.fPosition := -72.02;
     fbIM5K2.stYag1.bUseRawCounts := FALSE;
-    fbIM5K2.stYag1.nRequestAssertionID := 16#2523;
-    fbIM5K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM5K2.stYag1.bValid := TRUE;
+    fbIM5K2.stYag1.stPMPS.sPmpsState := 'IM5K2:PPM-YAG1';
 
     fbIM5K2.stYag2.fPosition := -98.03;
     fbIM5K2.stYag2.bUseRawCounts := FALSE;
-    fbIM5K2.stYag2.nRequestAssertionID := 16#2524;
-    fbIM5K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM5K2.stYag2.bValid := TRUE;
+    fbIM5K2.stYag2.stPMPS.sPmpsState := 'IM5K2:PPM-YAG2';
 
     fbIM5K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M14);
+        stYStage := Main.M14,
+        sPmpsDeviceName := 'IM5K2:PPM', 
+    	sTransitionKey := 'IM5K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2291,37 +2268,33 @@ PRG_IM6K2_PPM
                                   .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM6K2: FB_PPM;
     END_VAR
-    fbIM6K2.nTransitionAssertionID := 16#2620;
-    fbIM6K2.nUnknownAssertionID := 16#2629;
-
     fbIM6K2.stOut.fPosition := -8.61;
     fbIM6K2.stOut.bUseRawCounts := FALSE;
-    fbIM6K2.stOut.nRequestAssertionID := 16#2621;
-    fbIM6K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM6K2.stOut.bValid := TRUE;
+    fbIM6K2.stOut.stPMPS.sPmpsState := 'IM6K2:PPM-OUT';
 
     fbIM6K2.stPower.fPosition := -47.71;
     fbIM6K2.stPower.bUseRawCounts := FALSE;
-    fbIM6K2.stPower.nRequestAssertionID := 16#2622;
-    fbIM6K2.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM6K2.stPower.bValid := TRUE;
+    fbIM6K2.stPower.stPMPS.sPmpsState := 'IM6K2:PPM-POWERMETER';
 
     fbIM6K2.stYag1.fPosition := -71.71;
     fbIM6K2.stYag1.bUseRawCounts := FALSE;
-    fbIM6K2.stYag1.nRequestAssertionID := 16#2623;
-    fbIM6K2.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM6K2.stYag1.bValid := TRUE;
+    fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1';
 
     fbIM6K2.stYag2.fPosition := -97.72;
     fbIM6K2.stYag2.bUseRawCounts := FALSE;
-    fbIM6K2.stYag2.nRequestAssertionID := 16#2624;
-    fbIM6K2.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbIM6K2.stYag2.bValid := TRUE;
+    fbIM6K2.stYag2.stPMPS.sPmpsState := 'IM6K2:PPM-YAG2';
 
     fbIM6K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M24);
+        stYStage := Main.M24,
+        sPmpsDeviceName := 'IM6K2:PPM', 
+    	sTransitionKey := 'IM6K2:PPM-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2344,50 +2317,46 @@ PRG_LI2K2_K2A
         '}
         fbLI2K2: FB_LIC;
 
-        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-        stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
     *)
-    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 0.2;
+    //stSiBP.nTran := 0.2;
 
     // Drop transmission to 10%
-    stFoilBP.nTran := 0.1;
-
-    fbLI2K2.nTransitionAssertionID := 16#4220;
-    fbLI2K2.nUnknownAssertionID := 16#4229;
+    ////stFoilBP.nTran := 0.1;
 
     fbLI2K2.stOut.fPosition := 1.2;
     fbLI2K2.stOut.bUseRawCounts := FALSE;
-    fbLI2K2.stOut.nRequestAssertionID := 16#4221;
-    fbLI2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stOut.bValid := TRUE;
+    fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-OUT';
 
     fbLI2K2.stMirror1.fPosition := -35.3;
     fbLI2K2.stMirror1.bUseRawCounts := FALSE;
-    fbLI2K2.stMirror1.nRequestAssertionID := 16#4222;
-    fbLI2K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stMirror1.bValid := TRUE;
+    fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR1';
 
     fbLI2K2.stMirror2.fPosition := -69.3;
     fbLI2K2.stMirror2.bUseRawCounts := FALSE;
-    fbLI2K2.stMirror2.nRequestAssertionID := 16#4223;
-    fbLI2K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stMirror2.bValid := TRUE;
+    fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR2';
 
     fbLI2K2.stTarget1.fPosition := -101.3;
     fbLI2K2.stTarget1.bUseRawCounts := FALSE;
-    fbLI2K2.stTarget1.nRequestAssertionID := 16#4224;
-    fbLI2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI2K2.stTarget1.bValid := TRUE;
+    fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-TARGET1';
 
     fbLI2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M11);
+        stYStage := Main.M11,
+        sPmpsDeviceName := 'LI2K2-K2A_OUT', 
+    	sTransitionKey := 'LI2K2-K2A_OUT-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2410,50 +2379,46 @@ PRG_LI3K2_K2B
         '}
         fbLI3K2: FB_LIC;
 
-        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-        stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
     *)
-    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 0.2;
+    //stSiBP.nTran := 0.2;
 
     // Drop transmission to 10%
-    stFoilBP.nTran := 0.1;
-
-    fbLI3K2.nTransitionAssertionID := 16#4320;
-    fbLI3K2.nUnknownAssertionID := 16#4329;
+    //stFoilBP.nTran := 0.1;
 
     fbLI3K2.stOut.fPosition := 0.118;
     fbLI3K2.stOut.bUseRawCounts := FALSE;
-    fbLI3K2.stOut.nRequestAssertionID := 16#4321;
-    fbLI3K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stOut.bValid := TRUE;
+    fbLI3K2.stOut.stPMPS.sPmpsState := 'LI3K2:K2B-OUT';
 
     fbLI3K2.stMirror1.fPosition := -36.38;
     fbLI3K2.stMirror1.bUseRawCounts := FALSE;
-    fbLI3K2.stMirror1.nRequestAssertionID := 16#4322;
-    fbLI3K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stMirror1.bValid := TRUE;
+    fbLI3K2.stMirror1.stPMPS.sPmpsState := 'LI3K2:K2B-MIRROR1';
 
     fbLI3K2.stMirror2.fPosition := -70.38;
     fbLI3K2.stMirror2.bUseRawCounts := FALSE;
-    fbLI3K2.stMirror2.nRequestAssertionID := 16#4323;
-    fbLI3K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stMirror2.bValid := TRUE;
+    fbLI3K2.stMirror2.stPMPS.sPmpsState := 'LI3K2:K2B-MIRROR2';
 
     fbLI3K2.stTarget1.fPosition := -102.38;
     fbLI3K2.stTarget1.bUseRawCounts := FALSE;
-    fbLI3K2.stTarget1.nRequestAssertionID := 16#4324;
-    fbLI3K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbLI3K2.stTarget1.bValid := TRUE;
+    fbLI3K2.stTarget1.stPMPS.sPmpsState := 'LI3K2:K2B-TARGET1';
 
     fbLI3K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        stYStage := Main.M21);
+        stYStage := Main.M21,
+        sPmpsDeviceName := 'LI3K2:K2B', 
+    	sTransitionKey := 'LI3K2:K2B-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2484,59 +2449,53 @@ PRG_PF1K2_WFS
                                   .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value'}
         fbPF1K2: FB_WFS;
 
-        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
     *)
-    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 0.2;
-
-    fbPF1K2.nTransitionAssertionID := 16#3120;
-    fbPF1K2.nUnknownAssertionID := 16#3129;
+    //stSiBP.nTran := 0.2;
 
     fbPF1K2.stOut.fPosition := -13.00;
     fbPF1K2.stOut.bUseRawCounts := FALSE;
-    fbPF1K2.stOut.nRequestAssertionID := 16#3121;
-    fbPF1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stOut.bValid := TRUE;
+    fbPF1K2.stOut.stPMPS.sPmpsState := 'PF1K2:WFS-OUT';
 
     fbPF1K2.stTarget1.fPosition := -97.13;
     fbPF1K2.stTarget1.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget1.nRequestAssertionID := 16#3122;
-    fbPF1K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget1.bValid := TRUE;
+    fbPF1K2.stTarget1.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET1';
 
     fbPF1K2.stTarget2.fPosition := -82.755;
     fbPF1K2.stTarget2.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget2.nRequestAssertionID := 16#3123;
-    fbPF1K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF1K2.stTarget2.bValid := TRUE;
+    fbPF1K2.stTarget2.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET2';
 
     fbPF1K2.stTarget3.fPosition := -68.38;
     fbPF1K2.stTarget3.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget3.nRequestAssertionID := 16#3124;
-    fbPF1K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF1K2.stTarget3.bValid := TRUE;
+    fbPF1K2.stTarget3.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET3';
 
     fbPF1K2.stTarget4.fPosition := -54.004;
     fbPF1K2.stTarget4.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget4.nRequestAssertionID := 16#3125;
-    fbPF1K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget4.bValid := TRUE;
+    fbPF1K2.stTarget4.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET4';
 
     fbPF1K2.stTarget5.fPosition := -39.629;
     fbPF1K2.stTarget5.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget5.nRequestAssertionID := 16#3126;
-    fbPF1K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF1K2.stTarget5.bValid := TRUE;
+    fbPF1K2.stTarget5.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET5';
 
     fbPF1K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M12,
-        stZStage := Main.M13);
+        stZStage := Main.M13,
+    	sPmpsDeviceName := 'PF1K2:WFS', 
+    	sTransitionKey := 'PF1K2:WFS-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2567,59 +2526,53 @@ PRG_PF2K2_WFS
                                   .fbThermoCouple2.iRaw 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 2^Value'}
         fbPF2K2: FB_WFS;
 
-        stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
     END_VAR
     (*
        Avoid damage peak between 3.2 keV and 1.6 keV
     *)
-    stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
     // Drop transmission to 20%
-    stSiBP.nTran := 0.2;
-
-    fbPF2K2.nTransitionAssertionID := 16#3220;
-    fbPF2K2.nUnknownAssertionID := 16#3229;
+    //stSiBP.nTran := 0.2;
 
     fbPF2K2.stOut.fPosition := -15.00;
     fbPF2K2.stOut.bUseRawCounts := FALSE;
-    fbPF2K2.stOut.nRequestAssertionID := 16#3221;
-    fbPF2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stOut.bValid := TRUE;
+    fbPF2K2.stOut.stPMPS.sPmpsState := 'PF2K2:WFS-OUT';
 
     fbPF2K2.stTarget1.fPosition := -97.789;
     fbPF2K2.stTarget1.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget1.nRequestAssertionID := 16#3222;
-    fbPF2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget1.bValid := TRUE;
+    fbPF2K2.stTarget1.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET1';
 
     fbPF2K2.stTarget2.fPosition := -83.416;
     fbPF2K2.stTarget2.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget2.nRequestAssertionID := 16#3223;
-    fbPF2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF2K2.stTarget2.bValid := TRUE;
+    fbPF2K2.stTarget2.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET2';
 
     fbPF2K2.stTarget3.fPosition := -69.043;
     fbPF2K2.stTarget3.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget3.nRequestAssertionID := 16#3224;
-    fbPF2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam; 
     fbPF2K2.stTarget3.bValid := TRUE;
+    fbPF2K2.stTarget3.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET3';
 
     fbPF2K2.stTarget4.fPosition := -54.669;
     fbPF2K2.stTarget4.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget4.nRequestAssertionID := 16#3225;
-    fbPF2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget4.bValid := TRUE;
+    fbPF2K2.stTarget4.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET4';
 
     fbPF2K2.stTarget5.fPosition := -40.296;
     fbPF2K2.stTarget5.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget5.nRequestAssertionID := 16#3226;
-    fbPF2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbPF2K2.stTarget5.bValid := TRUE;
+    fbPF2K2.stTarget5.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET5';
 
     fbPF2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M22,
-        stZStage := Main.M23);
+        stZStage := Main.M23,
+        sPmpsDeviceName := 'PF2K2:WFS', 
+    	sTransitionKey := 'PF2K2:WFS-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2680,50 +2633,44 @@ PRG_TM1K2_ATM
                                   .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value'}
         fbTM1K2: FB_ATM;
     END_VAR
-    fbTM1K2.nTransitionAssertionID := 16#5120;
-    fbTM1K2.nUnknownAssertionID := 16#5129;
-
     fbTM1K2.stOut.fPosition := -16;
     fbTM1K2.stOut.bUseRawCounts := FALSE;
-    fbTM1K2.stOut.nRequestAssertionID := 16#5121;
-    fbTM1K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stOut.bValid := TRUE;
+    fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2-K2A-OUT';
 
     fbTM1K2.stTarget1.fPosition := -39.124;
     fbTM1K2.stTarget1.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget1.nRequestAssertionID := 16#5122;
-    fbTM1K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stTarget1.bValid := TRUE;
+    fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET1';
 
     fbTM1K2.stTarget2.fPosition := -53.5;
     fbTM1K2.stTarget2.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget2.nRequestAssertionID := 16#5123;
-    fbTM1K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stTarget2.bValid := TRUE;
+    fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET2';
 
     fbTM1K2.stTarget3.fPosition := -67.874;
     fbTM1K2.stTarget3.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget3.nRequestAssertionID := 16#5124;
-    fbTM1K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stTarget3.bValid := TRUE;
+    fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET3';
 
     fbTM1K2.stTarget4.fPosition := -82.25;
     fbTM1K2.stTarget4.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget4.nRequestAssertionID := 16#5125;
-    fbTM1K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stTarget4.bValid := TRUE;
+    fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET4';
 
     fbTM1K2.stTarget5.fPosition := -96.623;
     fbTM1K2.stTarget5.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget5.nRequestAssertionID := 16#5126;
-    fbTM1K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM1K2.stTarget5.bValid := TRUE;
+    fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET5';
 
     fbTM1K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M9,
-        stXStage := Main.M10);
+        stXStage := Main.M10,
+        sPmpsDeviceName := 'TM1K2-K2A', 
+    	sTransitionKey := 'TM1K2-K2A-TRANSITION',
+    );
 
     END_PROGRAM
 
@@ -2750,56 +2697,49 @@ PRG_TM2K2_ATM
                                   .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value'}
         fbTM2K2: FB_TM2K2;
     END_VAR
-    fbTM2K2.nTransitionAssertionID := 16#5220;
-    fbTM2K2.nUnknownAssertionID := 16#5229;
-
     fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
     fbTM2K2.stOut.bUseRawCounts := FALSE;
-    fbTM2K2.stOut.nRequestAssertionID := 16#5221;
-    fbTM2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stOut.bValid := TRUE;
+    fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:K2B-OUT';
 
     fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
     fbTM2K2.stTarget1.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget1.nRequestAssertionID := 16#5222;
-    fbTM2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget1.bValid := TRUE;
+    fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET1';
 
     fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
     fbTM2K2.stTarget2.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget2.nRequestAssertionID := 16#5223;
-    fbTM2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget2.bValid := TRUE;
+    fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET2';
 
     fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
     fbTM2K2.stTarget3.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget3.nRequestAssertionID := 16#5224;
-    fbTM2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget3.bValid := TRUE;
+    fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET3';
 
     fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
     fbTM2K2.stTarget4.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget4.nRequestAssertionID := 16#5225;
-    fbTM2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget4.bValid := TRUE;
+    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
 
     fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
     fbTM2K2.stTarget5.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget5.nRequestAssertionID := 16#5226;
-    fbTM2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget5.bValid := TRUE;
+    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
 
     fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
     fbTM2K2.stTarget6.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget6.nRequestAssertionID := 16#5227;
-    fbTM2K2.stTarget6.stBeamParams := PMPS_GVL.cstFullBeam;
     fbTM2K2.stTarget6.bValid := TRUE;
+    fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET5';
 
     fbTM2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M15,
-        stXStage := Main.M16);
+        stXStage := Main.M16,
+        sPmpsDeviceName := 'TM2K2:K2B', 
+    	sTransitionKey := 'TM2K2:K2B-TRANSITION',
+    );
 
     END_PROGRAM
 
