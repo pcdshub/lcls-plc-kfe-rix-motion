@@ -183,16 +183,22 @@
       <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 1.5.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 2.0.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
-      <Resolution>lcls-twincat-physics, * (SLAC)</Resolution>
+      <Resolution>lcls-twincat-physics, 0.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls2-cc-lib">
-      <Resolution>lcls2-cc-lib, 1.1.2 (SLAC)</Resolution>
+      <Resolution>lcls2-cc-lib, 2.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 3.0.13 (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Standard">
+      <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_System">
+      <Resolution>Tc2_System, 3.4.26.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>

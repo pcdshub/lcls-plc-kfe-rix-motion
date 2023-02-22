@@ -22,8 +22,8 @@ VAR_INPUT
     stTarget4: DUT_PositionState;
     stTarget5: DUT_PositionState;
     stTarget6: DUT_PositionState;
-    nTransitionAssertionID: UDINT;
-    nUnknownAssertionID: UDINT;
+    sPmpsDeviceName: STRING;
+    sTransitionKey: STRING;
 END_VAR
 VAR
     fbYStage: FB_MotionStage;
@@ -59,8 +59,6 @@ stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 fbStates(
     fbArbiter:=fbArbiter,
     fbFFHWO:=fbFFHWO,
-    nTransitionAssertionID:=nTransitionAssertionID,
-    nUnknownAssertionID:=nUnknownAssertionID,
     stMotionStage:=stYStage,
     bEnable := TRUE,
     stOut:=stOut,
@@ -69,7 +67,9 @@ fbStates(
     stTarget3:=stTarget3,
     stTarget4:=stTarget4,
     stTarget5:=stTarget5,
-    stTarget6:=stTarget6);
+    stTarget6:=stTarget6,
+    sPmpsDeviceName:=sPmpsDeviceName,
+    sTransitionKey:=sTransitionKey);
 
 fbThermoCouple1();]]></ST>
     </Implementation>

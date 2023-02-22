@@ -17,60 +17,54 @@ VAR
                               .fbThermoCouple2.iRaw 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 2^Value'}
     fbPF2K2: FB_WFS;
 
-    stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
    Avoid damage peak between 3.2 keV and 1.6 keV
 *)
-stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+//stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
 // Drop transmission to 20%
-stSiBP.nTran := 0.2;
-
-fbPF2K2.nTransitionAssertionID := 16#3220;
-fbPF2K2.nUnknownAssertionID := 16#3229;
+//stSiBP.nTran := 0.2;
 
 fbPF2K2.stOut.fPosition := -15.00;
 fbPF2K2.stOut.bUseRawCounts := FALSE;
-fbPF2K2.stOut.nRequestAssertionID := 16#3221;
-fbPF2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbPF2K2.stOut.bValid := TRUE;
+fbPF2K2.stOut.stPMPS.sPmpsState := 'PF2K2:WFS-OUT';
 
 fbPF2K2.stTarget1.fPosition := -97.789;
 fbPF2K2.stTarget1.bUseRawCounts := FALSE;
-fbPF2K2.stTarget1.nRequestAssertionID := 16#3222;
-fbPF2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbPF2K2.stTarget1.bValid := TRUE;
+fbPF2K2.stTarget1.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET1';
 
 fbPF2K2.stTarget2.fPosition := -83.416;
 fbPF2K2.stTarget2.bUseRawCounts := FALSE;
-fbPF2K2.stTarget2.nRequestAssertionID := 16#3223;
-fbPF2K2.stTarget2.stBeamParams := PMPS_GVL.cstFullBeam; 
 fbPF2K2.stTarget2.bValid := TRUE;
+fbPF2K2.stTarget2.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET2';
 
 fbPF2K2.stTarget3.fPosition := -69.043;
 fbPF2K2.stTarget3.bUseRawCounts := FALSE;
-fbPF2K2.stTarget3.nRequestAssertionID := 16#3224;
-fbPF2K2.stTarget3.stBeamParams := PMPS_GVL.cstFullBeam; 
 fbPF2K2.stTarget3.bValid := TRUE;
+fbPF2K2.stTarget3.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET3';
 
 fbPF2K2.stTarget4.fPosition := -54.669;
 fbPF2K2.stTarget4.bUseRawCounts := FALSE;
-fbPF2K2.stTarget4.nRequestAssertionID := 16#3225;
-fbPF2K2.stTarget4.stBeamParams := PMPS_GVL.cstFullBeam;
 fbPF2K2.stTarget4.bValid := TRUE;
+fbPF2K2.stTarget4.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET4';
 
 fbPF2K2.stTarget5.fPosition := -40.296;
 fbPF2K2.stTarget5.bUseRawCounts := FALSE;
-fbPF2K2.stTarget5.nRequestAssertionID := 16#3226;
-fbPF2K2.stTarget5.stBeamParams := PMPS_GVL.cstFullBeam;
 fbPF2K2.stTarget5.bValid := TRUE;
+fbPF2K2.stTarget5.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET5';
 
 fbPF2K2(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M22,
-    stZStage := Main.M23);
+    stZStage := Main.M23,
+    sPmpsDeviceName := 'PF2K2:WFS', 
+	sTransitionKey := 'PF2K2:WFS-TRANSITION',
+);
 ]]></ST>
     </Implementation>
   </POU>
