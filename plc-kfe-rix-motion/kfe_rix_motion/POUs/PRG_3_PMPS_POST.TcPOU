@@ -32,7 +32,13 @@ GVL.fbFastFaultOutput2.Execute(i_xVeto:=bMR1K1_Veto OR bST1K2_Veto);
 ff2_ff1_link_motion(
 	io_fbFFHWO := GVL.fbFastFaultOutput1,
     i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
-]]></ST>
+
+
+MOTION_GVL.fbStandardPMPSDB(
+    io_fbFFHWO:=GVL.fbFastFaultOutput1,
+    bEnable:=TRUE,
+    sPLCName:='plc-kfe-rix-motion',
+);	]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -22,37 +22,34 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM2K1.nTransitionAssertionID := 16#2210;
-fbIM2K1.nUnknownAssertionID := 16#2219;
-
+      <ST><![CDATA[
 fbIM2K1.stOut.fPosition := -9.09;
 fbIM2K1.stOut.bUseRawCounts := FALSE;
-fbIM2K1.stOut.nRequestAssertionID := 16#2211;
-fbIM2K1.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM2K1.stOut.bValid := TRUE;
+fbIM2K1.stOut.stPMPS.sPmpsState := 'IM2K1:PPM-OUT';
 
 fbIM2K1.stPower.fPosition := -48.19;
 fbIM2K1.stPower.bUseRawCounts := FALSE;
-fbIM2K1.stPower.nRequestAssertionID := 16#2212;
-fbIM2K1.stPower.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM2K1.stPower.bValid := TRUE;
+fbIM2K1.stPower.stPMPS.sPmpsState := 'IM2K1:PPM-POWERMETER';
 
 fbIM2K1.stYag1.fPosition := -72.19;
 fbIM2K1.stYag1.bUseRawCounts := FALSE;
-fbIM2K1.stYag1.nRequestAssertionID := 16#2213;
-fbIM2K1.stYag1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM2K1.stYag1.bValid := TRUE;
+fbIM2K1.stYag1.stPMPS.sPmpsState := 'IM2K1:PPM-YAG1';
 
 fbIM2K1.stYag2.fPosition := -98.2;
 fbIM2K1.stYag2.bUseRawCounts := FALSE;
-fbIM2K1.stYag2.nRequestAssertionID := 16#2214;
-fbIM2K1.stYag2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbIM2K1.stYag2.bValid := TRUE;
+fbIM2K1.stYag2.stPMPS.sPmpsState := 'IM2K1:PPM-YAG2';
 
 fbIM2K1(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput1,
-    stYStage := Main.M2);
+    stYStage := Main.M2,
+    sPmpsDeviceName := 'IM2K1:PPM', 
+	sTransitionKey := 'IM2K1:PPM-TRANSITION', 
+);
     ]]></ST>
     </Implementation>
   </POU>

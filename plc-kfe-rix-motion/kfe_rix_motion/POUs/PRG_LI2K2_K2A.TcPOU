@@ -9,51 +9,47 @@ VAR
     '}
     fbLI2K2: FB_LIC;
 
-    stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-    stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
    Avoid damage peak between 3.2 keV and 1.6 keV
 *)
-stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
+//stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
 // Drop transmission to 20%
-stSiBP.nTran := 0.2;
+//stSiBP.nTran := 0.2;
 
 // Drop transmission to 10%
-stFoilBP.nTran := 0.1;
-
-fbLI2K2.nTransitionAssertionID := 16#4220;
-fbLI2K2.nUnknownAssertionID := 16#4229;
+////stFoilBP.nTran := 0.1;
 
 fbLI2K2.stOut.fPosition := 1.2;
 fbLI2K2.stOut.bUseRawCounts := FALSE;
-fbLI2K2.stOut.nRequestAssertionID := 16#4221;
-fbLI2K2.stOut.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stOut.bValid := TRUE;
+fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-OUT';
 
 fbLI2K2.stMirror1.fPosition := -35.3;
 fbLI2K2.stMirror1.bUseRawCounts := FALSE;
-fbLI2K2.stMirror1.nRequestAssertionID := 16#4222;
-fbLI2K2.stMirror1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stMirror1.bValid := TRUE;
+fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR1';
 
 fbLI2K2.stMirror2.fPosition := -69.3;
 fbLI2K2.stMirror2.bUseRawCounts := FALSE;
-fbLI2K2.stMirror2.nRequestAssertionID := 16#4223;
-fbLI2K2.stMirror2.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stMirror2.bValid := TRUE;
+fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR2';
 
 fbLI2K2.stTarget1.fPosition := -101.3;
 fbLI2K2.stTarget1.bUseRawCounts := FALSE;
-fbLI2K2.stTarget1.nRequestAssertionID := 16#4224;
-fbLI2K2.stTarget1.stBeamParams := PMPS_GVL.cstFullBeam;
 fbLI2K2.stTarget1.bValid := TRUE;
+fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-TARGET1';
 
 fbLI2K2(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    stYStage := Main.M11);]]></ST>
+    stYStage := Main.M11,
+    sPmpsDeviceName := 'LI2K2-K2A_OUT', 
+	sTransitionKey := 'LI2K2-K2A_OUT-TRANSITION',
+);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
