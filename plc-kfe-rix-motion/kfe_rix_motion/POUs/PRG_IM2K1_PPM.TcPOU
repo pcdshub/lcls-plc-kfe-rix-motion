@@ -19,7 +19,6 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
     fbIM2K1: FB_PPM;
-	fbIM1K2: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
