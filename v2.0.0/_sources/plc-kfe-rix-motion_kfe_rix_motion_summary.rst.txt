@@ -1,0 +1,2709 @@
+
+Settings
+--------
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Setting
+      - Value
+      - Description
+    * - AMS Net ID
+      - 172.21.140.70.1.1
+      -
+    * - Target IP address
+      - 172.21.140.70
+      - Based on AMS Net ID by convention
+    * - AMS Port
+      - 851
+      -
+
+.. _kfe_rix_motion_pragmas:
+
+Pragmas
+-------
+
+Total pragmas found: 126
+Total linter errors: 0
+
+
+
+Libraries
+---------
+
+.. csv-table::
+    :header: Library, Vendor, Default, Version
+    :align: center
+
+        LCLS General, SLAC, Unset, 2.7.0
+        lcls-twincat-motion, SLAC, Unset, 2.0.1
+        lcls-twincat-physics, SLAC, Unset, 0.0.0
+        lcls2-cc-lib, SLAC, Unset, 2.0.0
+        PMPS, SLAC - LCLS, Unset, 3.0.13
+        Tc2_Standard, Beckhoff Automation GmbH, Unset, 3.3.3.0
+        Tc2_System, Beckhoff Automation GmbH, Unset, 3.4.26.0
+        Tc3_Module, Beckhoff Automation GmbH, Unset, Unset
+
+Symbols
+-------
+
+
+
+
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        .TCPADS_MAXUDP_BUFFSIZE, UDINT, 4389120 (32)
+
+
+Constants
+^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Constants.bFPUSupport, BOOL, 635196552 (8)
+        Constants.bLittleEndian, BOOL, 635195744 (8)
+        Constants.bSimulationMode, BOOL, 635195752 (8)
+        Constants.CompilerVersion, VERSION, 663867520 (64)
+        Constants.CompilerVersionNumeric, DWORD, 635197408 (32)
+        Constants.nPackMode, UINT, 635196560 (16)
+        Constants.nRegisterSize, WORD, 635195760 (16)
+        Constants.RuntimeVersion, VERSION, 663867456 (64)
+        Constants.RuntimeVersionNumeric, DWORD, 635196576 (32)
+
+
+DefaultGlobals
+^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        DefaultGlobals.fTimeStamp, LREAL, 4096128 (64)
+        DefaultGlobals.stSys, ST_System, 4096000 (88)
+
+
+GeneralConstants
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GeneralConstants.MAX_STATES, INT, 4096096 (16)
+
+
+Global_Constants
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Global_Constants.EMPTY_EVENT_CLASS, GUID, 4388256 (128)
+        Global_Constants.EMPTY_EVENT_ID, UDINT, 4388384 (32)
+        Global_Constants.EMPTY_SEVERITY, TcEventSeverity, 4388416 (16)
+        Global_Constants.SUCCESS_EVENT, TcEventEntry, 4388448 (192)
+
+
+Global_Variables
+^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>242 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Global_Variables.ADSIGRP_DEVICE_DATA, UDINT, 4181504 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_CLEARI, UDINT, 4181408 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_CLEARO, UDINT, 4181440 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RISIZE, UDINT, 4181280 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_ROSIZE, UDINT, 4181376 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RWIB, UDINT, 4181216 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RWIOB, UDINT, 4181472 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RWIX, UDINT, 4181248 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RWOB, UDINT, 4181312 (32)
+        Global_Variables.ADSIGRP_IOIMAGE_RWOX, UDINT, 4181344 (32)
+        Global_Variables.ADSIGRP_SYM_DOWNLOAD, UDINT, 4181088 (32)
+        Global_Variables.ADSIGRP_SYM_HNDBYNAME, UDINT, 4180864 (32)
+        Global_Variables.ADSIGRP_SYM_INFOBYNAME, UDINT, 4180992 (32)
+        Global_Variables.ADSIGRP_SYM_INFOBYNAMEEX, UDINT, 4181056 (32)
+        Global_Variables.ADSIGRP_SYM_RELEASEHND, UDINT, 4180960 (32)
+        Global_Variables.ADSIGRP_SYM_UPLOAD, UDINT, 4181120 (32)
+        Global_Variables.ADSIGRP_SYM_UPLOADINFO, UDINT, 4181152 (32)
+        Global_Variables.ADSIGRP_SYM_VALBYHND, UDINT, 4180928 (32)
+        Global_Variables.ADSIGRP_SYM_VALBYNAME, UDINT, 4180896 (32)
+        Global_Variables.ADSIGRP_SYM_VERSION, UDINT, 4181024 (32)
+        Global_Variables.ADSIGRP_SYMNAME, UDINT, 4180800 (32)
+        Global_Variables.ADSIGRP_SYMNOTE, UDINT, 4181184 (32)
+        Global_Variables.ADSIGRP_SYMTAB, UDINT, 4180768 (32)
+        Global_Variables.ADSIGRP_SYMVAL, UDINT, 4180832 (32)
+        Global_Variables.ADSIOFFS_DEVDATA_ADSSTATE, UDINT, 4181536 (32)
+        Global_Variables.ADSIOFFS_DEVDATA_DEVSTATE, UDINT, 4181568 (32)
+        Global_Variables.ADSLOG_MSGTYPE_ERROR, DWORD, 4182624 (32)
+        Global_Variables.ADSLOG_MSGTYPE_HINT, DWORD, 4182560 (32)
+        Global_Variables.ADSLOG_MSGTYPE_LOG, DWORD, 4182656 (32)
+        Global_Variables.ADSLOG_MSGTYPE_MSGBOX, DWORD, 4182688 (32)
+        Global_Variables.ADSLOG_MSGTYPE_RESOURCE, DWORD, 4182720 (32)
+        Global_Variables.ADSLOG_MSGTYPE_STRING, DWORD, 4182752 (32)
+        Global_Variables.ADSLOG_MSGTYPE_WARN, DWORD, 4182592 (32)
+        Global_Variables.ADSSTATE_CONFIG, UINT, 4180672 (16)
+        Global_Variables.ADSSTATE_ERROR, UINT, 4180608 (16)
+        Global_Variables.ADSSTATE_EXCEPTION, UINT, 4180736 (16)
+        Global_Variables.ADSSTATE_IDLE, UINT, 4180448 (16)
+        Global_Variables.ADSSTATE_INCOMPATIBLE, UINT, 4180720 (16)
+        Global_Variables.ADSSTATE_INIT, UINT, 4180480 (16)
+        Global_Variables.ADSSTATE_INVALID, UINT, 4180432 (16)
+        Global_Variables.ADSSTATE_LOADCFG, UINT, 4180560 (16)
+        Global_Variables.ADSSTATE_MAXSTATES, UINT, 4180752 (16)
+        Global_Variables.ADSSTATE_POWERFAILURE, UINT, 4180576 (16)
+        Global_Variables.ADSSTATE_POWERGOOD, UINT, 4180592 (16)
+        Global_Variables.ADSSTATE_RECONFIG, UINT, 4180688 (16)
+        Global_Variables.ADSSTATE_RESET, UINT, 4180464 (16)
+        Global_Variables.ADSSTATE_RESUME, UINT, 4180656 (16)
+        Global_Variables.ADSSTATE_RUN, UINT, 4180512 (16)
+        Global_Variables.ADSSTATE_SAVECFG, UINT, 4180544 (16)
+        Global_Variables.ADSSTATE_SHUTDOWN, UINT, 4180624 (16)
+        Global_Variables.ADSSTATE_START, UINT, 4180496 (16)
+        Global_Variables.ADSSTATE_STOP, UINT, 4180528 (16)
+        Global_Variables.ADSSTATE_STOPPING, UINT, 4180704 (16)
+        Global_Variables.ADSSTATE_SUSPEND, UINT, 4180640 (16)
+        Global_Variables.AMSLOGGER_IGR_GENERAL, UDINT, 4248320 (32)
+        Global_Variables.AMSLOGGER_IOF_MODE, UDINT, 4248352 (32)
+        Global_Variables.AMSPORT_AMSLOGGER, UINT, 4248384 (16)
+        Global_Variables.AMSPORT_EVENTLOG, UINT, 4097200 (16)
+        Global_Variables.AMSPORT_LOGGER, UINT, 4096432 (16)
+        Global_Variables.AMSPORT_R0_CAM, UINT, 4180368 (16)
+        Global_Variables.AMSPORT_R0_CAMTOOL, UINT, 4180384 (16)
+        Global_Variables.AMSPORT_R0_CNC, UINT, 4180256 (16)
+        Global_Variables.AMSPORT_R0_IO, UINT, 4180176 (16)
+        Global_Variables.AMSPORT_R0_ISG, UINT, 4180240 (16)
+        Global_Variables.AMSPORT_R0_LINE, UINT, 4180272 (16)
+        Global_Variables.AMSPORT_R0_NC, UINT, 4180192 (16)
+        Global_Variables.AMSPORT_R0_NCSAF, UINT, 4180208 (16)
+        Global_Variables.AMSPORT_R0_NCSVB, UINT, 4180224 (16)
+        Global_Variables.AMSPORT_R0_PLC, UINT, 4180288 (16)
+        Global_Variables.AMSPORT_R0_PLC_RTS1, UINT, 4180304 (16)
+        Global_Variables.AMSPORT_R0_PLC_RTS2, UINT, 4180320 (16)
+        Global_Variables.AMSPORT_R0_PLC_RTS3, UINT, 4180336 (16)
+        Global_Variables.AMSPORT_R0_PLC_RTS4, UINT, 4180352 (16)
+        Global_Variables.AMSPORT_R0_RTIME, UINT, 4180160 (16)
+        Global_Variables.AMSPORT_R3_SCOPESERVER, UINT, 4180416 (16)
+        Global_Variables.AMSPORT_R3_SYSSERV, UINT, 4180400 (16)
+        Global_Variables.AMSPORT_TCPIPSRV, UINT, 4388432 (16)
+        Global_Variables.BOOTDATAFLAGS_PERSISTENT_INVALID, BYTE, 4182800 (8)
+        Global_Variables.BOOTDATAFLAGS_PERSISTENT_LOADED, BYTE, 4182792 (8)
+        Global_Variables.BOOTDATAFLAGS_RETAIN_INVALID, BYTE, 4097192 (8)
+        Global_Variables.BOOTDATAFLAGS_RETAIN_LOADED, BYTE, 4096376 (8)
+        Global_Variables.BOOTDATAFLAGS_RETAIN_REQUESTED, BYTE, 4182784 (8)
+        Global_Variables.CONNECT_MODE_ENABLEDBG, DWORD, 4390112 (32)
+        Global_Variables.DATE_AND_TIME_SECPERDAY, DWORD, 4261280 (32)
+        Global_Variables.DATE_AND_TIME_SECPERWEEK, DWORD, 4261312 (32)
+        Global_Variables.DBG_OUTPUT_FILE, DWORD, 4267584 (32)
+        Global_Variables.DBG_OUTPUT_LOG, DWORD, 4267552 (32)
+        Global_Variables.DBG_OUTPUT_NONE, DWORD, 4267520 (32)
+        Global_Variables.DBG_OUTPUT_VISU, DWORD, 4267616 (32)
+        Global_Variables.DEFAULT_ADS_TIMEOUT, TIME, 4183456 (32)
+        Global_Variables.DEFAULT_BACKLASHVALUE, LREAL, 634617088 (64)
+        Global_Variables.DEFAULT_CSV_FIELD_DOUBLE_QUOTE, BYTE, 4383856 (8)
+        Global_Variables.DEFAULT_CSV_FIELD_SEP, BYTE, 4185096 (8)
+        Global_Variables.DEFAULT_CSV_RECORD_SEP_CR, BYTE, 4383864 (8)
+        Global_Variables.DEFAULT_CSV_RECORD_SEP_LF, BYTE, 4384816 (8)
+        Global_Variables.DEFAULT_HOME_POSITION, LREAL, 634617024 (64)
+        Global_Variables.EMPTY_ARG_VALUE, T_Arg, 4248960 (96)
+        Global_Variables.EMPTY_GUID_REGSTRING, STRING(38), 4386984 (312)
+        Global_Variables.EMPTY_GUID_STRING, STRING(36), 4386688 (296)
+        Global_Variables.EMPTY_GUID_STRUCT, GUID, 4386560 (128)
+        Global_Variables.EMPTY_ROUTE_ENTRY, ST_AmsRouteEntry, 4247072 (1184)
+        Global_Variables.eWatchdogConfig, E_WATCHDOG_TIME_CONFIG, 4184096 (16)
+        Global_Variables.FLOATREC_EXP_IS_INF, INT, 4248432 (16)
+        Global_Variables.FLOATREC_EXP_IS_NAN, INT, 4248416 (16)
+        Global_Variables.FLOATREC_MAX_DIGITS, INT, 4248448 (16)
+        Global_Variables.FLOATREC_MAX_PRECISION, INT, 4248464 (16)
+        Global_Variables.FLOATREC_MIN_PRECISION, INT, 4248480 (16)
+        Global_Variables.FMTERR_ARGTYPEINVALID, DWORD, 4248800 (32)
+        Global_Variables.FMTERR_ASTERISKPOSITION, DWORD, 4248576 (32)
+        Global_Variables.FMTERR_DESTBUFFOVERFLOW, DWORD, 4248896 (32)
+        Global_Variables.FMTERR_FLAGPOSITION, DWORD, 4248672 (32)
+        Global_Variables.FMTERR_INSUFFICIENTARGS, DWORD, 4248864 (32)
+        Global_Variables.FMTERR_INVALIDPOINTERINPUT, DWORD, 4248928 (32)
+        Global_Variables.FMTERR_NOERROR, DWORD, 4248512 (32)
+        Global_Variables.FMTERR_PERCENTSIGNPOSITION, DWORD, 4248544 (32)
+        Global_Variables.FMTERR_PRECISIONDOTPOSITION, DWORD, 4248736 (32)
+        Global_Variables.FMTERR_PRECISIONVALUE, DWORD, 4248640 (32)
+        Global_Variables.FMTERR_TYPEFIELDVALUE, DWORD, 4248768 (32)
+        Global_Variables.FMTERR_UNACCEPTEDPARAMETER, DWORD, 4248832 (32)
+        Global_Variables.FMTERR_WIDTHPRECISIONVALPOS, DWORD, 4248704 (32)
+        Global_Variables.FMTERR_WIDTHVALUE, DWORD, 4248608 (32)
+        Global_Variables.FOPEN_MODEAPPEND, DWORD, 4182912 (32)
+        Global_Variables.FOPEN_MODEBINARY, DWORD, 4182976 (32)
+        Global_Variables.FOPEN_MODEPLUS, DWORD, 4182944 (32)
+        Global_Variables.FOPEN_MODEREAD, DWORD, 4182848 (32)
+        Global_Variables.FOPEN_MODETEXT, DWORD, 4183008 (32)
+        Global_Variables.FOPEN_MODEWRITE, DWORD, 4182880 (32)
+        Global_Variables.FORMAT_DECASC_CODES, BYTE, 4249312 (80)
+        Global_Variables.FORMAT_HEXASC_CODES, BYTE, 4249056 (256)
+        Global_Variables.FORMAT_MAX_ARGS, INT, 4248400 (16)
+        Global_Variables.GLOBAL_DCF77_PULSE_SPLIT, TIME, 4185056 (32)
+        Global_Variables.GLOBAL_DCF77_SEQUENCE_CHECK, BOOL, 4185088 (8)
+        Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE, E_HashPrefixTypes, 4185024 (16)
+        Global_Variables.GLOBAL_SBCS_TABLE, E_SBCSType, 4185040 (16)
+        Global_Variables.HKEY_MAX_BINARY_DATA_SIZE, UDINT, 4248288 (32)
+        Global_Variables.IPHELPERAPI_ADAPTERSINFO, UDINT, 4246752 (32)
+        Global_Variables.IPHELPERAPI_IPADDRBYHOSTNAME, UDINT, 4246784 (32)
+        Global_Variables.LISTEN_MODE_CLOSEALL, DWORD, 4390048 (32)
+        Global_Variables.LISTEN_MODE_USEOPENED, DWORD, 4390080 (32)
+        Global_Variables.MAX_ADAPTER_ADDRESS_LENGTH, UDINT, 4246656 (32)
+        Global_Variables.MAX_ADAPTER_DESCRIPTION_LENGTH, UDINT, 4246624 (32)
+        Global_Variables.MAX_ADAPTER_NAME_LENGTH, UDINT, 4246592 (32)
+        Global_Variables.MAX_AVERAGE_MEASURES, INT, 4184112 (16)
+        Global_Variables.MAX_LOCAL_ADAPTERS, UDINT, 4246816 (32)
+        Global_Variables.MAX_REMOTE_PCS, INT, 4185104 (16)
+        Global_Variables.MAX_ROUTE_ADDR_LEN, BYTE, 4247048 (8)
+        Global_Variables.MAX_ROUTE_NAME_LEN, BYTE, 4247040 (8)
+        Global_Variables.MAX_ROUTE_TRANSPORT, BYTE, 4247064 (8)
+        Global_Variables.MAX_STRING_LENGTH, UDINT, 4183552 (32)
+        Global_Variables.MAX_THROTTLE_MODE, DWORD, 4390144 (32)
+        Global_Variables.MIN_ROUTE_TRANSPORT, BYTE, 4247056 (8)
+        Global_Variables.nWatchdogTime, BYTE, 4182824 (8)
+        Global_Variables.PI, LREAL, 4183488 (64)
+        Global_Variables.ROUTE_FLAG_DYNAMIC, DWORD, 4246976 (32)
+        Global_Variables.ROUTE_FLAG_NOOVERRIDE, DWORD, 4247008 (32)
+        Global_Variables.ROUTE_FLAG_TEMPORARY, DWORD, 4246944 (32)
+        Global_Variables.SYSTEMSERVICE_ADDREMOTE, UDINT, 4246848 (32)
+        Global_Variables.SYSTEMSERVICE_CHANGENETID, UDINT, 4182368 (32)
+        Global_Variables.SYSTEMSERVICE_CLOSEHANDLE, UDINT, 4181728 (32)
+        Global_Variables.SYSTEMSERVICE_CREATEFILE, UDINT, 4181696 (32)
+        Global_Variables.SYSTEMSERVICE_DELREMOTE, UDINT, 4246880 (32)
+        Global_Variables.SYSTEMSERVICE_ENUMREMOTE, UDINT, 4246912 (32)
+        Global_Variables.SYSTEMSERVICE_FCLOSE, UDINT, 4181792 (32)
+        Global_Variables.SYSTEMSERVICE_FDELETE, UDINT, 4182112 (32)
+        Global_Variables.SYSTEMSERVICE_FEOF, UDINT, 4182080 (32)
+        Global_Variables.SYSTEMSERVICE_FFILEFIND, UDINT, 4248256 (32)
+        Global_Variables.SYSTEMSERVICE_FGETS, UDINT, 4181952 (32)
+        Global_Variables.SYSTEMSERVICE_FOPEN, UDINT, 4181760 (32)
+        Global_Variables.SYSTEMSERVICE_FPRINTF, UDINT, 4182048 (32)
+        Global_Variables.SYSTEMSERVICE_FPUTS, UDINT, 4181984 (32)
+        Global_Variables.SYSTEMSERVICE_FREAD, UDINT, 4181824 (32)
+        Global_Variables.SYSTEMSERVICE_FRENAME, UDINT, 4182144 (32)
+        Global_Variables.SYSTEMSERVICE_FSCANF, UDINT, 4182016 (32)
+        Global_Variables.SYSTEMSERVICE_FSEEK, UDINT, 4181888 (32)
+        Global_Variables.SYSTEMSERVICE_FTELL, UDINT, 4181920 (32)
+        Global_Variables.SYSTEMSERVICE_FWRITE, UDINT, 4181856 (32)
+        Global_Variables.SYSTEMSERVICE_IPHELPERAPI, UDINT, 4246688 (32)
+        Global_Variables.SYSTEMSERVICE_IPHOSTNAME, UDINT, 4246720 (32)
+        Global_Variables.SYSTEMSERVICE_MKDIR, UDINT, 4182176 (32)
+        Global_Variables.SYSTEMSERVICE_OPENCREATE, UDINT, 4181600 (32)
+        Global_Variables.SYSTEMSERVICE_OPENREAD, UDINT, 4181632 (32)
+        Global_Variables.SYSTEMSERVICE_OPENWRITE, UDINT, 4181664 (32)
+        Global_Variables.SYSTEMSERVICE_REG_HKEYLOCALMACHINE, UDINT, 4182240 (32)
+        Global_Variables.SYSTEMSERVICE_RMDIR, UDINT, 4182208 (32)
+        Global_Variables.SYSTEMSERVICE_SENDEMAIL, UDINT, 4182272 (32)
+        Global_Variables.SYSTEMSERVICE_STARTPROCESS, UDINT, 4182336 (32)
+        Global_Variables.SYSTEMSERVICE_TIMESERVICES, UDINT, 4182304 (32)
+        Global_Variables.SYSTEMSTATEFLAGS_BSOD, BYTE, 4182808 (8)
+        Global_Variables.SYSTEMSTATEFLAGS_RTVIOLATION, BYTE, 4182816 (8)
+        Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX, T_ULARGE_INTEGER, 4255936 (64)
+        Global_Variables.SYSTEMTIME_DATE_AND_TIME_MAX64, ULINT, 4256256 (64)
+        Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN, T_ULARGE_INTEGER, 4255872 (64)
+        Global_Variables.SYSTEMTIME_DATE_AND_TIME_MIN64, ULINT, 4256192 (64)
+        Global_Variables.SYSTEMTIME_DATEDELTA_OFFSET, DWORD, 4255648 (32)
+        Global_Variables.SYSTEMTIME_MAX_MONTHDAYS, WORD, 4254800 (384)
+        Global_Variables.SYSTEMTIME_MAX_YEARSDAY, WORD, 4255184 (448)
+        Global_Variables.SYSTEMTIME_TICKSPERDAY, T_ULARGE_INTEGER, 4255808 (64)
+        Global_Variables.SYSTEMTIME_TICKSPERDAY64, ULINT, 4256128 (64)
+        Global_Variables.SYSTEMTIME_TICKSPERMSEC, T_ULARGE_INTEGER, 4255680 (64)
+        Global_Variables.SYSTEMTIME_TICKSPERMSEC64, ULINT, 4256000 (64)
+        Global_Variables.SYSTEMTIME_TICKSPERSEC, T_ULARGE_INTEGER, 4255744 (64)
+        Global_Variables.SYSTEMTIME_TICKSPERSEC64, ULINT, 4256064 (64)
+        Global_Variables.TCEVENT_FMTPRGSIZE, INT, 4183440 (16)
+        Global_Variables.TCEVENT_SRCNAMESIZE, INT, 4183424 (16)
+        Global_Variables.TCEVENTFLAG_AUTOFMTALL, WORD, 4183328 (16)
+        Global_Variables.TCEVENTFLAG_FMTSELF, WORD, 4183264 (16)
+        Global_Variables.TCEVENTFLAG_LOG, WORD, 4183280 (16)
+        Global_Variables.TCEVENTFLAG_MSGBOX, WORD, 4183296 (16)
+        Global_Variables.TCEVENTFLAG_PRIOCLASS, WORD, 4182832 (16)
+        Global_Variables.TCEVENTFLAG_SRCID, WORD, 4183312 (16)
+        Global_Variables.TCEVENTSTATE_CONFIRMED, WORD, 4183392 (16)
+        Global_Variables.TCEVENTSTATE_INVALID, WORD, 4183344 (16)
+        Global_Variables.TCEVENTSTATE_RESET, WORD, 4183376 (16)
+        Global_Variables.TCEVENTSTATE_RESETCON, WORD, 4183408 (16)
+        Global_Variables.TCEVENTSTATE_SIGNALED, WORD, 4183360 (16)
+        Global_Variables.TcMcGlobal, _TCMCGLOBAL, 634610048 (6976)
+        Global_Variables.TCPADS_IGR_ADAPTER_LINKSTATUS, UDINT, 4389440 (32)
+        Global_Variables.TCPADS_IGR_CLOSEBYHDL, UDINT, 4389184 (32)
+        Global_Variables.TCPADS_IGR_CONLIST, UDINT, 4389152 (32)
+        Global_Variables.TCPADS_IGR_MULTICAST_ADDBYHDL, UDINT, 4389376 (32)
+        Global_Variables.TCPADS_IGR_MULTICAST_DROPBYHDL, UDINT, 4389408 (32)
+        Global_Variables.TCPADS_IGR_PEERBYHDL, UDINT, 4389248 (32)
+        Global_Variables.TCPADS_IGR_RECVBYHDL, UDINT, 4389280 (32)
+        Global_Variables.TCPADS_IGR_RECVFROMBYHDL, UDINT, 4389312 (32)
+        Global_Variables.TCPADS_IGR_SENDBYHDL, UDINT, 4389216 (32)
+        Global_Variables.TCPADS_IGR_SENDTOBYHDL, UDINT, 4389344 (32)
+        Global_Variables.TCPADS_NULL_HSOCKET, T_HSOCKET, 4389696 (352)
+        Global_Variables.TCPADSCONLST_IOF_ACCEPT, UDINT, 4389568 (32)
+        Global_Variables.TCPADSCONLST_IOF_CLOSEALL, UDINT, 4389536 (32)
+        Global_Variables.TCPADSCONLST_IOF_CONNECT, UDINT, 4389472 (32)
+        Global_Variables.TCPADSCONLST_IOF_GETHNDLBYADDR, UDINT, 4389632 (32)
+        Global_Variables.TCPADSCONLST_IOF_GETLINKSTATUS, UDINT, 4389664 (32)
+        Global_Variables.TCPADSCONLST_IOF_LISTEN, UDINT, 4389504 (32)
+        Global_Variables.TCPADSCONLST_IOF_UDPBIND, UDINT, 4389600 (32)
+        Global_Variables.THROTTLE_MODE_DEFAULT, T_ThrottleTimes, 4390592 (416)
+        Global_Variables.THROTTLE_MODE_OFF, T_ThrottleTimes, 4390176 (416)
+        Global_Variables.TIMESERVICE_ADJUSTTIMETORTC, UDINT, 4182496 (32)
+        Global_Variables.TIMESERVICE_DATEANDTIME, UDINT, 4182400 (32)
+        Global_Variables.TIMESERVICE_RTCTIMEDIFF, UDINT, 4182464 (32)
+        Global_Variables.TIMESERVICE_SYSTEMTIMES, UDINT, 4182432 (32)
+        Global_Variables.TIMESERVICE_TIMEZONINFORMATION, UDINT, 4182528 (32)
+        Global_Variables.WEST_EUROPE_TZI, ST_TimeZoneInformation, 4256320 (864)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+Global_Version
+^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>13 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Global_Version.stLibVersion_Tc2_EtherCAT, ST_LibVersion, 4179296 (288)
+        Global_Version.stLibVersion_Tc2_IoFunctions, ST_LibVersion, 4387392 (288)
+        Global_Version.stLibVersion_Tc2_Math, ST_LibVersion, 634617152 (288)
+        Global_Version.stLibVersion_Tc2_MC2, ST_LibVersion, 634609760 (288)
+        Global_Version.stLibVersion_Tc2_ModbusSrv, ST_LibVersion, 4387680 (288)
+        Global_Version.stLibVersion_Tc2_SerialCom, ST_LibVersion, 4387968 (288)
+        Global_Version.stLibVersion_Tc2_Standard, ST_LibVersion, 4179584 (288)
+        Global_Version.stLibVersion_Tc2_System, ST_LibVersion, 4179872 (288)
+        Global_Version.stLibVersion_Tc2_Utilities, ST_LibVersion, 4184736 (288)
+        Global_Version.stLibVersion_Tc3_EventLogger, ST_LibVersion, 4388704 (288)
+        Global_Version.stLibVersion_Tc3_JsonXml, ST_LibVersion, 4391008 (288)
+        Global_Version.stLibVersion_Tc3_Module, ST_LibVersion, 4184128 (288)
+        Global_Version.stLibVersion_TcUnit, ST_LibVersion, 634591680 (288)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+GVL
+^^^
+
+.. raw:: html
+
+   <details>
+       <summary>12 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL.fbArbiter1, FB_Arbiter, 659974464 (776064)
+        GVL.fbArbiter2, FB_Arbiter, 660750528 (776064)
+        GVL.fbAtomicMass, FB_AtomicMass, 663285184 (2816)
+        GVL.fbAttenuatorElementDensity, FB_AttenuatorElementDensity, 663288000 (3712)
+        GVL.fbFastFaultOutput1, FB_HardwareFFOutput, 661526592 (879296)
+        GVL.fbFastFaultOutput1.q_xFastFaultOut, BOOL, 661526856 (8)
+        GVL.fbFastFaultOutput2, FB_HardwareFFOutput, 662405888 (879296)
+        GVL.fbFastFaultOutput2.q_xFastFaultOut, BOOL, 662406152 (8)
+        GVL.iFiltersPerSATTBlade, INT, 635195728 (16)
+        GVL.nLangId_OnlineMonitoring, DINT, 4388640 (32)
+        GVL.rCurTrans, ST_PMPS_Attenuator_IO, 663292736 (1024)
+        GVL.rReqTrans, ST_PMPS_Attenuator_IO, 663291712 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+GVL_AbsorptionTest
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_AbsorptionTest.fbScatteringFactorLUT, FB_ScatteringFactorLUT, 635465664 (575872)
+
+
+GVL_INTERNAL
+^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_INTERNAL.UNINITIALIZED_CLASS_GUID, GUID, 4388992 (128)
+
+
+GVL_Logger
+^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>14 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_Logger.bTrickleTripped, BOOL, 4096088 (8)
+        GVL_Logger.cLogHost, STRING(15), 4096192 (128)
+        GVL_Logger.fbRootLogger, FB_LogMessage, 4097280 (81984)
+        GVL_Logger.iLogPort, UINT, 4096112 (16)
+        GVL_Logger.nGlobAccEvents, UDINT, 4097248 (32)
+        GVL_Logger.nLocalTrickleTripThreshold, TIME, 4096448 (32)
+        GVL_Logger.nLocalTripThreshold, TIME, 4096384 (32)
+        GVL_Logger.nMinTimeViolationAcceptable, INT, 4096416 (16)
+        GVL_Logger.nTrickleThreshold, UDINT, 4179264 (32)
+        GVL_Logger.nTrickleTripTime, TIME, 4096480 (32)
+        GVL_Logger.nTripResetPeriod, TIME, 4096512 (32)
+        GVL_Logger.sIpTidbit, STRING(6), 4096320 (56)
+        GVL_Logger.sPlcHostname, STRING(80), 4096544 (648)
+        GVL_Logger.TCPADS_MAXUDP_BUFFSIZE, UDINT, 4097216 (32)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+GVL_Param_TcUnit
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_Param_TcUnit.AdsLogMessageFifoRingBufferSize, UINT, 4393440 (16)
+        GVL_Param_TcUnit.LogExtendedResults, BOOL, 4386536 (8)
+        GVL_Param_TcUnit.MaxNumberOfAssertsForEachTestSuite, UINT, 4391328 (16)
+        GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite, UINT, 4391312 (16)
+        GVL_Param_TcUnit.MaxNumberOfTestSuites, UINT, 4391296 (16)
+        GVL_Param_TcUnit.TimeBetweenTestSuitesExecution, TIME, 4393472 (32)
+        GVL_Param_TcUnit.xUnitBufferSize, UDINT, 4391360 (32)
+        GVL_Param_TcUnit.xUnitEnablePublish, BOOL, 4391344 (8)
+        GVL_Param_TcUnit.xUnitFilePath, STRING(255), 4391392 (2048)
+
+
+GVL_PhysicalConstants
+^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>1115 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_PhysicalConstants.f_220_LatticeSpacingOfSilicon_in_m, LREAL, 635218112 (64)
+        GVL_PhysicalConstants.f_220_LatticeSpacingOfSilicon_in_m_Uncertainty, LREAL, 635218880 (64)
+        GVL_PhysicalConstants.f_220_LatticeSpacingOfSilicon_in_m_Units, STRING(80), 635218176 (648)
+        GVL_PhysicalConstants.fAlphaParticleElectronMassRatio, LREAL, 635219776 (64)
+        GVL_PhysicalConstants.fAlphaParticleElectronMassRatio_Uncertainty, LREAL, 635219840 (64)
+        GVL_PhysicalConstants.fAlphaParticleMass_in_kg, LREAL, 635219904 (64)
+        GVL_PhysicalConstants.fAlphaParticleMass_in_kg_Uncertainty, LREAL, 635220672 (64)
+        GVL_PhysicalConstants.fAlphaParticleMass_in_kg_Units, STRING(80), 635219968 (648)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalent_in_J, LREAL, 635220736 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635221504 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalent_in_J_Units, STRING(80), 635220800 (648)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalentInMeV_in_MeV, LREAL, 635221568 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635222336 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635221632 (648)
+        GVL_PhysicalConstants.fAlphaParticleMassInU_in_u, LREAL, 635222400 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassInU_in_u_Uncertainty, LREAL, 635223168 (64)
+        GVL_PhysicalConstants.fAlphaParticleMassInU_in_u_Units, STRING(80), 635222464 (648)
+        GVL_PhysicalConstants.fAlphaParticleMolarMass_in_kg_mol_1, LREAL, 635223232 (64)
+        GVL_PhysicalConstants.fAlphaParticleMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635224000 (64)
+        GVL_PhysicalConstants.fAlphaParticleMolarMass_in_kg_mol_1_Units, STRING(80), 635223296 (648)
+        GVL_PhysicalConstants.fAlphaParticleProtonMassRatio, LREAL, 635224064 (64)
+        GVL_PhysicalConstants.fAlphaParticleProtonMassRatio_Uncertainty, LREAL, 635224128 (64)
+        GVL_PhysicalConstants.fAlphaParticleRelativeAtomicMass, LREAL, 635439296 (64)
+        GVL_PhysicalConstants.fAlphaParticleRelativeAtomicMass_Uncertainty, LREAL, 635439360 (64)
+        GVL_PhysicalConstants.fAngstromStar_in_m, LREAL, 635224192 (64)
+        GVL_PhysicalConstants.fAngstromStar_in_m_Uncertainty, LREAL, 635224960 (64)
+        GVL_PhysicalConstants.fAngstromStar_in_m_Units, STRING(80), 635224256 (648)
+        GVL_PhysicalConstants.fAtomicMassConstant_in_kg, LREAL, 635225024 (64)
+        GVL_PhysicalConstants.fAtomicMassConstant_in_kg_Uncertainty, LREAL, 635225792 (64)
+        GVL_PhysicalConstants.fAtomicMassConstant_in_kg_Units, STRING(80), 635225088 (648)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalent_in_J, LREAL, 635225856 (64)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalent_in_J_Uncertainty, LREAL, 635226624 (64)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalent_in_J_Units, STRING(80), 635225920 (648)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalentInMeV_in_MeV, LREAL, 635226688 (64)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635227456 (64)
+        GVL_PhysicalConstants.fAtomicMassConstantEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635226752 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitElectronVoltRelationship_in_eV, LREAL, 635227520 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitElectronVoltRelationship_in_eV_Uncertainty, LREAL, 635228288 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitElectronVoltRelationship_in_eV_Units, STRING(80), 635227584 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitHartreeRelationship_in_E_h, LREAL, 635228352 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitHartreeRelationship_in_E_h_Uncertainty, LREAL, 635229120 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitHartreeRelationship_in_E_h_Units, STRING(80), 635228416 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitHertzRelationship_in_Hz, LREAL, 635229184 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitHertzRelationship_in_Hz_Uncertainty, LREAL, 635229952 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitHertzRelationship_in_Hz_Units, STRING(80), 635229248 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitInverseMeterRelationship_in_m_1, LREAL, 635230016 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitInverseMeterRelationship_in_m_1_Uncertainty, LREAL, 635230784 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitInverseMeterRelationship_in_m_1_Units, STRING(80), 635230080 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitJouleRelationship_in_J, LREAL, 635230848 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitJouleRelationship_in_J_Uncertainty, LREAL, 635231616 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitJouleRelationship_in_J_Units, STRING(80), 635230912 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitKelvinRelationship_in_K, LREAL, 635231680 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitKelvinRelationship_in_K_Uncertainty, LREAL, 635232448 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitKelvinRelationship_in_K_Units, STRING(80), 635231744 (648)
+        GVL_PhysicalConstants.fAtomicMassUnitKilogramRelationship_in_kg, LREAL, 635232512 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitKilogramRelationship_in_kg_Uncertainty, LREAL, 635233280 (64)
+        GVL_PhysicalConstants.fAtomicMassUnitKilogramRelationship_in_kg_Units, STRING(80), 635232576 (648)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizability_in_C_3_m_3_J_2, LREAL, 635233344 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizability_in_C_3_m_3_J_2_Uncertainty, LREAL, 635234112 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizability_in_C_3_m_3_J_2_Units, STRING(80), 635233408 (648)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizablity_in_C_3_m_3_J_2, LREAL, 635194176 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizablity_in_C_3_m_3_J_2_Uncertainty, LREAL, 635194944 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf1stHyperpolarizablity_in_C_3_m_3_J_2_Units, STRING(80), 635194240 (648)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizability_in_C_4_m_4_J_3, LREAL, 635234176 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizability_in_C_4_m_4_J_3_Uncertainty, LREAL, 635234944 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizability_in_C_4_m_4_J_3_Units, STRING(80), 635234240 (648)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizablity_in_C_4_m_4_J_3, LREAL, 635195008 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizablity_in_C_4_m_4_J_3_Uncertainty, LREAL, 635195776 (64)
+        GVL_PhysicalConstants.fAtomicUnitOf2ndHyperpolarizablity_in_C_4_m_4_J_3_Units, STRING(80), 635195072 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfAction_in_J_s, LREAL, 635235008 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfAction_in_J_s_Units, STRING(80), 635235072 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfCharge_in_C, LREAL, 635235776 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfCharge_in_C_Units, STRING(80), 635235840 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfChargeDensity_in_C_m_3, LREAL, 635236544 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfChargeDensity_in_C_m_3_Uncertainty, LREAL, 635237312 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfChargeDensity_in_C_m_3_Units, STRING(80), 635236608 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfCurrent_in_A, LREAL, 635237376 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfCurrent_in_A_Uncertainty, LREAL, 635238144 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfCurrent_in_A_Units, STRING(80), 635237440 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMom_in_C_m, LREAL, 635238208 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMom_in_C_m_Uncertainty, LREAL, 635238976 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMom_in_C_m_Units, STRING(80), 635238272 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMoment_in_C_m, LREAL, 635195840 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMoment_in_C_m_Uncertainty, LREAL, 635196608 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricDipoleMoment_in_C_m_Units, STRING(80), 635195904 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricField_in_V_m_1, LREAL, 635239040 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricField_in_V_m_1_Uncertainty, LREAL, 635239808 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricField_in_V_m_1_Units, STRING(80), 635239104 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricFieldGradient_in_V_m_2, LREAL, 635239872 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricFieldGradient_in_V_m_2_Uncertainty, LREAL, 635240640 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricFieldGradient_in_V_m_2_Units, STRING(80), 635239936 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizability_in_C_2_m_2_J_1, LREAL, 635240704 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizability_in_C_2_m_2_J_1_Uncertainty, LREAL, 635241472 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizability_in_C_2_m_2_J_1_Units, STRING(80), 635240768 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizablity_in_C_2_m_2_J_1, LREAL, 635196672 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizablity_in_C_2_m_2_J_1_Uncertainty, LREAL, 635197440 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPolarizablity_in_C_2_m_2_J_1_Units, STRING(80), 635196736 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPotential_in_V, LREAL, 635241536 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPotential_in_V_Uncertainty, LREAL, 635242304 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricPotential_in_V_Units, STRING(80), 635241600 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMom_in_C_m_2, LREAL, 635242368 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMom_in_C_m_2_Uncertainty, LREAL, 635243136 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMom_in_C_m_2_Units, STRING(80), 635242432 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMoment_in_C_m_2, LREAL, 635197504 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMoment_in_C_m_2_Uncertainty, LREAL, 635198272 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfElectricQuadrupoleMoment_in_C_m_2_Units, STRING(80), 635197568 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfEnergy_in_J, LREAL, 635243200 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfEnergy_in_J_Uncertainty, LREAL, 635243968 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfEnergy_in_J_Units, STRING(80), 635243264 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfForce_in_N, LREAL, 635244032 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfForce_in_N_Uncertainty, LREAL, 635244800 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfForce_in_N_Units, STRING(80), 635244096 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfLength_in_m, LREAL, 635244864 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfLength_in_m_Uncertainty, LREAL, 635245632 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfLength_in_m_Units, STRING(80), 635244928 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_DipoleMom_in_J_T_1, LREAL, 635245696 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_DipoleMom_in_J_T_1_Uncertainty, LREAL, 635246464 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_DipoleMom_in_J_T_1_Units, STRING(80), 635245760 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_FluxDensity_in_T, LREAL, 635246528 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_FluxDensity_in_T_Uncertainty, LREAL, 635247296 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMag_FluxDensity_in_T_Units, STRING(80), 635246592 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticDipoleMoment_in_J_T_1, LREAL, 635198336 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticDipoleMoment_in_J_T_1_Uncertainty, LREAL, 635199104 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticDipoleMoment_in_J_T_1_Units, STRING(80), 635198400 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticFluxDensity_in_T, LREAL, 635199168 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticFluxDensity_in_T_Uncertainty, LREAL, 635199936 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagneticFluxDensity_in_T_Units, STRING(80), 635199232 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMagnetizability_in_J_T_2, LREAL, 635247360 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagnetizability_in_J_T_2_Uncertainty, LREAL, 635248128 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMagnetizability_in_J_T_2_Units, STRING(80), 635247424 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMass_in_kg, LREAL, 635248192 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMass_in_kg_Uncertainty, LREAL, 635248960 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMass_in_kg_Units, STRING(80), 635248256 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMom_um_in_kg_m_s_1, LREAL, 635430464 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMom_um_in_kg_m_s_1_Uncertainty, LREAL, 635431232 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMom_um_in_kg_m_s_1_Units, STRING(80), 635430528 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfMomentum_in_kg_m_s_1, LREAL, 635249024 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMomentum_in_kg_m_s_1_Uncertainty, LREAL, 635249792 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfMomentum_in_kg_m_s_1_Units, STRING(80), 635249088 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfPermittivity_in_F_m_1, LREAL, 635249856 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfPermittivity_in_F_m_1_Uncertainty, LREAL, 635250624 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfPermittivity_in_F_m_1_Units, STRING(80), 635249920 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfTime_in_s, LREAL, 635250688 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfTime_in_s_Uncertainty, LREAL, 635251456 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfTime_in_s_Units, STRING(80), 635250752 (648)
+        GVL_PhysicalConstants.fAtomicUnitOfVelocity_in_m_s_1, LREAL, 635251520 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfVelocity_in_m_s_1_Uncertainty, LREAL, 635252288 (64)
+        GVL_PhysicalConstants.fAtomicUnitOfVelocity_in_m_s_1_Units, STRING(80), 635251584 (648)
+        GVL_PhysicalConstants.fAvogadroConstant_in_mol_1, LREAL, 635252352 (64)
+        GVL_PhysicalConstants.fAvogadroConstant_in_mol_1_Units, STRING(80), 635252416 (648)
+        GVL_PhysicalConstants.fBohrMagneton_in_J_T_1, LREAL, 635253120 (64)
+        GVL_PhysicalConstants.fBohrMagneton_in_J_T_1_Uncertainty, LREAL, 635253888 (64)
+        GVL_PhysicalConstants.fBohrMagneton_in_J_T_1_Units, STRING(80), 635253184 (648)
+        GVL_PhysicalConstants.fBohrMagnetonInEV_T_in_eV_T_1, LREAL, 635253952 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInEV_T_in_eV_T_1_Uncertainty, LREAL, 635254720 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInEV_T_in_eV_T_1_Units, STRING(80), 635254016 (648)
+        GVL_PhysicalConstants.fBohrMagnetonInHz_T_in_Hz_T_1, LREAL, 635254784 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInHz_T_in_Hz_T_1_Uncertainty, LREAL, 635255552 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInHz_T_in_Hz_T_1_Units, STRING(80), 635254848 (648)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMeterPerTesla_in_m_1_T_1, LREAL, 635439424 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMeterPerTesla_in_m_1_T_1_Uncertainty, LREAL, 635440192 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMeterPerTesla_in_m_1_T_1_Units, STRING(80), 635439488 (648)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMetersPerTesla_in_m_1_T_1, LREAL, 635255616 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMetersPerTesla_in_m_1_T_1_Uncertainty, LREAL, 635256384 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInInverseMetersPerTesla_in_m_1_T_1_Units, STRING(80), 635255680 (648)
+        GVL_PhysicalConstants.fBohrMagnetonInK_T_in_K_T_1, LREAL, 635256448 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInK_T_in_K_T_1_Uncertainty, LREAL, 635257216 (64)
+        GVL_PhysicalConstants.fBohrMagnetonInK_T_in_K_T_1_Units, STRING(80), 635256512 (648)
+        GVL_PhysicalConstants.fBohrRadius_in_m, LREAL, 635257280 (64)
+        GVL_PhysicalConstants.fBohrRadius_in_m_Uncertainty, LREAL, 635258048 (64)
+        GVL_PhysicalConstants.fBohrRadius_in_m_Units, STRING(80), 635257344 (648)
+        GVL_PhysicalConstants.fBoltzmannConstant_in_J_K_1, LREAL, 635258112 (64)
+        GVL_PhysicalConstants.fBoltzmannConstant_in_J_K_1_Units, STRING(80), 635258176 (648)
+        GVL_PhysicalConstants.fBoltzmannConstantInEV_K_in_eV_K_1, LREAL, 635258880 (64)
+        GVL_PhysicalConstants.fBoltzmannConstantInEV_K_in_eV_K_1_Units, STRING(80), 635258944 (648)
+        GVL_PhysicalConstants.fBoltzmannConstantInHz_K_in_Hz_K_1, LREAL, 635259648 (64)
+        GVL_PhysicalConstants.fBoltzmannConstantInHz_K_in_Hz_K_1_Units, STRING(80), 635259712 (648)
+        GVL_PhysicalConstants.fBoltzmannConstantInInverseMeterPerKelvin_in_m_1_K_1, LREAL, 635440256 (64)
+        GVL_PhysicalConstants.fBoltzmannConstantInInverseMeterPerKelvin_in_m_1_K_1_Units, STRING(80), 635440320 (648)
+        GVL_PhysicalConstants.fBoltzmannConstantInInverseMetersPerKelvin_in_m_1_K_1, LREAL, 635260416 (64)
+        GVL_PhysicalConstants.fBoltzmannConstantInInverseMetersPerKelvin_in_m_1_K_1_Uncertainty, LREAL, 635261184 (64)
+        GVL_PhysicalConstants.fBoltzmannConstantInInverseMetersPerKelvin_in_m_1_K_1_Units, STRING(80), 635260480 (648)
+        GVL_PhysicalConstants.fCharacteristicImpedanceOfVacuum_in_ohm, LREAL, 635261248 (64)
+        GVL_PhysicalConstants.fCharacteristicImpedanceOfVacuum_in_ohm_Uncertainty, LREAL, 635262016 (64)
+        GVL_PhysicalConstants.fCharacteristicImpedanceOfVacuum_in_ohm_Units, STRING(80), 635261312 (648)
+        GVL_PhysicalConstants.fClassicalElectronRadius_in_m, LREAL, 635262080 (64)
+        GVL_PhysicalConstants.fClassicalElectronRadius_in_m_Uncertainty, LREAL, 635262848 (64)
+        GVL_PhysicalConstants.fClassicalElectronRadius_in_m_Units, STRING(80), 635262144 (648)
+        GVL_PhysicalConstants.fComptonWavelength_in_m, LREAL, 635262912 (64)
+        GVL_PhysicalConstants.fComptonWavelength_in_m_Uncertainty, LREAL, 635263680 (64)
+        GVL_PhysicalConstants.fComptonWavelength_in_m_Units, STRING(80), 635262976 (648)
+        GVL_PhysicalConstants.fComptonWavelengthOver2Pi_in_m, LREAL, 635263744 (64)
+        GVL_PhysicalConstants.fComptonWavelengthOver2Pi_in_m_Uncertainty, LREAL, 635264512 (64)
+        GVL_PhysicalConstants.fComptonWavelengthOver2Pi_in_m_Units, STRING(80), 635263808 (648)
+        GVL_PhysicalConstants.fConductanceQuantum_in_S, LREAL, 635264576 (64)
+        GVL_PhysicalConstants.fConductanceQuantum_in_S_Units, STRING(80), 635264640 (648)
+        GVL_PhysicalConstants.fConventionalValueOfAmpere_90_in_A, LREAL, 635441024 (64)
+        GVL_PhysicalConstants.fConventionalValueOfAmpere_90_in_A_Units, STRING(80), 635441088 (648)
+        GVL_PhysicalConstants.fConventionalValueOfCoulomb_90_in_C, LREAL, 635441792 (64)
+        GVL_PhysicalConstants.fConventionalValueOfCoulomb_90_in_C_Units, STRING(80), 635441856 (648)
+        GVL_PhysicalConstants.fConventionalValueOfFarad_90_in_F, LREAL, 635442560 (64)
+        GVL_PhysicalConstants.fConventionalValueOfFarad_90_in_F_Units, STRING(80), 635442624 (648)
+        GVL_PhysicalConstants.fConventionalValueOfHenry_90_in_H, LREAL, 635443328 (64)
+        GVL_PhysicalConstants.fConventionalValueOfHenry_90_in_H_Units, STRING(80), 635443392 (648)
+        GVL_PhysicalConstants.fConventionalValueOfJosephsonConstant_in_Hz_V_1, LREAL, 635265344 (64)
+        GVL_PhysicalConstants.fConventionalValueOfJosephsonConstant_in_Hz_V_1_Units, STRING(80), 635265408 (648)
+        GVL_PhysicalConstants.fConventionalValueOfOhm_90_in_ohm, LREAL, 635444096 (64)
+        GVL_PhysicalConstants.fConventionalValueOfOhm_90_in_ohm_Units, STRING(80), 635444160 (648)
+        GVL_PhysicalConstants.fConventionalValueOfVolt_90_in_V, LREAL, 635444864 (64)
+        GVL_PhysicalConstants.fConventionalValueOfVolt_90_in_V_Units, STRING(80), 635444928 (648)
+        GVL_PhysicalConstants.fConventionalValueOfVonKlitzingConstant_in_ohm, LREAL, 635266112 (64)
+        GVL_PhysicalConstants.fConventionalValueOfVonKlitzingConstant_in_ohm_Units, STRING(80), 635266176 (648)
+        GVL_PhysicalConstants.fConventionalValueOfWatt_90_in_W, LREAL, 635445632 (64)
+        GVL_PhysicalConstants.fConventionalValueOfWatt_90_in_W_Units, STRING(80), 635445696 (648)
+        GVL_PhysicalConstants.fCuXUnit_in_m, LREAL, 635266880 (64)
+        GVL_PhysicalConstants.fCuXUnit_in_m_Uncertainty, LREAL, 635267648 (64)
+        GVL_PhysicalConstants.fCuXUnit_in_m_Units, STRING(80), 635266944 (648)
+        GVL_PhysicalConstants.fDeuteronElectronMag_Mom_Ratio, LREAL, 635267712 (64)
+        GVL_PhysicalConstants.fDeuteronElectronMag_Mom_Ratio_Uncertainty, LREAL, 635267776 (64)
+        GVL_PhysicalConstants.fDeuteronElectronMagneticMomentRatio, LREAL, 635201088 (64)
+        GVL_PhysicalConstants.fDeuteronElectronMagneticMomentRatio_Uncertainty, LREAL, 635201152 (64)
+        GVL_PhysicalConstants.fDeuteronElectronMassRatio, LREAL, 635267840 (64)
+        GVL_PhysicalConstants.fDeuteronElectronMassRatio_Uncertainty, LREAL, 635267904 (64)
+        GVL_PhysicalConstants.fDeuteronGFactor, LREAL, 635267968 (64)
+        GVL_PhysicalConstants.fDeuteronGFactor_Uncertainty, LREAL, 635268032 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_in_J_T_1, LREAL, 635268096 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_in_J_T_1_Uncertainty, LREAL, 635268864 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_in_J_T_1_Units, STRING(80), 635268160 (648)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_ToBohrMagnetonRatio, LREAL, 635268928 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635268992 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_ToNuclearMagnetonRatio, LREAL, 635269056 (64)
+        GVL_PhysicalConstants.fDeuteronMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635269120 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMoment_in_J_T_1, LREAL, 635200000 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635200768 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMoment_in_J_T_1_Units, STRING(80), 635200064 (648)
+        GVL_PhysicalConstants.fDeuteronMagneticMomentToBohrMagnetonRatio, LREAL, 635200832 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635200896 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMomentToNuclearMagnetonRatio, LREAL, 635200960 (64)
+        GVL_PhysicalConstants.fDeuteronMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635201024 (64)
+        GVL_PhysicalConstants.fDeuteronMass_in_kg, LREAL, 635269184 (64)
+        GVL_PhysicalConstants.fDeuteronMass_in_kg_Uncertainty, LREAL, 635269952 (64)
+        GVL_PhysicalConstants.fDeuteronMass_in_kg_Units, STRING(80), 635269248 (648)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalent_in_J, LREAL, 635270016 (64)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635270784 (64)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalent_in_J_Units, STRING(80), 635270080 (648)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalentInMeV_in_MeV, LREAL, 635270848 (64)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635271616 (64)
+        GVL_PhysicalConstants.fDeuteronMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635270912 (648)
+        GVL_PhysicalConstants.fDeuteronMassInU_in_u, LREAL, 635271680 (64)
+        GVL_PhysicalConstants.fDeuteronMassInU_in_u_Uncertainty, LREAL, 635272448 (64)
+        GVL_PhysicalConstants.fDeuteronMassInU_in_u_Units, STRING(80), 635271744 (648)
+        GVL_PhysicalConstants.fDeuteronMolarMass_in_kg_mol_1, LREAL, 635272512 (64)
+        GVL_PhysicalConstants.fDeuteronMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635273280 (64)
+        GVL_PhysicalConstants.fDeuteronMolarMass_in_kg_mol_1_Units, STRING(80), 635272576 (648)
+        GVL_PhysicalConstants.fDeuteronNeutronMag_Mom_Ratio, LREAL, 635273344 (64)
+        GVL_PhysicalConstants.fDeuteronNeutronMag_Mom_Ratio_Uncertainty, LREAL, 635273408 (64)
+        GVL_PhysicalConstants.fDeuteronNeutronMagneticMomentRatio, LREAL, 635201344 (64)
+        GVL_PhysicalConstants.fDeuteronNeutronMagneticMomentRatio_Uncertainty, LREAL, 635201408 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMag_Mom_Ratio, LREAL, 635273472 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMag_Mom_Ratio_Uncertainty, LREAL, 635273536 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMagneticMomentRatio, LREAL, 635201216 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMagneticMomentRatio_Uncertainty, LREAL, 635201280 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMassRatio, LREAL, 635273600 (64)
+        GVL_PhysicalConstants.fDeuteronProtonMassRatio_Uncertainty, LREAL, 635273664 (64)
+        GVL_PhysicalConstants.fDeuteronRelativeAtomicMass, LREAL, 635446400 (64)
+        GVL_PhysicalConstants.fDeuteronRelativeAtomicMass_Uncertainty, LREAL, 635446464 (64)
+        GVL_PhysicalConstants.fDeuteronRmsChargeRadius_in_m, LREAL, 635273728 (64)
+        GVL_PhysicalConstants.fDeuteronRmsChargeRadius_in_m_Uncertainty, LREAL, 635274496 (64)
+        GVL_PhysicalConstants.fDeuteronRmsChargeRadius_in_m_Units, STRING(80), 635273792 (648)
+        GVL_PhysicalConstants.fElectricConstant_in_F_m_1, LREAL, 635274560 (64)
+        GVL_PhysicalConstants.fElectricConstant_in_F_m_1_Uncertainty, LREAL, 635275328 (64)
+        GVL_PhysicalConstants.fElectricConstant_in_F_m_1_Units, STRING(80), 635274624 (648)
+        GVL_PhysicalConstants.fElectronChargeToMassQuotient_in_C_kg_1, LREAL, 635275392 (64)
+        GVL_PhysicalConstants.fElectronChargeToMassQuotient_in_C_kg_1_Uncertainty, LREAL, 635276160 (64)
+        GVL_PhysicalConstants.fElectronChargeToMassQuotient_in_C_kg_1_Units, STRING(80), 635275456 (648)
+        GVL_PhysicalConstants.fElectronDeuteronMag_Mom_Ratio, LREAL, 635276224 (64)
+        GVL_PhysicalConstants.fElectronDeuteronMag_Mom_Ratio_Uncertainty, LREAL, 635276288 (64)
+        GVL_PhysicalConstants.fElectronDeuteronMagneticMomentRatio, LREAL, 635204608 (64)
+        GVL_PhysicalConstants.fElectronDeuteronMagneticMomentRatio_Uncertainty, LREAL, 635204672 (64)
+        GVL_PhysicalConstants.fElectronDeuteronMassRatio, LREAL, 635276352 (64)
+        GVL_PhysicalConstants.fElectronDeuteronMassRatio_Uncertainty, LREAL, 635276416 (64)
+        GVL_PhysicalConstants.fElectronGFactor, LREAL, 635276480 (64)
+        GVL_PhysicalConstants.fElectronGFactor_Uncertainty, LREAL, 635276544 (64)
+        GVL_PhysicalConstants.fElectronGyromag_Ratio_in_s_1_T_1, LREAL, 635276608 (64)
+        GVL_PhysicalConstants.fElectronGyromag_Ratio_in_s_1_T_1_Uncertainty, LREAL, 635277376 (64)
+        GVL_PhysicalConstants.fElectronGyromag_Ratio_in_s_1_T_1_Units, STRING(80), 635276672 (648)
+        GVL_PhysicalConstants.fElectronGyromag_RatioInMHz_T_in_MHz_T_1, LREAL, 635446528 (64)
+        GVL_PhysicalConstants.fElectronGyromag_RatioInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635447296 (64)
+        GVL_PhysicalConstants.fElectronGyromag_RatioInMHz_T_in_MHz_T_1_Units, STRING(80), 635446592 (648)
+        GVL_PhysicalConstants.fElectronGyromag_RatioOver2Pi_in_MHz_T_1, LREAL, 635277440 (64)
+        GVL_PhysicalConstants.fElectronGyromag_RatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635278208 (64)
+        GVL_PhysicalConstants.fElectronGyromag_RatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635277504 (648)
+        GVL_PhysicalConstants.fElectronGyromagneticRatio_in_s_1_T_1, LREAL, 635201472 (64)
+        GVL_PhysicalConstants.fElectronGyromagneticRatio_in_s_1_T_1_Uncertainty, LREAL, 635202240 (64)
+        GVL_PhysicalConstants.fElectronGyromagneticRatio_in_s_1_T_1_Units, STRING(80), 635201536 (648)
+        GVL_PhysicalConstants.fElectronGyromagneticRatioOver2Pi_in_MHz_T_1, LREAL, 635202304 (64)
+        GVL_PhysicalConstants.fElectronGyromagneticRatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635203072 (64)
+        GVL_PhysicalConstants.fElectronGyromagneticRatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635202368 (648)
+        GVL_PhysicalConstants.fElectronHelionMassRatio, LREAL, 635431296 (64)
+        GVL_PhysicalConstants.fElectronHelionMassRatio_Uncertainty, LREAL, 635431360 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_Anomaly, LREAL, 635279104 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_Anomaly_Uncertainty, LREAL, 635279168 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_in_J_T_1, LREAL, 635278272 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_in_J_T_1_Uncertainty, LREAL, 635279040 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_in_J_T_1_Units, STRING(80), 635278336 (648)
+        GVL_PhysicalConstants.fElectronMag_Mom_ToBohrMagnetonRatio, LREAL, 635279232 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635279296 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_ToNuclearMagnetonRatio, LREAL, 635279360 (64)
+        GVL_PhysicalConstants.fElectronMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635279424 (64)
+        GVL_PhysicalConstants.fElectronMagneticMoment_in_J_T_1, LREAL, 635203136 (64)
+        GVL_PhysicalConstants.fElectronMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635203904 (64)
+        GVL_PhysicalConstants.fElectronMagneticMoment_in_J_T_1_Units, STRING(80), 635203200 (648)
+        GVL_PhysicalConstants.fElectronMagneticMomentAnomaly, LREAL, 635204224 (64)
+        GVL_PhysicalConstants.fElectronMagneticMomentAnomaly_Uncertainty, LREAL, 635204288 (64)
+        GVL_PhysicalConstants.fElectronMagneticMomentToBohrMagnetonRatio, LREAL, 635203968 (64)
+        GVL_PhysicalConstants.fElectronMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635204032 (64)
+        GVL_PhysicalConstants.fElectronMagneticMomentToNuclearMagnetonRatio, LREAL, 635204096 (64)
+        GVL_PhysicalConstants.fElectronMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635204160 (64)
+        GVL_PhysicalConstants.fElectronMass_in_kg, LREAL, 635279488 (64)
+        GVL_PhysicalConstants.fElectronMass_in_kg_Uncertainty, LREAL, 635280256 (64)
+        GVL_PhysicalConstants.fElectronMass_in_kg_Units, STRING(80), 635279552 (648)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalent_in_J, LREAL, 635280320 (64)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635281088 (64)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalent_in_J_Units, STRING(80), 635280384 (648)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalentInMeV_in_MeV, LREAL, 635281152 (64)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635281920 (64)
+        GVL_PhysicalConstants.fElectronMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635281216 (648)
+        GVL_PhysicalConstants.fElectronMassInU_in_u, LREAL, 635281984 (64)
+        GVL_PhysicalConstants.fElectronMassInU_in_u_Uncertainty, LREAL, 635282752 (64)
+        GVL_PhysicalConstants.fElectronMassInU_in_u_Units, STRING(80), 635282048 (648)
+        GVL_PhysicalConstants.fElectronMolarMass_in_kg_mol_1, LREAL, 635282816 (64)
+        GVL_PhysicalConstants.fElectronMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635283584 (64)
+        GVL_PhysicalConstants.fElectronMolarMass_in_kg_mol_1_Units, STRING(80), 635282880 (648)
+        GVL_PhysicalConstants.fElectronMuonMag_Mom_Ratio, LREAL, 635283648 (64)
+        GVL_PhysicalConstants.fElectronMuonMag_Mom_Ratio_Uncertainty, LREAL, 635283712 (64)
+        GVL_PhysicalConstants.fElectronMuonMagneticMomentRatio, LREAL, 635204736 (64)
+        GVL_PhysicalConstants.fElectronMuonMagneticMomentRatio_Uncertainty, LREAL, 635204800 (64)
+        GVL_PhysicalConstants.fElectronMuonMassRatio, LREAL, 635283776 (64)
+        GVL_PhysicalConstants.fElectronMuonMassRatio_Uncertainty, LREAL, 635283840 (64)
+        GVL_PhysicalConstants.fElectronNeutronMag_Mom_Ratio, LREAL, 635283904 (64)
+        GVL_PhysicalConstants.fElectronNeutronMag_Mom_Ratio_Uncertainty, LREAL, 635283968 (64)
+        GVL_PhysicalConstants.fElectronNeutronMagneticMomentRatio, LREAL, 635204864 (64)
+        GVL_PhysicalConstants.fElectronNeutronMagneticMomentRatio_Uncertainty, LREAL, 635204928 (64)
+        GVL_PhysicalConstants.fElectronNeutronMassRatio, LREAL, 635284032 (64)
+        GVL_PhysicalConstants.fElectronNeutronMassRatio_Uncertainty, LREAL, 635284096 (64)
+        GVL_PhysicalConstants.fElectronProtonMag_Mom_Ratio, LREAL, 635284160 (64)
+        GVL_PhysicalConstants.fElectronProtonMag_Mom_Ratio_Uncertainty, LREAL, 635284224 (64)
+        GVL_PhysicalConstants.fElectronProtonMagneticMomentRatio, LREAL, 635204992 (64)
+        GVL_PhysicalConstants.fElectronProtonMagneticMomentRatio_Uncertainty, LREAL, 635205056 (64)
+        GVL_PhysicalConstants.fElectronProtonMassRatio, LREAL, 635284288 (64)
+        GVL_PhysicalConstants.fElectronProtonMassRatio_Uncertainty, LREAL, 635284352 (64)
+        GVL_PhysicalConstants.fElectronRelativeAtomicMass, LREAL, 635447360 (64)
+        GVL_PhysicalConstants.fElectronRelativeAtomicMass_Uncertainty, LREAL, 635447424 (64)
+        GVL_PhysicalConstants.fElectronTauMassRatio, LREAL, 635284416 (64)
+        GVL_PhysicalConstants.fElectronTauMassRatio_Uncertainty, LREAL, 635284480 (64)
+        GVL_PhysicalConstants.fElectronToAlphaParticleMassRatio, LREAL, 635284544 (64)
+        GVL_PhysicalConstants.fElectronToAlphaParticleMassRatio_Uncertainty, LREAL, 635284608 (64)
+        GVL_PhysicalConstants.fElectronToShieldedHelionMag_Mom_Ratio, LREAL, 635284672 (64)
+        GVL_PhysicalConstants.fElectronToShieldedHelionMag_Mom_Ratio_Uncertainty, LREAL, 635284736 (64)
+        GVL_PhysicalConstants.fElectronToShieldedHelionMagneticMomentRatio, LREAL, 635204480 (64)
+        GVL_PhysicalConstants.fElectronToShieldedHelionMagneticMomentRatio_Uncertainty, LREAL, 635204544 (64)
+        GVL_PhysicalConstants.fElectronToShieldedProtonMag_Mom_Ratio, LREAL, 635284800 (64)
+        GVL_PhysicalConstants.fElectronToShieldedProtonMag_Mom_Ratio_Uncertainty, LREAL, 635284864 (64)
+        GVL_PhysicalConstants.fElectronToShieldedProtonMagneticMomentRatio, LREAL, 635204352 (64)
+        GVL_PhysicalConstants.fElectronToShieldedProtonMagneticMomentRatio_Uncertainty, LREAL, 635204416 (64)
+        GVL_PhysicalConstants.fElectronTritonMassRatio, LREAL, 635431424 (64)
+        GVL_PhysicalConstants.fElectronTritonMassRatio_Uncertainty, LREAL, 635431488 (64)
+        GVL_PhysicalConstants.fElectronVolt_in_J, LREAL, 635284928 (64)
+        GVL_PhysicalConstants.fElectronVolt_in_J_Units, STRING(80), 635284992 (648)
+        GVL_PhysicalConstants.fElectronVoltAtomicMassUnitRelationship_in_u, LREAL, 635285696 (64)
+        GVL_PhysicalConstants.fElectronVoltAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635286464 (64)
+        GVL_PhysicalConstants.fElectronVoltAtomicMassUnitRelationship_in_u_Units, STRING(80), 635285760 (648)
+        GVL_PhysicalConstants.fElectronVoltHartreeRelationship_in_E_h, LREAL, 635286528 (64)
+        GVL_PhysicalConstants.fElectronVoltHartreeRelationship_in_E_h_Uncertainty, LREAL, 635287296 (64)
+        GVL_PhysicalConstants.fElectronVoltHartreeRelationship_in_E_h_Units, STRING(80), 635286592 (648)
+        GVL_PhysicalConstants.fElectronVoltHertzRelationship_in_Hz, LREAL, 635287360 (64)
+        GVL_PhysicalConstants.fElectronVoltHertzRelationship_in_Hz_Units, STRING(80), 635287424 (648)
+        GVL_PhysicalConstants.fElectronVoltInverseMeterRelationship_in_m_1, LREAL, 635288128 (64)
+        GVL_PhysicalConstants.fElectronVoltInverseMeterRelationship_in_m_1_Units, STRING(80), 635288192 (648)
+        GVL_PhysicalConstants.fElectronVoltJouleRelationship_in_J, LREAL, 635288896 (64)
+        GVL_PhysicalConstants.fElectronVoltJouleRelationship_in_J_Units, STRING(80), 635288960 (648)
+        GVL_PhysicalConstants.fElectronVoltKelvinRelationship_in_K, LREAL, 635289664 (64)
+        GVL_PhysicalConstants.fElectronVoltKelvinRelationship_in_K_Units, STRING(80), 635289728 (648)
+        GVL_PhysicalConstants.fElectronVoltKilogramRelationship_in_kg, LREAL, 635290432 (64)
+        GVL_PhysicalConstants.fElectronVoltKilogramRelationship_in_kg_Units, STRING(80), 635290496 (648)
+        GVL_PhysicalConstants.fElementaryCharge_in_C, LREAL, 635291200 (64)
+        GVL_PhysicalConstants.fElementaryCharge_in_C_Units, STRING(80), 635291264 (648)
+        GVL_PhysicalConstants.fElementaryChargeOverH_bar_in_A_J_1, LREAL, 635447488 (64)
+        GVL_PhysicalConstants.fElementaryChargeOverH_bar_in_A_J_1_Units, STRING(80), 635447552 (648)
+        GVL_PhysicalConstants.fElementaryChargeOverH_in_A_J_1, LREAL, 635291968 (64)
+        GVL_PhysicalConstants.fElementaryChargeOverH_in_A_J_1_Uncertainty, LREAL, 635292736 (64)
+        GVL_PhysicalConstants.fElementaryChargeOverH_in_A_J_1_Units, STRING(80), 635292032 (648)
+        GVL_PhysicalConstants.fFaradayConstant_in_C_mol_1, LREAL, 635292800 (64)
+        GVL_PhysicalConstants.fFaradayConstant_in_C_mol_1_Units, STRING(80), 635292864 (648)
+        GVL_PhysicalConstants.fFaradayConstantForConventionalElectricCurrent_in_C_90_mol_1, LREAL, 635293568 (64)
+        GVL_PhysicalConstants.fFaradayConstantForConventionalElectricCurrent_in_C_90_mol_1_Uncertainty, LREAL, 635294336 (64)
+        GVL_PhysicalConstants.fFaradayConstantForConventionalElectricCurrent_in_C_90_mol_1_Units, STRING(80), 635293632 (648)
+        GVL_PhysicalConstants.fFermiCouplingConstant_in_GeV_2, LREAL, 635294400 (64)
+        GVL_PhysicalConstants.fFermiCouplingConstant_in_GeV_2_Uncertainty, LREAL, 635295168 (64)
+        GVL_PhysicalConstants.fFermiCouplingConstant_in_GeV_2_Units, STRING(80), 635294464 (648)
+        GVL_PhysicalConstants.fFineStructureConstant, LREAL, 635295232 (64)
+        GVL_PhysicalConstants.fFineStructureConstant_Uncertainty, LREAL, 635295296 (64)
+        GVL_PhysicalConstants.fFirstRadiationConstant_in_W_m_2, LREAL, 635295360 (64)
+        GVL_PhysicalConstants.fFirstRadiationConstant_in_W_m_2_Units, STRING(80), 635295424 (648)
+        GVL_PhysicalConstants.fFirstRadiationConstantForSpectralRadiance_in_W_m_2_sr_1, LREAL, 635296128 (64)
+        GVL_PhysicalConstants.fFirstRadiationConstantForSpectralRadiance_in_W_m_2_sr_1_Units, STRING(80), 635296192 (648)
+        GVL_PhysicalConstants.fHartreeAtomicMassUnitRelationship_in_u, LREAL, 635296896 (64)
+        GVL_PhysicalConstants.fHartreeAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635297664 (64)
+        GVL_PhysicalConstants.fHartreeAtomicMassUnitRelationship_in_u_Units, STRING(80), 635296960 (648)
+        GVL_PhysicalConstants.fHartreeElectronVoltRelationship_in_eV, LREAL, 635297728 (64)
+        GVL_PhysicalConstants.fHartreeElectronVoltRelationship_in_eV_Uncertainty, LREAL, 635298496 (64)
+        GVL_PhysicalConstants.fHartreeElectronVoltRelationship_in_eV_Units, STRING(80), 635297792 (648)
+        GVL_PhysicalConstants.fHartreeEnergy_in_J, LREAL, 635298560 (64)
+        GVL_PhysicalConstants.fHartreeEnergy_in_J_Uncertainty, LREAL, 635299328 (64)
+        GVL_PhysicalConstants.fHartreeEnergy_in_J_Units, STRING(80), 635298624 (648)
+        GVL_PhysicalConstants.fHartreeEnergyInEV_in_eV, LREAL, 635299392 (64)
+        GVL_PhysicalConstants.fHartreeEnergyInEV_in_eV_Uncertainty, LREAL, 635300160 (64)
+        GVL_PhysicalConstants.fHartreeEnergyInEV_in_eV_Units, STRING(80), 635299456 (648)
+        GVL_PhysicalConstants.fHartreeHertzRelationship_in_Hz, LREAL, 635300224 (64)
+        GVL_PhysicalConstants.fHartreeHertzRelationship_in_Hz_Uncertainty, LREAL, 635300992 (64)
+        GVL_PhysicalConstants.fHartreeHertzRelationship_in_Hz_Units, STRING(80), 635300288 (648)
+        GVL_PhysicalConstants.fHartreeInverseMeterRelationship_in_m_1, LREAL, 635301056 (64)
+        GVL_PhysicalConstants.fHartreeInverseMeterRelationship_in_m_1_Uncertainty, LREAL, 635301824 (64)
+        GVL_PhysicalConstants.fHartreeInverseMeterRelationship_in_m_1_Units, STRING(80), 635301120 (648)
+        GVL_PhysicalConstants.fHartreeJouleRelationship_in_J, LREAL, 635301888 (64)
+        GVL_PhysicalConstants.fHartreeJouleRelationship_in_J_Uncertainty, LREAL, 635302656 (64)
+        GVL_PhysicalConstants.fHartreeJouleRelationship_in_J_Units, STRING(80), 635301952 (648)
+        GVL_PhysicalConstants.fHartreeKelvinRelationship_in_K, LREAL, 635302720 (64)
+        GVL_PhysicalConstants.fHartreeKelvinRelationship_in_K_Uncertainty, LREAL, 635303488 (64)
+        GVL_PhysicalConstants.fHartreeKelvinRelationship_in_K_Units, STRING(80), 635302784 (648)
+        GVL_PhysicalConstants.fHartreeKilogramRelationship_in_kg, LREAL, 635303552 (64)
+        GVL_PhysicalConstants.fHartreeKilogramRelationship_in_kg_Uncertainty, LREAL, 635304320 (64)
+        GVL_PhysicalConstants.fHartreeKilogramRelationship_in_kg_Units, STRING(80), 635303616 (648)
+        GVL_PhysicalConstants.fHelionElectronMassRatio, LREAL, 635304384 (64)
+        GVL_PhysicalConstants.fHelionElectronMassRatio_Uncertainty, LREAL, 635304448 (64)
+        GVL_PhysicalConstants.fHelionGFactor, LREAL, 635431552 (64)
+        GVL_PhysicalConstants.fHelionGFactor_Uncertainty, LREAL, 635431616 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_in_J_T_1, LREAL, 635431680 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_in_J_T_1_Uncertainty, LREAL, 635432448 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_in_J_T_1_Units, STRING(80), 635431744 (648)
+        GVL_PhysicalConstants.fHelionMag_Mom_ToBohrMagnetonRatio, LREAL, 635432512 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635432576 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_ToNuclearMagnetonRatio, LREAL, 635432640 (64)
+        GVL_PhysicalConstants.fHelionMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635432704 (64)
+        GVL_PhysicalConstants.fHelionMass_in_kg, LREAL, 635304512 (64)
+        GVL_PhysicalConstants.fHelionMass_in_kg_Uncertainty, LREAL, 635305280 (64)
+        GVL_PhysicalConstants.fHelionMass_in_kg_Units, STRING(80), 635304576 (648)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalent_in_J, LREAL, 635305344 (64)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635306112 (64)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalent_in_J_Units, STRING(80), 635305408 (648)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalentInMeV_in_MeV, LREAL, 635306176 (64)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635306944 (64)
+        GVL_PhysicalConstants.fHelionMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635306240 (648)
+        GVL_PhysicalConstants.fHelionMassInU_in_u, LREAL, 635307008 (64)
+        GVL_PhysicalConstants.fHelionMassInU_in_u_Uncertainty, LREAL, 635307776 (64)
+        GVL_PhysicalConstants.fHelionMassInU_in_u_Units, STRING(80), 635307072 (648)
+        GVL_PhysicalConstants.fHelionMolarMass_in_kg_mol_1, LREAL, 635307840 (64)
+        GVL_PhysicalConstants.fHelionMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635308608 (64)
+        GVL_PhysicalConstants.fHelionMolarMass_in_kg_mol_1_Units, STRING(80), 635307904 (648)
+        GVL_PhysicalConstants.fHelionProtonMassRatio, LREAL, 635308672 (64)
+        GVL_PhysicalConstants.fHelionProtonMassRatio_Uncertainty, LREAL, 635308736 (64)
+        GVL_PhysicalConstants.fHelionRelativeAtomicMass, LREAL, 635448256 (64)
+        GVL_PhysicalConstants.fHelionRelativeAtomicMass_Uncertainty, LREAL, 635448320 (64)
+        GVL_PhysicalConstants.fHelionShieldingShift, LREAL, 635448384 (64)
+        GVL_PhysicalConstants.fHelionShieldingShift_Uncertainty, LREAL, 635448448 (64)
+        GVL_PhysicalConstants.fHertzAtomicMassUnitRelationship_in_u, LREAL, 635308800 (64)
+        GVL_PhysicalConstants.fHertzAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635309568 (64)
+        GVL_PhysicalConstants.fHertzAtomicMassUnitRelationship_in_u_Units, STRING(80), 635308864 (648)
+        GVL_PhysicalConstants.fHertzElectronVoltRelationship_in_eV, LREAL, 635309632 (64)
+        GVL_PhysicalConstants.fHertzElectronVoltRelationship_in_eV_Units, STRING(80), 635309696 (648)
+        GVL_PhysicalConstants.fHertzHartreeRelationship_in_E_h, LREAL, 635310400 (64)
+        GVL_PhysicalConstants.fHertzHartreeRelationship_in_E_h_Uncertainty, LREAL, 635311168 (64)
+        GVL_PhysicalConstants.fHertzHartreeRelationship_in_E_h_Units, STRING(80), 635310464 (648)
+        GVL_PhysicalConstants.fHertzInverseMeterRelationship_in_m_1, LREAL, 635311232 (64)
+        GVL_PhysicalConstants.fHertzInverseMeterRelationship_in_m_1_Units, STRING(80), 635311296 (648)
+        GVL_PhysicalConstants.fHertzJouleRelationship_in_J, LREAL, 635312000 (64)
+        GVL_PhysicalConstants.fHertzJouleRelationship_in_J_Units, STRING(80), 635312064 (648)
+        GVL_PhysicalConstants.fHertzKelvinRelationship_in_K, LREAL, 635312768 (64)
+        GVL_PhysicalConstants.fHertzKelvinRelationship_in_K_Units, STRING(80), 635312832 (648)
+        GVL_PhysicalConstants.fHertzKilogramRelationship_in_kg, LREAL, 635313536 (64)
+        GVL_PhysicalConstants.fHertzKilogramRelationship_in_kg_Units, STRING(80), 635313600 (648)
+        GVL_PhysicalConstants.fHyperfineTransitionFrequencyOfCs_133_in_Hz, LREAL, 635448512 (64)
+        GVL_PhysicalConstants.fHyperfineTransitionFrequencyOfCs_133_in_Hz_Units, STRING(80), 635448576 (648)
+        GVL_PhysicalConstants.fInverseFineStructureConstant, LREAL, 635314304 (64)
+        GVL_PhysicalConstants.fInverseFineStructureConstant_Uncertainty, LREAL, 635314368 (64)
+        GVL_PhysicalConstants.fInverseMeterAtomicMassUnitRelationship_in_u, LREAL, 635314432 (64)
+        GVL_PhysicalConstants.fInverseMeterAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635315200 (64)
+        GVL_PhysicalConstants.fInverseMeterAtomicMassUnitRelationship_in_u_Units, STRING(80), 635314496 (648)
+        GVL_PhysicalConstants.fInverseMeterElectronVoltRelationship_in_eV, LREAL, 635315264 (64)
+        GVL_PhysicalConstants.fInverseMeterElectronVoltRelationship_in_eV_Units, STRING(80), 635315328 (648)
+        GVL_PhysicalConstants.fInverseMeterHartreeRelationship_in_E_h, LREAL, 635316032 (64)
+        GVL_PhysicalConstants.fInverseMeterHartreeRelationship_in_E_h_Uncertainty, LREAL, 635316800 (64)
+        GVL_PhysicalConstants.fInverseMeterHartreeRelationship_in_E_h_Units, STRING(80), 635316096 (648)
+        GVL_PhysicalConstants.fInverseMeterHertzRelationship_in_Hz, LREAL, 635316864 (64)
+        GVL_PhysicalConstants.fInverseMeterHertzRelationship_in_Hz_Units, STRING(80), 635316928 (648)
+        GVL_PhysicalConstants.fInverseMeterJouleRelationship_in_J, LREAL, 635317632 (64)
+        GVL_PhysicalConstants.fInverseMeterJouleRelationship_in_J_Units, STRING(80), 635317696 (648)
+        GVL_PhysicalConstants.fInverseMeterKelvinRelationship_in_K, LREAL, 635318400 (64)
+        GVL_PhysicalConstants.fInverseMeterKelvinRelationship_in_K_Units, STRING(80), 635318464 (648)
+        GVL_PhysicalConstants.fInverseMeterKilogramRelationship_in_kg, LREAL, 635319168 (64)
+        GVL_PhysicalConstants.fInverseMeterKilogramRelationship_in_kg_Units, STRING(80), 635319232 (648)
+        GVL_PhysicalConstants.fInverseOfConductanceQuantum_in_ohm, LREAL, 635319936 (64)
+        GVL_PhysicalConstants.fInverseOfConductanceQuantum_in_ohm_Units, STRING(80), 635320000 (648)
+        GVL_PhysicalConstants.fJosephsonConstant_in_Hz_V_1, LREAL, 635320704 (64)
+        GVL_PhysicalConstants.fJosephsonConstant_in_Hz_V_1_Units, STRING(80), 635320768 (648)
+        GVL_PhysicalConstants.fJouleAtomicMassUnitRelationship_in_u, LREAL, 635321472 (64)
+        GVL_PhysicalConstants.fJouleAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635322240 (64)
+        GVL_PhysicalConstants.fJouleAtomicMassUnitRelationship_in_u_Units, STRING(80), 635321536 (648)
+        GVL_PhysicalConstants.fJouleElectronVoltRelationship_in_eV, LREAL, 635322304 (64)
+        GVL_PhysicalConstants.fJouleElectronVoltRelationship_in_eV_Units, STRING(80), 635322368 (648)
+        GVL_PhysicalConstants.fJouleHartreeRelationship_in_E_h, LREAL, 635323072 (64)
+        GVL_PhysicalConstants.fJouleHartreeRelationship_in_E_h_Uncertainty, LREAL, 635323840 (64)
+        GVL_PhysicalConstants.fJouleHartreeRelationship_in_E_h_Units, STRING(80), 635323136 (648)
+        GVL_PhysicalConstants.fJouleHertzRelationship_in_Hz, LREAL, 635323904 (64)
+        GVL_PhysicalConstants.fJouleHertzRelationship_in_Hz_Units, STRING(80), 635323968 (648)
+        GVL_PhysicalConstants.fJouleInverseMeterRelationship_in_m_1, LREAL, 635324672 (64)
+        GVL_PhysicalConstants.fJouleInverseMeterRelationship_in_m_1_Units, STRING(80), 635324736 (648)
+        GVL_PhysicalConstants.fJouleKelvinRelationship_in_K, LREAL, 635325440 (64)
+        GVL_PhysicalConstants.fJouleKelvinRelationship_in_K_Units, STRING(80), 635325504 (648)
+        GVL_PhysicalConstants.fJouleKilogramRelationship_in_kg, LREAL, 635326208 (64)
+        GVL_PhysicalConstants.fJouleKilogramRelationship_in_kg_Units, STRING(80), 635326272 (648)
+        GVL_PhysicalConstants.fKelvinAtomicMassUnitRelationship_in_u, LREAL, 635326976 (64)
+        GVL_PhysicalConstants.fKelvinAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635327744 (64)
+        GVL_PhysicalConstants.fKelvinAtomicMassUnitRelationship_in_u_Units, STRING(80), 635327040 (648)
+        GVL_PhysicalConstants.fKelvinElectronVoltRelationship_in_eV, LREAL, 635327808 (64)
+        GVL_PhysicalConstants.fKelvinElectronVoltRelationship_in_eV_Units, STRING(80), 635327872 (648)
+        GVL_PhysicalConstants.fKelvinHartreeRelationship_in_E_h, LREAL, 635328576 (64)
+        GVL_PhysicalConstants.fKelvinHartreeRelationship_in_E_h_Uncertainty, LREAL, 635329344 (64)
+        GVL_PhysicalConstants.fKelvinHartreeRelationship_in_E_h_Units, STRING(80), 635328640 (648)
+        GVL_PhysicalConstants.fKelvinHertzRelationship_in_Hz, LREAL, 635329408 (64)
+        GVL_PhysicalConstants.fKelvinHertzRelationship_in_Hz_Units, STRING(80), 635329472 (648)
+        GVL_PhysicalConstants.fKelvinInverseMeterRelationship_in_m_1, LREAL, 635330176 (64)
+        GVL_PhysicalConstants.fKelvinInverseMeterRelationship_in_m_1_Units, STRING(80), 635330240 (648)
+        GVL_PhysicalConstants.fKelvinJouleRelationship_in_J, LREAL, 635330944 (64)
+        GVL_PhysicalConstants.fKelvinJouleRelationship_in_J_Units, STRING(80), 635331008 (648)
+        GVL_PhysicalConstants.fKelvinKilogramRelationship_in_kg, LREAL, 635331712 (64)
+        GVL_PhysicalConstants.fKelvinKilogramRelationship_in_kg_Units, STRING(80), 635331776 (648)
+        GVL_PhysicalConstants.fKilogramAtomicMassUnitRelationship_in_u, LREAL, 635332480 (64)
+        GVL_PhysicalConstants.fKilogramAtomicMassUnitRelationship_in_u_Uncertainty, LREAL, 635333248 (64)
+        GVL_PhysicalConstants.fKilogramAtomicMassUnitRelationship_in_u_Units, STRING(80), 635332544 (648)
+        GVL_PhysicalConstants.fKilogramElectronVoltRelationship_in_eV, LREAL, 635333312 (64)
+        GVL_PhysicalConstants.fKilogramElectronVoltRelationship_in_eV_Units, STRING(80), 635333376 (648)
+        GVL_PhysicalConstants.fKilogramHartreeRelationship_in_E_h, LREAL, 635334080 (64)
+        GVL_PhysicalConstants.fKilogramHartreeRelationship_in_E_h_Uncertainty, LREAL, 635334848 (64)
+        GVL_PhysicalConstants.fKilogramHartreeRelationship_in_E_h_Units, STRING(80), 635334144 (648)
+        GVL_PhysicalConstants.fKilogramHertzRelationship_in_Hz, LREAL, 635334912 (64)
+        GVL_PhysicalConstants.fKilogramHertzRelationship_in_Hz_Units, STRING(80), 635334976 (648)
+        GVL_PhysicalConstants.fKilogramInverseMeterRelationship_in_m_1, LREAL, 635335680 (64)
+        GVL_PhysicalConstants.fKilogramInverseMeterRelationship_in_m_1_Units, STRING(80), 635335744 (648)
+        GVL_PhysicalConstants.fKilogramJouleRelationship_in_J, LREAL, 635336448 (64)
+        GVL_PhysicalConstants.fKilogramJouleRelationship_in_J_Units, STRING(80), 635336512 (648)
+        GVL_PhysicalConstants.fKilogramKelvinRelationship_in_K, LREAL, 635337216 (64)
+        GVL_PhysicalConstants.fKilogramKelvinRelationship_in_K_Units, STRING(80), 635337280 (648)
+        GVL_PhysicalConstants.fLatticeParameterOfSilicon_in_m, LREAL, 635337984 (64)
+        GVL_PhysicalConstants.fLatticeParameterOfSilicon_in_m_Uncertainty, LREAL, 635338752 (64)
+        GVL_PhysicalConstants.fLatticeParameterOfSilicon_in_m_Units, STRING(80), 635338048 (648)
+        GVL_PhysicalConstants.fLatticeSpacingOfIdealSi_220_in_m, LREAL, 635449280 (64)
+        GVL_PhysicalConstants.fLatticeSpacingOfIdealSi_220_in_m_Uncertainty, LREAL, 635450048 (64)
+        GVL_PhysicalConstants.fLatticeSpacingOfIdealSi_220_in_m_Units, STRING(80), 635449344 (648)
+        GVL_PhysicalConstants.fLatticeSpacingOfSilicon_in_m, LREAL, 635218944 (64)
+        GVL_PhysicalConstants.fLatticeSpacingOfSilicon_in_m_Uncertainty, LREAL, 635219712 (64)
+        GVL_PhysicalConstants.fLatticeSpacingOfSilicon_in_m_Units, STRING(80), 635219008 (648)
+        GVL_PhysicalConstants.fLoschmidtConstant_273_15K_100KPa_in_m_3, LREAL, 635432768 (64)
+        GVL_PhysicalConstants.fLoschmidtConstant_273_15K_100KPa_in_m_3_Units, STRING(80), 635432832 (648)
+        GVL_PhysicalConstants.fLoschmidtConstant_273_15K_101_325KPa_in_m_3, LREAL, 635338816 (64)
+        GVL_PhysicalConstants.fLoschmidtConstant_273_15K_101_325KPa_in_m_3_Units, STRING(80), 635338880 (648)
+        GVL_PhysicalConstants.fLuminousEfficacy_in_lm_W_1, LREAL, 635450112 (64)
+        GVL_PhysicalConstants.fLuminousEfficacy_in_lm_W_1_Units, STRING(80), 635450176 (648)
+        GVL_PhysicalConstants.fMag_Constant_in_N_A_2, LREAL, 635339584 (64)
+        GVL_PhysicalConstants.fMag_Constant_in_N_A_2_Uncertainty, LREAL, 635340352 (64)
+        GVL_PhysicalConstants.fMag_Constant_in_N_A_2_Units, STRING(80), 635339648 (648)
+        GVL_PhysicalConstants.fMag_FluxQuantum_in_Wb, LREAL, 635340416 (64)
+        GVL_PhysicalConstants.fMag_FluxQuantum_in_Wb_Units, STRING(80), 635340480 (648)
+        GVL_PhysicalConstants.fMagneticConstant_in_N_A_2, LREAL, 635205120 (64)
+        GVL_PhysicalConstants.fMagneticConstant_in_N_A_2_Units, STRING(80), 635205184 (648)
+        GVL_PhysicalConstants.fMagneticFluxQuantum_in_Wb, LREAL, 635205888 (64)
+        GVL_PhysicalConstants.fMagneticFluxQuantum_in_Wb_Units, STRING(80), 635205952 (648)
+        GVL_PhysicalConstants.fMolarGasConstant_in_J_mol_1_K_1, LREAL, 635341184 (64)
+        GVL_PhysicalConstants.fMolarGasConstant_in_J_mol_1_K_1_Units, STRING(80), 635341248 (648)
+        GVL_PhysicalConstants.fMolarMassConstant_in_kg_mol_1, LREAL, 635341952 (64)
+        GVL_PhysicalConstants.fMolarMassConstant_in_kg_mol_1_Uncertainty, LREAL, 635342720 (64)
+        GVL_PhysicalConstants.fMolarMassConstant_in_kg_mol_1_Units, STRING(80), 635342016 (648)
+        GVL_PhysicalConstants.fMolarMassOfCarbon_12_in_kg_mol_1, LREAL, 635342784 (64)
+        GVL_PhysicalConstants.fMolarMassOfCarbon_12_in_kg_mol_1_Uncertainty, LREAL, 635343552 (64)
+        GVL_PhysicalConstants.fMolarMassOfCarbon_12_in_kg_mol_1_Units, STRING(80), 635342848 (648)
+        GVL_PhysicalConstants.fMolarPlanckConstant_in_J_Hz_1_mol_1, LREAL, 635343616 (64)
+        GVL_PhysicalConstants.fMolarPlanckConstant_in_J_Hz_1_mol_1_Units, STRING(80), 635343680 (648)
+        GVL_PhysicalConstants.fMolarPlanckConstantTimesC_in_J_m_mol_1, LREAL, 635344384 (64)
+        GVL_PhysicalConstants.fMolarPlanckConstantTimesC_in_J_m_mol_1_Uncertainty, LREAL, 635345152 (64)
+        GVL_PhysicalConstants.fMolarPlanckConstantTimesC_in_J_m_mol_1_Units, STRING(80), 635344448 (648)
+        GVL_PhysicalConstants.fMolarVolumeOfIdealGas_273_15K_100KPa_in_m_3_mol_1, LREAL, 635345216 (64)
+        GVL_PhysicalConstants.fMolarVolumeOfIdealGas_273_15K_100KPa_in_m_3_mol_1_Units, STRING(80), 635345280 (648)
+        GVL_PhysicalConstants.fMolarVolumeOfIdealGas_273_15K_101_325KPa_in_m_3_mol_1, LREAL, 635345984 (64)
+        GVL_PhysicalConstants.fMolarVolumeOfIdealGas_273_15K_101_325KPa_in_m_3_mol_1_Units, STRING(80), 635346048 (648)
+        GVL_PhysicalConstants.fMolarVolumeOfSilicon_in_m_3_mol_1, LREAL, 635346752 (64)
+        GVL_PhysicalConstants.fMolarVolumeOfSilicon_in_m_3_mol_1_Uncertainty, LREAL, 635347520 (64)
+        GVL_PhysicalConstants.fMolarVolumeOfSilicon_in_m_3_mol_1_Units, STRING(80), 635346816 (648)
+        GVL_PhysicalConstants.fMoXUnit_in_m, LREAL, 635347584 (64)
+        GVL_PhysicalConstants.fMoXUnit_in_m_Uncertainty, LREAL, 635348352 (64)
+        GVL_PhysicalConstants.fMoXUnit_in_m_Units, STRING(80), 635347648 (648)
+        GVL_PhysicalConstants.fMuonComptonWavelength_in_m, LREAL, 635348416 (64)
+        GVL_PhysicalConstants.fMuonComptonWavelength_in_m_Uncertainty, LREAL, 635349184 (64)
+        GVL_PhysicalConstants.fMuonComptonWavelength_in_m_Units, STRING(80), 635348480 (648)
+        GVL_PhysicalConstants.fMuonComptonWavelengthOver2Pi_in_m, LREAL, 635349248 (64)
+        GVL_PhysicalConstants.fMuonComptonWavelengthOver2Pi_in_m_Uncertainty, LREAL, 635350016 (64)
+        GVL_PhysicalConstants.fMuonComptonWavelengthOver2Pi_in_m_Units, STRING(80), 635349312 (648)
+        GVL_PhysicalConstants.fMuonElectronMassRatio, LREAL, 635350080 (64)
+        GVL_PhysicalConstants.fMuonElectronMassRatio_Uncertainty, LREAL, 635350144 (64)
+        GVL_PhysicalConstants.fMuonGFactor, LREAL, 635350208 (64)
+        GVL_PhysicalConstants.fMuonGFactor_Uncertainty, LREAL, 635350272 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_Anomaly, LREAL, 635351168 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_Anomaly_Uncertainty, LREAL, 635351232 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_in_J_T_1, LREAL, 635350336 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_in_J_T_1_Uncertainty, LREAL, 635351104 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_in_J_T_1_Units, STRING(80), 635350400 (648)
+        GVL_PhysicalConstants.fMuonMag_Mom_ToBohrMagnetonRatio, LREAL, 635351296 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635351360 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_ToNuclearMagnetonRatio, LREAL, 635351424 (64)
+        GVL_PhysicalConstants.fMuonMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635351488 (64)
+        GVL_PhysicalConstants.fMuonMagneticMoment_in_J_T_1, LREAL, 635206656 (64)
+        GVL_PhysicalConstants.fMuonMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635207424 (64)
+        GVL_PhysicalConstants.fMuonMagneticMoment_in_J_T_1_Units, STRING(80), 635206720 (648)
+        GVL_PhysicalConstants.fMuonMagneticMomentToBohrMagnetonRatio, LREAL, 635207488 (64)
+        GVL_PhysicalConstants.fMuonMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635207552 (64)
+        GVL_PhysicalConstants.fMuonMagneticMomentToNuclearMagnetonRatio, LREAL, 635207616 (64)
+        GVL_PhysicalConstants.fMuonMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635207680 (64)
+        GVL_PhysicalConstants.fMuonMass_in_kg, LREAL, 635351552 (64)
+        GVL_PhysicalConstants.fMuonMass_in_kg_Uncertainty, LREAL, 635352320 (64)
+        GVL_PhysicalConstants.fMuonMass_in_kg_Units, STRING(80), 635351616 (648)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalent_in_J, LREAL, 635352384 (64)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635353152 (64)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalent_in_J_Units, STRING(80), 635352448 (648)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalentInMeV_in_MeV, LREAL, 635353216 (64)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635353984 (64)
+        GVL_PhysicalConstants.fMuonMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635353280 (648)
+        GVL_PhysicalConstants.fMuonMassInU_in_u, LREAL, 635354048 (64)
+        GVL_PhysicalConstants.fMuonMassInU_in_u_Uncertainty, LREAL, 635354816 (64)
+        GVL_PhysicalConstants.fMuonMassInU_in_u_Units, STRING(80), 635354112 (648)
+        GVL_PhysicalConstants.fMuonMolarMass_in_kg_mol_1, LREAL, 635354880 (64)
+        GVL_PhysicalConstants.fMuonMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635355648 (64)
+        GVL_PhysicalConstants.fMuonMolarMass_in_kg_mol_1_Units, STRING(80), 635354944 (648)
+        GVL_PhysicalConstants.fMuonNeutronMassRatio, LREAL, 635355712 (64)
+        GVL_PhysicalConstants.fMuonNeutronMassRatio_Uncertainty, LREAL, 635355776 (64)
+        GVL_PhysicalConstants.fMuonProtonMag_Mom_Ratio, LREAL, 635355840 (64)
+        GVL_PhysicalConstants.fMuonProtonMag_Mom_Ratio_Uncertainty, LREAL, 635355904 (64)
+        GVL_PhysicalConstants.fMuonProtonMagneticMomentRatio, LREAL, 635207744 (64)
+        GVL_PhysicalConstants.fMuonProtonMagneticMomentRatio_Uncertainty, LREAL, 635207808 (64)
+        GVL_PhysicalConstants.fMuonProtonMassRatio, LREAL, 635355968 (64)
+        GVL_PhysicalConstants.fMuonProtonMassRatio_Uncertainty, LREAL, 635356032 (64)
+        GVL_PhysicalConstants.fMuonTauMassRatio, LREAL, 635356096 (64)
+        GVL_PhysicalConstants.fMuonTauMassRatio_Uncertainty, LREAL, 635356160 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfAction_in_J_s, LREAL, 635356224 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfAction_in_J_s_Units, STRING(80), 635356288 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfActionInEVS_in_eV_s, LREAL, 635356992 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfActionInEVS_in_eV_s_Units, STRING(80), 635357056 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergy_in_J, LREAL, 635357760 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergy_in_J_Uncertainty, LREAL, 635358528 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergy_in_J_Units, STRING(80), 635357824 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergyInMeV_in_MeV, LREAL, 635358592 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergyInMeV_in_MeV_Uncertainty, LREAL, 635359360 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfEnergyInMeV_in_MeV_Units, STRING(80), 635358656 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfLength_in_m, LREAL, 635359424 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfLength_in_m_Uncertainty, LREAL, 635360192 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfLength_in_m_Units, STRING(80), 635359488 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfMass_in_kg, LREAL, 635360256 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMass_in_kg_Uncertainty, LREAL, 635361024 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMass_in_kg_Units, STRING(80), 635360320 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_um_in_kg_m_s_1, LREAL, 635433536 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_um_in_kg_m_s_1_Uncertainty, LREAL, 635434304 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_um_in_kg_m_s_1_Units, STRING(80), 635433600 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_umInMeV_c_in_MeV_c, LREAL, 635434368 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_umInMeV_c_in_MeV_c_Uncertainty, LREAL, 635435136 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMom_umInMeV_c_in_MeV_c_Units, STRING(80), 635434432 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentum_in_kg_m_s_1, LREAL, 635361088 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentum_in_kg_m_s_1_Uncertainty, LREAL, 635361856 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentum_in_kg_m_s_1_Units, STRING(80), 635361152 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentumInMeV_c_in_MeV_c, LREAL, 635361920 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentumInMeV_c_in_MeV_c_Uncertainty, LREAL, 635362688 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfMomentumInMeV_c_in_MeV_c_Units, STRING(80), 635361984 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfTime_in_s, LREAL, 635362752 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfTime_in_s_Uncertainty, LREAL, 635363520 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfTime_in_s_Units, STRING(80), 635362816 (648)
+        GVL_PhysicalConstants.fNaturalUnitOfVelocity_in_m_s_1, LREAL, 635363584 (64)
+        GVL_PhysicalConstants.fNaturalUnitOfVelocity_in_m_s_1_Units, STRING(80), 635363648 (648)
+        GVL_PhysicalConstants.fNeutronComptonWavelength_in_m, LREAL, 635364352 (64)
+        GVL_PhysicalConstants.fNeutronComptonWavelength_in_m_Uncertainty, LREAL, 635365120 (64)
+        GVL_PhysicalConstants.fNeutronComptonWavelength_in_m_Units, STRING(80), 635364416 (648)
+        GVL_PhysicalConstants.fNeutronComptonWavelengthOver2Pi_in_m, LREAL, 635365184 (64)
+        GVL_PhysicalConstants.fNeutronComptonWavelengthOver2Pi_in_m_Uncertainty, LREAL, 635365952 (64)
+        GVL_PhysicalConstants.fNeutronComptonWavelengthOver2Pi_in_m_Units, STRING(80), 635365248 (648)
+        GVL_PhysicalConstants.fNeutronElectronMag_Mom_Ratio, LREAL, 635366016 (64)
+        GVL_PhysicalConstants.fNeutronElectronMag_Mom_Ratio_Uncertainty, LREAL, 635366080 (64)
+        GVL_PhysicalConstants.fNeutronElectronMagneticMomentRatio, LREAL, 635210752 (64)
+        GVL_PhysicalConstants.fNeutronElectronMagneticMomentRatio_Uncertainty, LREAL, 635210816 (64)
+        GVL_PhysicalConstants.fNeutronElectronMassRatio, LREAL, 635366144 (64)
+        GVL_PhysicalConstants.fNeutronElectronMassRatio_Uncertainty, LREAL, 635366208 (64)
+        GVL_PhysicalConstants.fNeutronGFactor, LREAL, 635366272 (64)
+        GVL_PhysicalConstants.fNeutronGFactor_Uncertainty, LREAL, 635366336 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_Ratio_in_s_1_T_1, LREAL, 635366400 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_Ratio_in_s_1_T_1_Uncertainty, LREAL, 635367168 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_Ratio_in_s_1_T_1_Units, STRING(80), 635366464 (648)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioInMHz_T_in_MHz_T_1, LREAL, 635450880 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635451648 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioInMHz_T_in_MHz_T_1_Units, STRING(80), 635450944 (648)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioOver2Pi_in_MHz_T_1, LREAL, 635367232 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635368000 (64)
+        GVL_PhysicalConstants.fNeutronGyromag_RatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635367296 (648)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatio_in_s_1_T_1, LREAL, 635207872 (64)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatio_in_s_1_T_1_Uncertainty, LREAL, 635208640 (64)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatio_in_s_1_T_1_Units, STRING(80), 635207936 (648)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatioOver2Pi_in_MHz_T_1, LREAL, 635208704 (64)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635209472 (64)
+        GVL_PhysicalConstants.fNeutronGyromagneticRatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635208768 (648)
+        GVL_PhysicalConstants.fNeutronMag_Mom_in_J_T_1, LREAL, 635368064 (64)
+        GVL_PhysicalConstants.fNeutronMag_Mom_in_J_T_1_Uncertainty, LREAL, 635368832 (64)
+        GVL_PhysicalConstants.fNeutronMag_Mom_in_J_T_1_Units, STRING(80), 635368128 (648)
+        GVL_PhysicalConstants.fNeutronMag_Mom_ToBohrMagnetonRatio, LREAL, 635368896 (64)
+        GVL_PhysicalConstants.fNeutronMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635368960 (64)
+        GVL_PhysicalConstants.fNeutronMag_Mom_ToNuclearMagnetonRatio, LREAL, 635369024 (64)
+        GVL_PhysicalConstants.fNeutronMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635369088 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMoment_in_J_T_1, LREAL, 635209536 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635210304 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMoment_in_J_T_1_Units, STRING(80), 635209600 (648)
+        GVL_PhysicalConstants.fNeutronMagneticMomentToBohrMagnetonRatio, LREAL, 635210368 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635210432 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMomentToNuclearMagnetonRatio, LREAL, 635210496 (64)
+        GVL_PhysicalConstants.fNeutronMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635210560 (64)
+        GVL_PhysicalConstants.fNeutronMass_in_kg, LREAL, 635369152 (64)
+        GVL_PhysicalConstants.fNeutronMass_in_kg_Uncertainty, LREAL, 635369920 (64)
+        GVL_PhysicalConstants.fNeutronMass_in_kg_Units, STRING(80), 635369216 (648)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalent_in_J, LREAL, 635369984 (64)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635370752 (64)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalent_in_J_Units, STRING(80), 635370048 (648)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalentInMeV_in_MeV, LREAL, 635370816 (64)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635371584 (64)
+        GVL_PhysicalConstants.fNeutronMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635370880 (648)
+        GVL_PhysicalConstants.fNeutronMassInU_in_u, LREAL, 635371648 (64)
+        GVL_PhysicalConstants.fNeutronMassInU_in_u_Uncertainty, LREAL, 635372416 (64)
+        GVL_PhysicalConstants.fNeutronMassInU_in_u_Units, STRING(80), 635371712 (648)
+        GVL_PhysicalConstants.fNeutronMolarMass_in_kg_mol_1, LREAL, 635372480 (64)
+        GVL_PhysicalConstants.fNeutronMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635373248 (64)
+        GVL_PhysicalConstants.fNeutronMolarMass_in_kg_mol_1_Units, STRING(80), 635372544 (648)
+        GVL_PhysicalConstants.fNeutronMuonMassRatio, LREAL, 635373312 (64)
+        GVL_PhysicalConstants.fNeutronMuonMassRatio_Uncertainty, LREAL, 635373376 (64)
+        GVL_PhysicalConstants.fNeutronProtonMag_Mom_Ratio, LREAL, 635373440 (64)
+        GVL_PhysicalConstants.fNeutronProtonMag_Mom_Ratio_Uncertainty, LREAL, 635373504 (64)
+        GVL_PhysicalConstants.fNeutronProtonMagneticMomentRatio, LREAL, 635210880 (64)
+        GVL_PhysicalConstants.fNeutronProtonMagneticMomentRatio_Uncertainty, LREAL, 635210944 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifference_in_kg, LREAL, 635435200 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifference_in_kg_Uncertainty, LREAL, 635435968 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifference_in_kg_Units, STRING(80), 635435264 (648)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalent_in_J, LREAL, 635436032 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalent_in_J_Uncertainty, LREAL, 635436800 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalent_in_J_Units, STRING(80), 635436096 (648)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalentInMeV_in_MeV, LREAL, 635436864 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635437632 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635436928 (648)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceInU_in_u, LREAL, 635437696 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceInU_in_u_Uncertainty, LREAL, 635438464 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassDifferenceInU_in_u_Units, STRING(80), 635437760 (648)
+        GVL_PhysicalConstants.fNeutronProtonMassRatio, LREAL, 635373568 (64)
+        GVL_PhysicalConstants.fNeutronProtonMassRatio_Uncertainty, LREAL, 635373632 (64)
+        GVL_PhysicalConstants.fNeutronRelativeAtomicMass, LREAL, 635451712 (64)
+        GVL_PhysicalConstants.fNeutronRelativeAtomicMass_Uncertainty, LREAL, 635451776 (64)
+        GVL_PhysicalConstants.fNeutronTauMassRatio, LREAL, 635373696 (64)
+        GVL_PhysicalConstants.fNeutronTauMassRatio_Uncertainty, LREAL, 635373760 (64)
+        GVL_PhysicalConstants.fNeutronToShieldedProtonMag_Mom_Ratio, LREAL, 635373824 (64)
+        GVL_PhysicalConstants.fNeutronToShieldedProtonMag_Mom_Ratio_Uncertainty, LREAL, 635373888 (64)
+        GVL_PhysicalConstants.fNeutronToShieldedProtonMagneticMomentRatio, LREAL, 635210624 (64)
+        GVL_PhysicalConstants.fNeutronToShieldedProtonMagneticMomentRatio_Uncertainty, LREAL, 635210688 (64)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitation_in_m_3_kg_1_s_2, LREAL, 635373952 (64)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitation_in_m_3_kg_1_s_2_Uncertainty, LREAL, 635374720 (64)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitation_in_m_3_kg_1_s_2_Units, STRING(80), 635374016 (648)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitationOverH_barC_in_GeV_c_2_2, LREAL, 635374784 (64)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitationOverH_barC_in_GeV_c_2_2_Uncertainty, LREAL, 635375552 (64)
+        GVL_PhysicalConstants.fNewtonianConstantOfGravitationOverH_barC_in_GeV_c_2_2_Units, STRING(80), 635374848 (648)
+        GVL_PhysicalConstants.fNuclearMagneton_in_J_T_1, LREAL, 635375616 (64)
+        GVL_PhysicalConstants.fNuclearMagneton_in_J_T_1_Uncertainty, LREAL, 635376384 (64)
+        GVL_PhysicalConstants.fNuclearMagneton_in_J_T_1_Units, STRING(80), 635375680 (648)
+        GVL_PhysicalConstants.fNuclearMagnetonInEV_T_in_eV_T_1, LREAL, 635376448 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInEV_T_in_eV_T_1_Uncertainty, LREAL, 635377216 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInEV_T_in_eV_T_1_Units, STRING(80), 635376512 (648)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMeterPerTesla_in_m_1_T_1, LREAL, 635451840 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMeterPerTesla_in_m_1_T_1_Uncertainty, LREAL, 635452608 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMeterPerTesla_in_m_1_T_1_Units, STRING(80), 635451904 (648)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMetersPerTesla_in_m_1_T_1, LREAL, 635377280 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMetersPerTesla_in_m_1_T_1_Uncertainty, LREAL, 635378048 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInInverseMetersPerTesla_in_m_1_T_1_Units, STRING(80), 635377344 (648)
+        GVL_PhysicalConstants.fNuclearMagnetonInK_T_in_K_T_1, LREAL, 635378112 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInK_T_in_K_T_1_Uncertainty, LREAL, 635378880 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInK_T_in_K_T_1_Units, STRING(80), 635378176 (648)
+        GVL_PhysicalConstants.fNuclearMagnetonInMHz_T_in_MHz_T_1, LREAL, 635378944 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635379712 (64)
+        GVL_PhysicalConstants.fNuclearMagnetonInMHz_T_in_MHz_T_1_Units, STRING(80), 635379008 (648)
+        GVL_PhysicalConstants.fPlanckConstant_in_J_Hz_1, LREAL, 635379776 (64)
+        GVL_PhysicalConstants.fPlanckConstant_in_J_Hz_1_Units, STRING(80), 635379840 (648)
+        GVL_PhysicalConstants.fPlanckConstantInEV_Hz_in_eV_Hz_1, LREAL, 635452672 (64)
+        GVL_PhysicalConstants.fPlanckConstantInEV_Hz_in_eV_Hz_1_Units, STRING(80), 635452736 (648)
+        GVL_PhysicalConstants.fPlanckConstantInEVS_in_eV_s, LREAL, 635380544 (64)
+        GVL_PhysicalConstants.fPlanckConstantInEVS_in_eV_s_Uncertainty, LREAL, 635381312 (64)
+        GVL_PhysicalConstants.fPlanckConstantInEVS_in_eV_s_Units, STRING(80), 635380608 (648)
+        GVL_PhysicalConstants.fPlanckConstantOver2Pi_in_J_s, LREAL, 635381376 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2Pi_in_J_s_Uncertainty, LREAL, 635382144 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2Pi_in_J_s_Units, STRING(80), 635381440 (648)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiInEVS_in_eV_s, LREAL, 635382208 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiInEVS_in_eV_s_Uncertainty, LREAL, 635382976 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiInEVS_in_eV_s_Units, STRING(80), 635382272 (648)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiTimesCInMeVFm_in_MeV_fm, LREAL, 635383040 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiTimesCInMeVFm_in_MeV_fm_Uncertainty, LREAL, 635383808 (64)
+        GVL_PhysicalConstants.fPlanckConstantOver2PiTimesCInMeVFm_in_MeV_fm_Units, STRING(80), 635383104 (648)
+        GVL_PhysicalConstants.fPlanckLength_in_m, LREAL, 635383872 (64)
+        GVL_PhysicalConstants.fPlanckLength_in_m_Uncertainty, LREAL, 635384640 (64)
+        GVL_PhysicalConstants.fPlanckLength_in_m_Units, STRING(80), 635383936 (648)
+        GVL_PhysicalConstants.fPlanckMass_in_kg, LREAL, 635384704 (64)
+        GVL_PhysicalConstants.fPlanckMass_in_kg_Uncertainty, LREAL, 635385472 (64)
+        GVL_PhysicalConstants.fPlanckMass_in_kg_Units, STRING(80), 635384768 (648)
+        GVL_PhysicalConstants.fPlanckMassEnergyEquivalentInGeV_in_GeV, LREAL, 635385536 (64)
+        GVL_PhysicalConstants.fPlanckMassEnergyEquivalentInGeV_in_GeV_Uncertainty, LREAL, 635386304 (64)
+        GVL_PhysicalConstants.fPlanckMassEnergyEquivalentInGeV_in_GeV_Units, STRING(80), 635385600 (648)
+        GVL_PhysicalConstants.fPlanckTemperature_in_K, LREAL, 635386368 (64)
+        GVL_PhysicalConstants.fPlanckTemperature_in_K_Uncertainty, LREAL, 635387136 (64)
+        GVL_PhysicalConstants.fPlanckTemperature_in_K_Units, STRING(80), 635386432 (648)
+        GVL_PhysicalConstants.fPlanckTime_in_s, LREAL, 635387200 (64)
+        GVL_PhysicalConstants.fPlanckTime_in_s_Uncertainty, LREAL, 635387968 (64)
+        GVL_PhysicalConstants.fPlanckTime_in_s_Units, STRING(80), 635387264 (648)
+        GVL_PhysicalConstants.fProtonChargeToMassQuotient_in_C_kg_1, LREAL, 635388032 (64)
+        GVL_PhysicalConstants.fProtonChargeToMassQuotient_in_C_kg_1_Uncertainty, LREAL, 635388800 (64)
+        GVL_PhysicalConstants.fProtonChargeToMassQuotient_in_C_kg_1_Units, STRING(80), 635388096 (648)
+        GVL_PhysicalConstants.fProtonComptonWavelength_in_m, LREAL, 635388864 (64)
+        GVL_PhysicalConstants.fProtonComptonWavelength_in_m_Uncertainty, LREAL, 635389632 (64)
+        GVL_PhysicalConstants.fProtonComptonWavelength_in_m_Units, STRING(80), 635388928 (648)
+        GVL_PhysicalConstants.fProtonComptonWavelengthOver2Pi_in_m, LREAL, 635389696 (64)
+        GVL_PhysicalConstants.fProtonComptonWavelengthOver2Pi_in_m_Uncertainty, LREAL, 635390464 (64)
+        GVL_PhysicalConstants.fProtonComptonWavelengthOver2Pi_in_m_Units, STRING(80), 635389760 (648)
+        GVL_PhysicalConstants.fProtonElectronMassRatio, LREAL, 635390528 (64)
+        GVL_PhysicalConstants.fProtonElectronMassRatio_Uncertainty, LREAL, 635390592 (64)
+        GVL_PhysicalConstants.fProtonGFactor, LREAL, 635390656 (64)
+        GVL_PhysicalConstants.fProtonGFactor_Uncertainty, LREAL, 635390720 (64)
+        GVL_PhysicalConstants.fProtonGyromag_Ratio_in_s_1_T_1, LREAL, 635390784 (64)
+        GVL_PhysicalConstants.fProtonGyromag_Ratio_in_s_1_T_1_Uncertainty, LREAL, 635391552 (64)
+        GVL_PhysicalConstants.fProtonGyromag_Ratio_in_s_1_T_1_Units, STRING(80), 635390848 (648)
+        GVL_PhysicalConstants.fProtonGyromag_RatioInMHz_T_in_MHz_T_1, LREAL, 635453440 (64)
+        GVL_PhysicalConstants.fProtonGyromag_RatioInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635454208 (64)
+        GVL_PhysicalConstants.fProtonGyromag_RatioInMHz_T_in_MHz_T_1_Units, STRING(80), 635453504 (648)
+        GVL_PhysicalConstants.fProtonGyromag_RatioOver2Pi_in_MHz_T_1, LREAL, 635391616 (64)
+        GVL_PhysicalConstants.fProtonGyromag_RatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635392384 (64)
+        GVL_PhysicalConstants.fProtonGyromag_RatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635391680 (648)
+        GVL_PhysicalConstants.fProtonGyromagneticRatio_in_s_1_T_1, LREAL, 635211008 (64)
+        GVL_PhysicalConstants.fProtonGyromagneticRatio_in_s_1_T_1_Uncertainty, LREAL, 635211776 (64)
+        GVL_PhysicalConstants.fProtonGyromagneticRatio_in_s_1_T_1_Units, STRING(80), 635211072 (648)
+        GVL_PhysicalConstants.fProtonGyromagneticRatioOver2Pi_in_MHz_T_1, LREAL, 635211840 (64)
+        GVL_PhysicalConstants.fProtonGyromagneticRatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635212608 (64)
+        GVL_PhysicalConstants.fProtonGyromagneticRatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635211904 (648)
+        GVL_PhysicalConstants.fProtonMag_Mom_in_J_T_1, LREAL, 635392448 (64)
+        GVL_PhysicalConstants.fProtonMag_Mom_in_J_T_1_Uncertainty, LREAL, 635393216 (64)
+        GVL_PhysicalConstants.fProtonMag_Mom_in_J_T_1_Units, STRING(80), 635392512 (648)
+        GVL_PhysicalConstants.fProtonMag_Mom_ToBohrMagnetonRatio, LREAL, 635393280 (64)
+        GVL_PhysicalConstants.fProtonMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635393344 (64)
+        GVL_PhysicalConstants.fProtonMag_Mom_ToNuclearMagnetonRatio, LREAL, 635393408 (64)
+        GVL_PhysicalConstants.fProtonMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635393472 (64)
+        GVL_PhysicalConstants.fProtonMag_ShieldingCorrection, LREAL, 635393536 (64)
+        GVL_PhysicalConstants.fProtonMag_ShieldingCorrection_Uncertainty, LREAL, 635393600 (64)
+        GVL_PhysicalConstants.fProtonMagneticMoment_in_J_T_1, LREAL, 635212672 (64)
+        GVL_PhysicalConstants.fProtonMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635213440 (64)
+        GVL_PhysicalConstants.fProtonMagneticMoment_in_J_T_1_Units, STRING(80), 635212736 (648)
+        GVL_PhysicalConstants.fProtonMagneticMomentToBohrMagnetonRatio, LREAL, 635213504 (64)
+        GVL_PhysicalConstants.fProtonMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635213568 (64)
+        GVL_PhysicalConstants.fProtonMagneticMomentToNuclearMagnetonRatio, LREAL, 635213632 (64)
+        GVL_PhysicalConstants.fProtonMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635213696 (64)
+        GVL_PhysicalConstants.fProtonMagneticShieldingCorrection, LREAL, 635213760 (64)
+        GVL_PhysicalConstants.fProtonMagneticShieldingCorrection_Uncertainty, LREAL, 635213824 (64)
+        GVL_PhysicalConstants.fProtonMass_in_kg, LREAL, 635393664 (64)
+        GVL_PhysicalConstants.fProtonMass_in_kg_Uncertainty, LREAL, 635394432 (64)
+        GVL_PhysicalConstants.fProtonMass_in_kg_Units, STRING(80), 635393728 (648)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalent_in_J, LREAL, 635394496 (64)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635395264 (64)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalent_in_J_Units, STRING(80), 635394560 (648)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalentInMeV_in_MeV, LREAL, 635395328 (64)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635396096 (64)
+        GVL_PhysicalConstants.fProtonMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635395392 (648)
+        GVL_PhysicalConstants.fProtonMassInU_in_u, LREAL, 635396160 (64)
+        GVL_PhysicalConstants.fProtonMassInU_in_u_Uncertainty, LREAL, 635396928 (64)
+        GVL_PhysicalConstants.fProtonMassInU_in_u_Units, STRING(80), 635396224 (648)
+        GVL_PhysicalConstants.fProtonMolarMass_in_kg_mol_1, LREAL, 635396992 (64)
+        GVL_PhysicalConstants.fProtonMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635397760 (64)
+        GVL_PhysicalConstants.fProtonMolarMass_in_kg_mol_1_Units, STRING(80), 635397056 (648)
+        GVL_PhysicalConstants.fProtonMuonMassRatio, LREAL, 635397824 (64)
+        GVL_PhysicalConstants.fProtonMuonMassRatio_Uncertainty, LREAL, 635397888 (64)
+        GVL_PhysicalConstants.fProtonNeutronMag_Mom_Ratio, LREAL, 635397952 (64)
+        GVL_PhysicalConstants.fProtonNeutronMag_Mom_Ratio_Uncertainty, LREAL, 635398016 (64)
+        GVL_PhysicalConstants.fProtonNeutronMagneticMomentRatio, LREAL, 635213888 (64)
+        GVL_PhysicalConstants.fProtonNeutronMagneticMomentRatio_Uncertainty, LREAL, 635213952 (64)
+        GVL_PhysicalConstants.fProtonNeutronMassRatio, LREAL, 635398080 (64)
+        GVL_PhysicalConstants.fProtonNeutronMassRatio_Uncertainty, LREAL, 635398144 (64)
+        GVL_PhysicalConstants.fProtonRelativeAtomicMass, LREAL, 635454272 (64)
+        GVL_PhysicalConstants.fProtonRelativeAtomicMass_Uncertainty, LREAL, 635454336 (64)
+        GVL_PhysicalConstants.fProtonRmsChargeRadius_in_m, LREAL, 635398208 (64)
+        GVL_PhysicalConstants.fProtonRmsChargeRadius_in_m_Uncertainty, LREAL, 635398976 (64)
+        GVL_PhysicalConstants.fProtonRmsChargeRadius_in_m_Units, STRING(80), 635398272 (648)
+        GVL_PhysicalConstants.fProtonTauMassRatio, LREAL, 635399040 (64)
+        GVL_PhysicalConstants.fProtonTauMassRatio_Uncertainty, LREAL, 635399104 (64)
+        GVL_PhysicalConstants.fQuantumOfCirculation_in_m_2_s_1, LREAL, 635399168 (64)
+        GVL_PhysicalConstants.fQuantumOfCirculation_in_m_2_s_1_Uncertainty, LREAL, 635399936 (64)
+        GVL_PhysicalConstants.fQuantumOfCirculation_in_m_2_s_1_Units, STRING(80), 635399232 (648)
+        GVL_PhysicalConstants.fQuantumOfCirculationTimes2_in_m_2_s_1, LREAL, 635400000 (64)
+        GVL_PhysicalConstants.fQuantumOfCirculationTimes2_in_m_2_s_1_Uncertainty, LREAL, 635400768 (64)
+        GVL_PhysicalConstants.fQuantumOfCirculationTimes2_in_m_2_s_1_Units, STRING(80), 635400064 (648)
+        GVL_PhysicalConstants.fReducedComptonWavelength_in_m, LREAL, 635454400 (64)
+        GVL_PhysicalConstants.fReducedComptonWavelength_in_m_Uncertainty, LREAL, 635455168 (64)
+        GVL_PhysicalConstants.fReducedComptonWavelength_in_m_Units, STRING(80), 635454464 (648)
+        GVL_PhysicalConstants.fReducedMuonComptonWavelength_in_m, LREAL, 635455232 (64)
+        GVL_PhysicalConstants.fReducedMuonComptonWavelength_in_m_Uncertainty, LREAL, 635456000 (64)
+        GVL_PhysicalConstants.fReducedMuonComptonWavelength_in_m_Units, STRING(80), 635455296 (648)
+        GVL_PhysicalConstants.fReducedNeutronComptonWavelength_in_m, LREAL, 635456064 (64)
+        GVL_PhysicalConstants.fReducedNeutronComptonWavelength_in_m_Uncertainty, LREAL, 635456832 (64)
+        GVL_PhysicalConstants.fReducedNeutronComptonWavelength_in_m_Units, STRING(80), 635456128 (648)
+        GVL_PhysicalConstants.fReducedPlanckConstant_in_J_s, LREAL, 635456896 (64)
+        GVL_PhysicalConstants.fReducedPlanckConstant_in_J_s_Units, STRING(80), 635456960 (648)
+        GVL_PhysicalConstants.fReducedPlanckConstantInEVS_in_eV_s, LREAL, 635457664 (64)
+        GVL_PhysicalConstants.fReducedPlanckConstantInEVS_in_eV_s_Units, STRING(80), 635457728 (648)
+        GVL_PhysicalConstants.fReducedPlanckConstantTimesCInMeVFm_in_MeV_fm, LREAL, 635458432 (64)
+        GVL_PhysicalConstants.fReducedPlanckConstantTimesCInMeVFm_in_MeV_fm_Units, STRING(80), 635458496 (648)
+        GVL_PhysicalConstants.fReducedProtonComptonWavelength_in_m, LREAL, 635459200 (64)
+        GVL_PhysicalConstants.fReducedProtonComptonWavelength_in_m_Uncertainty, LREAL, 635459968 (64)
+        GVL_PhysicalConstants.fReducedProtonComptonWavelength_in_m_Units, STRING(80), 635459264 (648)
+        GVL_PhysicalConstants.fReducedTauComptonWavelength_in_m, LREAL, 635460032 (64)
+        GVL_PhysicalConstants.fReducedTauComptonWavelength_in_m_Uncertainty, LREAL, 635460800 (64)
+        GVL_PhysicalConstants.fReducedTauComptonWavelength_in_m_Units, STRING(80), 635460096 (648)
+        GVL_PhysicalConstants.fRydbergConstant_in_m_1, LREAL, 635400832 (64)
+        GVL_PhysicalConstants.fRydbergConstant_in_m_1_Uncertainty, LREAL, 635401600 (64)
+        GVL_PhysicalConstants.fRydbergConstant_in_m_1_Units, STRING(80), 635400896 (648)
+        GVL_PhysicalConstants.fRydbergConstantTimesCInHz_in_Hz, LREAL, 635401664 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesCInHz_in_Hz_Uncertainty, LREAL, 635402432 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesCInHz_in_Hz_Units, STRING(80), 635401728 (648)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInEV_in_eV, LREAL, 635402496 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInEV_in_eV_Uncertainty, LREAL, 635403264 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInEV_in_eV_Units, STRING(80), 635402560 (648)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInJ_in_J, LREAL, 635403328 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInJ_in_J_Uncertainty, LREAL, 635404096 (64)
+        GVL_PhysicalConstants.fRydbergConstantTimesHcInJ_in_J_Units, STRING(80), 635403392 (648)
+        GVL_PhysicalConstants.fSackur_TetrodeConstant_1K_100KPa, LREAL, 635404160 (64)
+        GVL_PhysicalConstants.fSackur_TetrodeConstant_1K_100KPa_Uncertainty, LREAL, 635404224 (64)
+        GVL_PhysicalConstants.fSackur_TetrodeConstant_1K_101_325KPa, LREAL, 635404288 (64)
+        GVL_PhysicalConstants.fSackur_TetrodeConstant_1K_101_325KPa_Uncertainty, LREAL, 635404352 (64)
+        GVL_PhysicalConstants.fSecondRadiationConstant_in_m_K, LREAL, 635404416 (64)
+        GVL_PhysicalConstants.fSecondRadiationConstant_in_m_K_Units, STRING(80), 635404480 (648)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_Ratio_in_s_1_T_1, LREAL, 635405184 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_Ratio_in_s_1_T_1_Uncertainty, LREAL, 635405952 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_Ratio_in_s_1_T_1_Units, STRING(80), 635405248 (648)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioInMHz_T_in_MHz_T_1, LREAL, 635460864 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635461632 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioInMHz_T_in_MHz_T_1_Units, STRING(80), 635460928 (648)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioOver2Pi_in_MHz_T_1, LREAL, 635406016 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635406784 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromag_RatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635406080 (648)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatio_in_s_1_T_1, LREAL, 635214016 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatio_in_s_1_T_1_Uncertainty, LREAL, 635214784 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatio_in_s_1_T_1_Units, STRING(80), 635214080 (648)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatioOver2Pi_in_MHz_T_1, LREAL, 635214848 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635215616 (64)
+        GVL_PhysicalConstants.fShieldedHelionGyromagneticRatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635214912 (648)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_in_J_T_1, LREAL, 635406848 (64)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_in_J_T_1_Uncertainty, LREAL, 635407616 (64)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_in_J_T_1_Units, STRING(80), 635406912 (648)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_ToBohrMagnetonRatio, LREAL, 635407680 (64)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635407744 (64)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_ToNuclearMagnetonRatio, LREAL, 635407808 (64)
+        GVL_PhysicalConstants.fShieldedHelionMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635407872 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMoment_in_J_T_1, LREAL, 635215680 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635216448 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMoment_in_J_T_1_Units, STRING(80), 635215744 (648)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMomentToBohrMagnetonRatio, LREAL, 635216512 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635216576 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMomentToNuclearMagnetonRatio, LREAL, 635216640 (64)
+        GVL_PhysicalConstants.fShieldedHelionMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635216704 (64)
+        GVL_PhysicalConstants.fShieldedHelionToProtonMag_Mom_Ratio, LREAL, 635407936 (64)
+        GVL_PhysicalConstants.fShieldedHelionToProtonMag_Mom_Ratio_Uncertainty, LREAL, 635408000 (64)
+        GVL_PhysicalConstants.fShieldedHelionToProtonMagneticMomentRatio, LREAL, 635216768 (64)
+        GVL_PhysicalConstants.fShieldedHelionToProtonMagneticMomentRatio_Uncertainty, LREAL, 635216832 (64)
+        GVL_PhysicalConstants.fShieldedHelionToShieldedProtonMag_Mom_Ratio, LREAL, 635408064 (64)
+        GVL_PhysicalConstants.fShieldedHelionToShieldedProtonMag_Mom_Ratio_Uncertainty, LREAL, 635408128 (64)
+        GVL_PhysicalConstants.fShieldedHelionToShieldedProtonMagneticMomentRatio, LREAL, 635216896 (64)
+        GVL_PhysicalConstants.fShieldedHelionToShieldedProtonMagneticMomentRatio_Uncertainty, LREAL, 635216960 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_Ratio_in_s_1_T_1, LREAL, 635408192 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_Ratio_in_s_1_T_1_Uncertainty, LREAL, 635408960 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_Ratio_in_s_1_T_1_Units, STRING(80), 635408256 (648)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioInMHz_T_in_MHz_T_1, LREAL, 635461696 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioInMHz_T_in_MHz_T_1_Uncertainty, LREAL, 635462464 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioInMHz_T_in_MHz_T_1_Units, STRING(80), 635461760 (648)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioOver2Pi_in_MHz_T_1, LREAL, 635409024 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioOver2Pi_in_MHz_T_1_Uncertainty, LREAL, 635409792 (64)
+        GVL_PhysicalConstants.fShieldedProtonGyromag_RatioOver2Pi_in_MHz_T_1_Units, STRING(80), 635409088 (648)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_in_J_T_1, LREAL, 635409856 (64)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_in_J_T_1_Uncertainty, LREAL, 635410624 (64)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_in_J_T_1_Units, STRING(80), 635409920 (648)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_ToBohrMagnetonRatio, LREAL, 635410688 (64)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635410752 (64)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_ToNuclearMagnetonRatio, LREAL, 635410816 (64)
+        GVL_PhysicalConstants.fShieldedProtonMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635410880 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMoment_in_J_T_1, LREAL, 635217024 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMoment_in_J_T_1_Uncertainty, LREAL, 635217792 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMoment_in_J_T_1_Units, STRING(80), 635217088 (648)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMomentToBohrMagnetonRatio, LREAL, 635217856 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMomentToBohrMagnetonRatio_Uncertainty, LREAL, 635217920 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMomentToNuclearMagnetonRatio, LREAL, 635217984 (64)
+        GVL_PhysicalConstants.fShieldedProtonMagneticMomentToNuclearMagnetonRatio_Uncertainty, LREAL, 635218048 (64)
+        GVL_PhysicalConstants.fShieldingDifferenceOfDAndPInHD, LREAL, 635462528 (64)
+        GVL_PhysicalConstants.fShieldingDifferenceOfDAndPInHD_Uncertainty, LREAL, 635462592 (64)
+        GVL_PhysicalConstants.fShieldingDifferenceOfTAndPInHT, LREAL, 635462656 (64)
+        GVL_PhysicalConstants.fShieldingDifferenceOfTAndPInHT_Uncertainty, LREAL, 635462720 (64)
+        GVL_PhysicalConstants.fSpeedOfLightInVacuum_in_m_s_1, LREAL, 635410944 (64)
+        GVL_PhysicalConstants.fSpeedOfLightInVacuum_in_m_s_1_Units, STRING(80), 635411008 (648)
+        GVL_PhysicalConstants.fStandardAccelerationOfGravity_in_m_s_2, LREAL, 635411712 (64)
+        GVL_PhysicalConstants.fStandardAccelerationOfGravity_in_m_s_2_Units, STRING(80), 635411776 (648)
+        GVL_PhysicalConstants.fStandardAtmosphere_in_Pa, LREAL, 635412480 (64)
+        GVL_PhysicalConstants.fStandardAtmosphere_in_Pa_Units, STRING(80), 635412544 (648)
+        GVL_PhysicalConstants.fStandardStatePressure_in_Pa, LREAL, 635438528 (64)
+        GVL_PhysicalConstants.fStandardStatePressure_in_Pa_Units, STRING(80), 635438592 (648)
+        GVL_PhysicalConstants.fStefan_BoltzmannConstant_in_W_m_2_K_4, LREAL, 635413248 (64)
+        GVL_PhysicalConstants.fStefan_BoltzmannConstant_in_W_m_2_K_4_Units, STRING(80), 635413312 (648)
+        GVL_PhysicalConstants.fTauComptonWavelength_in_m, LREAL, 635414016 (64)
+        GVL_PhysicalConstants.fTauComptonWavelength_in_m_Uncertainty, LREAL, 635414784 (64)
+        GVL_PhysicalConstants.fTauComptonWavelength_in_m_Units, STRING(80), 635414080 (648)
+        GVL_PhysicalConstants.fTauComptonWavelengthOver2Pi_in_m, LREAL, 635414848 (64)
+        GVL_PhysicalConstants.fTauComptonWavelengthOver2Pi_in_m_Uncertainty, LREAL, 635415616 (64)
+        GVL_PhysicalConstants.fTauComptonWavelengthOver2Pi_in_m_Units, STRING(80), 635414912 (648)
+        GVL_PhysicalConstants.fTauElectronMassRatio, LREAL, 635415680 (64)
+        GVL_PhysicalConstants.fTauElectronMassRatio_Uncertainty, LREAL, 635415744 (64)
+        GVL_PhysicalConstants.fTauEnergyEquivalent_in_MeV, LREAL, 635462784 (64)
+        GVL_PhysicalConstants.fTauEnergyEquivalent_in_MeV_Uncertainty, LREAL, 635463552 (64)
+        GVL_PhysicalConstants.fTauEnergyEquivalent_in_MeV_Units, STRING(80), 635462848 (648)
+        GVL_PhysicalConstants.fTauMass_in_kg, LREAL, 635415808 (64)
+        GVL_PhysicalConstants.fTauMass_in_kg_Uncertainty, LREAL, 635416576 (64)
+        GVL_PhysicalConstants.fTauMass_in_kg_Units, STRING(80), 635415872 (648)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalent_in_J, LREAL, 635416640 (64)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635417408 (64)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalent_in_J_Units, STRING(80), 635416704 (648)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalentInMeV_in_MeV, LREAL, 635417472 (64)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635418240 (64)
+        GVL_PhysicalConstants.fTauMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635417536 (648)
+        GVL_PhysicalConstants.fTauMassInU_in_u, LREAL, 635418304 (64)
+        GVL_PhysicalConstants.fTauMassInU_in_u_Uncertainty, LREAL, 635419072 (64)
+        GVL_PhysicalConstants.fTauMassInU_in_u_Units, STRING(80), 635418368 (648)
+        GVL_PhysicalConstants.fTauMolarMass_in_kg_mol_1, LREAL, 635419136 (64)
+        GVL_PhysicalConstants.fTauMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635419904 (64)
+        GVL_PhysicalConstants.fTauMolarMass_in_kg_mol_1_Units, STRING(80), 635419200 (648)
+        GVL_PhysicalConstants.fTauMuonMassRatio, LREAL, 635419968 (64)
+        GVL_PhysicalConstants.fTauMuonMassRatio_Uncertainty, LREAL, 635420032 (64)
+        GVL_PhysicalConstants.fTauNeutronMassRatio, LREAL, 635420096 (64)
+        GVL_PhysicalConstants.fTauNeutronMassRatio_Uncertainty, LREAL, 635420160 (64)
+        GVL_PhysicalConstants.fTauProtonMassRatio, LREAL, 635420224 (64)
+        GVL_PhysicalConstants.fTauProtonMassRatio_Uncertainty, LREAL, 635420288 (64)
+        GVL_PhysicalConstants.fThomsonCrossSection_in_m_2, LREAL, 635420352 (64)
+        GVL_PhysicalConstants.fThomsonCrossSection_in_m_2_Uncertainty, LREAL, 635421120 (64)
+        GVL_PhysicalConstants.fThomsonCrossSection_in_m_2_Units, STRING(80), 635420416 (648)
+        GVL_PhysicalConstants.fTritonElectronMag_Mom_Ratio, LREAL, 635421184 (64)
+        GVL_PhysicalConstants.fTritonElectronMag_Mom_Ratio_Uncertainty, LREAL, 635421248 (64)
+        GVL_PhysicalConstants.fTritonElectronMassRatio, LREAL, 635421312 (64)
+        GVL_PhysicalConstants.fTritonElectronMassRatio_Uncertainty, LREAL, 635421376 (64)
+        GVL_PhysicalConstants.fTritonGFactor, LREAL, 635421440 (64)
+        GVL_PhysicalConstants.fTritonGFactor_Uncertainty, LREAL, 635421504 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_in_J_T_1, LREAL, 635421568 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_in_J_T_1_Uncertainty, LREAL, 635422336 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_in_J_T_1_Units, STRING(80), 635421632 (648)
+        GVL_PhysicalConstants.fTritonMag_Mom_ToBohrMagnetonRatio, LREAL, 635422400 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_ToBohrMagnetonRatio_Uncertainty, LREAL, 635422464 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_ToNuclearMagnetonRatio, LREAL, 635422528 (64)
+        GVL_PhysicalConstants.fTritonMag_Mom_ToNuclearMagnetonRatio_Uncertainty, LREAL, 635422592 (64)
+        GVL_PhysicalConstants.fTritonMass_in_kg, LREAL, 635422656 (64)
+        GVL_PhysicalConstants.fTritonMass_in_kg_Uncertainty, LREAL, 635423424 (64)
+        GVL_PhysicalConstants.fTritonMass_in_kg_Units, STRING(80), 635422720 (648)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalent_in_J, LREAL, 635423488 (64)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalent_in_J_Uncertainty, LREAL, 635424256 (64)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalent_in_J_Units, STRING(80), 635423552 (648)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalentInMeV_in_MeV, LREAL, 635424320 (64)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalentInMeV_in_MeV_Uncertainty, LREAL, 635425088 (64)
+        GVL_PhysicalConstants.fTritonMassEnergyEquivalentInMeV_in_MeV_Units, STRING(80), 635424384 (648)
+        GVL_PhysicalConstants.fTritonMassInU_in_u, LREAL, 635425152 (64)
+        GVL_PhysicalConstants.fTritonMassInU_in_u_Uncertainty, LREAL, 635425920 (64)
+        GVL_PhysicalConstants.fTritonMassInU_in_u_Units, STRING(80), 635425216 (648)
+        GVL_PhysicalConstants.fTritonMolarMass_in_kg_mol_1, LREAL, 635425984 (64)
+        GVL_PhysicalConstants.fTritonMolarMass_in_kg_mol_1_Uncertainty, LREAL, 635426752 (64)
+        GVL_PhysicalConstants.fTritonMolarMass_in_kg_mol_1_Units, STRING(80), 635426048 (648)
+        GVL_PhysicalConstants.fTritonNeutronMag_Mom_Ratio, LREAL, 635426816 (64)
+        GVL_PhysicalConstants.fTritonNeutronMag_Mom_Ratio_Uncertainty, LREAL, 635426880 (64)
+        GVL_PhysicalConstants.fTritonProtonMag_Mom_Ratio, LREAL, 635426944 (64)
+        GVL_PhysicalConstants.fTritonProtonMag_Mom_Ratio_Uncertainty, LREAL, 635427008 (64)
+        GVL_PhysicalConstants.fTritonProtonMassRatio, LREAL, 635427072 (64)
+        GVL_PhysicalConstants.fTritonProtonMassRatio_Uncertainty, LREAL, 635427136 (64)
+        GVL_PhysicalConstants.fTritonRelativeAtomicMass, LREAL, 635463616 (64)
+        GVL_PhysicalConstants.fTritonRelativeAtomicMass_Uncertainty, LREAL, 635463680 (64)
+        GVL_PhysicalConstants.fTritonToProtonMag_Mom_Ratio, LREAL, 635463744 (64)
+        GVL_PhysicalConstants.fTritonToProtonMag_Mom_Ratio_Uncertainty, LREAL, 635463808 (64)
+        GVL_PhysicalConstants.fUnifiedAtomicMassUnit_in_kg, LREAL, 635427200 (64)
+        GVL_PhysicalConstants.fUnifiedAtomicMassUnit_in_kg_Uncertainty, LREAL, 635427968 (64)
+        GVL_PhysicalConstants.fUnifiedAtomicMassUnit_in_kg_Units, STRING(80), 635427264 (648)
+        GVL_PhysicalConstants.fVacuumElectricPermittivity_in_F_m_1, LREAL, 635463872 (64)
+        GVL_PhysicalConstants.fVacuumElectricPermittivity_in_F_m_1_Uncertainty, LREAL, 635464640 (64)
+        GVL_PhysicalConstants.fVacuumElectricPermittivity_in_F_m_1_Units, STRING(80), 635463936 (648)
+        GVL_PhysicalConstants.fVacuumMag_Permeability_in_N_A_2, LREAL, 635464704 (64)
+        GVL_PhysicalConstants.fVacuumMag_Permeability_in_N_A_2_Uncertainty, LREAL, 635465472 (64)
+        GVL_PhysicalConstants.fVacuumMag_Permeability_in_N_A_2_Units, STRING(80), 635464768 (648)
+        GVL_PhysicalConstants.fVonKlitzingConstant_in_ohm, LREAL, 635428032 (64)
+        GVL_PhysicalConstants.fVonKlitzingConstant_in_ohm_Units, STRING(80), 635428096 (648)
+        GVL_PhysicalConstants.fWeakMixingAngle, LREAL, 635428800 (64)
+        GVL_PhysicalConstants.fWeakMixingAngle_Uncertainty, LREAL, 635428864 (64)
+        GVL_PhysicalConstants.fWienDisplacementLawConstant_in_m_K, LREAL, 635193344 (64)
+        GVL_PhysicalConstants.fWienDisplacementLawConstant_in_m_K_Uncertainty, LREAL, 635194112 (64)
+        GVL_PhysicalConstants.fWienDisplacementLawConstant_in_m_K_Units, STRING(80), 635193408 (648)
+        GVL_PhysicalConstants.fWienFrequencyDisplacementLawConstant_in_Hz_K_1, LREAL, 635428928 (64)
+        GVL_PhysicalConstants.fWienFrequencyDisplacementLawConstant_in_Hz_K_1_Units, STRING(80), 635428992 (648)
+        GVL_PhysicalConstants.fWienWavelengthDisplacementLawConstant_in_m_K, LREAL, 635429696 (64)
+        GVL_PhysicalConstants.fWienWavelengthDisplacementLawConstant_in_m_K_Units, STRING(80), 635429760 (648)
+        GVL_PhysicalConstants.fWToZMassRatio, LREAL, 635465536 (64)
+        GVL_PhysicalConstants.fWToZMassRatio_Uncertainty, LREAL, 635465600 (64)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+GVL_Physics
+^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_Physics.fbScatteringFactors, FB_ScatteringFactorLUT, 634617472 (575872)
+
+
+GVL_TcUnit
+^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        GVL_TcUnit.AdsMessageQueue, FB_AdsLogStringMessageFifoQueue, 626270816 (8320864)
+        GVL_TcUnit.CurrentlyRunningOrderedTestInTestSuite, UINT, 626254816 (16000)
+        GVL_TcUnit.CurrentTestIsFinished, BOOL, 4393456 (8)
+        GVL_TcUnit.CurrentTestNameBeingCalled, STRING(255), 626220736 (2048)
+        GVL_TcUnit.CurrentTestSuiteBeingCalled, POINTER TO FB_TestSuite, 626220704 (32)
+        GVL_TcUnit.IgnoreCurrentTest, BOOL, 4393464 (8)
+        GVL_TcUnit.NumberOfInitializedTestSuites, UINT, 626222784 (16)
+        GVL_TcUnit.TcUnitRunner, FB_TcUnitRunner, 4393504 (621827200)
+        GVL_TcUnit.TestSuiteAddresses, POINTER TO FB_TestSuite, 626222816 (32000)
+        GVL_TcUnit.TestSuiteIsRegistered, BOOL, 4391352 (8)
+
+
+LCLS_General
+^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        LCLS_General.DefaultGlobals.stSys.I_EcatMaster1, AMSNETID, 4096040 (48)
+
+
+Main
+^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>297 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Main.M1, DUT_MotionStage, 670221440 (21248)
+        Main.M1.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670222528 (2048)
+        Main.M1.Axis.PlcToNc, PLCTONC_AXIS_REF, 670221504 (1024)
+        Main.M1.bBrakeRelease, BOOL, 670230552 (8)
+        Main.M1.bHardwareEnable, BOOL, 670230560 (8)
+        Main.M1.bHome, BOOL, 670230544 (8)
+        Main.M1.bLimitBackwardEnable, BOOL, 670230536 (8)
+        Main.M1.bLimitForwardEnable, BOOL, 670230528 (8)
+        Main.M1.nRawEncoderINT, INT, 670230672 (16)
+        Main.M1.nRawEncoderUINT, UINT, 670230656 (16)
+        Main.M1.nRawEncoderULINT, ULINT, 670230592 (64)
+        Main.M10, DUT_MotionStage, 670445376 (21248)
+        Main.M10.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670446464 (2048)
+        Main.M10.Axis.PlcToNc, PLCTONC_AXIS_REF, 670445440 (1024)
+        Main.M10.bBrakeRelease, BOOL, 670454488 (8)
+        Main.M10.bHardwareEnable, BOOL, 670454496 (8)
+        Main.M10.bHome, BOOL, 670454480 (8)
+        Main.M10.bLimitBackwardEnable, BOOL, 670454472 (8)
+        Main.M10.bLimitForwardEnable, BOOL, 670454464 (8)
+        Main.M10.nRawEncoderINT, INT, 670454608 (16)
+        Main.M10.nRawEncoderUINT, UINT, 670454592 (16)
+        Main.M10.nRawEncoderULINT, ULINT, 670454528 (64)
+        Main.M11, DUT_MotionStage, 670466624 (21248)
+        Main.M11.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670467712 (2048)
+        Main.M11.Axis.PlcToNc, PLCTONC_AXIS_REF, 670466688 (1024)
+        Main.M11.bBrakeRelease, BOOL, 670475736 (8)
+        Main.M11.bHardwareEnable, BOOL, 670475744 (8)
+        Main.M11.bHome, BOOL, 670475728 (8)
+        Main.M11.bLimitBackwardEnable, BOOL, 670475720 (8)
+        Main.M11.bLimitForwardEnable, BOOL, 670475712 (8)
+        Main.M11.nRawEncoderINT, INT, 670475856 (16)
+        Main.M11.nRawEncoderUINT, UINT, 670475840 (16)
+        Main.M11.nRawEncoderULINT, ULINT, 670475776 (64)
+        Main.M12, DUT_MotionStage, 670487872 (21248)
+        Main.M12.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670488960 (2048)
+        Main.M12.Axis.PlcToNc, PLCTONC_AXIS_REF, 670487936 (1024)
+        Main.M12.bBrakeRelease, BOOL, 670496984 (8)
+        Main.M12.bHardwareEnable, BOOL, 670496992 (8)
+        Main.M12.bHome, BOOL, 670496976 (8)
+        Main.M12.bLimitBackwardEnable, BOOL, 670496968 (8)
+        Main.M12.bLimitForwardEnable, BOOL, 670496960 (8)
+        Main.M12.nRawEncoderINT, INT, 670497104 (16)
+        Main.M12.nRawEncoderUINT, UINT, 670497088 (16)
+        Main.M12.nRawEncoderULINT, ULINT, 670497024 (64)
+        Main.M13, DUT_MotionStage, 670509120 (21248)
+        Main.M13.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670510208 (2048)
+        Main.M13.Axis.PlcToNc, PLCTONC_AXIS_REF, 670509184 (1024)
+        Main.M13.bBrakeRelease, BOOL, 670518232 (8)
+        Main.M13.bHardwareEnable, BOOL, 670518240 (8)
+        Main.M13.bHome, BOOL, 670518224 (8)
+        Main.M13.bLimitBackwardEnable, BOOL, 670518216 (8)
+        Main.M13.bLimitForwardEnable, BOOL, 670518208 (8)
+        Main.M13.nRawEncoderINT, INT, 670518352 (16)
+        Main.M13.nRawEncoderUINT, UINT, 670518336 (16)
+        Main.M13.nRawEncoderULINT, ULINT, 670518272 (64)
+        Main.M14, DUT_MotionStage, 670530368 (21248)
+        Main.M14.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670531456 (2048)
+        Main.M14.Axis.PlcToNc, PLCTONC_AXIS_REF, 670530432 (1024)
+        Main.M14.bBrakeRelease, BOOL, 670539480 (8)
+        Main.M14.bHardwareEnable, BOOL, 670539488 (8)
+        Main.M14.bHome, BOOL, 670539472 (8)
+        Main.M14.bLimitBackwardEnable, BOOL, 670539464 (8)
+        Main.M14.bLimitForwardEnable, BOOL, 670539456 (8)
+        Main.M14.nRawEncoderINT, INT, 670539600 (16)
+        Main.M14.nRawEncoderUINT, UINT, 670539584 (16)
+        Main.M14.nRawEncoderULINT, ULINT, 670539520 (64)
+        Main.M15, DUT_MotionStage, 670551616 (21248)
+        Main.M15.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670552704 (2048)
+        Main.M15.Axis.PlcToNc, PLCTONC_AXIS_REF, 670551680 (1024)
+        Main.M15.bBrakeRelease, BOOL, 670560728 (8)
+        Main.M15.bHardwareEnable, BOOL, 670560736 (8)
+        Main.M15.bHome, BOOL, 670560720 (8)
+        Main.M15.bLimitBackwardEnable, BOOL, 670560712 (8)
+        Main.M15.bLimitForwardEnable, BOOL, 670560704 (8)
+        Main.M15.nRawEncoderINT, INT, 670560848 (16)
+        Main.M15.nRawEncoderUINT, UINT, 670560832 (16)
+        Main.M15.nRawEncoderULINT, ULINT, 670560768 (64)
+        Main.M16, DUT_MotionStage, 670572864 (21248)
+        Main.M16.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670573952 (2048)
+        Main.M16.Axis.PlcToNc, PLCTONC_AXIS_REF, 670572928 (1024)
+        Main.M16.bBrakeRelease, BOOL, 670581976 (8)
+        Main.M16.bHardwareEnable, BOOL, 670581984 (8)
+        Main.M16.bHome, BOOL, 670581968 (8)
+        Main.M16.bLimitBackwardEnable, BOOL, 670581960 (8)
+        Main.M16.bLimitForwardEnable, BOOL, 670581952 (8)
+        Main.M16.nRawEncoderINT, INT, 670582096 (16)
+        Main.M16.nRawEncoderUINT, UINT, 670582080 (16)
+        Main.M16.nRawEncoderULINT, ULINT, 670582016 (64)
+        Main.M17, DUT_MotionStage, 670594112 (21248)
+        Main.M17.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670595200 (2048)
+        Main.M17.Axis.PlcToNc, PLCTONC_AXIS_REF, 670594176 (1024)
+        Main.M17.bBrakeRelease, BOOL, 670603224 (8)
+        Main.M17.bHardwareEnable, BOOL, 670603232 (8)
+        Main.M17.bHome, BOOL, 670603216 (8)
+        Main.M17.bLimitBackwardEnable, BOOL, 670603208 (8)
+        Main.M17.bLimitForwardEnable, BOOL, 670603200 (8)
+        Main.M17.nRawEncoderINT, INT, 670603344 (16)
+        Main.M17.nRawEncoderUINT, UINT, 670603328 (16)
+        Main.M17.nRawEncoderULINT, ULINT, 670603264 (64)
+        Main.M18, DUT_MotionStage, 670615360 (21248)
+        Main.M18.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670616448 (2048)
+        Main.M18.Axis.PlcToNc, PLCTONC_AXIS_REF, 670615424 (1024)
+        Main.M18.bBrakeRelease, BOOL, 670624472 (8)
+        Main.M18.bHardwareEnable, BOOL, 670624480 (8)
+        Main.M18.bHome, BOOL, 670624464 (8)
+        Main.M18.bLimitBackwardEnable, BOOL, 670624456 (8)
+        Main.M18.bLimitForwardEnable, BOOL, 670624448 (8)
+        Main.M18.nRawEncoderINT, INT, 670624592 (16)
+        Main.M18.nRawEncoderUINT, UINT, 670624576 (16)
+        Main.M18.nRawEncoderULINT, ULINT, 670624512 (64)
+        Main.M19, DUT_MotionStage, 670636608 (21248)
+        Main.M19.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670637696 (2048)
+        Main.M19.Axis.PlcToNc, PLCTONC_AXIS_REF, 670636672 (1024)
+        Main.M19.bBrakeRelease, BOOL, 670645720 (8)
+        Main.M19.bHardwareEnable, BOOL, 670645728 (8)
+        Main.M19.bHome, BOOL, 670645712 (8)
+        Main.M19.bLimitBackwardEnable, BOOL, 670645704 (8)
+        Main.M19.bLimitForwardEnable, BOOL, 670645696 (8)
+        Main.M19.nRawEncoderINT, INT, 670645840 (16)
+        Main.M19.nRawEncoderUINT, UINT, 670645824 (16)
+        Main.M19.nRawEncoderULINT, ULINT, 670645760 (64)
+        Main.M2, DUT_MotionStage, 670275392 (21248)
+        Main.M2.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670276480 (2048)
+        Main.M2.Axis.PlcToNc, PLCTONC_AXIS_REF, 670275456 (1024)
+        Main.M2.bBrakeRelease, BOOL, 670284504 (8)
+        Main.M2.bHardwareEnable, BOOL, 670284512 (8)
+        Main.M2.bHome, BOOL, 670284496 (8)
+        Main.M2.bLimitBackwardEnable, BOOL, 670284488 (8)
+        Main.M2.bLimitForwardEnable, BOOL, 670284480 (8)
+        Main.M2.nRawEncoderINT, INT, 670284624 (16)
+        Main.M2.nRawEncoderUINT, UINT, 670284608 (16)
+        Main.M2.nRawEncoderULINT, ULINT, 670284544 (64)
+        Main.M20, DUT_MotionStage, 670657856 (21248)
+        Main.M20.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670658944 (2048)
+        Main.M20.Axis.PlcToNc, PLCTONC_AXIS_REF, 670657920 (1024)
+        Main.M20.bBrakeRelease, BOOL, 670666968 (8)
+        Main.M20.bHardwareEnable, BOOL, 670666976 (8)
+        Main.M20.bHome, BOOL, 670666960 (8)
+        Main.M20.bLimitBackwardEnable, BOOL, 670666952 (8)
+        Main.M20.bLimitForwardEnable, BOOL, 670666944 (8)
+        Main.M20.nRawEncoderINT, INT, 670667088 (16)
+        Main.M20.nRawEncoderUINT, UINT, 670667072 (16)
+        Main.M20.nRawEncoderULINT, ULINT, 670667008 (64)
+        Main.M21, DUT_MotionStage, 670679104 (21248)
+        Main.M21.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670680192 (2048)
+        Main.M21.Axis.PlcToNc, PLCTONC_AXIS_REF, 670679168 (1024)
+        Main.M21.bBrakeRelease, BOOL, 670688216 (8)
+        Main.M21.bHardwareEnable, BOOL, 670688224 (8)
+        Main.M21.bHome, BOOL, 670688208 (8)
+        Main.M21.bLimitBackwardEnable, BOOL, 670688200 (8)
+        Main.M21.bLimitForwardEnable, BOOL, 670688192 (8)
+        Main.M21.nRawEncoderINT, INT, 670688336 (16)
+        Main.M21.nRawEncoderUINT, UINT, 670688320 (16)
+        Main.M21.nRawEncoderULINT, ULINT, 670688256 (64)
+        Main.M22, DUT_MotionStage, 670717184 (21248)
+        Main.M22.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670718272 (2048)
+        Main.M22.Axis.PlcToNc, PLCTONC_AXIS_REF, 670717248 (1024)
+        Main.M22.bBrakeRelease, BOOL, 670726296 (8)
+        Main.M22.bHardwareEnable, BOOL, 670726304 (8)
+        Main.M22.bHome, BOOL, 670726288 (8)
+        Main.M22.bLimitBackwardEnable, BOOL, 670726280 (8)
+        Main.M22.bLimitForwardEnable, BOOL, 670726272 (8)
+        Main.M22.nRawEncoderINT, INT, 670726416 (16)
+        Main.M22.nRawEncoderUINT, UINT, 670726400 (16)
+        Main.M22.nRawEncoderULINT, ULINT, 670726336 (64)
+        Main.M23, DUT_MotionStage, 670738432 (21248)
+        Main.M23.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670739520 (2048)
+        Main.M23.Axis.PlcToNc, PLCTONC_AXIS_REF, 670738496 (1024)
+        Main.M23.bBrakeRelease, BOOL, 670747544 (8)
+        Main.M23.bHardwareEnable, BOOL, 670747552 (8)
+        Main.M23.bHome, BOOL, 670747536 (8)
+        Main.M23.bLimitBackwardEnable, BOOL, 670747528 (8)
+        Main.M23.bLimitForwardEnable, BOOL, 670747520 (8)
+        Main.M23.nRawEncoderINT, INT, 670747664 (16)
+        Main.M23.nRawEncoderUINT, UINT, 670747648 (16)
+        Main.M23.nRawEncoderULINT, ULINT, 670747584 (64)
+        Main.M24, DUT_MotionStage, 670759680 (21248)
+        Main.M24.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670760768 (2048)
+        Main.M24.Axis.PlcToNc, PLCTONC_AXIS_REF, 670759744 (1024)
+        Main.M24.bBrakeRelease, BOOL, 670768792 (8)
+        Main.M24.bHardwareEnable, BOOL, 670768800 (8)
+        Main.M24.bHome, BOOL, 670768784 (8)
+        Main.M24.bLimitBackwardEnable, BOOL, 670768776 (8)
+        Main.M24.bLimitForwardEnable, BOOL, 670768768 (8)
+        Main.M24.nRawEncoderINT, INT, 670768912 (16)
+        Main.M24.nRawEncoderUINT, UINT, 670768896 (16)
+        Main.M24.nRawEncoderULINT, ULINT, 670768832 (64)
+        Main.M25, DUT_MotionStage, 670780928 (21248)
+        Main.M25.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670782016 (2048)
+        Main.M25.Axis.PlcToNc, PLCTONC_AXIS_REF, 670780992 (1024)
+        Main.M25.bBrakeRelease, BOOL, 670790040 (8)
+        Main.M25.bHardwareEnable, BOOL, 670790048 (8)
+        Main.M25.bHome, BOOL, 670790032 (8)
+        Main.M25.bLimitBackwardEnable, BOOL, 670790024 (8)
+        Main.M25.bLimitForwardEnable, BOOL, 670790016 (8)
+        Main.M25.nRawEncoderINT, INT, 670790160 (16)
+        Main.M25.nRawEncoderUINT, UINT, 670790144 (16)
+        Main.M25.nRawEncoderULINT, ULINT, 670790080 (64)
+        Main.M26, DUT_MotionStage, 670802176 (21248)
+        Main.M26.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670803264 (2048)
+        Main.M26.Axis.PlcToNc, PLCTONC_AXIS_REF, 670802240 (1024)
+        Main.M26.bBrakeRelease, BOOL, 670811288 (8)
+        Main.M26.bHardwareEnable, BOOL, 670811296 (8)
+        Main.M26.bHome, BOOL, 670811280 (8)
+        Main.M26.bLimitBackwardEnable, BOOL, 670811272 (8)
+        Main.M26.bLimitForwardEnable, BOOL, 670811264 (8)
+        Main.M26.nRawEncoderINT, INT, 670811408 (16)
+        Main.M26.nRawEncoderUINT, UINT, 670811392 (16)
+        Main.M26.nRawEncoderULINT, ULINT, 670811328 (64)
+        Main.M27, DUT_MotionStage, 670823424 (21248)
+        Main.M27.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670824512 (2048)
+        Main.M27.Axis.PlcToNc, PLCTONC_AXIS_REF, 670823488 (1024)
+        Main.M27.bBrakeRelease, BOOL, 670832536 (8)
+        Main.M27.bHardwareEnable, BOOL, 670832544 (8)
+        Main.M27.bHome, BOOL, 670832528 (8)
+        Main.M27.bLimitBackwardEnable, BOOL, 670832520 (8)
+        Main.M27.bLimitForwardEnable, BOOL, 670832512 (8)
+        Main.M27.nRawEncoderINT, INT, 670832656 (16)
+        Main.M27.nRawEncoderUINT, UINT, 670832640 (16)
+        Main.M27.nRawEncoderULINT, ULINT, 670832576 (64)
+        Main.M3, DUT_MotionStage, 670296640 (21248)
+        Main.M3.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670297728 (2048)
+        Main.M3.Axis.PlcToNc, PLCTONC_AXIS_REF, 670296704 (1024)
+        Main.M3.bBrakeRelease, BOOL, 670305752 (8)
+        Main.M3.bHardwareEnable, BOOL, 670305760 (8)
+        Main.M3.bHome, BOOL, 670305744 (8)
+        Main.M3.bLimitBackwardEnable, BOOL, 670305736 (8)
+        Main.M3.bLimitForwardEnable, BOOL, 670305728 (8)
+        Main.M3.nRawEncoderINT, INT, 670305872 (16)
+        Main.M3.nRawEncoderUINT, UINT, 670305856 (16)
+        Main.M3.nRawEncoderULINT, ULINT, 670305792 (64)
+        Main.M4, DUT_MotionStage, 670317888 (21248)
+        Main.M4.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670318976 (2048)
+        Main.M4.Axis.PlcToNc, PLCTONC_AXIS_REF, 670317952 (1024)
+        Main.M4.bBrakeRelease, BOOL, 670327000 (8)
+        Main.M4.bHardwareEnable, BOOL, 670327008 (8)
+        Main.M4.bHome, BOOL, 670326992 (8)
+        Main.M4.bLimitBackwardEnable, BOOL, 670326984 (8)
+        Main.M4.bLimitForwardEnable, BOOL, 670326976 (8)
+        Main.M4.nRawEncoderINT, INT, 670327120 (16)
+        Main.M4.nRawEncoderUINT, UINT, 670327104 (16)
+        Main.M4.nRawEncoderULINT, ULINT, 670327040 (64)
+        Main.M5, DUT_MotionStage, 670339136 (21248)
+        Main.M5.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670340224 (2048)
+        Main.M5.Axis.PlcToNc, PLCTONC_AXIS_REF, 670339200 (1024)
+        Main.M5.bBrakeRelease, BOOL, 670348248 (8)
+        Main.M5.bHardwareEnable, BOOL, 670348256 (8)
+        Main.M5.bHome, BOOL, 670348240 (8)
+        Main.M5.bLimitBackwardEnable, BOOL, 670348232 (8)
+        Main.M5.bLimitForwardEnable, BOOL, 670348224 (8)
+        Main.M5.nRawEncoderINT, INT, 670348368 (16)
+        Main.M5.nRawEncoderUINT, UINT, 670348352 (16)
+        Main.M5.nRawEncoderULINT, ULINT, 670348288 (64)
+        Main.M6, DUT_MotionStage, 670360384 (21248)
+        Main.M6.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670361472 (2048)
+        Main.M6.Axis.PlcToNc, PLCTONC_AXIS_REF, 670360448 (1024)
+        Main.M6.bBrakeRelease, BOOL, 670369496 (8)
+        Main.M6.bHardwareEnable, BOOL, 670369504 (8)
+        Main.M6.bHome, BOOL, 670369488 (8)
+        Main.M6.bLimitBackwardEnable, BOOL, 670369480 (8)
+        Main.M6.bLimitForwardEnable, BOOL, 670369472 (8)
+        Main.M6.nRawEncoderINT, INT, 670369616 (16)
+        Main.M6.nRawEncoderUINT, UINT, 670369600 (16)
+        Main.M6.nRawEncoderULINT, ULINT, 670369536 (64)
+        Main.M7, DUT_MotionStage, 670381632 (21248)
+        Main.M7.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670382720 (2048)
+        Main.M7.Axis.PlcToNc, PLCTONC_AXIS_REF, 670381696 (1024)
+        Main.M7.bBrakeRelease, BOOL, 670390744 (8)
+        Main.M7.bHardwareEnable, BOOL, 670390752 (8)
+        Main.M7.bHome, BOOL, 670390736 (8)
+        Main.M7.bLimitBackwardEnable, BOOL, 670390728 (8)
+        Main.M7.bLimitForwardEnable, BOOL, 670390720 (8)
+        Main.M7.nRawEncoderINT, INT, 670390864 (16)
+        Main.M7.nRawEncoderUINT, UINT, 670390848 (16)
+        Main.M7.nRawEncoderULINT, ULINT, 670390784 (64)
+        Main.M8, DUT_MotionStage, 670402880 (21248)
+        Main.M8.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670403968 (2048)
+        Main.M8.Axis.PlcToNc, PLCTONC_AXIS_REF, 670402944 (1024)
+        Main.M8.bBrakeRelease, BOOL, 670411992 (8)
+        Main.M8.bHardwareEnable, BOOL, 670412000 (8)
+        Main.M8.bHome, BOOL, 670411984 (8)
+        Main.M8.bLimitBackwardEnable, BOOL, 670411976 (8)
+        Main.M8.bLimitForwardEnable, BOOL, 670411968 (8)
+        Main.M8.nRawEncoderINT, INT, 670412112 (16)
+        Main.M8.nRawEncoderUINT, UINT, 670412096 (16)
+        Main.M8.nRawEncoderULINT, ULINT, 670412032 (64)
+        Main.M9, DUT_MotionStage, 670424128 (21248)
+        Main.M9.Axis.NcToPlc, NCTOPLC_AXIS_REF, 670425216 (2048)
+        Main.M9.Axis.PlcToNc, PLCTONC_AXIS_REF, 670424192 (1024)
+        Main.M9.bBrakeRelease, BOOL, 670433240 (8)
+        Main.M9.bHardwareEnable, BOOL, 670433248 (8)
+        Main.M9.bHome, BOOL, 670433232 (8)
+        Main.M9.bLimitBackwardEnable, BOOL, 670433224 (8)
+        Main.M9.bLimitForwardEnable, BOOL, 670433216 (8)
+        Main.M9.nRawEncoderINT, INT, 670433360 (16)
+        Main.M9.nRawEncoderUINT, UINT, 670433344 (16)
+        Main.M9.nRawEncoderULINT, ULINT, 670433280 (64)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+MOTION_GVL
+^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        MOTION_GVL.fbPmpsFileReader, FB_JsonFileToJsonDoc, 672298048 (928512)
+        MOTION_GVL.fbStandardPMPSDB, FB_Standard_PMPSDB, 670247616 (27744)
+
+
+ParameterList
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        ParameterList.cSourceNameSize, UDINT, 4388672 (32)
+
+
+PMPS_GVL
+^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>24 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PMPS_GVL.AccumulatedFF, UDINT, 3072032 (32)
+        PMPS_GVL.AUX_ATTENUATORS, UINT, 634602656 (16)
+        PMPS_GVL.BP_jsonDoc, SJsonValue, 3072064 (32)
+        PMPS_GVL.cnMaxStateArrayLen, INT, 634606272 (16)
+        PMPS_GVL.cst0RateBeam, ST_BeamParams, 634604512 (1760)
+        PMPS_GVL.cstFullBeam, ST_BeamParams, 634602752 (1760)
+        PMPS_GVL.DUMMY_AUX_ATT_ARRAY, ST_PMPS_Attenuator, 634606304 (1024)
+        PMPS_GVL.EXCLUDED_ASSERTION_ID, UDINT, 634602432 (32)
+        PMPS_GVL.FAST_TEST_VELOCITY, LREAL, 634602560 (64)
+        PMPS_GVL.g_areVBoundaries, REAL, 634601408 (1024)
+        PMPS_GVL.g_areVBoundariesK, REAL, 634608416 (1024)
+        PMPS_GVL.g_areVBoundariesL, REAL, 634607392 (1024)
+        PMPS_GVL.g_cBoundaries, INT, 634607328 (16)
+        PMPS_GVL.MAX_APERTURES, UINT, 634606288 (16)
+        PMPS_GVL.MAX_DEVICE_STATES, UDINT, 634602464 (32)
+        PMPS_GVL.MAX_VETO_DEVICES, UINT, 634602672 (16)
+        PMPS_GVL.PERange, PE_Ranges, 634591968 (32)
+        PMPS_GVL.reVHyst, REAL, 634607360 (32)
+        PMPS_GVL.stAttenuators, ST_PMPS_Attenuator, 634602688 (64)
+        PMPS_GVL.stCurrentBeamParameters, ST_BeamParams, 634599648 (1760)
+        PMPS_GVL.stRequestedBeamParameters, ST_BeamParams, 634597888 (1760)
+        PMPS_GVL.SuccessfulPreemption, UDINT, 3072000 (32)
+        PMPS_GVL.TRANS_SCALING_FACTOR, REAL, 634602624 (32)
+        PMPS_GVL.VISIBLE_TEST_VELOCITY, LREAL, 634602496 (64)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PMPS_PARAM
+^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PMPS_PARAM.MAX_ASSERTIONS, UDINT, 634609440 (32)
+        PMPS_PARAM.MAX_FAST_FAULTS, UINT, 634607344 (16)
+        PMPS_PARAM.TRANS_MARGIN, REAL, 634609472 (32)
+
+
+PMPS_TOOLS
+^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PMPS_TOOLS.fbJson, FB_JsonSaxWriter, 634609504 (256)
+
+
+PRG_1_PlcTask
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_1_PlcTask.bDebug, BOOL, 635194056 (8)
+
+
+PRG_3_PMPS_POST
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_3_PMPS_POST.bMR1K1_Veto, BOOL, 635194888 (8)
+        PRG_3_PMPS_POST.bST1K2_Veto, BOOL, 635194896 (8)
+        PRG_3_PMPS_POST.bST1K2_Veto_Override, BOOL, 635194904 (8)
+        PRG_3_PMPS_POST.fbArbiterIO, FB_SubSysToArbiter_IO, 654018944 (138752)
+        PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP, ST_BeamParams_IO, 654019744 (1760)
+        PRG_3_PMPS_POST.fbArbiterIO.q_stRequestedBP, ST_BeamParams_IO, 654021504 (1760)
+        PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_state, BIT, 654023265 (1)
+        PRG_3_PMPS_POST.fbArbiterIO.xTxPDO_toggle, BIT, 654023264 (1)
+        PRG_3_PMPS_POST.ff2_ff1_link_motion, FB_FastFault, 654157696 (25088)
+
+
+PRG_4_LOG
+^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_4_LOG.fbLogHandler, FB_LogHandler, 654186560 (5784960)
+
+
+PRG_AL1K2_L2SI
+^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_AL1K2_L2SI.fbAL1K2, FB_REF, 677958592 (983424)
+        PRG_AL1K2_L2SI.fbAL1K2.fbLaser.fbGetLasPercent.iRaw, INT, 678940896 (16)
+        PRG_AL1K2_L2SI.fbAL1K2.fbLaser.fbSetLasPercent.iRaw, INT, 678941632 (16)
+        PRG_AL1K2_L2SI.fbAL1K2.fbLaser.iLaserINT, INT, 678940816 (16)
+        PRG_AL1K2_L2SI.fbAL1K2.fbLaser.iShutdownINT, INT, 678940800 (16)
+        PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 677969856 (2048)
+        PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 677968832 (1024)
+
+
+PRG_AT1K2_SOLID
+^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>28 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_AT1K2_SOLID.bDebug, BOOL, 635194064 (8)
+        PRG_AT1K2_SOLID.DEFAULT_VELOCITY, LREAL, 649544832 (64)
+        PRG_AT1K2_SOLID.fbStage1, FB_SXR_SATT_Stage, 690191232 (658688)
+        PRG_AT1K2_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 690234048 (2048)
+        PRG_AT1K2_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 690233024 (1024)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_1.bError, BOOL, 690824520 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_1.bOverrange, BOOL, 690824536 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_1.bUnderrange, BOOL, 690824528 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_1.iRaw, INT, 690824544 (16)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_2.bError, BOOL, 690824776 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_2.bOverrange, BOOL, 690824792 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_2.bUnderrange, BOOL, 690824784 (8)
+        PRG_AT1K2_SOLID.fbStage1.fbRTD_2.iRaw, INT, 690824800 (16)
+        PRG_AT1K2_SOLID.fbStage2, FB_SXR_SATT_Stage, 690849920 (658688)
+        PRG_AT1K2_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 690892736 (2048)
+        PRG_AT1K2_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 690891712 (1024)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_1.bError, BOOL, 691483208 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_1.bOverrange, BOOL, 691483224 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_1.bUnderrange, BOOL, 691483216 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_1.iRaw, INT, 691483232 (16)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_2.bError, BOOL, 691483464 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_2.bOverrange, BOOL, 691483480 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_2.bUnderrange, BOOL, 691483472 (8)
+        PRG_AT1K2_SOLID.fbStage2.fbRTD_2.iRaw, INT, 691483488 (16)
+        PRG_AT1K2_SOLID.fbStage3, FB_AT1K2, 691508608 (593344)
+        PRG_AT1K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 691518656 (2048)
+        PRG_AT1K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 691517632 (1024)
+        PRG_AT1K2_SOLID.nEnableMode, ENUM_StageEnableMode, 635194080 (16)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_AT2K2_SOLID
+^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>47 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_AT2K2_SOLID.bDebug, BOOL, 635194072 (8)
+        PRG_AT2K2_SOLID.DEFAULT_VELOCITY, LREAL, 651350208 (64)
+        PRG_AT2K2_SOLID.fbStage1, FB_SXR_SATT_Stage, 692101952 (658688)
+        PRG_AT2K2_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 692144768 (2048)
+        PRG_AT2K2_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 692143744 (1024)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_1.bError, BOOL, 692735240 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_1.bOverrange, BOOL, 692735256 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_1.bUnderrange, BOOL, 692735248 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_1.iRaw, INT, 692735264 (16)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bError, BOOL, 692735496 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bOverrange, BOOL, 692735512 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bUnderrange, BOOL, 692735504 (8)
+        PRG_AT2K2_SOLID.fbStage1.fbRTD_2.iRaw, INT, 692735520 (16)
+        PRG_AT2K2_SOLID.fbStage2, FB_SXR_SATT_Stage, 692760640 (658688)
+        PRG_AT2K2_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 692803456 (2048)
+        PRG_AT2K2_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 692802432 (1024)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bError, BOOL, 693393928 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bOverrange, BOOL, 693393944 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_1.bUnderrange, BOOL, 693393936 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_1.iRaw, INT, 693393952 (16)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bError, BOOL, 693394184 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bOverrange, BOOL, 693394200 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bUnderrange, BOOL, 693394192 (8)
+        PRG_AT2K2_SOLID.fbStage2.fbRTD_2.iRaw, INT, 693394208 (16)
+        PRG_AT2K2_SOLID.fbStage3, FB_SXR_SATT_Stage, 693419328 (658688)
+        PRG_AT2K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 693462144 (2048)
+        PRG_AT2K2_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 693461120 (1024)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bError, BOOL, 694052616 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bOverrange, BOOL, 694052632 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_1.bUnderrange, BOOL, 694052624 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_1.iRaw, INT, 694052640 (16)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bError, BOOL, 694052872 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bOverrange, BOOL, 694052888 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bUnderrange, BOOL, 694052880 (8)
+        PRG_AT2K2_SOLID.fbStage3.fbRTD_2.iRaw, INT, 694052896 (16)
+        PRG_AT2K2_SOLID.fbStage4, FB_SXR_SATT_Stage, 694078016 (658688)
+        PRG_AT2K2_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 694120832 (2048)
+        PRG_AT2K2_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 694119808 (1024)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bError, BOOL, 694711304 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bOverrange, BOOL, 694711320 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_1.bUnderrange, BOOL, 694711312 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_1.iRaw, INT, 694711328 (16)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bError, BOOL, 694711560 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bOverrange, BOOL, 694711576 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bUnderrange, BOOL, 694711568 (8)
+        PRG_AT2K2_SOLID.fbStage4.fbRTD_2.iRaw, INT, 694711584 (16)
+        PRG_AT2K2_SOLID.nEnableMode, ENUM_StageEnableMode, 635194096 (16)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM1K1_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM1K1_PPM.fbIM1K1, FB_PPM, 673226560 (1577344)
+        PRG_IM1K1_PPM.fbIM1K1.fbFlowMeter.fRaw, INT, 674803616 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbGige.bGigePower, BOOL, 674802544 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbGige.fbGetIllPercent.iRaw, INT, 674802656 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbGige.fbSetIllPercent.iRaw, INT, 674803392 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbGige.iIlluminatorINT, INT, 674802528 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 674416672 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bError, BOOL, 674416392 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 674416408 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 674416400 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.iRaw, INT, 674416416 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.iVoltageINT, INT, 674224032 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bError, BOOL, 674803848 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bOverrange, BOOL, 674803864 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bUnderrange, BOOL, 674803856 (8)
+        PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.iRaw, INT, 674803872 (16)
+        PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 673245120 (2048)
+        PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 673244096 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM1K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM1K2_PPM.fbIM1K2, FB_PPM, 676381248 (1577344)
+        PRG_IM1K2_PPM.fbIM1K2.fbFlowMeter.fRaw, INT, 677958304 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbGige.bGigePower, BOOL, 677957232 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbGige.fbGetIllPercent.iRaw, INT, 677957344 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbGige.fbSetIllPercent.iRaw, INT, 677958080 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbGige.iIlluminatorINT, INT, 677957216 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 677571360 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 677571080 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 677571096 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 677571088 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 677571104 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.iVoltageINT, INT, 677378720 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.bError, BOOL, 677958536 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.bOverrange, BOOL, 677958552 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.bUnderrange, BOOL, 677958544 (8)
+        PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.iRaw, INT, 677958560 (16)
+        PRG_IM1K2_PPM.fbIM1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 676399808 (2048)
+        PRG_IM1K2_PPM.fbIM1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 676398784 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM2K1_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM2K1_PPM.fbIM2K1, FB_PPM, 674803904 (1577344)
+        PRG_IM2K1_PPM.fbIM2K1.fbFlowMeter.fRaw, INT, 676380960 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbGige.bGigePower, BOOL, 676379888 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbGige.fbGetIllPercent.iRaw, INT, 676380000 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbGige.fbSetIllPercent.iRaw, INT, 676380736 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbGige.iIlluminatorINT, INT, 676379872 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 675994016 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bError, BOOL, 675993736 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 675993752 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 675993744 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.iRaw, INT, 675993760 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.iVoltageINT, INT, 675801376 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bError, BOOL, 676381192 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bOverrange, BOOL, 676381208 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bUnderrange, BOOL, 676381200 (8)
+        PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.iRaw, INT, 676381216 (16)
+        PRG_IM2K1_PPM.fbIM2K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 674822464 (2048)
+        PRG_IM2K1_PPM.fbIM2K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 674821440 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM2K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM2K2_PPM.fbIM2K2, FB_PPM, 678942016 (1577344)
+        PRG_IM2K2_PPM.fbIM2K2.fbFlowMeter.fRaw, INT, 680519072 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbGige.bGigePower, BOOL, 680518000 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbGige.fbGetIllPercent.iRaw, INT, 680518112 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbGige.fbSetIllPercent.iRaw, INT, 680518848 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbGige.iIlluminatorINT, INT, 680517984 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 680132128 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 680131848 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 680131864 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 680131856 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 680131872 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.iVoltageINT, INT, 679939488 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.bError, BOOL, 680519304 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.bOverrange, BOOL, 680519320 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.bUnderrange, BOOL, 680519312 (8)
+        PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.iRaw, INT, 680519328 (16)
+        PRG_IM2K2_PPM.fbIM2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 678960576 (2048)
+        PRG_IM2K2_PPM.fbIM2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 678959552 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM3K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM3K2_PPM.fbIM3K2, FB_PPM, 680519360 (1577344)
+        PRG_IM3K2_PPM.fbIM3K2.fbFlowMeter.fRaw, INT, 682096416 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbGige.bGigePower, BOOL, 682095344 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbGige.fbGetIllPercent.iRaw, INT, 682095456 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbGige.fbSetIllPercent.iRaw, INT, 682096192 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbGige.iIlluminatorINT, INT, 682095328 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 681709472 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 681709192 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 681709208 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 681709200 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 681709216 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.iVoltageINT, INT, 681516832 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.bError, BOOL, 682096648 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.bOverrange, BOOL, 682096664 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.bUnderrange, BOOL, 682096656 (8)
+        PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.iRaw, INT, 682096672 (16)
+        PRG_IM3K2_PPM.fbIM3K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 680537920 (2048)
+        PRG_IM3K2_PPM.fbIM3K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 680536896 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM4K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM4K2_PPM.fbIM4K2, FB_PPM, 682096704 (1577344)
+        PRG_IM4K2_PPM.fbIM4K2.fbFlowMeter.fRaw, INT, 683673760 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbGige.bGigePower, BOOL, 683672688 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbGige.fbGetIllPercent.iRaw, INT, 683672800 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbGige.fbSetIllPercent.iRaw, INT, 683673536 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbGige.iIlluminatorINT, INT, 683672672 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 683286816 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 683286536 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 683286552 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 683286544 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 683286560 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageINT, INT, 683094176 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bError, BOOL, 683673992 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bOverrange, BOOL, 683674008 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bUnderrange, BOOL, 683674000 (8)
+        PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.iRaw, INT, 683674016 (16)
+        PRG_IM4K2_PPM.fbIM4K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 682115264 (2048)
+        PRG_IM4K2_PPM.fbIM4K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 682114240 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM5K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM5K2_PPM.fbIM5K2, FB_PPM, 687295232 (1577344)
+        PRG_IM5K2_PPM.fbIM5K2.fbFlowMeter.fRaw, INT, 688872288 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbGige.bGigePower, BOOL, 688871216 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbGige.fbGetIllPercent.iRaw, INT, 688871328 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbGige.fbSetIllPercent.iRaw, INT, 688872064 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbGige.iIlluminatorINT, INT, 688871200 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 688485344 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 688485064 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 688485080 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 688485072 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 688485088 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.iVoltageINT, INT, 688292704 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.bError, BOOL, 688872520 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.bOverrange, BOOL, 688872536 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.bUnderrange, BOOL, 688872528 (8)
+        PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.iRaw, INT, 688872544 (16)
+        PRG_IM5K2_PPM.fbIM5K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 687313792 (2048)
+        PRG_IM5K2_PPM.fbIM5K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 687312768 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_IM6K2_PPM
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>18 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_IM6K2_PPM.fbIM6K2, FB_PPM, 697046144 (1577344)
+        PRG_IM6K2_PPM.fbIM6K2.fbFlowMeter.fRaw, INT, 698623200 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbGige.bGigePower, BOOL, 698622128 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbGige.fbGetIllPercent.iRaw, INT, 698622240 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbGige.fbSetIllPercent.iRaw, INT, 698622976 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbGige.iIlluminatorINT, INT, 698622112 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbGetPMVoltage.iRaw, INT, 698236256 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bError, BOOL, 698235976 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bOverrange, BOOL, 698235992 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bUnderrange, BOOL, 698235984 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.iRaw, INT, 698236000 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.iVoltageINT, INT, 698043616 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bError, BOOL, 698623432 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bOverrange, BOOL, 698623448 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bUnderrange, BOOL, 698623440 (8)
+        PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.iRaw, INT, 698623456 (16)
+        PRG_IM6K2_PPM.fbIM6K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 697064704 (2048)
+        PRG_IM6K2_PPM.fbIM6K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 697063680 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_LI2K2_K2A
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_LI2K2_K2A.fbLI2K2, FB_LIC, 684985792 (997440)
+        PRG_LI2K2_K2A.fbLI2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 685004352 (2048)
+        PRG_LI2K2_K2A.fbLI2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 685003328 (1024)
+
+
+PRG_LI3K2_K2B
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_LI3K2_K2B.fbLI3K2, FB_LIC, 694736704 (997440)
+        PRG_LI3K2_K2B.fbLI3K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 694755264 (2048)
+        PRG_LI3K2_K2B.fbLI3K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 694754240 (1024)
+
+
+PRG_PF1K2_WFS
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>13 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_PF1K2_WFS.fbPF1K2, FB_WFS, 685983232 (1312000)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.bError, BOOL, 687294920 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.bOverrange, BOOL, 687294936 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.bUnderrange, BOOL, 687294928 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.iRaw, INT, 687294944 (16)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.bError, BOOL, 687295176 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.bOverrange, BOOL, 687295192 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.bUnderrange, BOOL, 687295184 (8)
+        PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.iRaw, INT, 687295200 (16)
+        PRG_PF1K2_WFS.fbPF1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 686009152 (2048)
+        PRG_PF1K2_WFS.fbPF1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 686008128 (1024)
+        PRG_PF1K2_WFS.fbPF1K2.fbZStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 686308544 (2048)
+        PRG_PF1K2_WFS.fbPF1K2.fbZStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 686307520 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_PF2K2_WFS
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <details>
+       <summary>13 Symbols</summary>
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_PF2K2_WFS.fbPF2K2, FB_WFS, 695734144 (1312000)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bError, BOOL, 697045832 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bOverrange, BOOL, 697045848 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.bUnderrange, BOOL, 697045840 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.iRaw, INT, 697045856 (16)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bError, BOOL, 697046088 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bOverrange, BOOL, 697046104 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bUnderrange, BOOL, 697046096 (8)
+        PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.iRaw, INT, 697046112 (16)
+        PRG_PF2K2_WFS.fbPF2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 695760064 (2048)
+        PRG_PF2K2_WFS.fbPF2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 695759040 (1024)
+        PRG_PF2K2_WFS.fbPF2K2.fbZStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 696059456 (2048)
+        PRG_PF2K2_WFS.fbPF2K2.fbZStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 696058432 (1024)
+
+.. raw:: html
+
+   </details>
+   <br />
+
+
+PRG_TM1K2_ATM
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_TM1K2_ATM.fbTM1K2, FB_ATM, 683674048 (1311744)
+        PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError, BOOL, 684985736 (8)
+        PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bOverrange, BOOL, 684985752 (8)
+        PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bUnderrange, BOOL, 684985744 (8)
+        PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.iRaw, INT, 684985760 (16)
+        PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 683999360 (2048)
+        PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 683998336 (1024)
+        PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 683699968 (2048)
+        PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 683698944 (1024)
+
+
+PRG_TM2K2_ATM
+^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_TM2K2_ATM.fbTM2K2, FB_TM2K2, 688872576 (1318656)
+        PRG_TM2K2_ATM.fbTM2K2.fbThermoCouple1.bError, BOOL, 690191176 (8)
+        PRG_TM2K2_ATM.fbTM2K2.fbThermoCouple1.bOverrange, BOOL, 690191192 (8)
+        PRG_TM2K2_ATM.fbTM2K2.fbThermoCouple1.bUnderrange, BOOL, 690191184 (8)
+        PRG_TM2K2_ATM.fbTM2K2.fbThermoCouple1.iRaw, INT, 690191200 (16)
+        PRG_TM2K2_ATM.fbTM2K2.fbXStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 689201536 (2048)
+        PRG_TM2K2_ATM.fbTM2K2.fbXStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 689200512 (1024)
+        PRG_TM2K2_ATM.fbTM2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 688902144 (2048)
+        PRG_TM2K2_ATM.fbTM2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 688901120 (1024)
+
+
+TC_EVENT_CLASSES
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 663887104 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 663886848 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 663887360 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 663887488 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 663887232 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 663886976 (128)
+
+
+TC_EVENTS
+^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 663906816 (960)
+
+
+TwinCAT_SystemInfoVarList
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 663870656 (704)
+        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 663867584 (2048)
+        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 663869632 (1024)
+        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 635199072 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 635198240 (32)
+
+
