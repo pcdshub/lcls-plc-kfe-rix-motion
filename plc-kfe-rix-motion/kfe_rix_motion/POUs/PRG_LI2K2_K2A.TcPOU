@@ -26,29 +26,29 @@ END_VAR]]></Declaration>
 fbLI2K2.stOut.fPosition := 1.2;
 fbLI2K2.stOut.bUseRawCounts := FALSE;
 fbLI2K2.stOut.bValid := TRUE;
-fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-OUT';
+fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2:K2A-OUT';
 
 fbLI2K2.stMirror1.fPosition := -35.3;
 fbLI2K2.stMirror1.bUseRawCounts := FALSE;
 fbLI2K2.stMirror1.bValid := TRUE;
-fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR1';
+fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR1';
 
 fbLI2K2.stMirror2.fPosition := -69.3;
 fbLI2K2.stMirror2.bUseRawCounts := FALSE;
 fbLI2K2.stMirror2.bValid := TRUE;
-fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR2';
+fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR2';
 
 fbLI2K2.stTarget1.fPosition := -101.3;
 fbLI2K2.stTarget1.bUseRawCounts := FALSE;
 fbLI2K2.stTarget1.bValid := TRUE;
-fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-TARGET1';
+fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2:K2A-TARGET1';
 
 fbLI2K2(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M11,
-    sPmpsDeviceName := 'LI2K2-K2A_OUT', 
-	sTransitionKey := 'LI2K2-K2A_OUT-TRANSITION',
+    sPmpsDeviceName := 'LI2K2:K2A', 
+	sTransitionKey := 'LI2K2:K2A-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>
