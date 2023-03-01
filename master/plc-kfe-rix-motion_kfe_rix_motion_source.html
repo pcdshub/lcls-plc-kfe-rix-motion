@@ -11,13 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -47,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_ethercat.html">Box Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_links.html">Links</a></li>
 </ul>
@@ -127,9 +127,9 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
 <section id="dut-satt-filter">
-<h2>DUT_SATT_Filter<a class="headerlink" href="#dut-satt-filter" title="Permalink to this heading"></a></h2>
+<h2>DUT_SATT_Filter<a class="headerlink" href="#dut-satt-filter" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">DUT_SATT_Filter</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -158,7 +158,7 @@
 </dl>
 </section>
 <section id="enum-sxr-satt-position">
-<h2>ENUM_SXR_SATT_Position<a class="headerlink" href="#enum-sxr-satt-position" title="Permalink to this heading"></a></h2>
+<h2>ENUM_SXR_SATT_Position<a class="headerlink" href="#enum-sxr-satt-position" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">ENUM_SXR_SATT_Position</span> <span class="p">:</span>
 <span class="p">(</span>
@@ -178,7 +178,7 @@
 </div>
 </section>
 <section id="enum-tm2k2-states">
-<h2>ENUM_TM2K2_States<a class="headerlink" href="#enum-tm2k2-states" title="Permalink to this heading"></a></h2>
+<h2>ENUM_TM2K2_States<a class="headerlink" href="#enum-tm2k2-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">ENUM_TM2K2_States</span> <span class="p">:</span>
 <span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span> <span class="nn">ENUM_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span>
@@ -198,9 +198,9 @@
 </section>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
 <section id="gvl">
-<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this heading"></a></h2>
+<h2>GVL<a class="headerlink" href="#gvl" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:RIX:MOTION:ARB:01&#39;</span><span class="p">}</span>
@@ -241,7 +241,7 @@
 </dl>
 </section>
 <section id="main">
-<h2>Main<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">IM1K1</span><span class="o">-</span><span class="n">PPM</span><span class="o">-</span><span class="n">MMS</span>
@@ -454,9 +454,9 @@
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
 <section id="fb-at1k2">
-<h2>FB_AT1K2<a class="headerlink" href="#fb-at1k2" title="Permalink to this heading"></a></h2>
+<h2>FB_AT1K2<a class="headerlink" href="#fb-at1k2" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_AT1K2</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">fbFFHWO</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span><span class="p">;</span>
@@ -486,8 +486,8 @@
     <span class="n">bInitialized</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 
     <span class="n">fbFF</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Device is moving&#39;</span><span class="p">,</span>
-                                       <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2100,</span>
-                                       <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+                       <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#2100,</span>
+                       <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
 <span class="n">END_VAR</span>
 <span class="n">IF</span> <span class="n">NOT</span> <span class="n">bInitialized</span> <span class="n">THEN</span>
     <span class="n">bInitialized</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
@@ -531,7 +531,7 @@
 </div>
 </section>
 <section id="fb-attenuatorelementdensity">
-<h2>FB_AttenuatorElementDensity<a class="headerlink" href="#fb-attenuatorelementdensity" title="Permalink to this heading"></a></h2>
+<h2>FB_AttenuatorElementDensity<a class="headerlink" href="#fb-attenuatorelementdensity" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_AttenuatorElementDensity</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">sName</span> <span class="p">:</span> <span class="n">STRING</span><span class="p">;</span>
@@ -561,7 +561,7 @@
 </div>
 </section>
 <section id="fb-sxr-satt-positionstate">
-<h2>FB_SXR_SATT_PositionState<a class="headerlink" href="#fb-sxr-satt-positionstate" title="Permalink to this heading"></a></h2>
+<h2>FB_SXR_SATT_PositionState<a class="headerlink" href="#fb-sxr-satt-positionstate" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_SXR_SATT_PositionState</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase</span>
 <span class="n">VAR_INPUT</span>
      <span class="o">//</span> <span class="n">The</span> <span class="n">enum</span> <span class="n">position</span> <span class="n">to</span> <span class="n">move</span> <span class="n">to</span>
@@ -628,7 +628,7 @@
 </dl>
 </section>
 <section id="fb-sxr-satt-stage">
-<h2>FB_SXR_SATT_Stage<a class="headerlink" href="#fb-sxr-satt-stage" title="Permalink to this heading"></a></h2>
+<h2>FB_SXR_SATT_Stage<a class="headerlink" href="#fb-sxr-satt-stage" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_SXR_SATT_Stage
 VAR_IN_OUT
     stAxis : DUT_MotionStage;
@@ -801,7 +801,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-tm2k2">
-<h2>FB_TM2K2<a class="headerlink" href="#fb-tm2k2" title="Permalink to this heading"></a></h2>
+<h2>FB_TM2K2<a class="headerlink" href="#fb-tm2k2" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TM2K2</span>
 <span class="p">(</span><span class="o">*</span>
     <span class="n">Adapted</span> <span class="kn">from</span> <span class="nn">FB_ATM</span> <span class="n">to</span><span class="p">:</span>
@@ -883,7 +883,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-tm2k2-states">
-<h2>FB_TM2K2_States<a class="headerlink" href="#fb-tm2k2-states" title="Permalink to this heading"></a></h2>
+<h2>FB_TM2K2_States<a class="headerlink" href="#fb-tm2k2-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TM2K2_States</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase_WithPMPS</span>
 <span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span> <span class="nn">TB_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span> <span class="ow">and</span> <span class="n">to</span> <span class="n">switch</span> <span class="n">the</span> <span class="n">enumSet</span> <span class="ow">and</span> <span class="n">enumGet</span> <span class="n">ENUM</span> <span class="n">types</span>
 <span class="n">VAR_INPUT</span>
@@ -998,7 +998,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="prg-1-plctask">
-<h2>PRG_1_PlcTask<a class="headerlink" href="#prg-1-plctask" title="Permalink to this heading"></a></h2>
+<h2>PRG_1_PlcTask<a class="headerlink" href="#prg-1-plctask" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_1_PlcTask
 VAR
     bDebug: BOOL := FALSE;
@@ -1073,7 +1073,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-2-pmps-pre">
-<h2>PRG_2_PMPS_PRE<a class="headerlink" href="#prg-2-pmps-pre" title="Permalink to this heading"></a></h2>
+<h2>PRG_2_PMPS_PRE<a class="headerlink" href="#prg-2-pmps-pre" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_2_PMPS_PRE</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -1084,14 +1084,14 @@ END_PROGRAM
 </div>
 </section>
 <section id="prg-3-pmps-post">
-<h2>PRG_3_PMPS_POST<a class="headerlink" href="#prg-3-pmps-post" title="Permalink to this heading"></a></h2>
+<h2>PRG_3_PMPS_POST<a class="headerlink" href="#prg-3-pmps-post" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_3_PMPS_POST</span>
 <span class="n">VAR</span>
     <span class="n">fbArbiterIO</span><span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
     <span class="n">bMR1K1_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
     <span class="n">bST1K2_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
     <span class="n">bST1K2_Veto_Override</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="o">//</span><span class="n">fb_vetoArbiter</span><span class="p">:</span> <span class="n">FB_VetoArbiter</span><span class="p">;</span>
+    <span class="n">fb_vetoArbiter</span><span class="p">:</span> <span class="n">FB_VetoArbiter</span><span class="p">;</span>
     <span class="n">ff2_ff1_link_motion</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;FF2 to FF1 Link Motion&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Please DONT BYPASS ME!! This is virtual FF2 fault, Please check faulting motion devices&#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FFFF);</span>
 <span class="n">END_VAR</span>
 <span class="n">bMR1K1_Veto</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">];</span>
@@ -1105,14 +1105,15 @@ END_PROGRAM
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">);</span>
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span> <span class="n">OR</span> <span class="n">bST1K2_Veto</span><span class="p">);</span>
 
-<span class="o">//</span><span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span> <span class="n">bST1K2_Veto</span><span class="p">,</span>
-<span class="o">//</span>                <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
-<span class="o">//</span>                          <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
-<span class="o">//</span>                <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
+<span class="o">//</span><span class="n">create</span> <span class="n">a</span> <span class="n">preemptive</span> <span class="n">request</span> <span class="kn">from</span> <span class="nn">Arbiter</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">Arbiter</span> <span class="mi">1</span>
+<span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span> <span class="n">bST1K2_Veto</span><span class="p">,</span>
+                <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+                <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
+                <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 <span class="n">ff2_ff1_link_motion</span><span class="p">(</span>
     <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
-    <span class="n">i_xOK</span> <span class="o">:=</span>  <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">q_xFastFaultOut</span><span class="p">);</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span>  <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">q_xFastFaultOut</span> <span class="n">OR</span> <span class="n">bST1K2_Veto</span><span class="p">);</span>
 
 
 <span class="n">MOTION_GVL</span><span class="o">.</span><span class="n">fbStandardPMPSDB</span><span class="p">(</span>
@@ -1132,7 +1133,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-4-log">
-<h2>PRG_4_LOG<a class="headerlink" href="#prg-4-log" title="Permalink to this heading"></a></h2>
+<h2>PRG_4_LOG<a class="headerlink" href="#prg-4-log" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_4_LOG</span>
 <span class="n">VAR</span>
     <span class="n">fbLogHandler</span><span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
@@ -1144,7 +1145,7 @@ END_PROGRAM
 </div>
 </section>
 <section id="prg-al1k2-l2si">
-<h2>PRG_AL1K2_L2SI<a class="headerlink" href="#prg-al1k2-l2si" title="Permalink to this heading"></a></h2>
+<h2>PRG_AL1K2_L2SI<a class="headerlink" href="#prg-al1k2-l2si" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AL1K2_L2SI</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -1167,7 +1168,7 @@ END_PROGRAM
 
 <span class="n">fbAL1K2</span><span class="p">(</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M5</span><span class="p">,</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI&#39;</span><span class="p">,</span>
     <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI-TRANSITION&#39;</span><span class="p">,</span>
@@ -1185,7 +1186,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-at1k2-solid">
-<h2>PRG_AT1K2_SOLID<a class="headerlink" href="#prg-at1k2-solid" title="Permalink to this heading"></a></h2>
+<h2>PRG_AT1K2_SOLID<a class="headerlink" href="#prg-at1k2-solid" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AT1K2_SOLID</span>
 <span class="n">VAR</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">use</span> <span class="n">FALSE</span> <span class="k">for</span> <span class="n">simulation</span> <span class="ow">and</span> <span class="n">production</span> <span class="o">*</span><span class="p">)</span>
@@ -1464,7 +1465,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-at2k2-solid">
-<h2>PRG_AT2K2_SOLID<a class="headerlink" href="#prg-at2k2-solid" title="Permalink to this heading"></a></h2>
+<h2>PRG_AT2K2_SOLID<a class="headerlink" href="#prg-at2k2-solid" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AT2K2_SOLID</span>
 <span class="n">VAR</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">use</span> <span class="n">FALSE</span> <span class="k">for</span> <span class="n">simulation</span> <span class="ow">and</span> <span class="n">production</span> <span class="o">*</span><span class="p">)</span>
@@ -1647,7 +1648,7 @@ END_PROGRAM
 <span class="n">fbStage1</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mf">1.52</span><span class="p">;</span>
 <span class="n">fbStage1</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">sFilterMaterial</span>     <span class="o">:=</span> <span class="s1">&#39;Al&#39;</span><span class="p">;</span>
 
-<span class="n">fbStage1</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M17</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+<span class="n">fbStage1</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M17</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">2</span> <span class="o">*</span><span class="p">)</span>
@@ -1730,7 +1731,7 @@ END_PROGRAM
 <span class="n">fbStage2</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mf">0.78</span><span class="p">;</span>
 <span class="n">fbStage2</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">sFilterMaterial</span>     <span class="o">:=</span> <span class="s1">&#39;Al&#39;</span><span class="p">;</span>
 
-<span class="n">fbStage2</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M18</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+<span class="n">fbStage2</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M18</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">3</span> <span class="o">*</span><span class="p">)</span>
@@ -1813,7 +1814,7 @@ END_PROGRAM
 <span class="n">fbStage3</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mf">0.39</span><span class="p">;</span>
 <span class="n">fbStage3</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">sFilterMaterial</span>     <span class="o">:=</span> <span class="s1">&#39;Al&#39;</span><span class="p">;</span>
 
-<span class="n">fbStage3</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M19</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+<span class="n">fbStage3</span><span class="p">(</span><span class="n">stAxis</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M19</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">nEnableMode</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">);</span>
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">4</span> <span class="o">*</span><span class="p">)</span>
@@ -1919,7 +1920,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im1k1-ppm">
-<h2>PRG_IM1K1_PPM<a class="headerlink" href="#prg-im1k1-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM1K1_PPM<a class="headerlink" href="#prg-im1k1-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM1K1_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -1979,7 +1980,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im1k2-ppm">
-<h2>PRG_IM1K2_PPM<a class="headerlink" href="#prg-im1k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM1K2_PPM<a class="headerlink" href="#prg-im1k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM1K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2039,7 +2040,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im2k1-ppm">
-<h2>PRG_IM2K1_PPM<a class="headerlink" href="#prg-im2k1-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM2K1_PPM<a class="headerlink" href="#prg-im2k1-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM2K1_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2099,7 +2100,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im2k2-ppm">
-<h2>PRG_IM2K2_PPM<a class="headerlink" href="#prg-im2k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM2K2_PPM<a class="headerlink" href="#prg-im2k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM2K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2140,7 +2141,7 @@ END_PROGRAM
 <span class="n">fbIM2K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;IM2K2:PPM-YAG2&#39;</span><span class="p">;</span>
 
 <span class="n">fbIM2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM2K2:PPM&#39;</span><span class="p">,</span>
@@ -2159,7 +2160,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im3k2-ppm">
-<h2>PRG_IM3K2_PPM<a class="headerlink" href="#prg-im3k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM3K2_PPM<a class="headerlink" href="#prg-im3k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM3K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2200,7 +2201,7 @@ END_PROGRAM
 <span class="n">fbIM3K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;IM3K2:PPM-YAG2&#39;</span><span class="p">;</span>
 
 <span class="n">fbIM3K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM3K2:PPM&#39;</span><span class="p">,</span>
@@ -2219,7 +2220,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im4k2-ppm">
-<h2>PRG_IM4K2_PPM<a class="headerlink" href="#prg-im4k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM4K2_PPM<a class="headerlink" href="#prg-im4k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM4K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2260,7 +2261,7 @@ END_PROGRAM
 <span class="n">fbIM4K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;IM4K2:PPM-YAG2&#39;</span><span class="p">;</span>
 
 <span class="n">fbIM4K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM4K2:PPM&#39;</span><span class="p">,</span>
@@ -2279,7 +2280,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im5k2-ppm">
-<h2>PRG_IM5K2_PPM<a class="headerlink" href="#prg-im5k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM5K2_PPM<a class="headerlink" href="#prg-im5k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM5K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2320,7 +2321,7 @@ END_PROGRAM
 <span class="n">fbIM5K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;IM5K2:PPM-YAG2&#39;</span><span class="p">;</span>
 
 <span class="n">fbIM5K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M14</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM5K2:PPM&#39;</span><span class="p">,</span>
@@ -2339,7 +2340,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-im6k2-ppm">
-<h2>PRG_IM6K2_PPM<a class="headerlink" href="#prg-im6k2-ppm" title="Permalink to this heading"></a></h2>
+<h2>PRG_IM6K2_PPM<a class="headerlink" href="#prg-im6k2-ppm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM6K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2380,7 +2381,7 @@ END_PROGRAM
 <span class="n">fbIM6K2</span><span class="o">.</span><span class="n">stYag2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;IM6K2:PPM-YAG2&#39;</span><span class="p">;</span>
 
 <span class="n">fbIM6K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M24</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;IM6K2:PPM&#39;</span><span class="p">,</span>
@@ -2399,7 +2400,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-li2k2-k2a">
-<h2>PRG_LI2K2_K2A<a class="headerlink" href="#prg-li2k2-k2a" title="Permalink to this heading"></a></h2>
+<h2>PRG_LI2K2_K2A<a class="headerlink" href="#prg-li2k2-k2a" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_LI2K2_K2A</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2442,7 +2443,7 @@ END_PROGRAM
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-TARGET1&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M11</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A&#39;</span><span class="p">,</span>
@@ -2461,7 +2462,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-li3k2-k2b">
-<h2>PRG_LI3K2_K2B<a class="headerlink" href="#prg-li3k2-k2b" title="Permalink to this heading"></a></h2>
+<h2>PRG_LI3K2_K2B<a class="headerlink" href="#prg-li3k2-k2b" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_LI3K2_K2B</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2504,7 +2505,7 @@ END_PROGRAM
 <span class="n">fbLI3K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI3K2:K2B-TARGET1&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI3K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M21</span><span class="p">,</span>
     <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;LI3K2:K2B&#39;</span><span class="p">,</span>
@@ -2523,7 +2524,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-pf1k2-wfs">
-<h2>PRG_PF1K2_WFS<a class="headerlink" href="#prg-pf1k2-wfs" title="Permalink to this heading"></a></h2>
+<h2>PRG_PF1K2_WFS<a class="headerlink" href="#prg-pf1k2-wfs" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PF1K2_WFS</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2580,7 +2581,7 @@ END_PROGRAM
 <span class="n">fbPF1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;PF1K2:WFS-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbPF1K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M12</span><span class="p">,</span>
     <span class="n">stZStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M13</span><span class="p">,</span>
@@ -2600,7 +2601,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-pf2k2-wfs">
-<h2>PRG_PF2K2_WFS<a class="headerlink" href="#prg-pf2k2-wfs" title="Permalink to this heading"></a></h2>
+<h2>PRG_PF2K2_WFS<a class="headerlink" href="#prg-pf2k2-wfs" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PF2K2_WFS</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2657,7 +2658,7 @@ END_PROGRAM
 <span class="n">fbPF2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;PF2K2:WFS-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbPF2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M22</span><span class="p">,</span>
     <span class="n">stZStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M23</span><span class="p">,</span>
@@ -2677,7 +2678,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-st3k2-term">
-<h2>PRG_ST3K2_TERM<a class="headerlink" href="#prg-st3k2-term" title="Permalink to this heading"></a></h2>
+<h2>PRG_ST3K2_TERM<a class="headerlink" href="#prg-st3k2-term" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_ST3K2_TERM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: ST3K2:TERM&#39;</span><span class="p">}</span>
@@ -2711,7 +2712,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-tm1k2-atm">
-<h2>PRG_TM1K2_ATM<a class="headerlink" href="#prg-tm1k2-atm" title="Permalink to this heading"></a></h2>
+<h2>PRG_TM1K2_ATM<a class="headerlink" href="#prg-tm1k2-atm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_TM1K2_ATM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2755,7 +2756,7 @@ END_PROGRAM
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M10</span><span class="p">,</span>
@@ -2775,7 +2776,7 @@ END_PROGRAM
 </dl>
 </section>
 <section id="prg-tm2k2-atm">
-<h2>PRG_TM2K2_ATM<a class="headerlink" href="#prg-tm2k2-atm" title="Permalink to this heading"></a></h2>
+<h2>PRG_TM2K2_ATM<a class="headerlink" href="#prg-tm2k2-atm" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_TM2K2_ATM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -2824,7 +2825,7 @@ END_PROGRAM
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="p">(</span>
-    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M15</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M16</span><span class="p">,</span>

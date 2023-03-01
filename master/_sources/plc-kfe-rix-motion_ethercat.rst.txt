@@ -1,0 +1,855 @@
+Box Hierarchy
+-------------
+
+
+#. **Power (EK1200) [ID: 1]**
+        EK1200-5000 EtherCAT Power supply (2A E-Bus)
+
+    #. License (EL6070) [ID: 2]
+            EL6070 1Ch. Licensing-Terminal
+
+
+
+    #. PMPS_FFO [ID: 3]
+              ( **SyncUnit=PMPS** )    EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+    #. PMPS_PRE [ID: 4]
+              ( **SyncUnit=PMPS** )    EL6695 EtherCAT Bridge terminal (Primary)
+
+
+
+    #. Fiber Coupler (EK1521-0010) [ID: 33]
+            EK1521-0010 1 port EtherCAT junction (FX-SingleMode)
+
+        #. **Term 34 (EK1501-0010) [ID: 34]**
+                EK1501-0010 EtherCAT Coupler (2A E-Bus, FX-SingleMode, ID switch)
+
+            #. Term 35 (EL9410) [ID: 35]
+                    EL9410 E-Bus Power Supplier  (Diagnostics)
+
+
+
+            #. Term 36 (EL2202) [ID: 36]
+                    EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+            #. Term 37 (EL6070) [ID: 37]
+                    EL6070 1Ch. Licensing-Terminal
+
+
+
+            #. Term 38 (EL6695) [ID: 38]
+                    EL6695 EtherCAT Bridge terminal (Primary)
+
+
+
+            #. Term 39 (EK1122) [ID: 39]
+                    EK1122 2 port EtherCAT junction
+
+                #. **IM1K2-PPM (EK1100) [ID: 40]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM1K2-EL7041-E1 [ID: 41]
+                              ( **SyncUnit=IM1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM1K2-EL5042-E2 [ID: 42]
+                              ( **SyncUnit=IM1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM1K2-EL2004-E3 [ID: 43]
+                              ( **SyncUnit=IM1K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM1K2-EL3314-E4 [ID: 44]
+                              ( **SyncUnit=IM1K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM1K2-EL3052-E5 [ID: 45]
+                              ( **SyncUnit=IM1K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM1K2-EL3062-E6 [ID: 46]
+                              ( **SyncUnit=IM1K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM1K2-EL4004-E7 [ID: 47]
+                              ( **SyncUnit=IM1K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM1K2-EL9011-E8 [ID: 48]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **AL1K2-L2SI (EK1100) [ID: 80]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. AL1K2-EL7041-E1 [ID: 81]
+                              ( **SyncUnit=AL1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AL1K2-EL5042-E2 [ID: 82]
+                              ( **SyncUnit=AL1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. AL1K2-EL2004-E3 [ID: 83]
+                              ( **SyncUnit=AL1K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. AL1K2-EL4004-E4 [ID: 84]
+                              ( **SyncUnit=AL1K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. AL1K2-EL9011-E5 [ID: 235]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 49 (EK1122) [ID: 49]
+                    EK1122 2 port EtherCAT junction
+
+                #. **IM2K2-PPM (EK1100) [ID: 52]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM2K2-EL7041-E1 [ID: 53]
+                              ( **SyncUnit=IM2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM2K2-EL5042-E2 [ID: 54]
+                              ( **SyncUnit=IM2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM2K2-EL2004-E3 [ID: 55]
+                              ( **SyncUnit=IM2K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM2K2-EL3314-E4 [ID: 56]
+                              ( **SyncUnit=IM2K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM2K2-EL3052-E5 [ID: 57]
+                              ( **SyncUnit=IM2K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM2K2-EL3062-E6 [ID: 58]
+                              ( **SyncUnit=IM2K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM2K2-EL4004-E7 [ID: 59]
+                              ( **SyncUnit=IM2K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM2K2-EL9011-E8 [ID: 60]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 50 (EK1122) [ID: 50]
+                    EK1122 2 port EtherCAT junction
+
+                #. **IM3K2-PPM (EK1100) [ID: 90]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM3K2-EL7041-E1 [ID: 91]
+                              ( **SyncUnit=IM3K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM3K2-EL5042-E2 [ID: 92]
+                              ( **SyncUnit=IM3K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM3K2-EL2004-E3 [ID: 93]
+                              ( **SyncUnit=IM3K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM3K2-EL3314-E4 [ID: 94]
+                              ( **SyncUnit=IM3K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM3K2-EL3052-E5 [ID: 95]
+                              ( **SyncUnit=IM3K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM3K2-EL3062-E6 [ID: 96]
+                              ( **SyncUnit=IM3K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM3K2-EL4004-E7 [ID: 97]
+                              ( **SyncUnit=IM3K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM3K2-EL9011-E8 [ID: 134]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **IM4K2-PPM (EK1100) [ID: 98]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM4K2-EL7041-E1 [ID: 99]
+                              ( **SyncUnit=IM4K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM4K2-EL5042-E2 [ID: 100]
+                              ( **SyncUnit=IM4K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM4K2-EL2004-E3 [ID: 101]
+                              ( **SyncUnit=IM4K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM4K2-EL3314-E4 [ID: 102]
+                              ( **SyncUnit=IM4K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM4K2-EL3052-E5 [ID: 104]
+                              ( **SyncUnit=IM4K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM4K2-EL3062-E6 [ID: 105]
+                              ( **SyncUnit=IM4K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM4K2-EL4004-E7 [ID: 106]
+                              ( **SyncUnit=IM4K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM4K2-EL9011-E8 [ID: 135]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 51 (EK1110) [ID: 51]
+                    EK1110 EtherCAT extension
+
+
+
+
+
+        #. **Term 123 (EK1100) [ID: 123]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. Term 124 (EK1122) [ID: 124]
+                    EK1122 2 port EtherCAT junction
+
+                #. **TM1K2-K2A (EK1100) [ID: 125]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. TM1K2-EL7041-E1 [ID: 126]
+                              ( **SyncUnit=TM1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. TM1K2-EL7041-E2 [ID: 127]
+                              ( **SyncUnit=TM1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. TM1K2-EL5042-E3 [ID: 128]
+                              ( **SyncUnit=TM1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. TM1K2-EL2004-E4 [ID: 129]
+                              ( **SyncUnit=TM1K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. TM1K2-EL3314-E5 [ID: 130]
+                              ( **SyncUnit=TM1K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. TM1K2-EL9011-E6 [ID: 189]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 131 (EK1122) [ID: 131]
+                    EK1122 2 port EtherCAT junction
+
+                #. **LI2K2-K2A_OUT  (EK1100) [ID: 132]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. LI2K2-EL7041-E1 [ID: 133]
+                              ( **SyncUnit=LI2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. LI2K2-EL2004-E2 [ID: 177]
+                              ( **SyncUnit=LI2K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. LI2K2-EL5042-E3 [ID: 178]
+                              ( **SyncUnit=LI2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. LI2K2-EL9011-E4 [ID: 240]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **PF1K2-WFS (EK1100) [ID: 179]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. PF1K2-EL7041-E1 [ID: 180]
+                              ( **SyncUnit=PF1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. PF1K2-EL7041-E2 [ID: 181]
+                              ( **SyncUnit=PF1K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. PF1K2-EL5042-E3 [ID: 182]
+                              ( **SyncUnit=PF1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. PF1K2-EL2004-E4 [ID: 183]
+                              ( **SyncUnit=PF1K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. PF1K2-EL3314-E5 [ID: 184]
+                              ( **SyncUnit=PF1K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. PF1K2-EL9011-E6 [ID: 241]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 140 (EK1122) [ID: 140]
+                    EK1122 2 port EtherCAT junction
+
+                #. **IM5K2-PPM (EK1100) [ID: 141]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM5K2-EL7041-E1 [ID: 142]
+                              ( **SyncUnit=IM5K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM5K2-EL5042-E2 [ID: 143]
+                              ( **SyncUnit=IM5K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM5K2-EL2004-E3 [ID: 144]
+                              ( **SyncUnit=IM5K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM5K2-EL3314-E4 [ID: 145]
+                              ( **SyncUnit=IM5K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM5K2-EL3052-E5 [ID: 146]
+                              ( **SyncUnit=IM5K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM5K2-EL3062-E6 [ID: 147]
+                              ( **SyncUnit=IM5K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM5K2-EL4004-E7 [ID: 148]
+                              ( **SyncUnit=IM5K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM5K2-EL9011-E8 [ID: 191]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **TM2K2-K2B (EK1100) [ID: 149]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. TM2K2-EL7041-E1 [ID: 150]
+                              ( **SyncUnit=TM2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. TM2K2-EL7041-E2 [ID: 151]
+                              ( **SyncUnit=TM2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. TM2K2-EL5042-E3 [ID: 152]
+                              ( **SyncUnit=TM2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. TM2K2-EL2004-E4 [ID: 153]
+                              ( **SyncUnit=TM2K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. TM2K2-EL3314-E5 [ID: 154]
+                              ( **SyncUnit=TM2K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. TM2K2-EL9011-E6 [ID: 192]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 155 (EK1122) [ID: 155]
+                    EK1122 2 port EtherCAT junction
+
+                #. **AT2K2-SOLID (EK1100) [ID: 120]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. AT2K2-EL7047-01 [ID: 121]
+                              ( **SyncUnit=AT2K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT2K2-EL7047-02 [ID: 122]
+                              ( **SyncUnit=AT2K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT2K2-EL7047-03 [ID: 9]
+                              ( **SyncUnit=AT2K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT2K2-EL7047-04 [ID: 28]
+                              ( **SyncUnit=AT2K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT2K2-EL5042-01 [ID: 29]
+                              ( **SyncUnit=AT2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. AT2K2-EL5042-02 [ID: 30]
+                              ( **SyncUnit=AT2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. AT2K2-EL3202-01 [ID: 31]
+                              ( **SyncUnit=AT2K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT2K2-EL3202-02 [ID: 32]
+                              ( **SyncUnit=AT2K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT2K2-EL3202-03 [ID: 61]
+                              ( **SyncUnit=AT2K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT2K2-EL3202-04 [ID: 62]
+                              ( **SyncUnit=AT2K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT2K2-EL9011 [ID: 63]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **LI3K2-K2B (EK1100) [ID: 230]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. LI3K2-EL7041-E1 [ID: 231]
+                              ( **SyncUnit=LI3K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. LI3K2-EL5042-E2 [ID: 232]
+                              ( **SyncUnit=LI3K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. LI3K2-EL2004-E3 [ID: 233]
+                              ( **SyncUnit=LI3K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. LI3K2-EL3314-E4 [ID: 234]
+                              ( **SyncUnit=LI3K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. LI3K2-EL3052-E5 [ID: 236]
+                              ( **SyncUnit=LI3K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. LI3K2-EL3062-E6 [ID: 237]
+                              ( **SyncUnit=LI3K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. LI3K2-EL4004-E7 [ID: 238]
+                              ( **SyncUnit=LI3K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. LI3K2-EL9011-E8 [ID: 291]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 156 (EK1122) [ID: 156]
+                    EK1122 2 port EtherCAT junction
+
+                #. **PF2K2-WFS (EK1100) [ID: 242]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. PF2K2-EL7041-E1 [ID: 243]
+                              ( **SyncUnit=PF2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. PF2K2-EL7041-E2 [ID: 244]
+                              ( **SyncUnit=PF2K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. PF2K2-EL5042-E3 [ID: 245]
+                              ( **SyncUnit=PF2K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. PF2K2-EL2004-E4 [ID: 246]
+                              ( **SyncUnit=PF2K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. PF2K2-EL3314-E5 [ID: 247]
+                              ( **SyncUnit=PF2K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. PF2K2-EL9011-E6 [ID: 292]
+                            EL9011 End Terminal
+
+
+
+
+
+                #. **IM6K2-PPM (EK1100) [ID: 248]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. IM6K2-EL7041-E1 [ID: 249]
+                              ( **SyncUnit=IM6K2** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. IM6K2-EL5042-E2 [ID: 250]
+                              ( **SyncUnit=IM6K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. IM6K2-EL2004-E3 [ID: 251]
+                              ( **SyncUnit=IM6K2** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+                    #. IM6K2-EL3314-E4 [ID: 252]
+                              ( **SyncUnit=IM6K2** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+                    #. IM6K2-EL3052-E5 [ID: 253]
+                              ( **SyncUnit=IM6K2** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+                    #. IM6K2-EL3062-E6 [ID: 254]
+                              ( **SyncUnit=IM6K2** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+                    #. IM6K2-EL4004-E7 [ID: 255]
+                              ( **SyncUnit=IM6K2** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+                    #. IM6K2-EL9011-E8 [ID: 293]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 157 (EK1122) [ID: 157]
+                    EK1122 2 port EtherCAT junction
+
+                #. **AT1K2-SOLID (EK1100) [ID: 64]**
+                        EK1100 EtherCAT Coupler (2A E-Bus)
+
+                    #. AT1K2-EL7047-01 [ID: 65]
+                              ( **SyncUnit=AT1K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT1K2-EL7047-02 [ID: 67]
+                              ( **SyncUnit=AT1K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT1K2-EL7047-03 [ID: 66]
+                              ( **SyncUnit=AT1K2** )    EL7047 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+                    #. AT1K2-EL5042-01 [ID: 68]
+                              ( **SyncUnit=AT1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. AT1K2-EL5042-02 [ID: 69]
+                              ( **SyncUnit=AT1K2** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+                    #. AT1K2-EL3202-01 [ID: 70]
+                              ( **SyncUnit=AT1K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT1K2-EL3202-02 [ID: 71]
+                              ( **SyncUnit=AT1K2** )    EL3202-0020 2Ch. Ana. Input PT100 (RTD), High Precision, calibrated
+
+
+
+                    #. AT1K2-EL9011 [ID: 72]
+                            EL9011 End Terminal
+
+
+
+
+
+
+
+            #. Term 73 (EK1122) [ID: 73]
+                    EK1122 2 port EtherCAT junction
+
+
+
+            #. Term 74 (EK1122) [ID: 74]
+                    EK1122 2 port EtherCAT junction
+
+
+
+            #. Term 75 (EK1110) [ID: 75]
+                    EK1110 EtherCAT extension
+
+
+
+
+
+
+
+    #. PLC End Coupler (EK1110) [ID: 5]
+            EK1110 EtherCAT extension
+
+
+
+
+
+
+#. **EtherCAT Panel (EK1100) [ID: 6]**
+        EK1100 EtherCAT Coupler (2A E-Bus)
+
+    #. EC E1 (EK1122) [ID: 7]
+            EK1122 2 port EtherCAT junction
+
+        #. **X1 IM1K1-PPM (EK1100) [ID: 10]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. IM1K1-EL7041 [ID: 11]
+                      ( **SyncUnit=IM1K1** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+            #. IM1K1-EL5042 [ID: 12]
+                      ( **SyncUnit=IM1K1** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. IM1K1-EL2004 [ID: 13]
+                      ( **SyncUnit=IM1K1** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+            #. IM1K1-EL3314 [ID: 14]
+                      ( **SyncUnit=IM1K1** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+            #. IM1K1-EL3052 [ID: 15]
+                      ( **SyncUnit=IM1K1** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+            #. IM1K1-EL3062 [ID: 16]
+                      ( **SyncUnit=IM1K1** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+            #. IM1K1-EL4004 [ID: 17]
+                      ( **SyncUnit=IM1K1** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+            #. IM1K1-EL9011 [ID: 18]
+                    EL9011 End Terminal
+
+
+
+
+
+        #. **X2 IM2K1-PPM (EK1100) [ID: 19]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. IM2K1-EL7041 [ID: 20]
+                      ( **SyncUnit=IM2K1** )    EL7041 1Ch. Stepper motor output stage (50V, 5A)
+
+
+
+            #. IM2K1-EL5042 [ID: 21]
+                      ( **SyncUnit=IM2K1** )    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. IM2K1-EL2004 [ID: 22]
+                      ( **SyncUnit=IM2K1** )    EL2004 4Ch. Dig. Output 24V, 0.5A
+
+
+
+            #. IM2K1-EL3314 [ID: 23]
+                      ( **SyncUnit=IM2K1** )    EL3314 4Ch. Ana. Input Thermocouple (TC)
+
+
+
+            #. IM2K1-EL3052 [ID: 24]
+                      ( **SyncUnit=IM2K1** )    EL3052 2Ch. Ana. Input 4-20mA
+
+
+
+            #. IM2K1-EL3062 [ID: 25]
+                      ( **SyncUnit=IM2K1** )    EL3062 2Ch. Ana. Input 0-10V
+
+
+
+            #. IM2K1-EL4004 [ID: 26]
+                      ( **SyncUnit=IM2K1** )    EL4004 4Ch. Ana. Output 0-10V, 12bit
+
+
+
+            #. IM2K1-EL9011 [ID: 27]
+                    EL9011 End Terminal
+
+
+
+
+
+
+
+    #. EC E2 (EK1122) [ID: 8]
+            EK1122 2 port EtherCAT junction
+
+
+
+    #. Term 296 (EL9011) [ID: 296]
+            EL9011 End Terminal
+
+
+
+
+
