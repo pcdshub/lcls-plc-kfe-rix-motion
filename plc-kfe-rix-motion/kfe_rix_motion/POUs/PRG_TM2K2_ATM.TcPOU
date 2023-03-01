@@ -19,45 +19,45 @@ END_VAR
 fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
 fbTM2K2.stOut.bUseRawCounts := FALSE;
 fbTM2K2.stOut.bValid := TRUE;
-fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:K2B-OUT';
+fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:ATM-OUT';
 
 fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
 fbTM2K2.stTarget1.bUseRawCounts := FALSE;
 fbTM2K2.stTarget1.bValid := TRUE;
-fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET1';
+fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET1';
 
 fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
 fbTM2K2.stTarget2.bUseRawCounts := FALSE;
 fbTM2K2.stTarget2.bValid := TRUE;
-fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET2';
+fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET2';
 
 fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
 fbTM2K2.stTarget3.bUseRawCounts := FALSE;
 fbTM2K2.stTarget3.bValid := TRUE;
-fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET3';
+fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET3';
 
 fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
 fbTM2K2.stTarget4.bUseRawCounts := FALSE;
 fbTM2K2.stTarget4.bValid := TRUE;
-fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
+fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
 
 fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
 fbTM2K2.stTarget5.bUseRawCounts := FALSE;
 fbTM2K2.stTarget5.bValid := TRUE;
-fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
+fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
 
 fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
 fbTM2K2.stTarget6.bUseRawCounts := FALSE;
 fbTM2K2.stTarget6.bValid := TRUE;
-fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET5';
+fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET5';
 
 fbTM2K2(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M15,
     stXStage := Main.M16,
-    sPmpsDeviceName := 'TM2K2:K2B', 
-	sTransitionKey := 'TM2K2:K2B-TRANSITION',
+    sPmpsDeviceName := 'TM2K2:ATM', 
+	sTransitionKey := 'TM2K2:ATM-TRANSITION',
 );
 ]]></ST>
     </Implementation>

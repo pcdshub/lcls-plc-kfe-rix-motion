@@ -19,40 +19,40 @@ END_VAR
 fbTM1K2.stOut.fPosition := -16;
 fbTM1K2.stOut.bUseRawCounts := FALSE;
 fbTM1K2.stOut.bValid := TRUE;
-fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2-K2A-OUT';
+fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2:ATM-OUT';
 
 fbTM1K2.stTarget1.fPosition := -39.124;
 fbTM1K2.stTarget1.bUseRawCounts := FALSE;
 fbTM1K2.stTarget1.bValid := TRUE;
-fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET1';
+fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET1';
 
 fbTM1K2.stTarget2.fPosition := -53.5;
 fbTM1K2.stTarget2.bUseRawCounts := FALSE;
 fbTM1K2.stTarget2.bValid := TRUE;
-fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET2';
+fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET2';
 
 fbTM1K2.stTarget3.fPosition := -67.874;
 fbTM1K2.stTarget3.bUseRawCounts := FALSE;
 fbTM1K2.stTarget3.bValid := TRUE;
-fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET3';
+fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET3';
 
 fbTM1K2.stTarget4.fPosition := -82.25;
 fbTM1K2.stTarget4.bUseRawCounts := FALSE;
 fbTM1K2.stTarget4.bValid := TRUE;
-fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET4';
+fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET4';
 
 fbTM1K2.stTarget5.fPosition := -96.623;
 fbTM1K2.stTarget5.bUseRawCounts := FALSE;
 fbTM1K2.stTarget5.bValid := TRUE;
-fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET5';
+fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET5';
 
 fbTM1K2(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M9,
     stXStage := Main.M10,
-    sPmpsDeviceName := 'TM1K2-K2A', 
-	sTransitionKey := 'TM1K2-K2A-TRANSITION',
+    sPmpsDeviceName := 'TM1K2:ATM', 
+	sTransitionKey := 'TM1K2:ATM-TRANSITION',
 );
 ]]></ST>
     </Implementation>

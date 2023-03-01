@@ -16,19 +16,19 @@ END_VAR]]></Declaration>
 fbAL1K2.stOut.fPosition := -33.5; // Upper limit
 fbAL1K2.stOut.bUseRawCounts := FALSE;
 fbAL1K2.stOut.bValid := TRUE;
-fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2-OUT';
+fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2:L2SI-OUT';
 
 fbAL1K2.stIn.fPosition := -75; // Current position at time of edit
 fbAL1K2.stIn.bUseRawCounts := FALSE;
 fbAL1K2.stIn.bValid := TRUE;
-fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2-IN';
+fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2:L2SI-IN';
 
 fbAL1K2(
     stYStage := Main.M5,
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    sPmpsDeviceName := 'AL1K2', 
-	sTransitionKey := 'AL1K2-TRANSITION', 
+    sPmpsDeviceName := 'AL1K2:L2SI', 
+	sTransitionKey := 'AL1K2:L2SI-TRANSITION', 
 );]]></ST>
     </Implementation>
   </POU>
