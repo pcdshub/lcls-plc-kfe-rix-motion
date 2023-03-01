@@ -40,10 +40,23 @@ Libraries
         lcls-twincat-motion, SLAC, Unset, 2.0.1
         lcls-twincat-physics, SLAC, Unset, 0.0.0
         lcls2-cc-lib, SLAC, Unset, 2.0.0
-        PMPS, SLAC - LCLS, Unset, 3.0.13
+        PMPS, SLAC - LCLS, Unset, 3.0.14
+        SysDir, System, , 3.5.8.0
+        SysFile, System, , 3.5.9.0
+        Tc2_EtherCAT, Beckhoff Automation GmbH, , 3.3.21.0
+        Tc2_IoFunctions, Beckhoff Automation GmbH, , 3.3.13.0
+        Tc2_Math, Beckhoff Automation GmbH, , 3.3.1.0
+        Tc2_MC2, Beckhoff Automation GmbH, , 3.3.48.0
+        Tc2_ModbusSrv, Beckhoff Automation GmbH, , 3.3.2.0
+        Tc2_SerialCom, Beckhoff Automation GmbH, , 3.3.10.0
         Tc2_Standard, Beckhoff Automation GmbH, Unset, 3.3.3.0
         Tc2_System, Beckhoff Automation GmbH, Unset, 3.4.26.0
-        Tc3_Module, Beckhoff Automation GmbH, Unset, Unset
+        Tc2_TcpIp, Beckhoff Automation GmbH, , 3.3.6.0
+        Tc2_Utilities, Beckhoff Automation GmbH, , 3.3.54.0
+        Tc3_EventLogger, Beckhoff Automation GmbH, , 3.1.33.0
+        Tc3_JsonXml, Beckhoff Automation GmbH, , 3.3.18.0
+        Tc3_Module, Beckhoff Automation GmbH, Unset, 3.3.21.0
+        TcUnit, www.tcunit.org, , 1.2.0.0
 
 Symbols
 -------

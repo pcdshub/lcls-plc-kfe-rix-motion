@@ -1067,19 +1067,19 @@ PRG_AL1K2_L2SI
     fbAL1K2.stOut.fPosition := -33.5; // Upper limit
     fbAL1K2.stOut.bUseRawCounts := FALSE;
     fbAL1K2.stOut.bValid := TRUE;
-    fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2-OUT';
+    fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2:L2SI-OUT';
 
     fbAL1K2.stIn.fPosition := -75; // Current position at time of edit
     fbAL1K2.stIn.bUseRawCounts := FALSE;
     fbAL1K2.stIn.bValid := TRUE;
-    fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2-IN';
+    fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2:L2SI-IN';
 
     fbAL1K2(
         stYStage := Main.M5,
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        sPmpsDeviceName := 'AL1K2', 
-    	sTransitionKey := 'AL1K2-TRANSITION', 
+        sPmpsDeviceName := 'AL1K2:L2SI', 
+    	sTransitionKey := 'AL1K2:L2SI-TRANSITION', 
     );
 
     END_PROGRAM
@@ -2333,29 +2333,29 @@ PRG_LI2K2_K2A
     fbLI2K2.stOut.fPosition := 1.2;
     fbLI2K2.stOut.bUseRawCounts := FALSE;
     fbLI2K2.stOut.bValid := TRUE;
-    fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-OUT';
+    fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2:K2A-OUT';
 
     fbLI2K2.stMirror1.fPosition := -35.3;
     fbLI2K2.stMirror1.bUseRawCounts := FALSE;
     fbLI2K2.stMirror1.bValid := TRUE;
-    fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR1';
+    fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR1';
 
     fbLI2K2.stMirror2.fPosition := -69.3;
     fbLI2K2.stMirror2.bUseRawCounts := FALSE;
     fbLI2K2.stMirror2.bValid := TRUE;
-    fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-MIRROR2';
+    fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR2';
 
     fbLI2K2.stTarget1.fPosition := -101.3;
     fbLI2K2.stTarget1.bUseRawCounts := FALSE;
     fbLI2K2.stTarget1.bValid := TRUE;
-    fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2-K2A_OUT-TARGET1';
+    fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2:K2A-TARGET1';
 
     fbLI2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M11,
-        sPmpsDeviceName := 'LI2K2-K2A_OUT', 
-    	sTransitionKey := 'LI2K2-K2A_OUT-TRANSITION',
+        sPmpsDeviceName := 'LI2K2:K2A', 
+    	sTransitionKey := 'LI2K2:K2A-TRANSITION',
     );
 
     END_PROGRAM
@@ -2636,40 +2636,40 @@ PRG_TM1K2_ATM
     fbTM1K2.stOut.fPosition := -16;
     fbTM1K2.stOut.bUseRawCounts := FALSE;
     fbTM1K2.stOut.bValid := TRUE;
-    fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2-K2A-OUT';
+    fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2:ATM-OUT';
 
     fbTM1K2.stTarget1.fPosition := -39.124;
     fbTM1K2.stTarget1.bUseRawCounts := FALSE;
     fbTM1K2.stTarget1.bValid := TRUE;
-    fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET1';
+    fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET1';
 
     fbTM1K2.stTarget2.fPosition := -53.5;
     fbTM1K2.stTarget2.bUseRawCounts := FALSE;
     fbTM1K2.stTarget2.bValid := TRUE;
-    fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET2';
+    fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET2';
 
     fbTM1K2.stTarget3.fPosition := -67.874;
     fbTM1K2.stTarget3.bUseRawCounts := FALSE;
     fbTM1K2.stTarget3.bValid := TRUE;
-    fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET3';
+    fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET3';
 
     fbTM1K2.stTarget4.fPosition := -82.25;
     fbTM1K2.stTarget4.bUseRawCounts := FALSE;
     fbTM1K2.stTarget4.bValid := TRUE;
-    fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET4';
+    fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET4';
 
     fbTM1K2.stTarget5.fPosition := -96.623;
     fbTM1K2.stTarget5.bUseRawCounts := FALSE;
     fbTM1K2.stTarget5.bValid := TRUE;
-    fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2-K2A-TARGET5';
+    fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET5';
 
     fbTM1K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M9,
         stXStage := Main.M10,
-        sPmpsDeviceName := 'TM1K2-K2A', 
-    	sTransitionKey := 'TM1K2-K2A-TRANSITION',
+        sPmpsDeviceName := 'TM1K2:ATM', 
+    	sTransitionKey := 'TM1K2:ATM-TRANSITION',
     );
 
     END_PROGRAM
@@ -2700,45 +2700,45 @@ PRG_TM2K2_ATM
     fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
     fbTM2K2.stOut.bUseRawCounts := FALSE;
     fbTM2K2.stOut.bValid := TRUE;
-    fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:K2B-OUT';
+    fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:ATM-OUT';
 
     fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
     fbTM2K2.stTarget1.bUseRawCounts := FALSE;
     fbTM2K2.stTarget1.bValid := TRUE;
-    fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET1';
+    fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET1';
 
     fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
     fbTM2K2.stTarget2.bUseRawCounts := FALSE;
     fbTM2K2.stTarget2.bValid := TRUE;
-    fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET2';
+    fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET2';
 
     fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
     fbTM2K2.stTarget3.bUseRawCounts := FALSE;
     fbTM2K2.stTarget3.bValid := TRUE;
-    fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET3';
+    fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET3';
 
     fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
     fbTM2K2.stTarget4.bUseRawCounts := FALSE;
     fbTM2K2.stTarget4.bValid := TRUE;
-    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
+    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
 
     fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
     fbTM2K2.stTarget5.bUseRawCounts := FALSE;
     fbTM2K2.stTarget5.bValid := TRUE;
-    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET4';
+    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
 
     fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
     fbTM2K2.stTarget6.bUseRawCounts := FALSE;
     fbTM2K2.stTarget6.bValid := TRUE;
-    fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:K2B-TARGET5';
+    fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET5';
 
     fbTM2K2(
         fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput2,
         stYStage := Main.M15,
         stXStage := Main.M16,
-        sPmpsDeviceName := 'TM2K2:K2B', 
-    	sTransitionKey := 'TM2K2:K2B-TRANSITION',
+        sPmpsDeviceName := 'TM2K2:ATM', 
+    	sTransitionKey := 'TM2K2:ATM-TRANSITION',
     );
 
     END_PROGRAM

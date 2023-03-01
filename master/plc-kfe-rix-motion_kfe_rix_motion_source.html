@@ -1158,19 +1158,19 @@ END_PROGRAM
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">33.5</span><span class="p">;</span> <span class="o">//</span> <span class="n">Upper</span> <span class="n">limit</span>
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2-OUT&#39;</span><span class="p">;</span>
+<span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI-OUT&#39;</span><span class="p">;</span>
 
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stIn</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">75</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">position</span> <span class="n">at</span> <span class="n">time</span> <span class="n">of</span> <span class="n">edit</span>
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stIn</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stIn</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stIn</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2-IN&#39;</span><span class="p">;</span>
+<span class="n">fbAL1K2</span><span class="o">.</span><span class="n">stIn</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI-IN&#39;</span><span class="p">;</span>
 
 <span class="n">fbAL1K2</span><span class="p">(</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M5</span><span class="p">,</span>
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
-    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2&#39;</span><span class="p">,</span>
-    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2-TRANSITION&#39;</span><span class="p">,</span>
+    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI&#39;</span><span class="p">,</span>
+    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;AL1K2:L2SI-TRANSITION&#39;</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -2424,29 +2424,29 @@ END_PROGRAM
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">1.2</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT-OUT&#39;</span><span class="p">;</span>
+<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-OUT&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">35.3</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT-MIRROR1&#39;</span><span class="p">;</span>
+<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-MIRROR1&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">69.3</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT-MIRROR2&#39;</span><span class="p">;</span>
+<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stMirror2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-MIRROR2&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">101.3</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT-TARGET1&#39;</span><span class="p">;</span>
+<span class="n">fbLI2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-TARGET1&#39;</span><span class="p">;</span>
 
 <span class="n">fbLI2K2</span><span class="p">(</span>
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M11</span><span class="p">,</span>
-    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT&#39;</span><span class="p">,</span>
-    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2-K2A_OUT-TRANSITION&#39;</span><span class="p">,</span>
+    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A&#39;</span><span class="p">,</span>
+    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;LI2K2:K2A-TRANSITION&#39;</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -2727,40 +2727,40 @@ END_PROGRAM
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">16</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-OUT&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-OUT&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">39.124</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TARGET1&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET1&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">53.5</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TARGET2&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET2&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">67.874</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TARGET3&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET3&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">82.25</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TARGET4&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET4&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">96.623</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TARGET5&#39;</span><span class="p">;</span>
+<span class="n">fbTM1K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM1K2</span><span class="p">(</span>
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M10</span><span class="p">,</span>
-    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A&#39;</span><span class="p">,</span>
-    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2-K2A-TRANSITION&#39;</span><span class="p">,</span>
+    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM&#39;</span><span class="p">,</span>
+    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;TM1K2:ATM-TRANSITION&#39;</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -2791,45 +2791,45 @@ END_PROGRAM
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="mf">5.3</span><span class="p">;</span>  <span class="o">//</span><span class="s2">&quot;-15&quot;</span> <span class="n">Changing</span> <span class="n">OUT</span> <span class="n">setpoint</span> <span class="k">as</span> <span class="o">-</span><span class="mi">15</span> <span class="n">doesn</span><span class="s1">&#39;t seem to be OUT position;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-OUT&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stOut</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-OUT&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">15.5</span><span class="p">;</span> <span class="o">//-</span><span class="mf">39.124</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET1&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget1</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET1&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">36.5</span><span class="p">;</span> <span class="o">//-</span><span class="mf">53.5</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET2&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget2</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET2&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">52.0</span><span class="p">;</span> <span class="o">//-</span><span class="mf">67.874</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET3&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget3</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET3&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">60.5</span><span class="p">;</span> <span class="o">//-</span><span class="mf">82.25</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET4&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET4&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">77.0</span><span class="p">;</span> <span class="o">//-</span><span class="mf">96.623</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET4&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget4</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET4&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget6</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">96.6</span><span class="p">;</span> <span class="o">//-</span><span class="mf">96.623</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget6</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget6</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TARGET5&#39;</span><span class="p">;</span>
+<span class="n">fbTM2K2</span><span class="o">.</span><span class="n">stTarget5</span><span class="o">.</span><span class="n">stPMPS</span><span class="o">.</span><span class="n">sPmpsState</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TARGET5&#39;</span><span class="p">;</span>
 
 <span class="n">fbTM2K2</span><span class="p">(</span>
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="p">,</span>
     <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M15</span><span class="p">,</span>
     <span class="n">stXStage</span> <span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M16</span><span class="p">,</span>
-    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B&#39;</span><span class="p">,</span>
-    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:K2B-TRANSITION&#39;</span><span class="p">,</span>
+    <span class="n">sPmpsDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM&#39;</span><span class="p">,</span>
+    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;TM2K2:ATM-TRANSITION&#39;</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
