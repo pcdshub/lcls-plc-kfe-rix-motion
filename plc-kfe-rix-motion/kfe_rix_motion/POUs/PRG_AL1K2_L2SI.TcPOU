@@ -27,8 +27,8 @@ fbAL1K2(
     stYStage := Main.M5,
     fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    sPmpsDeviceName := 'AL1K2:L2SI', 
-	sTransitionKey := 'AL1K2:L2SI-TRANSITION', 
+    sPmpsDeviceName := 'AL1K2:L2SI',
+    sTransitionKey := 'AL1K2:L2SI-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

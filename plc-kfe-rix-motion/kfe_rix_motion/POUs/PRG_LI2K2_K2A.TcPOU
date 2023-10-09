@@ -47,8 +47,8 @@ fbLI2K2(
     fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M11,
-    sPmpsDeviceName := 'LI2K2:K2A', 
-	sTransitionKey := 'LI2K2:K2A-TRANSITION',
+    sPmpsDeviceName := 'LI2K2:K2A',
+    sTransitionKey := 'LI2K2:K2A-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

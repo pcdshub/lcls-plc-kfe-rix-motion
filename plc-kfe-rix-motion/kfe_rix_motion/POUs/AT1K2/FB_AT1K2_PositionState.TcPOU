@@ -13,7 +13,7 @@ END_VAR
 
     arrStates[1] := stOut;
     arrStates[2] := stIn;
-	
+
 END_IF
 setState := enumSet;
 Exec();

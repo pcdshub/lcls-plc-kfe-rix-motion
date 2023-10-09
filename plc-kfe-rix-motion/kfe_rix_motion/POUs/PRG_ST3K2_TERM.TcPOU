@@ -9,7 +9,7 @@ VAR
                                  .q_xRetract_DO	:=	TIIB[ST3K2-TERM (EP2338-0001)]^Channel 9^Output
     '}
     ST3K2: FB_MotionPneumaticActuator;
-    ibPMPS_OK : BOOL;	
+    ibPMPS_OK : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -23,7 +23,7 @@ END_VAR
     i_xReset:= ,
     stPneumaticActuator=> ,
     xMPS_OK=>  ,
-    io_fbFFHWO:= GVL.fbFastFaultOutput2  ); 
+    io_fbFFHWO:= GVL.fbFastFaultOutput2  );
 
 
 ]]></ST>

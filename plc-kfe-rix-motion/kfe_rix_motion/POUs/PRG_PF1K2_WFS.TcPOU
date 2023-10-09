@@ -62,8 +62,8 @@ fbPF1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M12,
     stZStage := Main.M13,
-	sPmpsDeviceName := 'PF1K2:WFS', 
-	sTransitionKey := 'PF1K2:WFS-TRANSITION',
+    sPmpsDeviceName := 'PF1K2:WFS',
+    sTransitionKey := 'PF1K2:WFS-TRANSITION',
 );
 ]]></ST>
     </Implementation>

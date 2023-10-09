@@ -439,10 +439,10 @@ fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
-	fbStage1.fTransmission * 
-	fbStage2.fTransmission * 
-	fbStage3.fTransmission * 
-	fbStage4.fTransmission
+    fbStage1.fTransmission *
+    fbStage2.fTransmission *
+    fbStage3.fTransmission *
+    fbStage4.fTransmission
 );
 ]]></ST>
     </Implementation>

@@ -46,11 +46,5 @@ PRG_IM6K2_PPM();
 PRG_3_PMPS_POST();
 PRG_4_LOG();]]></ST>
     </Implementation>
-    <LineIds Name="PRG_1_PlcTask">
-      <LineId Id="3" Count="29" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="33" Count="5" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

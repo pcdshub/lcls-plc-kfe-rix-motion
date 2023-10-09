@@ -51,8 +51,8 @@ fbTM1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M9,
     stXStage := Main.M10,
-    sPmpsDeviceName := 'TM1K2:ATM', 
-	sTransitionKey := 'TM1K2:ATM-TRANSITION',
+    sPmpsDeviceName := 'TM1K2:ATM',
+    sTransitionKey := 'TM1K2:ATM-TRANSITION',
 );
 ]]></ST>
     </Implementation>

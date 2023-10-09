@@ -47,8 +47,8 @@ fbIM6K2(
     fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M24,
-    sPmpsDeviceName := 'IM6K2:PPM', 
-	sTransitionKey := 'IM6K2:PPM-TRANSITION',
+    sPmpsDeviceName := 'IM6K2:PPM',
+    sTransitionKey := 'IM6K2:PPM-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>
