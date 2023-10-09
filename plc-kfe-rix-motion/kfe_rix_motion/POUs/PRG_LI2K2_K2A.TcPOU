@@ -44,7 +44,7 @@ fbLI2K2.stTarget1.bValid := TRUE;
 fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2:K2A-TARGET1';
 
 fbLI2K2(
-    fbArbiter := GVL.fbArbiter1,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M11,
     sPmpsDeviceName := 'LI2K2:K2A', 

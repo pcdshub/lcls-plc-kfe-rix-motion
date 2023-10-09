@@ -52,7 +52,7 @@ fbTM2K2.stTarget6.bValid := TRUE;
 fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET5';
 
 fbTM2K2(
-    fbArbiter := GVL.fbArbiter1,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M15,
     stXStage := Main.M16,

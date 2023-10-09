@@ -186,7 +186,7 @@ fbStage1.stFilter8.bMoveOk                 := TRUE;
 fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 (* State setup - stage 2 *)
@@ -269,7 +269,7 @@ fbStage2.stFilter8.bMoveOk                 := TRUE;
 fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 (* State setup - stage 3 *)
@@ -352,7 +352,7 @@ fbStage3.stFilter8.bMoveOk                 := TRUE;
 fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
 fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1);
+fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 (* State setup - stage 4 *)
