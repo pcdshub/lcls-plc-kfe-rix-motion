@@ -47,12 +47,12 @@ fbTM1K2.stTarget5.bValid := TRUE;
 fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET5';
 
 fbTM1K2(
-    fbArbiter := GVL.fbArbiter1,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M9,
     stXStage := Main.M10,
-    sPmpsDeviceName := 'TM1K2:ATM', 
-	sTransitionKey := 'TM1K2:ATM-TRANSITION',
+    sPmpsDeviceName := 'TM1K2:ATM',
+    sTransitionKey := 'TM1K2:ATM-TRANSITION',
 );
 ]]></ST>
     </Implementation>

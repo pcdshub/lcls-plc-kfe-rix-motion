@@ -44,11 +44,11 @@ fbIM2K2.stYag2.bValid := TRUE;
 fbIM2K2.stYag2.stPMPS.sPmpsState := 'IM2K2:PPM-YAG2';
 
 fbIM2K2(
-    fbArbiter := GVL.fbArbiter1,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M6,
-    sPmpsDeviceName := 'IM2K2:PPM', 
-	sTransitionKey := 'IM2K2:PPM-TRANSITION',
+    sPmpsDeviceName := 'IM2K2:PPM',
+    sTransitionKey := 'IM2K2:PPM-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

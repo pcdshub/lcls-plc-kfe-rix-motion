@@ -46,8 +46,8 @@ fbIM1K1(
     fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput1,
     stYStage := Main.M1,
-    sPmpsDeviceName := 'IM1K1:PPM', 
-	sTransitionKey := 'IM1K1:PPM-TRANSITION',
+    sPmpsDeviceName := 'IM1K1:PPM',
+    sTransitionKey := 'IM1K1:PPM-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

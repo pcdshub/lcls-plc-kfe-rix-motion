@@ -44,11 +44,11 @@ fbLI3K2.stTarget1.bValid := TRUE;
 fbLI3K2.stTarget1.stPMPS.sPmpsState := 'LI3K2:K2B-TARGET1';
 
 fbLI3K2(
-    fbArbiter := GVL.fbArbiter1,
+    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
     stYStage := Main.M21,
-    sPmpsDeviceName := 'LI3K2:K2B', 
-	sTransitionKey := 'LI3K2:K2B-TRANSITION',
+    sPmpsDeviceName := 'LI3K2:K2B',
+    sTransitionKey := 'LI3K2:K2B-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>

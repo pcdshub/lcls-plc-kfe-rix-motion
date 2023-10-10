@@ -35,7 +35,7 @@ VAR
         .fbRTD_1.bError := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Error;
         .fbRTD_1.bUnderrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
         .fbRTD_1.bOverrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
-		 
+
         .fbRTD_2.iRaw := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
@@ -44,7 +44,7 @@ VAR
     fbStage2: FB_SXR_SATT_Stage;
 
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
-    
+
     fbStage3: FB_AT1K2;
 
 END_VAR
@@ -261,10 +261,10 @@ fbStage3(stAxis:=Main.M27, fbFFHWO:=GVL.fbFastFaultOutput2);
 
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
-	fbStage1.fTransmission * 
-	fbStage2.fTransmission *
-	fbStage3.fTransmission
-	
+    fbStage1.fTransmission *
+    fbStage2.fTransmission *
+    fbStage3.fTransmission
+
 );
 ]]></ST>
     </Implementation>
