@@ -157,7 +157,7 @@
       <Parameters>
         <Parameter>
           <Key>MAX_FAST_FAULTS</Key>
-          <Value>100</Value>
+          <Value>200</Value>
         </Parameter>
         <Parameter>
           <Key>MAX_ASSERTIONS</Key>
@@ -180,16 +180,16 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.7.0 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.9.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 2.0.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.4 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
-      <Resolution>lcls-twincat-physics, 0.0.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-physics, 0.1.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls2-cc-lib">
-      <Resolution>lcls2-cc-lib, 2.0.0 (SLAC)</Resolution>
+      <Resolution>lcls2-cc-lib, 2.1.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>

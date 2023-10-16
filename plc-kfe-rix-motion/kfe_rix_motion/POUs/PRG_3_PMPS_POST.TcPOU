@@ -32,7 +32,7 @@ fb_vetoArbiter(bVeto:= bST1K2_Veto,
 
 ff2_ff1_link_motion(
     io_fbFFHWO := GVL.fbFastFaultOutput1,
-    i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut);
+    i_xOK :=  GVL.fbFastFaultOutput2.q_xFastFaultOut OR bST1K2_Veto);
 
 
 MOTION_GVL.fbStandardPMPSDB(
