@@ -19,36 +19,35 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value'}
     fbIM1K2: FB_PPM;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 12,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbIM1K2.stOut.fPosition := -9.82;
-fbIM1K2.stOut.bUseRawCounts := FALSE;
-fbIM1K2.stOut.bValid := TRUE;
-fbIM1K2.stOut.stPMPS.sPmpsState := 'IM1K2:PPM-OUT';
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbIM1K2.stPower.fPosition := -48.92;
-fbIM1K2.stPower.bUseRawCounts := FALSE;
-fbIM1K2.stPower.bValid := TRUE;
-fbIM1K2.stPower.stPMPS.sPmpsState := 'IM1K2:PPM-POWERMETER';
-
-fbIM1K2.stYag1.fPosition := -72.92;
-fbIM1K2.stYag1.bUseRawCounts := FALSE;
-fbIM1K2.stYag1.bValid := TRUE;
-fbIM1K2.stYag1.stPMPS.sPmpsState := 'IM1K2:PPM-YAG1';
-
-fbIM1K2.stYag2.fPosition := -98.93;
-fbIM1K2.stYag2.bUseRawCounts := FALSE;
-fbIM1K2.stYag2.bValid := TRUE;
-fbIM1K2.stYag2.stPMPS.sPmpsState := 'IM1K2:PPM-YAG2';
+fbStateSetup(stPositionState:=fbIM1K2.stOut, fPosition:=-9.82, sPmpsState:='IM1K2:PPM-OUT');
+fbStateSetup(stPositionState:=fbIM1K2.stPower, fPosition:=-48.92, sPmpsState:='IM1K2:PPM-POWERMETER');
+fbStateSetup(stPositionState:=fbIM1K2.stYag1, fPosition:=-72.92, sPmpsState:='IM1K2:PPM-YAG1');
+fbStateSetup(stPositionState:=fbIM1K2.stYag2, fPosition:=-98.93, sPmpsState:='IM1K2:PPM-YAG2');
 
 fbIM1K2(
-    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter1,
     stYStage := Main.M4,
-    sPmpsDeviceName := 'IM1K2:PPM',
+    sDeviceName := 'IM1K2:PPM',
     sTransitionKey := 'IM1K2:PPM-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
