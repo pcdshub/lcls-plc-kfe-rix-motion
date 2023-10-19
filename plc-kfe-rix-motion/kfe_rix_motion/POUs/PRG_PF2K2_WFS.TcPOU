@@ -3,10 +3,7 @@
   <POU Name="PRG_PF2K2_WFS" Id="{e443567e-cf8b-49d1-bdca-a5884362d234}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF2K2_WFS
 VAR
-    {attribute 'pytmc' := '
-        pv: PF2K2:WFS
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: PF2K2:WFS'}
     {attribute 'TcLinkTo' := '.fbThermoCouple1.bError 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                               .fbThermoCouple1.bUnderrange	:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                               .fbThermoCouple1.bOverrange 	:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
@@ -17,53 +14,34 @@ VAR
                               .fbThermoCouple2.iRaw 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 2^Value'}
     fbPF2K2: FB_WFS;
 
-    //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*
-   Avoid damage peak between 3.2 keV and 1.6 keV
-*)
-//stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-// Drop transmission to 20%
-//stSiBP.nTran := 0.2;
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbPF2K2.stOut.fPosition := -15.00;
-fbPF2K2.stOut.bUseRawCounts := FALSE;
-fbPF2K2.stOut.bValid := TRUE;
-fbPF2K2.stOut.stPMPS.sPmpsState := 'PF2K2:WFS-OUT';
-
-fbPF2K2.stTarget1.fPosition := -97.789;
-fbPF2K2.stTarget1.bUseRawCounts := FALSE;
-fbPF2K2.stTarget1.bValid := TRUE;
-fbPF2K2.stTarget1.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET1';
-
-fbPF2K2.stTarget2.fPosition := -83.416;
-fbPF2K2.stTarget2.bUseRawCounts := FALSE;
-fbPF2K2.stTarget2.bValid := TRUE;
-fbPF2K2.stTarget2.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET2';
-
-fbPF2K2.stTarget3.fPosition := -69.043;
-fbPF2K2.stTarget3.bUseRawCounts := FALSE;
-fbPF2K2.stTarget3.bValid := TRUE;
-fbPF2K2.stTarget3.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET3';
-
-fbPF2K2.stTarget4.fPosition := -54.669;
-fbPF2K2.stTarget4.bUseRawCounts := FALSE;
-fbPF2K2.stTarget4.bValid := TRUE;
-fbPF2K2.stTarget4.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET4';
-
-fbPF2K2.stTarget5.fPosition := -40.296;
-fbPF2K2.stTarget5.bUseRawCounts := FALSE;
-fbPF2K2.stTarget5.bValid := TRUE;
-fbPF2K2.stTarget5.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET5';
+fbStateSetup(stPositionState:=fbPF2K2.stOut, fPosition:=-15.00, sPmpsState:='PF2K2:WFS-OUT');
+fbStateSetup(stPositionState:=fbPF2K2.stTarget1, fPosition:=-97.789, sPmpsState:='PF2K2:WFS-TARGET1');
+fbStateSetup(stPositionState:=fbPF2K2.stTarget2, fPosition:=-83.416, sPmpsState:='PF2K2:WFS-TARGET2');
+fbStateSetup(stPositionState:=fbPF2K2.stTarget3, fPosition:=-69.043, sPmpsState:='PF2K2:WFS-TARGET3');
+fbStateSetup(stPositionState:=fbPF2K2.stTarget4, fPosition:=-54.669, sPmpsState:='PF2K2:WFS-TARGET4');
+fbStateSetup(stPositionState:=fbPF2K2.stTarget5, fPosition:=-40.296, sPmpsState:='PF2K2:WFS-TARGET5');
 
 fbPF2K2(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M22,
     stZStage := Main.M23,
-    sPmpsDeviceName := 'PF2K2:WFS',
+    sDeviceName := 'PF2K2:WFS',
     sTransitionKey := 'PF2K2:WFS-TRANSITION',
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
 );
 ]]></ST>
     </Implementation>

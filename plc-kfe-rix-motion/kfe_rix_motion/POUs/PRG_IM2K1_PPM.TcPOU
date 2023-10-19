@@ -3,10 +3,7 @@
   <POU Name="PRG_IM2K1_PPM" Id="{da6fce9c-eeb0-4159-ad2e-cab6da7c6426}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM2K1_PPM
 VAR
-    {attribute 'pytmc' := '
-        pv: IM2K1:PPM
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: IM2K1:PPM'}
     {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;

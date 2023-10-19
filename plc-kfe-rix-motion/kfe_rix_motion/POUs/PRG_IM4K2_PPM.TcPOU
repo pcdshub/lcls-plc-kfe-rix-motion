@@ -3,10 +3,7 @@
   <POU Name="PRG_IM4K2_PPM" Id="{dfd57a27-7901-4447-85ac-e5255b9203c4}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM4K2_PPM
 VAR
-    {attribute 'pytmc' := '
-        pv: IM4K2:PPM
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: IM4K2:PPM'}
      {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM4K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -19,37 +16,35 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value'}
     fbIM4K2: FB_PPM;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 12,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-fbIM4K2.stOut.fPosition := -10.80;
-fbIM4K2.stOut.bUseRawCounts := FALSE;
-fbIM4K2.stOut.bValid := TRUE;
-fbIM4K2.stOut.stPMPS.sPmpsState := 'IM4K2:PPM-OUT';
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbIM4K2.stPower.fPosition := -49.90;
-fbIM4K2.stPower.bUseRawCounts := FALSE;
-fbIM4K2.stPower.bValid := TRUE;
-fbIM4K2.stPower.stPMPS.sPmpsState := 'IM4K2:PPM-POWERMETER';
-
-fbIM4K2.stYag1.fPosition := -73.90;
-fbIM4K2.stYag1.bUseRawCounts := FALSE;
-fbIM4K2.stYag1.bValid := TRUE;
-fbIM4K2.stYag1.stPMPS.sPmpsState := 'IM4K2:PPM-YAG1';
-
-fbIM4K2.stYag2.fPosition := -99.91;
-fbIM4K2.stYag2.bUseRawCounts := FALSE;
-fbIM4K2.stYag2.bValid := TRUE;
-fbIM4K2.stYag2.stPMPS.sPmpsState := 'IM4K2:PPM-YAG2';
+fbStateSetup(stPositionState:=fbIM4K2.stOut, fPosition:=-10.80, sPmpsState:='IM4K2:PPM-OUT');
+fbStateSetup(stPositionState:=fbIM4K2.stPower, fPosition:=-49.90, sPmpsState:='IM4K2:PPM-POWERMETER');
+fbStateSetup(stPositionState:=fbIM4K2.stYag1, fPosition:=-73.90, sPmpsState:='IM4K2:PPM-YAG1');
+fbStateSetup(stPositionState:=fbIM4K2.stYag2, fPosition:=-99.91, sPmpsState:='IM4K2:PPM-YAG2');
 
 fbIM4K2(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M8,
-    sPmpsDeviceName := 'IM4K2:PPM',
+    sDeviceName := 'IM4K2:PPM',
     sTransitionKey := 'IM4K2:PPM-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
