@@ -31,8 +31,17 @@ fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=fbIM6K2.stOut, fPosition:=-8.61, sPmpsState:='IM6K2:PPM-OUT');
 fbStateSetup(stPositionState:=fbIM6K2.stPower, fPosition:=-47.71, sPmpsState:='IM6K2:PPM-POWERMETER');
-fbStateSetup(stPositionState:=fbIM6K2.stYag1, fPosition:=-71.71, sPmpsState:='IM6K2:PPM-YAG1');
+fbStateSetup(stPositionState:=fbIM6K2.stYag1, fPosition:=-71.71);
 fbStateSetup(stPositionState:=fbIM6K2.stYag2, fPosition:=-97.72, sPmpsState:='IM6K2:PPM-YAG2');
+
+CASE GVL.ePF2K2State OF
+    E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+        // Known state targets: allow less strict pmps
+        fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1_WFS_IN';
+ELSE
+    // Out, Unknown, or an unexpected state: full pmps
+    fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1';
+END_CASE
 
 fbIM6K2(
     fbFFHWO := GVL.fbFastFaultOutput2,

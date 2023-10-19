@@ -42,6 +42,7 @@ fbPF2K2(
     bEnableMotion := TRUE,
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
+    eEnumGet=>GVL.ePF2K2State,
 );
 ]]></ST>
     </Implementation>
