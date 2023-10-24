@@ -98,8 +98,8 @@ END_VAR
 IF NOT bInit THEN
     bInit := TRUE;
 
-    stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
-    stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+    stYStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+    stXStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
 
     // Partial backcompat, this used to set fVelocity too but this should be set per install
     fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);

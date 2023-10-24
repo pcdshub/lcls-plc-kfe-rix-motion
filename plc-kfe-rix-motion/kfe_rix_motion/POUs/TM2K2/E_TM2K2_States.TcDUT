@@ -13,7 +13,7 @@ TYPE E_TM2K2_States :
     TARGET4 := 5,
     TARGET5 := 6,
     TARGET6 := 7
-);
+) UINT;
 END_TYPE
 ]]></Declaration>
   </DUT>

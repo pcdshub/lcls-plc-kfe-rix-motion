@@ -7,7 +7,7 @@ VAR
     (* NOTE: use TRUE when relying on visualization + actual hardware *)
     bDebug : BOOL := FALSE;
 
-    nEnableMode : ENUM_StageEnableMode;
+    nEnableMode : E_StageEnableMode;
 
     {attribute 'pytmc' := '
         pv: AT2K2:L2SI:MMS:01
@@ -23,7 +23,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
 
     '}
     fbStage1: FB_SXR_SATT_Stage;
@@ -39,7 +39,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
 
     '}
     fbStage2: FB_SXR_SATT_Stage;
@@ -55,7 +55,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
     '}
     fbStage3: FB_SXR_SATT_Stage;
 
@@ -70,7 +70,7 @@ VAR
         .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Value;
         .fbRTD_2.bError := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
-        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+        .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
     '}
     fbStage4: FB_SXR_SATT_Stage;
 
@@ -96,10 +96,10 @@ END_VAR
 
 IF bDebug THEN
     // NEVER: checkouts with the TwinCAT NC GUI.
-    nEnableMode := ENUM_StageEnableMode.NEVER;
+    nEnableMode := E_StageEnableMode.NEVER;
 ELSE
     // ALWAYS: want active position correction at all times
-    nEnableMode := ENUM_StageEnableMode.ALWAYS;
+    nEnableMode := E_StageEnableMode.ALWAYS;
 END_IF
 
 (*
