@@ -3,61 +3,43 @@
   <POU Name="PRG_TM2K2_ATM" Id="{127a807d-3b35-4680-8720-2eb4a2f35b86}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TM2K2_ATM
 VAR
-    {attribute 'pytmc' := '
-        pv: TM2K2:ATM
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: TM2K2:ATM'}
     {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                               .fbThermoCouple1.bUnderrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                               .fbThermoCouple1.bOverrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
                               .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value'}
     fbTM2K2: FB_TM2K2;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
-fbTM2K2.stOut.bUseRawCounts := FALSE;
-fbTM2K2.stOut.bValid := TRUE;
-fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:ATM-OUT';
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
-fbTM2K2.stTarget1.bUseRawCounts := FALSE;
-fbTM2K2.stTarget1.bValid := TRUE;
-fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET1';
-
-fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
-fbTM2K2.stTarget2.bUseRawCounts := FALSE;
-fbTM2K2.stTarget2.bValid := TRUE;
-fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET2';
-
-fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
-fbTM2K2.stTarget3.bUseRawCounts := FALSE;
-fbTM2K2.stTarget3.bValid := TRUE;
-fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET3';
-
-fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
-fbTM2K2.stTarget4.bUseRawCounts := FALSE;
-fbTM2K2.stTarget4.bValid := TRUE;
-fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
-
-fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
-fbTM2K2.stTarget5.bUseRawCounts := FALSE;
-fbTM2K2.stTarget5.bValid := TRUE;
-fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
-
-fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
-fbTM2K2.stTarget6.bUseRawCounts := FALSE;
-fbTM2K2.stTarget6.bValid := TRUE;
-fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET5';
+fbStateSetup(stPositionState:=fbTM2K2.stOut, fPosition:=5.3, sPmpsState:='TM2K2:ATM-OUT');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget1, fPosition:=-15.5, sPmpsState:='TM2K2:ATM-TARGET1');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget2, fPosition:=-36.5, sPmpsState:='TM2K2:ATM-TARGET2');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget3, fPosition:=-52.0, sPmpsState:='TM2K2:ATM-TARGET3');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-60.5, sPmpsState:='TM2K2:ATM-TARGET4');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget5, fPosition:=-77.0, sPmpsState:='TM2K2:ATM-TARGET5');
+fbStateSetup(stPositionState:=fbTM2K2.stTarget6, fPosition:=-96.6, sPmpsState:='TM2K2:ATM-TARGET6');
 
 fbTM2K2(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M15,
     stXStage := Main.M16,
-    sPmpsDeviceName := 'TM2K2:ATM',
+    sDeviceName := 'TM2K2:ATM',
     sTransitionKey := 'TM2K2:ATM-TRANSITION',
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
 );
 ]]></ST>
     </Implementation>
