@@ -33,6 +33,29 @@ Related:
     * `DUT_SATT_Filter`_
 
 
+E_TM2K2_States
+^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    TYPE E_TM2K2_States :
+    // Adapted from E_ATM_States to add TARGET6
+    (
+        Unknown := 0,
+        OUT := 1,
+        TARGET1 := 2,
+        TARGET2 := 3,
+        TARGET3 := 4,
+        TARGET4 := 5,
+        TARGET5 := 6,
+        TARGET6 := 7
+    ) UINT;
+    END_TYPE
+
+
+
+
 ENUM_SXR_SATT_Position
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -57,29 +80,6 @@ ENUM_SXR_SATT_Position
 
 
 
-ENUM_TM2K2_States
-^^^^^^^^^^^^^^^^^
-
-::
-
-    {attribute 'qualified_only'}
-    TYPE ENUM_TM2K2_States :
-    // Adapted from ENUM_ATM_States to add TARGET6
-    (
-        Unknown := 0,
-        OUT := 1,
-        TARGET1 := 2,
-        TARGET2 := 3,
-        TARGET3 := 4,
-        TARGET4 := 5,
-        TARGET5 := 6,
-        TARGET6 := 7
-    );
-    END_TYPE
-
-
-
-
 GVLs
 ----
 
@@ -96,13 +96,18 @@ GVL
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
         fbArbiter2: FB_Arbiter(2);
 
-        // For devices between the mirror and the stopper
-        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
+        // For devices between the mirror and the stopper, uses 44 FF slots as of 1/12/2024, load 75 in EPICS (skip 125 for IOC load speed)
+        {attribute 'pytmc' := '
+            pv: PLC:RIX:MOTION:FFO:01
+            astFF.array: 1..75
+        '}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
         fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
-        // For devices after the stopper
-        {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
+        // For devices after the stopper, uses 165 FF slots as of 1/12/2024, load all in EPICS
+        {attribute 'pytmc' := '
+            pv: PLC:RIX:MOTION:FFO:02
+        '}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
         fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
@@ -114,6 +119,8 @@ GVL
         {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
         rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
 
+        ePF1K2State: E_WFS_States;
+        ePF2K2State: E_WFS_States;
     END_VAR
 
     VAR_GLOBAL CONSTANT
@@ -121,8 +128,6 @@ GVL
     END_VAR
 
 
-Related:
-    * `FB_AttenuatorElementDensity`_
 
 
 Main
@@ -137,24 +142,24 @@ Main
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM1K1-EL7041]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM1K1-EL2004]^Channel 1^Output'}
-        M1: DUT_MotionStage := (sName := 'IM1K1:PPM:MMS');
+        M1: ST_MotionStage := (sName := 'IM1K1:PPM:MMS');
 
         // IM2K1-PPM-MMS
         {attribute 'pytmc' := 'pv: IM2K1:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM2K1-EL7041]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM2K1-EL2004]^Channel 1^Output'}
-        M2: DUT_MotionStage := (sName := 'IM2K1:PPM:MMS');
+        M2: ST_MotionStage := (sName := 'IM2K1:PPM:MMS');
 
         // SPARE (Previously ZOS)
-        M3: DUT_MotionStage;
+        M3: ST_MotionStage;
 
         // IM1K2-PPM-MMS
         {attribute 'pytmc' := 'pv: IM1K2:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM1K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM1K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM1K2-EL2004-E3]^Channel 1^Output'}
-        M4: DUT_MotionStage := (sName := 'IM1K2:PPM:MMS');
+        M4: ST_MotionStage := (sName := 'IM1K2:PPM:MMS');
 
         // AL1K2-L2SI: 1 Axis
         {attribute 'pytmc' := 'pv: AL1K2:L2SI:MMS'}
@@ -162,28 +167,28 @@ Main
                                   .bLimitBackwardEnable := TIIB[AL1K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[AL1K2-EL2004-E3]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[AL1K2-EL5042-E2]^FB Inputs Channel 1^Position'}
-        M5: DUT_MotionStage := (sName := 'AL1K2:L2SI:MMS');
+        M5: ST_MotionStage := (sName := 'AL1K2:L2SI:MMS');
 
         // IM2K2-PPM-MMS
         {attribute 'pytmc' := 'pv: IM2K2:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM2K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM2K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM2K2-EL2004-E3]^Channel 1^Output'}
-        M6: DUT_MotionStage := (sName := 'IM2K2:PPM:MMS');
+        M6: ST_MotionStage := (sName := 'IM2K2:PPM:MMS');
 
         // IM3K2-PPM-MMS
         {attribute 'pytmc' := 'pv: IM3K2:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM3K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM3K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM3K2-EL2004-E3]^Channel 1^Output'}
-        M7: DUT_MotionStage := (sName := 'IM3K2:PPM:MMS');
+        M7: ST_MotionStage := (sName := 'IM3K2:PPM:MMS');
 
         // IM4K2-PPM-MMS
         {attribute 'pytmc' := 'pv: IM4K2:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM4K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM4K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM4K2-EL2004-E3]^Channel 1^Output'}
-        M8: DUT_MotionStage := (sName := 'IM4K2:PPM:MMS');
+        M8: ST_MotionStage := (sName := 'IM4K2:PPM:MMS');
 
         // TM1K2: 2 Axes
         {attribute 'pytmc' := 'pv: TM1K2:ATM:MMS:Y'}
@@ -191,10 +196,10 @@ Main
                                   .bLimitBackwardEnable := TIIB[TM1K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[TM1K2-EL2004-E4]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[TM1K2-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M9: DUT_MotionStage := (sName := 'TM1K2:ATM:MMS:Y');
+        M9: ST_MotionStage := (sName := 'TM1K2:ATM:MMS:Y');
         {attribute 'pytmc' := 'pv: TM1K2:ATM:MMS:X'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[TM1K2-EL5042-E3]^FB Inputs Channel 2^Position'}
-        M10: DUT_MotionStage := (sName := 'TM1K2:ATM:MMS:X');
+        M10: ST_MotionStage := (sName := 'TM1K2:ATM:MMS:X');
 
         // LI2K2-K2A_OUT: 1 Axis
         {attribute 'pytmc' := 'pv: LI2K2:K2A:MMS'}
@@ -202,7 +207,7 @@ Main
                                   .bLimitBackwardEnable := TIIB[LI2K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[LI2K2-EL2004-E2]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[LI2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M11: DUT_MotionStage := (sName := 'LI2K2:K2A:MMS');
+        M11: ST_MotionStage := (sName := 'LI2K2:K2A:MMS');
 
         // PF1K2-WFS: 2 Axes
         {attribute 'pytmc' := 'pv: PF1K2:WFS:MMS:Y'}
@@ -210,17 +215,17 @@ Main
                                   .bLimitBackwardEnable := TIIB[PF1K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[PF1K2-EL2004-E4]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[PF1K2-EL5042-E3]^FB Inputs Channel 2^Position'}
-        M12: DUT_MotionStage := (sName := 'PF1K2:WFS:MMS:Y');
+        M12: ST_MotionStage := (sName := 'PF1K2:WFS:MMS:Y');
         {attribute 'pytmc' := 'pv: PF1K2:WFS:MMS:Z'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF1K2-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M13: DUT_MotionStage := (sName := 'PF1K2:WFS:MMS:Z');
+        M13: ST_MotionStage := (sName := 'PF1K2:WFS:MMS:Z');
 
         // IM5K2-PPM-MMS
         {attribute 'pytmc' := 'pv: IM5K2:PPM:MMS'}
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM5K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable := TIIB[IM5K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[IM5K2-EL2004-E3]^Channel 1^Output'}
-        M14: DUT_MotionStage := (sName := 'IM5K2:PPM:MMS');
+        M14: ST_MotionStage := (sName := 'IM5K2:PPM:MMS');
 
         // TM2K2: 2 Axes
         {attribute 'pytmc' := 'pv: TM2K2:ATM:MMS:Y'}
@@ -228,10 +233,10 @@ Main
                                   .bLimitBackwardEnable := TIIB[TM2K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[TM2K2-EL2004-E4]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[TM2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M15: DUT_MotionStage := (sName := 'TM2K2:ATM:MMS:Y');
+        M15: ST_MotionStage := (sName := 'TM2K2:ATM:MMS:Y');
         {attribute 'pytmc' := 'pv: TM2K2:ATM:MMS:X'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[TM2K2-EL5042-E3]^FB Inputs Channel 2^Position'}
-        M16: DUT_MotionStage := (sName := 'TM2K2:ATM:MMS:X');
+        M16: ST_MotionStage := (sName := 'TM2K2:ATM:MMS:X');
 
         //AT2K2: 4 Axes
     (*
@@ -250,33 +255,33 @@ Main
         {attribute 'TcLinkTo' := '
             .bLimitForwardEnable  := TIIB[AT2K2-EL7047-01]^STM Status^Status^Digital input 1;
             .bLimitBackwardEnable := TIIB[AT2K2-EL7047-01]^STM Status^Status^Digital input 2;
-            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 1^Position;
+            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 1^Position
         '}
-        M17: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:01');
+        M17: ST_MotionStage := (sName := 'AT2K2:L2SI:MMS:01');
 
         {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02'}
         {attribute 'TcLinkTo' := '
             .bLimitForwardEnable  := TIIB[AT2K2-EL7047-02]^STM Status^Status^Digital input 1;
             .bLimitBackwardEnable := TIIB[AT2K2-EL7047-02]^STM Status^Status^Digital input 2;
-            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 2^Position;
+            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-01]^FB Inputs Channel 2^Position
         '}
-        M18: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:02');
+        M18: ST_MotionStage := (sName := 'AT2K2:L2SI:MMS:02');
 
         {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:03'}
         {attribute 'TcLinkTo' := '
             .bLimitForwardEnable  := TIIB[AT2K2-EL7047-03]^STM Status^Status^Digital input 1;
             .bLimitBackwardEnable := TIIB[AT2K2-EL7047-03]^STM Status^Status^Digital input 2;
-            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 1^Position;
+            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 1^Position
         '}
-        M19: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:03');
+        M19: ST_MotionStage := (sName := 'AT2K2:L2SI:MMS:03');
 
         {attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:04'}
         {attribute 'TcLinkTo' := '
             .bLimitForwardEnable  := TIIB[AT2K2-EL7047-04]^STM Status^Status^Digital input 1;
             .bLimitBackwardEnable := TIIB[AT2K2-EL7047-04]^STM Status^Status^Digital input 2;
-            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 2^Position;
+            .nRawEncoderULINT     := TIIB[AT2K2-EL5042-02]^FB Inputs Channel 2^Position
         '}
-        M20: DUT_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
+        M20: ST_MotionStage := (sName := 'AT2K2:L2SI:MMS:04');
 
         //LI3K2-K2B: 1 Axis
         {attribute 'pytmc' := 'pv: LI3K2:K2B:MMS'}
@@ -284,7 +289,7 @@ Main
                                   .bLimitBackwardEnable := TIIB[LI3K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[LI3K2-EL2004-E3]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[LI3K2-EL5042-E2]^FB Inputs Channel 1^Position'}
-        M21: DUT_MotionStage := (sName := 'LI3K2:K2B:MMS');
+        M21: ST_MotionStage := (sName := 'LI3K2:K2B:MMS');
 
         //PF2K2: 2 Axes
         {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Y'}
@@ -292,10 +297,10 @@ Main
                                   .bLimitBackwardEnable := TIIB[PF2K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                   .bBrakeRelease        := TIIB[PF2K2-EL2004-E4]^Channel 1^Output;
                                   .nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 2^Position'}
-        M22: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Y');
+        M22: ST_MotionStage := (sName := 'PF2K2:WFS:MMS:Y');
         {attribute 'pytmc' := 'pv: PF2K2:WFS:MMS:Z'}
         {attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIIB[PF2K2-EL5042-E3]^FB Inputs Channel 1^Position'}
-        M23: DUT_MotionStage := (sName := 'PF2K2:WFS:MMS:Z');
+        M23: ST_MotionStage := (sName := 'PF2K2:WFS:MMS:Z');
 
 
         //IM6K2: 1 Axis
@@ -303,7 +308,7 @@ Main
         {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[IM6K2-EL7041-E1]^STM Status^Status^Digital input 1;
                                  .bLimitBackwardEnable := TIIB[IM6K2-EL7041-E1]^STM Status^Status^Digital input 2;
                                  .bBrakeRelease        := TIIB[IM6K2-EL2004-E3]^Channel 1^Output'}
-        M24: DUT_MotionStage := (sName := 'IM6K2:PPM:MMS');
+        M24: ST_MotionStage := (sName := 'IM6K2:PPM:MMS');
 
 
         //AT1K2: Blade 1
@@ -315,7 +320,7 @@ Main
             .bLimitBackwardEnable := TIIB[AT1K2-EL7047-01]^STM Status^Status^Digital input 2;
             .nRawEncoderULINT     := TIIB[AT1K2-EL5042-01]^FB Inputs Channel 1^Position';
         ;}
-        M25: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:01');
+        M25: ST_MotionStage := (sName := 'AT1K2:L2SI:MMS:01');
 
         //AT1K2: Blade 2
 
@@ -325,7 +330,7 @@ Main
             .bLimitBackwardEnable := TIIB[AT1K2-EL7047-02]^STM Status^Status^Digital input 2;
             .nRawEncoderULINT     := TIIB[AT1K2-EL5042-01]^FB Inputs Channel 2^Position';
         ;}
-        M26: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:02');
+        M26: ST_MotionStage := (sName := 'AT1K2:L2SI:MMS:02');
 
         //AT1K2: Mirror
 
@@ -333,7 +338,7 @@ Main
         {attribute 'TcLinkTo' := '
             .nRawEncoderULINT     := TIIB[AT1K2-EL5042-02]^FB Inputs Channel 1^Position';
         ;}
-        M27: DUT_MotionStage := (sName := 'AT1K2:L2SI:MMS:03');
+        M27: ST_MotionStage := (sName := 'AT1K2:L2SI:MMS:03');
 
 
     END_VAR
@@ -345,359 +350,6 @@ POUs
 ----
 
 
-FB_AT1K2
-^^^^^^^^
-
-::
-
-    FUNCTION_BLOCK FB_AT1K2
-    VAR_IN_OUT
-        fbFFHWO: FB_HardwareFFOutput;
-        stAxis: DUT_MotionStage;
-    END_VAR
-    VAR_INPUT
-        nEnableMode : ENUM_StageEnableMode;
-
-        stOut		: DUT_PositionState;
-        stIn        : DUT_PositionState;
-
-    END_VAR
-    VAR_OUTPUT
-        fTransmission : LREAL;
-        bMirrorOut : BOOL;
-
-    END_VAR
-    VAR
-        fbMotion: FB_MotionStage;
-
-        {attribute 'pytmc' := '
-             pv: STATE
-        '}
-
-        fbState: FB_PositionStateInOut;
-
-        bInitialized: BOOL := FALSE;
-
-        fbFF: FB_FastFault := (i_Desc := 'Device is moving',
-                           i_TypeCode := 16#2100,
-                           i_xAutoReset := TRUE);
-    END_VAR
-    IF NOT bInitialized THEN
-        bInitialized := TRUE;
-
-        (* Defaults for DUT_MotionStage *)
-        stAxis.bHardwareEnable      := TRUE;
-        stAxis.bLimitBackwardEnable := TRUE;
-        stAxis.bLimitForwardEnable  := TRUE;
-        stAxis.bPowerSelf           := TRUE;
-        stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
-        stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
-
-    END_IF
-
-    stAxis.nEnableMode := nEnableMode;
-    fbMotion(stMotionStage:=stAxis);
-    fbState(
-        bEnable:=TRUE,
-        stMotionStage:=stAxis,
-        stOut:=stOut,
-        stIn:=stIn,
-    );
-
-    bMirrorOut := fbState.enumGet = ENUM_EpicsInOut.OUT;
-    // If Mirror is in, fTransmission of mirror is 0. If out, fTransmission is 1
-    IF bMirrorOut THEN
-        fTransmission := 1.0;
-    ELSE
-        fTransmission := 0.0;
-    END_IF
-
-
-    fbFF(
-        i_DevName:=stAxis.sName,
-        i_xOK:= fbState.enumGet = ENUM_EpicsInOut.OUT,
-        io_fbFFHWO := fbFFHWO
-    );
-
-    END_FUNCTION_BLOCK
-
-
-
-
-FB_AttenuatorElementDensity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-    FUNCTION_BLOCK FB_AttenuatorElementDensity
-    VAR_INPUT
-        sName : STRING;
-    END_VAR
-    VAR_OUTPUT
-        fDensity : LREAL;
-        bFound : BOOL;
-    END_VAR
-    VAR
-        fbElementDensity : FB_ElementDensity;
-        fDensity_gm3 : LREAL;
-    END_VAR
-    IF sName = 'C' THEN
-        (* Special-case diamond here *)
-        fDensity := 3.51E6;  (* C (Diamond) g/m^3 *)
-    ELSE
-        fbElementDensity(sName:=sName);
-        IF fbElementDensity.bFound THEN
-            fDensity := fbElementDensity.fValue * 1.0E6; (* g/cm^3 -> g/m^3 *)
-        ELSE
-            fDensity := 0.0;
-        END_IF
-    END_IF
-
-    END_FUNCTION_BLOCK
-
-
-
-
-FB_SXR_SATT_PositionState
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-    FUNCTION_BLOCK FB_SXR_SATT_PositionState EXTENDS FB_PositionStateBase
-    VAR_INPUT
-         // The enum position to move to
-         {attribute 'pytmc' := '
-             pv: SET
-             io: io
-         '}
-         enumSet: ENUM_SXR_SATT_Position;
-
-        // NOTE: Do not pragma these, let it happen in the manager.
-         // Information about the OUT position
-         stOut		: DUT_PositionState;
-         stFilter1	: DUT_PositionState;
-         stFilter2	: DUT_PositionState;
-         stFilter3	: DUT_PositionState;
-         stFilter4	: DUT_PositionState;
-         stFilter5	: DUT_PositionState;
-         stFilter6	: DUT_PositionState;
-         stFilter7	: DUT_PositionState;
-         stFilter8	: DUT_PositionState;
-
-    END_VAR
-    VAR_OUTPUT
-        // The enum state readback
-        {attribute 'pytmc' := '
-            pv: GET
-            io: i
-        '}
-        enumGet: ENUM_SXR_SATT_Position;
-
-    END_VAR
-    VAR
-        bInitialized: BOOL := FALSE;
-    END_VAR
-    IF NOT bInitialized THEN
-        bInitialized := TRUE;
-
-        arrStates[1] := stOut;
-
-        arrStates[2] := stFilter1;
-        arrStates[3] := stFilter2;
-        arrStates[4] := stFilter3;
-        arrStates[5] := stFilter4;
-
-        arrStates[6] := stFilter5;
-        arrStates[7] := stFilter6;
-        arrStates[8] := stFilter7;
-        arrStates[9] := stFilter8;
-
-    END_IF
-    setState := enumSet;
-    Exec();
-    enumGet := getState;
-    enumSet := setState;
-
-    END_FUNCTION_BLOCK
-
-
-Related:
-    * `ENUM_SXR_SATT_Position`_
-
-
-FB_SXR_SATT_Stage
-^^^^^^^^^^^^^^^^^
-
-::
-
-    FUNCTION_BLOCK FB_SXR_SATT_Stage
-    VAR_IN_OUT
-        stAxis : DUT_MotionStage;
-        fbFFHWO: FB_HardwareFFOutput;
-    END_VAR
-    VAR_INPUT
-        nEnableMode : ENUM_StageEnableMode;
-
-        stOut		: DUT_PositionState;
-        stFilter1	: DUT_PositionState;
-        stFilter2	: DUT_PositionState;
-        stFilter3	: DUT_PositionState;
-        stFilter4	: DUT_PositionState;
-        stFilter5	: DUT_PositionState;
-        stFilter6	: DUT_PositionState;
-        stFilter7	: DUT_PositionState;
-        stFilter8	: DUT_PositionState;
-
-        {attribute 'pytmc' := 'pv: FILTERS'}
-        arrFilters: ARRAY[1..8] OF DUT_SATT_Filter;
-
-    END_VAR
-    VAR_OUTPUT
-        // stExtra : DUT_MotionStage_Extras;
-        fTemp1 : LREAL;
-        fTemp2 : LREAL;
-        bIsStationary : BOOL;
-        bError : BOOL;
-
-        {attribute 'pytmc' := '
-            pv: MATERIAL
-            io: i
-        '}
-        sActiveFilterMaterial : STRING;
-
-        {attribute 'pytmc' := '
-            pv: THICKNESS
-            io: i
-            field: EGU um
-        '}
-        fActiveFilterThickness_um : LREAL;
-
-        {attribute 'pytmc' := '
-            pv: TRANSMISSION
-            io: i
-            field: DESC Filter transmission
-        '}
-        fTransmission : LREAL;
-        fActiveFilterDensity : LREAL;
-        fActiveFilterAtomicMass : LREAL;
-        fAbsorptionConstant : LREAL;
-
-        iFilterIndex: INT := 0;
-
-    END_VAR
-    VAR
-        fbMotion: FB_MotionStage;
-
-        {attribute 'pytmc' := '
-             pv: STATE
-        '}
-        fbState 	: FB_SXR_SATT_PositionState;
-
-        bInitialized: BOOL := FALSE;
-
-        fbAtomicMass : FB_AtomicMass;
-        fbAttenuatorElementDensity : FB_AttenuatorElementDensity;
-
-        (* EL3202-0020: 0.01 °C per digit *)
-        {attribute 'pytmc' := 'pv: RTD:1'}
-        fbRTD_1: FB_TempSensor := ( fResolution:=0.01 );
-        {attribute 'pytmc' := 'pv: RTD:2'}
-        fbRTD_2: FB_TempSensor := ( fResolution:=0.01 );
-
-        fbFF: FB_FastFault := (i_Desc := 'Device is moving',
-                               i_TypeCode := 16#2100,
-                               i_xAutoReset := TRUE);
-    END_VAR
-    IF NOT bInitialized THEN
-        bInitialized := TRUE;
-
-        (* Defaults for DUT_MotionStage *)
-        stAxis.bHardwareEnable      := TRUE;
-        stAxis.bLimitBackwardEnable := TRUE;
-        stAxis.bLimitForwardEnable  := TRUE;
-        stAxis.bPowerSelf           := TRUE;
-        stAxis.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
-        stAxis.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
-
-        (* Defaults for visualization *)
-        // stExtra.fVisuStep			:= 0.1;
-
-    END_IF
-
-    fbRTD_1();
-    fTemp1 := fbRTD_1.fTemp;
-
-    fbRTD_2();
-    fTemp2 := fbRTD_2.fTemp;
-
-    stAxis.nEnableMode := nEnableMode;
-    fbMotion(stMotionStage:=stAxis);
-    fbState(
-        bEnable:=TRUE,
-        stMotionStage:=stAxis,
-        stOut:=stOut,
-        stFilter1:=stFilter1,
-        stFilter2:=stFilter2,
-        stFilter3:=stFilter3,
-        stFilter4:=stFilter4,
-        stFilter5:=stFilter5,
-        stFilter6:=stFilter6,
-        stFilter7:=stFilter7,
-        stFilter8:=stFilter8,
-    );
-
-    (* Filter indices are off by one due to "Out" being in position 1. *)
-    iFilterIndex := fbState.enumGet - 1;
-
-    IF iFilterIndex >= 1 AND iFilterIndex <= GVL.iFiltersPerSATTBlade THEN
-        sActiveFilterMaterial := arrFilters[iFilterIndex].sFilterMaterial;
-        fActiveFilterThickness_um := arrFilters[iFilterIndex].fFilterThickness_um;
-
-        fbAtomicMass(sName:=sActiveFilterMaterial, fValue=>fActiveFilterAtomicMass);
-        fbAttenuatorElementDensity(sName:=sActiveFilterMaterial, fDensity=>fActiveFilterDensity);
-
-        fAbsorptionConstant := F_CalculateAbsorptionConstant(
-            sElement:=sActiveFilterMaterial,
-            fEnergyEV:=PMPS_GVL.stCurrentBeamParameters.neV,
-            fDensity_gm3:=fActiveFilterDensity,
-            fAtomicWeight:=fActiveFilterAtomicMass,
-            bError=>bError,
-        );
-        fTransmission := F_CalculateTransmission(
-            fAbsorptionConstant:=fAbsorptionConstant,
-            fThickness_in_m:=fActiveFilterThickness_um * 1.0E-6
-        );
-    ELSE
-        sActiveFilterMaterial := '';
-        fActiveFilterThickness_um := 0.0;
-        fAbsorptionConstant := 0.0;
-        fActiveFilterDensity := 0.0;
-        fActiveFilterAtomicMass := 0.0;
-        fTransmission := 1.0;
-    END_IF
-
-
-    bIsStationary := NOT stAxis.Axis.Status.Moving;
-    fbFF(
-        i_DevName:=stAxis.sName,
-        i_xOK:=bIsStationary AND fbState.enumGet <> ENUM_SXR_SATT_Position.UNKNOWN,
-        io_fbFFHWO := fbFFHWO
-    );
-
-    // stExtra.bVisuHighLim := NOT stAxis.bAllForwardEnable;
-    // stExtra.bVisuLowLim := NOT stAxis.bAllBackwardEnable;
-
-    END_FUNCTION_BLOCK
-
-
-Related:
-    * `DUT_SATT_Filter`_
-    * `ENUM_SXR_SATT_Position`_
-    * `FB_AttenuatorElementDensity`_
-    * `FB_SXR_SATT_PositionState`_
-    * `GVL`_
-
-
 FB_TM2K2
 ^^^^^^^^
 
@@ -705,71 +357,167 @@ FB_TM2K2
 
     FUNCTION_BLOCK FB_TM2K2
     (*
-        Adapted from FB_ATM to:
+        Function block for Arrival Time Monitor (ATM) controls:
+        - X, Y motion
+        - Y target states
+        - thermocouple
+
+        For TM2K2, we make the following adjustments:
         - Add stTarget6 to the inputs
-        - Change the arrStates.array pragma from 1..6 to 1..7 (out and 6 in states, up from 5)
-        - Swap out FB_ATM_States for FB_TM2K2_States
+        - Change the array pragma from 1..6 to 1..7 (1 out and 6 in states, up from 5 in states)
+        - Use E_TM2K2_States instead of E_ATM_States
     *)
     VAR_IN_OUT
-        stYStage: DUT_MotionStage;
-        stXStage: DUT_MotionStage;
-        fbArbiter: FB_Arbiter;
+        // Y motor (state select).
+        stYStage: ST_MotionStage;
+        // X motor (align target to beam).
+        stXStage: ST_MotionStage;
+        // The fast fault output to fault to.
         fbFFHWO: FB_HardwareFFOutput;
+        // The arbiter to request beam conditions from.
+        fbArbiter: FB_Arbiter;
     END_VAR
     VAR_INPUT
-        stOut: DUT_PositionState;
-        stTarget1: DUT_PositionState;
-        stTarget2: DUT_PositionState;
-        stTarget3: DUT_PositionState;
-        stTarget4: DUT_PositionState;
-        stTarget5: DUT_PositionState;
-        stTarget6: DUT_PositionState;
-        sPmpsDeviceName: STRING;
+        // Settings for the OUT state.
+        stOut: ST_PositionState;
+        // Settings for the TARGET1 state.
+        stTarget1: ST_PositionState;
+        // Settings for the TARGET2 state.
+        stTarget2: ST_PositionState;
+        // Settings for the TARGET3 state.
+        stTarget3: ST_PositionState;
+        // Settings for the TARGET4 state.
+        stTarget4: ST_PositionState;
+        // Settings for the TARGET5 state.
+        stTarget5: ST_PositionState;
+        // Settings for the TARGET6 state.
+        stTarget6: ST_PositionState;
+        // Set this to a non-unknown value to request a new move.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:SET
+            io: io
+        '}
+        eEnumSet: E_TM2K2_States;
+        // Set this to TRUE to enable input state moves, or FALSE to disable them.
+        bEnableMotion: BOOL;
+        // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+        bEnableBeamParams: BOOL;
+        // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+        bEnablePositionLimits: BOOL;
+        // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+        sDeviceName: STRING;
+        // The name of the transition state in the PMPS database.
         sTransitionKey: STRING;
+        // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+        bReadDBNow: BOOL;
+    END_VAR
+    VAR_OUTPUT
+        // The current position state as an enum.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:GET
+            io: i
+        '}
+        eEnumGet: E_TM2K2_States;
+        // The PMPS database lookup associated with the current position state.
+        stDbStateParams: ST_DbStateParams;
     END_VAR
     VAR
+        bInit: BOOL;
+
         fbYStage: FB_MotionStage;
         fbXStage: FB_MotionStage;
 
-        {attribute 'pytmc' := '
-            pv: MMS:STATE
-            io: i
-            arrStates.array: 1..7
-        '}
-        fbStates: FB_TM2K2_States;
+        fbStateDefaults: FB_PositionState_Defaults;
 
         {attribute 'pytmc' := '
-            pv: STC:01
-            io: input
+            pv: MMS
+            astPositionState.array: 1..7
         '}
+        fbStates: FB_PositionStatePMPS1D;
+        astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+        fbArrCheckWrite: FB_CheckPositionStateWrite;
+
+        {attribute 'pytmc' := 'pv: STC:01'}
         fbThermoCouple1: FB_TempSensor;
     END_VAR
-    fbYStage(stMotionStage:=stYStage);
+    VAR CONSTANT
+        // State defaults if not provided
+        fDelta: LREAL := 2;
+        fAccel: LREAL := 200;
+        fOutDecel: LREAL := 25;
+    END_VAR
+    IF NOT bInit THEN
+        bInit := TRUE;
+
+        stYStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+        stXStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+
+        // Partial backcompat, this used to set fVelocity too but this should be set per install
+        fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+        fbStateDefaults(stPositionState:=stTarget1, sNameDefault:='TARGET1', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget2, sNameDefault:='TARGET2', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget3, sNameDefault:='TARGET3', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget4, sNameDefault:='TARGET4', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget5, sNameDefault:='TARGET5', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget6, sNameDefault:='TARGET6', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    END_IF
+
     stYStage.bHardwareEnable := TRUE;
     stYStage.bPowerSelf := FALSE;
-    stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 
-    fbXStage(stMotionStage:=stXStage);
     stXStage.bLimitForwardEnable := TRUE;
     stXStage.bLimitBackwardEnable := TRUE;
     stXStage.bHardwareEnable := TRUE;
     stXStage.bPowerSelf := TRUE;
-    stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    fbYStage(stMotionStage:=stYStage);
+    fbXStage(stMotionStage:=stXStage);
+
+    // We need to update from PLC or from EPICS, but not both
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=TRUE,
+        bSave:=FALSE,
+    );
+    IF NOT fbArrCheckWrite.bHadWrite THEN
+        astPositionState[E_TM2K2_States.OUT] := stOut;
+        astPositionState[E_TM2K2_States.TARGET1] := stTarget1;
+        astPositionState[E_TM2K2_States.TARGET2] := stTarget2;
+        astPositionState[E_TM2K2_States.TARGET3] := stTarget3;
+        astPositionState[E_TM2K2_States.TARGET4] := stTarget4;
+        astPositionState[E_TM2K2_States.TARGET5] := stTarget5;
+        astPositionState[E_TM2K2_States.TARGET6] := stTarget6;
+    END_IF
 
     fbStates(
-        fbArbiter:=fbArbiter,
-        fbFFHWO:=fbFFHWO,
         stMotionStage:=stYStage,
-        bEnable := TRUE,
-        stOut:=stOut,
-        stTarget1:=stTarget1,
-        stTarget2:=stTarget2,
-        stTarget3:=stTarget3,
-        stTarget4:=stTarget4,
-        stTarget5:=stTarget5,
-        stTarget6:=stTarget6,
-        sPmpsDeviceName:=sPmpsDeviceName,
-        sTransitionKey:=sTransitionKey);
+        astPositionState:=astPositionState,
+        eEnumSet:=eEnumSet,
+        eEnumGet:=eEnumGet,
+        fbFFHWO:=fbFFHWO,
+        fbArbiter:=fbArbiter,
+        bEnableMotion:=bEnableMotion,
+        bEnableBeamParams:=bEnableBeamParams,
+        bEnablePositionLimits:=bEnablePositionLimits,
+        sDeviceName:=sDeviceName,
+        sTransitionKey:=sTransitionKey,
+        bReadDBNow:=bReadDBNow,
+        stDbStateParams=>stDbStateParams,
+    );
+
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=FALSE,
+        bSave:=TRUE,
+    );
+
+    stOut := astPositionState[E_TM2K2_States.OUT];
+    stTarget1 := astPositionState[E_TM2K2_States.TARGET1];
+    stTarget2 := astPositionState[E_TM2K2_States.TARGET2];
+    stTarget3 := astPositionState[E_TM2K2_States.TARGET3];
+    stTarget4 := astPositionState[E_TM2K2_States.TARGET4];
+    stTarget5 := astPositionState[E_TM2K2_States.TARGET5];
+    stTarget6 := astPositionState[E_TM2K2_States.TARGET6];
 
     fbThermoCouple1();
 
@@ -777,122 +525,7 @@ FB_TM2K2
 
 
 Related:
-    * `FB_TM2K2_States`_
-
-
-FB_TM2K2_States
-^^^^^^^^^^^^^^^
-
-::
-
-    FUNCTION_BLOCK FB_TM2K2_States EXTENDS FB_PositionStateBase_WithPMPS
-    // Adapted from TB_ATM_States to add TARGET6 and to switch the enumSet and enumGet ENUM types
-    VAR_INPUT
-        {attribute 'pytmc' := '
-            pv: SET
-            io: io
-        '}
-        enumSet: ENUM_TM2K2_states;
-
-        stOut: DUT_PositionState;
-        stTarget1: DUT_PositionState;
-        stTarget2: DUT_PositionState;
-        stTarget3: DUT_PositionState;
-        stTarget4: DUT_PositionState;
-        stTarget5: DUT_PositionState;
-        stTarget6: DUT_PositionState;
-
-        bStatesLock: BOOL;
-    END_VAR
-    VAR_OUTPUT
-        {attribute 'pytmc' := '
-            pv: GET
-            io: i
-        '}
-        enumGet: ENUM_TM2K2_States;
-    END_VAR
-    VAR
-        bATMInit: BOOL;
-    END_VAR
-    VAR CONSTANT
-        fInDelta: LREAL := 2;
-        fOutDelta: LREAL := 2;
-        fInVelocity: LREAL := 5;
-        fOutVelocity: LREAL := 5;
-        fAccel: LREAL := 200;
-        fOutDecel: LREAL := 25;
-    END_VAR
-    IF NOT bATMInit THEN
-        bATMInit := TRUE;
-
-        stOut.sName := 'OUT';
-        stOut.fVelocity := fOutVelocity;
-        stOut.fDelta := fOutDelta;
-        stOut.fAccel := fAccel;
-        stOut.fDecel := fOutDecel;
-        stOut.bMoveOk := TRUE;
-
-        stTarget1.sName := 'TARGET1';
-        stTarget1.fVelocity := fInVelocity;
-        stTarget1.fDelta := fInDelta;
-        stTarget1.fAccel := fAccel;
-        stTarget1.fDecel := fAccel;
-        stTarget1.bMoveOk := TRUE;
-
-        stTarget2.sName := 'TARGET2';
-        stTarget2.fVelocity := fInVelocity;
-        stTarget2.fDelta := fInDelta;
-        stTarget2.fAccel := fAccel;
-        stTarget2.fDecel := fAccel;
-        stTarget2.bMoveOk := TRUE;
-
-        stTarget3.sName := 'TARGET3';
-        stTarget3.fVelocity := fInVelocity;
-        stTarget3.fDelta := fInDelta;
-        stTarget3.fAccel := fAccel;
-        stTarget3.fDecel := fAccel;
-        stTarget3.bMoveOk := TRUE;
-
-        stTarget4.sName := 'TARGET4';
-        stTarget4.fVelocity := fInVelocity;
-        stTarget4.fDelta := fInDelta;
-        stTarget4.fAccel := fAccel;
-        stTarget4.fDecel := fAccel;
-        stTarget4.bMoveOk := TRUE;
-
-        stTarget5.sName := 'TARGET5';
-        stTarget5.fVelocity := fInVelocity;
-        stTarget5.fDelta := fInDelta;
-        stTarget5.fAccel := fAccel;
-        stTarget5.fDecel := fAccel;
-        stTarget5.bMoveOk := TRUE;
-
-        stTarget6.sName := 'TARGET6';
-        stTarget6.fVelocity := fInVelocity;
-        stTarget6.fDelta := fInDelta;
-        stTarget6.fAccel := fAccel;
-        stTarget6.fDecel := fAccel;
-        stTarget6.bMoveOk := TRUE;
-
-        arrStates[1] := stOut;
-        arrStates[2] := stTarget1;
-        arrStates[3] := stTarget2;
-        arrStates[4] := stTarget3;
-        arrStates[5] := stTarget4;
-        arrStates[6] := stTarget5;
-        arrStates[7] := stTarget6;
-    END_IF
-
-    setState := enumSet;
-    Exec();
-    enumGet := getState;
-    enumSet := setState;
-
-    END_FUNCTION_BLOCK
-
-
-Related:
-    * `ENUM_TM2K2_States`_
+    * `E_TM2K2_States`_
 
 
 PRG_1_PlcTask
@@ -1057,30 +690,32 @@ PRG_AL1K2_L2SI
 
     PROGRAM PRG_AL1K2_L2SI
     VAR
-        {attribute 'pytmc' := '
-            pv: AL1K2:L2SI
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: AL1K2:L2SI'}
         {attribute 'TcLinkTo' := '.fbLaser.iLaserINT := TIIB[AL1K2-EL4004-E4]^AO Outputs Channel 1^Analog output;
                                   .fbLaser.iShutdownINT := TIIB[AL1K2-EL4004-E4]^AO Outputs Channel 2^Analog output'}
         fbAL1K2: FB_REF;
-    END_VAR
-    fbAL1K2.stOut.fPosition := -33.5; // Upper limit
-    fbAL1K2.stOut.bUseRawCounts := FALSE;
-    fbAL1K2.stOut.bValid := TRUE;
-    fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2:L2SI-OUT';
 
-    fbAL1K2.stIn.fPosition := -75; // Current position at time of edit
-    fbAL1K2.stIn.bUseRawCounts := FALSE;
-    fbAL1K2.stIn.bValid := TRUE;
-    fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2:L2SI-IN';
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 10,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+    END_VAR
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
+
+    fbStateSetup(stPositionState:=fbAL1K2.stOut, fPosition:=-33.5, sPmpsState:='AL1K2:L2SI-OUT');
+    fbStateSetup(stPositionState:=fbAL1K2.stIn, fPosition:=-75, sPmpsState:='AL1K2:L2SI-IN');
 
     fbAL1K2(
-        stYStage := Main.M5,
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
-        sPmpsDeviceName := 'AL1K2:L2SI',
+        fbArbiter := GVL.fbArbiter2,
+        stYStage := Main.M5,
+        sDeviceName := 'AL1K2:L2SI',
         sTransitionKey := 'AL1K2:L2SI-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -1102,7 +737,7 @@ PRG_AT1K2_SOLID
         (* NOTE: use TRUE when relying on visualization + actual hardware *)
         bDebug : BOOL := FALSE;
 
-        nEnableMode : ENUM_StageEnableMode;
+        nEnableMode : E_StageEnableMode;
 
         {attribute 'pytmc' := '
             pv: AT1K2:L2SI:MMS:01
@@ -1118,7 +753,7 @@ PRG_AT1K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
 
         '}
         fbStage1: FB_SXR_SATT_Stage;
@@ -1134,24 +769,46 @@ PRG_AT1K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
         '}
         fbStage2: FB_SXR_SATT_Stage;
 
+        // Special case: inspection mirror
         {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
+        fbStage3: FB_PositionState1D_InOut;
+        stMirrorOut: ST_PositionState;
+        stMirrorIn: ST_PositionState;
+        // Consider transmission=1 if out, transmission=0 if in
+        fMirrorTrans: LREAL;
+        // Fault unless the mirror is out
+        fbFFMirror: FB_FastFault := (
+            i_Desc := 'Mirror is not out',
+            i_TypeCode := E_MotionFFType.DEVICE_MOVE,
+            i_xAutoReset := TRUE
+        );
 
-        fbStage3: FB_AT1K2;
-
-    END_VAR
-    VAR CONSTANT
-        DEFAULT_VELOCITY : LREAL := 1;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefaultGood: ST_PositionState := (
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+        fbBadStateSetup: FB_StateSetupHelper;
+        stDefaultBad: ST_PositionState := (
+            fPosition := 500,
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := FALSE,
+            bValid := FALSE
+        );
     END_VAR
     IF bDebug THEN
         // NEVER: checkouts with the TwinCAT NC GUI.
-        nEnableMode := ENUM_StageEnableMode.NEVER;
+        nEnableMode := E_StageEnableMode.NEVER;
     ELSE
         // ALWAYS: want active position correction at all times
-        nEnableMode := ENUM_StageEnableMode.ALWAYS;
+        nEnableMode := E_StageEnableMode.ALWAYS;
     END_IF
 
     (*
@@ -1167,205 +824,118 @@ PRG_AT1K2_SOLID
         10XX      3   MMS:03   fbStage3  M27  Mirror Insertion Stage
 
     *)
-    (* State setup - stage 1 *)
-    fbStage1.stOut.sName         := 'Out';
-    fbStage1.stOut.fPosition     := 66.00;
-    fbStage1.stOut.fDelta        := 0.2;
-    fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage1.stOut.bValid        := TRUE;
-    fbStage1.stOut.bMoveOk       := TRUE;
 
-    fbStage1.stFilter1.sName                   := 'Filter 1';
-    fbStage1.stFilter1.fPosition               := 500.0;
-    fbStage1.stFilter1.fDelta                  := 0.2;
-    fbStage1.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter1.bValid                  := FALSE;
-    fbStage1.stFilter1.bMoveOk                 := FALSE;
+    fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+    fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+    (* State setup - stage 1 *)
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=66.00);
+
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
     fbStage1.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage1.stFilter2.sName                   := 'Filter 2';
-    fbStage1.stFilter2.fPosition               := 500.0;
-    fbStage1.stFilter2.fDelta                  := 0.2;
-    fbStage1.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter2.bValid                  := FALSE;
-    fbStage1.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter2, sName:='Filter 2');
     fbStage1.arrFilters[2].fFilterThickness_um := 0;
     fbStage1.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage1.stFilter3.sName                   := '(3) 11.5 um Al';
-    fbStage1.stFilter3.fPosition               := 75.0;
-    fbStage1.stFilter3.fDelta                  := 0.2;
-    fbStage1.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter3.bValid                  := TRUE;
-    fbStage1.stFilter3.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter3, sName:='(3) 11.5 um Al', fPosition:=75.0);
     fbStage1.arrFilters[3].fFilterThickness_um := 11.5;
     fbStage1.arrFilters[3].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter4.sName                   := '(4) 6.18 um Al';
-    fbStage1.stFilter4.fPosition               := 90.5;
-    fbStage1.stFilter4.fDelta                  := 0.2;
-    fbStage1.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter4.bValid                  := TRUE;
-    fbStage1.stFilter4.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter4, sName:='(4) 6.18 um Al', fPosition:=90.5);
     fbStage1.arrFilters[4].fFilterThickness_um := 6.18;
     fbStage1.arrFilters[4].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter5.sName                   := '(5) 2.85 um Al';
-    fbStage1.stFilter5.fPosition               := 105.5;
-    fbStage1.stFilter5.fDelta                  := 0.2;
-    fbStage1.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter5.bValid                  := TRUE;
-    fbStage1.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='(5) 2.85 um Al', fPosition:=105.5);
     fbStage1.arrFilters[5].fFilterThickness_um := 2.85;
     fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter6.sName                   := '(6) 1.52 um Al';
-    fbStage1.stFilter6.fPosition               := 122.0;
-    fbStage1.stFilter6.fDelta                  := 0.2;
-    fbStage1.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter6.bValid                  := TRUE;
-    fbStage1.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='(6) 1.52 um Al', fPosition:=122.0);
     fbStage1.arrFilters[6].fFilterThickness_um := 1.52;
     fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter7.sName                   := '(7) 0.78 um Al';
-    fbStage1.stFilter7.fPosition               := 136.5;
-    fbStage1.stFilter7.fDelta                  := 0.2;
-    fbStage1.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter7.bValid                  := TRUE;
-    fbStage1.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='(7) 0.78 um Al', fPosition:=136.5);
     fbStage1.arrFilters[7].fFilterThickness_um := 0.78;
     fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter8.sName                   := '(8) 0.39 um Al';
-    fbStage1.stFilter8.fPosition               := 152.2;
-    fbStage1.stFilter8.fDelta                  := 0.2;
-    fbStage1.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter8.bValid                  := TRUE;
-    fbStage1.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 0.39 um Al', fPosition:=152.2);
     fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
     fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+    fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 2 *)
-    fbStage2.stOut.sName         := 'Out';
-    fbStage2.stOut.fPosition     := 66.00;
-    fbStage2.stOut.fDelta        := 0.2;
-    fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage2.stOut.bValid        := TRUE;
-    fbStage2.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=66.00);
 
-    fbStage2.stFilter1.sName                   := 'Filter 1';
-    fbStage2.stFilter1.fPosition               := 500.0;
-    fbStage2.stFilter1.fDelta                  := 0.2;
-    fbStage2.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter1.bValid                  := FALSE;
-    fbStage2.stFilter1.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
     fbStage2.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage2.stFilter2.sName                   := 'Filter 2';
-    fbStage2.stFilter2.fPosition               := 500.0;
-    fbStage2.stFilter2.fDelta                  := 0.2;
-    fbStage2.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter2.bValid                  := FALSE;
-    fbStage2.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
     fbStage2.arrFilters[2].fFilterThickness_um := 0;
     fbStage2.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage2.stFilter3.sName                   := '(3) 11.5 um Al';
-    fbStage2.stFilter3.fPosition               := 75.0;
-    fbStage2.stFilter3.fDelta                  := 0.2;
-    fbStage2.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter3.bValid                  := TRUE;
-    fbStage2.stFilter3.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter3, sName:='(3) 11.5 um Al', fPosition:=75.0);
     fbStage2.arrFilters[3].fFilterThickness_um := 11.5;
     fbStage2.arrFilters[3].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter4.sName                   := '(4) 6.18 um Al';
-    fbStage2.stFilter4.fPosition               := 90.5;
-    fbStage2.stFilter4.fDelta                  := 0.2;
-    fbStage2.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter4.bValid                  := TRUE;
-    fbStage2.stFilter4.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter4, sName:='(4) 6.18 um Al', fPosition:=90.5);
     fbStage2.arrFilters[4].fFilterThickness_um := 6.18;
     fbStage2.arrFilters[4].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter5.sName                   := '(5) 1.52 um Al';
-    fbStage2.stFilter5.fPosition               := 105.5;
-    fbStage2.stFilter5.fDelta                  := 0.2;
-    fbStage2.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter5.bValid                  := TRUE;
-    fbStage2.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='(5) 1.52 um Al', fPosition:=105.5);
     fbStage2.arrFilters[5].fFilterThickness_um := 1.52;
     fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter6.sName                   := '(6) 0.78 um Al';
-    fbStage2.stFilter6.fPosition               := 122.0;
-    fbStage2.stFilter6.fDelta                  := 0.2;
-    fbStage2.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter6.bValid                  := TRUE;
-    fbStage2.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='(6) 0.78 um Al', fPosition:=122.0);
     fbStage2.arrFilters[6].fFilterThickness_um := 0.78;
     fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter7.sName                   := '(7) 0.39 um Al';
-    fbStage2.stFilter7.fPosition               := 136.5;
-    fbStage2.stFilter7.fDelta                  := 0.2;
-    fbStage2.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter7.bValid                  := TRUE;
-    fbStage2.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 0.39 um Al', fPosition:=136.5);
     fbStage2.arrFilters[7].fFilterThickness_um := 0.39;
     fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter8.sName                   := '(8) 0.2 um Al';
-    fbStage2.stFilter8.fPosition               := 152.2;
-    fbStage2.stFilter8.fDelta                  := 0.2;
-    fbStage2.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter8.bValid                  := TRUE;
-    fbStage2.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.2 um Al', fPosition:=152.2);
     fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
     fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
-
-
+    fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
     (* State setup - stage 3 *)
-    fbStage3.stOut.sName         := 'Out';
-    fbStage3.stOut.fPosition     := 65.00;
-    fbStage3.stOut.fDelta        := 0.2;
-    fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage3.stOut.bValid        := TRUE;
-    fbStage3.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
+    fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
 
-    fbStage3.stIn.sName         := 'In';
-    fbStage3.stIn.fPosition     := 25.00;
-    fbStage3.stIn.fDelta        := 0.2;
-    fbStage3.stIn.fVelocity     := DEFAULT_VELOCITY;
-    fbStage3.stIn.bValid        := TRUE;
-    fbStage3.stIn.bMoveOk       := TRUE;
+    fbStage3(
+        stMotionStage:=Main.M27,
+        stOut:=stMirrorOut,
+        stIn:=stMirrorIn,
+    );
 
-    fbStage3(stAxis:=Main.M27, fbFFHWO:=GVL.fbFastFaultOutput2);
+    IF fbStage3.eStateGet = E_EpicsInOut.OUT THEN
+        fMirrorTrans := 1.0;
+    ELSE
+        fMirrorTrans := 0.0;
+    END_IF
 
-
+    fbFFMirror(
+        i_DevName := Main.M27.sName,
+        i_xOK := fbStage3.eStateGet = E_EpicsInOut.OUT,
+        io_fbFFHWO := GVL.fbFastFaultOutput2,
+    );
 
     GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
         fbStage1.fTransmission *
         fbStage2.fTransmission *
-        fbStage3.fTransmission
-
+        fMirrorTrans
     );
 
     END_PROGRAM
 
 
 Related:
-    * `FB_AT1K2`_
-    * `FB_SXR_SATT_Stage`_
     * `GVL`_
     * `Main`_
 
@@ -1381,7 +951,7 @@ PRG_AT2K2_SOLID
         (* NOTE: use TRUE when relying on visualization + actual hardware *)
         bDebug : BOOL := FALSE;
 
-        nEnableMode : ENUM_StageEnableMode;
+        nEnableMode : E_StageEnableMode;
 
         {attribute 'pytmc' := '
             pv: AT2K2:L2SI:MMS:01
@@ -1397,7 +967,7 @@ PRG_AT2K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
 
         '}
         fbStage1: FB_SXR_SATT_Stage;
@@ -1413,7 +983,7 @@ PRG_AT2K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
 
         '}
         fbStage2: FB_SXR_SATT_Stage;
@@ -1429,7 +999,7 @@ PRG_AT2K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
         '}
         fbStage3: FB_SXR_SATT_Stage;
 
@@ -1444,20 +1014,32 @@ PRG_AT2K2_SOLID
             .fbRTD_2.iRaw := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Value;
             .fbRTD_2.bError := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Error;
             .fbRTD_2.bUnderrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
-            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange;
+            .fbRTD_2.bOverrange := TIIB[AT2K2-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
         '}
         fbStage4: FB_SXR_SATT_Stage;
 
-    END_VAR
-    VAR CONSTANT
-        DEFAULT_VELOCITY : LREAL := 1;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefaultGood: ST_PositionState := (
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+        fbBadStateSetup: FB_StateSetupHelper;
+        stDefaultBad: ST_PositionState := (
+            fPosition := 500,
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := FALSE,
+            bValid := FALSE
+        );
     END_VAR
     IF bDebug THEN
         // NEVER: checkouts with the TwinCAT NC GUI.
-        nEnableMode := ENUM_StageEnableMode.NEVER;
+        nEnableMode := E_StageEnableMode.NEVER;
     ELSE
         // ALWAYS: want active position correction at all times
-        nEnableMode := ENUM_StageEnableMode.ALWAYS;
+        nEnableMode := E_StageEnableMode.ALWAYS;
     END_IF
 
     (*
@@ -1475,338 +1057,160 @@ PRG_AT2K2_SOLID
 
     *)
 
+    fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+    fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 
 
     (* State setup - stage 1 *)
-    fbStage1.stOut.sName         := 'Out';
-    fbStage1.stOut.fPosition     := 27.00;
-    fbStage1.stOut.fDelta        := 0.2;
-    fbStage1.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage1.stOut.bValid        := TRUE;
-    fbStage1.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=27.00);
 
-    fbStage1.stFilter1.sName                   := 'Filter 1';
-    fbStage1.stFilter1.fPosition               := 500.0;
-    fbStage1.stFilter1.fDelta                  := 0.2;
-    fbStage1.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter1.bValid                  := FALSE;
-    fbStage1.stFilter1.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
     fbStage1.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage1.stFilter2.sName                   := 'Filter 2';
-    fbStage1.stFilter2.fPosition               := 500.0;
-    fbStage1.stFilter2.fDelta                  := 0.2;
-    fbStage1.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter2.bValid                  := FALSE;
-    fbStage1.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter2, sName:='Filter 2');
     fbStage1.arrFilters[2].fFilterThickness_um := 0;
     fbStage1.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage1.stFilter3.sName                   := 'Filter 3';
-    fbStage1.stFilter3.fPosition               := 500.0;
-    fbStage1.stFilter3.fDelta                  := 0.2;
-    fbStage1.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter3.bValid                  := FALSE;
-    fbStage1.stFilter3.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter3, sName:='Filter 3');
     fbStage1.arrFilters[3].fFilterThickness_um := 0;
     fbStage1.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage1.stFilter4.sName                   := 'Filter 4';
-    fbStage1.stFilter4.fPosition               := 500.0;
-    fbStage1.stFilter4.fDelta                  := 0.2;
-    fbStage1.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter4.bValid                  := FALSE;
-    fbStage1.stFilter4.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter4, sName:='Filter 4');
     fbStage1.arrFilters[4].fFilterThickness_um := 0;
     fbStage1.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage1.stFilter5.sName                   := '(5) 11.5 um Al';
-    fbStage1.stFilter5.fPosition               := 103.0;
-    fbStage1.stFilter5.fDelta                  := 0.2;
-    fbStage1.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter5.bValid                  := TRUE;
-    fbStage1.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='(5) 11.5 um Al', fPosition:=103.0);
     fbStage1.arrFilters[5].fFilterThickness_um := 11.5;
     fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter6.sName                   := '(6) 6.18 um Al';
-    fbStage1.stFilter6.fPosition               := 119.0;
-    fbStage1.stFilter6.fDelta                  := 0.2;
-    fbStage1.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter6.bValid                  := TRUE;
-    fbStage1.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='(6) 6.18 um Al', fPosition:=119.0);
     fbStage1.arrFilters[6].fFilterThickness_um := 6.18;
     fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter7.sName                   := '(7) 2.85 um Al';
-    fbStage1.stFilter7.fPosition               := 135.0;
-    fbStage1.stFilter7.fDelta                  := 0.2;
-    fbStage1.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter7.bValid                  := TRUE;
-    fbStage1.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='(7) 2.85 um Al', fPosition:=135.0);
     fbStage1.arrFilters[7].fFilterThickness_um := 2.85;
     fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage1.stFilter8.sName                   := '(8) 1.52 um Al';
-    fbStage1.stFilter8.fPosition               := 150.0;
-    fbStage1.stFilter8.fDelta                  := 0.2;
-    fbStage1.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage1.stFilter8.bValid                  := TRUE;
-    fbStage1.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 1.52 um Al', fPosition:=150.0);
     fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
     fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+    fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 2 *)
-    fbStage2.stOut.sName         := 'Out';
-    fbStage2.stOut.fPosition     := 27.72;
-    fbStage2.stOut.fDelta        := 0.2;
-    fbStage2.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage2.stOut.bValid        := TRUE;
-    fbStage2.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=27.72);
 
-    fbStage2.stFilter1.sName                   := 'Filter 1';
-    fbStage2.stFilter1.fPosition               := 500.0;
-    fbStage2.stFilter1.fDelta                  := 0.2;
-    fbStage2.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter1.bValid                  := FALSE;
-    fbStage2.stFilter1.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
     fbStage2.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage2.stFilter2.sName                   := 'Filter 2';
-    fbStage2.stFilter2.fPosition               := 500.0;
-    fbStage2.stFilter2.fDelta                  := 0.2;
-    fbStage2.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter2.bValid                  := FALSE;
-    fbStage2.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
     fbStage2.arrFilters[2].fFilterThickness_um := 0;
     fbStage2.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage2.stFilter3.sName                   := 'Filter 3';
-    fbStage2.stFilter3.fPosition               := 500.0;
-    fbStage2.stFilter3.fDelta                  := 0.2;
-    fbStage2.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter3.bValid                  := FALSE;
-    fbStage2.stFilter3.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter3, sName:='Filter 3');
     fbStage2.arrFilters[3].fFilterThickness_um := 0;
     fbStage2.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage2.stFilter4.sName                   := 'Filter 4';
-    fbStage2.stFilter4.fPosition               := 500.0;
-    fbStage2.stFilter4.fDelta                  := 0.2;
-    fbStage2.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter4.bValid                  := FALSE;
-    fbStage2.stFilter4.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter4, sName:='Filter 4');
     fbStage2.arrFilters[4].fFilterThickness_um := 0;
     fbStage2.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage2.stFilter5.sName                   := '(5) 6.18 um Al';
-    fbStage2.stFilter5.fPosition               := 103.0;
-    fbStage2.stFilter5.fDelta                  := 0.2;
-    fbStage2.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter5.bValid                  := TRUE;
-    fbStage2.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='(5) 6.18 um Al', fPosition:=103.0);
     fbStage2.arrFilters[5].fFilterThickness_um := 6.18;
     fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter6.sName                   := '(6) 2.85 um Al';
-    fbStage2.stFilter6.fPosition               := 119.0;
-    fbStage2.stFilter6.fDelta                  := 0.2;
-    fbStage2.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter6.bValid                  := TRUE;
-    fbStage2.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='(6) 2.85 um Al', fPosition:=119.0);
     fbStage2.arrFilters[6].fFilterThickness_um := 2.85;
     fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter7.sName                   := '(7) 1.52 um Al';
-    fbStage2.stFilter7.fPosition               := 135.0;
-    fbStage2.stFilter7.fDelta                  := 0.2;
-    fbStage2.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter7.bValid                  := TRUE;
-    fbStage2.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 1.52 um Al', fPosition:=135.0);
     fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
     fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage2.stFilter8.sName                   := '(8) 0.78 um Al';
-    fbStage2.stFilter8.fPosition               := 150.0;
-    fbStage2.stFilter8.fDelta                  := 0.2;
-    fbStage2.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage2.stFilter8.bValid                  := TRUE;
-    fbStage2.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.78 um Al', fPosition:=150.0);
     fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
     fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+    fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 3 *)
-    fbStage3.stOut.sName         := 'Out';
-    fbStage3.stOut.fPosition     := 27.00;
-    fbStage3.stOut.fDelta        := 0.2;
-    fbStage3.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage3.stOut.bValid        := TRUE;
-    fbStage3.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=27.00);
 
-    fbStage3.stFilter1.sName                   := 'Filter 1';
-    fbStage3.stFilter1.fPosition               := 500.0;
-    fbStage3.stFilter1.fDelta                  := 0.2;
-    fbStage3.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter1.bValid                  := FALSE;
-    fbStage3.stFilter1.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
     fbStage3.arrFilters[1].fFilterThickness_um := 0;
     fbStage3.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage3.stFilter2.sName                   := 'Filter 2';
-    fbStage3.stFilter2.fPosition               := 500.0;
-    fbStage3.stFilter2.fDelta                  := 0.2;
-    fbStage3.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter2.bValid                  := FALSE;
-    fbStage3.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:='Filter 2');
     fbStage3.arrFilters[2].fFilterThickness_um := 0;
     fbStage3.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage3.stFilter3.sName                   := 'Filter 3';
-    fbStage3.stFilter3.fPosition               := 500.0;
-    fbStage3.stFilter3.fDelta                  := 0.2;
-    fbStage3.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter3.bValid                  := FALSE;
-    fbStage3.stFilter3.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter3, sName:='Filter 3');
     fbStage3.arrFilters[3].fFilterThickness_um := 0;
     fbStage3.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage3.stFilter4.sName                   := 'Filter 4';
-    fbStage3.stFilter4.fPosition               := 500.0;
-    fbStage3.stFilter4.fDelta                  := 0.2;
-    fbStage3.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter4.bValid                  := FALSE;
-    fbStage3.stFilter4.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter4, sName:='Filter 4');
     fbStage3.arrFilters[4].fFilterThickness_um := 0;
     fbStage3.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage3.stFilter5.sName                   := '(5) 2.85 um Al';
-    fbStage3.stFilter5.fPosition               := 103.0;
-    fbStage3.stFilter5.fDelta                  := 0.2;
-    fbStage3.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter5.bValid                  := TRUE;
-    fbStage3.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage3.stFilter5, sName:='(5) 2.85 um Al', fPosition:=103.0);
     fbStage3.arrFilters[5].fFilterThickness_um := 2.85;
     fbStage3.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter6.sName                   := '(6) 1.52 um Al';
-    fbStage3.stFilter6.fPosition               := 119.0;
-    fbStage3.stFilter6.fDelta                  := 0.2;
-    fbStage3.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter6.bValid                  := TRUE;
-    fbStage3.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage3.stFilter6, sName:='(6) 1.52 um Al', fPosition:=119.0);
     fbStage3.arrFilters[6].fFilterThickness_um := 1.52;
     fbStage3.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter7.sName                   := '(7) 0.78 um Al';
-    fbStage3.stFilter7.fPosition               := 135.0;
-    fbStage3.stFilter7.fDelta                  := 0.2;
-    fbStage3.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter7.bValid                  := TRUE;
-    fbStage3.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage3.stFilter7, sName:='(7) 0.78 um Al', fPosition:=135.0);
     fbStage3.arrFilters[7].fFilterThickness_um := 0.78;
     fbStage3.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage3.stFilter8.sName                   := '(8) 0.39 um Al';
-    fbStage3.stFilter8.fPosition               := 150.0;
-    fbStage3.stFilter8.fDelta                  := 0.2;
-    fbStage3.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage3.stFilter8.bValid                  := TRUE;
-    fbStage3.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 0.39 um Al', fPosition:=150.0);
     fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
     fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+    fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 4 *)
-    fbStage4.stOut.sName         := 'Out';
-    fbStage4.stOut.fPosition     := 28.03;
-    fbStage4.stOut.fDelta        := 0.2;
-    fbStage4.stOut.fVelocity     := DEFAULT_VELOCITY;
-    fbStage4.stOut.bValid        := TRUE;
-    fbStage4.stOut.bMoveOk       := TRUE;
+    fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=28.03);
 
-    fbStage4.stFilter1.sName                   := 'Filter 1';
-    fbStage4.stFilter1.fPosition               := 500.0;
-    fbStage4.stFilter1.fDelta                  := 0.2;
-    fbStage4.stFilter1.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter1.bValid                  := FALSE;
-    fbStage4.stFilter1.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
     fbStage4.arrFilters[1].fFilterThickness_um := 0;
     fbStage4.arrFilters[1].sFilterMaterial     := '';
 
-    fbStage4.stFilter2.sName                   := 'Filter 2';
-    fbStage4.stFilter2.fPosition               := 500.0;
-    fbStage4.stFilter2.fDelta                  := 0.2;
-    fbStage4.stFilter2.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter2.bValid                  := FALSE;
-    fbStage4.stFilter2.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:='Filter 2');
     fbStage4.arrFilters[2].fFilterThickness_um := 0;
     fbStage4.arrFilters[2].sFilterMaterial     := '';
 
-    fbStage4.stFilter3.sName                   := 'Filter 3';
-    fbStage4.stFilter3.fPosition               := 500.0;
-    fbStage4.stFilter3.fDelta                  := 0.2;
-    fbStage4.stFilter3.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter3.bValid                  := FALSE;
-    fbStage4.stFilter3.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter3, sName:='Filter 3');
     fbStage4.arrFilters[3].fFilterThickness_um := 0;
     fbStage4.arrFilters[3].sFilterMaterial     := '';
 
-    fbStage4.stFilter4.sName                   := 'Filter 4';
-    fbStage4.stFilter4.fPosition               := 500.0;
-    fbStage4.stFilter4.fDelta                  := 0.2;
-    fbStage4.stFilter4.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter4.bValid                  := FALSE;
-    fbStage4.stFilter4.bMoveOk                 := FALSE;
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter4, sName:='Filter 4');
     fbStage4.arrFilters[4].fFilterThickness_um := 0;
     fbStage4.arrFilters[4].sFilterMaterial     := '';
 
-    fbStage4.stFilter5.sName                   := '(5) 1.52 um Al';
-    fbStage4.stFilter5.fPosition               := 103.0;
-    fbStage4.stFilter5.fDelta                  := 0.2;
-    fbStage4.stFilter5.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter5.bValid                  := TRUE;
-    fbStage4.stFilter5.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage4.stFilter5, sName:='(5) 1.52 um Al', fPosition:=103.0);
     fbStage4.arrFilters[5].fFilterThickness_um := 1.52;
     fbStage4.arrFilters[5].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter6.sName                   := '(6) 0.78 um Al';
-    fbStage4.stFilter6.fPosition               := 119.0;
-    fbStage4.stFilter6.fDelta                  := 0.2;
-    fbStage4.stFilter6.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter6.bValid                  := TRUE;
-    fbStage4.stFilter6.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage4.stFilter6, sName:='(6) 0.78 um Al', fPosition:=119.0);
     fbStage4.arrFilters[6].fFilterThickness_um := 0.78;
     fbStage4.arrFilters[6].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter7.sName                   := '(7) 0.39 um Al';
-    fbStage4.stFilter7.fPosition               := 135.0;
-    fbStage4.stFilter7.fDelta                  := 0.2;
-    fbStage4.stFilter7.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter7.bValid                  := TRUE;
-    fbStage4.stFilter7.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage4.stFilter7, sName:='(7) 0.39 um Al', fPosition:=135.0);
     fbStage4.arrFilters[7].fFilterThickness_um := 0.39;
     fbStage4.arrFilters[7].sFilterMaterial     := 'Al';
 
-    fbStage4.stFilter8.sName                   := '(8) 0.20 um Al';
-    fbStage4.stFilter8.fPosition               := 150.0;
-    fbStage4.stFilter8.fDelta                  := 0.2;
-    fbStage4.stFilter8.fVelocity               := DEFAULT_VELOCITY;
-    fbStage4.stFilter8.bValid                  := TRUE;
-    fbStage4.stFilter8.bMoveOk                 := TRUE;
+    fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.20 um Al', fPosition:=150.0);
     fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
     fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+    fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
@@ -1820,7 +1224,6 @@ PRG_AT2K2_SOLID
 
 
 Related:
-    * `FB_SXR_SATT_Stage`_
     * `GVL`_
     * `Main`_
 
@@ -1832,10 +1235,7 @@ PRG_IM1K1_PPM
 
     PROGRAM PRG_IM1K1_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM1K1:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM1K1:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K1-EL4004]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM1K1-EL2004]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM1K1-EL3062]^AI Standard Channel 1^Value;
@@ -1848,33 +1248,30 @@ PRG_IM1K1_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM1K1: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM1K1.stOut.fPosition := -8.82;
-    fbIM1K1.stOut.bUseRawCounts := FALSE;
-    fbIM1K1.stOut.bValid := TRUE;
-    fbIM1K1.stOut.stPMPS.sPmpsState := 'IM1K1:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM1K1.stPower.fPosition := -47.92;
-    fbIM1K1.stPower.bUseRawCounts := FALSE;
-    fbIM1K1.stPower.bValid := TRUE;
-    fbIM1K1.stPower.stPMPS.sPmpsState := 'IM1K1:PPM-POWERMETER';
-
-    fbIM1K1.stYag1.fPosition := -71.92;
-    fbIM1K1.stYag1.bUseRawCounts := FALSE;
-    fbIM1K1.stYag1.bValid := TRUE;
-    fbIM1K1.stYag1.stPMPS.sPmpsState := 'IM1K1:PPM-YAG1';
-
-    fbIM1K1.stYag2.fPosition := -97.93;
-    fbIM1K1.stYag2.bUseRawCounts := FALSE;
-    fbIM1K1.stYag2.bValid := TRUE;
-    fbIM1K1.stYag2.stPMPS.sPmpsState := 'IM1K1:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM1K1.stOut, fPosition:=-8.82, sPmpsState:='IM1K1:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM1K1.stPower, fPosition:=-47.92, sPmpsState:='IM1K1:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM1K1.stYag1, fPosition:=-71.92, sPmpsState:='IM1K1:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM1K1.stYag2, fPosition:=-97.93, sPmpsState:='IM1K1:PPM-YAG2');
 
     fbIM1K1(
-        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter1,
         stYStage := Main.M1,
-        sPmpsDeviceName := 'IM1K1:PPM',
+        sDeviceName := 'IM1K1:PPM',
         sTransitionKey := 'IM1K1:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -1892,10 +1289,7 @@ PRG_IM1K2_PPM
 
     PROGRAM PRG_IM1K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM1K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM1K2:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM1K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -1908,33 +1302,30 @@ PRG_IM1K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM1K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 12,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM1K2.stOut.fPosition := -9.82;
-    fbIM1K2.stOut.bUseRawCounts := FALSE;
-    fbIM1K2.stOut.bValid := TRUE;
-    fbIM1K2.stOut.stPMPS.sPmpsState := 'IM1K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM1K2.stPower.fPosition := -48.92;
-    fbIM1K2.stPower.bUseRawCounts := FALSE;
-    fbIM1K2.stPower.bValid := TRUE;
-    fbIM1K2.stPower.stPMPS.sPmpsState := 'IM1K2:PPM-POWERMETER';
-
-    fbIM1K2.stYag1.fPosition := -72.92;
-    fbIM1K2.stYag1.bUseRawCounts := FALSE;
-    fbIM1K2.stYag1.bValid := TRUE;
-    fbIM1K2.stYag1.stPMPS.sPmpsState := 'IM1K2:PPM-YAG1';
-
-    fbIM1K2.stYag2.fPosition := -98.93;
-    fbIM1K2.stYag2.bUseRawCounts := FALSE;
-    fbIM1K2.stYag2.bValid := TRUE;
-    fbIM1K2.stYag2.stPMPS.sPmpsState := 'IM1K2:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM1K2.stOut, fPosition:=-9.82, sPmpsState:='IM1K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM1K2.stPower, fPosition:=-48.92, sPmpsState:='IM1K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM1K2.stYag1, fPosition:=-72.92, sPmpsState:='IM1K2:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM1K2.stYag2, fPosition:=-98.93, sPmpsState:='IM1K2:PPM-YAG2');
 
     fbIM1K2(
-        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter1,
         stYStage := Main.M4,
-        sPmpsDeviceName := 'IM1K2:PPM',
+        sDeviceName := 'IM1K2:PPM',
         sTransitionKey := 'IM1K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -1952,10 +1343,7 @@ PRG_IM2K1_PPM
 
     PROGRAM PRG_IM2K1_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM2K1:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM2K1:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
@@ -1968,33 +1356,30 @@ PRG_IM2K1_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM2K1: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 13,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM2K1.stOut.fPosition := -9.09;
-    fbIM2K1.stOut.bUseRawCounts := FALSE;
-    fbIM2K1.stOut.bValid := TRUE;
-    fbIM2K1.stOut.stPMPS.sPmpsState := 'IM2K1:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM2K1.stPower.fPosition := -48.19;
-    fbIM2K1.stPower.bUseRawCounts := FALSE;
-    fbIM2K1.stPower.bValid := TRUE;
-    fbIM2K1.stPower.stPMPS.sPmpsState := 'IM2K1:PPM-POWERMETER';
-
-    fbIM2K1.stYag1.fPosition := -72.19;
-    fbIM2K1.stYag1.bUseRawCounts := FALSE;
-    fbIM2K1.stYag1.bValid := TRUE;
-    fbIM2K1.stYag1.stPMPS.sPmpsState := 'IM2K1:PPM-YAG1';
-
-    fbIM2K1.stYag2.fPosition := -98.2;
-    fbIM2K1.stYag2.bUseRawCounts := FALSE;
-    fbIM2K1.stYag2.bValid := TRUE;
-    fbIM2K1.stYag2.stPMPS.sPmpsState := 'IM2K1:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM2K1.stOut, fPosition:=-9.09, sPmpsState:='IM2K1:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM2K1.stPower, fPosition:=-48.19, sPmpsState:='IM2K1:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM2K1.stYag1, fPosition:=-72.19, sPmpsState:='IM2K1:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM2K1.stYag2, fPosition:=-98.2, sPmpsState:='IM2K1:PPM-YAG2');
 
     fbIM2K1(
-        fbArbiter := GVL.fbArbiter1,
         fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter1,
         stYStage := Main.M2,
-        sPmpsDeviceName := 'IM2K1:PPM',
+        sDeviceName := 'IM2K1:PPM',
         sTransitionKey := 'IM2K1:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2012,10 +1397,7 @@ PRG_IM2K2_PPM
 
     PROGRAM PRG_IM2K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM2K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM2K2:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM2K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM2K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -2028,33 +1410,30 @@ PRG_IM2K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM2K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 15,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM2K2.stOut.fPosition := -8.49;
-    fbIM2K2.stOut.bUseRawCounts := FALSE;
-    fbIM2K2.stOut.bValid := TRUE;
-    fbIM2K2.stOut.stPMPS.sPmpsState := 'IM2K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM2K2.stPower.fPosition := -47.59;
-    fbIM2K2.stPower.bUseRawCounts := FALSE;
-    fbIM2K2.stPower.bValid := TRUE;
-    fbIM2K2.stPower.stPMPS.sPmpsState := 'IM2K2:PPM-POWERMETER';
-
-    fbIM2K2.stYag1.fPosition := -71.59;
-    fbIM2K2.stYag1.bUseRawCounts := FALSE;
-    fbIM2K2.stYag1.bValid := TRUE;
-    fbIM2K2.stYag1.stPMPS.sPmpsState := 'IM2K2:PPM-YAG1';
-
-    fbIM2K2.stYag2.fPosition := -97.60;
-    fbIM2K2.stYag2.bUseRawCounts := FALSE;
-    fbIM2K2.stYag2.bValid := TRUE;
-    fbIM2K2.stYag2.stPMPS.sPmpsState := 'IM2K2:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM2K2.stOut, fPosition:=-8.49, sPmpsState:='IM2K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM2K2.stPower, fPosition:=-47.59, sPmpsState:='IM2K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM2K2.stYag1, fPosition:=-71.59, sPmpsState:='IM2K2:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM2K2.stYag2, fPosition:=-97.60, sPmpsState:='IM2K2:PPM-YAG2');
 
     fbIM2K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M6,
-        sPmpsDeviceName := 'IM2K2:PPM',
+        sDeviceName := 'IM2K2:PPM',
         sTransitionKey := 'IM2K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2072,10 +1451,7 @@ PRG_IM3K2_PPM
 
     PROGRAM PRG_IM3K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM3K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM3K2:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM3K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM3K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM3K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -2088,33 +1464,30 @@ PRG_IM3K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM3K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 14,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM3K2.stOut.fPosition := -9.61;
-    fbIM3K2.stOut.bUseRawCounts := FALSE;
-    fbIM3K2.stOut.bValid := TRUE;
-    fbIM3K2.stOut.stPMPS.sPmpsState := 'IM3K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM3K2.stPower.fPosition := -48.71;
-    fbIM3K2.stPower.bUseRawCounts := FALSE;
-    fbIM3K2.stPower.bValid := TRUE;
-    fbIM3K2.stPower.stPMPS.sPmpsState := 'IM3K2:PPM-POWERMETER';
-
-    fbIM3K2.stYag1.fPosition := -72.71;
-    fbIM3K2.stYag1.bUseRawCounts := FALSE;
-    fbIM3K2.stYag1.bValid := TRUE;
-    fbIM3K2.stYag1.stPMPS.sPmpsState := 'IM3K2:PPM-YAG1';
-
-    fbIM3K2.stYag2.fPosition := -98.72;
-    fbIM3K2.stYag2.bUseRawCounts := FALSE;
-    fbIM3K2.stYag2.bValid := TRUE;
-    fbIM3K2.stYag2.stPMPS.sPmpsState := 'IM3K2:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM3K2.stOut, fPosition:=-9.61, sPmpsState:='IM3K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM3K2.stPower, fPosition:=-48.71, sPmpsState:='IM3K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM3K2.stYag1, fPosition:=-72.71, sPmpsState:='IM3K2:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM3K2.stYag2, fPosition:=-98.72, sPmpsState:='IM3K2:PPM-YAG2');
 
     fbIM3K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M7,
-        sPmpsDeviceName := 'IM3K2:PPM',
+        sDeviceName := 'IM3K2:PPM',
         sTransitionKey := 'IM3K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2132,10 +1505,7 @@ PRG_IM4K2_PPM
 
     PROGRAM PRG_IM4K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM4K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM4K2:PPM'}
          {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM4K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -2148,33 +1518,30 @@ PRG_IM4K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM4K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 12,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM4K2.stOut.fPosition := -10.80;
-    fbIM4K2.stOut.bUseRawCounts := FALSE;
-    fbIM4K2.stOut.bValid := TRUE;
-    fbIM4K2.stOut.stPMPS.sPmpsState := 'IM4K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM4K2.stPower.fPosition := -49.90;
-    fbIM4K2.stPower.bUseRawCounts := FALSE;
-    fbIM4K2.stPower.bValid := TRUE;
-    fbIM4K2.stPower.stPMPS.sPmpsState := 'IM4K2:PPM-POWERMETER';
-
-    fbIM4K2.stYag1.fPosition := -73.90;
-    fbIM4K2.stYag1.bUseRawCounts := FALSE;
-    fbIM4K2.stYag1.bValid := TRUE;
-    fbIM4K2.stYag1.stPMPS.sPmpsState := 'IM4K2:PPM-YAG1';
-
-    fbIM4K2.stYag2.fPosition := -99.91;
-    fbIM4K2.stYag2.bUseRawCounts := FALSE;
-    fbIM4K2.stYag2.bValid := TRUE;
-    fbIM4K2.stYag2.stPMPS.sPmpsState := 'IM4K2:PPM-YAG2';
+    fbStateSetup(stPositionState:=fbIM4K2.stOut, fPosition:=-10.80, sPmpsState:='IM4K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM4K2.stPower, fPosition:=-49.90, sPmpsState:='IM4K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM4K2.stYag1, fPosition:=-73.90, sPmpsState:='IM4K2:PPM-YAG1');
+    fbStateSetup(stPositionState:=fbIM4K2.stYag2, fPosition:=-99.91, sPmpsState:='IM4K2:PPM-YAG2');
 
     fbIM4K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M8,
-        sPmpsDeviceName := 'IM4K2:PPM',
+        sDeviceName := 'IM4K2:PPM',
         sTransitionKey := 'IM4K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2192,10 +1559,7 @@ PRG_IM5K2_PPM
 
     PROGRAM PRG_IM5K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM5K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM5K2:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM5K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM5K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM5K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -2208,33 +1572,39 @@ PRG_IM5K2_PPM
                                   .fbYagThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                                   .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM5K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 12,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM5K2.stOut.fPosition := -8.92;
-    fbIM5K2.stOut.bUseRawCounts := FALSE;
-    fbIM5K2.stOut.bValid := TRUE;
-    fbIM5K2.stOut.stPMPS.sPmpsState := 'IM5K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM5K2.stPower.fPosition := -48.02;
-    fbIM5K2.stPower.bUseRawCounts := FALSE;
-    fbIM5K2.stPower.bValid := TRUE;
-    fbIM5K2.stPower.stPMPS.sPmpsState := 'IM5K2:PPM-POWERMETER';
+    fbStateSetup(stPositionState:=fbIM5K2.stOut, fPosition:=-8.92, sPmpsState:='IM5K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM5K2.stPower, fPosition:=-48.02, sPmpsState:='IM5K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM5K2.stYag1, fPosition:=-72.02);
+    fbStateSetup(stPositionState:=fbIM5K2.stYag2, fPosition:=-98.03, sPmpsState:='IM5K2:PPM-YAG2');
 
-    fbIM5K2.stYag1.fPosition := -72.02;
-    fbIM5K2.stYag1.bUseRawCounts := FALSE;
-    fbIM5K2.stYag1.bValid := TRUE;
-    fbIM5K2.stYag1.stPMPS.sPmpsState := 'IM5K2:PPM-YAG1';
-
-    fbIM5K2.stYag2.fPosition := -98.03;
-    fbIM5K2.stYag2.bUseRawCounts := FALSE;
-    fbIM5K2.stYag2.bValid := TRUE;
-    fbIM5K2.stYag2.stPMPS.sPmpsState := 'IM5K2:PPM-YAG2';
+    CASE GVL.ePF1K2State OF
+        E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+            // Known state targets: allow less strict pmps
+            fbIM5K2.stYag1.stPMPS.sPmpsState := 'IM5K2:PPM-YAG1_WFS_IN';
+    ELSE
+        // Out, Unknown, or an unexpected state: full pmps
+        fbIM5K2.stYag1.stPMPS.sPmpsState := 'IM5K2:PPM-YAG1';
+    END_CASE
 
     fbIM5K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M14,
-        sPmpsDeviceName := 'IM5K2:PPM',
+        sDeviceName := 'IM5K2:PPM',
         sTransitionKey := 'IM5K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2252,10 +1622,7 @@ PRG_IM6K2_PPM
 
     PROGRAM PRG_IM6K2_PPM
     VAR
-        {attribute 'pytmc' := '
-            pv: IM6K2:PPM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: IM6K2:PPM'}
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM6K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM6K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM6K2-EL3062-E6]^AI Standard Channel 1^Value;
@@ -2266,35 +1633,41 @@ PRG_IM6K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw 6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM6K2: FB_PPM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 14,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbIM6K2.stOut.fPosition := -8.61;
-    fbIM6K2.stOut.bUseRawCounts := FALSE;
-    fbIM6K2.stOut.bValid := TRUE;
-    fbIM6K2.stOut.stPMPS.sPmpsState := 'IM6K2:PPM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbIM6K2.stPower.fPosition := -47.71;
-    fbIM6K2.stPower.bUseRawCounts := FALSE;
-    fbIM6K2.stPower.bValid := TRUE;
-    fbIM6K2.stPower.stPMPS.sPmpsState := 'IM6K2:PPM-POWERMETER';
+    fbStateSetup(stPositionState:=fbIM6K2.stOut, fPosition:=-8.61, sPmpsState:='IM6K2:PPM-OUT');
+    fbStateSetup(stPositionState:=fbIM6K2.stPower, fPosition:=-47.71, sPmpsState:='IM6K2:PPM-POWERMETER');
+    fbStateSetup(stPositionState:=fbIM6K2.stYag1, fPosition:=-71.71);
+    fbStateSetup(stPositionState:=fbIM6K2.stYag2, fPosition:=-97.72, sPmpsState:='IM6K2:PPM-YAG2');
 
-    fbIM6K2.stYag1.fPosition := -71.71;
-    fbIM6K2.stYag1.bUseRawCounts := FALSE;
-    fbIM6K2.stYag1.bValid := TRUE;
-    fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1';
-
-    fbIM6K2.stYag2.fPosition := -97.72;
-    fbIM6K2.stYag2.bUseRawCounts := FALSE;
-    fbIM6K2.stYag2.bValid := TRUE;
-    fbIM6K2.stYag2.stPMPS.sPmpsState := 'IM6K2:PPM-YAG2';
+    CASE GVL.ePF2K2State OF
+        E_WFS_STATES.TARGET1, E_WFS_STATES.TARGET2, E_WFS_STATES.TARGET3, E_WFS_STATES.TARGET4, E_WFS_STATES.TARGET5 :
+            // Known state targets: allow less strict pmps
+            fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1_WFS_IN';
+    ELSE
+        // Out, Unknown, or an unexpected state: full pmps
+        fbIM6K2.stYag1.stPMPS.sPmpsState := 'IM6K2:PPM-YAG1';
+    END_CASE
 
     fbIM6K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M24,
-        sPmpsDeviceName := 'IM6K2:PPM',
+        sDeviceName := 'IM6K2:PPM',
         sTransitionKey := 'IM6K2:PPM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2312,51 +1685,32 @@ PRG_LI2K2_K2A
 
     PROGRAM PRG_LI2K2_K2A
     VAR
-        {attribute 'pytmc' := '
-            pv: LI2K2:K2A
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: LI2K2:K2A'}
         fbLI2K2: FB_LIC;
 
-        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-        //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    (*
-       Avoid damage peak between 3.2 keV and 1.6 keV
-    *)
-    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-    // Drop transmission to 20%
-    //stSiBP.nTran := 0.2;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    // Drop transmission to 10%
-    ////stFoilBP.nTran := 0.1;
-
-    fbLI2K2.stOut.fPosition := 1.2;
-    fbLI2K2.stOut.bUseRawCounts := FALSE;
-    fbLI2K2.stOut.bValid := TRUE;
-    fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2:K2A-OUT';
-
-    fbLI2K2.stMirror1.fPosition := -35.3;
-    fbLI2K2.stMirror1.bUseRawCounts := FALSE;
-    fbLI2K2.stMirror1.bValid := TRUE;
-    fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR1';
-
-    fbLI2K2.stMirror2.fPosition := -69.3;
-    fbLI2K2.stMirror2.bUseRawCounts := FALSE;
-    fbLI2K2.stMirror2.bValid := TRUE;
-    fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR2';
-
-    fbLI2K2.stTarget1.fPosition := -101.3;
-    fbLI2K2.stTarget1.bUseRawCounts := FALSE;
-    fbLI2K2.stTarget1.bValid := TRUE;
-    fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2:K2A-TARGET1';
+    fbStateSetup(stPositionState:=fbLI2K2.stOut, fPosition:=1.2, sPmpsState:='LI2K2:K2A-OUT');
+    fbStateSetup(stPositionState:=fbLI2K2.stMirror1, fPosition:=-35.3, sPmpsState:='LI2K2:K2A-MIRROR1');
+    fbStateSetup(stPositionState:=fbLI2K2.stMirror2, fPosition:=-69.3, sPmpsState:='LI2K2:K2A-MIRROR2');
+    fbStateSetup(stPositionState:=fbLI2K2.stTarget1, fPosition:=-101.3, sPmpsState:='LI2K2:K2A-TARGET1');
 
     fbLI2K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M11,
-        sPmpsDeviceName := 'LI2K2:K2A',
+        sDeviceName := 'LI2K2:K2A',
         sTransitionKey := 'LI2K2:K2A-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2374,51 +1728,32 @@ PRG_LI3K2_K2B
 
     PROGRAM PRG_LI3K2_K2B
     VAR
-        {attribute 'pytmc' := '
-            pv: LI3K2:K2B
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: LI3K2:K2B'}
         fbLI3K2: FB_LIC;
 
-        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-        //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    (*
-       Avoid damage peak between 3.2 keV and 1.6 keV
-    *)
-    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-    // Drop transmission to 20%
-    //stSiBP.nTran := 0.2;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    // Drop transmission to 10%
-    //stFoilBP.nTran := 0.1;
-
-    fbLI3K2.stOut.fPosition := 0.118;
-    fbLI3K2.stOut.bUseRawCounts := FALSE;
-    fbLI3K2.stOut.bValid := TRUE;
-    fbLI3K2.stOut.stPMPS.sPmpsState := 'LI3K2:K2B-OUT';
-
-    fbLI3K2.stMirror1.fPosition := -36.38;
-    fbLI3K2.stMirror1.bUseRawCounts := FALSE;
-    fbLI3K2.stMirror1.bValid := TRUE;
-    fbLI3K2.stMirror1.stPMPS.sPmpsState := 'LI3K2:K2B-MIRROR1';
-
-    fbLI3K2.stMirror2.fPosition := -70.38;
-    fbLI3K2.stMirror2.bUseRawCounts := FALSE;
-    fbLI3K2.stMirror2.bValid := TRUE;
-    fbLI3K2.stMirror2.stPMPS.sPmpsState := 'LI3K2:K2B-MIRROR2';
-
-    fbLI3K2.stTarget1.fPosition := -102.38;
-    fbLI3K2.stTarget1.bUseRawCounts := FALSE;
-    fbLI3K2.stTarget1.bValid := TRUE;
-    fbLI3K2.stTarget1.stPMPS.sPmpsState := 'LI3K2:K2B-TARGET1';
+    fbStateSetup(stPositionState:=fbLI3K2.stOut, fPosition:=0.118, sPmpsState:='LI3K2:K2B-OUT');
+    fbStateSetup(stPositionState:=fbLI3K2.stMirror1, fPosition:=-36.38, sPmpsState:='LI3K2:K2B-MIRROR1');
+    fbStateSetup(stPositionState:=fbLI3K2.stMirror2, fPosition:=-70.38, sPmpsState:='LI3K2:K2B-MIRROR2');
+    fbStateSetup(stPositionState:=fbLI3K2.stTarget1, fPosition:=-102.38, sPmpsState:='LI3K2:K2B-TARGET1');
 
     fbLI3K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M21,
-        sPmpsDeviceName := 'LI3K2:K2B',
+        sDeviceName := 'LI3K2:K2B',
         sTransitionKey := 'LI3K2:K2B-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2436,10 +1771,7 @@ PRG_PF1K2_WFS
 
     PROGRAM PRG_PF1K2_WFS
     VAR
-        {attribute 'pytmc' := '
-            pv: PF1K2:WFS
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: PF1K2:WFS'}
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange 	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
@@ -2450,52 +1782,33 @@ PRG_PF1K2_WFS
                                   .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value'}
         fbPF1K2: FB_WFS;
 
-        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    (*
-       Avoid damage peak between 3.2 keV and 1.6 keV
-    *)
-    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-    // Drop transmission to 20%
-    //stSiBP.nTran := 0.2;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbPF1K2.stOut.fPosition := -13.00;
-    fbPF1K2.stOut.bUseRawCounts := FALSE;
-    fbPF1K2.stOut.bValid := TRUE;
-    fbPF1K2.stOut.stPMPS.sPmpsState := 'PF1K2:WFS-OUT';
-
-    fbPF1K2.stTarget1.fPosition := -97.13;
-    fbPF1K2.stTarget1.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget1.bValid := TRUE;
-    fbPF1K2.stTarget1.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET1';
-
-    fbPF1K2.stTarget2.fPosition := -82.755;
-    fbPF1K2.stTarget2.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget2.bValid := TRUE;
-    fbPF1K2.stTarget2.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET2';
-
-    fbPF1K2.stTarget3.fPosition := -68.38;
-    fbPF1K2.stTarget3.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget3.bValid := TRUE;
-    fbPF1K2.stTarget3.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET3';
-
-    fbPF1K2.stTarget4.fPosition := -54.004;
-    fbPF1K2.stTarget4.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget4.bValid := TRUE;
-    fbPF1K2.stTarget4.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET4';
-
-    fbPF1K2.stTarget5.fPosition := -39.629;
-    fbPF1K2.stTarget5.bUseRawCounts := FALSE;
-    fbPF1K2.stTarget5.bValid := TRUE;
-    fbPF1K2.stTarget5.stPMPS.sPmpsState := 'PF1K2:WFS-TARGET5';
+    fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.00, sPmpsState:='PF1K2:WFS-OUT');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-97.13, sPmpsState:='PF1K2:WFS-TARGET1');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget2, fPosition:=-82.755, sPmpsState:='PF1K2:WFS-TARGET2');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget3, fPosition:=-68.38, sPmpsState:='PF1K2:WFS-TARGET3');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget4, fPosition:=-54.004, sPmpsState:='PF1K2:WFS-TARGET4');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget5, fPosition:=-39.629, sPmpsState:='PF1K2:WFS-TARGET5');
 
     fbPF1K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M12,
         stZStage := Main.M13,
-        sPmpsDeviceName := 'PF1K2:WFS',
+        sDeviceName := 'PF1K2:WFS',
         sTransitionKey := 'PF1K2:WFS-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+        eEnumGet=>GVL.ePF1K2State,
     );
 
     END_PROGRAM
@@ -2513,10 +1826,7 @@ PRG_PF2K2_WFS
 
     PROGRAM PRG_PF2K2_WFS
     VAR
-        {attribute 'pytmc' := '
-            pv: PF2K2:WFS
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: PF2K2:WFS'}
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange	:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange 	:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
@@ -2527,52 +1837,33 @@ PRG_PF2K2_WFS
                                   .fbThermoCouple2.iRaw 		:= TIIB[PF2K2-EL3314-E5]^TC Inputs Channel 2^Value'}
         fbPF2K2: FB_WFS;
 
-        //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    (*
-       Avoid damage peak between 3.2 keV and 1.6 keV
-    *)
-    //stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-    // Drop transmission to 20%
-    //stSiBP.nTran := 0.2;
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbPF2K2.stOut.fPosition := -15.00;
-    fbPF2K2.stOut.bUseRawCounts := FALSE;
-    fbPF2K2.stOut.bValid := TRUE;
-    fbPF2K2.stOut.stPMPS.sPmpsState := 'PF2K2:WFS-OUT';
-
-    fbPF2K2.stTarget1.fPosition := -97.789;
-    fbPF2K2.stTarget1.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget1.bValid := TRUE;
-    fbPF2K2.stTarget1.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET1';
-
-    fbPF2K2.stTarget2.fPosition := -83.416;
-    fbPF2K2.stTarget2.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget2.bValid := TRUE;
-    fbPF2K2.stTarget2.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET2';
-
-    fbPF2K2.stTarget3.fPosition := -69.043;
-    fbPF2K2.stTarget3.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget3.bValid := TRUE;
-    fbPF2K2.stTarget3.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET3';
-
-    fbPF2K2.stTarget4.fPosition := -54.669;
-    fbPF2K2.stTarget4.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget4.bValid := TRUE;
-    fbPF2K2.stTarget4.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET4';
-
-    fbPF2K2.stTarget5.fPosition := -40.296;
-    fbPF2K2.stTarget5.bUseRawCounts := FALSE;
-    fbPF2K2.stTarget5.bValid := TRUE;
-    fbPF2K2.stTarget5.stPMPS.sPmpsState := 'PF2K2:WFS-TARGET5';
+    fbStateSetup(stPositionState:=fbPF2K2.stOut, fPosition:=-15.00, sPmpsState:='PF2K2:WFS-OUT');
+    fbStateSetup(stPositionState:=fbPF2K2.stTarget1, fPosition:=-97.789, sPmpsState:='PF2K2:WFS-TARGET1');
+    fbStateSetup(stPositionState:=fbPF2K2.stTarget2, fPosition:=-83.416, sPmpsState:='PF2K2:WFS-TARGET2');
+    fbStateSetup(stPositionState:=fbPF2K2.stTarget3, fPosition:=-69.043, sPmpsState:='PF2K2:WFS-TARGET3');
+    fbStateSetup(stPositionState:=fbPF2K2.stTarget4, fPosition:=-54.669, sPmpsState:='PF2K2:WFS-TARGET4');
+    fbStateSetup(stPositionState:=fbPF2K2.stTarget5, fPosition:=-40.296, sPmpsState:='PF2K2:WFS-TARGET5');
 
     fbPF2K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M22,
         stZStage := Main.M23,
-        sPmpsDeviceName := 'PF2K2:WFS',
+        sDeviceName := 'PF2K2:WFS',
         sTransitionKey := 'PF2K2:WFS-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+        eEnumGet=>GVL.ePF2K2State,
     );
 
     END_PROGRAM
@@ -2624,53 +1915,39 @@ PRG_TM1K2_ATM
 
     PROGRAM PRG_TM1K2_ATM
     VAR
-        {attribute 'pytmc' := '
-            pv: TM1K2:ATM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: TM1K2:ATM'}
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
                                   .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value'}
         fbTM1K2: FB_ATM;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbTM1K2.stOut.fPosition := -16;
-    fbTM1K2.stOut.bUseRawCounts := FALSE;
-    fbTM1K2.stOut.bValid := TRUE;
-    fbTM1K2.stOut.stPMPS.sPmpsState := 'TM1K2:ATM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbTM1K2.stTarget1.fPosition := -39.124;
-    fbTM1K2.stTarget1.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget1.bValid := TRUE;
-    fbTM1K2.stTarget1.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET1';
-
-    fbTM1K2.stTarget2.fPosition := -53.5;
-    fbTM1K2.stTarget2.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget2.bValid := TRUE;
-    fbTM1K2.stTarget2.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET2';
-
-    fbTM1K2.stTarget3.fPosition := -67.874;
-    fbTM1K2.stTarget3.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget3.bValid := TRUE;
-    fbTM1K2.stTarget3.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET3';
-
-    fbTM1K2.stTarget4.fPosition := -82.25;
-    fbTM1K2.stTarget4.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget4.bValid := TRUE;
-    fbTM1K2.stTarget4.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET4';
-
-    fbTM1K2.stTarget5.fPosition := -96.623;
-    fbTM1K2.stTarget5.bUseRawCounts := FALSE;
-    fbTM1K2.stTarget5.bValid := TRUE;
-    fbTM1K2.stTarget5.stPMPS.sPmpsState := 'TM1K2:ATM-TARGET5';
+    fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, sPmpsState:='TM1K2:ATM-OUT');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, sPmpsState:='TM1K2:ATM-TARGET1');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, sPmpsState:='TM1K2:ATM-TARGET2');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, sPmpsState:='TM1K2:ATM-TARGET3');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, sPmpsState:='TM1K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, sPmpsState:='TM1K2:ATM-TARGET5');
 
     fbTM1K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M9,
         stXStage := Main.M10,
-        sPmpsDeviceName := 'TM1K2:ATM',
+        sDeviceName := 'TM1K2:ATM',
         sTransitionKey := 'TM1K2:ATM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM
@@ -2688,58 +1965,40 @@ PRG_TM2K2_ATM
 
     PROGRAM PRG_TM2K2_ATM
     VAR
-        {attribute 'pytmc' := '
-            pv: TM2K2:ATM
-            io: io
-        '}
+        {attribute 'pytmc' := 'pv: TM2K2:ATM'}
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
                                   .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value'}
         fbTM2K2: FB_TM2K2;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
     END_VAR
-    fbTM2K2.stOut.fPosition := 5.3;  //"-15" Changing OUT setpoint as -15 doesn't seem to be OUT position;
-    fbTM2K2.stOut.bUseRawCounts := FALSE;
-    fbTM2K2.stOut.bValid := TRUE;
-    fbTM2K2.stOut.stPMPS.sPmpsState := 'TM2K2:ATM-OUT';
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbTM2K2.stTarget1.fPosition := -15.5; //-39.124;
-    fbTM2K2.stTarget1.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget1.bValid := TRUE;
-    fbTM2K2.stTarget1.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET1';
-
-    fbTM2K2.stTarget2.fPosition := -36.5; //-53.5;
-    fbTM2K2.stTarget2.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget2.bValid := TRUE;
-    fbTM2K2.stTarget2.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET2';
-
-    fbTM2K2.stTarget3.fPosition := -52.0; //-67.874;
-    fbTM2K2.stTarget3.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget3.bValid := TRUE;
-    fbTM2K2.stTarget3.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET3';
-
-    fbTM2K2.stTarget4.fPosition := -60.5; //-82.25;
-    fbTM2K2.stTarget4.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget4.bValid := TRUE;
-    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
-
-    fbTM2K2.stTarget5.fPosition := -77.0; //-96.623;
-    fbTM2K2.stTarget5.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget5.bValid := TRUE;
-    fbTM2K2.stTarget4.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET4';
-
-    fbTM2K2.stTarget6.fPosition := -96.6; //-96.623;
-    fbTM2K2.stTarget6.bUseRawCounts := FALSE;
-    fbTM2K2.stTarget6.bValid := TRUE;
-    fbTM2K2.stTarget5.stPMPS.sPmpsState := 'TM2K2:ATM-TARGET5';
+    fbStateSetup(stPositionState:=fbTM2K2.stOut, fPosition:=5.3, sPmpsState:='TM2K2:ATM-OUT');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget1, fPosition:=-15.5, sPmpsState:='TM2K2:ATM-TARGET1');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget2, fPosition:=-36.5, sPmpsState:='TM2K2:ATM-TARGET2');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget3, fPosition:=-52.0, sPmpsState:='TM2K2:ATM-TARGET3');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-60.5, sPmpsState:='TM2K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget5, fPosition:=-77.0, sPmpsState:='TM2K2:ATM-TARGET5');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget6, fPosition:=-96.6, sPmpsState:='TM2K2:ATM-TARGET6');
 
     fbTM2K2(
-        fbArbiter := GVL.fbArbiter2,
         fbFFHWO := GVL.fbFastFaultOutput2,
+        fbArbiter := GVL.fbArbiter2,
         stYStage := Main.M15,
         stXStage := Main.M16,
-        sPmpsDeviceName := 'TM2K2:ATM',
+        sDeviceName := 'TM2K2:ATM',
         sTransitionKey := 'TM2K2:ATM-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
     );
 
     END_PROGRAM

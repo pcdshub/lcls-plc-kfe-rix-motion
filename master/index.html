@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lcls-plc-kfe-rix-motion &mdash; pcdshub/lcls-plc-kfe-rix-motion  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,7 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_links.html">Links</a></li>
 </ul>
@@ -126,7 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_nc.html#axis-27-axis-27-at1k2-solid-mms-03">Axis 27: Axis 27 AT1K2-SOLID-MMS-03</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html">Boxes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#power-ek1200">Power (EK1200)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#license-el6070">License (EL6070)</a></li>
@@ -268,7 +272,8 @@
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#pf1k2-el3314-e5">PF1K2-EL3314-E5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#tm1k2-el9011-e6">TM1K2-EL9011-E6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#im5k2-el9011-e8">IM5K2-EL9011-E8</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#tm2k2-el9011-e6">TM2K2-EL9011-E6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#tm2k2-el9011-e7">TM2K2-EL9011-E7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#tm2k2-el3052-e6">TM2K2-EL3052-E6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#li3k2-k2b-ek1100">LI3K2-K2B (EK1100)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#li3k2-el7041-e1">LI3K2-EL7041-E1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#li3k2-el5042-e2">LI3K2-EL5042-E2</a></li>
@@ -298,6 +303,7 @@
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#pf2k2-el9011-e6">PF2K2-EL9011-E6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#im6k2-el9011-e8">IM6K2-EL9011-E8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#term-296-el9011">Term 296 (EL9011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_boxes.html#at1k2-el3052-e8">AT1K2-EL3052-E8</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_links.html">Links</a></li>
@@ -357,24 +363,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html">Data Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#dut-satt-filter">DUT_SATT_Filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#fb-at1k2">FB_AT1K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#fb-sxr-satt-positionstate">FB_SXR_SATT_PositionState</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#fb-sxr-satt-stage">FB_SXR_SATT_Stage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#fb-tm2k2">FB_TM2K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#fb-tm2k2-states">FB_TM2K2_States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-atm">lcls2_cc_lib.FB_ATM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-atm-states">lcls2_cc_lib.FB_ATM_States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-lic">lcls2_cc_lib.FB_LIC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-lic-states">lcls2_cc_lib.FB_LIC_States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ppm">lcls2_cc_lib.FB_PPM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ppm-gige">lcls2_cc_lib.FB_PPM_Gige</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ppm-powermeter">lcls2_cc_lib.FB_PPM_PowerMeter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ppm-states">lcls2_cc_lib.FB_PPM_States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ref">lcls2_cc_lib.FB_REF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-ref-laser">lcls2_cc_lib.FB_REF_Laser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-wfs">lcls2_cc_lib.FB_WFS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls2-cc-lib-fb-wfs-states">lcls2_cc_lib.FB_WFS_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-dut-eps">LCLS_General.DUT_EPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-fb-analoginput">LCLS_General.FB_AnalogInput</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-fb-listener">LCLS_General.FB_Listener</a></li>
@@ -383,18 +372,28 @@
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-fb-tempsensor">LCLS_General.FB_TempSensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-fb-thermocouple">LCLS_General.FB_ThermoCouple</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-general-st-pendingevent">LCLS_General.ST_PendingEvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-dut-motionstage">lcls_twincat_motion.DUT_MotionStage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-dut-positionstate">lcls_twincat_motion.DUT_PositionState</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatebase">lcls_twincat_motion.FB_PositionStateBase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatebase-withpmps">lcls_twincat_motion.FB_PositionStateBase_WithPMPS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstateinout">lcls_twincat_motion.FB_PositionStateInOut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstateinout-withpmps">lcls_twincat_motion.FB_PositionStateInOut_WithPMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-atm">lcls_twincat_common_components.FB_ATM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-lic">lcls_twincat_common_components.FB_LIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-ppm">lcls_twincat_common_components.FB_PPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-ppm-gige">lcls_twincat_common_components.FB_PPM_Gige</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-ppm-powermeter">lcls_twincat_common_components.FB_PPM_PowerMeter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-ref">lcls_twincat_common_components.FB_REF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-ref-laser">lcls_twincat_common_components.FB_REF_Laser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-sxr-satt-stage">lcls_twincat_common_components.FB_SXR_SATT_Stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-wfs">lcls_twincat_common_components.FB_WFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-fb-xtes-flowswitch">lcls_twincat_common_components.FB_XTES_Flowswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-common-components-st-satt-filter">lcls_twincat_common_components.ST_SATT_Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstate1d">lcls_twincat_motion.FB_PositionState1D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstate1d-inout">lcls_twincat_motion.FB_PositionState1D_InOut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatemove">lcls_twincat_motion.FB_PositionStateMove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatepmps">lcls_twincat_motion.FB_PositionStatePMPS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatepmps-base">lcls_twincat_motion.FB_PositionStatePMPS_Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-positionstatepmps1d">lcls_twincat_motion.FB_PositionStatePMPS1D</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-fb-standard-pmpsdb">lcls_twincat_motion.FB_Standard_PMPSDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-motionstage">lcls_twincat_motion.ST_MotionStage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-positionstate">lcls_twincat_motion.ST_PositionState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-stateepicstoplc">lcls_twincat_motion.ST_StateEpicsToPlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-stateplctoepics">lcls_twincat_motion.ST_StatePlcToEpics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-statepmpsepicstoplc">lcls_twincat_motion.ST_StatePMPSEpicsToPlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#lcls-twincat-motion-st-statepmpsplctoepics">lcls_twincat_motion.ST_StatePMPSPlcToEpics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#pmps-fb-arbiter">PMPS.FB_Arbiter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#pmps-fb-beamparamassertionpool">PMPS.FB_BeamParamAssertionPool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#pmps-fb-hardwareffoutput">PMPS.FB_HardwareFFOutput</a></li>
@@ -415,8 +414,8 @@
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_epics.html#database-records">Database Records</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html">DUTs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#dut-satt-filter">DUT_SATT_Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#e-tm2k2-states">E_TM2K2_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#enum-sxr-satt-position">ENUM_SXR_SATT_Position</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#enum-tm2k2-states">ENUM_TM2K2_States</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#gvls">GVLs</a><ul>
@@ -425,12 +424,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#pous">POUs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-at1k2">FB_AT1K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-attenuatorelementdensity">FB_AttenuatorElementDensity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-sxr-satt-positionstate">FB_SXR_SATT_PositionState</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-sxr-satt-stage">FB_SXR_SATT_Stage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-tm2k2">FB_TM2K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#fb-tm2k2-states">FB_TM2K2_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#prg-1-plctask">PRG_1_PlcTask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#prg-2-pmps-pre">PRG_2_PMPS_PRE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plc-kfe-rix-motion_kfe_rix_motion_source.html#prg-3-pmps-post">PRG_3_PMPS_POST</a></li>
@@ -477,7 +471,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
