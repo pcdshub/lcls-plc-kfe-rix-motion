@@ -1849,8 +1849,11 @@
 					<CoeProfile ProfileNo="20976521"/>
 				</EtherCAT>
 			</Box>
-			<Box File="AT1K2-EL9011.xti" Id="72">
+			<Box File="AT1K2-EL3052-E8.xti" Id="301">
 				<EtherCAT PortABoxInfo="#x01000047"/>
+			</Box>
+			<Box File="AT1K2-EL9011.xti" Id="72">
+				<EtherCAT PortABoxInfo="#x0100012d"/>
 			</Box>
 		</Box>
 	</Box>
