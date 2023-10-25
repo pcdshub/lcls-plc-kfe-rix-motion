@@ -29,10 +29,10 @@ END_VAR
       <ST><![CDATA[
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbStateSetup(stPositionState:=fbIM2K1.stOut, fPosition:=-8.82, sPmpsState:='IM2K1:PPM-OUT');
-fbStateSetup(stPositionState:=fbIM2K1.stPower, fPosition:=-47.92, sPmpsState:='IM2K1:PPM-POWERMETER');
-fbStateSetup(stPositionState:=fbIM2K1.stYag1, fPosition:=-71.92, sPmpsState:='IM2K1:PPM-YAG1');
-fbStateSetup(stPositionState:=fbIM2K1.stYag2, fPosition:=-97.93, sPmpsState:='IM2K1:PPM-YAG2');
+fbStateSetup(stPositionState:=fbIM2K1.stOut, fPosition:=-9.09, sPmpsState:='IM2K1:PPM-OUT');
+fbStateSetup(stPositionState:=fbIM2K1.stPower, fPosition:=-48.19, sPmpsState:='IM2K1:PPM-POWERMETER');
+fbStateSetup(stPositionState:=fbIM2K1.stYag1, fPosition:=-72.19, sPmpsState:='IM2K1:PPM-YAG1');
+fbStateSetup(stPositionState:=fbIM2K1.stYag2, fPosition:=-98.2, sPmpsState:='IM2K1:PPM-YAG2');
 
 fbIM2K1(
     fbFFHWO := GVL.fbFastFaultOutput1,
