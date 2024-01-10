@@ -163,13 +163,13 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.9.1 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.10.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-common-components">
-      <Resolution>lcls-twincat-common-components, 3.0.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-common-components, 3.3.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 4.0.4 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.5 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
       <Resolution>lcls-twincat-physics, 0.1.0 (SLAC)</Resolution>
