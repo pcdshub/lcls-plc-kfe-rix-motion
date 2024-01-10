@@ -190,7 +190,7 @@ fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 1.52 um Al', fPosi
 fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
 fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
 
-fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(8) 0.78 um Al', fPosition:=150.0);
+fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.78 um Al', fPosition:=150.0);
 fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
