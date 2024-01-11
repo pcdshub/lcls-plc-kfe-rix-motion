@@ -136,7 +136,7 @@ fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 0.39 um Al', fPosi
 fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 (* State setup - stage 2 *)
@@ -174,7 +174,7 @@ fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.2 um Al', fPosit
 fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2);
+fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 (* State setup - stage 3 *)
 fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
