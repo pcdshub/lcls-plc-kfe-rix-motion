@@ -121,6 +121,12 @@
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
       <Namespace>LCLS_General</Namespace>
+      <Parameters>
+        <Parameter xmlns="">
+          <Key>MAX_STATES</Key>
+          <Value>9</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-common-components">
       <DefaultResolution>lcls-twincat-common-components, * (SLAC)</DefaultResolution>
@@ -129,6 +135,12 @@
     <PlaceholderReference Include="lcls-twincat-motion">
       <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_motion</Namespace>
+      <Parameters>
+        <Parameter xmlns="">
+          <Key>MAX_STATE_MOTORS</Key>
+          <Value>1</Value>
+        </Parameter>
+      </Parameters>
     </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-physics">
       <DefaultResolution>lcls-twincat-physics, * (SLAC)</DefaultResolution>

@@ -9,18 +9,17 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
     fbArbiter2: FB_Arbiter(2);
 
-    // For devices between the mirror and the stopper, uses 28 FF slots as of 10/17/2023, load 50 in EPICS
+    // For devices between the mirror and the stopper, uses 44 FF slots as of 1/12/2024, load 75 in EPICS (skip 125 for IOC load speed)
     {attribute 'pytmc' := '
         pv: PLC:RIX:MOTION:FFO:01
-        astFF.array: 1..50
+        astFF.array: 1..75
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
-    // For devices after the stopper, uses 104 FF slots as of 10/17/2023, load 125 in EPICS
+    // For devices after the stopper, uses 165 FF slots as of 1/12/2024, load all in EPICS
     {attribute 'pytmc' := '
         pv: PLC:RIX:MOTION:FFO:02
-        astFF.array: 1..125
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
