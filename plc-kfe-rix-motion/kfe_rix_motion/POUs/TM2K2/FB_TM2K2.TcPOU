@@ -1,75 +1,172 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_TM2K2" Id="{2f5a266c-a319-48e1-b797-55a7489c8358}" SpecialFunc="None">
+  <POU Name="FB_TM2K2" Id="{ee8b9044-2ca0-4dc9-987a-972c6c78f71e}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TM2K2
 (*
-    Adapted from FB_ATM to:
+    Function block for Arrival Time Monitor (ATM) controls:
+    - X, Y motion
+    - Y target states
+    - thermocouple
+
+    For TM2K2, we make the following adjustments:
     - Add stTarget6 to the inputs
-    - Change the arrStates.array pragma from 1..6 to 1..7 (out and 6 in states, up from 5)
-    - Swap out FB_ATM_States for FB_TM2K2_States
+    - Change the array pragma from 1..6 to 1..7 (1 out and 6 in states, up from 5 in states)
+    - Use E_TM2K2_States instead of E_ATM_States
 *)
 VAR_IN_OUT
-    stYStage: DUT_MotionStage;
-    stXStage: DUT_MotionStage;
-    fbArbiter: FB_Arbiter;
+    // Y motor (state select).
+    stYStage: ST_MotionStage;
+    // X motor (align target to beam).
+    stXStage: ST_MotionStage;
+    // The fast fault output to fault to.
     fbFFHWO: FB_HardwareFFOutput;
+    // The arbiter to request beam conditions from.
+    fbArbiter: FB_Arbiter;
 END_VAR
 VAR_INPUT
-    stOut: DUT_PositionState;
-    stTarget1: DUT_PositionState;
-    stTarget2: DUT_PositionState;
-    stTarget3: DUT_PositionState;
-    stTarget4: DUT_PositionState;
-    stTarget5: DUT_PositionState;
-    stTarget6: DUT_PositionState;
-    sPmpsDeviceName: STRING;
+    // Settings for the OUT state.
+    stOut: ST_PositionState;
+    // Settings for the TARGET1 state.
+    stTarget1: ST_PositionState;
+    // Settings for the TARGET2 state.
+    stTarget2: ST_PositionState;
+    // Settings for the TARGET3 state.
+    stTarget3: ST_PositionState;
+    // Settings for the TARGET4 state.
+    stTarget4: ST_PositionState;
+    // Settings for the TARGET5 state.
+    stTarget5: ST_PositionState;
+    // Settings for the TARGET6 state.
+    stTarget6: ST_PositionState;
+    // Set this to a non-unknown value to request a new move.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:SET
+        io: io
+    '}
+    eEnumSet: E_TM2K2_States;
+    // Set this to TRUE to enable input state moves, or FALSE to disable them.
+    bEnableMotion: BOOL;
+    // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+    bEnableBeamParams: BOOL;
+    // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+    bEnablePositionLimits: BOOL;
+    // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+    sDeviceName: STRING;
+    // The name of the transition state in the PMPS database.
     sTransitionKey: STRING;
+    // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+    bReadDBNow: BOOL;
+END_VAR
+VAR_OUTPUT
+    // The current position state as an enum.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:GET
+        io: i
+    '}
+    eEnumGet: E_TM2K2_States;
+    // The PMPS database lookup associated with the current position state.
+    stDbStateParams: ST_DbStateParams;
 END_VAR
 VAR
+    bInit: BOOL;
+
     fbYStage: FB_MotionStage;
     fbXStage: FB_MotionStage;
 
-    {attribute 'pytmc' := '
-        pv: MMS:STATE
-        io: i
-        arrStates.array: 1..7
-    '}
-    fbStates: FB_TM2K2_States;
+    fbStateDefaults: FB_PositionState_Defaults;
 
     {attribute 'pytmc' := '
-        pv: STC:01
-        io: input
+        pv: MMS
+        astPositionState.array: 1..7
     '}
+    fbStates: FB_PositionStatePMPS1D;
+    astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+    fbArrCheckWrite: FB_CheckPositionStateWrite;
+
+    {attribute 'pytmc' := 'pv: STC:01'}
     fbThermoCouple1: FB_TempSensor;
+END_VAR
+VAR CONSTANT
+    // State defaults if not provided
+    fDelta: LREAL := 2;
+    fAccel: LREAL := 200;
+    fOutDecel: LREAL := 25;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbYStage(stMotionStage:=stYStage);
+      <ST><![CDATA[
+IF NOT bInit THEN
+    bInit := TRUE;
+
+    stYStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+    stXStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+
+    // Partial backcompat, this used to set fVelocity too but this should be set per install
+    fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+    fbStateDefaults(stPositionState:=stTarget1, sNameDefault:='TARGET1', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget2, sNameDefault:='TARGET2', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget3, sNameDefault:='TARGET3', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget4, sNameDefault:='TARGET4', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget5, sNameDefault:='TARGET5', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget6, sNameDefault:='TARGET6', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+END_IF
+
 stYStage.bHardwareEnable := TRUE;
 stYStage.bPowerSelf := FALSE;
-stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
 
-fbXStage(stMotionStage:=stXStage);
 stXStage.bLimitForwardEnable := TRUE;
 stXStage.bLimitBackwardEnable := TRUE;
 stXStage.bHardwareEnable := TRUE;
 stXStage.bPowerSelf := TRUE;
-stXStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+fbYStage(stMotionStage:=stYStage);
+fbXStage(stMotionStage:=stXStage);
+
+// We need to update from PLC or from EPICS, but not both
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=TRUE,
+    bSave:=FALSE,
+);
+IF NOT fbArrCheckWrite.bHadWrite THEN
+    astPositionState[E_TM2K2_States.OUT] := stOut;
+    astPositionState[E_TM2K2_States.TARGET1] := stTarget1;
+    astPositionState[E_TM2K2_States.TARGET2] := stTarget2;
+    astPositionState[E_TM2K2_States.TARGET3] := stTarget3;
+    astPositionState[E_TM2K2_States.TARGET4] := stTarget4;
+    astPositionState[E_TM2K2_States.TARGET5] := stTarget5;
+    astPositionState[E_TM2K2_States.TARGET6] := stTarget6;
+END_IF
 
 fbStates(
-    fbArbiter:=fbArbiter,
-    fbFFHWO:=fbFFHWO,
     stMotionStage:=stYStage,
-    bEnable := TRUE,
-    stOut:=stOut,
-    stTarget1:=stTarget1,
-    stTarget2:=stTarget2,
-    stTarget3:=stTarget3,
-    stTarget4:=stTarget4,
-    stTarget5:=stTarget5,
-    stTarget6:=stTarget6,
-    sPmpsDeviceName:=sPmpsDeviceName,
-    sTransitionKey:=sTransitionKey);
+    astPositionState:=astPositionState,
+    eEnumSet:=eEnumSet,
+    eEnumGet:=eEnumGet,
+    fbFFHWO:=fbFFHWO,
+    fbArbiter:=fbArbiter,
+    bEnableMotion:=bEnableMotion,
+    bEnableBeamParams:=bEnableBeamParams,
+    bEnablePositionLimits:=bEnablePositionLimits,
+    sDeviceName:=sDeviceName,
+    sTransitionKey:=sTransitionKey,
+    bReadDBNow:=bReadDBNow,
+    stDbStateParams=>stDbStateParams,
+);
+
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=FALSE,
+    bSave:=TRUE,
+);
+
+stOut := astPositionState[E_TM2K2_States.OUT];
+stTarget1 := astPositionState[E_TM2K2_States.TARGET1];
+stTarget2 := astPositionState[E_TM2K2_States.TARGET2];
+stTarget3 := astPositionState[E_TM2K2_States.TARGET3];
+stTarget4 := astPositionState[E_TM2K2_States.TARGET4];
+stTarget5 := astPositionState[E_TM2K2_States.TARGET5];
+stTarget6 := astPositionState[E_TM2K2_States.TARGET6];
 
 fbThermoCouple1();]]></ST>
     </Implementation>

@@ -9,13 +9,18 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:ARB:02'}
     fbArbiter2: FB_Arbiter(2);
 
-    // For devices between the mirror and the stopper
-    {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:01'}
+    // For devices between the mirror and the stopper, uses 44 FF slots as of 1/12/2024, load 75 in EPICS (skip 125 for IOC load speed)
+    {attribute 'pytmc' := '
+        pv: PLC:RIX:MOTION:FFO:01
+        astFF.array: 1..75
+    '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
-    // For devices after the stopper
-    {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:FFO:02'}
+    // For devices after the stopper, uses 165 FF slots as of 1/12/2024, load all in EPICS
+    {attribute 'pytmc' := '
+        pv: PLC:RIX:MOTION:FFO:02
+    '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     fbFastFaultOutput2: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='172.21.42.126.1.1');
 
@@ -27,6 +32,8 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:RIX:MOTION:PMPS:CurTrans'}
     rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
 
+    ePF1K2State: E_WFS_States;
+    ePF2K2State: E_WFS_States;
 END_VAR
 
 VAR_GLOBAL CONSTANT

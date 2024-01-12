@@ -3,10 +3,7 @@
   <POU Name="PRG_IM2K1_PPM" Id="{da6fce9c-eeb0-4159-ad2e-cab6da7c6426}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM2K1_PPM
 VAR
-    {attribute 'pytmc' := '
-        pv: IM2K1:PPM
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: IM2K1:PPM'}
     {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
@@ -19,38 +16,35 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
     fbIM2K1: FB_PPM;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 13,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-fbIM2K1.stOut.fPosition := -9.09;
-fbIM2K1.stOut.bUseRawCounts := FALSE;
-fbIM2K1.stOut.bValid := TRUE;
-fbIM2K1.stOut.stPMPS.sPmpsState := 'IM2K1:PPM-OUT';
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbIM2K1.stPower.fPosition := -48.19;
-fbIM2K1.stPower.bUseRawCounts := FALSE;
-fbIM2K1.stPower.bValid := TRUE;
-fbIM2K1.stPower.stPMPS.sPmpsState := 'IM2K1:PPM-POWERMETER';
-
-fbIM2K1.stYag1.fPosition := -72.19;
-fbIM2K1.stYag1.bUseRawCounts := FALSE;
-fbIM2K1.stYag1.bValid := TRUE;
-fbIM2K1.stYag1.stPMPS.sPmpsState := 'IM2K1:PPM-YAG1';
-
-fbIM2K1.stYag2.fPosition := -98.2;
-fbIM2K1.stYag2.bUseRawCounts := FALSE;
-fbIM2K1.stYag2.bValid := TRUE;
-fbIM2K1.stYag2.stPMPS.sPmpsState := 'IM2K1:PPM-YAG2';
+fbStateSetup(stPositionState:=fbIM2K1.stOut, fPosition:=-9.09, sPmpsState:='IM2K1:PPM-OUT');
+fbStateSetup(stPositionState:=fbIM2K1.stPower, fPosition:=-48.19, sPmpsState:='IM2K1:PPM-POWERMETER');
+fbStateSetup(stPositionState:=fbIM2K1.stYag1, fPosition:=-72.19, sPmpsState:='IM2K1:PPM-YAG1');
+fbStateSetup(stPositionState:=fbIM2K1.stYag2, fPosition:=-98.2, sPmpsState:='IM2K1:PPM-YAG2');
 
 fbIM2K1(
-    fbArbiter := GVL.fbArbiter1,
     fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter1,
     stYStage := Main.M2,
-    sPmpsDeviceName := 'IM2K1:PPM',
+    sDeviceName := 'IM2K1:PPM',
     sTransitionKey := 'IM2K1:PPM-TRANSITION',
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
 );
-    ]]></ST>
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

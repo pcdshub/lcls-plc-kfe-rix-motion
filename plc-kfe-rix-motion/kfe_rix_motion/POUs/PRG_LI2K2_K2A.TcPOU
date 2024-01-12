@@ -3,53 +3,36 @@
   <POU Name="PRG_LI2K2_K2A" Id="{9ffb2115-7d48-4e03-8278-7e55d55de1e7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_LI2K2_K2A
 VAR
-    {attribute 'pytmc' := '
-        pv: LI2K2:K2A
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: LI2K2:K2A'}
     fbLI2K2: FB_LIC;
 
-    //stSiBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
-    //stFoilBP: ST_BeamParams := PMPS_GVL.cstFullBeam;
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*
-   Avoid damage peak between 3.2 keV and 1.6 keV
-*)
-//stSiBp.neVRange := F_eVExcludeRange(1600, 3200);
-// Drop transmission to 20%
-//stSiBP.nTran := 0.2;
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-// Drop transmission to 10%
-////stFoilBP.nTran := 0.1;
-
-fbLI2K2.stOut.fPosition := 1.2;
-fbLI2K2.stOut.bUseRawCounts := FALSE;
-fbLI2K2.stOut.bValid := TRUE;
-fbLI2K2.stOut.stPMPS.sPmpsState := 'LI2K2:K2A-OUT';
-
-fbLI2K2.stMirror1.fPosition := -35.3;
-fbLI2K2.stMirror1.bUseRawCounts := FALSE;
-fbLI2K2.stMirror1.bValid := TRUE;
-fbLI2K2.stMirror1.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR1';
-
-fbLI2K2.stMirror2.fPosition := -69.3;
-fbLI2K2.stMirror2.bUseRawCounts := FALSE;
-fbLI2K2.stMirror2.bValid := TRUE;
-fbLI2K2.stMirror2.stPMPS.sPmpsState := 'LI2K2:K2A-MIRROR2';
-
-fbLI2K2.stTarget1.fPosition := -101.3;
-fbLI2K2.stTarget1.bUseRawCounts := FALSE;
-fbLI2K2.stTarget1.bValid := TRUE;
-fbLI2K2.stTarget1.stPMPS.sPmpsState := 'LI2K2:K2A-TARGET1';
+fbStateSetup(stPositionState:=fbLI2K2.stOut, fPosition:=1.2, sPmpsState:='LI2K2:K2A-OUT');
+fbStateSetup(stPositionState:=fbLI2K2.stMirror1, fPosition:=-35.3, sPmpsState:='LI2K2:K2A-MIRROR1');
+fbStateSetup(stPositionState:=fbLI2K2.stMirror2, fPosition:=-69.3, sPmpsState:='LI2K2:K2A-MIRROR2');
+fbStateSetup(stPositionState:=fbLI2K2.stTarget1, fPosition:=-101.3, sPmpsState:='LI2K2:K2A-TARGET1');
 
 fbLI2K2(
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
+    fbArbiter := GVL.fbArbiter2,
     stYStage := Main.M11,
-    sPmpsDeviceName := 'LI2K2:K2A',
+    sDeviceName := 'LI2K2:K2A',
     sTransitionKey := 'LI2K2:K2A-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

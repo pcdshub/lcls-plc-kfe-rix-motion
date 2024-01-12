@@ -3,33 +3,37 @@
   <POU Name="PRG_AL1K2_L2SI" Id="{b9065558-4333-4ee9-89fd-a00441a263a3}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AL1K2_L2SI
 VAR
-    {attribute 'pytmc' := '
-        pv: AL1K2:L2SI
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: AL1K2:L2SI'}
     {attribute 'TcLinkTo' := '.fbLaser.iLaserINT := TIIB[AL1K2-EL4004-E4]^AO Outputs Channel 1^Analog output;
                               .fbLaser.iShutdownINT := TIIB[AL1K2-EL4004-E4]^AO Outputs Channel 2^Analog output'}
     fbAL1K2: FB_REF;
-END_VAR]]></Declaration>
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 10,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+END_VAR
+]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-fbAL1K2.stOut.fPosition := -33.5; // Upper limit
-fbAL1K2.stOut.bUseRawCounts := FALSE;
-fbAL1K2.stOut.bValid := TRUE;
-fbAL1K2.stOut.stPMPS.sPmpsState := 'AL1K2:L2SI-OUT';
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbAL1K2.stIn.fPosition := -75; // Current position at time of edit
-fbAL1K2.stIn.bUseRawCounts := FALSE;
-fbAL1K2.stIn.bValid := TRUE;
-fbAL1K2.stIn.stPMPS.sPmpsState := 'AL1K2:L2SI-IN';
+fbStateSetup(stPositionState:=fbAL1K2.stOut, fPosition:=-33.5, sPmpsState:='AL1K2:L2SI-OUT');
+fbStateSetup(stPositionState:=fbAL1K2.stIn, fPosition:=-75, sPmpsState:='AL1K2:L2SI-IN');
 
 fbAL1K2(
-    stYStage := Main.M5,
-    fbArbiter := GVL.fbArbiter2,
     fbFFHWO := GVL.fbFastFaultOutput2,
-    sPmpsDeviceName := 'AL1K2:L2SI',
+    fbArbiter := GVL.fbArbiter2,
+    stYStage := Main.M5,
+    sDeviceName := 'AL1K2:L2SI',
     sTransitionKey := 'AL1K2:L2SI-TRANSITION',
-);]]></ST>
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
