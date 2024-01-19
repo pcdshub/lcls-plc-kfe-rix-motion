@@ -16,7 +16,7 @@ VAR
                               .fbYagThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
                               .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
-// // IM3K2 shares the same flow meter as IM1K2
+// IM3K2 shares the same flow meter as IM1K2
     fbIM3K2: FB_PPM;
 
     fbStateSetup: FB_StateSetupHelper;
