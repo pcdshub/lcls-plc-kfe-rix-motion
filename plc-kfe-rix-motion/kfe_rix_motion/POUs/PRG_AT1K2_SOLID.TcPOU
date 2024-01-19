@@ -72,6 +72,11 @@ VAR
         bMoveOk := FALSE,
         bValid := FALSE
     );
+
+    {attribute 'pytmc' :='pv: AT1K2:L2SI:FWM'}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value'}
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -203,6 +208,8 @@ GVL.rCurTrans[PMPS.K_Attenuators.AT1K2].nTran := LREAL_TO_REAL(
     fbStage2.fTransmission *
     fMirrorTrans
 );
+
+fbFlowMeter();
 ]]></ST>
     </Implementation>
   </POU>

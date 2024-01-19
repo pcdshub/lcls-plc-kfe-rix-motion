@@ -85,6 +85,9 @@ VAR
 
     {attribute 'pytmc' := 'pv: STC:01'}
     fbThermoCouple1: FB_TempSensor;
+
+    {attribute 'pytmc' :='pv: FWM'}
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
 END_VAR
 VAR CONSTANT
     // State defaults if not provided
@@ -168,7 +171,8 @@ stTarget4 := astPositionState[E_TM2K2_States.TARGET4];
 stTarget5 := astPositionState[E_TM2K2_States.TARGET5];
 stTarget6 := astPositionState[E_TM2K2_States.TARGET6];
 
-fbThermoCouple1();]]></ST>
+fbThermoCouple1();
+fbFlowMeter();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
