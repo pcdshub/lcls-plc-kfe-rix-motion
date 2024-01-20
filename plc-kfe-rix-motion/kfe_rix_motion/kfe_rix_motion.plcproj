@@ -128,9 +128,9 @@
         </Parameter>
       </Parameters>
     </PlaceholderReference>
-    <PlaceholderReference Include="lcls-twincat-common-components-nrw">
-      <DefaultResolution>lcls-twincat-common-components-nrw, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_common_components_nrw</Namespace>
+    <PlaceholderReference Include="lcls-twincat-common-components">
+      <DefaultResolution>lcls-twincat-common-components, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_common_components</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-motion">
       <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
@@ -177,8 +177,8 @@
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 2.10.0 (SLAC)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="lcls-twincat-common-components-nrw">
-      <Resolution>lcls-twincat-common-components-nrw, * (SLAC)</Resolution>
+    <PlaceholderResolution Include="lcls-twincat-common-components">
+      <Resolution>lcls-twincat-common-components, 3.4.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 4.0.5 (SLAC)</Resolution>
