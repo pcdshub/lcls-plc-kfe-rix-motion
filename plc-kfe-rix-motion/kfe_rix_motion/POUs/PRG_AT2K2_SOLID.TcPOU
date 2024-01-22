@@ -89,7 +89,7 @@ VAR
         bMoveOk := FALSE,
         bValid := FALSE
     );
-    
+
     {attribute 'pytmc' :='pv: AT2K2:L2SI:FWM'}
     {attribute 'TcLinkTo' := '.iRaw := TIIB[TM2K2-EL3052-E6]^AI Standard Channel 1^Value'} // AT2K2 shares flow meter with TM2K2
     fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
