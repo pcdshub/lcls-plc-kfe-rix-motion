@@ -178,7 +178,7 @@
       <Resolution>LCLS General, 2.10.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-common-components">
-      <Resolution>lcls-twincat-common-components, 3.3.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-common-components, 3.4.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 4.0.5 (SLAC)</Resolution>

@@ -11,7 +11,10 @@ VAR
                               .fbThermoCouple2.bError 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Error;
                               .fbThermoCouple2.bUnderrange 	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Underrange;
                               .fbThermoCouple2.bOverrange 	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Overrange;
-                              .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value'}
+                              .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value;
+                              .fbFlowMeter.iRaw := TIIB[IM5K2-EL3052-E5]^AI Standard Channel 1^Value
+
+'} // PF1K2 shares the same flow meter as IM5K2
     fbPF1K2: FB_WFS;
 
     fbStateSetup: FB_StateSetupHelper;

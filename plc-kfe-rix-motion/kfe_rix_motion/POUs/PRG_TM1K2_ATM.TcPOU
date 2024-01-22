@@ -7,7 +7,10 @@ VAR
     {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                               .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                               .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value'}
+                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
+                              .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
+
+'} // TM1K2 shares the same cooling meter as AT1K2
     fbTM1K2: FB_ATM;
 
     fbStateSetup: FB_StateSetupHelper;
