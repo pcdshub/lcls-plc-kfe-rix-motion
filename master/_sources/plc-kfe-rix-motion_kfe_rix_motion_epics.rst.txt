@@ -15,6 +15,36 @@ FB_TM2K2
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):FWM:OFF
+      - ao
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:OFF_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES
+      - ao
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:VAL_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fReal
+      - | io: input
+
+
     * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
@@ -1860,6 +1890,36 @@ lcls_twincat_common_components.FB_ATM
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):FWM:OFF
+      - ao
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:OFF_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES
+      - ao
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:VAL_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fReal
+      - | io: input
+
+
     * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
@@ -5387,6 +5447,36 @@ lcls_twincat_common_components.FB_WFS
         | io: output
 
 
+    * - $(PREFIX):FWM:OFF
+      - ao
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:OFF_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES
+      - ao
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:VAL_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fReal
+      - | io: input
+
+
     * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
@@ -6147,7 +6237,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
-                                                  
+ 
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -8636,7 +8726,7 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
       - | io: input
 
 
-                
+                                                                 
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -117790,6 +117880,36 @@ Database Records
         | io: input
 
 
+    * - AT1K2:L2SI:FWM:OFF_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - AT1K2:L2SI:FWM:OFF
+      - ao
+      - PRG_AT1K2_SOLID.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - AT1K2:L2SI:FWM:VAL_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - AT1K2:L2SI:FWM:RES_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - AT1K2:L2SI:FWM:RES
+      - ao
+      - PRG_AT1K2_SOLID.fbFlowMeter.fResolution
+      - | io: output
+
+
     * - AT1K2:L2SI:MMS:01:FILTERS:01:THICKNESS_RBV
       - ai
       - Filter material thickness
@@ -119983,6 +120103,36 @@ Database Records
       - waveform
       - PRG_AT1K2_SOLID.fbStage3.fbPositionState1D.stPlcToEpics.sErrorMsg
       - | io: input
+
+
+    * - AT2K2:L2SI:FWM:OFF_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - AT2K2:L2SI:FWM:OFF
+      - ao
+      - PRG_AT2K2_SOLID.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - AT2K2:L2SI:FWM:VAL_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - AT2K2:L2SI:FWM:RES_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - AT2K2:L2SI:FWM:RES
+      - ao
+      - PRG_AT2K2_SOLID.fbFlowMeter.fResolution
+      - | io: output
 
 
     * - AT2K2:L2SI:MMS:01:FILTERS:01:THICKNESS_RBV
@@ -130411,6 +130561,36 @@ Database Records
       - | io: output
 
 
+    * - PF1K2:WFS:FWM:OFF_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - PF1K2:WFS:FWM:OFF
+      - ao
+      - PRG_PF1K2_WFS.fbPF1K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - PF1K2:WFS:FWM:VAL_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - PF1K2:WFS:FWM:RES_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - PF1K2:WFS:FWM:RES
+      - ao
+      - PRG_PF1K2_WFS.fbPF1K2.fbFlowMeter.fResolution
+      - | io: output
+
+
     * - PF1K2:WFS:FSW:FLOW_OK_RBV
       - bi
       - PRG_PF1K2_WFS.fbPF1K2.fbFlowSwitch.bFlowOk
@@ -131156,6 +131336,36 @@ Database Records
     * - PF2K2:WFS:MMS:STATE:SET
       - mbbo
       - PRG_PF2K2_WFS.fbPF2K2.eEnumSet
+      - | io: output
+
+
+    * - PF2K2:WFS:FWM:OFF_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - PF2K2:WFS:FWM:OFF
+      - ao
+      - PRG_PF2K2_WFS.fbPF2K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - PF2K2:WFS:FWM:VAL_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - PF2K2:WFS:FWM:RES_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - PF2K2:WFS:FWM:RES
+      - ao
+      - PRG_PF2K2_WFS.fbPF2K2.fbFlowMeter.fResolution
       - | io: output
 
 
@@ -131907,6 +132117,36 @@ Database Records
       - | io: output
 
 
+    * - TM1K2:ATM:FWM:OFF_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - TM1K2:ATM:FWM:OFF
+      - ao
+      - PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - TM1K2:ATM:FWM:VAL_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - TM1K2:ATM:FWM:RES_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - TM1K2:ATM:FWM:RES
+      - ao
+      - PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.fResolution
+      - | io: output
+
+
     * - TM1K2:ATM:MMS:STATE:01:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
@@ -132612,6 +132852,36 @@ Database Records
     * - TM2K2:ATM:MMS:STATE:SET
       - mbbo
       - PRG_TM2K2_ATM.fbTM2K2.eEnumSet
+      - | io: output
+
+
+    * - TM2K2:ATM:FWM:OFF_RBV
+      - ai
+      - PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - TM2K2:ATM:FWM:OFF
+      - ao
+      - PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - TM2K2:ATM:FWM:VAL_RBV
+      - ai
+      - PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.fReal
+      - | io: input
+
+
+    * - TM2K2:ATM:FWM:RES_RBV
+      - ai
+      - PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - TM2K2:ATM:FWM:RES
+      - ao
+      - PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.fResolution
       - | io: output
 
 

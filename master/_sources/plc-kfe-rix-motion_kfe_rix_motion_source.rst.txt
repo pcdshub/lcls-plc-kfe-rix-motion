@@ -439,6 +439,9 @@ FB_TM2K2
 
         {attribute 'pytmc' := 'pv: STC:01'}
         fbThermoCouple1: FB_TempSensor;
+
+        {attribute 'pytmc' :='pv: FWM'}
+        fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
     END_VAR
     VAR CONSTANT
         // State defaults if not provided
@@ -520,6 +523,7 @@ FB_TM2K2
     stTarget6 := astPositionState[E_TM2K2_States.TARGET6];
 
     fbThermoCouple1();
+    fbFlowMeter();
 
     END_FUNCTION_BLOCK
 
@@ -802,6 +806,11 @@ PRG_AT1K2_SOLID
             bMoveOk := FALSE,
             bValid := FALSE
         );
+
+        {attribute 'pytmc' :='pv: AT1K2:L2SI:FWM'}
+        {attribute 'TcLinkTo' := '.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value'}
+        fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+
     END_VAR
     IF bDebug THEN
         // NEVER: checkouts with the TwinCAT NC GUI.
@@ -932,6 +941,8 @@ PRG_AT1K2_SOLID
         fMirrorTrans
     );
 
+    fbFlowMeter();
+
     END_PROGRAM
 
 
@@ -1033,6 +1044,10 @@ PRG_AT2K2_SOLID
             bMoveOk := FALSE,
             bValid := FALSE
         );
+
+        {attribute 'pytmc' :='pv: AT2K2:L2SI:FWM'}
+        {attribute 'TcLinkTo' := '.iRaw := TIIB[TM2K2-EL3052-E6]^AI Standard Channel 1^Value'} // AT2K2 shares flow meter with TM2K2
+        fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
     END_VAR
     IF bDebug THEN
         // NEVER: checkouts with the TwinCAT NC GUI.
@@ -1220,6 +1235,8 @@ PRG_AT2K2_SOLID
         fbStage4.fTransmission
     );
 
+    fbFlowMeter();
+
     END_PROGRAM
 
 
@@ -1300,7 +1317,8 @@ PRG_IM1K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
         fbIM1K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1408,7 +1426,9 @@ PRG_IM2K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
+    // IM2K2 shares the same flow meter as IM1K2
         fbIM2K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1462,7 +1482,9 @@ PRG_IM3K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
+    // IM3K2 shares the same flow meter as IM1K2
         fbIM3K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1516,7 +1538,9 @@ PRG_IM4K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
+    // IM4K2 shares the same flow meter as IM1K2
         fbIM4K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1570,7 +1594,8 @@ PRG_IM5K2_PPM
                                   .fbYagThermoCouple.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
                                   .fbYagThermoCouple.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
                                   .fbYagThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM5K2-EL3052-E5]^AI Standard Channel 1^Value'}
         fbIM5K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1779,7 +1804,10 @@ PRG_PF1K2_WFS
                                   .fbThermoCouple2.bError 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Error;
                                   .fbThermoCouple2.bUnderrange 	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Underrange;
                                   .fbThermoCouple2.bOverrange 	:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value'}
+                                  .fbThermoCouple2.iRaw 		:= TIIB[PF1K2-EL3314-E5]^TC Inputs Channel 2^Value;
+                                  .fbFlowMeter.iRaw := TIIB[IM5K2-EL3052-E5]^AI Standard Channel 1^Value
+
+    '} // PF1K2 shares the same flow meter as IM5K2
         fbPF1K2: FB_WFS;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1919,7 +1947,10 @@ PRG_TM1K2_ATM
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value'}
+                                  .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
+                                  .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
+
+    '} // TM1K2 shares the same cooling meter as AT1K2
         fbTM1K2: FB_ATM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -1969,7 +2000,9 @@ PRG_TM2K2_ATM
         {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
                                   .fbThermoCouple1.bUnderrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
                                   .fbThermoCouple1.bOverrange := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value'}
+                                  .fbThermoCouple1.iRaw := TIIB[TM2K2-EL3314-E5]^TC Inputs Channel 1^Value;
+                                  .fbFlowMeter.iRaw := TIIB[TM2K2-EL3052-E6]^AI Standard Channel 1^Value
+    '}
         fbTM2K2: FB_TM2K2;
 
         fbStateSetup: FB_StateSetupHelper;
