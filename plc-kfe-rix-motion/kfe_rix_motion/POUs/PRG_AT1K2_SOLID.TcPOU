@@ -46,6 +46,7 @@ VAR
     // Special case: inspection mirror
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
     fbStage3: FB_PositionState1D_InOut;
+    fbMotionStage3: FB_MotionStage;
     stMirrorOut: ST_PositionState;
     stMirrorIn: ST_PositionState;
     // Consider transmission=1 if out, transmission=0 if in
@@ -190,6 +191,7 @@ fbStage3(
     stOut:=stMirrorOut,
     stIn:=stMirrorIn,
 );
+fbMotionStage3(stMotionStage:=Main.M27);
 
 IF fbStage3.eStateGet = E_EpicsInOut.OUT THEN
     fMirrorTrans := 1.0;
