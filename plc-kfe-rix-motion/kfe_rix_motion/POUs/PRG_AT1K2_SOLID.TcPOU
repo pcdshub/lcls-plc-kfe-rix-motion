@@ -46,6 +46,7 @@ VAR
     // Special case: inspection mirror
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
     fbStage3: FB_PositionState1D_InOut;
+    bStage3Init: BOOL;
     fbMotionStage3: FB_MotionStage;
     stMirrorOut: ST_PositionState;
     stMirrorIn: ST_PositionState;
@@ -185,6 +186,16 @@ fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 (* State setup - stage 3 *)
 fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
 fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
+
+IF NOT bStage3Init THEN
+    bStage3Init := TRUE;
+    Main.M27.bHardwareEnable      := TRUE;
+    Main.M27.bLimitBackwardEnable := TRUE;
+    Main.M27.bLimitForwardEnable  := TRUE;
+    Main.M27.bPowerSelf           := TRUE;
+    Main.M27.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    Main.M27.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+END_IF
 
 fbStage3(
     stMotionStage:=Main.M27,
