@@ -46,6 +46,8 @@ VAR
     // Special case: inspection mirror
     {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
     fbStage3: FB_PositionState1D_InOut;
+    bStage3Init: BOOL;
+    fbMotionStage3: FB_MotionStage;
     stMirrorOut: ST_PositionState;
     stMirrorIn: ST_PositionState;
     // Consider transmission=1 if out, transmission=0 if in
@@ -185,11 +187,22 @@ fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
 fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
 
+IF NOT bStage3Init THEN
+    bStage3Init := TRUE;
+    Main.M27.bHardwareEnable      := TRUE;
+    Main.M27.bLimitBackwardEnable := TRUE;
+    Main.M27.bLimitForwardEnable  := TRUE;
+    Main.M27.bPowerSelf           := TRUE;
+    Main.M27.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+    Main.M27.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+END_IF
+
 fbStage3(
     stMotionStage:=Main.M27,
     stOut:=stMirrorOut,
     stIn:=stMirrorIn,
 );
+fbMotionStage3(stMotionStage:=Main.M27);
 
 IF fbStage3.eStateGet = E_EpicsInOut.OUT THEN
     fMirrorTrans := 1.0;
