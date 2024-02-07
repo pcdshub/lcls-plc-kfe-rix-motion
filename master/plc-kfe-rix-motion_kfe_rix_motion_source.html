@@ -874,6 +874,8 @@ END_PROGRAM
     <span class="o">//</span> <span class="n">Special</span> <span class="n">case</span><span class="p">:</span> <span class="n">inspection</span> <span class="n">mirror</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT1K2:L2SI:MMS:03&#39;</span><span class="p">}</span>
     <span class="n">fbStage3</span><span class="p">:</span> <span class="n">FB_PositionState1D_InOut</span><span class="p">;</span>
+    <span class="n">bStage3Init</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="n">fbMotionStage3</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
     <span class="n">stMirrorOut</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
     <span class="n">stMirrorIn</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
     <span class="o">//</span> <span class="n">Consider</span> <span class="n">transmission</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">out</span><span class="p">,</span> <span class="n">transmission</span><span class="o">=</span><span class="mi">0</span> <span class="k">if</span> <span class="ow">in</span>
@@ -933,7 +935,7 @@ END_PROGRAM
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">1</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">66.00</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">22.00</span><span class="p">);</span>
 
 <span class="n">fbBadStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Filter 1&#39;</span><span class="p">);</span>
 <span class="n">fbStage1</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
@@ -971,7 +973,7 @@ END_PROGRAM
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">2</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">66.00</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">22.00</span><span class="p">);</span>
 
 <span class="n">fbBadStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Filter 1&#39;</span><span class="p">);</span>
 <span class="n">fbStage2</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
@@ -1011,11 +1013,22 @@ END_PROGRAM
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stMirrorOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">65.00</span><span class="p">);</span>
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stMirrorIn</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">25.00</span><span class="p">);</span>
 
+<span class="n">IF</span> <span class="n">NOT</span> <span class="n">bStage3Init</span> <span class="n">THEN</span>
+    <span class="n">bStage3Init</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bHardwareEnable</span>      <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bPowerSelf</span>           <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">nBrakeMode</span>           <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">nHomingMode</span>          <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">NONE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
 <span class="n">fbStage3</span><span class="p">(</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="p">,</span>
     <span class="n">stOut</span><span class="o">:=</span><span class="n">stMirrorOut</span><span class="p">,</span>
     <span class="n">stIn</span><span class="o">:=</span><span class="n">stMirrorIn</span><span class="p">,</span>
 <span class="p">);</span>
+<span class="n">fbMotionStage3</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="p">);</span>
 
 <span class="n">IF</span> <span class="n">fbStage3</span><span class="o">.</span><span class="n">eStateGet</span> <span class="o">=</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
     <span class="n">fMirrorTrans</span> <span class="o">:=</span> <span class="mf">1.0</span><span class="p">;</span>

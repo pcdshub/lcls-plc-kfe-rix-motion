@@ -780,6 +780,8 @@ PRG_AT1K2_SOLID
         // Special case: inspection mirror
         {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
         fbStage3: FB_PositionState1D_InOut;
+        bStage3Init: BOOL;
+        fbMotionStage3: FB_MotionStage;
         stMirrorOut: ST_PositionState;
         stMirrorIn: ST_PositionState;
         // Consider transmission=1 if out, transmission=0 if in
@@ -839,7 +841,7 @@ PRG_AT1K2_SOLID
 
 
     (* State setup - stage 1 *)
-    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=66.00);
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
     fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
@@ -877,7 +879,7 @@ PRG_AT1K2_SOLID
 
 
     (* State setup - stage 2 *)
-    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=66.00);
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
     fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
@@ -917,11 +919,22 @@ PRG_AT1K2_SOLID
     fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
     fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
 
+    IF NOT bStage3Init THEN
+        bStage3Init := TRUE;
+        Main.M27.bHardwareEnable      := TRUE;
+        Main.M27.bLimitBackwardEnable := TRUE;
+        Main.M27.bLimitForwardEnable  := TRUE;
+        Main.M27.bPowerSelf           := TRUE;
+        Main.M27.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+        Main.M27.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+    END_IF
+
     fbStage3(
         stMotionStage:=Main.M27,
         stOut:=stMirrorOut,
         stIn:=stMirrorIn,
     );
+    fbMotionStage3(stMotionStage:=Main.M27);
 
     IF fbStage3.eStateGet = E_EpicsInOut.OUT THEN
         fMirrorTrans := 1.0;
