@@ -109,7 +109,7 @@ fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 
 
 (* State setup - stage 1 *)
-fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=66.00);
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
 fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
 fbStage1.arrFilters[1].fFilterThickness_um := 0;
@@ -147,7 +147,7 @@ fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOut
 
 
 (* State setup - stage 2 *)
-fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=66.00);
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
 fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
 fbStage2.arrFilters[1].fFilterThickness_um := 0;
@@ -184,8 +184,8 @@ fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 (* State setup - stage 3 *)
-fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
-fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
+fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=25.00);
+fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=65.00);
 
 IF NOT bStage3Init THEN
     bStage3Init := TRUE;
