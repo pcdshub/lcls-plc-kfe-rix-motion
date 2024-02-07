@@ -764,6 +764,24 @@ FB_TM2K2
         | io: input
 
 
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):MMS:STATE:RESET
       - bo
       - $(SYMBOL).fbStates.stEpicsToPlc.bReset
@@ -2574,6 +2592,24 @@ lcls_twincat_common_components.FB_ATM
         | io: input
 
 
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):MMS:STATE:RESET
       - bo
       - $(SYMBOL).fbStates.stEpicsToPlc.bReset
@@ -3161,6 +3197,24 @@ lcls_twincat_common_components.FB_LIC
       - waveform
       - PMPS Database Lookup Key
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -3803,6 +3857,24 @@ lcls_twincat_common_components.FB_PPM
       - waveform
       - PMPS Database Lookup Key
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -4517,6 +4589,24 @@ lcls_twincat_common_components.FB_REF
       - waveform
       - PMPS Database Lookup Key
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -6131,6 +6221,24 @@ lcls_twincat_common_components.FB_WFS
         | io: input
 
 
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):MMS:STATE:RESET
       - bo
       - $(SYMBOL).fbStates.stEpicsToPlc.bReset
@@ -6237,7 +6345,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
- 
+                                                  
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -8153,6 +8261,22 @@ lcls_twincat_motion.FB_PositionStatePMPS1D
       - | io: input
 
 
+    * - $(PREFIX):STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):STATE:RESET
       - bo
       - $(SYMBOL).stEpicsToPlc.bReset
@@ -8200,6 +8324,90 @@ lcls_twincat_motion.FB_Standard_PMPSDB
 
 
        
+lcls_twincat_motion.ST_AxisParameterSetExposed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - $(PREFIX):EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - $(PREFIX):MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - $(PREFIX):MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - $(PREFIX):MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - $(PREFIX):PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - $(PREFIX):PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - $(PREFIX):PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - $(PREFIX):SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - $(PREFIX):SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - $(PREFIX):SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - $(PREFIX):SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+ 
 lcls_twincat_motion.ST_MotionStage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -8211,6 +8419,78 @@ lcls_twincat_motion.ST_MotionStage
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - $(PREFIX):PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
     * - $(PREFIX):PLC:bError_RBV
       - bi
       - TRUE if we are in an error state
@@ -8726,7 +9006,23 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
       - | io: input
 
 
-                                                                 
+    * - $(PREFIX):PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).stTransitionDb.stReactiveParams.nPressSP
+      - | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).stTransitionDb.stReactiveParams.nTempSP
+      - | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
+                
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -53502,6 +53798,22 @@ PMPS.ST_DbStateParams
       - | io: input
 
 
+    * - $(PREFIX):ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).stReactiveParams.nPressSP
+      - | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).stReactiveParams.nTempSP
+      - | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
  
 PMPS.ST_FF
 ^^^^^^^^^^
@@ -53823,6 +54135,34 @@ PMPS.ST_PMPS_Aperture
 
 
   
+PMPS.ST_ReactiveParams
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):PressSP_RBV
+      - ai
+      - $(SYMBOL).nPressSP
+      - | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):TempSP_RBV
+      - ai
+      - $(SYMBOL).nTempSP
+      - | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
+ 
 PMPS.T_HashTableEntry
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -112381,6 +112721,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - IM1K1:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM1K1:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - IM1K1:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -112550,6 +112962,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:X:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - TM1K2:ATM:MMS:X:PLC:stEPSB:bEPS_OK_RBV
@@ -112723,6 +113207,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - LI2K2:K2A:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - LI2K2:K2A:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - LI2K2:K2A:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -112892,6 +113448,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Y:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - PF1K2:WFS:MMS:Y:PLC:stEPSB:bEPS_OK_RBV
@@ -113065,6 +113693,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF1K2:WFS:MMS:Z:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - PF1K2:WFS:MMS:Z:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -113234,6 +113934,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM5K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - IM5K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
@@ -113407,6 +114179,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:Y:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - TM2K2:ATM:MMS:Y:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -113576,6 +114420,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM2K2:ATM:MMS:X:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - TM2K2:ATM:MMS:X:PLC:stEPSB:bEPS_OK_RBV
@@ -113749,6 +114665,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:01:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -113918,6 +114906,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - AT2K2:L2SI:MMS:02:PLC:stEPSB:bEPS_OK_RBV
@@ -114091,6 +115151,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:03:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -114260,6 +115392,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM2K1:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - IM2K1:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
@@ -114433,6 +115637,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AT2K2:L2SI:MMS:04:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -114602,6 +115878,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - LI3K2:K2B:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - LI3K2:K2B:MMS:PLC:stEPSB:bEPS_OK_RBV
@@ -114775,6 +116123,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Y:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - PF2K2:WFS:MMS:Y:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -114944,6 +116364,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - PF2K2:WFS:MMS:Z:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - PF2K2:WFS:MMS:Z:PLC:stEPSB:bEPS_OK_RBV
@@ -115117,6 +116609,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - IM6K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM6K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - IM6K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -115286,6 +116850,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - AT1K2:L2SI:MMS:01:PLC:stEPSB:bEPS_OK_RBV
@@ -115459,6 +117095,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AT1K2:L2SI:MMS:02:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -115630,6 +117338,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AT1K2:L2SI:MMS:03:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AT1K2:L2SI:MMS:03:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -115697,6 +117477,2436 @@ Database Records
 
 
     * - AT1K2:L2SI:MMS:03:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:01:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:02:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:03:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:01:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:X:02:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:04:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Z:01:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:RY:01:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:05:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSB:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSF:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSP:bEPS_OK_RBV
+      - bi
+      - check if nFlags are all true
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1K2:PAX:MMS:Y:06:PLC:stEPSP:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
@@ -115799,6 +120009,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM1K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - IM1K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
@@ -115972,6 +120254,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - AL1K2:L2SI:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - AL1K2:L2SI:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -116141,6 +120495,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM2K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - IM2K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
@@ -116314,6 +120740,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - IM3K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM3K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - IM3K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -116485,6 +120983,78 @@ Database Records
         | update: 100hz notify
 
 
+    * - IM4K2:PPM:MMS:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - IM4K2:PPM:MMS:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
     * - IM4K2:PPM:MMS:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
@@ -116654,6 +121224,78 @@ Database Records
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - TM1K2:ATM:MMS:Y:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
 
 
     * - TM1K2:ATM:MMS:Y:PLC:stEPSB:bEPS_OK_RBV
@@ -117836,6 +122478,24 @@ Database Records
       - bi
       - PRG_AL1K2_L2SI.fbAL1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | io: input
+
+
+    * - AL1K2:L2SI:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_AL1K2_L2SI.fbAL1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - AL1K2:L2SI:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_AL1K2_L2SI.fbAL1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..2')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -124152,6 +128812,24 @@ Database Records
         | io: input
 
 
+    * - IM1K1:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K1:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - IM1K1:PPM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_IM1K1_PPM.fbIM1K1.fbStates.stPlcToEpics.bBusy
@@ -124895,6 +129573,24 @@ Database Records
       - bi
       - PRG_IM1K2_PPM.fbIM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - IM1K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -125644,6 +130340,24 @@ Database Records
         | io: input
 
 
+    * - IM2K1:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K1:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - IM2K1:PPM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_IM2K1_PPM.fbIM2K1.fbStates.stPlcToEpics.bBusy
@@ -126387,6 +131101,24 @@ Database Records
       - bi
       - PRG_IM2K2_PPM.fbIM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - IM2K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -127136,6 +131868,24 @@ Database Records
         | io: input
 
 
+    * - IM3K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM3K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - IM3K2:PPM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_IM3K2_PPM.fbIM3K2.fbStates.stPlcToEpics.bBusy
@@ -127879,6 +132629,24 @@ Database Records
       - bi
       - PRG_IM4K2_PPM.fbIM4K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - IM4K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM4K2_PPM.fbIM4K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM4K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM4K2_PPM.fbIM4K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -128628,6 +133396,24 @@ Database Records
         | io: input
 
 
+    * - IM5K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM5K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - IM5K2:PPM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_IM5K2_PPM.fbIM5K2.fbStates.stPlcToEpics.bBusy
@@ -129374,6 +134160,24 @@ Database Records
         | io: input
 
 
+    * - IM6K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - IM6K2:PPM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - IM6K2:PPM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_IM6K2_PPM.fbIM6K2.fbStates.stPlcToEpics.bBusy
@@ -129948,6 +134752,24 @@ Database Records
         | io: input
 
 
+    * - LI2K2:K2A:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_LI2K2_K2A.fbLI2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - LI2K2:K2A:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_LI2K2_K2A.fbLI2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - LI2K2:K2A:MMS:STATE:BUSY_RBV
       - bi
       - PRG_LI2K2_K2A.fbLI2K2.fbStates.stPlcToEpics.bBusy
@@ -130499,6 +135321,24 @@ Database Records
       - bi
       - PRG_LI3K2_K2B.fbLI3K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - LI3K2:K2B:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_LI3K2_K2B.fbLI3K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -131229,6 +136069,24 @@ Database Records
       - bi
       - PRG_PF1K2_WFS.fbPF1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | io: input
+
+
+    * - PF1K2:WFS:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - PF1K2:WFS:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -132010,6 +136868,24 @@ Database Records
         | io: input
 
 
+    * - PF2K2:WFS:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - PF2K2:WFS:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
     * - PF2K2:WFS:MMS:STATE:BUSY_RBV
       - bi
       - PRG_PF2K2_WFS.fbPF2K2.fbStates.stPlcToEpics.bBusy
@@ -132769,6 +137645,24 @@ Database Records
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | io: input
+
+
+    * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 
@@ -133572,6 +138466,24 @@ Database Records
       - bi
       - PRG_TM2K2_ATM.fbTM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
       - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - TM2K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - PRG_TM2K2_ATM.fbTM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - TM2K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - PRG_TM2K2_ATM.fbTM2K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "C"
+        | field: PREC 2
         | io: input
 
 

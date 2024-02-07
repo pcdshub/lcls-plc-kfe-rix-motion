@@ -340,6 +340,69 @@ Main
         ;}
         M27: ST_MotionStage := (sName := 'AT1K2:L2SI:MMS:03');
 
+        // PAX Motors
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E01]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E01]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E02]^FB Inputs Channel 1^Position'}
+        M28: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:01');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:02'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E03]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E03]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E02]^FB Inputs Channel 2^Position'}
+
+        M29: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:02');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:03'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E04]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E04]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E05]^FB Inputs Channel 1^Position'}
+        M30: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:03');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:X:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 1;
+                                  .bBrakeRelease        := TIIB[PAX-EL2004-E07]^Channel 1^Output;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E05]^FB Inputs Channel 2^Position'}
+        M31: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:X');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:X:02'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08^STM Status^Status^Digital input 1;
+                                  .nRawEncoderULINT     := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09^FB Inputs Channel 1^Position'}
+        M32: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:X');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:04'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 1;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E09]^FB Inputs Channel 2^Position'}
+        M33: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:Y');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Z:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E12]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E12]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E13]^FB Inputs Channel 1^Position'}
+        M34: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:Z');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:RY:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E14]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E14]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E13]^FB Inputs Channel 2^Position'}
+        M35: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:RY:01');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:05'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E15]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E15]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 1^Position'}
+        M36: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:01');
+
+        {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:06'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 2^Position'}
+        M37: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:02');
+
 
     END_VAR
 
@@ -577,6 +640,8 @@ PRG_1_PlcTask
     PRG_PF2K2_WFS();
     PRG_IM6K2_PPM();
 
+    PRG_SP1K2_PAX();
+
     PRG_3_PMPS_POST();
     PRG_4_LOG();
 
@@ -603,6 +668,7 @@ Related:
     * `PRG_LI3K2_K2B`_
     * `PRG_PF1K2_WFS`_
     * `PRG_PF2K2_WFS`_
+    * `PRG_SP1K2_PAX`_
     * `PRG_TM1K2_ATM`_
     * `PRG_TM2K2_ATM`_
 
@@ -780,6 +846,8 @@ PRG_AT1K2_SOLID
         // Special case: inspection mirror
         {attribute 'pytmc' := 'pv: AT1K2:L2SI:MMS:03'}
         fbStage3: FB_PositionState1D_InOut;
+        bStage3Init: BOOL;
+        fbMotionStage3: FB_MotionStage;
         stMirrorOut: ST_PositionState;
         stMirrorIn: ST_PositionState;
         // Consider transmission=1 if out, transmission=0 if in
@@ -839,7 +907,7 @@ PRG_AT1K2_SOLID
 
 
     (* State setup - stage 1 *)
-    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=66.00);
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
     fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
@@ -877,7 +945,7 @@ PRG_AT1K2_SOLID
 
 
     (* State setup - stage 2 *)
-    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=66.00);
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
     fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
@@ -917,11 +985,22 @@ PRG_AT1K2_SOLID
     fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
     fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
 
+    IF NOT bStage3Init THEN
+        bStage3Init := TRUE;
+        Main.M27.bHardwareEnable      := TRUE;
+        Main.M27.bLimitBackwardEnable := TRUE;
+        Main.M27.bLimitForwardEnable  := TRUE;
+        Main.M27.bPowerSelf           := TRUE;
+        Main.M27.nBrakeMode           := ENUM_StageBrakeMode.NO_BRAKE;
+        Main.M27.nHomingMode          := ENUM_EpicsHomeCmd.NONE;
+    END_IF
+
     fbStage3(
         stMotionStage:=Main.M27,
         stOut:=stMirrorOut,
         stIn:=stMirrorIn,
     );
+    fbMotionStage3(stMotionStage:=Main.M27);
 
     IF fbStage3.eStateGet = E_EpicsInOut.OUT THEN
         fMirrorTrans := 1.0;
@@ -1899,6 +1978,85 @@ PRG_PF2K2_WFS
 
 Related:
     * `GVL`_
+    * `Main`_
+
+
+PRG_SP1K2_PAX
+^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_SP1K2_PAX
+    VAR
+        bInit : BOOL := TRUE;
+        fbPAX_TAR_X : FB_MotionStage;
+        fbPAX_TAR_Y : FB_MotionStage;
+        fbPAX_TAR_Z : FB_MotionStage;
+
+        fbPAX_BB_Y_01 : FB_MotionStage;
+        fbPAX_BB_Y_02 : FB_MotionStage;
+
+        fbPAX_FRAME_X : FB_MotionStage;
+        fbPAX_FRAME_Y_01 : FB_MotionStage;
+        fbPAX_FRAME_Y_02 : FB_MotionStage;
+        fbPAX_FRAME_Y_03 : FB_MotionStage;
+
+    END_VAR
+    IF bInit THEN
+        Main.M28.bHardwareEnable := TRUE;
+        Main.M28.bPowerSelf := TRUE;
+
+        Main.M29.bHardwareEnable := TRUE;
+        Main.M29.bPowerSelf := TRUE;
+
+        Main.M30.bHardwareEnable := TRUE;
+        Main.M30.bPowerSelf := TRUE;
+
+        Main.M31.bHardwareEnable := TRUE;
+        Main.M31.bPowerSelf := TRUE;
+
+        Main.M32.bHardwareEnable := TRUE;
+        Main.M32.bPowerSelf := TRUE;
+
+        Main.M33.bHardwareEnable := TRUE;
+        Main.M33.bPowerSelf := TRUE;
+
+        Main.M34.bHardwareEnable := TRUE;
+        Main.M34.bPowerSelf := TRUE;
+
+        Main.M36.bHardwareEnable := TRUE;
+        Main.M36.bPowerSelf := TRUE;
+
+        Main.M37.bHardwareEnable := TRUE;
+        Main.M37.bPowerSelf := TRUE;
+
+        bInit := FALSE;
+    END_IF
+
+    // PAX TAR
+    fbPAX_TAR_X(stMotionStage:= Main.M32);
+    fbPAX_TAR_Y(stMotionStage:= Main.M33);
+    fbPAX_TAR_Z(stMotionStage:= Main.M34);
+
+    // PAX BB
+    Main.M36.bLimitForwardEnable := TRUE;
+    Main.M36.bLimitBackwardEnable := TRUE;
+    fbPAX_BB_Y_01(stMotionStage:= Main.M36);
+
+    Main.M37.bLimitForwardEnable := TRUE;
+    Main.M37.bLimitBackwardEnable := TRUE;
+    fbPAX_BB_Y_02(stMotionStage:= Main.M37);
+
+    // FRAME
+    fbPAX_FRAME_X(stMotionStage:= Main.M31);
+    fbPAX_FRAME_Y_01(stMotionStage:= Main.M28);
+    fbPAX_FRAME_Y_02(stMotionStage:= Main.M29);
+    fbPAX_FRAME_Y_03(stMotionStage:= Main.M30);
+
+    END_PROGRAM
+
+
+Related:
     * `Main`_
 
 

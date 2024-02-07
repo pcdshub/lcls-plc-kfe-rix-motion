@@ -18,7 +18,7 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -94,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-li3k2-k2b">PRG_LI3K2_K2B</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf1k2-wfs">PRG_PF1K2_WFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf2k2-wfs">PRG_PF2K2_WFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-sp1k2-pax">PRG_SP1K2_PAX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-st3k2-term">PRG_ST3K2_TERM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-tm1k2-atm">PRG_TM1K2_ATM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-tm2k2-atm">PRG_TM2K2_ATM</a></li>
@@ -447,6 +448,69 @@
     <span class="p">;}</span>
     <span class="n">M27</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT1K2:L2SI:MMS:03&#39;</span><span class="p">);</span>
 
+    <span class="o">//</span> <span class="n">PAX</span> <span class="n">Motors</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E01]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E01</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E02</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M28</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:FRAME:Y:01&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E03]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E03</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E02</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+
+    <span class="n">M29</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:FRAME:Y:02&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:03&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E04]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E04</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E05</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M30</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:FRAME:Y:03&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:X:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 2;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E06</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bBrakeRelease</span>        <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E07</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E05</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M31</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:FRAME:X&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:X:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08^STM Status^Status^Digital input 2;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIID</span><span class="o">^</span><span class="n">PLC</span> <span class="n">Rail</span> <span class="p">(</span><span class="n">EtherCAT</span><span class="p">)</span><span class="o">^</span><span class="n">Power</span> <span class="p">(</span><span class="n">EK1200</span><span class="p">)</span><span class="o">^</span><span class="n">Fiber</span> <span class="n">Coupler</span> <span class="p">(</span><span class="n">EK1521</span><span class="o">-</span><span class="mi">0010</span><span class="p">)</span><span class="o">^</span><span class="n">Term</span> <span class="mi">123</span> <span class="p">(</span><span class="n">EK1100</span><span class="p">)</span><span class="o">^</span><span class="n">Term</span> <span class="mi">73</span> <span class="p">(</span><span class="n">EK1122</span><span class="p">)</span><span class="o">^</span><span class="n">PAX</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span> <span class="p">(</span><span class="n">EK1100</span><span class="p">)</span><span class="o">^</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E08</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIID</span><span class="o">^</span><span class="n">PLC</span> <span class="n">Rail</span> <span class="p">(</span><span class="n">EtherCAT</span><span class="p">)</span><span class="o">^</span><span class="n">Power</span> <span class="p">(</span><span class="n">EK1200</span><span class="p">)</span><span class="o">^</span><span class="n">Fiber</span> <span class="n">Coupler</span> <span class="p">(</span><span class="n">EK1521</span><span class="o">-</span><span class="mi">0010</span><span class="p">)</span><span class="o">^</span><span class="n">Term</span> <span class="mi">123</span> <span class="p">(</span><span class="n">EK1100</span><span class="p">)</span><span class="o">^</span><span class="n">Term</span> <span class="mi">73</span> <span class="p">(</span><span class="n">EK1122</span><span class="p">)</span><span class="o">^</span><span class="n">PAX</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span> <span class="p">(</span><span class="n">EK1100</span><span class="p">)</span><span class="o">^</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E09</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M32</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:TAR:X&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:04&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 2;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E10</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">1</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E09</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M33</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:TAR:Y&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Z:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E12]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E12</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M34</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:TAR:Z&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:RY:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E14]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M35</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:MMS:RY:01&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:05&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E15]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E15</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E16</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M36</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:BB:Y:01&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SP1K2:PAX:MMS:Y:06&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL7047</span><span class="o">-</span><span class="n">E17</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">PAX</span><span class="o">-</span><span class="n">EL5042</span><span class="o">-</span><span class="n">E16</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="n">M37</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP1K2:PAX:BB:Y:02&#39;</span><span class="p">);</span>
+
 
 <span class="n">END_VAR</span>
 </pre></div>
@@ -679,6 +743,8 @@ PRG_LI3K2_K2B();
 PRG_PF2K2_WFS();
 PRG_IM6K2_PPM();
 
+PRG_SP1K2_PAX();
+
 PRG_3_PMPS_POST();
 PRG_4_LOG();
 
@@ -706,6 +772,7 @@ END_PROGRAM
 <li><p><a class="reference internal" href="#prg-li3k2-k2b">PRG_LI3K2_K2B</a></p></li>
 <li><p><a class="reference internal" href="#prg-pf1k2-wfs">PRG_PF1K2_WFS</a></p></li>
 <li><p><a class="reference internal" href="#prg-pf2k2-wfs">PRG_PF2K2_WFS</a></p></li>
+<li><p><a class="reference internal" href="#prg-sp1k2-pax">PRG_SP1K2_PAX</a></p></li>
 <li><p><a class="reference internal" href="#prg-tm1k2-atm">PRG_TM1K2_ATM</a></p></li>
 <li><p><a class="reference internal" href="#prg-tm2k2-atm">PRG_TM2K2_ATM</a></p></li>
 </ul>
@@ -874,6 +941,8 @@ END_PROGRAM
     <span class="o">//</span> <span class="n">Special</span> <span class="n">case</span><span class="p">:</span> <span class="n">inspection</span> <span class="n">mirror</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT1K2:L2SI:MMS:03&#39;</span><span class="p">}</span>
     <span class="n">fbStage3</span><span class="p">:</span> <span class="n">FB_PositionState1D_InOut</span><span class="p">;</span>
+    <span class="n">bStage3Init</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="n">fbMotionStage3</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
     <span class="n">stMirrorOut</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
     <span class="n">stMirrorIn</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
     <span class="o">//</span> <span class="n">Consider</span> <span class="n">transmission</span><span class="o">=</span><span class="mi">1</span> <span class="k">if</span> <span class="n">out</span><span class="p">,</span> <span class="n">transmission</span><span class="o">=</span><span class="mi">0</span> <span class="k">if</span> <span class="ow">in</span>
@@ -933,7 +1002,7 @@ END_PROGRAM
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">1</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">66.00</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">22.00</span><span class="p">);</span>
 
 <span class="n">fbBadStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage1</span><span class="o">.</span><span class="n">stFilter1</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Filter 1&#39;</span><span class="p">);</span>
 <span class="n">fbStage1</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
@@ -971,7 +1040,7 @@ END_PROGRAM
 
 
 <span class="p">(</span><span class="o">*</span> <span class="n">State</span> <span class="n">setup</span> <span class="o">-</span> <span class="n">stage</span> <span class="mi">2</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">66.00</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">22.00</span><span class="p">);</span>
 
 <span class="n">fbBadStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbStage2</span><span class="o">.</span><span class="n">stFilter1</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Filter 1&#39;</span><span class="p">);</span>
 <span class="n">fbStage2</span><span class="o">.</span><span class="n">arrFilters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fFilterThickness_um</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
@@ -1011,11 +1080,22 @@ END_PROGRAM
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stMirrorOut</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Out&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">65.00</span><span class="p">);</span>
 <span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stMirrorIn</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;In&#39;</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=</span><span class="mf">25.00</span><span class="p">);</span>
 
+<span class="n">IF</span> <span class="n">NOT</span> <span class="n">bStage3Init</span> <span class="n">THEN</span>
+    <span class="n">bStage3Init</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bHardwareEnable</span>      <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bLimitForwardEnable</span>  <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">bPowerSelf</span>           <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">nBrakeMode</span>           <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="o">.</span><span class="n">nHomingMode</span>          <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">NONE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
 <span class="n">fbStage3</span><span class="p">(</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="p">,</span>
     <span class="n">stOut</span><span class="o">:=</span><span class="n">stMirrorOut</span><span class="p">,</span>
     <span class="n">stIn</span><span class="o">:=</span><span class="n">stMirrorIn</span><span class="p">,</span>
 <span class="p">);</span>
+<span class="n">fbMotionStage3</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M27</span><span class="p">);</span>
 
 <span class="n">IF</span> <span class="n">fbStage3</span><span class="o">.</span><span class="n">eStateGet</span> <span class="o">=</span> <span class="n">E_EpicsInOut</span><span class="o">.</span><span class="n">OUT</span> <span class="n">THEN</span>
     <span class="n">fMirrorTrans</span> <span class="o">:=</span> <span class="mf">1.0</span><span class="p">;</span>
@@ -1994,6 +2074,85 @@ END_PROGRAM
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
 <li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+<li><p><a class="reference internal" href="#main">Main</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-sp1k2-pax">
+<h2>PRG_SP1K2_PAX<a class="headerlink" href="#prg-sp1k2-pax" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_SP1K2_PAX</span>
+<span class="n">VAR</span>
+    <span class="n">bInit</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbPAX_TAR_X</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_TAR_Y</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_TAR_Z</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="n">fbPAX_BB_Y_01</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_BB_Y_02</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="n">fbPAX_FRAME_X</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_FRAME_Y_01</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_FRAME_Y_02</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbPAX_FRAME_Y_03</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+<span class="n">END_VAR</span>
+<span class="n">IF</span> <span class="n">bInit</span> <span class="n">THEN</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M28</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M28</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M29</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M29</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M30</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M30</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M31</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M31</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M32</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M32</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M34</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M34</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M36</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M36</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">Main</span><span class="o">.</span><span class="n">M37</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">Main</span><span class="o">.</span><span class="n">M37</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+    <span class="n">bInit</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="o">//</span> <span class="n">PAX</span> <span class="n">TAR</span>
+<span class="n">fbPAX_TAR_X</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M32</span><span class="p">);</span>
+<span class="n">fbPAX_TAR_Y</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M33</span><span class="p">);</span>
+<span class="n">fbPAX_TAR_Z</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M34</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">PAX</span> <span class="n">BB</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M36</span><span class="o">.</span><span class="n">bLimitForwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M36</span><span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbPAX_BB_Y_01</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M36</span><span class="p">);</span>
+
+<span class="n">Main</span><span class="o">.</span><span class="n">M37</span><span class="o">.</span><span class="n">bLimitForwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M37</span><span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbPAX_BB_Y_02</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M37</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">FRAME</span>
+<span class="n">fbPAX_FRAME_X</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M31</span><span class="p">);</span>
+<span class="n">fbPAX_FRAME_Y_01</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M28</span><span class="p">);</span>
+<span class="n">fbPAX_FRAME_Y_02</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M29</span><span class="p">);</span>
+<span class="n">fbPAX_FRAME_Y_03</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M30</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
 <li><p><a class="reference internal" href="#main">Main</a></p></li>
 </ul>
 </dd>

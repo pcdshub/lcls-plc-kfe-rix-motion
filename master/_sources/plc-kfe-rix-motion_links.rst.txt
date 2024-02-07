@@ -171,6 +171,78 @@ Links
         , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^Ready to enable
         , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^Torque reduced
         , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Motor stall
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Warning
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 1
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Digital input 2
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Status^Status^Sync error
@@ -263,6 +335,42 @@ Links
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^Digital input 2
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^Sync error
         , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^TxPDO Toggle
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, WcState^InputToggle
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, WcState^WcState
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, WcState^InputToggle
@@ -309,6 +417,24 @@ Links
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL7041-E2, WcState^WcState
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, WcState^InputToggle
         , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, WcState^WcState
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Enable
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Reduce torque
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Control^Control^Reset
@@ -378,10 +504,46 @@ Links
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Control^Control^Enable
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Control^Control^Reduce torque
         , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Control^Control^Reset
         , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 155 (EK1122)^AT2K2-SOLID (EK1100)^AT2K2-EL7047-01, STM Control^Control^Digital output 1
         , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 155 (EK1122)^AT2K2-SOLID (EK1100)^AT2K2-EL7047-02, STM Control^Control^Digital output 1
         , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 155 (EK1122)^AT2K2-SOLID (EK1100)^AT2K2-EL7047-03, STM Control^Control^Digital output 1
         , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 155 (EK1122)^AT2K2-SOLID (EK1100)^AT2K2-EL7047-04, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Control^Control^Digital output 1
+        , Drive^Outputs^Out^nCtrl2, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Control^Control^Digital output 1
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL7041, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL7041, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL7041-E1, STM Velocity^Velocity
@@ -405,6 +567,15 @@ Links
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL7041-E1, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL7041-E2, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL7041-E1, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Velocity^Velocity
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, WcState^InputToggle
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, WcState^WcState
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, WcState^InputToggle
@@ -451,6 +622,24 @@ Links
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL5042-E3, WcState^WcState
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, WcState^InputToggle
         , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, WcState^WcState
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL5042, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL5042-E2, FB Inputs Channel 1^Position
@@ -474,6 +663,15 @@ Links
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL5042-E3, FB Inputs Channel 2^Position
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^PF2K2-WFS (EK1100)^PF2K2-EL5042-E3, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Diag
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Error
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL5042, FB Inputs Channel 1^Status^Input cycle counter
@@ -612,6 +810,60 @@ Links
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^Ready
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^TxPDO State
         , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL5042-E2, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Status^Warning
         Axes^Axis 25 AT1K2-SOLID-MMS-01, Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^AT1K2-SOLID (EK1100)^AT1K2-EL7047-01, STM Status^Status^Error
         Axes^Axis 25 AT1K2-SOLID-MMS-01, Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^AT1K2-SOLID (EK1100)^AT1K2-EL7047-01, STM Status^Status^Motor stall
         Axes^Axis 25 AT1K2-SOLID-MMS-01, Drive^Inputs^In^nState1, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^AT1K2-SOLID (EK1100)^AT1K2-EL7047-01, STM Status^Status^Moving negative
@@ -765,7 +1017,47 @@ Links
         kfe_rix_motion Instance, PlcTask Inputs^Main.M26.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^AT1K2-SOLID (EK1100)^AT1K2-EL5042-01, FB Inputs Channel 2^Position
         kfe_rix_motion Instance, PlcTask Inputs^Main.M27.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 27 AT1K2-SOLID-MMS-03, Outputs^ToPlc
         kfe_rix_motion Instance, PlcTask Inputs^Main.M27.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 157 (EK1122)^AT1K2-SOLID (EK1100)^AT1K2-EL5042-02, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M28.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 28 SP1K2-PAX-FRAME-MMS-Y-01, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M28.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M28.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E01, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M28.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M29.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 29 SP1K2-PAX-FRAME-MMS-Y-02, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M29.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M29.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E03, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M29.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E02, FB Inputs Channel 2^Position
         kfe_rix_motion Instance, PlcTask Inputs^Main.M3.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 3 SPARE, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M30.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 30 SP1K2-PAX-FRAME-MMS-Y-03, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M30.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M30.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E04, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M30.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M31.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 31 SP1K2-PAX-FRAME-MMS-X, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M31.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M31.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E06, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M31.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E05, FB Inputs Channel 2^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M32.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 32 SP1K2-PAX-TAR-MMS-X, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M32.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M32.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M32.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M33.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 33 SP1K2-PAX-TAR-MMS-Y, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M33.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M33.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E10, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M33.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09, FB Inputs Channel 2^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M34.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 34 SP1K2-PAX-TAR-MMS-Z, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M34.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M34.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E12, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M34.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M35.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 35 SP1K2-PAX-TAR-MMS-RY, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M35.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E14, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M35.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E14, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M35.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E13, FB Inputs Channel 2^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M36.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 36 SP1K2-PAX-BB-MMS-Y-01, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M36.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M36.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E15, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M36.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 1^Position
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M37.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 37 SP1K2-PAX-BB-MMS-Y-02, Outputs^ToPlc
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M37.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Digital input 2
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M37.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E17, STM Status^Status^Digital input 1
+        kfe_rix_motion Instance, PlcTask Inputs^Main.M37.nRawEncoderULINT, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E16, FB Inputs Channel 2^Position
         kfe_rix_motion Instance, PlcTask Inputs^Main.M4.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 4 IM1K2-PPM-MMS, Outputs^ToPlc
         kfe_rix_motion Instance, PlcTask Inputs^Main.M4.bLimitBackwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL7041-E1, STM Status^Status^Digital input 2
         kfe_rix_motion Instance, PlcTask Inputs^Main.M4.bLimitForwardEnable, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL7041-E1, STM Status^Status^Digital input 1
@@ -974,7 +1266,18 @@ Links
         kfe_rix_motion Instance, PlcTask Outputs^Main.M25.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 25 AT1K2-SOLID-MMS-01, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M26.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 26 AT1K2-SOLID-MMS-02, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M27.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 27 AT1K2-SOLID-MMS-03, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M28.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 28 SP1K2-PAX-FRAME-MMS-Y-01, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M29.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 29 SP1K2-PAX-FRAME-MMS-Y-02, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M3.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 3 SPARE, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M30.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 30 SP1K2-PAX-FRAME-MMS-Y-03, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M31.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 31 SP1K2-PAX-FRAME-MMS-X, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M31.bBrakeRelease, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL2004-E07, Channel 1^Output
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M32.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 32 SP1K2-PAX-TAR-MMS-X, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M33.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 33 SP1K2-PAX-TAR-MMS-Y, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M34.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 34 SP1K2-PAX-TAR-MMS-Z, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M35.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 35 SP1K2-PAX-TAR-MMS-RY, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M36.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 36 SP1K2-PAX-BB-MMS-Y-01, Inputs^FromPlc
+        kfe_rix_motion Instance, PlcTask Outputs^Main.M37.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 37 SP1K2-PAX-BB-MMS-Y-02, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M4.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 4 IM1K2-PPM-MMS, Inputs^FromPlc
         kfe_rix_motion Instance, PlcTask Outputs^Main.M4.bBrakeRelease, TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL2004-E3, Channel 1^Output
         kfe_rix_motion Instance, PlcTask Outputs^Main.M5.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 5 AL1K2-L2SI-MMS, Inputs^FromPlc
