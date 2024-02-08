@@ -184,8 +184,8 @@ fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 (* State setup - stage 3 *)
-fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=25.00);
-fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=65.00);
+fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
+fbStateSetup(stPositionState:=stMirrorIn, sName:='In', fPosition:=25.00);
 
 IF NOT bStage3Init THEN
     bStage3Init := TRUE;
