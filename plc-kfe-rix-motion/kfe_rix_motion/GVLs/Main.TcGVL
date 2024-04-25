@@ -243,13 +243,13 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E09]^FB Inputs Channel 2^Position'}
-    M33: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:04');
+    M33: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:Y');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Z:01'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E12]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E12]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E13]^FB Inputs Channel 1^Position'}
-    M34: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Z:01');
+    M34: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:Z');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:RY:01'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E14]^STM Status^Status^Digital input 1;
@@ -261,13 +261,13 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E15]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E15]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 1^Position'}
-    M36: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:05');
+    M36: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:01');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:06'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 2^Position'}
-    M37: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:06');
+    M37: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:02');
 
 
 END_VAR]]></Declaration>
