@@ -235,10 +235,10 @@
 				<Entry Name="Status__">
 					<Type GUID="{18071995-0000-0000-0000-002000000003}">ARRAY [0..2] OF BIT</Type>
 				</Entry>
-				<Entry Name="Status__Digital input 1" Index="#x6010" Sub="#x0c">
+				<Entry Name="Status__Digital input 1" Index="#x6010" Sub="#x0c" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
-				<Entry Name="Status__Digital input 2" Index="#x6010" Sub="#x0d">
+				<Entry Name="Status__Digital input 2" Index="#x6010" Sub="#x0d" Flags="#x00008020">
 					<Type>BIT</Type>
 				</Entry>
 				<Entry Name="Status__Sync error" Index="#x6010" Sub="#x0e">

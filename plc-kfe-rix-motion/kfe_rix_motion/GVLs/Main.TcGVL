@@ -234,10 +234,10 @@ VAR_GLOBAL
     M31: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:X:01');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:X:02'}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E08]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIIB[PAX-EL7047-E08]^STM Status^Status^Digital input 2;
-                              .nRawEncoderULINT     := TIIB[PAX-EL5042-E09]^FB Inputs Channel 1^Position'}
-    M32: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:X:02');
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL7047-E08^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^PAX-DRL-02 (EK1100)^PAX-EL5042-E09^FB Inputs Channel 1^Position'}
+    M32: ST_MotionStage := (sName := 'SP1K2:PAX:TAR:X');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:04'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E10]^STM Status^Status^Digital input 1;
