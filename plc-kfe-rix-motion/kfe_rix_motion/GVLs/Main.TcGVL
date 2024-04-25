@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="Main" Id="{fff0648d-526a-4895-b18d-41e28b717bbc}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+    <Declaration><![CDATA[ {attribute 'qualified_only'}
 VAR_GLOBAL
     // IM1K1-PPM-MMS
     {attribute 'pytmc' := 'pv: IM1K1:PPM:MMS'}
