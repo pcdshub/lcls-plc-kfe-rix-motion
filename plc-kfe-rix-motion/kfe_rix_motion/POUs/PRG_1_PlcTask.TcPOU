@@ -43,6 +43,8 @@ PRG_LI3K2_K2B();
 PRG_PF2K2_WFS();
 PRG_IM6K2_PPM();
 
+PRG_SP1K2_PAX();
+
 PRG_3_PMPS_POST();
 PRG_4_LOG();]]></ST>
     </Implementation>
