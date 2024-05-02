@@ -1324,7 +1324,8 @@ External Setpoint Generation:
 	<Axis Id="32" CreateSymbols="true" AxisType="1" AxisFolder="SP1K2-PAX">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Velo SlowManual="0.1" FastManual="1" Maximum="1"/>
+			<Dynamic AccelerationMaximum="1" DecelerationMaximum="1"/>
+			<Velo SlowManual="0.1" FastManual="1" Maximum="0.5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
@@ -1372,7 +1373,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog VeloReferenz="2" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="1" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
