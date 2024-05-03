@@ -211,20 +211,20 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E01]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E01]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E02]^FB Inputs Channel 1^Position'}
-    M28: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:01');
+    M28: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:01');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:02'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E03]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E03]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E02]^FB Inputs Channel 2^Position'}
 
-    M29: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:02');
+    M29: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:02');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:Y:03'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E04]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[PAX-EL7047-E04]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E05]^FB Inputs Channel 1^Position'}
-    M30: ST_MotionStage := (sName := 'SP1K2:PAX:MMS:Y:03');
+    M30: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:03');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:X:01'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 1;
