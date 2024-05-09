@@ -227,8 +227,8 @@ VAR_GLOBAL
     M30: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:Y:03');
 
     {attribute 'pytmc' := 'pv: SP1K2:PAX:MMS:X:01'}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 2;
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[PAX-EL7047-E06]^STM Status^Status^Digital input 1;
                               .bBrakeRelease        := TIIB[PAX-EL2004-E07]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E05]^FB Inputs Channel 2^Position'}
     M31: ST_MotionStage := (sName := 'SP1K2:PAX:FRAME:X');
