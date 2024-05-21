@@ -4,8 +4,8 @@
 #         Project: plc-kfe-rix-motion.tsproj
 #        PLC name: kfe_rix_motion (kfe_rix_motion Instance)
 # Generated using: pytmc 2.16.0
-# Project version: 3023027
-#    Project hash: 302302707a9f7d0108757cdcd707ec76d69c472f
+# Project version: 1989374
+#    Project hash: 198937406e9b28c0b64723011a70463c1abcab63
 #     PLC IP/host: 172.21.140.70
 #      PLC Net ID: 172.21.140.70.1.1
 #  ** Production mode IOC **
@@ -17,7 +17,7 @@
 #   lcls-twincat-common-components: * -> 3.4.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
-#   PMPS: * -> 3.0.14 (SLAC - LCLS)
+#   PMPS: * -> 3.2.1 (SLAC - LCLS)
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
 #   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
@@ -43,7 +43,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.140.70")
 epicsEnvSet("AMSID",            "172.21.140.70.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "13361")
+epicsEnvSet("ADS_MAX_PARAMS",   "13391")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -662,7 +662,7 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:RIX:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-motion.tsproj,HASH=3023027,VERSION=3023027,PYTMC=2.16.0,PLC_HOST=172.21.140.70")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-motion.tsproj,HASH=1989374,VERSION=1989374,PYTMC=2.16.0,PLC_HOST=172.21.140.70")
 
 #   LCLS General: * -> 2.10.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
@@ -672,8 +672,8 @@ dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-tw
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.8,VENDOR=SLAC")
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-physics,VERSION=0.1.0,VENDOR=SLAC")
-#   PMPS: * -> 3.0.14 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=PMPS,VERSION=3.0.14,VENDOR=SLAC - LCLS")
+#   PMPS: * -> 3.2.1 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=PMPS,VERSION=3.2.1,VENDOR=SLAC - LCLS")
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
@@ -686,8 +686,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("kfe_rix_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 12361
-callbackSetQueueSize(26722)
+# Total records: 12391
+callbackSetQueueSize(26782)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:RIX:MOTION:")
