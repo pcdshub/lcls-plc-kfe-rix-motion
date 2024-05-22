@@ -1355,6 +1355,7 @@ External Setpoint Generation:
 		<AxisFolder Name="PF2K2-WFS"/>
 		<AxisFolder Name="IM6K2-PPM"/>
 		<AxisFolder Name="AT1K2-SOLID"/>
+		<AxisFolder Name="SP1K2-PAX"/>
 		<Axis File="Axis 1 IM1K1-PPM-MMS.xti" Id="1"/>
 		<Axis File="Axis 2 IM2K1-PPM-MMS.xti" Id="2"/>
 		<Axis File="Axis 3 SPARE.xti" Id="3"/>
@@ -1391,8 +1392,6 @@ External Setpoint Generation:
 					<SoftEndMinControl Enable="true" Range="19"/>
 					<SoftEndMaxControl Enable="true" Range="152.2"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
-					<ParameterChanged>14</ParameterChanged>
-					<ParameterChanged>13</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -1604,8 +1603,6 @@ External Setpoint Generation:
 					<SoftEndMinControl Enable="true" Range="19"/>
 					<SoftEndMaxControl Enable="true" Range="152.2"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
-					<ParameterChanged>14</ParameterChanged>
-					<ParameterChanged>13</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -2016,6 +2013,16 @@ External Setpoint Generation:
 				</Var>
 			</Vars>
 		</Axis>
+		<Axis File="Axis 37 SP1K2-PAX-BB-MMS-Y-02.xti" Id="37"/>
+		<Axis File="Axis 36 SP1K2-PAX-BB-MMS-Y-01.xti" Id="36"/>
+		<Axis File="Axis 35 SP1K2-PAX-TAR-MMS-RY.xti" Id="35"/>
+		<Axis File="Axis 34 SP1K2-PAX-TAR-MMS-Z.xti" Id="34"/>
+		<Axis File="Axis 33 SP1K2-PAX-TAR-MMS-Y.xti" Id="33"/>
+		<Axis File="Axis 32 SP1K2-PAX-TAR-MMS-X.xti" Id="32"/>
+		<Axis File="Axis 31 SP1K2-PAX-FRAME-MMS-X.xti" Id="31"/>
+		<Axis File="Axis 30 SP1K2-PAX-FRAME-MMS-Y-03.xti" Id="30"/>
+		<Axis File="Axis 29 SP1K2-PAX-FRAME-MMS-Y-02.xti" Id="29"/>
+		<Axis File="Axis 28 SP1K2-PAX-FRAME-MMS-Y-01.xti" Id="28"/>
 	</NC>
 	<Mappings>
 		<OwnerA Name="Axes^Axis 25 AT1K2-SOLID-MMS-01">

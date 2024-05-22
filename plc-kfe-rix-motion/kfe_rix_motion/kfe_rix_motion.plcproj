@@ -94,6 +94,9 @@
     <Compile Include="POUs\PRG_PF2K2_WFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_SP1K2_PAX.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_TM1K2_ATM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -181,13 +184,13 @@
       <Resolution>lcls-twincat-common-components, 3.4.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 4.0.6 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.8 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
       <Resolution>lcls-twincat-physics, 0.1.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.2.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="SysDir">
       <Resolution>SysDir, 3.5.8.0 (System)</Resolution>

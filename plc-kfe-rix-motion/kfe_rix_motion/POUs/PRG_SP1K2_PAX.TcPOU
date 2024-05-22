@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_SP1K2_PAX" Id="{7594ee7f-4f5d-4eba-b4fd-40f8476ab083}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SP1K2_PAX
+VAR
+    bInit : BOOL := TRUE;
+    fbPAX_TAR_X : FB_MotionStage;
+    fbPAX_TAR_Y : FB_MotionStage;
+    fbPAX_TAR_Z : FB_MotionStage;
+
+    fbPAX_BB_Y_01 : FB_MotionStage;
+    fbPAX_BB_Y_02 : FB_MotionStage;
+
+    fbPAX_FRAME_X : FB_MotionStage;
+    fbPAX_FRAME_Y_01 : FB_MotionStage;
+    fbPAX_FRAME_Y_02 : FB_MotionStage;
+    fbPAX_FRAME_Y_03 : FB_MotionStage;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    Main.M28.bHardwareEnable := TRUE;
+    Main.M28.bPowerSelf := TRUE;
+
+    Main.M29.bHardwareEnable := TRUE;
+    Main.M29.bPowerSelf := TRUE;
+
+    Main.M30.bHardwareEnable := TRUE;
+    Main.M30.bPowerSelf := TRUE;
+
+    Main.M31.bHardwareEnable := TRUE;
+    Main.M31.bPowerSelf := TRUE;
+
+    Main.M32.bHardwareEnable := TRUE;
+    Main.M32.bPowerSelf := TRUE;
+
+    Main.M33.bHardwareEnable := TRUE;
+    Main.M33.bPowerSelf := TRUE;
+
+    Main.M34.bHardwareEnable := TRUE;
+    Main.M34.bPowerSelf := TRUE;
+
+    Main.M36.bHardwareEnable := TRUE;
+    Main.M36.bPowerSelf := TRUE;
+
+    Main.M37.bHardwareEnable := TRUE;
+    Main.M37.bPowerSelf := TRUE;
+
+    bInit := FALSE;
+END_IF
+
+// PAX TAR
+fbPAX_TAR_X(stMotionStage:= Main.M32);
+fbPAX_TAR_Y(stMotionStage:= Main.M33);
+fbPAX_TAR_Z(stMotionStage:= Main.M34);
+
+// PAX BB
+Main.M36.bLimitForwardEnable := TRUE;
+Main.M36.bLimitBackwardEnable := TRUE;
+fbPAX_BB_Y_01(stMotionStage:= Main.M36);
+
+Main.M37.bLimitForwardEnable := TRUE;
+Main.M37.bLimitBackwardEnable := TRUE;
+fbPAX_BB_Y_02(stMotionStage:= Main.M37);
+
+// FRAME
+fbPAX_FRAME_X(stMotionStage:= Main.M31);
+fbPAX_FRAME_Y_01(stMotionStage:= Main.M28);
+fbPAX_FRAME_Y_02(stMotionStage:= Main.M29);
+fbPAX_FRAME_Y_03(stMotionStage:= Main.M30);
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
