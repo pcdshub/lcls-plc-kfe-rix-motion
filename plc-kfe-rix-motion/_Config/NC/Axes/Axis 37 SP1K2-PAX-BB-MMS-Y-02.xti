@@ -1324,12 +1324,18 @@ External Setpoint Generation:
 	<Axis Id="37" CreateSymbols="true" AxisType="1" AxisFolder="SP1K2-PAX">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Velo SlowManual="1" FastManual="10" Maximum="0.5"/>
+			<Velo SlowManual="0.5" FastManual="1" Maximum="1.5"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="0.000244" Offset="-8924.3488" MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="0.000244" Offset="-8917.43869" MaxCount="#xffffffff">
+				<SoftEndMinControl Enable="true"/>
+				<SoftEndMaxControl Enable="true" Range="43"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
+				<ParameterChanged>14</ParameterChanged>
+				<ParameterChanged>11</ParameterChanged>
+				<ParameterChanged>7</ParameterChanged>
+				<ParameterChanged>12</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
