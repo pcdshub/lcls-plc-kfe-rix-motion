@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_AnalogInput_IM4K2" Id="{c3bf2f11-e399-406d-ba95-ae8960e90a27}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_AnalogInput_IM4K2
+(*
+    Converts the integer from an analog input terminal to a real unit value (e.g., volts)
+    2019-10-09 Zachary Lentz
+*)
+VAR_INPUT
+    // Connect this input to the terminal
+    iRaw AT %I*: DINT;
+    // The number of bits correlated with the terminal's max value. This is not necessarily the resolution parameter.
+    iTermBits: UINT;
+    // The fReal value correlated with the terminal's max value
+    fTermMax: LREAL;
+    // The fReal value correlated with the terminal's min value
+    fTermMin: LREAL;
+    // Value to scale the end result to
+    {attribute 'pytmc' := '
+        pv: RES
+        io: io
+    '}
+    fResolution : LREAL := 1;
+    {attribute 'pytmc' := '
+        pv: OFF
+        io: io
+    '}
+    fOffset : LREAL;
+END_VAR
+VAR_OUTPUT
+    // The real value read from the output
+    {attribute 'pytmc' := '
+        pv: VAL
+        io: i
+    '}
+    fReal: LREAL;
+END_VAR
+VAR
+    fScale: LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF fScale = 0 AND fTermMax > fTermMin THEN
+    fScale := (EXPT(2, iTermBits) - 1) / (fTermMax - fTermMin);
+END_IF
+IF fScale <> 0 THEN
+    fReal := iRaw / fScale + fTermMin;
+    fReal := fReal * fResolution + fOffset;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

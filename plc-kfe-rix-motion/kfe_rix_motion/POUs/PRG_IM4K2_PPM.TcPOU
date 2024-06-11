@@ -6,7 +6,7 @@ VAR
     {attribute 'pytmc' := 'pv: IM4K2:PPM'}
      {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
-                              .fbPowerMeter.iVoltageINT := TIIB[IM4K2-EL3062-E6]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-E8]^AI Inputs Channel 1^Value;
                               .fbPowerMeter.fbThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
                               .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
                               .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
@@ -17,7 +17,7 @@ VAR
                               .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
 // IM4K2 shares the same flow meter as IM1K2
-    fbIM4K2: FB_PPM;
+    fbIM4K2: FB_PPM_IM4K2;
 
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (

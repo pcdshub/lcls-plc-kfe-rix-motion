@@ -37,6 +37,15 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\IM4K2\FB_AnalogInput_IM4K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\IM4K2\FB_PPM_IM4K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\IM4K2\FB_PPM_PowerMeter_IM4K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -116,6 +125,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\IM4K2" />
     <Folder Include="POUs\TM2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

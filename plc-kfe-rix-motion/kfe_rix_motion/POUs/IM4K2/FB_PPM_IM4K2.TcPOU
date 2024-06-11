@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_PPM_IM4K2" Id="{21ba0056-420c-4281-af9c-7f35e47eaf5b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PPM_IM4K2
+(*
+    Function block for Power and Profile Monitor (PPM) controls:
+    - Y motion
+    - Y power and profile states
+    - power meter
+    - camera power
+    - camera illuminator
+    - flow meter
+    - thermocouple
+
+    The following IO link points are included and should be used:
+    - FB_PPM.fbPowerMeter.iVoltageINT should be linked to the power meter analog input voltage
+    - FB_PPM.fbPowerMeter.fbThermoCouple.bError, bUnderrange, bOverrange, and iRaw should be linked to the corresponding thermocouple terminal inputs.
+    - FB_PPM.fbGige.iIlluminatorINT should be linked to illuminator dimmer analog output voltage
+    - FB_PPM.fbGige.bGigePower should be linked to the camera power digial output channel
+    - FB_PPM.fbFlowMeter.iRaw should be linked to the flow meter current analog input channel
+    - FB_PPM.fbYagThermoCouple.bError, bUnderrange, bOverrange, and iRaw should be linked to the corresponding thermocouple terminal inputs.
+*)
+VAR_IN_OUT
+    // Y motor (state select).
+    stYStage: ST_MotionStage;
+    // The fast fault output to fault to.
+    fbFFHWO: FB_HardwareFFOutput;
+    // The arbiter to request beam conditions from.
+    fbArbiter: FB_Arbiter;
+END_VAR
+VAR_INPUT
+    // Settings for the OUT state.
+    stOut: ST_PositionState;
+    // Settings for the POWERMETER state.
+    stPower: ST_PositionState;
+    // Settings for the YAG1 state.
+    stYag1: ST_PositionState;
+    // Settings for the YAG2 state.
+    stYag2: ST_PositionState;
+    // Set this to a non-unknown value to request a new move.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:SET
+        io: io
+    '}
+    eEnumSet: E_PPM_States;
+    // Set this to TRUE to enable input state moves, or FALSE to disable them.
+    bEnableMotion: BOOL;
+    // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+    bEnableBeamParams: BOOL;
+    // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+    bEnablePositionLimits: BOOL;
+    // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+    sDeviceName: STRING;
+    // The name of the transition state in the PMPS database.
+    sTransitionKey: STRING;
+    // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+    bReadDBNow: BOOL;
+    // Offset for the flow meter in engineering units
+    fFlowOffset: LREAL := 0;
+END_VAR
+VAR_OUTPUT
+    // The current position state as an enum.
+    {attribute 'pytmc' := '
+        pv: MMS:STATE:GET
+        io: i
+    '}
+    eEnumGet: E_PPM_States;
+    // The PMPS database lookup associated with the current position state.
+    stDbStateParams: ST_DbStateParams;
+END_VAR
+VAR
+    bInit: BOOL;
+
+    fbYStage: FB_MotionStage;
+
+    fbStateDefaults: FB_PositionState_Defaults;
+
+    {attribute 'pytmc' := '
+        pv: MMS
+        astPositionState.array: 1..4
+    '}
+    fbStates: FB_PositionStatePMPS1D;
+    astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+    fbArrCheckWrite: FB_CheckPositionStateWrite;
+
+    {attribute 'pytmc' := 'pv: SPM'}
+    fbPowerMeter: FB_PPM_PowerMeter_IM4K2;
+
+    {attribute 'pytmc' := 'pv: CAM'}
+    fbGige: FB_PPM_Gige;
+
+    {attribute 'pytmc' :='pv: FWM'}
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+
+    {attribute 'pytmc' := 'pv: YAG'}
+    fbYagThermoCouple: FB_ThermoCouple;
+
+    {attribute 'pytmc' := 'pv: FSW'}
+    fbFlowSwitch: FB_XTES_Flowswitch;
+END_VAR
+VAR CONSTANT
+    // State defaults if not provided
+    fDelta: LREAL := 2;
+    fAccel: LREAL := 200;
+    fOutDecel: LREAL := 25;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF NOT bInit THEN
+    bInit := TRUE;
+
+    stYStage.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    // Partial backcompat, this used to set fVelocity too but this should be set per install
+    fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+    fbStateDefaults(stPositionState:=stPower, sNameDefault:='POWERMETER', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stYag1, sNameDefault:='YAG1', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stYag2, sNameDefault:='YAG2', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+END_IF
+
+stYStage.bHardwareEnable := TRUE;
+stYStage.bPowerSelf := FALSE;
+
+fbYStage(stMotionStage:=stYStage);
+
+// We need to update from PLC or from EPICS, but not both
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=TRUE,
+    bSave:=FALSE,
+);
+IF NOT fbArrCheckWrite.bHadWrite THEN
+    astPositionState[E_PPM_States.OUT] := stOut;
+    astPositionState[E_PPM_States.POWERMETER] := stPower;
+    astPositionState[E_PPM_States.YAG1] := stYag1;
+    astPositionState[E_PPM_States.YAG2] := stYag2;
+END_IF
+
+fbStates(
+    stMotionStage:=stYStage,
+    astPositionState:=astPositionState,
+    eEnumSet:=eEnumSet,
+    eEnumGet:=eEnumGet,
+    fbFFHWO:=fbFFHWO,
+    fbArbiter:=fbArbiter,
+    bEnableMotion:=bEnableMotion,
+    bEnableBeamParams:=bEnableBeamParams,
+    bEnablePositionLimits:=bEnablePositionLimits,
+    sDeviceName:=sDeviceName,
+    sTransitionKey:=sTransitionKey,
+    bReadDBNow:=bReadDBNow,
+    stDbStateParams=>stDbStateParams,
+);
+
+fbArrCheckWrite(
+    astPositionState:=astPositionState,
+    bCheck:=FALSE,
+    bSave:=TRUE,
+);
+
+stOut := astPositionState[E_PPM_States.OUT];
+stPower := astPositionState[E_PPM_States.POWERMETER];
+stYag1 := astPositionState[E_PPM_States.YAG1];
+stYag2 := astPositionState[E_PPM_States.YAG2];
+
+fbPowerMeter();
+fbGige();
+fbFlowMeter(fOffset:=fFlowOffset);
+fbYagThermoCouple();
+fbFlowSwitch();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
