@@ -362,9 +362,7 @@ Axis 9: Axis 9 TM1K2-MMS-Y
     Enc:Offset, -214702
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 5e-05
-    Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, -16
-    Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -100
     Id, 9
     OtherSettings:AllowMotionCmdToSlave, true
@@ -1189,13 +1187,16 @@ Axis 36: Axis 36 SP1K2-PAX-BB-MMS-Y-01
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -8812.9677
+    Enc:Offset, -1039158.545
     Enc:ScaleFactorNumerator, 0.000244
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -43
     Id, 36
     OtherSettings:AllowMotionCmdToSlave, true
-    Velo:FastManual, 10
-    Velo:Maximum, 0.5
-    Velo:SlowManual, 1
+    Velo:FastManual, 1
+    Velo:Maximum, 1.5
+    Velo:SlowManual, 0.5
 
 
 
@@ -1214,12 +1215,15 @@ Axis 37: Axis 37 SP1K2-PAX-BB-MMS-Y-02
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -8924.3488
+    Enc:Offset, -8917.43869
     Enc:ScaleFactorNumerator, 0.000244
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 43
+    Enc:SoftEndMinControl:Enable, true
     Id, 37
     OtherSettings:AllowMotionCmdToSlave, true
-    Velo:FastManual, 10
-    Velo:Maximum, 0.5
-    Velo:SlowManual, 1
+    Velo:FastManual, 1
+    Velo:Maximum, 1.5
+    Velo:SlowManual, 0.5
 
 
