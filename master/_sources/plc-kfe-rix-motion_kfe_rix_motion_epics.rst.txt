@@ -4,6 +4,932 @@ Data Types
 
 
    
+FB_AnalogInput_IM4K2
+^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):OFF
+      - ao
+      - $(SYMBOL).fOffset
+      - | io: output
+
+
+    * - $(PREFIX):OFF_RBV
+      - ai
+      - $(SYMBOL).fOffset
+      - | io: output
+
+
+    * - $(PREFIX):RES
+      - ao
+      - $(SYMBOL).fResolution
+      - | io: output
+
+
+    * - $(PREFIX):RES_RBV
+      - ai
+      - $(SYMBOL).fResolution
+      - | io: output
+
+
+    * - $(PREFIX):VAL_RBV
+      - ai
+      - $(SYMBOL).fReal
+      - | io: input
+
+
+ 
+FB_PPM_IM4K2
+^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CAM:CIL:PCT
+      - ao
+      - $(SYMBOL).fbGige.fIlluminatorPercent
+      - | EGU: %
+        | io: output
+
+
+    * - $(PREFIX):CAM:CIL:PCT_RBV
+      - ai
+      - $(SYMBOL).fbGige.fIlluminatorPercent
+      - | EGU: %
+        | io: output
+
+
+    * - $(PREFIX):CAM:PWR
+      - bo
+      - $(SYMBOL).fbGige.bGigePower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):CAM:PWR_RBV
+      - bi
+      - $(SYMBOL).fbGige.bGigePower
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK
+      - bo
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FSW:FLOW_OK_RBV
+      - bi
+      - $(SYMBOL).fbFlowSwitch.bFlowOk
+      - | field: ONAM OK
+        | field: ZNAM LOW
+        | io: output
+
+
+    * - $(PREFIX):FWM:OFF
+      - ao
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:OFF_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES
+      - ao
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:VAL_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fReal
+      - | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | array: 1..4
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:BUSY_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:DONE_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERR_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRID_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRMSG_RBV
+      - waveform
+      - $(SYMBOL).fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:GET_RBV
+      - mbbi
+      - $(SYMBOL).eEnumGet
+      - | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT
+      - bo
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClass_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBeamClass
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClassRanges_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBCRange
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:eVRanges_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neVRange
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU eV
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:MachineMode_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nMachineMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:PhotonEnergy_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neV
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU eV
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Rate_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nRate
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU Hz
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Transmission_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nTran
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Valid_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Veto_RBV
+      - waveform
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.aVetoDevices
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_ID_RBV
+      - longin
+      - Assertion Request ID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_LOADED_RBV
+      - bi
+      - TRUE if PMPS loaded parameters from the database.
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_STATE_RBV
+      - waveform
+      - PMPS Database Lookup Key
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:RESET
+      - bo
+      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:RESET_RBV
+      - bi
+      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..4')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET
+      - mbbo
+      - $(SYMBOL).eEnumSet
+      - | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET_RBV
+      - mbbi
+      - $(SYMBOL).eEnumSet
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:MJ_RATIO
+      - ao
+      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:MJ_RATIO_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:OFFSET
+      - ao
+      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:OFFSET_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:RATIO
+      - ao
+      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB:RATIO_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+      - | io: output
+
+
+    * - $(PREFIX):SPM:CALIB_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fbPowerMeter.fCalibBaseBuffer
+      - | io: input
+
+
+    * - $(PREFIX):SPM:CALIB_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fCalibBase
+      - | io: input
+
+
+    * - $(PREFIX):SPM:MJ_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fbPowerMeter.fCalibMJBuffer
+      - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):SPM:MJ_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fCalibMJ
+      - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):SPM:STC:CONN_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.fbThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):SPM:STC:ERR_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.fbThermoCouple.bError
+      - | io: input
+
+
+    * - $(PREFIX):SPM:STC:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fbThermoCouple.fTemp
+      - | io: input
+
+
+    * - $(PREFIX):SPM:VOLT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fbPowerMeter.fVoltageBuffer
+      - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):SPM:VOLT_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fVoltage
+      - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):YAG:STC:CONN_RBV
+      - bi
+      - $(SYMBOL).fbYagThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):YAG:STC:ERR_RBV
+      - bi
+      - $(SYMBOL).fbYagThermoCouple.bError
+      - | io: input
+
+
+    * - $(PREFIX):YAG:STC:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbYagThermoCouple.fTemp
+      - | io: input
+
+
+ 
+FB_PPM_PowerMeter_IM4K2
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CALIB:MJ_RATIO
+      - ao
+      - $(SYMBOL).fCalibMJRatio
+      - | io: output
+
+
+    * - $(PREFIX):CALIB:MJ_RATIO_RBV
+      - ai
+      - $(SYMBOL).fCalibMJRatio
+      - | io: output
+
+
+    * - $(PREFIX):CALIB:OFFSET
+      - ao
+      - $(SYMBOL).fCalibRelOffset
+      - | io: output
+
+
+    * - $(PREFIX):CALIB:OFFSET_RBV
+      - ai
+      - $(SYMBOL).fCalibRelOffset
+      - | io: output
+
+
+    * - $(PREFIX):CALIB:RATIO
+      - ao
+      - $(SYMBOL).fCalibRelRatio
+      - | io: output
+
+
+    * - $(PREFIX):CALIB:RATIO_RBV
+      - ai
+      - $(SYMBOL).fCalibRelRatio
+      - | io: output
+
+
+    * - $(PREFIX):CALIB_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fCalibBaseBuffer
+      - | io: input
+
+
+    * - $(PREFIX):CALIB_RBV
+      - ai
+      - $(SYMBOL).fCalibBase
+      - | io: input
+
+
+    * - $(PREFIX):MJ_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fCalibMJBuffer
+      - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):MJ_RBV
+      - ai
+      - $(SYMBOL).fCalibMJ
+      - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):STC:CONN_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):STC:ERR_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple.bError
+      - | io: input
+
+
+    * - $(PREFIX):STC:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple.fTemp
+      - | io: input
+
+
+    * - $(PREFIX):VOLT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fVoltageBuffer
+      - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):VOLT_RBV
+      - ai
+      - $(SYMBOL).fVoltage
+      - | field: EGU mV
+        | io: input
+
+
+ 
 FB_TM2K2
 ^^^^^^^^
 
