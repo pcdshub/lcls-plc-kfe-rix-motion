@@ -2540,8 +2540,8 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageINT</Name>
-					<Type>INT</Type>
+					<Name>PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageDINT</Name>
+					<Type>DINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bError</Name>
@@ -2564,7 +2564,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Connect this input to the terminal]]>
 					</Comment>
-					<Type>INT</Type>
+					<Type>DINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_IM4K2_PPM.fbIM4K2.fbGige.fbGetIllPercent.iRaw</Name>
@@ -10777,6 +10777,13 @@ External Setpoint Generation:
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2024-06-11T14:08:48">
+				<OwnerA Name="InputDst" Prefix="TIPC^kfe_rix_motion^kfe_rix_motion Instance" Type="1">
+					<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3062-E6">
+						<Link VarA="PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageINT" TypeA="INT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000006}" VarB="AI Standard Channel 1^Value" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="20" OTCID="#x08502001"/>
 			</TaskPouOids>
@@ -11246,9 +11253,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^Main.M8.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PRG_IM4K2_PPM.fbIM4K2.fbGige.bGigePower" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3062-E6">
-				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3314-E4">
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true"/>
@@ -11258,6 +11262,9 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3602-E8">
+				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageDINT" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM4K2_PPM.fbIM4K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>

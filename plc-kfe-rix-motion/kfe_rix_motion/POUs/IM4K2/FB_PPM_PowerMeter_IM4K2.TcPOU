@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_PPM_PowerMeter_IM4K2" Id="{fedad4c7-7971-4466-a86d-d67d48d0e596}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PPM_PowerMeter_IM4K2
+VAR
+    iVoltageDINT AT %I*: DINT;
+
+    {attribute 'pytmc' := '
+        pv: VOLT
+        io: input
+        field: EGU mV
+    '}
+    fVoltage: LREAL;
+
+    {attribute 'pytmc' := '
+        pv: VOLT_BUFFER
+        io: input
+        field: EGU mV
+    '}
+    fVoltageBuffer: ARRAY[1..1000] OF LREAL;
+
+    {attribute 'pytmc' := '
+        pv: CALIB
+        io: input
+    '}
+    fCalibBase: LREAL;
+
+    {attribute 'pytmc' := '
+        pv: CALIB_BUFFER
+        io: input
+    '}
+    fCalibBaseBuffer: ARRAY[1..1000] OF LREAL;
+
+    {attribute 'pytmc' := '
+        pv: MJ
+        io: input
+        field: EGU mJ
+    '}
+    fCalibMJ: LREAL;
+
+    {attribute 'pytmc' := '
+        pv: MJ_BUFFER
+        io: input
+        field: EGU mJ
+    '}
+    fCalibMJBuffer: ARRAY[1..1000] OF LREAL;
+
+    {attribute 'pytmc' := '
+        pv:
+        io: input
+    '}
+    fbThermoCouple: FB_ThermoCouple;
+
+    {attribute 'pytmc' := '
+        pv: CALIB:OFFSET
+        io: io
+    '}
+    fCalibRelOffset: LREAL;
+
+    {attribute 'pytmc' := '
+        pv: CALIB:RATIO
+        io: io
+    '}
+    fCalibRelRatio: LREAL;
+
+    {attribute 'pytmc' := '
+        pv: CALIB:MJ_RATIO
+        io: io
+    '}
+    fCalibMJRatio: LREAL;
+
+    fbGetPMVoltage: FB_AnalogInput_IM4K2;
+    fbVoltageBuffer: FB_LREALBuffer;
+    fbCalibBaseBuffer: FB_LREALBuffer;
+    fbCalibMJBuffer: FB_LREALBuffer;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbThermoCouple();
+
+// Convert the terminal's integer into a value in millivolts
+fbGetPMVoltage(
+    iRaw := iVoltageDINT,
+    iTermBits := 23,
+    fTermMax := 10000,
+    fTermMin := -10000,
+    fReal => fVoltage);
+
+// Power meter calibration
+fCalibBase := (fVoltage + fCalibRelOffset) * fCalibRelRatio;
+fCalibMJ := fCalibBase * fCalibMJRatio;
+
+// Buffer the full-rate Voltage and calibrated MJ values
+fbVoltageBuffer(
+    bExecute := TRUE,
+    fInput := fVoltage,
+    arrOutput => fVoltageBuffer);
+fbCalibBaseBuffer(
+    bExecute := TRUE,
+    fInput := fCalibBase,
+    arrOutput => fCalibBaseBuffer);
+fbCalibMJBuffer(
+    bExecute := TRUE,
+    fInput := fCalibMJ,
+    arrOutput => fCalibMJBuffer);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
