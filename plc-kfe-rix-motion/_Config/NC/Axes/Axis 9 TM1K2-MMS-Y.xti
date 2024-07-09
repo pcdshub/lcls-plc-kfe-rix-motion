@@ -1322,7 +1322,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="9" CreateSymbols="true" AxisType="1" AxisFolder="TM1K2-K2A">
-		<Name>Axis 9 TM1K2-MMS-Y</Name>
+		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="200" DecelerationMaximum="200" Acceleration="10" Deceleration="10" Jerk="500" DelayTime="0.004"/>
 			<Velo Maximum="20"/>
@@ -1331,8 +1331,8 @@ External Setpoint Generation:
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="5e-05" Offset="-214702" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Enable="true" Range="-100"/>
-				<SoftEndMaxControl Enable="true" Range="-16"/>
+				<SoftEndMinControl Range="-100"/>
+				<SoftEndMaxControl Range="-16"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">

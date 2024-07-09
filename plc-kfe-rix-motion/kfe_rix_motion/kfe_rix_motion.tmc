@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{5D9BEA48-F87F-C349-A110-60CC7785F335}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{95A18949-018A-BE35-90AD-DF14DCA7C27E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -51616,44 +51616,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       </Properties>
     </DataType>
     <DataType>
-      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
-      <DisplayName TxtId="">Log event</DisplayName>
-      <EventId>
-        <Name Id="0">Critical</Name>
-        <DisplayName TxtId="">Critical</DisplayName>
-        <Severity>Critical</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="1">Error</Name>
-        <DisplayName TxtId="">Error</DisplayName>
-        <Severity>Error</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="2">Warning</Name>
-        <DisplayName TxtId="">Warning</DisplayName>
-        <Severity>Warning</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="3">Info</Name>
-        <DisplayName TxtId="">Info</DisplayName>
-        <Severity>Info</Severity>
-      </EventId>
-      <EventId>
-        <Name Id="4">Verbose</Name>
-        <DisplayName TxtId="">Verbose</DisplayName>
-        <Severity>Verbose</Severity>
-      </EventId>
-      <Hides>
-        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
-        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
-        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
-        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
-        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
-        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
-        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
-      </Hides>
-    </DataType>
-    <DataType>
       <Name GUID="{11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31}" TcBaseType="true" CName="TcSystemEventClass">TcSystemEventClass</Name>
       <DisplayName TxtId="">TcSystemEventClass</DisplayName>
       <EventId>
@@ -52457,6 +52419,44 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       </EventId>
       <Hides>
         <Hide GUID="{3FEAA938-D042-4B1E-8ADD-BB2F7BE872B0}"/>
+      </Hides>
+    </DataType>
+    <DataType>
+      <Name GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Name>
+      <DisplayName TxtId="">Log event</DisplayName>
+      <EventId>
+        <Name Id="0">Critical</Name>
+        <DisplayName TxtId="">Critical</DisplayName>
+        <Severity>Critical</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="1">Error</Name>
+        <DisplayName TxtId="">Error</DisplayName>
+        <Severity>Error</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="2">Warning</Name>
+        <DisplayName TxtId="">Warning</DisplayName>
+        <Severity>Warning</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="3">Info</Name>
+        <DisplayName TxtId="">Info</DisplayName>
+        <Severity>Info</Severity>
+      </EventId>
+      <EventId>
+        <Name Id="4">Verbose</Name>
+        <DisplayName TxtId="">Verbose</DisplayName>
+        <Severity>Verbose</Severity>
+      </EventId>
+      <Hides>
+        <Hide GUID="{E50B8F82-4C54-4F5A-855E-90970D01354A}"/>
+        <Hide GUID="{772B0B6F-412E-46FD-9006-6E00BFFE1C3D}"/>
+        <Hide GUID="{8FAD87A4-C885-4A4F-85AF-8AB324945AE2}"/>
+        <Hide GUID="{16BEE339-E307-4BC2-8E77-D5FB1794DF5A}"/>
+        <Hide GUID="{B7E60A74-CB5C-4A02-B59C-74B86A888DE9}"/>
+        <Hide GUID="{6B58EF80-AB34-4F6C-81D0-B0589F4FC534}"/>
+        <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
       </Hides>
     </DataType>
   </DataTypes>
@@ -90293,29 +90293,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>680166016</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
-            <Comment> ST_LCLSGeneralEventClass</Comment>
-            <BitSize>960</BitSize>
-            <BaseType GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">ST_LCLSGeneralEventClass</BaseType>
-            <Properties>
-              <Property>
-                <Name>tc_no_symbol</Name>
-                <Value>unused</Value>
-              </Property>
-              <Property>
-                <Name>const_non_replaced</Name>
-              </Property>
-              <Property>
-                <Name>suppress_warning_0</Name>
-                <Value>C0228</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>680197696</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>TC_EVENT_CLASSES.TcSystemEventClass</Name>
             <Comment> 11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31</Comment>
             <BitSize>128</BitSize>
@@ -90382,7 +90359,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211328</BitOffs>
+            <BitOffs>680182208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcGeneralAdsEventClass</Name>
@@ -90451,7 +90428,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211456</BitOffs>
+            <BitOffs>680182336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRouterEventClass</Name>
@@ -90520,7 +90497,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211584</BitOffs>
+            <BitOffs>680182464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRTimeEventClass</Name>
@@ -90589,7 +90566,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211712</BitOffs>
+            <BitOffs>680182592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.Win32EventClass</Name>
@@ -90658,7 +90635,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211840</BitOffs>
+            <BitOffs>680182720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.LCLSGeneralEventClass</Name>
@@ -90727,7 +90704,30 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>680211968</BitOffs>
+            <BitOffs>680182848</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
+            <Comment> ST_LCLSGeneralEventClass</Comment>
+            <BitSize>960</BitSize>
+            <BaseType GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">ST_LCLSGeneralEventClass</BaseType>
+            <Properties>
+              <Property>
+                <Name>tc_no_symbol</Name>
+                <Value>unused</Value>
+              </Property>
+              <Property>
+                <Name>const_non_replaced</Name>
+              </Property>
+              <Property>
+                <Name>suppress_warning_0</Name>
+                <Value>C0228</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>680213312</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -90789,9 +90789,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <Deployment/>
       <EventClasses>
         <EventClass>
-          <Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type>
-        </EventClass>
-        <EventClass>
           <Type GUID="{11F7FC20-DBF4-4DAF-96C7-1FD6B6156B31}">TcSystemEventClass</Type>
         </EventClass>
         <EventClass>
@@ -90806,6 +90803,9 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <EventClass>
           <Type GUID="{1D0C4BAC-ECF3-4F33-8F20-A12E77AB6387}">Win32EventClass</Type>
         </EventClass>
+        <EventClass>
+          <Type GUID="{97CF8247-B59C-4E2C-B4B0-7350D0471457}">LCLSGeneralEventClass</Type>
+        </EventClass>
       </EventClasses>
       <Properties>
         <Property>
@@ -90814,7 +90814,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-06-11T14:08:45</Value>
+          <Value>2024-07-02T10:04:19</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
