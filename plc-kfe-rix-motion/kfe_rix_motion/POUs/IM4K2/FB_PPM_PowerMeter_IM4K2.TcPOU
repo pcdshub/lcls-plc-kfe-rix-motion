@@ -84,7 +84,7 @@ fbGetPMVoltage(
     iTermBits := 23,
     fTermMax := 10,
     fTermMin := -10,
-	fOffset := 8,
+    fOffset := 8,
     fReal => fVoltage);
 
 // Power meter calibration
