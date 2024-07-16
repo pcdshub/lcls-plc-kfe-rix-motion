@@ -82,8 +82,9 @@ END_VAR
 fbGetPMVoltage(
     iRaw := iVoltageDINT,
     iTermBits := 23,
-    fTermMax := 10000,
-    fTermMin := 0,  //For 24-bit to spread 10,000mV across 23 bits
+    fTermMax := 10,
+    fTermMin := -10,
+	fOffset := 8,
     fReal => fVoltage);
 
 // Power meter calibration
