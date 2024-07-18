@@ -705,52 +705,110 @@ FB_PPM_IM4K2
       - | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:MJ_RATIO
+    * - $(PREFIX):SPM:BACK:COLL
+      - bo
+      - $(SYMBOL).fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:COLL_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:MODE
+      - mbbo
+      - $(SYMBOL).fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:MODE_RBV
+      - mbbi
+      - $(SYMBOL).fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:RESET
+      - bo
+      - $(SYMBOL).fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:RESET_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:TIME
+      - longout
+      - $(SYMBOL).fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):SPM:BACK:TIME_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):SPM:BACK:VOLT
       - ao
-      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:MJ_RATIO_RBV
+    * - $(PREFIX):SPM:BACK:VOLT_RBV
       - ai
-      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:OFFSET
+    * - $(PREFIX):SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - $(SYMBOL).fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):SPM:CALIB:OFFSET_RBV
+    * - $(PREFIX):SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - $(SYMBOL).fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):SPM:CALIB:RATIO
-      - ao
-      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+    * - $(PREFIX):SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):SPM:CALIB:RATIO_RBV
-      - ai
-      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+    * - $(PREFIX):SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):SPM:CALIB_BUFFER_RBV
-      - waveform
-      - $(SYMBOL).fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - $(PREFIX):SPM:HXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
-    * - $(PREFIX):SPM:CALIB_RBV
-      - ai
-      - $(SYMBOL).fbPowerMeter.fCalibBase
-      - | io: input
+    * - $(PREFIX):SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):SPM:MJ_BUFFER_RBV
@@ -764,6 +822,13 @@ FB_PPM_IM4K2
       - ai
       - $(SYMBOL).fbPowerMeter.fCalibMJ
       - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):SPM:RES_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fResponsivity
+      - | field: EGU V/W
         | io: input
 
 
@@ -787,6 +852,48 @@ FB_PPM_IM4K2
       - | io: input
 
 
+    * - $(PREFIX):SPM:SXR_NC_BeamRateFromEpics
+      - ao
+      - $(SYMBOL).fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SPM:SXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - $(PREFIX):SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
     * - $(PREFIX):SPM:VOLT_BUFFER_RBV
       - waveform
       - $(SYMBOL).fbPowerMeter.fVoltageBuffer
@@ -798,6 +905,20 @@ FB_PPM_IM4K2
       - ai
       - $(SYMBOL).fbPowerMeter.fVoltage
       - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):SPM:WATT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
+
+
+    * - $(PREFIX):SPM:WATT_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fPulseWattage
+      - | field: EGU mW
         | io: input
 
 
@@ -833,52 +954,110 @@ FB_PPM_PowerMeter_IM4K2
       - Type
       - Description
       - Pragma
-    * - $(PREFIX):CALIB:MJ_RATIO
+    * - $(PREFIX):BACK:COLL
+      - bo
+      - $(SYMBOL).bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):BACK:COLL_RBV
+      - bi
+      - $(SYMBOL).bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):BACK:MODE
+      - mbbo
+      - $(SYMBOL).BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):BACK:MODE_RBV
+      - mbbi
+      - $(SYMBOL).BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):BACK:RESET
+      - bo
+      - $(SYMBOL).bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):BACK:RESET_RBV
+      - bi
+      - $(SYMBOL).bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):BACK:TIME
+      - longout
+      - $(SYMBOL).uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):BACK:TIME_RBV
+      - longin
+      - $(SYMBOL).uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):BACK:VOLT
       - ao
-      - $(SYMBOL).fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):CALIB:MJ_RATIO_RBV
+    * - $(PREFIX):BACK:VOLT_RBV
       - ai
-      - $(SYMBOL).fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):CALIB:OFFSET
+    * - $(PREFIX):HXR_NC_BeamRateFromEpics
       - ao
-      - $(SYMBOL).fCalibRelOffset
+      - $(SYMBOL).fHXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):CALIB:OFFSET_RBV
+    * - $(PREFIX):HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - $(SYMBOL).fCalibRelOffset
+      - $(SYMBOL).fHXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):CALIB:RATIO
-      - ao
-      - $(SYMBOL).fCalibRelRatio
+    * - $(PREFIX):HXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).uHXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):CALIB:RATIO_RBV
-      - ai
-      - $(SYMBOL).fCalibRelRatio
+    * - $(PREFIX):HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).uHXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):CALIB_BUFFER_RBV
-      - waveform
-      - $(SYMBOL).fCalibBaseBuffer
-      - | io: input
+    * - $(PREFIX):HXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).uHXR_Accelerator; Linked to PV: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
-    * - $(PREFIX):CALIB_RBV
-      - ai
-      - $(SYMBOL).fCalibBase
-      - | io: input
+    * - $(PREFIX):HXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).uHXR_Accelerator; Linked to PV: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):MJ_BUFFER_RBV
@@ -892,6 +1071,13 @@ FB_PPM_PowerMeter_IM4K2
       - ai
       - $(SYMBOL).fCalibMJ
       - | field: EGU mJ
+        | io: input
+
+
+    * - $(PREFIX):RES_RBV
+      - ai
+      - $(SYMBOL).fResponsivity
+      - | field: EGU V/W
         | io: input
 
 
@@ -915,6 +1101,48 @@ FB_PPM_PowerMeter_IM4K2
       - | io: input
 
 
+    * - $(PREFIX):SXR_NC_BeamRateFromEpics
+      - ao
+      - $(SYMBOL).fSXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - $(SYMBOL).fSXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).uSXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).uSXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).uSXR_Accelerator; Linked to PV: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - $(PREFIX):SXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).uSXR_Accelerator; Linked to PV: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
     * - $(PREFIX):VOLT_BUFFER_RBV
       - waveform
       - $(SYMBOL).fVoltageBuffer
@@ -926,6 +1154,20 @@ FB_PPM_PowerMeter_IM4K2
       - ai
       - $(SYMBOL).fVoltage
       - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):WATT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
+
+
+    * - $(PREFIX):WATT_RBV
+      - ai
+      - $(SYMBOL).fPulseWattage
+      - | field: EGU mW
         | io: input
 
 
@@ -3568,7 +3810,7 @@ lcls_twincat_common_components.FB_ATM
 
     * - $(PREFIX):STC:01:CONN_RBV
       - bi
-      - $(SYMBOL).fbThermoCouple1.bConnected
+      - $(SYMBOL).fbTempSensor1.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -3576,21 +3818,89 @@ lcls_twincat_common_components.FB_ATM
 
     * - $(PREFIX):STC:01:ERR_RBV
       - bi
-      - $(SYMBOL).fbThermoCouple1.bError
+      - $(SYMBOL).fbTempSensor1.bError
       - | field: ONAM True
         | field: ZNAM False
         | io: input
 
 
-    * - $(PREFIX):STC:01:TEMP_RBV
+    * - $(PREFIX):STC:01:FAULT_SP_HYS_RBV
       - ai
-      - $(SYMBOL).fbThermoCouple1.fTemp
+      - $(SYMBOL).fbTempSensor1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):STC:01:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbTempSensor1.fFaultThreshold
       - | field: EGU C
         | field: PREC 2
         | io: input
 
 
-   
+    * - $(PREFIX):STC:01:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbTempSensor1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+  
+lcls_twincat_common_components.FB_CC_TempSensor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CONN_RBV
+      - bi
+      - $(SYMBOL).bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):ERR_RBV
+      - bi
+      - $(SYMBOL).bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):TEMP_RBV
+      - ai
+      - $(SYMBOL).fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+  
 lcls_twincat_common_components.FB_LIC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4834,52 +5144,110 @@ lcls_twincat_common_components.FB_PPM
       - | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:MJ_RATIO
+    * - $(PREFIX):SPM:BACK:COLL
+      - bo
+      - $(SYMBOL).fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:COLL_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:MODE
+      - mbbo
+      - $(SYMBOL).fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:MODE_RBV
+      - mbbi
+      - $(SYMBOL).fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:RESET
+      - bo
+      - $(SYMBOL).fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:RESET_RBV
+      - bi
+      - $(SYMBOL).fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):SPM:BACK:TIME
+      - longout
+      - $(SYMBOL).fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):SPM:BACK:TIME_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):SPM:BACK:VOLT
       - ao
-      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:MJ_RATIO_RBV
+    * - $(PREFIX):SPM:BACK:VOLT_RBV
       - ai
-      - $(SYMBOL).fbPowerMeter.fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):SPM:CALIB:OFFSET
+    * - $(PREFIX):SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - $(SYMBOL).fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):SPM:CALIB:OFFSET_RBV
+    * - $(PREFIX):SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - $(SYMBOL).fbPowerMeter.fCalibRelOffset
+      - $(SYMBOL).fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):SPM:CALIB:RATIO
-      - ao
-      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+    * - $(PREFIX):SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):SPM:CALIB:RATIO_RBV
-      - ai
-      - $(SYMBOL).fbPowerMeter.fCalibRelRatio
+    * - $(PREFIX):SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):SPM:CALIB_BUFFER_RBV
-      - waveform
-      - $(SYMBOL).fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - $(PREFIX):SPM:HXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
-    * - $(PREFIX):SPM:CALIB_RBV
-      - ai
-      - $(SYMBOL).fbPowerMeter.fCalibBase
-      - | io: input
+    * - $(PREFIX):SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):SPM:MJ_BUFFER_RBV
@@ -4896,9 +5264,16 @@ lcls_twincat_common_components.FB_PPM
         | io: input
 
 
+    * - $(PREFIX):SPM:RES_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
     * - $(PREFIX):SPM:STC:CONN_RBV
       - bi
-      - $(SYMBOL).fbPowerMeter.fbThermoCouple.bConnected
+      - $(SYMBOL).fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -4906,14 +5281,76 @@ lcls_twincat_common_components.FB_PPM
 
     * - $(PREFIX):SPM:STC:ERR_RBV
       - bi
-      - $(SYMBOL).fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - $(SYMBOL).fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):SPM:STC:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - $(PREFIX):SPM:STC:TEMP_RBV
       - ai
-      - $(SYMBOL).fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - $(SYMBOL).fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):SPM:SXR_NC_BeamRateFromEpics
+      - ao
+      - $(SYMBOL).fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SPM:SXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - $(PREFIX):SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):SPM:VOLT_BUFFER_RBV
@@ -4930,9 +5367,23 @@ lcls_twincat_common_components.FB_PPM
         | io: input
 
 
+    * - $(PREFIX):SPM:WATT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
+
+
+    * - $(PREFIX):SPM:WATT_RBV
+      - ai
+      - $(SYMBOL).fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
+
+
     * - $(PREFIX):YAG:STC:CONN_RBV
       - bi
-      - $(SYMBOL).fbYagThermoCouple.bConnected
+      - $(SYMBOL).fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -4940,14 +5391,34 @@ lcls_twincat_common_components.FB_PPM
 
     * - $(PREFIX):YAG:STC:ERR_RBV
       - bi
-      - $(SYMBOL).fbYagThermoCouple.bError
-      - | io: input
+      - $(SYMBOL).fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):YAG:STC:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - $(PREFIX):YAG:STC:TEMP_RBV
       - ai
-      - $(SYMBOL).fbYagThermoCouple.fTemp
-      - | io: input
+      - $(SYMBOL).fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
  
@@ -5004,52 +5475,110 @@ lcls_twincat_common_components.FB_PPM_PowerMeter
       - Type
       - Description
       - Pragma
-    * - $(PREFIX):CALIB:MJ_RATIO
+    * - $(PREFIX):BACK:COLL
+      - bo
+      - $(SYMBOL).bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):BACK:COLL_RBV
+      - bi
+      - $(SYMBOL).bBackgroundCollect
+      - | io: output
+
+
+    * - $(PREFIX):BACK:MODE
+      - mbbo
+      - $(SYMBOL).BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):BACK:MODE_RBV
+      - mbbi
+      - $(SYMBOL).BACKGROUND_MODE
+      - | io: output
+
+
+    * - $(PREFIX):BACK:RESET
+      - bo
+      - $(SYMBOL).bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):BACK:RESET_RBV
+      - bi
+      - $(SYMBOL).bResetAutoBackground
+      - | io: output
+
+
+    * - $(PREFIX):BACK:TIME
+      - longout
+      - $(SYMBOL).uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):BACK:TIME_RBV
+      - longin
+      - $(SYMBOL).uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - $(PREFIX):BACK:VOLT
       - ao
-      - $(SYMBOL).fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):CALIB:MJ_RATIO_RBV
+    * - $(PREFIX):BACK:VOLT_RBV
       - ai
-      - $(SYMBOL).fCalibMJRatio
-      - | io: output
+      - $(SYMBOL).fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - $(PREFIX):CALIB:OFFSET
+    * - $(PREFIX):HXR_NC_BeamRateFromEpics
       - ao
-      - $(SYMBOL).fCalibRelOffset
+      - $(SYMBOL).fHXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):CALIB:OFFSET_RBV
+    * - $(PREFIX):HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - $(SYMBOL).fCalibRelOffset
+      - $(SYMBOL).fHXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - $(PREFIX):CALIB:RATIO
-      - ao
-      - $(SYMBOL).fCalibRelRatio
+    * - $(PREFIX):HXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).uHXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):CALIB:RATIO_RBV
-      - ai
-      - $(SYMBOL).fCalibRelRatio
+    * - $(PREFIX):HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).uHXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST03:RATE']
       - | io: output
+        | link: [None, 'TPG:SYS0:1:DST03:RATE']
 
 
-    * - $(PREFIX):CALIB_BUFFER_RBV
-      - waveform
-      - $(SYMBOL).fCalibBaseBuffer
-      - | io: input
+    * - $(PREFIX):HXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).uHXR_Accelerator; Linked to PV: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
-    * - $(PREFIX):CALIB_RBV
-      - ai
-      - $(SYMBOL).fCalibBase
-      - | io: input
+    * - $(PREFIX):HXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).uHXR_Accelerator; Linked to PV: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDH:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):MJ_BUFFER_RBV
@@ -5066,9 +5595,16 @@ lcls_twincat_common_components.FB_PPM_PowerMeter
         | io: input
 
 
+    * - $(PREFIX):RES_RBV
+      - ai
+      - $(SYMBOL).fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
     * - $(PREFIX):STC:CONN_RBV
       - bi
-      - $(SYMBOL).fbThermoCouple.bConnected
+      - $(SYMBOL).fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -5076,14 +5612,76 @@ lcls_twincat_common_components.FB_PPM_PowerMeter
 
     * - $(PREFIX):STC:ERR_RBV
       - bi
-      - $(SYMBOL).fbThermoCouple.bError
-      - | io: input
+      - $(SYMBOL).fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):STC:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):STC:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - $(PREFIX):STC:TEMP_RBV
       - ai
-      - $(SYMBOL).fbThermoCouple.fTemp
-      - | io: input
+      - $(SYMBOL).fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):SXR_NC_BeamRateFromEpics
+      - ao
+      - $(SYMBOL).fSXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - $(SYMBOL).fSXR_NC_Frequency; Linked to PV: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+      - | io: output
+        | link: [None, 'EVNT:SYS0:1:NC_SOFTRATE']
+
+
+    * - $(PREFIX):SXR_SC_BeamRateFromEpics
+      - longout
+      - $(SYMBOL).uSXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - $(SYMBOL).uSXR_SC_Frequency; Linked to PV: [None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - $(PREFIX):SXRAccTypeFromEpics
+      - longout
+      - $(SYMBOL).uSXR_Accelerator; Linked to PV: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - $(PREFIX):SXRAccTypeFromEpics_RBV
+      - longin
+      - $(SYMBOL).uSXR_Accelerator; Linked to PV: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, 'PHYS:UNDS:1:FACMODE.RVAL']
 
 
     * - $(PREFIX):VOLT_BUFFER_RBV
@@ -5097,6 +5695,20 @@ lcls_twincat_common_components.FB_PPM_PowerMeter
       - ai
       - $(SYMBOL).fVoltage
       - | field: EGU mV
+        | io: input
+
+
+    * - $(PREFIX):WATT_BUFFER_RBV
+      - waveform
+      - $(SYMBOL).fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
+
+
+    * - $(PREFIX):WATT_RBV
+      - ai
+      - $(SYMBOL).fPulseWattage
+      - | field: EGU mW
         | io: input
 
 
@@ -5728,6 +6340,22 @@ lcls_twincat_common_components.FB_SXR_SATT_Stage
         | io: input
 
 
+    * - $(PREFIX):RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):RTD:1:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):RTD:1:TEMP_RBV
       - ai
       - $(SYMBOL).fbRTD_1.fTemp
@@ -5749,6 +6377,22 @@ lcls_twincat_common_components.FB_SXR_SATT_Stage
       - $(SYMBOL).fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):RTD:2:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
         | io: input
 
 
@@ -7211,6 +7855,22 @@ lcls_twincat_common_components.FB_WFS
         | io: input
 
 
+    * - $(PREFIX):STC:01:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):STC:01:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
     * - $(PREFIX):STC:01:TEMP_RBV
       - ai
       - $(SYMBOL).fbThermoCouple1.fTemp
@@ -7232,6 +7892,22 @@ lcls_twincat_common_components.FB_WFS
       - $(SYMBOL).fbThermoCouple2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):STC:02:FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):STC:02:FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
         | io: input
 
 
@@ -7271,7 +7947,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
-                                                  
+ 
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9948,7 +10624,7 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
         | io: input
 
 
-                
+                                                                                 
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -54214,6 +54890,58 @@ PMPS.FB_SubSysToArbiter_IO
       - | io: input
 
 
+ 
+PMPS.FB_TempSensor_FFO
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CONN_RBV
+      - bi
+      - $(SYMBOL).bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):ERR_RBV
+      - bi
+      - $(SYMBOL).bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):FAULT_SP_HYS_RBV
+      - ai
+      - $(SYMBOL).fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):FAULT_SP_RBV
+      - ai
+      - $(SYMBOL).fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):TEMP_RBV
+      - ai
+      - $(SYMBOL).fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
      
 PMPS.ST_BeamParams
 ^^^^^^^^^^^^^^^^^^
@@ -55154,7 +55882,7 @@ ST_BeamParams_IO
       - | io: input
 
 
-  
+   
 ST_LoggingEventInfo
 ^^^^^^^^^^^^^^^^^^^
 
@@ -55262,7 +55990,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                            
+                                      
 Database Records
 ----------------
 
@@ -123647,6 +124375,22 @@ Database Records
         | io: input
 
 
+    * - AT1K2:L2SI:MMS:01:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage1.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage1.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT1K2:L2SI:MMS:01:RTD:1:TEMP_RBV
       - ai
       - PRG_AT1K2_SOLID.fbStage1.fbRTD_1.fTemp
@@ -123668,6 +124412,22 @@ Database Records
       - PRG_AT1K2_SOLID.fbStage1.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage1.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:01:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage1.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -124480,6 +125240,22 @@ Database Records
         | io: input
 
 
+    * - AT1K2:L2SI:MMS:02:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage2.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage2.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT1K2:L2SI:MMS:02:RTD:1:TEMP_RBV
       - ai
       - PRG_AT1K2_SOLID.fbStage2.fbRTD_1.fTemp
@@ -124501,6 +125277,22 @@ Database Records
       - PRG_AT1K2_SOLID.fbStage2.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage2.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT1K2:L2SI:MMS:02:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT1K2_SOLID.fbStage2.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -125872,6 +126664,22 @@ Database Records
         | io: input
 
 
+    * - AT2K2:L2SI:MMS:01:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage1.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage1.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT2K2:L2SI:MMS:01:RTD:1:TEMP_RBV
       - ai
       - PRG_AT2K2_SOLID.fbStage1.fbRTD_1.fTemp
@@ -125893,6 +126701,22 @@ Database Records
       - PRG_AT2K2_SOLID.fbStage1.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage1.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:01:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage1.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -126705,6 +127529,22 @@ Database Records
         | io: input
 
 
+    * - AT2K2:L2SI:MMS:02:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage2.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage2.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT2K2:L2SI:MMS:02:RTD:1:TEMP_RBV
       - ai
       - PRG_AT2K2_SOLID.fbStage2.fbRTD_1.fTemp
@@ -126726,6 +127566,22 @@ Database Records
       - PRG_AT2K2_SOLID.fbStage2.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage2.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:02:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage2.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -127538,6 +128394,22 @@ Database Records
         | io: input
 
 
+    * - AT2K2:L2SI:MMS:03:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage3.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage3.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT2K2:L2SI:MMS:03:RTD:1:TEMP_RBV
       - ai
       - PRG_AT2K2_SOLID.fbStage3.fbRTD_1.fTemp
@@ -127559,6 +128431,22 @@ Database Records
       - PRG_AT2K2_SOLID.fbStage3.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage3.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:03:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage3.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -128371,6 +129259,22 @@ Database Records
         | io: input
 
 
+    * - AT2K2:L2SI:MMS:04:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage4.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage4.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - AT2K2:L2SI:MMS:04:RTD:1:TEMP_RBV
       - ai
       - PRG_AT2K2_SOLID.fbStage4.fbRTD_1.fTemp
@@ -128392,6 +129296,22 @@ Database Records
       - PRG_AT2K2_SOLID.fbStage4.fbRTD_2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage4.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT2K2:L2SI:MMS:04:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT2K2_SOLID.fbStage4.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -129147,16 +130067,54 @@ Database Records
         | io: output
 
 
-    * - IM1K1:PPM:SPM:CALIB_RBV
+    * - IM1K1:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM1K1:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM1K1:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM1K1:PPM:SPM:MJ_RBV
@@ -129173,40 +130131,53 @@ Database Records
         | io: input
 
 
-    * - IM1K1:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM1K1:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibMJRatio
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM1K1:PPM:SPM:CALIB:MJ_RATIO
+    * - IM1K1:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibMJRatio
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM1K1:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM1K1:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM1K1:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM1K1:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM1K1:PPM:SPM:CALIB:RATIO_RBV
+    * - IM1K1:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibRelRatio
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM1K1:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM1K1:PPM:SPM:CALIB:RATIO
+    * - IM1K1:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fCalibRelRatio
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM1K1:PPM:SPM:VOLT_RBV
@@ -129225,7 +130196,7 @@ Database Records
 
     * - IM1K1:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -129233,14 +130204,104 @@ Database Records
 
     * - IM1K1:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K1:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K1:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM1K1:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K1:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM1K1:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM1K1:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM1K1:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM1K1:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM1K1:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM1K1:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM1K1:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM1K1:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM1K1:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM1K1:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -129799,7 +130860,7 @@ Database Records
 
     * - IM1K1:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bConnected
+      - PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -129807,14 +130868,34 @@ Database Records
 
     * - IM1K1:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K1:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K1:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM1K1:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM1K1_PPM.fbIM1K1.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM1K2:PPM:MMS:STATE:GET_RBV
@@ -129911,16 +130992,54 @@ Database Records
         | io: output
 
 
-    * - IM1K2:PPM:SPM:CALIB_RBV
+    * - IM1K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM1K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM1K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM1K2:PPM:SPM:MJ_RBV
@@ -129937,40 +131056,53 @@ Database Records
         | io: input
 
 
-    * - IM1K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM1K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM1K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM1K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM1K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM1K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM1K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM1K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM1K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM1K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM1K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM1K2:PPM:SPM:CALIB:RATIO
+    * - IM1K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM1K2:PPM:SPM:VOLT_RBV
@@ -129989,7 +131121,7 @@ Database Records
 
     * - IM1K2:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -129997,14 +131129,104 @@ Database Records
 
     * - IM1K2:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K2:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K2:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM1K2:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM1K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM1K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM1K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM1K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM1K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM1K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM1K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM1K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM1K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM1K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -130563,7 +131785,7 @@ Database Records
 
     * - IM1K2:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.bConnected
+      - PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -130571,14 +131793,34 @@ Database Records
 
     * - IM1K2:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM1K2:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM1K2:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM1K2:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM1K2_PPM.fbIM1K2.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K1:PPM:MMS:STATE:GET_RBV
@@ -130675,16 +131917,54 @@ Database Records
         | io: output
 
 
-    * - IM2K1:PPM:SPM:CALIB_RBV
+    * - IM2K1:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM2K1:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM2K1:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM2K1:PPM:SPM:MJ_RBV
@@ -130701,40 +131981,53 @@ Database Records
         | io: input
 
 
-    * - IM2K1:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM2K1:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibMJRatio
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM2K1:PPM:SPM:CALIB:MJ_RATIO
+    * - IM2K1:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibMJRatio
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM2K1:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM2K1:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM2K1:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM2K1:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM2K1:PPM:SPM:CALIB:RATIO_RBV
+    * - IM2K1:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibRelRatio
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM2K1:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM2K1:PPM:SPM:CALIB:RATIO
+    * - IM2K1:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fCalibRelRatio
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM2K1:PPM:SPM:VOLT_RBV
@@ -130753,7 +132046,7 @@ Database Records
 
     * - IM2K1:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -130761,14 +132054,104 @@ Database Records
 
     * - IM2K1:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM2K1:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K1:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K1:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K1:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM2K1:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM2K1:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM2K1:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM2K1:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM2K1:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM2K1:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM2K1:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM2K1:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM2K1:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM2K1:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -131327,7 +132710,7 @@ Database Records
 
     * - IM2K1:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bConnected
+      - PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -131335,14 +132718,34 @@ Database Records
 
     * - IM2K1:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM2K1:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K1:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K1:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM2K1_PPM.fbIM2K1.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K2:PPM:MMS:STATE:GET_RBV
@@ -131439,16 +132842,54 @@ Database Records
         | io: output
 
 
-    * - IM2K2:PPM:SPM:CALIB_RBV
+    * - IM2K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM2K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM2K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM2K2:PPM:SPM:MJ_RBV
@@ -131465,40 +132906,53 @@ Database Records
         | io: input
 
 
-    * - IM2K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM2K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM2K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM2K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM2K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM2K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM2K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM2K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM2K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM2K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM2K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM2K2:PPM:SPM:CALIB:RATIO
+    * - IM2K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM2K2:PPM:SPM:VOLT_RBV
@@ -131517,7 +132971,7 @@ Database Records
 
     * - IM2K2:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -131525,14 +132979,104 @@ Database Records
 
     * - IM2K2:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM2K2:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K2:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K2:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM2K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM2K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM2K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM2K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM2K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM2K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM2K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM2K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM2K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM2K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -132091,7 +133635,7 @@ Database Records
 
     * - IM2K2:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.bConnected
+      - PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -132099,14 +133643,34 @@ Database Records
 
     * - IM2K2:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM2K2:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM2K2:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM2K2:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM2K2_PPM.fbIM2K2.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM3K2:PPM:MMS:STATE:GET_RBV
@@ -132203,16 +133767,54 @@ Database Records
         | io: output
 
 
-    * - IM3K2:PPM:SPM:CALIB_RBV
+    * - IM3K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM3K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM3K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM3K2:PPM:SPM:MJ_RBV
@@ -132229,40 +133831,53 @@ Database Records
         | io: input
 
 
-    * - IM3K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM3K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM3K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM3K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM3K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM3K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM3K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM3K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM3K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM3K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM3K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM3K2:PPM:SPM:CALIB:RATIO
+    * - IM3K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM3K2:PPM:SPM:VOLT_RBV
@@ -132281,7 +133896,7 @@ Database Records
 
     * - IM3K2:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -132289,14 +133904,104 @@ Database Records
 
     * - IM3K2:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM3K2:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM3K2:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM3K2:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM3K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM3K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM3K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM3K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM3K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM3K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM3K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM3K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM3K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM3K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM3K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -132855,7 +134560,7 @@ Database Records
 
     * - IM3K2:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.bConnected
+      - PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -132863,14 +134568,34 @@ Database Records
 
     * - IM3K2:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM3K2:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM3K2:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM3K2:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM3K2_PPM.fbIM3K2.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM4K2:PPM:MMS:STATE:GET_RBV
@@ -132967,16 +134692,54 @@ Database Records
         | io: output
 
 
-    * - IM4K2:PPM:SPM:CALIB_RBV
+    * - IM4K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM4K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM4K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM4K2:PPM:SPM:MJ_RBV
@@ -132993,40 +134756,53 @@ Database Records
         | io: input
 
 
-    * - IM4K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM4K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM4K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM4K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM4K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM4K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM4K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM4K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM4K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM4K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM4K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM4K2:PPM:SPM:CALIB:RATIO
+    * - IM4K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM4K2:PPM:SPM:VOLT_RBV
@@ -133061,6 +134837,76 @@ Database Records
       - ai
       - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.fbThermoCouple.fTemp
       - | io: input
+
+
+    * - IM4K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM4K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM4K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM4K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM4K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM4K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM4K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM4K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM4K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM4K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM4K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -133731,16 +135577,54 @@ Database Records
         | io: output
 
 
-    * - IM5K2:PPM:SPM:CALIB_RBV
+    * - IM5K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM5K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM5K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM5K2:PPM:SPM:MJ_RBV
@@ -133757,40 +135641,53 @@ Database Records
         | io: input
 
 
-    * - IM5K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM5K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM5K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM5K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM5K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM5K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM5K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM5K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM5K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM5K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM5K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM5K2:PPM:SPM:CALIB:RATIO
+    * - IM5K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM5K2:PPM:SPM:VOLT_RBV
@@ -133809,7 +135706,7 @@ Database Records
 
     * - IM5K2:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -133817,14 +135714,104 @@ Database Records
 
     * - IM5K2:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM5K2:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM5K2:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM5K2:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM5K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM5K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM5K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM5K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM5K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM5K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM5K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM5K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM5K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM5K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM5K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -134383,7 +136370,7 @@ Database Records
 
     * - IM5K2:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.bConnected
+      - PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -134391,14 +136378,34 @@ Database Records
 
     * - IM5K2:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM5K2:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM5K2:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM5K2:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM5K2_PPM.fbIM5K2.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - IM6K2:PPM:MMS:STATE:GET_RBV
@@ -134495,16 +136502,54 @@ Database Records
         | io: output
 
 
-    * - IM6K2:PPM:SPM:CALIB_RBV
+    * - IM6K2:PPM:SPM:BACK:MODE_RBV
+      - mbbi
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:MODE
+      - mbbo
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.BACKGROUND_MODE
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:COLL_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:COLL
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.bBackgroundCollect
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:RESET_RBV
+      - bi
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:RESET
+      - bo
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.bResetAutoBackground
+      - | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:VOLT_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibBase
-      - | io: input
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
-    * - IM6K2:PPM:SPM:CALIB_BUFFER_RBV
-      - waveform
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibBaseBuffer
-      - | io: input
+    * - IM6K2:PPM:SPM:BACK:VOLT
+      - ao
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fBackgroundVoltage
+      - | field: EGU mV
+        | io: output
 
 
     * - IM6K2:PPM:SPM:MJ_RBV
@@ -134521,40 +136566,53 @@ Database Records
         | io: input
 
 
-    * - IM6K2:PPM:SPM:CALIB:MJ_RATIO_RBV
+    * - IM6K2:PPM:SPM:HXR_NC_BeamRateFromEpics_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM6K2:PPM:SPM:CALIB:MJ_RATIO
+    * - IM6K2:PPM:SPM:HXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibMJRatio
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fHXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_HARDRATE']
 
 
-    * - IM6K2:PPM:SPM:CALIB:OFFSET_RBV
+    * - IM6K2:PPM:SPM:WATT_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fPulseWattage
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM6K2:PPM:SPM:CALIB:OFFSET
-      - ao
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelOffset
-      - | io: output
+    * - IM6K2:PPM:SPM:WATT_BUFFER_RBV
+      - waveform
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fPulseWattageBuffer
+      - | field: EGU mW
+        | io: input
 
 
-    * - IM6K2:PPM:SPM:CALIB:RATIO_RBV
+    * - IM6K2:PPM:SPM:RES_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fResponsivity
+      - | field: EGU V/W
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:SXR_NC_BeamRateFromEpics_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
-    * - IM6K2:PPM:SPM:CALIB:RATIO
+    * - IM6K2:PPM:SPM:SXR_NC_BeamRateFromEpics
       - ao
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fCalibRelRatio
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fSXR_NC_Frequency; Linked to PV: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
       - | io: output
+        | link: [None, None, 'EVNT:SYS0:1:NC_SOFTRATE']
 
 
     * - IM6K2:PPM:SPM:VOLT_RBV
@@ -134573,7 +136631,7 @@ Database Records
 
     * - IM6K2:PPM:SPM:STC:CONN_RBV
       - bi
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bConnected
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -134581,14 +136639,104 @@ Database Records
 
     * - IM6K2:PPM:SPM:STC:ERR_RBV
       - bi
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.bError
-      - | io: input
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM6K2:PPM:SPM:STC:TEMP_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbThermoCouple.fTemp
-      - | io: input
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM6K2:PPM:SPM:BACK:TIME_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM6K2:PPM:SPM:BACK:TIME
+      - longout
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uBackgroundCollectionTime
+      - | field: EGU s
+        | io: output
+
+
+    * - IM6K2:PPM:SPM:HXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM6K2:PPM:SPM:HXRAccTypeFromEpics
+      - longout
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uHXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDH:1:FACMODE.RVAL']
+
+
+    * - IM6K2:PPM:SPM:HXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM6K2:PPM:SPM:HXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uHXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST03:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST03:RATE']
+
+
+    * - IM6K2:PPM:SPM:SXRAccTypeFromEpics_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM6K2:PPM:SPM:SXRAccTypeFromEpics
+      - longout
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uSXR_Accelerator; Linked to PV: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+      - | io: output
+        | link: [None, None, 'PHYS:UNDS:1:FACMODE.RVAL']
+
+
+    * - IM6K2:PPM:SPM:SXR_SC_BeamRateFromEpics_RBV
+      - longin
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
+
+
+    * - IM6K2:PPM:SPM:SXR_SC_BeamRateFromEpics
+      - longout
+      - PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.uSXR_SC_Frequency; Linked to PV: [None, None, 'TPG:SYS0:1:DST04:RATE']
+      - | io: output
+        | link: [None, None, 'TPG:SYS0:1:DST04:RATE']
 
 
     * - IM6K2:PPM:MMS:STATE:01:MOVE_OK_RBV
@@ -135147,7 +137295,7 @@ Database Records
 
     * - IM6K2:PPM:YAG:STC:CONN_RBV
       - bi
-      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bConnected
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -135155,14 +137303,34 @@ Database Records
 
     * - IM6K2:PPM:YAG:STC:ERR_RBV
       - bi
-      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.bError
-      - | io: input
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - IM6K2:PPM:YAG:STC:FAULT_SP_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - IM6K2:PPM:YAG:STC:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
 
 
     * - IM6K2:PPM:YAG:STC:TEMP_RBV
       - ai
-      - PRG_IM6K2_PPM.fbIM6K2.fbYagThermoCouple.fTemp
-      - | io: input
+      - PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
 
 
     * - LI2K2:K2A:MMS:STATE:GET_RBV
@@ -137073,6 +139241,22 @@ Database Records
         | io: input
 
 
+    * - PF1K2:WFS:STC:01:FAULT_SP_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF1K2:WFS:STC:01:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - PF1K2:WFS:STC:01:TEMP_RBV
       - ai
       - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple1.fTemp
@@ -137094,6 +139278,22 @@ Database Records
       - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - PF1K2:WFS:STC:02:FAULT_SP_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF1K2:WFS:STC:02:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_PF1K2_WFS.fbPF1K2.fbThermoCouple2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -137869,6 +140069,22 @@ Database Records
         | io: input
 
 
+    * - PF2K2:WFS:STC:01:FAULT_SP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF2K2:WFS:STC:01:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - PF2K2:WFS:STC:01:TEMP_RBV
       - ai
       - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple1.fTemp
@@ -137890,6 +140106,22 @@ Database Records
       - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.bError
       - | field: ONAM True
         | field: ZNAM False
+        | io: input
+
+
+    * - PF2K2:WFS:STC:02:FAULT_SP_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - PF2K2:WFS:STC:02:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_PF2K2_WFS.fbPF2K2.fbThermoCouple2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
         | io: input
 
 
@@ -138635,7 +140867,7 @@ Database Records
 
     * - TM1K2:ATM:STC:01:CONN_RBV
       - bi
-      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bConnected
+      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -138643,15 +140875,31 @@ Database Records
 
     * - TM1K2:ATM:STC:01:ERR_RBV
       - bi
-      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError
+      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bError
       - | field: ONAM True
         | field: ZNAM False
         | io: input
 
 
+    * - TM1K2:ATM:STC:01:FAULT_SP_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - TM1K2:ATM:STC:01:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
     * - TM1K2:ATM:STC:01:TEMP_RBV
       - ai
-      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.fTemp
+      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fTemp
       - | field: EGU C
         | field: PREC 2
         | io: input

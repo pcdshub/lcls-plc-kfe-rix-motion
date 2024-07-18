@@ -455,13 +455,9 @@ FB_AnalogInput_IM4K2
     VAR
         fScale: LREAL;
     END_VAR
-    IF fScale = 0 AND fTermMax > fTermMin THEN
-        fScale := (EXPT(2, iTermBits) - 1) / (fTermMax - fTermMin);
-    END_IF
-    IF fScale <> 0 THEN
-        fReal := iRaw / fScale + fTermMin;
-        fReal := fReal * fResolution + fOffset;
-    END_IF
+    fScale := (EXPT(2, iTermBits) - 1);
+    fReal := (iRaw / fScale) * fTermMax;
+    fReal := fReal * fResolution + fOffset;
 
     END_FUNCTION_BLOCK
 
@@ -529,6 +525,8 @@ FB_PPM_IM4K2
         bReadDBNow: BOOL;
         // Offset for the flow meter in engineering units
         fFlowOffset: LREAL := 0;
+        // Responsivity for power meter
+          fResponsivity: LREAL;
     END_VAR
     VAR_OUTPUT
         // The current position state as an enum.
@@ -633,7 +631,15 @@ FB_PPM_IM4K2
     stYag1 := astPositionState[E_PPM_States.YAG1];
     stYag2 := astPositionState[E_PPM_States.YAG2];
 
-    fbPowerMeter();
+    fbPowerMeter(
+      fTempSP:=fbStates.stDbStateParams.stReactiveParams.nTempSP,
+      bVetoTempFFO:=eEnumGet = E_PPM_States.OUT,
+      sDeviceName:=sDeviceName,
+      fbFFHWO:=fbFFHWO,
+      eEnumGet:=eEnumGet,
+      stYAxisState:=stYStage.Axis.NcToPlc.AxisState,
+      fResponsivity:=fResponsivity,
+    );
     fbGige();
     fbFlowMeter(fOffset:=fFlowOffset);
     fbYagThermoCouple();
@@ -652,6 +658,27 @@ FB_PPM_PowerMeter_IM4K2
 ::
 
     FUNCTION_BLOCK FB_PPM_PowerMeter_IM4K2
+    VAR_INPUT
+        fTempSP: REAL;
+        bVetoTempFFO: BOOL;
+        sDeviceName: STRING;
+
+        // Used to know when to stop background auto-collection
+        eEnumGet: E_PPM_States;
+        stYAxisState: DWORD;
+
+        // Calibrated for each gentec, should be passed as input
+        // If not set, responsive energy will not be calculated
+        {attribute 'pytmc' := '
+            pv: RES
+            io: i
+            field: EGU V/W
+        '}
+        fResponsivity: LREAL;
+    END_VAR
+    VAR_IN_OUT
+        fbFFHWO: FB_HardwareFFOutput;
+    END_VAR
     VAR
         iVoltageDINT AT %I*: DINT;
 
@@ -670,83 +697,288 @@ FB_PPM_PowerMeter_IM4K2
         fVoltageBuffer: ARRAY[1..1000] OF LREAL;
 
         {attribute 'pytmc' := '
-            pv: CALIB
-            io: input
-        '}
-        fCalibBase: LREAL;
-
-        {attribute 'pytmc' := '
-            pv: CALIB_BUFFER
-            io: input
-        '}
-        fCalibBaseBuffer: ARRAY[1..1000] OF LREAL;
-
-        {attribute 'pytmc' := '
-            pv: MJ
-            io: input
-            field: EGU mJ
-        '}
-        fCalibMJ: LREAL;
-
-        {attribute 'pytmc' := '
-            pv: MJ_BUFFER
-            io: input
-            field: EGU mJ
-        '}
-        fCalibMJBuffer: ARRAY[1..1000] OF LREAL;
-
-        {attribute 'pytmc' := '
             pv:
             io: input
         '}
         fbThermoCouple: FB_ThermoCouple;
 
+
+        fFrequency: REAL;
+        // Used to get beam mode and rate
         {attribute 'pytmc' := '
-            pv: CALIB:OFFSET
-            io: io
+            pv: SXRAccTypeFromEpics
+            link: PHYS:UNDS:1:FACMODE.RVAL
         '}
-        fCalibRelOffset: LREAL;
+        uSXR_Accelerator: UINT;
+        {attribute 'pytmc' := '
+            pv: SXR_NC_BeamRateFromEpics
+            link: EVNT:SYS0:1:NC_SOFTRATE
+        '}
+        fSXR_NC_Frequency: REAL;
+        {attribute 'pytmc' := '
+            pv: SXR_SC_BeamRateFromEpics
+            link: TPG:SYS0:1:DST04:RATE
+        '}
+        uSXR_SC_Frequency: UINT;
 
         {attribute 'pytmc' := '
-            pv: CALIB:RATIO
-            io: io
+            pv: HXRAccTypeFromEpics
+            link: PHYS:UNDH:1:FACMODE.RVAL
         '}
-        fCalibRelRatio: LREAL;
-
+        uHXR_Accelerator: UINT;
         {attribute 'pytmc' := '
-            pv: CALIB:MJ_RATIO
+            pv: HXR_NC_BeamRateFromEpics
+            link: EVNT:SYS0:1:NC_HARDRATE
+        '}
+        fHXR_NC_Frequency: REAL;
+        {attribute 'pytmc' := '
+            pv: HXR_SC_BeamRateFromEpics
+            link: TPG:SYS0:1:DST03:RATE
+        '}
+        uHXR_SC_Frequency: UINT;
+
+        // Pulse-by-pulse energy and buffer
+        {attribute 'pytmc' := '
+            pv: MJ
+            io: i
+            field: EGU mJ
+        '}
+        fCalibMJ: LREAL;
+        {attribute 'pytmc' := '
+            pv: MJ_BUFFER
+            io: i
+            field: EGU mJ
+        '}
+        fCalibMJBuffer: ARRAY[1..1000] OF LREAL;
+
+        // Wattage and buffer
+        {attribute 'pytmc' := '
+            pv: WATT
+            io: i
+            field: EGU mW
+        '}
+        fPulseWattage: LREAL;
+        {attribute 'pytmc' := '
+            pv: WATT_BUFFER
+            io: i
+            field: EGU mW
+        '}
+        fPulseWattageBuffer: ARRAY[1..1000] OF LREAL;
+
+        // Background voltage
+        {attribute 'pytmc' := '
+            pv: BACK:VOLT
+            io: io
+            field: EGU mV
+        '}
+        fBackgroundVoltage: LREAL;
+
+        // Internal variables for background voltage auto-collection
+        fBackgroundVoltageAcc: LREAL;
+        uAccCount: UINT;
+        fBackgroundVoltageSum: LREAL;
+        fBackgroundVoltageStale: LREAL;
+        tonBackgroundAutoCollecting: TON;
+        fBackgroundVoltageBuffer: ARRAY[1..100] OF LREAL;
+        udBackgroundVoltageBufferIndex: UDINT := 1;
+        rTrig_Background : R_TRIG;
+        i: UDINT;
+        // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode
+        {attribute 'pytmc' := '
+            pv: BACK:RESET
             io: io
         '}
-        fCalibMJRatio: LREAL;
+        bResetAutoBackground: BOOL;
+
+        // In manual mode, auto-background updates buffer but does not change fBackgroundVoltage
+        {attribute 'pytmc' := '
+            pv: BACK:MODE
+            io: io
+        '}
+        BACKGROUND_MODE: (Manual, Passive) := Passive;
+
+        // Boolean to trigger collection of background voltages
+        {attribute 'pytmc' := '
+            pv: BACK:COLL
+            io: io
+        '}
+        bBackgroundCollect: BOOL;
+
+        // Time in seconds to collect background voltages for
+        {attribute 'pytmc' := '
+            pv: BACK:TIME
+            io: io
+            field: EGU s
+        '}
+        uBackgroundCollectionTime: UINT := 60;
+        tofBackgroundCollecting: TOF;
+        udBackgroundManualCount: UDINT;
 
         fbGetPMVoltage: FB_AnalogInput_IM4K2;
+
         fbVoltageBuffer: FB_LREALBuffer;
-        fbCalibBaseBuffer: FB_LREALBuffer;
+        fbPulseWattageBuffer: FB_LREALBuffer;
         fbCalibMJBuffer: FB_LREALBuffer;
+
+        FFO: FB_FastFault :=(
+            i_Desc := 'Fault occurs when the per-pulse energy reading is high enough to damage the power meter',
+            i_TypeCode := 16#500);
+        bOverAllowableEnergy: BOOL;
+    END_VAR
+    VAR_STAT CONSTANT
+        // Voltage limits for wavelength ranges
+        uSoftWavelengthEdge1: UINT := 300;
+        uSoftWavelengthEdge1L: UINT := 299;
+        uSoftWavelengthEdge2: UINT := 1000;
+        uSoftWavelengthEdge2L: UINT := 999;
+        uSoftWavelengthEdge3: UINT := 1560;
+        uSoftWavelengthEdge3L: UINT := 1559;
+        uSoftWavelengthEdge4: UINT := 2000;
+        uSoftWavelengthEdge4L: UINT := 1999;
+
+        uHardWavelengthEdge1: UINT := 1000;
+        uHardWavelengthEdge2: UINT := 1500;
+        uHardWavelengthEdge2L: UINT := 1499;
+        uHardWavelengthEdge3: UINT := 4000;
+        uHardWavelengthEdge3L: UINT := 3999;
     END_VAR
     fbThermoCouple();
 
     // Convert the terminal's integer into a value in millivolts
     fbGetPMVoltage(
         iRaw := iVoltageDINT,
-        iTermBits := 23,
-        fTermMax := 10000,
-        fTermMin := 0,  //For 24-bit to spread 10,000mV across 23 bits
+        iTermBits := 32,
+        fTermMax := 10,
+        fTermMin := -10,
+        fOffset := -2, // Add Offset based on fResolution (2mV in this case).
+        fResolution := 1000, // Display the output in mV
         fReal => fVoltage);
 
-    // Power meter calibration
-    fCalibBase := (fVoltage + fCalibRelOffset) * fCalibRelRatio;
-    fCalibMJ := fCalibBase * fCalibMJRatio;
+    rTrig_Background(CLK:=(eEnumGet <> E_PPM_States.OUT OR stYAxisState <> 0));
+    // Reset buffer and related variables
+    IF rTrig_Background.Q OR bResetAutoBackground THEN
+        IF bResetAutoBackground THEN
+            bResetAutoBackground := FALSE;
+            IF BACKGROUND_MODE = Passive THEN
+                fBackgroundVoltage := 0;
+            END_IF
+        ELSE
+            // Dump 5s worth of readings
+            IF udBackgroundVoltageBufferIndex > 6 THEN
+                FOR i := (udBackgroundVoltageBufferIndex - 5) TO (udBackgroundVoltageBufferIndex - 1) DO
+                    fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[i MOD 100];
+                END_FOR
+                udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex - 5;
+                IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+                    fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
+                END_IF
+            ELSIF BACKGROUND_MODE = Passive THEN
+                    fBackgroundVoltage := 0;
+            END_IF
+        END_IF
+        fBackgroundVoltageAcc := 0;
+        fBackgroundVoltageSum := 0;
+        tonBackgroundAutoCollecting(IN := FALSE);
+        udBackgroundVoltageBufferIndex := 1;
+    ELSIF eEnumGet = E_PPM_States.OUT AND stYAxisState = 0 THEN
+        tonBackgroundAutoCollecting( IN := TRUE, PT := T#1000MS);
+        // Every second, move fBackgroundVoltageAcc into buffer and sum
+        IF tonBackgroundAutoCollecting.Q = TRUE THEN
+            tonBackgroundAutoCollecting( IN := FALSE);
+            fBackgroundVoltageStale := fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100];
+            fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100] := fBackgroundVoltageAcc / uAccCount;
+            // Remove overwritten voltage
+            IF udBackgroundVoltageBufferIndex > 100 THEN
+                fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageStale;
+            END_IF
+            fBackgroundVoltageSum := fBackgroundVoltageSum + fBackgroundVoltageAcc / uAccCount;
+            fBackgroundVoltageAcc := fVoltage;
+            uAccCount := 1;
+            udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex + 1;
+        ELSE
+            uAccCount := uAccCount + 1;
+            fBackgroundVoltageAcc := fBackgroundVoltageAcc + fVoltage;
+        END_IF
 
-    // Buffer the full-rate Voltage and calibrated MJ values
+    END_IF
+
+    IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+        fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
+    END_IF
+
+    // Start collecting background in manual mode - 60s by default but can be set with uBackgroundCollectionTime
+    IF bBackgroundCollect = TRUE THEN
+        bBackgroundCollect := FALSE;
+        udBackgroundManualCount := 0;
+        fBackgroundVoltage := 0;
+        tofBackgroundCollecting(IN := TRUE);
+    END_IF
+
+
+    tofBackgroundCollecting(IN := FALSE, PT := UINT_TO_TIME(uBackgroundCollectionTime * 1000));
+    IF tofBackgroundCollecting.Q = TRUE THEN
+        udBackgroundManualCount := udBackgroundManualCount + 1;
+        IF BACKGROUND_MODE = Manual THEN
+            fBackgroundVoltage := (fBackgroundVoltage * (udBackgroundManualCount - 1) + fVoltage) / udBackgroundManualCount;
+        END_IF
+    END_IF
+
+    // Getting frequency based on accelerator source
+    (*
+    CASE uAccelerator OF
+        0: uFrequency := uNCFrequency;
+        1: uFrequency := uSCFrequency;
+        2: uFrequency := 0; // ASTA?
+    ELSE
+        uFrequency := 0;
+    END_CASE*)
+
+    {IF defined (K)}
+        IF uSXR_Accelerator = 0 THEN
+            fFrequency := fSXR_NC_Frequency;
+        ELSIF uSXR_Accelerator = 1 THEN
+            fFrequency := uSXR_SC_Frequency;
+        END_IF
+    {ELSIF defined (L)}
+        IF uHXR_Accelerator = 0 THEN
+            fFrequency := fHXR_NC_Frequency;
+        ELSIF uHXR_Accelerator = 1 THEN
+            fFrequency := uHXR_SC_Frequency;
+        END_IF
+    {END_IF}
+
+    // Getting wattage and energy
+    fPulseWattage := SEL(fResponsivity <> 0, 0, (fVoltage - fBackgroundVoltage) / fResponsivity);
+    fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
+
+    // FF in case voltage is high enough to damage power meter based on wavelength
+    {IF defined (K)}
+        CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+            0 .. uSoftWavelengthEdge1L: bOverAllowableEnergy := fCalibMJ > 2;
+            uSoftWavelengthEdge1 .. uSoftWavelengthEdge2L : bOverAllowableEnergy := fCalibMJ > 2;
+            uSoftWavelengthEdge2 .. uSoftWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
+            uSoftWavelengthEdge3 .. uSoftWavelengthEdge4L: bOverAllowableEnergy := fCalibMJ > 0.5;
+            uSoftWavelengthEdge4 .. 65535: bOverAllowableEnergy := fCalibMJ > 1;
+        END_CASE
+    {ELSIF defined (L)}
+        CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+            uHardWavelengthEdge1 .. uHardWavelengthEdge2L: bOverAllowableEnergy := fCalibMJ > 10;
+            uHardWavelengthEdge2 .. uHardWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
+            uHardWavelengthEdge3 .. 65535: bOverAllowableEnergy := fCalibMJ > 10;
+        END_CASE
+    {END_IF}
+    FFO(i_xOK := bOverAllowableEnergy,
+        io_fbFFHWO := fbFFHWO);
+
+    // Buffer the full-rate Voltage, Pulse wattage, and calibrated MJ values
     fbVoltageBuffer(
         bExecute := TRUE,
         fInput := fVoltage,
         arrOutput => fVoltageBuffer);
-    fbCalibBaseBuffer(
+    fbPulseWattageBuffer(
         bExecute := TRUE,
-        fInput := fCalibBase,
-        arrOutput => fCalibBaseBuffer);
+        fInput := fPulseWattage,
+        arrOutput => fPulseWattageBuffer);
     fbCalibMJBuffer(
         bExecute := TRUE,
         fInput := fCalibMJ,
@@ -1714,6 +1946,7 @@ PRG_IM1K1_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0624,
     );
 
     END_PROGRAM
@@ -1769,6 +2002,7 @@ PRG_IM1K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0513,
     );
 
     END_PROGRAM
@@ -1823,6 +2057,7 @@ PRG_IM2K1_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0625,
     );
 
     END_PROGRAM
@@ -1879,6 +2114,7 @@ PRG_IM2K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0670,
     );
 
     END_PROGRAM
@@ -1935,6 +2171,7 @@ PRG_IM3K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0503
     );
 
     END_PROGRAM
@@ -1991,6 +2228,7 @@ PRG_IM4K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0584,
     );
 
     END_PROGRAM
@@ -2056,6 +2294,7 @@ PRG_IM5K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := 0.0574,
     );
 
     END_PROGRAM
@@ -2119,6 +2358,7 @@ PRG_IM6K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
+        fResponsivity := -0.0719,
     );
 
     END_PROGRAM
@@ -2467,12 +2707,12 @@ PRG_TM1K2_ATM
     END_VAR
     fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, sPmpsState:='TM1K2:ATM-OUT');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, sPmpsState:='TM1K2:ATM-TARGET1');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, sPmpsState:='TM1K2:ATM-TARGET2');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, sPmpsState:='TM1K2:ATM-TARGET3');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, sPmpsState:='TM1K2:ATM-TARGET4');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, sPmpsState:='TM1K2:ATM-TARGET5');
+    fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, fDelta:=7, sPmpsState:='TM1K2:ATM-OUT');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET1');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET2');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
 
     fbTM1K2(
         fbFFHWO := GVL.fbFastFaultOutput2,
@@ -2519,13 +2759,13 @@ PRG_TM2K2_ATM
     END_VAR
     fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbStateSetup(stPositionState:=fbTM2K2.stOut, fPosition:=5.3, sPmpsState:='TM2K2:ATM-OUT');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget1, fPosition:=-15.5, sPmpsState:='TM2K2:ATM-TARGET1');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget2, fPosition:=-36.5, sPmpsState:='TM2K2:ATM-TARGET2');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget3, fPosition:=-52.0, sPmpsState:='TM2K2:ATM-TARGET3');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-60.5, sPmpsState:='TM2K2:ATM-TARGET4');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget5, fPosition:=-77.0, sPmpsState:='TM2K2:ATM-TARGET5');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget6, fPosition:=-96.6, sPmpsState:='TM2K2:ATM-TARGET6');
+    fbStateSetup(stPositionState:=fbTM2K2.stOut, fPosition:=5.3, fDelta:=7, sPmpsState:='TM2K2:ATM-OUT');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget1, fPosition:=-15.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET1');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget2, fPosition:=-36.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET2');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget3, fPosition:=-52.0, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET3');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-60.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget5, fPosition:=-77.0, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET5');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget6, fPosition:=-96.6, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET6');
 
     fbTM2K2(
         fbFFHWO := GVL.fbFastFaultOutput2,
