@@ -81,10 +81,11 @@ END_VAR
 // Convert the terminal's integer into a value in millivolts
 fbGetPMVoltage(
     iRaw := iVoltageDINT,
-    iTermBits := 23,
+    iTermBits := 32, // DINT IRaw # of Bit for scaling
     fTermMax := 10,
     fTermMin := -10,
-    fOffset := 8,
+    fOffset := -2, // Add Offset based on fResolution (2mV in this case).
+    fResolution := 1000, // Display the output in mV
     fReal => fVoltage);
 
 // Power meter calibration
