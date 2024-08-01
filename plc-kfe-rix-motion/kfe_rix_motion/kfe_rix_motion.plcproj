@@ -194,7 +194,7 @@
       <Resolution>lcls-twincat-common-components, 3.4.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 4.0.8 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.1.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-physics">
       <Resolution>lcls-twincat-physics, 0.1.0 (SLAC)</Resolution>
