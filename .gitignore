@@ -1,4 +1,4 @@
-# From Confluence "Twincat 3 Git Setup and Best Practices
+i# From Confluence "Twincat 3 Git Setup and Best Practices
 _Boot
 _Libraries
 _CompileInfo
@@ -14,8 +14,7 @@ TrialLicense.tclrs
 *.library
 *.tmcRefac
 .pytmc_build
-*.tclrq
-*.TCLRS
+
 
 # An extra
 UpgradeLog.htm
