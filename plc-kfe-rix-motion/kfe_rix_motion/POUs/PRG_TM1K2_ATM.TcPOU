@@ -25,12 +25,12 @@ END_VAR
       <ST><![CDATA[
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, fDelta:=10, sPmpsState:='TM1K2:ATM-OUT');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, fDelta:=10, sPmpsState:='TM1K2:ATM-TARGET1');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=10, sPmpsState:='TM1K2:ATM-TARGET2');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=10, sPmpsState:='TM1K2:ATM-TARGET3');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=10, sPmpsState:='TM1K2:ATM-TARGET4');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=10, sPmpsState:='TM1K2:ATM-TARGET5');
+fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, fDelta:=7, sPmpsState:='TM1K2:ATM-OUT');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET1');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET2');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
 
 fbTM1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,
