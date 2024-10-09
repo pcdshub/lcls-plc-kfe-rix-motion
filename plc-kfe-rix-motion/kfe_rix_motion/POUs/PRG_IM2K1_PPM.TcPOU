@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_IM2K1_PPM" Id="{da6fce9c-eeb0-4159-ad2e-cab6da7c6426}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM2K1_PPM
 VAR
@@ -43,6 +43,7 @@ fbIM2K1(
     bEnableMotion := TRUE,
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
+    fResponsivity := 0.0625,
 );
 ]]></ST>
     </Implementation>

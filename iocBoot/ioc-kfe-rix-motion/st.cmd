@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.2/bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.6.1///bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: plc-kfe-rix-motion.tsproj
 #        PLC name: kfe_rix_motion (kfe_rix_motion Instance)
-# Generated using: pytmc 2.16.0
-# Project version: 9b91783
-#    Project hash: 9b917832a039803f2e33d09e5ce23487342e792b
+# Generated using: pytmc 2.15.2.dev0+g73bd2d9.d20230727
+# Project version: unknown
+#    Project hash: unknown
 #     PLC IP/host: 172.21.140.70
 #      PLC Net ID: 172.21.140.70.1.1
 #  ** Production mode IOC **
@@ -14,7 +14,7 @@
 # Libraries:
 #
 #   LCLS General: * -> 2.10.0 (SLAC)
-#   lcls-twincat-common-components: * -> 3.4.0 (SLAC)
+#   lcls-twincat-common-components: * -> 3.8.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 #   PMPS: * -> 3.2.1 (SLAC - LCLS)
@@ -27,7 +27,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "jjoshi" )
+epicsEnvSet("ENGINEER", "" )
 epicsEnvSet("LOCATION", "PLC:RIX:MOTION" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -43,14 +43,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.140.70")
 epicsEnvSet("AMSID",            "172.21.140.70.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "13391")
+epicsEnvSet("ADS_MAX_PARAMS",   "13589")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.140.70 ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.140.70 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -659,15 +659,15 @@ dbLoadRecords("save_restoreStatus.db", "P=PLC:RIX:MOTION:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION,IDX=1,TASK_PORT=350")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION,IDX=1")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:RIX:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-motion.tsproj,HASH=9b91783,VERSION=9b91783,PYTMC=2.16.0,PLC_HOST=172.21.140.70")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.140.70")
 
 #   LCLS General: * -> 2.10.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
-#   lcls-twincat-common-components: * -> 3.4.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.4.0,VENDOR=SLAC")
+#   lcls-twincat-common-components: * -> 3.8.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.8.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.1.1,VENDOR=SLAC")
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
@@ -686,8 +686,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("kfe_rix_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 12391
-callbackSetQueueSize(26782)
+# Total records: 12589
+callbackSetQueueSize(27178)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:RIX:MOTION:")
