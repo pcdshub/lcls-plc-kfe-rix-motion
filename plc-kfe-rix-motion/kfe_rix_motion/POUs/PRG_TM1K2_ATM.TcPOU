@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_TM1K2_ATM" Id="{c02e8350-6bfd-4c3f-8509-cf01c04221fa}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_TM1K2_ATM
 VAR
@@ -25,12 +25,12 @@ END_VAR
       <ST><![CDATA[
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, sPmpsState:='TM1K2:ATM-OUT');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, sPmpsState:='TM1K2:ATM-TARGET1');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, sPmpsState:='TM1K2:ATM-TARGET2');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, sPmpsState:='TM1K2:ATM-TARGET3');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, sPmpsState:='TM1K2:ATM-TARGET4');
-fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, sPmpsState:='TM1K2:ATM-TARGET5');
+fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, fDelta:=7, sPmpsState:='TM1K2:ATM-OUT');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET1');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET2');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
 
 fbTM1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,
