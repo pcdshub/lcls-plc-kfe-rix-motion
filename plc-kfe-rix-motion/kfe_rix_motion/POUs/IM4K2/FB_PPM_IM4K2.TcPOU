@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="FB_PPM_IM4K2" Id="{21ba0056-420c-4281-af9c-7f35e47eaf5b}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PPM_IM4K2
 (*
@@ -57,6 +57,8 @@ VAR_INPUT
     bReadDBNow: BOOL;
     // Offset for the flow meter in engineering units
     fFlowOffset: LREAL := 0;
+    // Responsivity for power meter
+      fResponsivity: LREAL;
 END_VAR
 VAR_OUTPUT
     // The current position state as an enum.
@@ -163,7 +165,15 @@ stPower := astPositionState[E_PPM_States.POWERMETER];
 stYag1 := astPositionState[E_PPM_States.YAG1];
 stYag2 := astPositionState[E_PPM_States.YAG2];
 
-fbPowerMeter();
+fbPowerMeter(
+  fTempSP:=fbStates.stDbStateParams.stReactiveParams.nTempSP,
+  bVetoTempFFO:=eEnumGet = E_PPM_States.OUT,
+  sDeviceName:=sDeviceName,
+  fbFFHWO:=fbFFHWO,
+  eEnumGet:=eEnumGet,
+  stYAxisState:=stYStage.Axis.NcToPlc.AxisState,
+  fResponsivity:=fResponsivity,
+);
 fbGige();
 fbFlowMeter(fOffset:=fFlowOffset);
 fbYagThermoCouple();
