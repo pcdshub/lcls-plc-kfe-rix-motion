@@ -1172,6 +1172,839 @@ FB_PPM_PowerMeter_IM4K2
 
 
  
+FB_TM1K2
+^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):FWM:OFF
+      - ao
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:OFF_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fOffset
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES
+      - ao
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:RES_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fResolution
+      - | io: output
+
+
+    * - $(PREFIX):FWM:VAL_RBV
+      - ai
+      - $(SYMBOL).fbFlowMeter.fReal
+      - | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:BUSY_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:DONE_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERR_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRID_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:ERRMSG_RBV
+      - waveform
+      - $(SYMBOL).fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:GET_RBV
+      - mbbi
+      - $(SYMBOL).eEnumGet
+      - | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE
+      - bo
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT
+      - bo
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:MAINT_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Height_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Height
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:OK_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].xOK
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Width_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Width
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClass_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBeamClass
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClassRanges_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBCRange
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Cohort_RBV
+      - longin
+      - Cohort inc on each arb cycle
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:eVRanges_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neVRange
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU eV
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:MachineMode_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nMachineMode
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:PhotonEnergy_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neV
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU eV
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Rate_RBV
+      - longin
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nRate
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU Hz
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Transmission_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nTran
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: HOPR 1
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Valid_RBV
+      - bi
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Veto_RBV
+      - waveform
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.aVetoDevices
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_ID_RBV
+      - longin
+      - Assertion Request ID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_LOADED_RBV
+      - bi
+      - TRUE if PMPS loaded parameters from the database.
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_STATE_RBV
+      - waveform
+      - PMPS Database Lookup Key
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "TORR"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
+      - ai
+      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: EGU "C"
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):MMS:STATE:RESET
+      - bo
+      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:RESET_RBV
+      - bi
+      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET
+      - mbbo
+      - $(SYMBOL).eEnumSet
+      - | io: output
+
+
+    * - $(PREFIX):MMS:STATE:SET_RBV
+      - mbbi
+      - $(SYMBOL).eEnumSet
+      - | io: output
+
+
+    * - $(PREFIX):STC:01:CONN_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):STC:01:ERR_RBV
+      - bi
+      - $(SYMBOL).fbThermoCouple1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):STC:01:TEMP_RBV
+      - ai
+      - $(SYMBOL).fbThermoCouple1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+ 
 FB_TM2K2
 ^^^^^^^^
 
@@ -3064,791 +3897,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-                                                                               
-lcls_twincat_common_components.FB_ATM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):FWM:OFF
-      - ao
-      - $(SYMBOL).fbFlowMeter.fOffset
-      - | io: output
-
-
-    * - $(PREFIX):FWM:OFF_RBV
-      - ai
-      - $(SYMBOL).fbFlowMeter.fOffset
-      - | io: output
-
-
-    * - $(PREFIX):FWM:RES
-      - ao
-      - $(SYMBOL).fbFlowMeter.fResolution
-      - | io: output
-
-
-    * - $(PREFIX):FWM:RES_RBV
-      - ai
-      - $(SYMBOL).fbFlowMeter.fResolution
-      - | io: output
-
-
-    * - $(PREFIX):FWM:VAL_RBV
-      - ai
-      - $(SYMBOL).fbFlowMeter.fReal
-      - | io: input
-
-
-    * - $(PREFIX):MMS:STATE:01:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:01:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:01:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:01:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:01:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:01:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:01:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:02:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:02:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:02:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:02:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:02:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:02:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:02:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:03:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:03:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:03:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:03:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:03:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:03:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:03:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:04:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:04:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:04:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:04:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:04:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:04:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:04:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:05:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:05:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:05:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:05:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:05:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:05:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:05:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:06:ENCODER_RBV
-      - longin
-      - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:06:MOVE_OK_RBV
-      - bi
-      - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | field: ONAM TRUE
-        | field: ZNAM FALSE
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:06:NAME_RBV
-      - waveform
-      - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:06:SETPOINT
-      - ao
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:06:SETPOINT_RBV
-      - ai
-      - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:06:VELO
-      - ao
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:06:VELO_RBV
-      - ai
-      - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
-        | expand: :%.2d
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:BUSY_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPlcToEpics.bBusy
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: ONAM True
-        | field: ZNAM False
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:DONE_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPlcToEpics.bDone
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: ONAM True
-        | field: ZNAM False
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:ERR_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPlcToEpics.bError
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: ONAM True
-        | field: ZNAM False
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:ERRID_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPlcToEpics.nErrorID
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:ERRMSG_RBV
-      - waveform
-      - $(SYMBOL).fbStates.stPlcToEpics.sErrorMsg
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:GET_RBV
-      - mbbi
-      - $(SYMBOL).eEnumGet
-      - | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE
-      - bo
-      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:ARB:ENABLE_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bArbiterEnabled
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:MAINT
-      - bo
-      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:MAINT_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSEpicsToPlc.bMaintMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Height_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:OK_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:01:Width_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Height_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:OK_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:02:Width_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Height_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:OK_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:03:Width_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Height_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:OK_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Apt:04:Width_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU mm
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClass_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBeamClass
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:BeamClassRanges_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBCRange
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Cohort_RBV
-      - longin
-      - Cohort inc on each arb cycle
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:eVRanges_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neVRange
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU eV
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:MachineMode_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nMachineMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:PhotonEnergy_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neV
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU eV
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Rate_RBV
-      - longin
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nRate
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU Hz
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Transmission_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nTran
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: HOPR 1
-        | field: LOPR 0
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Valid_RBV
-      - bi
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:BP:Veto_RBV
-      - waveform
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.aVetoDevices
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_ID_RBV
-      - longin
-      - Assertion Request ID
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_LOADED_RBV
-      - bi
-      - TRUE if PMPS loaded parameters from the database.
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:PMPS_STATE_RBV
-      - waveform
-      - PMPS Database Lookup Key
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU "TORR"
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
-      - ai
-      - $(SYMBOL).fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: EGU "C"
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):MMS:STATE:RESET
-      - bo
-      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: ONAM True
-        | field: ZNAM False
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:RESET_RBV
-      - bi
-      - $(SYMBOL).fbStates.stEpicsToPlc.bReset
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | field: ONAM True
-        | field: ZNAM False
-        | io: output
-
-
-    * - $(PREFIX):MMS:STATE:SET
-      - mbbo
-      - $(SYMBOL).eEnumSet
-      - | io: output
-
-
-    * - $(PREFIX):MMS:STATE:SET_RBV
-      - mbbi
-      - $(SYMBOL).eEnumSet
-      - | io: output
-
-
-    * - $(PREFIX):STC:01:CONN_RBV
-      - bi
-      - $(SYMBOL).fbTempSensor1.bConnected
-      - | field: ONAM Connected
-        | field: ZNAM Disconnected
-        | io: input
-
-
-    * - $(PREFIX):STC:01:ERR_RBV
-      - bi
-      - $(SYMBOL).fbTempSensor1.bError
-      - | field: ONAM True
-        | field: ZNAM False
-        | io: input
-
-
-    * - $(PREFIX):STC:01:FAULT_SP_HYS_RBV
-      - ai
-      - $(SYMBOL).fbTempSensor1.fHysteresis
-      - | field: EGU %
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):STC:01:FAULT_SP_RBV
-      - ai
-      - $(SYMBOL).fbTempSensor1.fFaultThreshold
-      - | field: EGU C
-        | field: PREC 2
-        | io: input
-
-
-    * - $(PREFIX):STC:01:TEMP_RBV
-      - ai
-      - $(SYMBOL).fbTempSensor1.fTemp
-      - | field: EGU C
-        | field: PREC 2
-        | io: input
-
-
-  
+                                                                                
 lcls_twincat_common_components.FB_CC_TempSensor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -7947,7 +7996,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
- 
+               
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -7972,7 +8021,7 @@ lcls_twincat_common_components.ST_SATT_Filter
         | io: input
 
 
-                          
+                                                                           
 lcls_twincat_motion.FB_PositionState1D
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10624,7 +10673,7 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
         | io: input
 
 
-                                                                                 
+                  
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
@@ -140184,8 +140233,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140195,8 +140244,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140204,8 +140253,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140213,8 +140262,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140222,8 +140271,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140231,8 +140280,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140240,8 +140289,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:01:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140249,8 +140298,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140260,8 +140309,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140269,8 +140318,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140278,8 +140327,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140287,8 +140336,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140296,8 +140345,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140305,8 +140354,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:02:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140314,8 +140363,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140325,8 +140374,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140334,8 +140383,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140343,8 +140392,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140352,8 +140401,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140361,8 +140410,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140370,8 +140419,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:03:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140379,8 +140428,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140390,8 +140439,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140399,8 +140448,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140408,8 +140457,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140417,8 +140466,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140426,8 +140475,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140435,8 +140484,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:04:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140444,8 +140493,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140455,8 +140504,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140464,8 +140513,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140473,8 +140522,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140482,8 +140531,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140491,8 +140540,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140500,8 +140549,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:05:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140509,8 +140558,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:MOVE_OK_RBV
       - bi
       - TRUE if the move would be safe
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | field: ONAM TRUE
         | field: ZNAM FALSE
@@ -140520,8 +140569,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:SETPOINT_RBV
       - ai
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140529,8 +140578,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:SETPOINT
       - ao
       - Axis position associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140538,8 +140587,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:VELO_RBV
       - ai
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140547,8 +140596,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:VELO
       - ao
       - Speed at which to move to this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: output
 
@@ -140556,8 +140605,8 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:ENCODER_RBV
       - longin
       - Encoder count associated with this state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140565,8 +140614,73 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:06:NAME_RBV
       - waveform
       - Name of this position state
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
-        | array: 1..6
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - TM1K2:ATM:MMS:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - TM1K2:ATM:MMS:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - TM1K2:ATM:MMS:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - TM1K2:ATM:MMS:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - TM1K2:ATM:MMS:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: output
+
+
+    * - TM1K2:ATM:MMS:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
+        | expand: :%.2d
+        | io: input
+
+
+    * - TM1K2:ATM:MMS:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
+        | array: 1..7
         | expand: :%.2d
         | io: input
 
@@ -140574,7 +140688,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:RESET_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stEpicsToPlc.bReset
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: ONAM True
         | field: ZNAM False
         | io: output
@@ -140583,7 +140697,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:RESET
       - bo
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stEpicsToPlc.bReset
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: ONAM True
         | field: ZNAM False
         | io: output
@@ -140592,63 +140706,63 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:ARB:ENABLE_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSEpicsToPlc.bArbiterEnabled
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: output
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:ARB:ENABLE
       - bo
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSEpicsToPlc.bArbiterEnabled
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: output
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:MAINT_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSEpicsToPlc.bMaintMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: output
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:MAINT
       - bo
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSEpicsToPlc.bMaintMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: output
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:PMPS_LOADED_RBV
       - bi
       - TRUE if PMPS loaded parameters from the database.
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:PMPS_ID_RBV
       - longin
       - Assertion Request ID
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:PMPS_STATE_RBV
       - waveform
       - PMPS Database Lookup Key
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Veto_RBV
       - waveform
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.aVetoDevices
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:01:Height_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140656,7 +140770,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:01:Width_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140664,14 +140778,14 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:01:OK_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[1].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:02:Height_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140679,7 +140793,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:02:Width_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140687,14 +140801,14 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:02:OK_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[2].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:03:Height_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140702,7 +140816,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:03:Width_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140710,14 +140824,14 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:03:OK_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[3].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:04:Height_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Height
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140725,7 +140839,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:04:Width_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].Width
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU mm
         | io: input
 
@@ -140733,42 +140847,42 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Apt:04:OK_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.astApertures[4].xOK
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:BeamClassRanges_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBCRange
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:BeamClass_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nBeamClass
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Cohort_RBV
       - longin
       - Cohort inc on each arb cycle
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:MachineMode_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nMachineMode
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Rate_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nRate
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU Hz
         | io: input
 
@@ -140776,7 +140890,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Transmission_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.nTran
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: HOPR 1
         | field: LOPR 0
         | field: PREC 2
@@ -140786,7 +140900,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:PhotonEnergy_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neV
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU eV
         | io: input
 
@@ -140794,7 +140908,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:eVRanges_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.neVRange
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU eV
         | io: input
 
@@ -140802,14 +140916,14 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:BP:Valid_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stBeamParams.xValid
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:PressSP_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nPressSP
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU "TORR"
         | field: PREC 2
         | io: input
@@ -140818,7 +140932,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:PMPS:TRANS:ReParams:TempSP_RBV
       - ai
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPMPSPlcToEpics.stTransitionDb.stReactiveParams.nTempSP
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: EGU "C"
         | field: PREC 2
         | io: input
@@ -140827,7 +140941,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:BUSY_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPlcToEpics.bBusy
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: ONAM True
         | field: ZNAM False
         | io: input
@@ -140836,7 +140950,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:DONE_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPlcToEpics.bDone
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: ONAM True
         | field: ZNAM False
         | io: input
@@ -140845,7 +140959,7 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:ERR_RBV
       - bi
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPlcToEpics.bError
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | field: ONAM True
         | field: ZNAM False
         | io: input
@@ -140854,20 +140968,20 @@ Database Records
     * - TM1K2:ATM:MMS:STATE:ERRID_RBV
       - longin
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPlcToEpics.nErrorID
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:MMS:STATE:ERRMSG_RBV
       - waveform
       - PRG_TM1K2_ATM.fbTM1K2.fbStates.stPlcToEpics.sErrorMsg
-      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..6')]}}
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..7')]}}
         | io: input
 
 
     * - TM1K2:ATM:STC:01:CONN_RBV
       - bi
-      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bConnected
+      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bConnected
       - | field: ONAM Connected
         | field: ZNAM Disconnected
         | io: input
@@ -140875,31 +140989,15 @@ Database Records
 
     * - TM1K2:ATM:STC:01:ERR_RBV
       - bi
-      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bError
+      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError
       - | field: ONAM True
         | field: ZNAM False
         | io: input
 
 
-    * - TM1K2:ATM:STC:01:FAULT_SP_RBV
-      - ai
-      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fFaultThreshold
-      - | field: EGU C
-        | field: PREC 2
-        | io: input
-
-
-    * - TM1K2:ATM:STC:01:FAULT_SP_HYS_RBV
-      - ai
-      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fHysteresis
-      - | field: EGU %
-        | field: PREC 2
-        | io: input
-
-
     * - TM1K2:ATM:STC:01:TEMP_RBV
       - ai
-      - PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.fTemp
+      - PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.fTemp
       - | field: EGU C
         | field: PREC 2
         | io: input
