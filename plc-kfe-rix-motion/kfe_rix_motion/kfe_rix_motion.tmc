@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{068EE325-B267-887D-F857-964E996E13BF}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C7F0CB99-2BF9-16DF-E6F9-C53B714C49BF}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -89436,15 +89436,15 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Default>
               <SubItem>
                 <Name>.iMajor</Name>
-                <Value>0</Value>
+                <Value>3</Value>
               </SubItem>
               <SubItem>
                 <Name>.iMinor</Name>
-                <Value>0</Value>
+                <Value>8</Value>
               </SubItem>
               <SubItem>
                 <Name>.iBuild</Name>
-                <Value>0</Value>
+                <Value>1</Value>
               </SubItem>
               <SubItem>
                 <Name>.iRevision</Name>
@@ -89452,11 +89452,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
               <SubItem>
                 <Name>.nFlags</Name>
-                <Value>0</Value>
+                <Value>1</Value>
               </SubItem>
               <SubItem>
                 <Name>.sVersion</Name>
-                <String>0.0.0</String>
+                <String>3.8.1</String>
               </SubItem>
             </Default>
             <Properties>
@@ -110765,7 +110765,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-09T23:17:23</Value>
+          <Value>2024-10-10T12:19:23</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
