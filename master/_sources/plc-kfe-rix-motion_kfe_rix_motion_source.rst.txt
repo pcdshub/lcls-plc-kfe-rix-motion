@@ -33,6 +33,29 @@ Related:
     * `DUT_SATT_Filter`_
 
 
+E_TM1K2_States
+^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    TYPE E_TM1K2_States :
+    // Adapted from E_ATM_States to add TARGET6
+    (
+        Unknown := 0,
+        OUT := 1,
+        TARGET1 := 2,
+        TARGET2 := 3,
+        TARGET3 := 4,
+        TARGET4 := 5,
+        TARGET5 := 6,
+        TARGET6 := 7
+    ) UINT;
+    END_TYPE
+
+
+
+
 E_TM2K2_States
 ^^^^^^^^^^^^^^
 
@@ -670,7 +693,7 @@ FB_PPM_PowerMeter_IM4K2
         // Calibrated for each gentec, should be passed as input
         // If not set, responsive energy will not be calculated
         {attribute 'pytmc' := '
-            pv: RES
+            pv: RESP
             io: i
             field: EGU V/W
         '}
@@ -704,12 +727,7 @@ FB_PPM_PowerMeter_IM4K2
 
 
         fFrequency: REAL;
-        // Used to get beam mode and rate
-        {attribute 'pytmc' := '
-            pv: SXRAccTypeFromEpics
-            link: PHYS:UNDS:1:FACMODE.RVAL
-        '}
-        uSXR_Accelerator: UINT;
+        // Used to get beam rate
         {attribute 'pytmc' := '
             pv: SXR_NC_BeamRateFromEpics
             link: EVNT:SYS0:1:NC_SOFTRATE
@@ -721,11 +739,6 @@ FB_PPM_PowerMeter_IM4K2
         '}
         uSXR_SC_Frequency: UINT;
 
-        {attribute 'pytmc' := '
-            pv: HXRAccTypeFromEpics
-            link: PHYS:UNDH:1:FACMODE.RVAL
-        '}
-        uHXR_Accelerator: UINT;
         {attribute 'pytmc' := '
             pv: HXR_NC_BeamRateFromEpics
             link: EVNT:SYS0:1:NC_HARDRATE
@@ -783,7 +796,7 @@ FB_PPM_PowerMeter_IM4K2
         udBackgroundVoltageBufferIndex: UDINT := 1;
         rTrig_Background : R_TRIG;
         i: UDINT;
-        // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode
+        // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Auto mode
         {attribute 'pytmc' := '
             pv: BACK:RESET
             io: io
@@ -795,7 +808,7 @@ FB_PPM_PowerMeter_IM4K2
             pv: BACK:MODE
             io: io
         '}
-        BACKGROUND_MODE: (Manual, Passive) := Passive;
+        BACKGROUND_MODE: (Manual, Auto) := Auto;
 
         // Boolean to trigger collection of background voltages
         {attribute 'pytmc' := '
@@ -813,6 +826,12 @@ FB_PPM_PowerMeter_IM4K2
         uBackgroundCollectionTime: UINT := 60;
         tofBackgroundCollecting: TOF;
         udBackgroundManualCount: UDINT;
+        // Boolean indicating when background is being manually collected
+        {attribute 'pytmc' := '
+            pv: BACK:MANUAL_COLLECTING
+            io: i
+        '}
+        bBackgroundCollecting: BOOL := FALSE;
 
         fbGetPMVoltage: FB_AnalogInput_IM4K2;
 
@@ -820,10 +839,11 @@ FB_PPM_PowerMeter_IM4K2
         fbPulseWattageBuffer: FB_LREALBuffer;
         fbCalibMJBuffer: FB_LREALBuffer;
 
-        FFO: FB_FastFault :=(
+        FF: FB_FastFault :=(
             i_Desc := 'Fault occurs when the per-pulse energy reading is high enough to damage the power meter',
             i_TypeCode := 16#500);
         bOverAllowableEnergy: BOOL;
+        uOverCounter: UINT := 1;
     END_VAR
     VAR_STAT CONSTANT
         // Voltage limits for wavelength ranges
@@ -859,20 +879,20 @@ FB_PPM_PowerMeter_IM4K2
     IF rTrig_Background.Q OR bResetAutoBackground THEN
         IF bResetAutoBackground THEN
             bResetAutoBackground := FALSE;
-            IF BACKGROUND_MODE = Passive THEN
+            IF BACKGROUND_MODE = Auto THEN
                 fBackgroundVoltage := 0;
             END_IF
         ELSE
             // Dump 5s worth of readings
             IF udBackgroundVoltageBufferIndex > 6 THEN
                 FOR i := (udBackgroundVoltageBufferIndex - 5) TO (udBackgroundVoltageBufferIndex - 1) DO
-                    fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[i MOD 100];
+                    fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[((i-1) MOD 100) + 1];
                 END_FOR
                 udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex - 5;
-                IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+                IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
                     fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
                 END_IF
-            ELSIF BACKGROUND_MODE = Passive THEN
+            ELSIF BACKGROUND_MODE = Auto THEN
                     fBackgroundVoltage := 0;
             END_IF
         END_IF
@@ -885,8 +905,8 @@ FB_PPM_PowerMeter_IM4K2
         // Every second, move fBackgroundVoltageAcc into buffer and sum
         IF tonBackgroundAutoCollecting.Q = TRUE THEN
             tonBackgroundAutoCollecting( IN := FALSE);
-            fBackgroundVoltageStale := fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100];
-            fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100] := fBackgroundVoltageAcc / uAccCount;
+            fBackgroundVoltageStale := fBackgroundVoltageBuffer[((udBackgroundVoltageBufferIndex - 1) MOD 100) + 1];
+            fBackgroundVoltageBuffer[((udBackgroundVoltageBufferIndex - 1) MOD 100) + 1] := fBackgroundVoltageAcc / uAccCount;
             // Remove overwritten voltage
             IF udBackgroundVoltageBufferIndex > 100 THEN
                 fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageStale;
@@ -902,47 +922,39 @@ FB_PPM_PowerMeter_IM4K2
 
     END_IF
 
-    IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+    IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
         fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
     END_IF
 
     // Start collecting background in manual mode - 60s by default but can be set with uBackgroundCollectionTime
-    IF bBackgroundCollect = TRUE THEN
+    IF bBackgroundCollect = TRUE AND BACKGROUND_MODE = Manual THEN
         bBackgroundCollect := FALSE;
         udBackgroundManualCount := 0;
         fBackgroundVoltage := 0;
         tofBackgroundCollecting(IN := TRUE);
     END_IF
 
-
+    bBackgroundCollecting := FALSE;
     tofBackgroundCollecting(IN := FALSE, PT := UINT_TO_TIME(uBackgroundCollectionTime * 1000));
     IF tofBackgroundCollecting.Q = TRUE THEN
-        udBackgroundManualCount := udBackgroundManualCount + 1;
         IF BACKGROUND_MODE = Manual THEN
+            bBackgroundCollecting := TRUE;
+            udBackgroundManualCount := udBackgroundManualCount + 1;
             fBackgroundVoltage := (fBackgroundVoltage * (udBackgroundManualCount - 1) + fVoltage) / udBackgroundManualCount;
         END_IF
     END_IF
 
     // Getting frequency based on accelerator source
-    (*
-    CASE uAccelerator OF
-        0: uFrequency := uNCFrequency;
-        1: uFrequency := uSCFrequency;
-        2: uFrequency := 0; // ASTA?
-    ELSE
-        uFrequency := 0;
-    END_CASE*)
-
     {IF defined (K)}
-        IF uSXR_Accelerator = 0 THEN
+        IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
             fFrequency := fSXR_NC_Frequency;
-        ELSIF uSXR_Accelerator = 1 THEN
+        ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
             fFrequency := uSXR_SC_Frequency;
         END_IF
     {ELSIF defined (L)}
-        IF uHXR_Accelerator = 0 THEN
+        IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
             fFrequency := fHXR_NC_Frequency;
-        ELSIF uHXR_Accelerator = 1 THEN
+        ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
             fFrequency := uHXR_SC_Frequency;
         END_IF
     {END_IF}
@@ -951,9 +963,9 @@ FB_PPM_PowerMeter_IM4K2
     fPulseWattage := SEL(fResponsivity <> 0, 0, (fVoltage - fBackgroundVoltage) / fResponsivity);
     fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
 
-    // FF in case voltage is high enough to damage power meter based on wavelength
+    // FF in case voltage is high enough to damage power meter based on wavelengths
     {IF defined (K)}
-        CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+        CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
             0 .. uSoftWavelengthEdge1L: bOverAllowableEnergy := fCalibMJ > 2;
             uSoftWavelengthEdge1 .. uSoftWavelengthEdge2L : bOverAllowableEnergy := fCalibMJ > 2;
             uSoftWavelengthEdge2 .. uSoftWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
@@ -961,13 +973,19 @@ FB_PPM_PowerMeter_IM4K2
             uSoftWavelengthEdge4 .. 65535: bOverAllowableEnergy := fCalibMJ > 1;
         END_CASE
     {ELSIF defined (L)}
-        CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+        CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
             uHardWavelengthEdge1 .. uHardWavelengthEdge2L: bOverAllowableEnergy := fCalibMJ > 10;
             uHardWavelengthEdge2 .. uHardWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
             uHardWavelengthEdge3 .. 65535: bOverAllowableEnergy := fCalibMJ > 10;
         END_CASE
     {END_IF}
-    FFO(i_xOK := bOverAllowableEnergy,
+    IF eEnumGet = E_PPM_States.POWERMETER AND bOverAllowableEnergy THEN
+        uOverCounter := MIN(uOverCounter + 1, 10);
+    ELSE
+        uOverCounter := 0;
+    END_IF
+    FF(i_xOK := eEnumGet <> E_PPM_States.POWERMETER OR uOverCounter < 10,
+        i_DevName := sDeviceName,
         io_fbFFHWO := fbFFHWO);
 
     // Buffer the full-rate Voltage, Pulse wattage, and calibrated MJ values
@@ -989,6 +1007,188 @@ FB_PPM_PowerMeter_IM4K2
 
 Related:
     * `FB_AnalogInput_IM4K2`_
+
+
+FB_TM1K2
+^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TM1K2
+    (*
+        Function block for Arrival Time Monitor (ATM) controls:
+        - X, Y motion
+        - Y target states
+        - thermocouple
+
+        For TM1K2, we make the following adjustments:
+        - Add stTarget6 to the inputs
+        - Change the array pragma from 1..6 to 1..7 (1 out and 6 in states, up from 5 in states)
+        - Use E_TM1K2_States instead of E_ATM_States
+    *)
+    VAR_IN_OUT
+        // Y motor (state select).
+        stYStage: ST_MotionStage;
+        // X motor (align target to beam).
+        stXStage: ST_MotionStage;
+        // The fast fault output to fault to.
+        fbFFHWO: FB_HardwareFFOutput;
+        // The arbiter to request beam conditions from.
+        fbArbiter: FB_Arbiter;
+    END_VAR
+    VAR_INPUT
+        // Settings for the OUT state.
+        stOut: ST_PositionState;
+        // Settings for the TARGET1 state.
+        stTarget1: ST_PositionState;
+        // Settings for the TARGET2 state.
+        stTarget2: ST_PositionState;
+        // Settings for the TARGET3 state.
+        stTarget3: ST_PositionState;
+        // Settings for the TARGET4 state.
+        stTarget4: ST_PositionState;
+        // Settings for the TARGET5 state.
+        stTarget5: ST_PositionState;
+        // Settings for the TARGET6 state.
+        stTarget6: ST_PositionState;
+        // Set this to a non-unknown value to request a new move.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:SET
+            io: io
+        '}
+        eEnumSet: E_TM1K2_States;
+        // Set this to TRUE to enable input state moves, or FALSE to disable them.
+        bEnableMotion: BOOL;
+        // Set this to TRUE to enable beam parameter checks, or FALSE to disable them.
+        bEnableBeamParams: BOOL;
+        // Set this to TRUE to enable position limit checks, or FALSE to disable them.
+        bEnablePositionLimits: BOOL;
+        // The name of the device for use in the PMPS DB lookup and diagnostic screens.
+        sDeviceName: STRING;
+        // The name of the transition state in the PMPS database.
+        sTransitionKey: STRING;
+        // Set this to TRUE to re-read the loaded database immediately (useful for debug).
+        bReadDBNow: BOOL;
+    END_VAR
+    VAR_OUTPUT
+        // The current position state as an enum.
+        {attribute 'pytmc' := '
+            pv: MMS:STATE:GET
+            io: i
+        '}
+        eEnumGet: E_TM1K2_States;
+        // The PMPS database lookup associated with the current position state.
+        stDbStateParams: ST_DbStateParams;
+    END_VAR
+    VAR
+        bInit: BOOL;
+
+        fbYStage: FB_MotionStage;
+        fbXStage: FB_MotionStage;
+
+        fbStateDefaults: FB_PositionState_Defaults;
+
+        {attribute 'pytmc' := '
+            pv: MMS
+            astPositionState.array: 1..7
+        '}
+        fbStates: FB_PositionStatePMPS1D;
+        astPositionState: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+        fbArrCheckWrite: FB_CheckPositionStateWrite;
+
+        {attribute 'pytmc' := 'pv: STC:01'}
+        fbThermoCouple1: FB_TempSensor;
+
+        {attribute 'pytmc' :='pv: FWM'}
+        fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+    END_VAR
+    VAR CONSTANT
+        // State defaults if not provided
+        fDelta: LREAL := 2;
+        fAccel: LREAL := 200;
+        fOutDecel: LREAL := 25;
+    END_VAR
+    IF NOT bInit THEN
+        bInit := TRUE;
+
+        stYStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+        stXStage.nEnableMode := E_StageEnableMode.DURING_MOTION;
+
+        // Partial backcompat, this used to set fVelocity too but this should be set per install
+        fbStateDefaults(stPositionState:=stOut, sNameDefault:='OUT', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fOutDecel);
+        fbStateDefaults(stPositionState:=stTarget1, sNameDefault:='TARGET1', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget2, sNameDefault:='TARGET2', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget3, sNameDefault:='TARGET3', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget4, sNameDefault:='TARGET4', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget5, sNameDefault:='TARGET5', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget6, sNameDefault:='TARGET6', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    END_IF
+
+    stYStage.bHardwareEnable := TRUE;
+    stYStage.bPowerSelf := FALSE;
+
+    stXStage.bLimitForwardEnable := TRUE;
+    stXStage.bLimitBackwardEnable := TRUE;
+    stXStage.bHardwareEnable := TRUE;
+    stXStage.bPowerSelf := TRUE;
+
+    fbYStage(stMotionStage:=stYStage);
+    fbXStage(stMotionStage:=stXStage);
+
+    // We need to update from PLC or from EPICS, but not both
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=TRUE,
+        bSave:=FALSE,
+    );
+    IF NOT fbArrCheckWrite.bHadWrite THEN
+        astPositionState[E_TM1K2_States.OUT] := stOut;
+        astPositionState[E_TM1K2_States.TARGET1] := stTarget1;
+        astPositionState[E_TM1K2_States.TARGET2] := stTarget2;
+        astPositionState[E_TM1K2_States.TARGET3] := stTarget3;
+        astPositionState[E_TM1K2_States.TARGET4] := stTarget4;
+        astPositionState[E_TM1K2_States.TARGET5] := stTarget5;
+        astPositionState[E_TM1K2_States.TARGET6] := stTarget6;
+    END_IF
+
+    fbStates(
+        stMotionStage:=stYStage,
+        astPositionState:=astPositionState,
+        eEnumSet:=eEnumSet,
+        eEnumGet:=eEnumGet,
+        fbFFHWO:=fbFFHWO,
+        fbArbiter:=fbArbiter,
+        bEnableMotion:=bEnableMotion,
+        bEnableBeamParams:=bEnableBeamParams,
+        bEnablePositionLimits:=bEnablePositionLimits,
+        sDeviceName:=sDeviceName,
+        sTransitionKey:=sTransitionKey,
+        bReadDBNow:=bReadDBNow,
+        stDbStateParams=>stDbStateParams,
+    );
+
+    fbArrCheckWrite(
+        astPositionState:=astPositionState,
+        bCheck:=FALSE,
+        bSave:=TRUE,
+    );
+
+    stOut := astPositionState[E_TM1K2_States.OUT];
+    stTarget1 := astPositionState[E_TM1K2_States.TARGET1];
+    stTarget2 := astPositionState[E_TM1K2_States.TARGET2];
+    stTarget3 := astPositionState[E_TM1K2_States.TARGET3];
+    stTarget4 := astPositionState[E_TM1K2_States.TARGET4];
+    stTarget5 := astPositionState[E_TM1K2_States.TARGET5];
+    stTarget6 := astPositionState[E_TM1K2_States.TARGET6];
+
+    fbThermoCouple1();
+    fbFlowMeter();
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `E_TM1K2_States`_
 
 
 FB_TM2K2
@@ -1487,7 +1687,7 @@ PRG_AT1K2_SOLID
     (* State setup - stage 1 *)
     fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
-    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
     fbStage1.arrFilters[1].sFilterMaterial     := '';
 
@@ -1519,13 +1719,13 @@ PRG_AT1K2_SOLID
     fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
     fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage1 (stAxis:=Main.M25,sDeviceName:='AT1K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 2 *)
     fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
-    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
     fbStage2.arrFilters[1].sFilterMaterial     := '';
 
@@ -1557,7 +1757,7 @@ PRG_AT1K2_SOLID
     fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
     fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage2(stAxis:=Main.M26,sDeviceName:='AT1K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
     (* State setup - stage 3 *)
     fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
@@ -1736,7 +1936,7 @@ PRG_AT2K2_SOLID
     (* State setup - stage 1 *)
     fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=27.00);
 
-    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
     fbStage1.arrFilters[1].fFilterThickness_um := 0;
     fbStage1.arrFilters[1].sFilterMaterial     := '';
 
@@ -1768,13 +1968,13 @@ PRG_AT2K2_SOLID
     fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
     fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage1(stAxis:=Main.M17,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 2 *)
     fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=27.72);
 
-    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
     fbStage2.arrFilters[1].fFilterThickness_um := 0;
     fbStage2.arrFilters[1].sFilterMaterial     := '';
 
@@ -1806,13 +2006,13 @@ PRG_AT2K2_SOLID
     fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
     fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage2(stAxis:=Main.M18,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 3 *)
     fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=27.00);
 
-    fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
     fbStage3.arrFilters[1].fFilterThickness_um := 0;
     fbStage3.arrFilters[1].sFilterMaterial     := '';
 
@@ -1844,13 +2044,13 @@ PRG_AT2K2_SOLID
     fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
     fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage3(stAxis:=Main.M19,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     (* State setup - stage 4 *)
     fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=28.03);
 
-    fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
     fbStage4.arrFilters[1].fFilterThickness_um := 0;
     fbStage4.arrFilters[1].sFilterMaterial     := '';
 
@@ -1882,7 +2082,7 @@ PRG_AT2K2_SOLID
     fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
     fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-    fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+    fbStage4(stAxis:=Main.M20,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
     GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
@@ -1913,19 +2113,19 @@ PRG_IM1K1_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K1-EL4004]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM1K1-EL2004]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM1K1-EL3062]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value'}
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM1K1: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
         stDefault: ST_PositionState := (
-            fVelocity := 1,
+            fVelocity := 10,
             bMoveOk := TRUE,
             bValid := TRUE
         );
@@ -1968,14 +2168,14 @@ PRG_IM1K2_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM1K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062-E6]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value;
                                   .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
         fbIM1K2: FB_PPM;
 
@@ -2024,14 +2224,14 @@ PRG_IM2K1_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value'}
         fbIM2K1: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -2079,14 +2279,14 @@ PRG_IM2K2_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM2K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM2K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM2K2-EL3062-E6]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value;
                                   .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
     // IM2K2 shares the same flow meter as IM1K2
         fbIM2K2: FB_PPM;
@@ -2136,14 +2336,14 @@ PRG_IM3K2_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM3K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM3K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM3K2-EL3062-E6]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
                                   .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
     // IM3K2 shares the same flow meter as IM1K2
         fbIM3K2: FB_PPM;
@@ -2251,14 +2451,14 @@ PRG_IM5K2_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM5K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM5K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM5K2-EL3062-E6]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value;
                                   .fbFlowMeter.iRaw := TIIB[IM5K2-EL3052-E5]^AI Standard Channel 1^Value'}
         fbIM5K2: FB_PPM;
 
@@ -2316,14 +2516,14 @@ PRG_IM6K2_PPM
         {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM6K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM6K2-EL2004-E3]^Channel 2^Output;
                                   .fbPowerMeter.iVoltageINT := TIIB[IM6K2-EL3062-E6]^AI Standard Channel 1^Value;
-                                  .fbPowerMeter.fbThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                                  .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                                  .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                                  .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                                  .fbYagThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                                  .fbYagThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                                  .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                                  .fbYagThermoCouple.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
+                                  .fbPowerMeter.fbTempSensor.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                                  .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                                  .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                                  .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                                  .fbYagTempSensor.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                                  .fbYagTempSensor.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                                  .fbYagTempSensor.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                                  .fbYagTempSensor.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Value'}
         fbIM6K2: FB_PPM;
 
         fbStateSetup: FB_StateSetupHelper;
@@ -2358,7 +2558,7 @@ PRG_IM6K2_PPM
         bEnableMotion := TRUE,
         bEnableBeamParams := TRUE,
         bEnablePositionLimits := TRUE,
-        fResponsivity := -0.0719,
+        fResponsivity := 0.0719,
     );
 
     END_PROGRAM
@@ -2486,7 +2686,7 @@ PRG_PF1K2_WFS
     fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
     fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.00, sPmpsState:='PF1K2:WFS-OUT');
-    fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-97.13, sPmpsState:='PF1K2:WFS-TARGET1');
+    fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-94.00, sPmpsState:='PF1K2:WFS-TARGET1');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget2, fPosition:=-82.755, sPmpsState:='PF1K2:WFS-TARGET2');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget3, fPosition:=-68.38, sPmpsState:='PF1K2:WFS-TARGET3');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget4, fPosition:=-54.004, sPmpsState:='PF1K2:WFS-TARGET4');
@@ -2696,7 +2896,7 @@ PRG_TM1K2_ATM
                                   .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
 
     '} // TM1K2 shares the same cooling meter as AT1K2
-        fbTM1K2: FB_ATM;
+        fbTM1K2: FB_TM1K2;
 
         fbStateSetup: FB_StateSetupHelper;
         stDefault: ST_PositionState := (
@@ -2713,6 +2913,7 @@ PRG_TM1K2_ATM
     fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
     fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
     fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget6, fPosition:=-114.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET6');
 
     fbTM1K2(
         fbFFHWO := GVL.fbFastFaultOutput2,
@@ -2730,6 +2931,7 @@ PRG_TM1K2_ATM
 
 
 Related:
+    * `FB_TM1K2`_
     * `GVL`_
     * `Main`_
 

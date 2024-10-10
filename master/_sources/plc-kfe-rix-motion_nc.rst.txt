@@ -463,7 +463,7 @@ Axis 12: Axis 12 PF1K2-WFS-MMS-Y
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, -9.71
     Enc:SoftEndMinControl:Enable, true
-    Enc:SoftEndMinControl:Range, -99.33
+    Enc:SoftEndMinControl:Range, -94
     Id, 12
     OtherSettings:AllowMotionCmdToSlave, true
     TargetPosControl:Range, 0.002
