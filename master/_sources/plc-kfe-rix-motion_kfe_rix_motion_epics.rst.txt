@@ -7947,7 +7947,7 @@ lcls_twincat_common_components.FB_XTES_Flowswitch
         | io: output
 
 
- 
+               
 lcls_twincat_common_components.ST_SATT_Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -7972,7 +7972,7 @@ lcls_twincat_common_components.ST_SATT_Filter
         | io: input
 
 
-                          
+                                                                           
 lcls_twincat_motion.FB_PositionState1D
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10624,7 +10624,7 @@ lcls_twincat_motion.ST_StatePMPSPlcToEpics
         | io: input
 
 
-                                                                                 
+                  
 PMPS.FB_Arbiter
 ^^^^^^^^^^^^^^^
 
