@@ -211,7 +211,7 @@ IF rTrig_Background.Q OR bResetAutoBackground THEN
         // Dump 5s worth of readings
         IF udBackgroundVoltageBufferIndex > 6 THEN
             FOR i := (udBackgroundVoltageBufferIndex - 5) TO (udBackgroundVoltageBufferIndex - 1) DO
-                fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[i MOD 100];
+                fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[((i-1) MOD 100) + 1];
             END_FOR
             udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex - 5;
             IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
@@ -230,8 +230,8 @@ ELSIF eEnumGet = E_PPM_States.OUT AND stYAxisState = 0 THEN
     // Every second, move fBackgroundVoltageAcc into buffer and sum
     IF tonBackgroundAutoCollecting.Q = TRUE THEN
         tonBackgroundAutoCollecting( IN := FALSE);
-        fBackgroundVoltageStale := fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100];
-        fBackgroundVoltageBuffer[udBackgroundVoltageBufferIndex MOD 100] := fBackgroundVoltageAcc / uAccCount;
+        fBackgroundVoltageStale := fBackgroundVoltageBuffer[((udBackgroundVoltageBufferIndex - 1) MOD 100) + 1];
+        fBackgroundVoltageBuffer[((udBackgroundVoltageBufferIndex - 1) MOD 100) + 1] := fBackgroundVoltageAcc / uAccCount;
         // Remove overwritten voltage
         IF udBackgroundVoltageBufferIndex > 100 THEN
             fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageStale;
