@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{C7F0CB99-2BF9-16DF-E6F9-C53B714C49BF}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{6FB43682-F8C0-6934-62F9-3CCAB3C49C31}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -5375,6 +5375,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3062">
 				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL3314">
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K1_PPM.fbIM1K1.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X1 IM1K1-PPM (EK1100)^IM1K1-EL4004">
 				<Link VarA="PlcTask Outputs^PRG_IM1K1_PPM.fbIM1K1.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
 			</OwnerB>
@@ -5389,6 +5399,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3062">
 				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL3314">
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K1_PPM.fbIM2K1.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^EtherCAT Panel (EK1100)^EC E1 (EK1122)^X2 IM2K1-PPM (EK1100)^IM2K1-EL4004">
 				<Link VarA="PlcTask Outputs^PRG_IM2K1_PPM.fbIM2K1.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
 			</OwnerB>
@@ -5398,6 +5418,12 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 124 (EK1122)^TM1K2-K2A (EK1100)^TM1K2-EL2004-E4">
 				<Link VarA="PlcTask Outputs^Main.M9.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 124 (EK1122)^TM1K2-K2A (EK1100)^TM1K2-EL3314-E5">
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 124 (EK1122)^TM1K2-K2A (EK1100)^TM1K2-EL5042-E3">
 				<Link VarA="PlcTask Inputs^Main.M10.nRawEncoderULINT" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
@@ -5448,6 +5474,16 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^IM5K2-PPM (EK1100)^IM5K2-EL3062-E6">
 				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^IM5K2-PPM (EK1100)^IM5K2-EL3314-E4">
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM5K2_PPM.fbIM5K2.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^IM5K2-PPM (EK1100)^IM5K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM5K2_PPM.fbIM5K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
@@ -5557,6 +5593,16 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL3062-E6">
 				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL3314-E4">
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM6K2_PPM.fbIM6K2.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 156 (EK1122)^IM6K2-PPM (EK1100)^IM6K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM6K2_PPM.fbIM6K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
@@ -5715,6 +5761,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL3062-E6">
 				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL3314-E4">
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM1K2_PPM.fbIM1K2.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 39 (EK1122)^IM1K2-PPM (EK1100)^IM1K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM1K2_PPM.fbIM1K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
 			</OwnerB>
@@ -5729,6 +5785,16 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 49 (EK1122)^IM2K2-PPM (EK1100)^IM2K2-EL3062-E6">
 				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 49 (EK1122)^IM2K2-PPM (EK1100)^IM2K2-EL3314-E4">
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM2K2_PPM.fbIM2K2.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 49 (EK1122)^IM2K2-PPM (EK1100)^IM2K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM2K2_PPM.fbIM2K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
 			</OwnerB>
@@ -5742,6 +5808,16 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM3K2-PPM (EK1100)^IM3K2-EL3062-E6">
 				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.iVoltageINT" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM3K2-PPM (EK1100)^IM3K2-EL3314-E4">
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbPowerMeter.fbTempSensor.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.bError" VarB="TC Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.bOverrange" VarB="TC Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_IM3K2_PPM.fbIM3K2.fbYagTempSensor.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM3K2-PPM (EK1100)^IM3K2-EL4004-E7">
 				<Link VarA="PlcTask Outputs^PRG_IM3K2_PPM.fbIM3K2.fbGige.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
