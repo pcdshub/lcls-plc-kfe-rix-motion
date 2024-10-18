@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C7F0CB99-2BF9-16DF-E6F9-C53B714C49BF}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{1CD30134-BCE4-07D2-990C-DA2F9D4CD619}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -71740,7 +71740,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87031808</ByteSize>
+          <ByteSize>87162880</ByteSize>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
             <BitSize>2048</BitSize>
@@ -81643,7 +81643,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87031808</ByteSize>
+          <ByteSize>87162880</ByteSize>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -84020,7 +84020,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87031808</ByteSize>
+          <ByteSize>87162880</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -89444,7 +89444,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
               <SubItem>
                 <Name>.iBuild</Name>
-                <Value>1</Value>
+                <Value>2</Value>
               </SubItem>
               <SubItem>
                 <Name>.iRevision</Name>
@@ -89456,7 +89456,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
               <SubItem>
                 <Name>.sVersion</Name>
-                <String>3.8.1</String>
+                <String>3.8.2</String>
               </SubItem>
             </Default>
             <Properties>
@@ -107569,14 +107569,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM1K1-EL4004]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM1K1-EL2004]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM1K1-EL3062]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value</Value>
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM1K1-EL3314]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
             <BitOffs>636202880</BitOffs>
@@ -107621,14 +107621,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM2K1-EL4004]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM2K1-EL2004]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM2K1-EL3062]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value</Value>
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM2K1-EL3314]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
             <BitOffs>638305600</BitOffs>
@@ -107673,14 +107673,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM1K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM1K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM1K2-EL3062-E6]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM1K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value</Value>
               </Property>
             </Properties>
@@ -107770,14 +107770,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM2K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM2K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM2K2-EL3062-E6]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM2K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value</Value>
               </Property>
             </Properties>
@@ -107824,14 +107824,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM3K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM3K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM3K2-EL3062-E6]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM3K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value</Value>
               </Property>
             </Properties>
@@ -107929,10 +107929,10 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
-                              .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
-                              .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
+                <Value>.fbTempSensor1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
+                              .fbTempSensor1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
+                              .fbTempSensor1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
+                              .fbTempSensor1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
                               .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
 
 </Value>
@@ -108071,14 +108071,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM5K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM5K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM5K2-EL3062-E6]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM5K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM5K2-EL3052-E5]^AI Standard Channel 1^Value</Value>
               </Property>
             </Properties>
@@ -108677,14 +108677,14 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM6K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM6K2-EL2004-E3]^Channel 2^Output;
                               .fbPowerMeter.iVoltageINT := TIIB[IM6K2-EL3062-E6]^AI Standard Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Value</Value>
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 2^Value</Value>
               </Property>
             </Properties>
             <BitOffs>668449024</BitOffs>
@@ -110679,7 +110679,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87031808</ByteSize>
+          <ByteSize>87162880</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -110765,11 +110765,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-10T12:19:23</Value>
+          <Value>2024-10-18T12:14:59</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>1208320</Value>
+          <Value>1150976</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
