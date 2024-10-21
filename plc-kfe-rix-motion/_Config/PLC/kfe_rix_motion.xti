@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{97A2DD6E-BA1E-0D7C-E450-1179EDEECB95}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{8F83DBE3-9FAE-B2DE-DB48-CDE86119B4CA}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1958,19 +1958,19 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bError</Name>
+					<Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bUnderrange</Name>
+					<Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bUnderrange</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bOverrange</Name>
+					<Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bOverrange</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.iRaw</Name>
+					<Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
@@ -5420,10 +5420,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^Main.M9.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 124 (EK1122)^TM1K2-K2A (EK1100)^TM1K2-EL3314-E5">
-				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbTempSensor1.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError" VarB="TC Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bOverrange" VarB="TC Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bUnderrange" VarB="TC Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.iRaw" VarB="TC Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 124 (EK1122)^TM1K2-K2A (EK1100)^TM1K2-EL5042-E3">
 				<Link VarA="PlcTask Inputs^Main.M10.nRawEncoderULINT" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>

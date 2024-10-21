@@ -4,14 +4,14 @@
     <Declaration><![CDATA[PROGRAM PRG_TM1K2_ATM
 VAR
     {attribute 'pytmc' := 'pv: TM1K2:ATM'}
-    {attribute 'TcLinkTo' := '.fbTempSensor1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
-                              .fbTempSensor1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
-                              .fbTempSensor1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                              .fbTempSensor1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
+    {attribute 'TcLinkTo' := '.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
+                              .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
+                              .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
+                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
                               .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
 
 '} // TM1K2 shares the same cooling meter as AT1K2
-    fbTM1K2: FB_ATM;
+    fbTM1K2: FB_TM1K2;
 
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (
@@ -31,6 +31,7 @@ fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sP
 fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
 fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
 fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget6, fPosition:=-114.5, fDelta:=7, sPmpsState:='TM2K2:ATM-DIODE');
 
 fbTM1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,
