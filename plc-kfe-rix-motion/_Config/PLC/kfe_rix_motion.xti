@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{6FB43682-F8C0-6934-62F9-3CCAB3C49C31}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{97A2DD6E-BA1E-0D7C-E450-1179EDEECB95}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">

@@ -109,9 +109,9 @@ fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 
 
 (* State setup - stage 1 *)
-fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00,sPmpsState:='AT1K2:L2SI-RTD');
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
-fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
 fbStage1.arrFilters[1].fFilterThickness_um := 0;
 fbStage1.arrFilters[1].sFilterMaterial     := '';
 
@@ -147,9 +147,9 @@ fbStage1 (stAxis:=Main.M25,sDeviceName:='AT1K2:L2SI', nEnableMode:=nEnableMode, 
 
 
 (* State setup - stage 2 *)
-fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00, sPmpsState:='AT1K2:L2SI-RTD');
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
-fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
 fbStage2.arrFilters[1].fFilterThickness_um := 0;
 fbStage2.arrFilters[1].sFilterMaterial     := '';
 
