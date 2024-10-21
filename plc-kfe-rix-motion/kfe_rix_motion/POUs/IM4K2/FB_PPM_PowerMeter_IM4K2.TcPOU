@@ -51,7 +51,7 @@ VAR
     // Used to get beam mode and rate
     {attribute 'pytmc' := '
         pv: SXRAccTypeFromEpics
-        link: PHYS:UNDS:1:FACMODE.RVAL
+        link: PHYS:UNDS:1:FACMODE.VAL
     '}
     uSXR_Accelerator: UINT;
     {attribute 'pytmc' := '
@@ -67,7 +67,7 @@ VAR
 
     {attribute 'pytmc' := '
         pv: HXRAccTypeFromEpics
-        link: PHYS:UNDH:1:FACMODE.RVAL
+        link: PHYS:UNDH:1:FACMODE.VAL
     '}
     uHXR_Accelerator: UINT;
     {attribute 'pytmc' := '
@@ -127,7 +127,7 @@ VAR
     udBackgroundVoltageBufferIndex: UDINT := 1;
     rTrig_Background : R_TRIG;
     i: UDINT;
-    // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode
+    // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Auto mode
     {attribute 'pytmc' := '
         pv: BACK:RESET
         io: io
@@ -139,7 +139,7 @@ VAR
         pv: BACK:MODE
         io: io
     '}
-    BACKGROUND_MODE: (Manual, Passive) := Passive;
+    BACKGROUND_MODE: (Manual, Auto) := Auto;
 
     // Boolean to trigger collection of background voltages
     {attribute 'pytmc' := '
@@ -157,6 +157,12 @@ VAR
     uBackgroundCollectionTime: UINT := 60;
     tofBackgroundCollecting: TOF;
     udBackgroundManualCount: UDINT;
+    // Boolean indicating when background is being manually collected
+    {attribute 'pytmc' := '
+        pv: BACK:MANUAL_COLLECTING
+        io: i
+    '}
+    bBackgroundCollecting: BOOL := FALSE;
 
     fbGetPMVoltage: FB_AnalogInput_IM4K2;
 
@@ -204,7 +210,7 @@ rTrig_Background(CLK:=(eEnumGet <> E_PPM_States.OUT OR stYAxisState <> 0));
 IF rTrig_Background.Q OR bResetAutoBackground THEN
     IF bResetAutoBackground THEN
         bResetAutoBackground := FALSE;
-        IF BACKGROUND_MODE = Passive THEN
+        IF BACKGROUND_MODE = Auto THEN
             fBackgroundVoltage := 0;
         END_IF
     ELSE
@@ -214,10 +220,10 @@ IF rTrig_Background.Q OR bResetAutoBackground THEN
                 fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[((i-1) MOD 100) + 1];
             END_FOR
             udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex - 5;
-            IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+            IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
                 fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
             END_IF
-        ELSIF BACKGROUND_MODE = Passive THEN
+        ELSIF BACKGROUND_MODE = Auto THEN
                 fBackgroundVoltage := 0;
         END_IF
     END_IF
@@ -247,7 +253,7 @@ ELSIF eEnumGet = E_PPM_States.OUT AND stYAxisState = 0 THEN
 
 END_IF
 
-IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
     fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
 END_IF
 
@@ -259,11 +265,12 @@ IF bBackgroundCollect = TRUE THEN
     tofBackgroundCollecting(IN := TRUE);
 END_IF
 
-
+bBackgroundCollecting := FALSE;
 tofBackgroundCollecting(IN := FALSE, PT := UINT_TO_TIME(uBackgroundCollectionTime * 1000));
 IF tofBackgroundCollecting.Q = TRUE THEN
-    udBackgroundManualCount := udBackgroundManualCount + 1;
     IF BACKGROUND_MODE = Manual THEN
+        bBackgroundCollecting := TRUE;
+        udBackgroundManualCount := udBackgroundManualCount + 1;
         fBackgroundVoltage := (fBackgroundVoltage * (udBackgroundManualCount - 1) + fVoltage) / udBackgroundManualCount;
     END_IF
 END_IF
