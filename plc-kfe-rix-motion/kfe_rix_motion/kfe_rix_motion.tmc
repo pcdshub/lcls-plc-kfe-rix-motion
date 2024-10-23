@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8F83DBE3-9FAE-B2DE-DB48-CDE86119B4CA}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{528F95C4-8C1C-E5E1-6FA8-FD8E03D347BC}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -45556,7 +45556,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Enum>0</Enum>
       </EnumInfo>
       <EnumInfo>
-        <Text>Passive</Text>
+        <Text>Auto</Text>
         <Enum>1</Enum>
       </EnumInfo>
       <Properties>
@@ -45971,7 +45971,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <Property>
             <Name>pytmc</Name>
             <Value>
-        pv: RES
+        pv: RESP
         io: i
         field: EGU V/W
     </Value>
@@ -46060,26 +46060,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <BitOffs>179456</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>uSXR_Accelerator</Name>
-        <Type>UINT</Type>
-        <Comment> Used to get beam mode and rate</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>179488</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: SXRAccTypeFromEpics
-        link: PHYS:UNDS:1:FACMODE.RVAL
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
         <Name>fSXR_NC_Frequency</Name>
         <Type>REAL</Type>
+        <Comment> Used to get beam rate</Comment>
         <BitSize>32</BitSize>
-        <BitOffs>179520</BitOffs>
+        <BitOffs>179488</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -46094,7 +46079,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>uSXR_SC_Frequency</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>179552</BitOffs>
+        <BitOffs>179520</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -46106,25 +46091,10 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>uHXR_Accelerator</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>179568</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: HXRAccTypeFromEpics
-        link: PHYS:UNDH:1:FACMODE.RVAL
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
         <Name>fHXR_NC_Frequency</Name>
         <Type>REAL</Type>
         <BitSize>32</BitSize>
-        <BitOffs>179584</BitOffs>
+        <BitOffs>179552</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -46139,7 +46109,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>uHXR_SC_Frequency</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>179616</BitOffs>
+        <BitOffs>179584</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -46306,7 +46276,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>bResetAutoBackground</Name>
         <Type>BOOL</Type>
-        <Comment> Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode</Comment>
+        <Comment> Used to reset auto-collected background buffer, and fBackgroundVoltage if in Auto mode</Comment>
         <BitSize>8</BitSize>
         <BitOffs>314976</BitOffs>
         <Properties>
@@ -46326,7 +46296,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <BitSize>16</BitSize>
         <BitOffs>314992</BitOffs>
         <Default>
-          <EnumText>Implicit_Enum__FB_PPM_PowerMeter__BACKGROUND_MODE.Passive</EnumText>
+          <EnumText>Implicit_Enum__FB_PPM_PowerMeter__BACKGROUND_MODE.Auto</EnumText>
         </Default>
         <Properties>
           <Property>
@@ -46388,6 +46358,25 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
         <BitOffs>315328</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bBackgroundCollecting</Name>
+        <Type>BOOL</Type>
+        <Comment> Boolean indicating when background is being manually collected</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>315360</BitOffs>
+        <Default>
+          <Bool>false</Bool>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: BACK:MANUAL_COLLECTING
+        io: i
+    </Value>
+          </Property>
+        </Properties>
       </SubItem>
       <SubItem>
         <Name>fbGetPMVoltage</Name>
@@ -47939,7 +47928,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Enum>0</Enum>
       </EnumInfo>
       <EnumInfo>
-        <Text>Passive</Text>
+        <Text>Auto</Text>
         <Enum>1</Enum>
       </EnumInfo>
       <Properties>
@@ -48164,7 +48153,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <Property>
             <Name>pytmc</Name>
             <Value>
-        pv: RES
+        pv: RESP
         io: i
         field: EGU V/W
     </Value>
@@ -48253,26 +48242,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <BitOffs>65344</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>uSXR_Accelerator</Name>
-        <Type>UINT</Type>
-        <Comment> Used to get beam mode and rate</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>65376</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: SXRAccTypeFromEpics
-        link: PHYS:UNDS:1:FACMODE.RVAL
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
         <Name>fSXR_NC_Frequency</Name>
         <Type>REAL</Type>
+        <Comment> Used to get beam rate</Comment>
         <BitSize>32</BitSize>
-        <BitOffs>65408</BitOffs>
+        <BitOffs>65376</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -48287,7 +48261,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>uSXR_SC_Frequency</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>65440</BitOffs>
+        <BitOffs>65408</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -48299,25 +48273,10 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>uHXR_Accelerator</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>65456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: HXRAccTypeFromEpics
-        link: PHYS:UNDH:1:FACMODE.RVAL
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
         <Name>fHXR_NC_Frequency</Name>
         <Type>REAL</Type>
         <BitSize>32</BitSize>
-        <BitOffs>65472</BitOffs>
+        <BitOffs>65440</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -48332,7 +48291,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Name>uHXR_SC_Frequency</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>65504</BitOffs>
+        <BitOffs>65472</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
@@ -48499,7 +48458,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       <SubItem>
         <Name>bResetAutoBackground</Name>
         <Type>BOOL</Type>
-        <Comment> Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode</Comment>
+        <Comment> Used to reset auto-collected background buffer, and fBackgroundVoltage if in Auto mode</Comment>
         <BitSize>8</BitSize>
         <BitOffs>200864</BitOffs>
         <Properties>
@@ -48519,7 +48478,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <BitSize>16</BitSize>
         <BitOffs>200880</BitOffs>
         <Default>
-          <EnumText>Implicit_Enum__FB_PPM_PowerMeter_IM4K2__BACKGROUND_MODE.Passive</EnumText>
+          <EnumText>Implicit_Enum__FB_PPM_PowerMeter_IM4K2__BACKGROUND_MODE.Auto</EnumText>
         </Default>
         <Properties>
           <Property>
@@ -48581,6 +48540,25 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
         <BitOffs>201216</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bBackgroundCollecting</Name>
+        <Type>BOOL</Type>
+        <Comment> Boolean indicating when background is being manually collected</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>201248</BitOffs>
+        <Default>
+          <Bool>false</Bool>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: BACK:MANUAL_COLLECTING
+        io: i
+    </Value>
+          </Property>
+        </Properties>
       </SubItem>
       <SubItem>
         <Name>fbGetPMVoltage</Name>
@@ -89456,15 +89434,15 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Default>
               <SubItem>
                 <Name>.iMajor</Name>
-                <Value>3</Value>
+                <Value>0</Value>
               </SubItem>
               <SubItem>
                 <Name>.iMinor</Name>
-                <Value>8</Value>
+                <Value>0</Value>
               </SubItem>
               <SubItem>
                 <Name>.iBuild</Name>
-                <Value>2</Value>
+                <Value>0</Value>
               </SubItem>
               <SubItem>
                 <Name>.iRevision</Name>
@@ -89472,11 +89450,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
               <SubItem>
                 <Name>.nFlags</Name>
-                <Value>1</Value>
+                <Value>0</Value>
               </SubItem>
               <SubItem>
                 <Name>.sVersion</Name>
-                <String>3.8.2</String>
+                <String>0.0.0</String>
               </SubItem>
             </Default>
             <Properties>
@@ -110785,7 +110763,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-10-22T21:06:18</Value>
+          <Value>2024-10-23T14:31:30</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

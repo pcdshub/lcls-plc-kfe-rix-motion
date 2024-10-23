@@ -52,7 +52,7 @@ fbIM6K2(
     bEnableMotion := TRUE,
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
-    fResponsivity := -0.0719,
+    fResponsivity := 0.0719,
 );
 ]]></ST>
     </Implementation>
