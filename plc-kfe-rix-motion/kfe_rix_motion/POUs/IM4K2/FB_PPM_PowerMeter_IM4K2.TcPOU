@@ -248,7 +248,7 @@ IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
 END_IF
 
 // Start collecting background in manual mode - 60s by default but can be set with uBackgroundCollectionTime
-IF bBackgroundCollect = TRUE THEN
+IF bBackgroundCollect = TRUE AND BACKGROUND_MODE = Manual THEN
     bBackgroundCollect := FALSE;
     udBackgroundManualCount := 0;
     fBackgroundVoltage := 0;
