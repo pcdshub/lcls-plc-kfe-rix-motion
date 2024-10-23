@@ -11,7 +11,7 @@ VAR
                               .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
 
 '} // TM1K2 shares the same cooling meter as AT1K2
-    fbTM1K2: FB_ATM;
+    fbTM1K2: FB_TM1K2;
 
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (
@@ -31,6 +31,7 @@ fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sP
 fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
 fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
 fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
+fbStateSetup(stPositionState:=fbTM1K2.stTarget6, fPosition:=-114.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET6');
 
 fbTM1K2(
     fbFFHWO := GVL.fbFastFaultOutput2,

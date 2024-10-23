@@ -115,6 +115,12 @@
     <Compile Include="POUs\PRG_ST3K2_TERM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TM1K2\E_TM1K2_States.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TM1K2\FB_TM1K2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\TM2K2\E_TM2K2_States.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -126,6 +132,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="POUs\IM4K2" />
+    <Folder Include="POUs\TM1K2" />
     <Folder Include="POUs\TM2K2" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -191,7 +198,7 @@
       <Resolution>LCLS General, 2.10.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-common-components">
-      <Resolution>lcls-twincat-common-components, 3.8.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-common-components, 3.8.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 4.1.1 (SLAC)</Resolution>

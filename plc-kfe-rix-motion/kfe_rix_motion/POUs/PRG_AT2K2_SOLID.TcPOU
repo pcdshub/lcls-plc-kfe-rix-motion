@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_AT2K2_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259999}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AT2K2_SOLID
 VAR
@@ -128,7 +128,7 @@ fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 (* State setup - stage 1 *)
 fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=27.00);
 
-fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
 fbStage1.arrFilters[1].fFilterThickness_um := 0;
 fbStage1.arrFilters[1].sFilterMaterial     := '';
 
@@ -160,13 +160,13 @@ fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 1.52 um Al', fPosi
 fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage1(stAxis:=Main.M17, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage1(stAxis:=Main.M17,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 (* State setup - stage 2 *)
 fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=27.72);
 
-fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
 fbStage2.arrFilters[1].fFilterThickness_um := 0;
 fbStage2.arrFilters[1].sFilterMaterial     := '';
 
@@ -198,13 +198,13 @@ fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.78 um Al', fPosi
 fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage2(stAxis:=Main.M18, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage2(stAxis:=Main.M18,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 (* State setup - stage 3 *)
 fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=27.00);
 
-fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
 fbStage3.arrFilters[1].fFilterThickness_um := 0;
 fbStage3.arrFilters[1].sFilterMaterial     := '';
 
@@ -236,13 +236,13 @@ fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 0.39 um Al', fPosi
 fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
 fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage3(stAxis:=Main.M19, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage3(stAxis:=Main.M19,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 (* State setup - stage 4 *)
 fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=28.03);
 
-fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1',sPmpsState:='AT2K2:L2SI-RTD');
 fbStage4.arrFilters[1].fFilterThickness_um := 0;
 fbStage4.arrFilters[1].sFilterMaterial     := '';
 
@@ -274,7 +274,7 @@ fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.20 um Al', fPosi
 fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
 fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage4(stAxis:=Main.M20, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage4(stAxis:=Main.M20,sDeviceName:='AT2K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
