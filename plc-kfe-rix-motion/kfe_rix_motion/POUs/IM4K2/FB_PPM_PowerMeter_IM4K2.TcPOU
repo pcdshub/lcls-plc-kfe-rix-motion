@@ -305,7 +305,7 @@ fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
 
 // FF in case voltage is high enough to damage power meter based on wavelength
 {IF defined (K)}
-    CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+    CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
         0 .. uSoftWavelengthEdge1L: bOverAllowableEnergy := fCalibMJ > 2;
         uSoftWavelengthEdge1 .. uSoftWavelengthEdge2L : bOverAllowableEnergy := fCalibMJ > 2;
         uSoftWavelengthEdge2 .. uSoftWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
@@ -313,7 +313,7 @@ fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
         uSoftWavelengthEdge4 .. 65535: bOverAllowableEnergy := fCalibMJ > 1;
     END_CASE
 {ELSIF defined (L)}
-    CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+    CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
         uHardWavelengthEdge1 .. uHardWavelengthEdge2L: bOverAllowableEnergy := fCalibMJ > 10;
         uHardWavelengthEdge2 .. uHardWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
         uHardWavelengthEdge3 .. 65535: bOverAllowableEnergy := fCalibMJ > 10;
