@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_AT1K2_SOLID" Id="{51ac20ea-82fa-49be-8d38-263aded91896}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AT1K2_SOLID
 VAR
@@ -111,7 +111,7 @@ fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
 (* State setup - stage 1 *)
 fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=22.00);
 
-fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
 fbStage1.arrFilters[1].fFilterThickness_um := 0;
 fbStage1.arrFilters[1].sFilterMaterial     := '';
 
@@ -143,13 +143,13 @@ fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 0.39 um Al', fPosi
 fbStage1.arrFilters[8].fFilterThickness_um := 0.39;
 fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage1(stAxis:=Main.M25, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage1 (stAxis:=Main.M25,sDeviceName:='AT1K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 
 (* State setup - stage 2 *)
 fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=22.00);
 
-fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1',sPmpsState:='AT1K2:L2SI-RTD');
 fbStage2.arrFilters[1].fFilterThickness_um := 0;
 fbStage2.arrFilters[1].sFilterMaterial     := '';
 
@@ -181,7 +181,7 @@ fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.2 um Al', fPosit
 fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
 fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
-fbStage2(stAxis:=Main.M26, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage2(stAxis:=Main.M26,sDeviceName:='AT1K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
 
 (* State setup - stage 3 *)
 fbStateSetup(stPositionState:=stMirrorOut, sName:='Out', fPosition:=65.00);
