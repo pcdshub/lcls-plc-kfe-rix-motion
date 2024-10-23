@@ -48,12 +48,7 @@ VAR
 
 
     fFrequency: REAL;
-    // Used to get beam mode and rate
-    {attribute 'pytmc' := '
-        pv: SXRAccTypeFromEpics
-        link: PHYS:UNDS:1:FACMODE.VAL
-    '}
-    uSXR_Accelerator: UINT;
+    // Used to get beam rate
     {attribute 'pytmc' := '
         pv: SXR_NC_BeamRateFromEpics
         link: EVNT:SYS0:1:NC_SOFTRATE
@@ -65,11 +60,6 @@ VAR
     '}
     uSXR_SC_Frequency: UINT;
 
-    {attribute 'pytmc' := '
-        pv: HXRAccTypeFromEpics
-        link: PHYS:UNDH:1:FACMODE.VAL
-    '}
-    uHXR_Accelerator: UINT;
     {attribute 'pytmc' := '
         pv: HXR_NC_BeamRateFromEpics
         link: EVNT:SYS0:1:NC_HARDRATE
@@ -276,25 +266,16 @@ IF tofBackgroundCollecting.Q = TRUE THEN
 END_IF
 
 // Getting frequency based on accelerator source
-(*
-CASE uAccelerator OF
-    0: uFrequency := uNCFrequency;
-    1: uFrequency := uSCFrequency;
-    2: uFrequency := 0; // ASTA?
-ELSE
-    uFrequency := 0;
-END_CASE*)
-
 {IF defined (K)}
-    IF uSXR_Accelerator = 0 THEN
+    IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
         fFrequency := fSXR_NC_Frequency;
-    ELSIF uSXR_Accelerator = 1 THEN
+    ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
         fFrequency := uSXR_SC_Frequency;
     END_IF
 {ELSIF defined (L)}
-    IF uHXR_Accelerator = 0 THEN
+    IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
         fFrequency := fHXR_NC_Frequency;
-    ELSIF uHXR_Accelerator = 1 THEN
+    ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
         fFrequency := uHXR_SC_Frequency;
     END_IF
 {END_IF}
