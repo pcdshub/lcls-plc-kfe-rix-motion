@@ -14,7 +14,7 @@ VAR_INPUT
     // Calibrated for each gentec, should be passed as input
     // If not set, responsive energy will not be calculated
     {attribute 'pytmc' := '
-        pv: RES
+        pv: RESP
         io: i
         field: EGU V/W
     '}
