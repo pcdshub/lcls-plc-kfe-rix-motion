@@ -160,10 +160,11 @@ VAR
     fbPulseWattageBuffer: FB_LREALBuffer;
     fbCalibMJBuffer: FB_LREALBuffer;
 
-    FFO: FB_FastFault :=(
+    FF: FB_FastFault :=(
         i_Desc := 'Fault occurs when the per-pulse energy reading is high enough to damage the power meter',
         i_TypeCode := 16#500);
     bOverAllowableEnergy: BOOL;
+    uOverCounter: UINT := 1;
 END_VAR
 VAR_STAT CONSTANT
     // Voltage limits for wavelength ranges
@@ -284,7 +285,7 @@ END_IF
 fPulseWattage := SEL(fResponsivity <> 0, 0, (fVoltage - fBackgroundVoltage) / fResponsivity);
 fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
 
-// FF in case voltage is high enough to damage power meter based on wavelength
+// FF in case voltage is high enough to damage power meter based on wavelengths
 {IF defined (K)}
     CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
         0 .. uSoftWavelengthEdge1L: bOverAllowableEnergy := fCalibMJ > 2;
@@ -300,7 +301,12 @@ fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
         uHardWavelengthEdge3 .. 65535: bOverAllowableEnergy := fCalibMJ > 10;
     END_CASE
 {END_IF}
-FFO(i_xOK := NOT bOverAllowableEnergy,
+IF eEnumGet = E_PPM_States.POWERMETER AND bOverAllowableEnergy THEN
+    uOverCounter := MIN(uOverCounter + 1, 10);
+ELSE
+    uOverCounter := 0;
+END_IF
+FF(i_xOK := eEnumGet <> E_PPM_States.POWERMETER OR uOverCounter < 10,
     i_DevName := sDeviceName,
     io_fbFFHWO := fbFFHWO);
 
