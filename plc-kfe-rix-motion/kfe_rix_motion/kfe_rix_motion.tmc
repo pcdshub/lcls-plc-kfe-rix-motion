@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{6E39B5FA-C5FB-9A0B-293E-8D4E7D1425B2}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{ADD6A367-2A13-BD77-5A4A-CDAA94BB92CB}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -71756,7 +71756,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89128960</ByteSize>
+          <ByteSize>89063424</ByteSize>
           <Symbol>
             <Name>PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
             <BitSize>2048</BitSize>
@@ -81659,7 +81659,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89128960</ByteSize>
+          <ByteSize>89063424</ByteSize>
           <Symbol>
             <Name>PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -84036,7 +84036,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89128960</ByteSize>
+          <ByteSize>89063424</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -89452,15 +89452,15 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Default>
               <SubItem>
                 <Name>.iMajor</Name>
-                <Value>0</Value>
+                <Value>3</Value>
               </SubItem>
               <SubItem>
                 <Name>.iMinor</Name>
-                <Value>0</Value>
+                <Value>8</Value>
               </SubItem>
               <SubItem>
                 <Name>.iBuild</Name>
-                <Value>0</Value>
+                <Value>4</Value>
               </SubItem>
               <SubItem>
                 <Name>.iRevision</Name>
@@ -89468,11 +89468,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
               <SubItem>
                 <Name>.nFlags</Name>
-                <Value>0</Value>
+                <Value>1</Value>
               </SubItem>
               <SubItem>
                 <Name>.sVersion</Name>
-                <String>0.0.0</String>
+                <String>3.8.4</String>
               </SubItem>
             </Default>
             <Properties>
@@ -107584,7 +107584,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Default>
               <SubItem>
                 <Name>.fVelocity</Name>
-                <Value>1</Value>
+                <Value>10</Value>
               </SubItem>
               <SubItem>
                 <Name>.bMoveOk</Name>
@@ -110695,7 +110695,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89128960</ByteSize>
+          <ByteSize>89063424</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -110781,11 +110781,11 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-11-07T09:13:17</Value>
+          <Value>2024-11-07T13:59:31</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>1208320</Value>
+          <Value>1150976</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
