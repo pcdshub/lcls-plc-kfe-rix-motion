@@ -14,7 +14,7 @@ VAR_INPUT
     // Calibrated for each gentec, should be passed as input
     // If not set, responsive energy will not be calculated
     {attribute 'pytmc' := '
-        pv: RES
+        pv: RESP
         io: i
         field: EGU V/W
     '}
@@ -48,12 +48,7 @@ VAR
 
 
     fFrequency: REAL;
-    // Used to get beam mode and rate
-    {attribute 'pytmc' := '
-        pv: SXRAccTypeFromEpics
-        link: PHYS:UNDS:1:FACMODE.RVAL
-    '}
-    uSXR_Accelerator: UINT;
+    // Used to get beam rate
     {attribute 'pytmc' := '
         pv: SXR_NC_BeamRateFromEpics
         link: EVNT:SYS0:1:NC_SOFTRATE
@@ -65,11 +60,6 @@ VAR
     '}
     uSXR_SC_Frequency: UINT;
 
-    {attribute 'pytmc' := '
-        pv: HXRAccTypeFromEpics
-        link: PHYS:UNDH:1:FACMODE.RVAL
-    '}
-    uHXR_Accelerator: UINT;
     {attribute 'pytmc' := '
         pv: HXR_NC_BeamRateFromEpics
         link: EVNT:SYS0:1:NC_HARDRATE
@@ -127,7 +117,7 @@ VAR
     udBackgroundVoltageBufferIndex: UDINT := 1;
     rTrig_Background : R_TRIG;
     i: UDINT;
-    // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Passive mode
+    // Used to reset auto-collected background buffer, and fBackgroundVoltage if in Auto mode
     {attribute 'pytmc' := '
         pv: BACK:RESET
         io: io
@@ -139,7 +129,7 @@ VAR
         pv: BACK:MODE
         io: io
     '}
-    BACKGROUND_MODE: (Manual, Passive) := Passive;
+    BACKGROUND_MODE: (Manual, Auto) := Auto;
 
     // Boolean to trigger collection of background voltages
     {attribute 'pytmc' := '
@@ -157,6 +147,12 @@ VAR
     uBackgroundCollectionTime: UINT := 60;
     tofBackgroundCollecting: TOF;
     udBackgroundManualCount: UDINT;
+    // Boolean indicating when background is being manually collected
+    {attribute 'pytmc' := '
+        pv: BACK:MANUAL_COLLECTING
+        io: i
+    '}
+    bBackgroundCollecting: BOOL := FALSE;
 
     fbGetPMVoltage: FB_AnalogInput_IM4K2;
 
@@ -164,10 +160,11 @@ VAR
     fbPulseWattageBuffer: FB_LREALBuffer;
     fbCalibMJBuffer: FB_LREALBuffer;
 
-    FFO: FB_FastFault :=(
+    FF: FB_FastFault :=(
         i_Desc := 'Fault occurs when the per-pulse energy reading is high enough to damage the power meter',
         i_TypeCode := 16#500);
     bOverAllowableEnergy: BOOL;
+    uOverCounter: UINT := 1;
 END_VAR
 VAR_STAT CONSTANT
     // Voltage limits for wavelength ranges
@@ -204,7 +201,7 @@ rTrig_Background(CLK:=(eEnumGet <> E_PPM_States.OUT OR stYAxisState <> 0));
 IF rTrig_Background.Q OR bResetAutoBackground THEN
     IF bResetAutoBackground THEN
         bResetAutoBackground := FALSE;
-        IF BACKGROUND_MODE = Passive THEN
+        IF BACKGROUND_MODE = Auto THEN
             fBackgroundVoltage := 0;
         END_IF
     ELSE
@@ -214,10 +211,10 @@ IF rTrig_Background.Q OR bResetAutoBackground THEN
                 fBackgroundVoltageSum := fBackgroundVoltageSum - fBackgroundVoltageBuffer[((i-1) MOD 100) + 1];
             END_FOR
             udBackgroundVoltageBufferIndex := udBackgroundVoltageBufferIndex - 5;
-            IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+            IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
                 fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
             END_IF
-        ELSIF BACKGROUND_MODE = Passive THEN
+        ELSIF BACKGROUND_MODE = Auto THEN
                 fBackgroundVoltage := 0;
         END_IF
     END_IF
@@ -247,47 +244,39 @@ ELSIF eEnumGet = E_PPM_States.OUT AND stYAxisState = 0 THEN
 
 END_IF
 
-IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Passive THEN
+IF udBackgroundVoltageBufferIndex <> 1 AND BACKGROUND_MODE = Auto THEN
     fBackgroundVoltage := fBackgroundVoltageSum / MIN((udBackgroundVoltageBufferIndex - 1), 100);
 END_IF
 
 // Start collecting background in manual mode - 60s by default but can be set with uBackgroundCollectionTime
-IF bBackgroundCollect = TRUE THEN
+IF bBackgroundCollect = TRUE AND BACKGROUND_MODE = Manual THEN
     bBackgroundCollect := FALSE;
     udBackgroundManualCount := 0;
     fBackgroundVoltage := 0;
     tofBackgroundCollecting(IN := TRUE);
 END_IF
 
-
+bBackgroundCollecting := FALSE;
 tofBackgroundCollecting(IN := FALSE, PT := UINT_TO_TIME(uBackgroundCollectionTime * 1000));
 IF tofBackgroundCollecting.Q = TRUE THEN
-    udBackgroundManualCount := udBackgroundManualCount + 1;
     IF BACKGROUND_MODE = Manual THEN
+        bBackgroundCollecting := TRUE;
+        udBackgroundManualCount := udBackgroundManualCount + 1;
         fBackgroundVoltage := (fBackgroundVoltage * (udBackgroundManualCount - 1) + fVoltage) / udBackgroundManualCount;
     END_IF
 END_IF
 
 // Getting frequency based on accelerator source
-(*
-CASE uAccelerator OF
-    0: uFrequency := uNCFrequency;
-    1: uFrequency := uSCFrequency;
-    2: uFrequency := 0; // ASTA?
-ELSE
-    uFrequency := 0;
-END_CASE*)
-
 {IF defined (K)}
-    IF uSXR_Accelerator = 0 THEN
+    IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
         fFrequency := fSXR_NC_Frequency;
-    ELSIF uSXR_Accelerator = 1 THEN
+    ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
         fFrequency := uSXR_SC_Frequency;
     END_IF
 {ELSIF defined (L)}
-    IF uHXR_Accelerator = 0 THEN
+    IF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 0 THEN
         fFrequency := fHXR_NC_Frequency;
-    ELSIF uHXR_Accelerator = 1 THEN
+    ELSIF PMPS_GVL.stCurrentBeamParameters.nMachineMode = 1 THEN
         fFrequency := uHXR_SC_Frequency;
     END_IF
 {END_IF}
@@ -296,9 +285,9 @@ END_CASE*)
 fPulseWattage := SEL(fResponsivity <> 0, 0, (fVoltage - fBackgroundVoltage) / fResponsivity);
 fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
 
-// FF in case voltage is high enough to damage power meter based on wavelength
+// FF in case voltage is high enough to damage power meter based on wavelengths
 {IF defined (K)}
-    CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+    CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
         0 .. uSoftWavelengthEdge1L: bOverAllowableEnergy := fCalibMJ > 2;
         uSoftWavelengthEdge1 .. uSoftWavelengthEdge2L : bOverAllowableEnergy := fCalibMJ > 2;
         uSoftWavelengthEdge2 .. uSoftWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
@@ -306,13 +295,18 @@ fCalibMJ := SEL(fFrequency <> 0, -9999, fPulseWattage / fFrequency);
         uSoftWavelengthEdge4 .. 65535: bOverAllowableEnergy := fCalibMJ > 1;
     END_CASE
 {ELSIF defined (L)}
-    CASE REAL_TO_UINT(PMPS_GVL.cstFullBeam.neV) OF
+    CASE REAL_TO_UINT(PMPS_GVL.stCurrentBeamParameters.neV) OF
         uHardWavelengthEdge1 .. uHardWavelengthEdge2L: bOverAllowableEnergy := fCalibMJ > 10;
         uHardWavelengthEdge2 .. uHardWavelengthEdge3L: bOverAllowableEnergy := fCalibMJ > 4;
         uHardWavelengthEdge3 .. 65535: bOverAllowableEnergy := fCalibMJ > 10;
     END_CASE
 {END_IF}
-FFO(i_xOK := NOT bOverAllowableEnergy,
+IF eEnumGet = E_PPM_States.POWERMETER AND bOverAllowableEnergy THEN
+    uOverCounter := MIN(uOverCounter + 1, 10);
+ELSE
+    uOverCounter := 0;
+END_IF
+FF(i_xOK := eEnumGet <> E_PPM_States.POWERMETER OR uOverCounter < 10,
     i_DevName := sDeviceName,
     io_fbFFHWO := fbFFHWO);
 

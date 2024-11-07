@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_PF1K2_WFS" Id="{46eac427-b476-476c-a121-178e6bb826c5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PF1K2_WFS
 VAR
@@ -29,7 +29,7 @@ END_VAR]]></Declaration>
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.00, sPmpsState:='PF1K2:WFS-OUT');
-fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-97.13, sPmpsState:='PF1K2:WFS-TARGET1');
+fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-94.00, sPmpsState:='PF1K2:WFS-TARGET1');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget2, fPosition:=-82.755, sPmpsState:='PF1K2:WFS-TARGET2');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget3, fPosition:=-68.38, sPmpsState:='PF1K2:WFS-TARGET3');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget4, fPosition:=-54.004, sPmpsState:='PF1K2:WFS-TARGET4');
