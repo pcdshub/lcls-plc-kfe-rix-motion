@@ -14,7 +14,7 @@
 # Libraries:
 #
 #   LCLS General: * -> 2.10.0 (SLAC)
-#   lcls-twincat-common-components: * -> 3.8.3 (SLAC)
+#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 #   PMPS: * -> 3.2.1 (SLAC - LCLS)
@@ -666,8 +666,8 @@ dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-m
 
 #   LCLS General: * -> 2.10.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
-#   lcls-twincat-common-components: * -> 3.8.3 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.8.3,VENDOR=SLAC")
+#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=0.0.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.1.1,VENDOR=SLAC")
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
