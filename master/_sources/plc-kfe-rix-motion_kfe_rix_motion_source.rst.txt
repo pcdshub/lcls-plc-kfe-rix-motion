@@ -49,7 +49,9 @@ E_TM1K2_States
         TARGET3 := 4,
         TARGET4 := 5,
         TARGET5 := 6,
-        TARGET6 := 7
+        TARGET6 := 7,
+        TARGET7 := 8,
+        TARGET8 := 9
     ) UINT;
     END_TYPE
 
@@ -1025,6 +1027,8 @@ FB_TM1K2
         - Add stTarget6 to the inputs
         - Change the array pragma from 1..6 to 1..7 (1 out and 6 in states, up from 5 in states)
         - Use E_TM1K2_States instead of E_ATM_States
+
+        Add array to 1..9
     *)
     VAR_IN_OUT
         // Y motor (state select).
@@ -1051,6 +1055,10 @@ FB_TM1K2
         stTarget5: ST_PositionState;
         // Settings for the TARGET6 state.
         stTarget6: ST_PositionState;
+        // Settings for the TARGET7 state.
+        stTarget7: ST_PositionState;
+        // Settings for the TARGET8 state.
+        stTarget8: ST_PositionState;
         // Set this to a non-unknown value to request a new move.
         {attribute 'pytmc' := '
             pv: MMS:STATE:SET
@@ -1122,6 +1130,8 @@ FB_TM1K2
         fbStateDefaults(stPositionState:=stTarget4, sNameDefault:='TARGET4', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
         fbStateDefaults(stPositionState:=stTarget5, sNameDefault:='TARGET5', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
         fbStateDefaults(stPositionState:=stTarget6, sNameDefault:='TARGET6', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget7, sNameDefault:='TARGET7', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+        fbStateDefaults(stPositionState:=stTarget8, sNameDefault:='TARGET8', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
     END_IF
 
     stYStage.bHardwareEnable := TRUE;
@@ -1149,6 +1159,8 @@ FB_TM1K2
         astPositionState[E_TM1K2_States.TARGET4] := stTarget4;
         astPositionState[E_TM1K2_States.TARGET5] := stTarget5;
         astPositionState[E_TM1K2_States.TARGET6] := stTarget6;
+        astPositionState[E_TM1K2_States.TARGET7] := stTarget7;
+        astPositionState[E_TM1K2_States.TARGET8] := stTarget8;
     END_IF
 
     fbStates(
@@ -1180,6 +1192,8 @@ FB_TM1K2
     stTarget4 := astPositionState[E_TM1K2_States.TARGET4];
     stTarget5 := astPositionState[E_TM1K2_States.TARGET5];
     stTarget6 := astPositionState[E_TM1K2_States.TARGET6];
+    stTarget7 := astPositionState[E_TM1K2_States.TARGET7];
+    stTarget8 := astPositionState[E_TM1K2_States.TARGET8];
 
     fbThermoCouple1();
     fbFlowMeter();
@@ -2685,7 +2699,7 @@ PRG_PF1K2_WFS
     END_VAR
     fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-    fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.00, sPmpsState:='PF1K2:WFS-OUT');
+    fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.80, sPmpsState:='PF1K2:WFS-OUT');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-94.00, sPmpsState:='PF1K2:WFS-TARGET1');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget2, fPosition:=-82.755, sPmpsState:='PF1K2:WFS-TARGET2');
     fbStateSetup(stPositionState:=fbPF1K2.stTarget3, fPosition:=-68.38, sPmpsState:='PF1K2:WFS-TARGET3');
@@ -2908,12 +2922,14 @@ PRG_TM1K2_ATM
     fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
     fbStateSetup(stPositionState:=fbTM1K2.stOut, fPosition:=-16.00, fDelta:=7, sPmpsState:='TM1K2:ATM-OUT');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-39.124, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET1');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-53.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET2');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-67.874, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-82.25, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-96.623, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
-    fbStateSetup(stPositionState:=fbTM1K2.stTarget6, fPosition:=-114.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET6');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget1, fPosition:=-28, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET1');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget2, fPosition:=-38, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET2');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget3, fPosition:=-48, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET3');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget4, fPosition:=-58, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget5, fPosition:=-68, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET5');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget6, fPosition:=-80, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET6');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget7, fPosition:=-96, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET7');
+    fbStateSetup(stPositionState:=fbTM1K2.stTarget8, fPosition:=-114.5, fDelta:=7, sPmpsState:='TM1K2:ATM-TARGET8');
 
     fbTM1K2(
         fbFFHWO := GVL.fbFastFaultOutput2,
@@ -2965,7 +2981,7 @@ PRG_TM2K2_ATM
     fbStateSetup(stPositionState:=fbTM2K2.stTarget1, fPosition:=-15.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET1');
     fbStateSetup(stPositionState:=fbTM2K2.stTarget2, fPosition:=-36.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET2');
     fbStateSetup(stPositionState:=fbTM2K2.stTarget3, fPosition:=-52.0, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET3');
-    fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-60.5, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET4');
+    fbStateSetup(stPositionState:=fbTM2K2.stTarget4, fPosition:=-61.50, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET4');
     fbStateSetup(stPositionState:=fbTM2K2.stTarget5, fPosition:=-77.0, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET5');
     fbStateSetup(stPositionState:=fbTM2K2.stTarget6, fPosition:=-96.6, fDelta:=7, sPmpsState:='TM2K2:ATM-TARGET6');
 
