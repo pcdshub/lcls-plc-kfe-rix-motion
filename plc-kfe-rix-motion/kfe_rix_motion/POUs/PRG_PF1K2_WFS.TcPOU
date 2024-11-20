@@ -28,7 +28,7 @@ END_VAR]]></Declaration>
       <ST><![CDATA[
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
-fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.00, sPmpsState:='PF1K2:WFS-OUT');
+fbStateSetup(stPositionState:=fbPF1K2.stOut, fPosition:=-13.80, sPmpsState:='PF1K2:WFS-OUT');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget1, fPosition:=-94.00, sPmpsState:='PF1K2:WFS-TARGET1');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget2, fPosition:=-82.755, sPmpsState:='PF1K2:WFS-TARGET2');
 fbStateSetup(stPositionState:=fbPF1K2.stTarget3, fPosition:=-68.38, sPmpsState:='PF1K2:WFS-TARGET3');
