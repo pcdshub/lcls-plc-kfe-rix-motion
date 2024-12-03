@@ -118,8 +118,8 @@ IF NOT bInit THEN
     fbStateDefaults(stPositionState:=stTarget4, sNameDefault:='TARGET4', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
     fbStateDefaults(stPositionState:=stTarget5, sNameDefault:='TARGET5', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
     fbStateDefaults(stPositionState:=stTarget6, sNameDefault:='TARGET6', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
-	fbStateDefaults(stPositionState:=stTarget7, sNameDefault:='TARGET7', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
-	fbStateDefaults(stPositionState:=stTarget8, sNameDefault:='TARGET8', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget7, sNameDefault:='TARGET7', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
+    fbStateDefaults(stPositionState:=stTarget8, sNameDefault:='TARGET8', fDeltaDefault:=fDelta, fAccelDefault:=fAccel, fDecelDefault:=fAccel);
 END_IF
 
 stYStage.bHardwareEnable := TRUE;
@@ -147,8 +147,8 @@ IF NOT fbArrCheckWrite.bHadWrite THEN
     astPositionState[E_TM1K2_States.TARGET4] := stTarget4;
     astPositionState[E_TM1K2_States.TARGET5] := stTarget5;
     astPositionState[E_TM1K2_States.TARGET6] := stTarget6;
-	astPositionState[E_TM1K2_States.TARGET7] := stTarget7;
-	astPositionState[E_TM1K2_States.TARGET8] := stTarget8;
+    astPositionState[E_TM1K2_States.TARGET7] := stTarget7;
+    astPositionState[E_TM1K2_States.TARGET8] := stTarget8;
 END_IF
 
 fbStates(
@@ -180,6 +180,8 @@ stTarget3 := astPositionState[E_TM1K2_States.TARGET3];
 stTarget4 := astPositionState[E_TM1K2_States.TARGET4];
 stTarget5 := astPositionState[E_TM1K2_States.TARGET5];
 stTarget6 := astPositionState[E_TM1K2_States.TARGET6];
+stTarget7 := astPositionState[E_TM1K2_States.TARGET7];
+stTarget8 := astPositionState[E_TM1K2_States.TARGET8];
 
 fbThermoCouple1();
 fbFlowMeter();]]></ST>
