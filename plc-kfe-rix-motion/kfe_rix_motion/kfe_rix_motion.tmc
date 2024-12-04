@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{5E131CCC-A3A0-E958-9625-CC2213B587CD}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{2EA11D80-50F9-3A21-1A3E-9DFFE58C6262}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -32034,28 +32034,55 @@ ELSE:
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="lcls_twincat_motion">E_EpicsInOut</Name>
-      <Comment> Example EPICS states enum for use in all versions of the states FBs
- Remove strict attribute for easier handling</Comment>
+      <Name>E_TM1K2_States</Name>
       <BitSize>16</BitSize>
       <BaseType>UINT</BaseType>
       <EnumInfo>
-        <Text>UNKNOWN</Text>
+        <Text>Unknown</Text>
         <Enum>0</Enum>
-        <Comment> UNKNOWN must be in slot 0 or the FB breaks</Comment>
       </EnumInfo>
       <EnumInfo>
         <Text>OUT</Text>
         <Enum>1</Enum>
-        <Comment> OUT at slot 1 is a convention</Comment>
       </EnumInfo>
       <EnumInfo>
-        <Text>IN</Text>
+        <Text>TARGET1</Text>
         <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET2</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET3</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET4</Text>
+        <Enum>5</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET5</Text>
+        <Enum>6</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET6</Text>
+        <Enum>7</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET7</Text>
+        <Enum>8</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>TARGET8</Text>
+        <Enum>9</Enum>
       </EnumInfo>
       <Properties>
         <Property>
           <Name>qualified_only</Name>
+        </Property>
+        <Property>
+          <Name>generate_implicit_init_function</Name>
         </Property>
       </Properties>
     </DataType>
@@ -45418,6 +45445,146 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
       </Properties>
     </DataType>
     <DataType>
+      <Name Namespace="LCLS_General">FB_TempSensor</Name>
+      <BitSize>256</BitSize>
+      <SubItem>
+        <Name>fResolution</Name>
+        <Type>LREAL</Type>
+        <Comment> Resolution parameter from the Beckhoff docs. Default is 0.1 for 0.1 degree resolution</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <Value>0.1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fTemp</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: TEMP
+        io: input
+        field: EGU C
+        field: PREC 2
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bConnected</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CONN
+        io: input
+        field: ONAM Connected
+        field: ZNAM Disconnected
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>200</BitOffs>
+        <Default>
+          <Bool>true</Bool>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bUnderrange</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>208</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOverrange</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>216</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iRaw</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>224</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
       <Name Namespace="LCLS_General">FB_AnalogInput</Name>
       <BitSize>512</BitSize>
       <SubItem>
@@ -45548,6 +45715,463 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_TM1K2</Name>
+      <BitSize>1510016</BitSize>
+      <SubItem>
+        <Name>stYStage</Name>
+        <Type Namespace="lcls_twincat_motion" ReferenceTo="true">ST_MotionStage</Type>
+        <Comment> Y motor (state select).</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stXStage</Name>
+        <Type Namespace="lcls_twincat_motion" ReferenceTo="true">ST_MotionStage</Type>
+        <Comment> X motor (align target to beam).</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbFFHWO</Name>
+        <Type Namespace="PMPS" ReferenceTo="true">FB_HardwareFFOutput</Type>
+        <Comment> The fast fault output to fault to.</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbArbiter</Name>
+        <Type Namespace="PMPS" ReferenceTo="true">FB_Arbiter</Type>
+        <Comment> The arbiter to request beam conditions from.</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>256</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stOut</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the OUT state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>320</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget1</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET1 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>4032</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget2</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET2 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>7744</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget3</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET3 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>11456</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget4</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET4 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>15168</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget5</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET5 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>18880</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget6</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET6 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>22592</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget7</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET7 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>26304</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stTarget8</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <Comment> Settings for the TARGET8 state.</Comment>
+        <BitSize>3712</BitSize>
+        <BitOffs>30016</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>eEnumSet</Name>
+        <Type>E_TM1K2_States</Type>
+        <Comment> Set this to a non-unknown value to request a new move.</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>33728</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: MMS:STATE:SET
+        io: io
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEnableMotion</Name>
+        <Type>BOOL</Type>
+        <Comment> Set this to TRUE to enable input state moves, or FALSE to disable them.</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>33744</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEnableBeamParams</Name>
+        <Type>BOOL</Type>
+        <Comment> Set this to TRUE to enable beam parameter checks, or FALSE to disable them.</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>33752</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEnablePositionLimits</Name>
+        <Type>BOOL</Type>
+        <Comment> Set this to TRUE to enable position limit checks, or FALSE to disable them.</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>33760</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>sDeviceName</Name>
+        <Type>STRING(80)</Type>
+        <Comment> The name of the device for use in the PMPS DB lookup and diagnostic screens.</Comment>
+        <BitSize>648</BitSize>
+        <BitOffs>33768</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>sTransitionKey</Name>
+        <Type>STRING(80)</Type>
+        <Comment> The name of the transition state in the PMPS database.</Comment>
+        <BitSize>648</BitSize>
+        <BitOffs>34416</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bReadDBNow</Name>
+        <Type>BOOL</Type>
+        <Comment> Set this to TRUE to re-read the loaded database immediately (useful for debug).</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>35064</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>eEnumGet</Name>
+        <Type>E_TM1K2_States</Type>
+        <Comment> The current position state as an enum.</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>35072</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: MMS:STATE:GET
+        io: i
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stDbStateParams</Name>
+        <Type Namespace="PMPS">ST_DbStateParams</Type>
+        <Comment> The PMPS database lookup associated with the current position state.</Comment>
+        <BitSize>2560</BitSize>
+        <BitOffs>35104</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bInit</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>37664</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbYStage</Name>
+        <Type Namespace="lcls_twincat_motion">FB_MotionStage</Type>
+        <BitSize>328512</BitSize>
+        <BitOffs>37696</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbXStage</Name>
+        <Type Namespace="lcls_twincat_motion">FB_MotionStage</Type>
+        <BitSize>328512</BitSize>
+        <BitOffs>366208</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbStateDefaults</Name>
+        <Type Namespace="lcls_twincat_common_components">FB_PositionState_Defaults</Type>
+        <BitSize>1088</BitSize>
+        <BitOffs>694720</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbStates</Name>
+        <Type Namespace="lcls_twincat_motion">FB_PositionStatePMPS1D</Type>
+        <BitSize>746176</BitSize>
+        <BitOffs>695808</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: MMS
+        astPositionState.array: 1..7
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>astPositionState</Name>
+        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
+        <ArrayInfo>
+          <LBound>1</LBound>
+          <Elements>9</Elements>
+        </ArrayInfo>
+        <BitSize>33408</BitSize>
+        <BitOffs>1441984</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbArrCheckWrite</Name>
+        <Type Namespace="lcls_twincat_common_components">FB_CheckPositionStateWrite</Type>
+        <BitSize>33664</BitSize>
+        <BitOffs>1475392</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbThermoCouple1</Name>
+        <Type Namespace="LCLS_General">FB_TempSensor</Type>
+        <BitSize>256</BitSize>
+        <BitOffs>1509056</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: STC:01</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbFlowMeter</Name>
+        <Type Namespace="LCLS_General">FB_AnalogInput</Type>
+        <BitSize>512</BitSize>
+        <BitOffs>1509312</BitOffs>
+        <Default>
+          <SubItem>
+            <Name>.iTermBits</Name>
+            <Value>15</Value>
+          </SubItem>
+          <SubItem>
+            <Name>.fTermMax</Name>
+            <Value>60</Value>
+          </SubItem>
+          <SubItem>
+            <Name>.fTermMin</Name>
+            <Value>0</Value>
+          </SubItem>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: FWM</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fDelta</Name>
+        <Type>LREAL</Type>
+        <Comment> State defaults if not provided</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>1509824</BitOffs>
+        <Default>
+          <Value>2</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>fAccel</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>1509888</BitOffs>
+        <Default>
+          <Value>200</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>fOutDecel</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>1509952</BitOffs>
+        <Default>
+          <Value>25</Value>
+        </Default>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="lcls_twincat_motion">E_EpicsInOut</Name>
+      <Comment> Example EPICS states enum for use in all versions of the states FBs
+ Remove strict attribute for easier handling</Comment>
+      <BitSize>16</BitSize>
+      <BaseType>UINT</BaseType>
+      <EnumInfo>
+        <Text>UNKNOWN</Text>
+        <Enum>0</Enum>
+        <Comment> UNKNOWN must be in slot 0 or the FB breaks</Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>OUT</Text>
+        <Enum>1</Enum>
+        <Comment> OUT at slot 1 is a convention</Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>IN</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <Properties>
+        <Property>
+          <Name>qualified_only</Name>
         </Property>
       </Properties>
     </DataType>
@@ -46015,596 +46639,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <BitOffs>1155904</BitOffs>
         <Default>
           <Value>10</Value>
-        </Default>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>E_TM1K2_States</Name>
-      <BitSize>16</BitSize>
-      <BaseType>UINT</BaseType>
-      <EnumInfo>
-        <Text>Unknown</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>OUT</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET1</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET2</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET3</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET4</Text>
-        <Enum>5</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET5</Text>
-        <Enum>6</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>TARGET6</Text>
-        <Enum>7</Enum>
-      </EnumInfo>
-      <Properties>
-        <Property>
-          <Name>qualified_only</Name>
-        </Property>
-        <Property>
-          <Name>generate_implicit_init_function</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_General">FB_TempSensor</Name>
-      <BitSize>256</BitSize>
-      <SubItem>
-        <Name>fResolution</Name>
-        <Type>LREAL</Type>
-        <Comment> Resolution parameter from the Beckhoff docs. Default is 0.1 for 0.1 degree resolution</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <Value>0.1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fTemp</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: TEMP
-        io: input
-        field: EGU C
-        field: PREC 2
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bConnected</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CONN
-        io: input
-        field: ONAM Connected
-        field: ZNAM Disconnected
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bError</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>200</BitOffs>
-        <Default>
-          <Bool>true</Bool>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ERR
-        io: input
-        field: ONAM True
-        field: ZNAM False
-    </Value>
-          </Property>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bUnderrange</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>208</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOverrange</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>216</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iRaw</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>224</BitOffs>
-        <Properties>
-          <Property>
-            <Name>TcAddressType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_TM1K2</Name>
-      <BitSize>1502592</BitSize>
-      <SubItem>
-        <Name>stYStage</Name>
-        <Type Namespace="lcls_twincat_motion" ReferenceTo="true">ST_MotionStage</Type>
-        <Comment> Y motor (state select).</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stXStage</Name>
-        <Type Namespace="lcls_twincat_motion" ReferenceTo="true">ST_MotionStage</Type>
-        <Comment> X motor (align target to beam).</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbFFHWO</Name>
-        <Type Namespace="PMPS" ReferenceTo="true">FB_HardwareFFOutput</Type>
-        <Comment> The fast fault output to fault to.</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbArbiter</Name>
-        <Type Namespace="PMPS" ReferenceTo="true">FB_Arbiter</Type>
-        <Comment> The arbiter to request beam conditions from.</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>256</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stOut</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the OUT state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>320</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget1</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET1 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>4032</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget2</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET2 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>7744</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget3</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET3 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>11456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget4</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET4 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>15168</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget5</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET5 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>18880</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stTarget6</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <Comment> Settings for the TARGET6 state.</Comment>
-        <BitSize>3712</BitSize>
-        <BitOffs>22592</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>eEnumSet</Name>
-        <Type>E_TM1K2_States</Type>
-        <Comment> Set this to a non-unknown value to request a new move.</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>26304</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: MMS:STATE:SET
-        io: io
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEnableMotion</Name>
-        <Type>BOOL</Type>
-        <Comment> Set this to TRUE to enable input state moves, or FALSE to disable them.</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>26320</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEnableBeamParams</Name>
-        <Type>BOOL</Type>
-        <Comment> Set this to TRUE to enable beam parameter checks, or FALSE to disable them.</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>26328</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEnablePositionLimits</Name>
-        <Type>BOOL</Type>
-        <Comment> Set this to TRUE to enable position limit checks, or FALSE to disable them.</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>26336</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>sDeviceName</Name>
-        <Type>STRING(80)</Type>
-        <Comment> The name of the device for use in the PMPS DB lookup and diagnostic screens.</Comment>
-        <BitSize>648</BitSize>
-        <BitOffs>26344</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>sTransitionKey</Name>
-        <Type>STRING(80)</Type>
-        <Comment> The name of the transition state in the PMPS database.</Comment>
-        <BitSize>648</BitSize>
-        <BitOffs>26992</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bReadDBNow</Name>
-        <Type>BOOL</Type>
-        <Comment> Set this to TRUE to re-read the loaded database immediately (useful for debug).</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>27640</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>eEnumGet</Name>
-        <Type>E_TM1K2_States</Type>
-        <Comment> The current position state as an enum.</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>27648</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: MMS:STATE:GET
-        io: i
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stDbStateParams</Name>
-        <Type Namespace="PMPS">ST_DbStateParams</Type>
-        <Comment> The PMPS database lookup associated with the current position state.</Comment>
-        <BitSize>2560</BitSize>
-        <BitOffs>27680</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bInit</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>30240</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbYStage</Name>
-        <Type Namespace="lcls_twincat_motion">FB_MotionStage</Type>
-        <BitSize>328512</BitSize>
-        <BitOffs>30272</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbXStage</Name>
-        <Type Namespace="lcls_twincat_motion">FB_MotionStage</Type>
-        <BitSize>328512</BitSize>
-        <BitOffs>358784</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbStateDefaults</Name>
-        <Type Namespace="lcls_twincat_common_components">FB_PositionState_Defaults</Type>
-        <BitSize>1088</BitSize>
-        <BitOffs>687296</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbStates</Name>
-        <Type Namespace="lcls_twincat_motion">FB_PositionStatePMPS1D</Type>
-        <BitSize>746176</BitSize>
-        <BitOffs>688384</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: MMS
-        astPositionState.array: 1..7
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>astPositionState</Name>
-        <Type Namespace="lcls_twincat_motion">ST_PositionState</Type>
-        <ArrayInfo>
-          <LBound>1</LBound>
-          <Elements>9</Elements>
-        </ArrayInfo>
-        <BitSize>33408</BitSize>
-        <BitOffs>1434560</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbArrCheckWrite</Name>
-        <Type Namespace="lcls_twincat_common_components">FB_CheckPositionStateWrite</Type>
-        <BitSize>33664</BitSize>
-        <BitOffs>1467968</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbThermoCouple1</Name>
-        <Type Namespace="LCLS_General">FB_TempSensor</Type>
-        <BitSize>256</BitSize>
-        <BitOffs>1501632</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: STC:01</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbFlowMeter</Name>
-        <Type Namespace="LCLS_General">FB_AnalogInput</Type>
-        <BitSize>512</BitSize>
-        <BitOffs>1501888</BitOffs>
-        <Default>
-          <SubItem>
-            <Name>.iTermBits</Name>
-            <Value>15</Value>
-          </SubItem>
-          <SubItem>
-            <Name>.fTermMax</Name>
-            <Value>60</Value>
-          </SubItem>
-          <SubItem>
-            <Name>.fTermMin</Name>
-            <Value>0</Value>
-          </SubItem>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: FWM</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fDelta</Name>
-        <Type>LREAL</Type>
-        <Comment> State defaults if not provided</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>1502400</BitOffs>
-        <Default>
-          <Value>2</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>fAccel</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>1502464</BitOffs>
-        <Default>
-          <Value>200</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>fOutDecel</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>1502528</BitOffs>
-        <Default>
-          <Value>25</Value>
         </Default>
       </SubItem>
       <Properties>
@@ -71756,7 +71790,217 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89063424</ByteSize>
+          <ByteSize>88932352</ByteSize>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>638345920</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>638674432</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639689280</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+            <Comment> NC Forward Limit Switch: TRUE if ok to move</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697280</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+            <Comment> NC Backward Limit Switch: TRUE if ok to move</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697288</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bHome</Name>
+            <Comment> NO Home Switch: TRUE if at home</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697296</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+            <Comment> NC STO Input: TRUE if ok to move</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: PLC:bHardwareEnable
+        io: i
+        field: ZNAM FALSE
+        field: ONAM TRUE
+        field: DESC TRUE if STO not hit
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697312</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+            <Comment> Raw encoder IO for ULINT (Biss-C)</Comment>
+            <BitSize>64</BitSize>
+            <BaseType>ULINT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+            <Comment> Raw encoder IO for UINT (Relative Encoders)</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697408</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+            <Comment> Raw encoder IO for INT (LVDT)</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697424</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Bool>true</Bool>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639814856</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639814864</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639814872</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639814880</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.iRaw</Name>
+            <Comment> Connect this input to the terminal</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639814976</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
             <BitSize>2048</BitSize>
@@ -71894,216 +72138,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </Property>
             </Properties>
             <BitOffs>643666560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>649878656</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650207168</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651222016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
-            <Comment> NC Forward Limit Switch: TRUE if ok to move</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230016</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
-            <Comment> NC Backward Limit Switch: TRUE if ok to move</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230024</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bHome</Name>
-            <Comment> NO Home Switch: TRUE if at home</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230032</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
-            <Comment> NC STO Input: TRUE if ok to move</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: PLC:bHardwareEnable
-        io: i
-        field: ZNAM FALSE
-        field: ONAM TRUE
-        field: DESC TRUE if STO not hit
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230048</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
-            <Comment> Raw encoder IO for ULINT (Biss-C)</Comment>
-            <BitSize>64</BitSize>
-            <BaseType>ULINT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230080</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
-            <Comment> Raw encoder IO for UINT (Relative Encoders)</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230144</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
-            <Comment> Raw encoder IO for INT (LVDT)</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230160</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bError</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Bool>true</Bool>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: ERR
-        io: input
-        field: ONAM True
-        field: ZNAM False
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651347592</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bUnderrange</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651347600</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.bOverrange</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651347608</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbThermoCouple1.iRaw</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651347616</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbFlowMeter.iRaw</Name>
-            <Comment> Connect this input to the terminal</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651347712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI2K2_K2A.fbLI2K2.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -81659,7 +81693,56 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89063424</ByteSize>
+          <ByteSize>88932352</ByteSize>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>638344896</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>638673408</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639688256</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+            <Comment> NC Brake Output: TRUE to release brake</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>639697304</BitOffs>
+          </Symbol>
           <Symbol>
             <Name>PRG_AL1K2_L2SI.fbAL1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -81733,55 +81816,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </Property>
             </Properties>
             <BitOffs>643667456</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>649877632</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbXStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>650206144</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651220992</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
-            <Comment> NC Brake Output: TRUE to release brake</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>651230040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_LI2K2_K2A.fbLI2K2.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -84036,7 +84070,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89063424</ByteSize>
+          <ByteSize>88932352</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -107598,6 +107632,29 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitOffs>638301888</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_TM1K2_ATM.fbTM1K2</Name>
+            <Comment> TM1K2 shares the same cooling meter as AT1K2</Comment>
+            <BitSize>1510016</BitSize>
+            <BaseType>FB_TM1K2</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: TM1K2:ATM</Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
+                              .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
+                              .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
+                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
+                              .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
+
+</Value>
+              </Property>
+            </Properties>
+            <BitOffs>638305600</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PRG_IM2K1_PPM.fbStateSetup</Name>
             <BitSize>92416</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_StateSetupHelper</BaseType>
@@ -107769,29 +107826,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               </SubItem>
             </Default>
             <BitOffs>649841600</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_TM1K2_ATM.fbTM1K2</Name>
-            <Comment> TM1K2 shares the same cooling meter as AT1K2</Comment>
-            <BitSize>1502592</BitSize>
-            <BaseType>FB_TM1K2</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: TM1K2:ATM</Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.fbThermoCouple1.bError := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Error;
-                              .fbThermoCouple1.bUnderrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Underrange;
-                              .fbThermoCouple1.bOverrange := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Status^Overrange;
-                              .fbThermoCouple1.iRaw := TIIB[TM1K2-EL3314-E5]^TC Inputs Channel 1^Value;
-                              .fbFlowMeter.iRaw := TIIB[AT1K2-EL3052-E8]^AI Standard Channel 1^Value
-
-</Value>
-              </Property>
-            </Properties>
-            <BitOffs>649845760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_TM1K2_ATM.fbStateSetup</Name>
@@ -110695,7 +110729,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>89063424</ByteSize>
+          <ByteSize>88932352</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -110781,7 +110815,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-11-19T22:31:14</Value>
+          <Value>2024-12-04T10:52:14</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
