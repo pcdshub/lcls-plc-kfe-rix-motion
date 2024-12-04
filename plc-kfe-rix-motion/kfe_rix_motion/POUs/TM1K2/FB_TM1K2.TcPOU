@@ -12,8 +12,8 @@
     - Add stTarget6 to the inputs
     - Change the array pragma from 1..6 to 1..7 (1 out and 6 in states, up from 5 in states)
     - Use E_TM1K2_States instead of E_ATM_States
-	
-	Add array to 1..9
+
+    Add array to 1..9
 *)
 VAR_IN_OUT
     // Y motor (state select).
