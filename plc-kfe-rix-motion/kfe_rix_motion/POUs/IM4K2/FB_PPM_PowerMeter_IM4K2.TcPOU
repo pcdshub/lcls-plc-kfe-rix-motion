@@ -190,9 +190,9 @@ END_VAR]]></Declaration>
 fbGetPMVoltage(
     iRaw := iVoltageDINT,
     iTermBits := 32,
-    fTermMax := 10,
-    fTermMin := -10,
-    fOffset := -2, // Add Offset based on fResolution (2mV in this case).
+    fTermMax := 0.2,
+    fTermMin := -0.2,
+    fOffset := 0, // Add Offset based on fResolution (2mV in this case).
     fResolution := 1000, // Display the output in mV
     fReal => fVoltage);
 
