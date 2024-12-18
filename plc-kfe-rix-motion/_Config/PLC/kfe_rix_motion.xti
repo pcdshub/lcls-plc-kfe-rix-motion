@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{2EA11D80-50F9-3A21-1A3E-9DFFE58C6262}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{8AC8CE2C-2FDF-5E7D-7B6C-5A8582434B49}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -5840,7 +5840,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.bUnderrange" VarB="TC Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbYagThermoCouple.iRaw" VarB="TC Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3602-E8">
+			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL3602-0002-E8">
 				<Link VarA="PlcTask Inputs^PRG_IM4K2_PPM.fbIM4K2.fbPowerMeter.iVoltageDINT" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 34 (EK1501-0010)^Term 50 (EK1122)^IM4K2-PPM (EK1100)^IM4K2-EL4004-E7">
