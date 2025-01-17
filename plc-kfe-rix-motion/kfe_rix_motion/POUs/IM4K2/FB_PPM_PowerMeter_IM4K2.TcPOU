@@ -189,7 +189,7 @@ END_VAR]]></Declaration>
 // Convert the terminal's integer into a value in millivolts
 fbGetPMVoltage(
     iRaw := iVoltageDINT,
-    iTermBits := 32,
+    iTermBits := 31,
     fTermMax := 0.2,
     fTermMin := -0.2,
     fOffset := 0, // Add Offset based on fResolution (2mV in this case).
