@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{2EA11D80-50F9-3A21-1A3E-9DFFE58C6262}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8AC8CE2C-2FDF-5E7D-7B6C-5A8582434B49}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -110657,7 +110657,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcLinkTo</Name>
                 <Value>.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
-                              .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-E8]^AI Inputs Channel 1^Value;
+                              .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-0002-E8]^AI Inputs Channel 1^Value;
                               .fbPowerMeter.fbThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
                               .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
                               .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
@@ -110815,7 +110815,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-12-04T10:52:14</Value>
+          <Value>2024-12-17T15:35:08</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
