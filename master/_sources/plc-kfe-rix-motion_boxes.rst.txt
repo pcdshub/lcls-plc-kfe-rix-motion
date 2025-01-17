@@ -6847,8 +6847,8 @@ Term 75 (EK1110)
    </details>
 
 
-IM4K2-EL3602-E8
-^^^^^^^^^^^^^^^
+IM4K2-EL3602-0002-E8
+^^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -6860,7 +6860,7 @@ IM4K2-EL3602-E8
     :header: Name, Data
     :align: center
 
-    Name, IM4K2-EL3602-E8
+    Name, IM4K2-EL3602-0002-E8
     ID, 76
         BootStrapData, 0010f400f410f400
         SyncMan, 001080002600010001000000800080008000001026010000

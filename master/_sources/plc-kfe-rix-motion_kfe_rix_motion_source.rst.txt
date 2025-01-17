@@ -869,10 +869,10 @@ FB_PPM_PowerMeter_IM4K2
     // Convert the terminal's integer into a value in millivolts
     fbGetPMVoltage(
         iRaw := iVoltageDINT,
-        iTermBits := 32,
-        fTermMax := 10,
-        fTermMin := -10,
-        fOffset := -2, // Add Offset based on fResolution (2mV in this case).
+        iTermBits := 31,
+        fTermMax := 0.2,
+        fTermMin := -0.2,
+        fOffset := 0, // Add Offset based on fResolution (2mV in this case).
         fResolution := 1000, // Display the output in mV
         fReal => fVoltage);
 
@@ -2406,7 +2406,7 @@ PRG_IM4K2_PPM
         {attribute 'pytmc' := 'pv: IM4K2:PPM'}
          {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                                   .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
-                                  .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-E8]^AI Inputs Channel 1^Value;
+                                  .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-0002-E8]^AI Inputs Channel 1^Value;
                                   .fbPowerMeter.fbThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
                                   .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
                                   .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;

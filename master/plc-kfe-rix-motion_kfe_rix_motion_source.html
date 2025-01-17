@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-rix-motion  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
@@ -164,7 +164,7 @@
 <h2>E_TM1K2_States<a class="headerlink" href="#e-tm1k2-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">E_TM1K2_States</span> <span class="p">:</span>
-<span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span> <span class="nn">E_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span>
+<span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span><span class="w"> </span><span class="nn">E_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span>
 <span class="p">(</span>
     <span class="n">Unknown</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">OUT</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span>
@@ -185,7 +185,7 @@
 <h2>E_TM2K2_States<a class="headerlink" href="#e-tm2k2-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">E_TM2K2_States</span> <span class="p">:</span>
-<span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span> <span class="nn">E_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span>
+<span class="o">//</span> <span class="n">Adapted</span> <span class="kn">from</span><span class="w"> </span><span class="nn">E_ATM_States</span> <span class="n">to</span> <span class="n">add</span> <span class="n">TARGET6</span>
 <span class="p">(</span>
     <span class="n">Unknown</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">OUT</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span>
@@ -547,7 +547,7 @@
 <h2>FB_AnalogInput_IM4K2<a class="headerlink" href="#fb-analoginput-im4k2" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_AnalogInput_IM4K2</span>
 <span class="p">(</span><span class="o">*</span>
-    <span class="n">Converts</span> <span class="n">the</span> <span class="n">integer</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">analog</span> <span class="nb">input</span> <span class="n">terminal</span> <span class="n">to</span> <span class="n">a</span> <span class="n">real</span> <span class="n">unit</span> <span class="n">value</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">volts</span><span class="p">)</span>
+    <span class="n">Converts</span> <span class="n">the</span> <span class="n">integer</span> <span class="kn">from</span><span class="w"> </span><span class="nn">an</span> <span class="n">analog</span> <span class="nb">input</span> <span class="n">terminal</span> <span class="n">to</span> <span class="n">a</span> <span class="n">real</span> <span class="n">unit</span> <span class="n">value</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">volts</span><span class="p">)</span>
     <span class="mi">2019</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="n">Zachary</span> <span class="n">Lentz</span>
 <span class="o">*</span><span class="p">)</span>
 <span class="n">VAR_INPUT</span>
@@ -572,7 +572,7 @@
     <span class="n">fOffset</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR_OUTPUT</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">real</span> <span class="n">value</span> <span class="n">read</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">output</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">real</span> <span class="n">value</span> <span class="n">read</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">output</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">VAL</span>
         <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
@@ -714,7 +714,7 @@
 
 <span class="n">fbYStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span> <span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span> <span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
+<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span><span class="w"> </span><span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
 <span class="n">fbArrCheckWrite</span><span class="p">(</span>
     <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
     <span class="n">bCheck</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
@@ -967,10 +967,10 @@
 <span class="o">//</span> <span class="n">Convert</span> <span class="n">the</span> <span class="n">terminal</span><span class="s1">&#39;s integer into a value in millivolts</span>
 <span class="n">fbGetPMVoltage</span><span class="p">(</span>
     <span class="n">iRaw</span> <span class="o">:=</span> <span class="n">iVoltageDINT</span><span class="p">,</span>
-    <span class="n">iTermBits</span> <span class="o">:=</span> <span class="mi">32</span><span class="p">,</span>
-    <span class="n">fTermMax</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="n">fTermMin</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">fOffset</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">//</span> <span class="n">Add</span> <span class="n">Offset</span> <span class="n">based</span> <span class="n">on</span> <span class="n">fResolution</span> <span class="p">(</span><span class="mi">2</span><span class="n">mV</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span><span class="p">)</span><span class="o">.</span>
+    <span class="n">iTermBits</span> <span class="o">:=</span> <span class="mi">31</span><span class="p">,</span>
+    <span class="n">fTermMax</span> <span class="o">:=</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">fTermMin</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">fOffset</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">Add</span> <span class="n">Offset</span> <span class="n">based</span> <span class="n">on</span> <span class="n">fResolution</span> <span class="p">(</span><span class="mi">2</span><span class="n">mV</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span><span class="p">)</span><span class="o">.</span>
     <span class="n">fResolution</span> <span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span> <span class="o">//</span> <span class="n">Display</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">mV</span>
     <span class="n">fReal</span> <span class="o">=&gt;</span> <span class="n">fVoltage</span><span class="p">);</span>
 
@@ -1123,7 +1123,7 @@
 
     <span class="n">For</span> <span class="n">TM1K2</span><span class="p">,</span> <span class="n">we</span> <span class="n">make</span> <span class="n">the</span> <span class="n">following</span> <span class="n">adjustments</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">Add</span> <span class="n">stTarget6</span> <span class="n">to</span> <span class="n">the</span> <span class="n">inputs</span>
-    <span class="o">-</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">array</span> <span class="n">pragma</span> <span class="kn">from</span> <span class="mf">1..6</span> <span class="n">to</span> <span class="mf">1..7</span> <span class="p">(</span><span class="mi">1</span> <span class="n">out</span> <span class="ow">and</span> <span class="mi">6</span> <span class="ow">in</span> <span class="n">states</span><span class="p">,</span> <span class="n">up</span> <span class="kn">from</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">array</span> <span class="n">pragma</span> <span class="kn">from</span><span class="w"> </span><span class="mf">1..6</span> <span class="n">to</span> <span class="mf">1..7</span> <span class="p">(</span><span class="mi">1</span> <span class="n">out</span> <span class="ow">and</span> <span class="mi">6</span> <span class="ow">in</span> <span class="n">states</span><span class="p">,</span> <span class="n">up</span> <span class="kn">from</span><span class="w"> </span><span class="mi">5</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
     <span class="o">-</span> <span class="n">Use</span> <span class="n">E_TM1K2_States</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">E_ATM_States</span>
 
     <span class="n">Add</span> <span class="n">array</span> <span class="n">to</span> <span class="mf">1..9</span>
@@ -1243,7 +1243,7 @@
 <span class="n">fbYStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">);</span>
 <span class="n">fbXStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stXStage</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span> <span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span> <span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
+<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span><span class="w"> </span><span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
 <span class="n">fbArrCheckWrite</span><span class="p">(</span>
     <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
     <span class="n">bCheck</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
@@ -1317,7 +1317,7 @@
 
     <span class="n">For</span> <span class="n">TM2K2</span><span class="p">,</span> <span class="n">we</span> <span class="n">make</span> <span class="n">the</span> <span class="n">following</span> <span class="n">adjustments</span><span class="p">:</span>
     <span class="o">-</span> <span class="n">Add</span> <span class="n">stTarget6</span> <span class="n">to</span> <span class="n">the</span> <span class="n">inputs</span>
-    <span class="o">-</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">array</span> <span class="n">pragma</span> <span class="kn">from</span> <span class="mf">1..6</span> <span class="n">to</span> <span class="mf">1..7</span> <span class="p">(</span><span class="mi">1</span> <span class="n">out</span> <span class="ow">and</span> <span class="mi">6</span> <span class="ow">in</span> <span class="n">states</span><span class="p">,</span> <span class="n">up</span> <span class="kn">from</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">Change</span> <span class="n">the</span> <span class="n">array</span> <span class="n">pragma</span> <span class="kn">from</span><span class="w"> </span><span class="mf">1..6</span> <span class="n">to</span> <span class="mf">1..7</span> <span class="p">(</span><span class="mi">1</span> <span class="n">out</span> <span class="ow">and</span> <span class="mi">6</span> <span class="ow">in</span> <span class="n">states</span><span class="p">,</span> <span class="n">up</span> <span class="kn">from</span><span class="w"> </span><span class="mi">5</span> <span class="ow">in</span> <span class="n">states</span><span class="p">)</span>
     <span class="o">-</span> <span class="n">Use</span> <span class="n">E_TM2K2_States</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">E_ATM_States</span>
 <span class="o">*</span><span class="p">)</span>
 <span class="n">VAR_IN_OUT</span>
@@ -1429,7 +1429,7 @@
 <span class="n">fbYStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">);</span>
 <span class="n">fbXStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stXStage</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span> <span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span> <span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
+<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span><span class="w"> </span><span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
 <span class="n">fbArrCheckWrite</span><span class="p">(</span>
     <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
     <span class="n">bCheck</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
@@ -1599,7 +1599,7 @@ END_PROGRAM
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span><span class="p">);</span>
 <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="n">bMR1K1_Veto</span> <span class="n">OR</span> <span class="n">bST1K2_Veto</span><span class="p">);</span>
 
-<span class="o">//</span><span class="n">create</span> <span class="n">a</span> <span class="n">preemptive</span> <span class="n">request</span> <span class="kn">from</span> <span class="nn">Arbiter</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">Arbiter</span> <span class="mi">1</span>
+<span class="o">//</span><span class="n">create</span> <span class="n">a</span> <span class="n">preemptive</span> <span class="n">request</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Arbiter</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">Arbiter</span> <span class="mi">1</span>
 <span class="n">fb_vetoArbiter</span><span class="p">(</span><span class="n">bVeto</span><span class="o">:=</span> <span class="n">bST1K2_Veto</span><span class="p">,</span>
                 <span class="n">HigherAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
                 <span class="n">LowerAuthority</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter2</span><span class="p">,</span>
@@ -2496,7 +2496,7 @@ END_PROGRAM
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM4K2:PPM&#39;</span><span class="p">}</span>
      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;</span>
                               <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E3</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageDINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3602</span><span class="o">-</span><span class="n">E8</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageDINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3602</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="n">E8</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
@@ -3111,7 +3111,7 @@ END_PROGRAM
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

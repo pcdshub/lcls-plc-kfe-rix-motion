@@ -1262,7 +1262,7 @@ EtherCAT Terminals
                                                           <td width="10%">
                                                             ID=76:
                                                           </td>
-                                                          <td width="75%">IM4K2-EL3602-E8
+                                                          <td width="75%">IM4K2-EL3602-0002-E8
                                                           </td>
                                                           <td>        </td>
                                                         </tr>
@@ -1270,7 +1270,7 @@ EtherCAT Terminals
                                                           <td>
                                                                     </td>
                                                           <td colspan="2">
-                                                            EL3602 2Ch. Ana. Input +/-10Volt, Diff. 24bit
+                                                            EL3602-0002 2Ch. Ana. Input +/-200mV, Diff. 24bit
                                                           </td>
                                                         </tr>
                                                       </table>
