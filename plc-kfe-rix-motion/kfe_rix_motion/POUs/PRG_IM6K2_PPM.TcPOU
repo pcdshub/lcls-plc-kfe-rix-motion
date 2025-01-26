@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_IM6K2_PPM" Id="{b5662f22-bf30-4831-ae62-848249eb31cc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_IM6K2_PPM
 VAR
     {attribute 'pytmc' := 'pv: IM6K2:PPM'}
     {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM6K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM6K2-EL2004-E3]^Channel 2^Output;
-                              .fbPowerMeter.iVoltageINT := TIIB[IM6K2-EL3062-E6]^AI Standard Channel 1^Value;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM6K2-EL3602-E8]^AI Inputs Channel 1^Value;
                               .fbPowerMeter.fbTempSensor.bError := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
                               .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
                               .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM6K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
@@ -53,6 +53,9 @@ fbIM6K2(
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
     fResponsivity := 0.0719,
+    iTermBits := 31,
+    fTermMax := 1.25,
+    fTermMin := -1.25,
 );
 ]]></ST>
     </Implementation>
