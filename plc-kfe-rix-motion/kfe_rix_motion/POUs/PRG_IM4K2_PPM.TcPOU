@@ -4,20 +4,20 @@
     <Declaration><![CDATA[PROGRAM PRG_IM4K2_PPM
 VAR
     {attribute 'pytmc' := 'pv: IM4K2:PPM'}
-     {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
+    {attribute 'TcLinkTo' := '.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;
                               .fbGige.bGigePower := TIIB[IM4K2-EL2004-E3]^Channel 2^Output;
-                              .fbPowerMeter.iVoltageDINT := TIIB[IM4K2-EL3602-0002-E8]^AI Inputs Channel 1^Value;
-                              .fbPowerMeter.fbThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
-                              .fbPowerMeter.fbThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
-                              .fbPowerMeter.fbThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
-                              .fbPowerMeter.fbThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Value;
-                              .fbYagThermoCouple.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
-                              .fbYagThermoCouple.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
-                              .fbYagThermoCouple.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
-                              .fbYagThermoCouple.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value;
+                              .fbPowerMeter.iVoltageINT := TIIB[IM4K2-EL3602-0002-E8]^AI Inputs Channel 1^Value;
+                              .fbPowerMeter.fbTempSensor.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Error;
+                              .fbPowerMeter.fbTempSensor.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Underrange;
+                              .fbPowerMeter.fbTempSensor.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Status^Overrange;
+                              .fbPowerMeter.fbTempSensor.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 1^Value;
+                              .fbYagTempSensor.bError := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Error;
+                              .fbYagTempSensor.bUnderrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Underrange;
+                              .fbYagTempSensor.bOverrange := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Status^Overrange;
+                              .fbYagTempSensor.iRaw := TIIB[IM4K2-EL3314-E4]^TC Inputs Channel 2^Value;
                               .fbFlowMeter.iRaw := TIIB[IM1K2-EL3052-E5]^AI Standard Channel 1^Value'}
 // IM4K2 shares the same flow meter as IM1K2
-    fbIM4K2: FB_PPM_IM4K2;
+    fbIM4K2: FB_PPM;
 
     fbStateSetup: FB_StateSetupHelper;
     stDefault: ST_PositionState := (
@@ -46,6 +46,9 @@ fbIM4K2(
     bEnableBeamParams := TRUE,
     bEnablePositionLimits := TRUE,
     fResponsivity := 0.0584,
+    iTermBits := 31,
+    fTermMax := 0.2,
+    fTermMin := -0.2,
 );
 ]]></ST>
     </Implementation>

@@ -13,8 +13,8 @@
 #
 # Libraries:
 #
-#   LCLS General: * -> 2.10.0 (SLAC)
-#   lcls-twincat-common-components: * -> 3.8.4 (SLAC)
+#   LCLS General: * -> 0.0.0 (SLAC)
+#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
 #   PMPS: * -> 3.2.1 (SLAC - LCLS)
@@ -43,7 +43,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.140.70")
 epicsEnvSet("AMSID",            "172.21.140.70.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "13570")
+epicsEnvSet("ADS_MAX_PARAMS",   "13574")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -664,10 +664,10 @@ dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:RIX:MOTION")
 
 dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:RIX:MOTION,PROJECT=plc-kfe-rix-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.140.70")
 
-#   LCLS General: * -> 2.10.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
-#   lcls-twincat-common-components: * -> 3.8.4 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=3.8.4,VENDOR=SLAC")
+#   LCLS General: * -> 0.0.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=LCLS_General,VERSION=0.0.0,VENDOR=SLAC")
+#   lcls-twincat-common-components: * -> 0.0.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-common-components,VERSION=0.0.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.1.1 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:RIX:MOTION,DEPENDENCY=lcls-twincat-motion,VERSION=4.1.1,VENDOR=SLAC")
 #   lcls-twincat-physics: * -> 0.1.0 (SLAC)
@@ -686,8 +686,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("kfe_rix_motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:RIX:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 12570
-callbackSetQueueSize(27140)
+# Total records: 12574
+callbackSetQueueSize(27148)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:RIX:MOTION:")
