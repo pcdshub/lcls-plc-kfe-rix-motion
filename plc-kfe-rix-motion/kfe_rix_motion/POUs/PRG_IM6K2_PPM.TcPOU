@@ -54,8 +54,8 @@ fbIM6K2(
     bEnablePositionLimits := TRUE,
     fResponsivity := 0.0719,
     iTermBits := 31,
-    fTermMax := 1.25,
-    fTermMin := -1.25,
+    fTermMax := 1250,
+    fTermMin := 0,
 );
 ]]></ST>
     </Implementation>

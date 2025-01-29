@@ -47,8 +47,8 @@ fbIM4K2(
     bEnablePositionLimits := TRUE,
     fResponsivity := 0.0584,
     iTermBits := 31,
-    fTermMax := 0.2,
-    fTermMin := -0.2,
+    fTermMax := 200,
+    fTermMin := 0,
 );
 ]]></ST>
     </Implementation>
