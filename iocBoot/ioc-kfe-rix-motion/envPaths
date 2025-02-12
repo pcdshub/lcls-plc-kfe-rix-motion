@@ -1,2 +1,2 @@
-epicsEnvSet("IOC_TOP", "/c/Users/kaushikm/Documents/TcXaeShell/lcls-plc-kfe-rix-motion/iocBoot/ioc-kfe-rix-motion")
+epicsEnvSet("IOC_TOP", "/c/Users/kaushikm/Documents/TcXaeShell/kfe-rix-motion/iocBoot/ioc-kfe-rix-motion")
 epicsEnvSet("IOC_DATA", "/cds/data/iocData")
