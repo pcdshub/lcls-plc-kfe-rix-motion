@@ -17305,7 +17305,7 @@ PF2K2-EL9011-E6
    </details>
 
 
-IM6K2-EL9011-E8
+IM6K2-EL9011-E9
 ^^^^^^^^^^^^^^^
 
 
@@ -17318,8 +17318,75 @@ IM6K2-EL9011-E8
     :header: Name, Data
     :align: center
 
-    Name, IM6K2-EL9011-E8
+    Name, IM6K2-EL9011-E9
     ID, 293
+
+
+.. raw:: html
+
+   </details>
+
+
+IM6K2-EL3602-E8
+^^^^^^^^^^^^^^^
+
+
+.. raw:: html
+
+   <details>
+        <summary>EtherCAT (2 PDOs)</summary>
+
+.. csv-table:: Basic Settings
+    :header: Name, Data
+    :align: center
+
+    Name, IM6K2-EL3602-E8
+    ID, 294
+        BootStrapData, 0010f400f410f400
+        SyncMan, 001080002600010001000000800080008000001026010000
+        SyncMan, 801080002200010002000000800080008000801022010000
+        SyncMan, 001100000400000003000000000000000000001104000000
+        SyncMan, 80110c002000010004000000000000000c00801120010000
+        Fmmu, 0000000000000000801100010100000002000000000000000000000000000000
+        Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
+        CoeProfile, 19665801
+        CoeProfile, 19665801
+
+
+
+PDO AI Inputs Channel 1 (Index #x1a00, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Underrange", "Underrange event active", , "#x6000", "BIT"
+        "Overrange", "Overrange event active", , "#x6000", "BIT"
+        "Limit 1", "Bit0: Value smaller/equal Limit1 Bit1: Value bigger/equal Limit1", , "#x6000", "BIT2"
+        "Limit 2", "Bit0: Value smaller/equal Limit2 Bit1: Value bigger/equal Limit2", , "#x6000", "BIT2"
+        "Error", "Bit set when Over- or Underrange", , "#x6000", "BIT"
+        "None", "", , "", "ARRAY [0..6] OF BIT"
+        "TxPDO State", "TRUE when this TxPDO is not valid", , "#x1800", "BIT"
+        "TxPDO Toggle", "Bit toggles everytime when new value available", , "#x1800", "BIT"
+        "Value", "", , "#x6000", "DINT"
+
+
+
+PDO AI Inputs Channel 2 (Index #x1a01, Flags #x0010, SyncMan 3)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "Underrange", "Underrange event active", , "#x6010", "BIT"
+        "Overrange", "Overrange event active", , "#x6010", "BIT"
+        "Limit 1", "Bit0: Value smaller/equal Limit1 Bit1: Value bigger/equal Limit1", , "#x6010", "BIT2"
+        "Limit 2", "Bit0: Value smaller/equal Limit2 Bit1: Value bigger/equal Limit2", , "#x6010", "BIT2"
+        "Error", "Bit set when Over- or Underrange", , "#x6010", "BIT"
+        "None", "", , "", "ARRAY [0..6] OF BIT"
+        "TxPDO State", "TRUE when this TxPDO is not valid", , "#x1801", "BIT"
+        "TxPDO Toggle", "Bit toggles everytime when new value available", , "#x1801", "BIT"
+        "Value", "", , "#x6010", "DINT"
 
 
 .. raw:: html

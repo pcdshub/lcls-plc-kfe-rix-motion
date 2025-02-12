@@ -73,9 +73,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fb-analoginput-im4k2">FB_AnalogInput_IM4K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fb-ppm-im4k2">FB_PPM_IM4K2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fb-ppm-powermeter-im4k2">FB_PPM_PowerMeter_IM4K2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-tm1k2">FB_TM1K2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-tm2k2">FB_TM2K2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-1-plctask">PRG_1_PlcTask</a></li>
@@ -543,575 +540,6 @@
 </section>
 <section id="pous">
 <h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
-<section id="fb-analoginput-im4k2">
-<h2>FB_AnalogInput_IM4K2<a class="headerlink" href="#fb-analoginput-im4k2" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_AnalogInput_IM4K2</span>
-<span class="p">(</span><span class="o">*</span>
-    <span class="n">Converts</span> <span class="n">the</span> <span class="n">integer</span> <span class="kn">from</span><span class="w"> </span><span class="nn">an</span> <span class="n">analog</span> <span class="nb">input</span> <span class="n">terminal</span> <span class="n">to</span> <span class="n">a</span> <span class="n">real</span> <span class="n">unit</span> <span class="n">value</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">volts</span><span class="p">)</span>
-    <span class="mi">2019</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">09</span> <span class="n">Zachary</span> <span class="n">Lentz</span>
-<span class="o">*</span><span class="p">)</span>
-<span class="n">VAR_INPUT</span>
-    <span class="o">//</span> <span class="n">Connect</span> <span class="n">this</span> <span class="nb">input</span> <span class="n">to</span> <span class="n">the</span> <span class="n">terminal</span>
-    <span class="n">iRaw</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span> <span class="n">DINT</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">bits</span> <span class="n">correlated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">terminal</span><span class="s1">&#39;s max value. This is not necessarily the resolution parameter.</span>
-    <span class="n">iTermBits</span><span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">fReal</span> <span class="n">value</span> <span class="n">correlated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">terminal</span><span class="s1">&#39;s max value</span>
-    <span class="n">fTermMax</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">fReal</span> <span class="n">value</span> <span class="n">correlated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">terminal</span><span class="s1">&#39;s min value</span>
-    <span class="n">fTermMin</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Value</span> <span class="n">to</span> <span class="n">scale</span> <span class="n">the</span> <span class="n">end</span> <span class="n">result</span> <span class="n">to</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">RES</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fResolution</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">OFF</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fOffset</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_OUTPUT</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">real</span> <span class="n">value</span> <span class="n">read</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">output</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">VAL</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fReal</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR</span>
-    <span class="n">fScale</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">fScale</span> <span class="o">:=</span> <span class="p">(</span><span class="n">EXPT</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">iTermBits</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">fReal</span> <span class="o">:=</span> <span class="p">(</span><span class="n">iRaw</span> <span class="o">/</span> <span class="n">fScale</span><span class="p">)</span> <span class="o">*</span> <span class="n">fTermMax</span><span class="p">;</span>
-<span class="n">fReal</span> <span class="o">:=</span> <span class="n">fReal</span> <span class="o">*</span> <span class="n">fResolution</span> <span class="o">+</span> <span class="n">fOffset</span><span class="p">;</span>
-
-<span class="n">END_FUNCTION_BLOCK</span>
-</pre></div>
-</div>
-</section>
-<section id="fb-ppm-im4k2">
-<h2>FB_PPM_IM4K2<a class="headerlink" href="#fb-ppm-im4k2" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_PPM_IM4K2</span>
-<span class="p">(</span><span class="o">*</span>
-    <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="n">Power</span> <span class="ow">and</span> <span class="n">Profile</span> <span class="n">Monitor</span> <span class="p">(</span><span class="n">PPM</span><span class="p">)</span> <span class="n">controls</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">Y</span> <span class="n">motion</span>
-    <span class="o">-</span> <span class="n">Y</span> <span class="n">power</span> <span class="ow">and</span> <span class="n">profile</span> <span class="n">states</span>
-    <span class="o">-</span> <span class="n">power</span> <span class="n">meter</span>
-    <span class="o">-</span> <span class="n">camera</span> <span class="n">power</span>
-    <span class="o">-</span> <span class="n">camera</span> <span class="n">illuminator</span>
-    <span class="o">-</span> <span class="n">flow</span> <span class="n">meter</span>
-    <span class="o">-</span> <span class="n">thermocouple</span>
-
-    <span class="n">The</span> <span class="n">following</span> <span class="n">IO</span> <span class="n">link</span> <span class="n">points</span> <span class="n">are</span> <span class="n">included</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">used</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageINT</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">the</span> <span class="n">power</span> <span class="n">meter</span> <span class="n">analog</span> <span class="nb">input</span> <span class="n">voltage</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bError</span><span class="p">,</span> <span class="n">bUnderrange</span><span class="p">,</span> <span class="n">bOverrange</span><span class="p">,</span> <span class="ow">and</span> <span class="n">iRaw</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">thermocouple</span> <span class="n">terminal</span> <span class="n">inputs</span><span class="o">.</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">iIlluminatorINT</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">illuminator</span> <span class="n">dimmer</span> <span class="n">analog</span> <span class="n">output</span> <span class="n">voltage</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">the</span> <span class="n">camera</span> <span class="n">power</span> <span class="n">digial</span> <span class="n">output</span> <span class="n">channel</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbFlowMeter</span><span class="o">.</span><span class="n">iRaw</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">the</span> <span class="n">flow</span> <span class="n">meter</span> <span class="n">current</span> <span class="n">analog</span> <span class="nb">input</span> <span class="n">channel</span>
-    <span class="o">-</span> <span class="n">FB_PPM</span><span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bError</span><span class="p">,</span> <span class="n">bUnderrange</span><span class="p">,</span> <span class="n">bOverrange</span><span class="p">,</span> <span class="ow">and</span> <span class="n">iRaw</span> <span class="n">should</span> <span class="n">be</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">the</span> <span class="n">corresponding</span> <span class="n">thermocouple</span> <span class="n">terminal</span> <span class="n">inputs</span><span class="o">.</span>
-<span class="o">*</span><span class="p">)</span>
-<span class="n">VAR_IN_OUT</span>
-    <span class="o">//</span> <span class="n">Y</span> <span class="n">motor</span> <span class="p">(</span><span class="n">state</span> <span class="n">select</span><span class="p">)</span><span class="o">.</span>
-    <span class="n">stYStage</span><span class="p">:</span> <span class="n">ST_MotionStage</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">fast</span> <span class="n">fault</span> <span class="n">output</span> <span class="n">to</span> <span class="n">fault</span> <span class="n">to</span><span class="o">.</span>
-    <span class="n">fbFFHWO</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">arbiter</span> <span class="n">to</span> <span class="n">request</span> <span class="n">beam</span> <span class="n">conditions</span> <span class="n">from</span><span class="o">.</span>
-    <span class="n">fbArbiter</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_INPUT</span>
-    <span class="o">//</span> <span class="n">Settings</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OUT</span> <span class="n">state</span><span class="o">.</span>
-    <span class="n">stOut</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Settings</span> <span class="k">for</span> <span class="n">the</span> <span class="n">POWERMETER</span> <span class="n">state</span><span class="o">.</span>
-    <span class="n">stPower</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Settings</span> <span class="k">for</span> <span class="n">the</span> <span class="n">YAG1</span> <span class="n">state</span><span class="o">.</span>
-    <span class="n">stYag1</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Settings</span> <span class="k">for</span> <span class="n">the</span> <span class="n">YAG2</span> <span class="n">state</span><span class="o">.</span>
-    <span class="n">stYag2</span><span class="p">:</span> <span class="n">ST_PositionState</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">unknown</span> <span class="n">value</span> <span class="n">to</span> <span class="n">request</span> <span class="n">a</span> <span class="n">new</span> <span class="n">move</span><span class="o">.</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MMS</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">eEnumSet</span><span class="p">:</span> <span class="n">E_PPM_States</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="n">TRUE</span> <span class="n">to</span> <span class="n">enable</span> <span class="nb">input</span> <span class="n">state</span> <span class="n">moves</span><span class="p">,</span> <span class="ow">or</span> <span class="n">FALSE</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">them</span><span class="o">.</span>
-    <span class="n">bEnableMotion</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="n">TRUE</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">beam</span> <span class="n">parameter</span> <span class="n">checks</span><span class="p">,</span> <span class="ow">or</span> <span class="n">FALSE</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">them</span><span class="o">.</span>
-    <span class="n">bEnableBeamParams</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="n">TRUE</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">position</span> <span class="n">limit</span> <span class="n">checks</span><span class="p">,</span> <span class="ow">or</span> <span class="n">FALSE</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">them</span><span class="o">.</span>
-    <span class="n">bEnablePositionLimits</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">device</span> <span class="k">for</span> <span class="n">use</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">PMPS</span> <span class="n">DB</span> <span class="n">lookup</span> <span class="ow">and</span> <span class="n">diagnostic</span> <span class="n">screens</span><span class="o">.</span>
-    <span class="n">sDeviceName</span><span class="p">:</span> <span class="n">STRING</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">transition</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">PMPS</span> <span class="n">database</span><span class="o">.</span>
-    <span class="n">sTransitionKey</span><span class="p">:</span> <span class="n">STRING</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">this</span> <span class="n">to</span> <span class="n">TRUE</span> <span class="n">to</span> <span class="n">re</span><span class="o">-</span><span class="n">read</span> <span class="n">the</span> <span class="n">loaded</span> <span class="n">database</span> <span class="n">immediately</span> <span class="p">(</span><span class="n">useful</span> <span class="k">for</span> <span class="n">debug</span><span class="p">)</span><span class="o">.</span>
-    <span class="n">bReadDBNow</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Offset</span> <span class="k">for</span> <span class="n">the</span> <span class="n">flow</span> <span class="n">meter</span> <span class="ow">in</span> <span class="n">engineering</span> <span class="n">units</span>
-    <span class="n">fFlowOffset</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Responsivity</span> <span class="k">for</span> <span class="n">power</span> <span class="n">meter</span>
-      <span class="n">fResponsivity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_OUTPUT</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">current</span> <span class="n">position</span> <span class="n">state</span> <span class="k">as</span> <span class="n">an</span> <span class="n">enum</span><span class="o">.</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MMS</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">GET</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">eEnumGet</span><span class="p">:</span> <span class="n">E_PPM_States</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">The</span> <span class="n">PMPS</span> <span class="n">database</span> <span class="n">lookup</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">the</span> <span class="n">current</span> <span class="n">position</span> <span class="n">state</span><span class="o">.</span>
-    <span class="n">stDbStateParams</span><span class="p">:</span> <span class="n">ST_DbStateParams</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR</span>
-    <span class="n">bInit</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-
-    <span class="n">fbYStage</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
-
-    <span class="n">fbStateDefaults</span><span class="p">:</span> <span class="n">FB_PositionState_Defaults</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MMS</span>
-        <span class="n">astPositionState</span><span class="o">.</span><span class="n">array</span><span class="p">:</span> <span class="mf">1..4</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fbStates</span><span class="p">:</span> <span class="n">FB_PositionStatePMPS1D</span><span class="p">;</span>
-    <span class="n">astPositionState</span><span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">GeneralConstants</span><span class="o">.</span><span class="n">MAX_STATES</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PositionState</span><span class="p">;</span>
-    <span class="n">fbArrCheckWrite</span><span class="p">:</span> <span class="n">FB_CheckPositionStateWrite</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SPM&#39;</span><span class="p">}</span>
-    <span class="n">fbPowerMeter</span><span class="p">:</span> <span class="n">FB_PPM_PowerMeter_IM4K2</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: CAM&#39;</span><span class="p">}</span>
-    <span class="n">fbGige</span><span class="p">:</span> <span class="n">FB_PPM_Gige</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span><span class="s1">&#39;pv: FWM&#39;</span><span class="p">}</span>
-    <span class="n">fbFlowMeter</span><span class="p">:</span> <span class="n">FB_AnalogInput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">15</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mi">60</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mi">0</span><span class="p">);</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: YAG&#39;</span><span class="p">}</span>
-    <span class="n">fbYagThermoCouple</span><span class="p">:</span> <span class="n">FB_ThermoCouple</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: FSW&#39;</span><span class="p">}</span>
-    <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR</span> <span class="n">CONSTANT</span>
-    <span class="o">//</span> <span class="n">State</span> <span class="n">defaults</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">provided</span>
-    <span class="n">fDelta</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">fAccel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">200</span><span class="p">;</span>
-    <span class="n">fOutDecel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">IF</span> <span class="n">NOT</span> <span class="n">bInit</span> <span class="n">THEN</span>
-    <span class="n">bInit</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-
-    <span class="n">stYStage</span><span class="o">.</span><span class="n">nEnableMode</span> <span class="o">:=</span> <span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">DURING_MOTION</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Partial</span> <span class="n">backcompat</span><span class="p">,</span> <span class="n">this</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">fVelocity</span> <span class="n">too</span> <span class="n">but</span> <span class="n">this</span> <span class="n">should</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">per</span> <span class="n">install</span>
-    <span class="n">fbStateDefaults</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stOut</span><span class="p">,</span> <span class="n">sNameDefault</span><span class="o">:=</span><span class="s1">&#39;OUT&#39;</span><span class="p">,</span> <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span> <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span> <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fOutDecel</span><span class="p">);</span>
-    <span class="n">fbStateDefaults</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stPower</span><span class="p">,</span> <span class="n">sNameDefault</span><span class="o">:=</span><span class="s1">&#39;POWERMETER&#39;</span><span class="p">,</span> <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span> <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span> <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">);</span>
-    <span class="n">fbStateDefaults</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stYag1</span><span class="p">,</span> <span class="n">sNameDefault</span><span class="o">:=</span><span class="s1">&#39;YAG1&#39;</span><span class="p">,</span> <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span> <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span> <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">);</span>
-    <span class="n">fbStateDefaults</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stYag2</span><span class="p">,</span> <span class="n">sNameDefault</span><span class="o">:=</span><span class="s1">&#39;YAG2&#39;</span><span class="p">,</span> <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span> <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span> <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">);</span>
-<span class="n">END_IF</span>
-
-<span class="n">stYStage</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">stYStage</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-
-<span class="n">fbYStage</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">);</span>
-
-<span class="o">//</span> <span class="n">We</span> <span class="n">need</span> <span class="n">to</span> <span class="n">update</span> <span class="kn">from</span><span class="w"> </span><span class="nn">PLC</span> <span class="ow">or</span> <span class="kn">from</span><span class="w"> </span><span class="nn">EPICS</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">both</span>
-<span class="n">fbArrCheckWrite</span><span class="p">(</span>
-    <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
-    <span class="n">bCheck</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
-    <span class="n">bSave</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">,</span>
-<span class="p">);</span>
-<span class="n">IF</span> <span class="n">NOT</span> <span class="n">fbArrCheckWrite</span><span class="o">.</span><span class="n">bHadWrite</span> <span class="n">THEN</span>
-    <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">OUT</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stOut</span><span class="p">;</span>
-    <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">POWERMETER</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stPower</span><span class="p">;</span>
-    <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">YAG1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stYag1</span><span class="p">;</span>
-    <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">YAG2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stYag2</span><span class="p">;</span>
-<span class="n">END_IF</span>
-
-<span class="n">fbStates</span><span class="p">(</span>
-    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stYStage</span><span class="p">,</span>
-    <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
-    <span class="n">eEnumSet</span><span class="o">:=</span><span class="n">eEnumSet</span><span class="p">,</span>
-    <span class="n">eEnumGet</span><span class="o">:=</span><span class="n">eEnumGet</span><span class="p">,</span>
-    <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">fbFFHWO</span><span class="p">,</span>
-    <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">fbArbiter</span><span class="p">,</span>
-    <span class="n">bEnableMotion</span><span class="o">:=</span><span class="n">bEnableMotion</span><span class="p">,</span>
-    <span class="n">bEnableBeamParams</span><span class="o">:=</span><span class="n">bEnableBeamParams</span><span class="p">,</span>
-    <span class="n">bEnablePositionLimits</span><span class="o">:=</span><span class="n">bEnablePositionLimits</span><span class="p">,</span>
-    <span class="n">sDeviceName</span><span class="o">:=</span><span class="n">sDeviceName</span><span class="p">,</span>
-    <span class="n">sTransitionKey</span><span class="o">:=</span><span class="n">sTransitionKey</span><span class="p">,</span>
-    <span class="n">bReadDBNow</span><span class="o">:=</span><span class="n">bReadDBNow</span><span class="p">,</span>
-    <span class="n">stDbStateParams</span><span class="o">=&gt;</span><span class="n">stDbStateParams</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="n">fbArrCheckWrite</span><span class="p">(</span>
-    <span class="n">astPositionState</span><span class="o">:=</span><span class="n">astPositionState</span><span class="p">,</span>
-    <span class="n">bCheck</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">,</span>
-    <span class="n">bSave</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="n">stOut</span> <span class="o">:=</span> <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">OUT</span><span class="p">];</span>
-<span class="n">stPower</span> <span class="o">:=</span> <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">POWERMETER</span><span class="p">];</span>
-<span class="n">stYag1</span> <span class="o">:=</span> <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">YAG1</span><span class="p">];</span>
-<span class="n">stYag2</span> <span class="o">:=</span> <span class="n">astPositionState</span><span class="p">[</span><span class="n">E_PPM_States</span><span class="o">.</span><span class="n">YAG2</span><span class="p">];</span>
-
-<span class="n">fbPowerMeter</span><span class="p">(</span>
-  <span class="n">fTempSP</span><span class="o">:=</span><span class="n">fbStates</span><span class="o">.</span><span class="n">stDbStateParams</span><span class="o">.</span><span class="n">stReactiveParams</span><span class="o">.</span><span class="n">nTempSP</span><span class="p">,</span>
-  <span class="n">bVetoTempFFO</span><span class="o">:=</span><span class="n">eEnumGet</span> <span class="o">=</span> <span class="n">E_PPM_States</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span>
-  <span class="n">sDeviceName</span><span class="o">:=</span><span class="n">sDeviceName</span><span class="p">,</span>
-  <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">fbFFHWO</span><span class="p">,</span>
-  <span class="n">eEnumGet</span><span class="o">:=</span><span class="n">eEnumGet</span><span class="p">,</span>
-  <span class="n">stYAxisState</span><span class="o">:=</span><span class="n">stYStage</span><span class="o">.</span><span class="n">Axis</span><span class="o">.</span><span class="n">NcToPlc</span><span class="o">.</span><span class="n">AxisState</span><span class="p">,</span>
-  <span class="n">fResponsivity</span><span class="o">:=</span><span class="n">fResponsivity</span><span class="p">,</span>
-<span class="p">);</span>
-<span class="n">fbGige</span><span class="p">();</span>
-<span class="n">fbFlowMeter</span><span class="p">(</span><span class="n">fOffset</span><span class="o">:=</span><span class="n">fFlowOffset</span><span class="p">);</span>
-<span class="n">fbYagThermoCouple</span><span class="p">();</span>
-<span class="n">fbFlowSwitch</span><span class="p">();</span>
-
-<span class="n">END_FUNCTION_BLOCK</span>
-</pre></div>
-</div>
-<dl class="simple">
-<dt>Related:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#fb-ppm-powermeter-im4k2">FB_PPM_PowerMeter_IM4K2</a></p></li>
-</ul>
-</dd>
-</dl>
-</section>
-<section id="fb-ppm-powermeter-im4k2">
-<h2>FB_PPM_PowerMeter_IM4K2<a class="headerlink" href="#fb-ppm-powermeter-im4k2" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_PPM_PowerMeter_IM4K2</span>
-<span class="n">VAR_INPUT</span>
-    <span class="n">fTempSP</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="n">bVetoTempFFO</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="n">sDeviceName</span><span class="p">:</span> <span class="n">STRING</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Used</span> <span class="n">to</span> <span class="n">know</span> <span class="n">when</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">background</span> <span class="n">auto</span><span class="o">-</span><span class="n">collection</span>
-    <span class="n">eEnumGet</span><span class="p">:</span> <span class="n">E_PPM_States</span><span class="p">;</span>
-    <span class="n">stYAxisState</span><span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Calibrated</span> <span class="k">for</span> <span class="n">each</span> <span class="n">gentec</span><span class="p">,</span> <span class="n">should</span> <span class="n">be</span> <span class="n">passed</span> <span class="k">as</span> <span class="nb">input</span>
-    <span class="o">//</span> <span class="n">If</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">,</span> <span class="n">responsive</span> <span class="n">energy</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">calculated</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">RESP</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">V</span><span class="o">/</span><span class="n">W</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fResponsivity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_IN_OUT</span>
-    <span class="n">fbFFHWO</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR</span>
-    <span class="n">iVoltageDINT</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span> <span class="n">DINT</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">VOLT</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mV</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fVoltage</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">VOLT_BUFFER</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mV</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fVoltageBuffer</span><span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1..1000</span><span class="p">]</span> <span class="n">OF</span> <span class="n">LREAL</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fbThermoCouple</span><span class="p">:</span> <span class="n">FB_ThermoCouple</span><span class="p">;</span>
-
-
-    <span class="n">fFrequency</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Used</span> <span class="n">to</span> <span class="n">get</span> <span class="n">beam</span> <span class="n">rate</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">SXR_NC_BeamRateFromEpics</span>
-        <span class="n">link</span><span class="p">:</span> <span class="n">EVNT</span><span class="p">:</span><span class="n">SYS0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">NC_SOFTRATE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fSXR_NC_Frequency</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">SXR_SC_BeamRateFromEpics</span>
-        <span class="n">link</span><span class="p">:</span> <span class="n">TPG</span><span class="p">:</span><span class="n">SYS0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">DST04</span><span class="p">:</span><span class="n">RATE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">uSXR_SC_Frequency</span><span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">HXR_NC_BeamRateFromEpics</span>
-        <span class="n">link</span><span class="p">:</span> <span class="n">EVNT</span><span class="p">:</span><span class="n">SYS0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">NC_HARDRATE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fHXR_NC_Frequency</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">HXR_SC_BeamRateFromEpics</span>
-        <span class="n">link</span><span class="p">:</span> <span class="n">TPG</span><span class="p">:</span><span class="n">SYS0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="n">DST03</span><span class="p">:</span><span class="n">RATE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">uHXR_SC_Frequency</span><span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Pulse</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">pulse</span> <span class="n">energy</span> <span class="ow">and</span> <span class="n">buffer</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MJ</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mJ</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fCalibMJ</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MJ_BUFFER</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mJ</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fCalibMJBuffer</span><span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1..1000</span><span class="p">]</span> <span class="n">OF</span> <span class="n">LREAL</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Wattage</span> <span class="ow">and</span> <span class="n">buffer</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">WATT</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mW</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fPulseWattage</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">WATT_BUFFER</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mW</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fPulseWattageBuffer</span><span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1..1000</span><span class="p">]</span> <span class="n">OF</span> <span class="n">LREAL</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Background</span> <span class="n">voltage</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">VOLT</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">mV</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fBackgroundVoltage</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Internal</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">background</span> <span class="n">voltage</span> <span class="n">auto</span><span class="o">-</span><span class="n">collection</span>
-    <span class="n">fBackgroundVoltageAcc</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">uAccCount</span><span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
-    <span class="n">fBackgroundVoltageSum</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">fBackgroundVoltageStale</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">tonBackgroundAutoCollecting</span><span class="p">:</span> <span class="n">TON</span><span class="p">;</span>
-    <span class="n">fBackgroundVoltageBuffer</span><span class="p">:</span> <span class="n">ARRAY</span><span class="p">[</span><span class="mf">1..100</span><span class="p">]</span> <span class="n">OF</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">udBackgroundVoltageBufferIndex</span><span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">rTrig_Background</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
-    <span class="n">i</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Used</span> <span class="n">to</span> <span class="n">reset</span> <span class="n">auto</span><span class="o">-</span><span class="n">collected</span> <span class="n">background</span> <span class="n">buffer</span><span class="p">,</span> <span class="ow">and</span> <span class="n">fBackgroundVoltage</span> <span class="k">if</span> <span class="ow">in</span> <span class="n">Auto</span> <span class="n">mode</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">RESET</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bResetAutoBackground</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">In</span> <span class="n">manual</span> <span class="n">mode</span><span class="p">,</span> <span class="n">auto</span><span class="o">-</span><span class="n">background</span> <span class="n">updates</span> <span class="n">buffer</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">change</span> <span class="n">fBackgroundVoltage</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">MODE</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">BACKGROUND_MODE</span><span class="p">:</span> <span class="p">(</span><span class="n">Manual</span><span class="p">,</span> <span class="n">Auto</span><span class="p">)</span> <span class="o">:=</span> <span class="n">Auto</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Boolean</span> <span class="n">to</span> <span class="n">trigger</span> <span class="n">collection</span> <span class="n">of</span> <span class="n">background</span> <span class="n">voltages</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">COLL</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bBackgroundCollect</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Time</span> <span class="ow">in</span> <span class="n">seconds</span> <span class="n">to</span> <span class="n">collect</span> <span class="n">background</span> <span class="n">voltages</span> <span class="k">for</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">TIME</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">s</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">uBackgroundCollectionTime</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">60</span><span class="p">;</span>
-    <span class="n">tofBackgroundCollecting</span><span class="p">:</span> <span class="n">TOF</span><span class="p">;</span>
-    <span class="n">udBackgroundManualCount</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Boolean</span> <span class="n">indicating</span> <span class="n">when</span> <span class="n">background</span> <span class="ow">is</span> <span class="n">being</span> <span class="n">manually</span> <span class="n">collected</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">BACK</span><span class="p">:</span><span class="n">MANUAL_COLLECTING</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bBackgroundCollecting</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-
-    <span class="n">fbGetPMVoltage</span><span class="p">:</span> <span class="n">FB_AnalogInput_IM4K2</span><span class="p">;</span>
-
-    <span class="n">fbVoltageBuffer</span><span class="p">:</span> <span class="n">FB_LREALBuffer</span><span class="p">;</span>
-    <span class="n">fbPulseWattageBuffer</span><span class="p">:</span> <span class="n">FB_LREALBuffer</span><span class="p">;</span>
-    <span class="n">fbCalibMJBuffer</span><span class="p">:</span> <span class="n">FB_LREALBuffer</span><span class="p">;</span>
-
-    <span class="n">FF</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
-        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when the per-pulse energy reading is high enough to damage the power meter&#39;</span><span class="p">,</span>
-        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#500);</span>
-    <span class="n">bOverAllowableEnergy</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="n">uOverCounter</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_STAT</span> <span class="n">CONSTANT</span>
-    <span class="o">//</span> <span class="n">Voltage</span> <span class="n">limits</span> <span class="k">for</span> <span class="n">wavelength</span> <span class="n">ranges</span>
-    <span class="n">uSoftWavelengthEdge1</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">300</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge1L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">299</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge2</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1000</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge2L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">999</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge3</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1560</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge3L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1559</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge4</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">2000</span><span class="p">;</span>
-    <span class="n">uSoftWavelengthEdge4L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1999</span><span class="p">;</span>
-
-    <span class="n">uHardWavelengthEdge1</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1000</span><span class="p">;</span>
-    <span class="n">uHardWavelengthEdge2</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1500</span><span class="p">;</span>
-    <span class="n">uHardWavelengthEdge2L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">1499</span><span class="p">;</span>
-    <span class="n">uHardWavelengthEdge3</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">4000</span><span class="p">;</span>
-    <span class="n">uHardWavelengthEdge3L</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">3999</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">fbThermoCouple</span><span class="p">();</span>
-
-<span class="o">//</span> <span class="n">Convert</span> <span class="n">the</span> <span class="n">terminal</span><span class="s1">&#39;s integer into a value in millivolts</span>
-<span class="n">fbGetPMVoltage</span><span class="p">(</span>
-    <span class="n">iRaw</span> <span class="o">:=</span> <span class="n">iVoltageDINT</span><span class="p">,</span>
-    <span class="n">iTermBits</span> <span class="o">:=</span> <span class="mi">31</span><span class="p">,</span>
-    <span class="n">fTermMax</span> <span class="o">:=</span> <span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">fTermMin</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">fOffset</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">//</span> <span class="n">Add</span> <span class="n">Offset</span> <span class="n">based</span> <span class="n">on</span> <span class="n">fResolution</span> <span class="p">(</span><span class="mi">2</span><span class="n">mV</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">case</span><span class="p">)</span><span class="o">.</span>
-    <span class="n">fResolution</span> <span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span> <span class="o">//</span> <span class="n">Display</span> <span class="n">the</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">mV</span>
-    <span class="n">fReal</span> <span class="o">=&gt;</span> <span class="n">fVoltage</span><span class="p">);</span>
-
-<span class="n">rTrig_Background</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span><span class="p">(</span><span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_PPM_States</span><span class="o">.</span><span class="n">OUT</span> <span class="n">OR</span> <span class="n">stYAxisState</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span><span class="p">));</span>
-<span class="o">//</span> <span class="n">Reset</span> <span class="n">buffer</span> <span class="ow">and</span> <span class="n">related</span> <span class="n">variables</span>
-<span class="n">IF</span> <span class="n">rTrig_Background</span><span class="o">.</span><span class="n">Q</span> <span class="n">OR</span> <span class="n">bResetAutoBackground</span> <span class="n">THEN</span>
-    <span class="n">IF</span> <span class="n">bResetAutoBackground</span> <span class="n">THEN</span>
-        <span class="n">bResetAutoBackground</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-        <span class="n">IF</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Auto</span> <span class="n">THEN</span>
-            <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="n">END_IF</span>
-    <span class="n">ELSE</span>
-        <span class="o">//</span> <span class="n">Dump</span> <span class="mi">5</span><span class="n">s</span> <span class="n">worth</span> <span class="n">of</span> <span class="n">readings</span>
-        <span class="n">IF</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="n">THEN</span>
-            <span class="n">FOR</span> <span class="n">i</span> <span class="o">:=</span> <span class="p">(</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="n">TO</span> <span class="p">(</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">DO</span>
-                <span class="n">fBackgroundVoltageSum</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageSum</span> <span class="o">-</span> <span class="n">fBackgroundVoltageBuffer</span><span class="p">[((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">MOD</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-            <span class="n">END_FOR</span>
-            <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">:=</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">5</span><span class="p">;</span>
-            <span class="n">IF</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Auto</span> <span class="n">THEN</span>
-                <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageSum</span> <span class="o">/</span> <span class="n">MIN</span><span class="p">((</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">100</span><span class="p">);</span>
-            <span class="n">END_IF</span>
-        <span class="n">ELSIF</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Auto</span> <span class="n">THEN</span>
-                <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="n">END_IF</span>
-    <span class="n">END_IF</span>
-    <span class="n">fBackgroundVoltageAcc</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">fBackgroundVoltageSum</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">tonBackgroundAutoCollecting</span><span class="p">(</span><span class="n">IN</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">);</span>
-    <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">ELSIF</span> <span class="n">eEnumGet</span> <span class="o">=</span> <span class="n">E_PPM_States</span><span class="o">.</span><span class="n">OUT</span> <span class="n">AND</span> <span class="n">stYAxisState</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">THEN</span>
-    <span class="n">tonBackgroundAutoCollecting</span><span class="p">(</span> <span class="n">IN</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">PT</span> <span class="o">:=</span> <span class="n">T</span><span class="c1">#1000MS);</span>
-    <span class="o">//</span> <span class="n">Every</span> <span class="n">second</span><span class="p">,</span> <span class="n">move</span> <span class="n">fBackgroundVoltageAcc</span> <span class="n">into</span> <span class="n">buffer</span> <span class="ow">and</span> <span class="nb">sum</span>
-    <span class="n">IF</span> <span class="n">tonBackgroundAutoCollecting</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="n">TRUE</span> <span class="n">THEN</span>
-        <span class="n">tonBackgroundAutoCollecting</span><span class="p">(</span> <span class="n">IN</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">);</span>
-        <span class="n">fBackgroundVoltageStale</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageBuffer</span><span class="p">[((</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">MOD</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">fBackgroundVoltageBuffer</span><span class="p">[((</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">MOD</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageAcc</span> <span class="o">/</span> <span class="n">uAccCount</span><span class="p">;</span>
-        <span class="o">//</span> <span class="n">Remove</span> <span class="n">overwritten</span> <span class="n">voltage</span>
-        <span class="n">IF</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="n">THEN</span>
-            <span class="n">fBackgroundVoltageSum</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageSum</span> <span class="o">-</span> <span class="n">fBackgroundVoltageStale</span><span class="p">;</span>
-        <span class="n">END_IF</span>
-        <span class="n">fBackgroundVoltageSum</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageSum</span> <span class="o">+</span> <span class="n">fBackgroundVoltageAcc</span> <span class="o">/</span> <span class="n">uAccCount</span><span class="p">;</span>
-        <span class="n">fBackgroundVoltageAcc</span> <span class="o">:=</span> <span class="n">fVoltage</span><span class="p">;</span>
-        <span class="n">uAccCount</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">:=</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">ELSE</span>
-        <span class="n">uAccCount</span> <span class="o">:=</span> <span class="n">uAccCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">fBackgroundVoltageAcc</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageAcc</span> <span class="o">+</span> <span class="n">fVoltage</span><span class="p">;</span>
-    <span class="n">END_IF</span>
-
-<span class="n">END_IF</span>
-
-<span class="n">IF</span> <span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Auto</span> <span class="n">THEN</span>
-    <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="n">fBackgroundVoltageSum</span> <span class="o">/</span> <span class="n">MIN</span><span class="p">((</span><span class="n">udBackgroundVoltageBufferIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">100</span><span class="p">);</span>
-<span class="n">END_IF</span>
-
-<span class="o">//</span> <span class="n">Start</span> <span class="n">collecting</span> <span class="n">background</span> <span class="ow">in</span> <span class="n">manual</span> <span class="n">mode</span> <span class="o">-</span> <span class="mi">60</span><span class="n">s</span> <span class="n">by</span> <span class="n">default</span> <span class="n">but</span> <span class="n">can</span> <span class="n">be</span> <span class="nb">set</span> <span class="k">with</span> <span class="n">uBackgroundCollectionTime</span>
-<span class="n">IF</span> <span class="n">bBackgroundCollect</span> <span class="o">=</span> <span class="n">TRUE</span> <span class="n">AND</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Manual</span> <span class="n">THEN</span>
-    <span class="n">bBackgroundCollect</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="n">udBackgroundManualCount</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">tofBackgroundCollecting</span><span class="p">(</span><span class="n">IN</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
-<span class="n">END_IF</span>
-
-<span class="n">bBackgroundCollecting</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-<span class="n">tofBackgroundCollecting</span><span class="p">(</span><span class="n">IN</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">PT</span> <span class="o">:=</span> <span class="n">UINT_TO_TIME</span><span class="p">(</span><span class="n">uBackgroundCollectionTime</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">));</span>
-<span class="n">IF</span> <span class="n">tofBackgroundCollecting</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="n">TRUE</span> <span class="n">THEN</span>
-    <span class="n">IF</span> <span class="n">BACKGROUND_MODE</span> <span class="o">=</span> <span class="n">Manual</span> <span class="n">THEN</span>
-        <span class="n">bBackgroundCollecting</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-        <span class="n">udBackgroundManualCount</span> <span class="o">:=</span> <span class="n">udBackgroundManualCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">fBackgroundVoltage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fBackgroundVoltage</span> <span class="o">*</span> <span class="p">(</span><span class="n">udBackgroundManualCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fVoltage</span><span class="p">)</span> <span class="o">/</span> <span class="n">udBackgroundManualCount</span><span class="p">;</span>
-    <span class="n">END_IF</span>
-<span class="n">END_IF</span>
-
-<span class="o">//</span> <span class="n">Getting</span> <span class="n">frequency</span> <span class="n">based</span> <span class="n">on</span> <span class="n">accelerator</span> <span class="n">source</span>
-<span class="p">{</span><span class="n">IF</span> <span class="n">defined</span> <span class="p">(</span><span class="n">K</span><span class="p">)}</span>
-    <span class="n">IF</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nMachineMode</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">THEN</span>
-        <span class="n">fFrequency</span> <span class="o">:=</span> <span class="n">fSXR_NC_Frequency</span><span class="p">;</span>
-    <span class="n">ELSIF</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nMachineMode</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">THEN</span>
-        <span class="n">fFrequency</span> <span class="o">:=</span> <span class="n">uSXR_SC_Frequency</span><span class="p">;</span>
-    <span class="n">END_IF</span>
-<span class="p">{</span><span class="n">ELSIF</span> <span class="n">defined</span> <span class="p">(</span><span class="n">L</span><span class="p">)}</span>
-    <span class="n">IF</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nMachineMode</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">THEN</span>
-        <span class="n">fFrequency</span> <span class="o">:=</span> <span class="n">fHXR_NC_Frequency</span><span class="p">;</span>
-    <span class="n">ELSIF</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nMachineMode</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">THEN</span>
-        <span class="n">fFrequency</span> <span class="o">:=</span> <span class="n">uHXR_SC_Frequency</span><span class="p">;</span>
-    <span class="n">END_IF</span>
-<span class="p">{</span><span class="n">END_IF</span><span class="p">}</span>
-
-<span class="o">//</span> <span class="n">Getting</span> <span class="n">wattage</span> <span class="ow">and</span> <span class="n">energy</span>
-<span class="n">fPulseWattage</span> <span class="o">:=</span> <span class="n">SEL</span><span class="p">(</span><span class="n">fResponsivity</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">fVoltage</span> <span class="o">-</span> <span class="n">fBackgroundVoltage</span><span class="p">)</span> <span class="o">/</span> <span class="n">fResponsivity</span><span class="p">);</span>
-<span class="n">fCalibMJ</span> <span class="o">:=</span> <span class="n">SEL</span><span class="p">(</span><span class="n">fFrequency</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">fPulseWattage</span> <span class="o">/</span> <span class="n">fFrequency</span><span class="p">);</span>
-
-<span class="o">//</span> <span class="n">FF</span> <span class="ow">in</span> <span class="n">case</span> <span class="n">voltage</span> <span class="ow">is</span> <span class="n">high</span> <span class="n">enough</span> <span class="n">to</span> <span class="n">damage</span> <span class="n">power</span> <span class="n">meter</span> <span class="n">based</span> <span class="n">on</span> <span class="n">wavelengths</span>
-<span class="p">{</span><span class="n">IF</span> <span class="n">defined</span> <span class="p">(</span><span class="n">K</span><span class="p">)}</span>
-    <span class="n">CASE</span> <span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neV</span><span class="p">)</span> <span class="n">OF</span>
-        <span class="mi">0</span> <span class="o">..</span> <span class="n">uSoftWavelengthEdge1L</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="n">uSoftWavelengthEdge1</span> <span class="o">..</span> <span class="n">uSoftWavelengthEdge2L</span> <span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="n">uSoftWavelengthEdge2</span> <span class="o">..</span> <span class="n">uSoftWavelengthEdge3L</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">;</span>
-        <span class="n">uSoftWavelengthEdge3</span> <span class="o">..</span> <span class="n">uSoftWavelengthEdge4L</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">;</span>
-        <span class="n">uSoftWavelengthEdge4</span> <span class="o">..</span> <span class="mi">65535</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">END_CASE</span>
-<span class="p">{</span><span class="n">ELSIF</span> <span class="n">defined</span> <span class="p">(</span><span class="n">L</span><span class="p">)}</span>
-    <span class="n">CASE</span> <span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neV</span><span class="p">)</span> <span class="n">OF</span>
-        <span class="n">uHardWavelengthEdge1</span> <span class="o">..</span> <span class="n">uHardWavelengthEdge2L</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="n">uHardWavelengthEdge2</span> <span class="o">..</span> <span class="n">uHardWavelengthEdge3L</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">;</span>
-        <span class="n">uHardWavelengthEdge3</span> <span class="o">..</span> <span class="mi">65535</span><span class="p">:</span> <span class="n">bOverAllowableEnergy</span> <span class="o">:=</span> <span class="n">fCalibMJ</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">END_CASE</span>
-<span class="p">{</span><span class="n">END_IF</span><span class="p">}</span>
-<span class="n">IF</span> <span class="n">eEnumGet</span> <span class="o">=</span> <span class="n">E_PPM_States</span><span class="o">.</span><span class="n">POWERMETER</span> <span class="n">AND</span> <span class="n">bOverAllowableEnergy</span> <span class="n">THEN</span>
-    <span class="n">uOverCounter</span> <span class="o">:=</span> <span class="n">MIN</span><span class="p">(</span><span class="n">uOverCounter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="n">ELSE</span>
-    <span class="n">uOverCounter</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">END_IF</span>
-<span class="n">FF</span><span class="p">(</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">eEnumGet</span> <span class="o">&lt;&gt;</span> <span class="n">E_PPM_States</span><span class="o">.</span><span class="n">POWERMETER</span> <span class="n">OR</span> <span class="n">uOverCounter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="n">i_DevName</span> <span class="o">:=</span> <span class="n">sDeviceName</span><span class="p">,</span>
-    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">fbFFHWO</span><span class="p">);</span>
-
-<span class="o">//</span> <span class="n">Buffer</span> <span class="n">the</span> <span class="n">full</span><span class="o">-</span><span class="n">rate</span> <span class="n">Voltage</span><span class="p">,</span> <span class="n">Pulse</span> <span class="n">wattage</span><span class="p">,</span> <span class="ow">and</span> <span class="n">calibrated</span> <span class="n">MJ</span> <span class="n">values</span>
-<span class="n">fbVoltageBuffer</span><span class="p">(</span>
-    <span class="n">bExecute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
-    <span class="n">fInput</span> <span class="o">:=</span> <span class="n">fVoltage</span><span class="p">,</span>
-    <span class="n">arrOutput</span> <span class="o">=&gt;</span> <span class="n">fVoltageBuffer</span><span class="p">);</span>
-<span class="n">fbPulseWattageBuffer</span><span class="p">(</span>
-    <span class="n">bExecute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
-    <span class="n">fInput</span> <span class="o">:=</span> <span class="n">fPulseWattage</span><span class="p">,</span>
-    <span class="n">arrOutput</span> <span class="o">=&gt;</span> <span class="n">fPulseWattageBuffer</span><span class="p">);</span>
-<span class="n">fbCalibMJBuffer</span><span class="p">(</span>
-    <span class="n">bExecute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
-    <span class="n">fInput</span> <span class="o">:=</span> <span class="n">fCalibMJ</span><span class="p">,</span>
-    <span class="n">arrOutput</span> <span class="o">=&gt;</span> <span class="n">fCalibMJBuffer</span><span class="p">);</span>
-
-<span class="n">END_FUNCTION_BLOCK</span>
-</pre></div>
-</div>
-<dl class="simple">
-<dt>Related:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#fb-analoginput-im4k2">FB_AnalogInput_IM4K2</a></p></li>
-</ul>
-</dd>
-</dl>
-</section>
 <section id="fb-tm1k2">
 <h2>FB_TM1K2<a class="headerlink" href="#fb-tm1k2" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TM1K2</span>
@@ -2494,20 +1922,20 @@ END_PROGRAM
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_IM4K2_PPM</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM4K2:PPM&#39;</span><span class="p">}</span>
-     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbGige.iIlluminatorINT := TIIB[IM4K2-EL4004-E7]^AO Outputs Channel 1^Analog output;</span>
                               <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E3</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageDINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3602</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="n">E8</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbYagThermoCouple</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3602</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="n">E8</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagTempSensor</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagTempSensor</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagTempSensor</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbYagTempSensor</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM4K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbFlowMeter</span><span class="o">.</span><span class="n">iRaw</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM1K2</span><span class="o">-</span><span class="n">EL3052</span><span class="o">-</span><span class="n">E5</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Standard</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="s1">&#39;}</span>
 <span class="o">//</span> <span class="n">IM4K2</span> <span class="n">shares</span> <span class="n">the</span> <span class="n">same</span> <span class="n">flow</span> <span class="n">meter</span> <span class="k">as</span> <span class="n">IM1K2</span>
-    <span class="n">fbIM4K2</span><span class="p">:</span> <span class="n">FB_PPM_IM4K2</span><span class="p">;</span>
+    <span class="n">fbIM4K2</span><span class="p">:</span> <span class="n">FB_PPM</span><span class="p">;</span>
 
     <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
     <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
@@ -2533,6 +1961,9 @@ END_PROGRAM
     <span class="n">bEnableBeamParams</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
     <span class="n">bEnablePositionLimits</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
     <span class="n">fResponsivity</span> <span class="o">:=</span> <span class="mf">0.0584</span><span class="p">,</span>
+    <span class="n">iTermBits</span> <span class="o">:=</span> <span class="mi">31</span><span class="p">,</span>
+    <span class="n">fTermMax</span> <span class="o">:=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">fTermMin</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -2540,7 +1971,6 @@ END_PROGRAM
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#fb-ppm-im4k2">FB_PPM_IM4K2</a></p></li>
 <li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
 <li><p><a class="reference internal" href="#main">Main</a></p></li>
 </ul>
@@ -2619,7 +2049,7 @@ END_PROGRAM
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: IM6K2:PPM&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbGige.iIlluminatorINT := TIIB[IM6K2-EL4004-E7]^AO Outputs Channel 1^Analog output;</span>
                               <span class="o">.</span><span class="n">fbGige</span><span class="o">.</span><span class="n">bGigePower</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL2004</span><span class="o">-</span><span class="n">E3</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL3062</span><span class="o">-</span><span class="n">E6</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Standard</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">iVoltageINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL3602</span><span class="o">-</span><span class="n">E8</span><span class="p">]</span><span class="o">^</span><span class="n">AI</span> <span class="n">Standard</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Value</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
                               <span class="o">.</span><span class="n">fbPowerMeter</span><span class="o">.</span><span class="n">fbTempSensor</span><span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">IM6K2</span><span class="o">-</span><span class="n">EL3314</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">TC</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
@@ -2663,6 +2093,9 @@ END_PROGRAM
     <span class="n">bEnableBeamParams</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
     <span class="n">bEnablePositionLimits</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
     <span class="n">fResponsivity</span> <span class="o">:=</span> <span class="mf">0.0719</span><span class="p">,</span>
+    <span class="n">iTermBits</span> <span class="o">:=</span> <span class="mi">31</span><span class="p">,</span>
+    <span class="n">fTermMax</span> <span class="o">:=</span> <span class="mi">1250</span><span class="p">,</span>
+    <span class="n">fTermMin</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
 <span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
