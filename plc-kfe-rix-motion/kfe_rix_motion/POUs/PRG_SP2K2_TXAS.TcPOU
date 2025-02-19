@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_SP2K2_TXAS" Id="{5d1de4e6-8549-48db-a26e-02c10173afc0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SP2K2_TXAS
+VAR
+	bInit : BOOL := TRUE;
+    fbTXAS_TAR_RX : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bInit THEN
+    Main.M38.bHardwareEnable := TRUE;
+    Main.M38.bPowerSelf := TRUE;
+    bInit := FALSE;
+END_IF
+
+
+fbTXAS_TAR_RX(stMotionStage:=Main.M38);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

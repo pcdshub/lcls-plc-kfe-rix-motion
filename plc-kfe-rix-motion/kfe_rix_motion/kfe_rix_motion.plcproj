@@ -97,6 +97,9 @@
     <Compile Include="POUs\PRG_SP1K2_PAX.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_SP2K2_TXAS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_TM1K2_ATM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
