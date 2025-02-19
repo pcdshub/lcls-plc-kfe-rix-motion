@@ -272,9 +272,8 @@ VAR_GLOBAL
 	
 	// TXAS Motors
 	{attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:Y:01'}
-    //{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 1;
-    //                          .bLimitBackwardEnable := TIIB[PAX-EL7047-E17]^STM Status^Status^Digital input 2;
-    //                          .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 2^Position'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;}
     M38: ST_MotionStage := (sName := 'SP2K2:TXAS:MMS:Y:01');
 
 END_VAR]]></Declaration>
