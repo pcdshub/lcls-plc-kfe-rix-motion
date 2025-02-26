@@ -15,6 +15,8 @@ IF bInit THEN
     bInit := FALSE;
 END_IF
 
+Main.M38.bLimitBackwardEnable := TRUE;
+Main.M38.bLimitForwardEnable := TRUE;
 
 fbTXAS_TAR_RX(stMotionStage:=Main.M38);]]></ST>
     </Implementation>
