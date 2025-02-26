@@ -55,6 +55,9 @@
     <Compile Include="POUs\PRG_AT2K2_SOLID.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_AT3K2_SOLID.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_IM6K2_PPM.TcPOU">
       <SubType>Code</SubType>
     </Compile>

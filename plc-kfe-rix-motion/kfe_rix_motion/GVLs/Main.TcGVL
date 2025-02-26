@@ -275,6 +275,16 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;}
     M38: ST_MotionStage := (sName := 'SP2K2:TXAS:MMS:Y:01');
+	
+	{attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:01'}
+    //{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
+    //                         .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;}
+    M39: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:01');
+	
+	{attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:02'}
+    //{attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
+    //                          .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;}
+    M40: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:02');
 
 END_VAR]]></Declaration>
   </GVL>
