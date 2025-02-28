@@ -1427,10 +1427,15 @@ External Setpoint Generation:
 	<Axis Id="38" CreateSymbols="true" AxisType="1" AxisFolder="SP2K2-TXAS">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<General UnitName="Degree"/>
+			<Dynamic Acceleration="83.0317" Deceleration="83.0317" Jerk="1378.85"/>
+			<Velo RefSearch="1" RefSync="1" SlowManual="0.5" FastManual="5" Maximum="5"/>
+			<PositionAreaControl Range="1"/>
+			<TargetPosControl Range="1"/>
+			<OtherSettings AllowMotionCmdToSlave="true" PulseDistancePos="1" PulseDistanceNeg="1"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
-			<EncPara MaxCount="#xffffffff">
+			<EncPara ScaleFactorNumerator="0.0128" MaxCount="#xffffffff">
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1491,7 +1496,7 @@ External Setpoint Generation:
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
 			<DrvPara>
-				<Analog VeloReferenz="20" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
+				<Analog VeloReferenz="128" TorqueSetpointScale="10" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1563,6 +1568,7 @@ External Setpoint Generation:
 		</Drive>
 		<Controller Name="Ctrl" CtrType="1">
 			<CtrPara PriorControlFactor="1">
+				<PosDiffControl Range="0.1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
