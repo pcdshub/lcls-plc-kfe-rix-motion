@@ -1424,7 +1424,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="38" CreateSymbols="true" AxisType="1" AxisFolder="SP2K2-TXAS">
+	<Axis Id="38" Disabled="true" CreateSymbols="true" AxisType="1" AxisFolder="SP2K2-TXAS">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<General UnitName="Degree"/>
