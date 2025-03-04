@@ -35,8 +35,8 @@
 			<Device File="PLC Rail (EtherCAT).xti" Id="1"/>
 		</Io>
 		<SymbolWatch>
-			<Variable>TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E8 (EL5112)^ENC Status Channel 1^Counter value</Variable>
-			<Variable>TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E7 (EL7047)^STM Velocity^Velocity</Variable>
+			<Variable>TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-02 (EK1100)^K2S18-DRL-02-E6 (EL7047)^STM Status^Status^Digital input 1</Variable>
+			<Variable>TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-02 (EK1100)^K2S18-DRL-02-E6 (EL7047)^STM Status^Status^Digital input 2</Variable>
 		</SymbolWatch>
 	</Project>
 	<Mappings>
