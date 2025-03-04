@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{6B321A58-5B0C-3F54-1B1D-F1E27C8B6032}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{DB6D104C-F985-96DA-A5E4-9E2B317CEDF4}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -4503,6 +4503,14 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+				</Var>
+				<Var>
 					<Name>Main.M39.Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
@@ -5429,6 +5437,14 @@ External Setpoint Generation:
 					<Name>Main.M37.bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
 					<Name>Main.M39.Axis.PlcToNc</Name>
