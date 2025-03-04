@@ -2,11 +2,10 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35" TcVersionFixed="true">
 	<Project ProjectGUID="{06EDD21A-F81F-4EDE-B8E8-8DF2C1260331}" TargetNetId="172.21.140.70.1.1" Target64Bit="true" ShowHideConfigurations="#x3c6">
 		<System>
-			<Settings MaxCpus="3">
+			<Settings MaxCpus="4" NonWinCpus="2">
 				<Cpu/>
 				<Cpu CpuId="1"/>
-				<Cpu CpuId="2"/>
-				<IoIdleTask Affinity="#x00000001"/>
+				<IoIdleTask Affinity="#x00000002"/>
 			</Settings>
 			<Licenses CacheOrCheckLicensesOnStartup="true">
 				<Target BkhfOrder="01390224">
@@ -20,7 +19,7 @@
 				</Target>
 			</Licenses>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" Affinity="#x00000004" DisableFpExceptions="true" AdtTasks="true">
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" Affinity="#x00000001" DisableFpExceptions="true" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
 			</Tasks>
@@ -30,7 +29,7 @@
 		</Motion>
 		<Plc>
 			<Project File="kfe_rix_motion.xti"/>
-			<PlcAuxTask Affinity="#x00000001"/>
+			<PlcAuxTask Affinity="#x00000002"/>
 		</Plc>
 		<Io>
 			<Device File="PLC Rail (EtherCAT).xti" Id="1"/>
