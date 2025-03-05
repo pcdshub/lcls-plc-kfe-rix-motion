@@ -3,7 +3,7 @@
   <POU Name="PRG_SP2K2_TXAS" Id="{5d1de4e6-8549-48db-a26e-02c10173afc0}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SP2K2_TXAS
 VAR
-	bInit : BOOL := TRUE;
+    bInit : BOOL := TRUE;
     fbTXAS_TAR_RX : FB_MotionStage;
 END_VAR
 ]]></Declaration>
