@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_AT3K2_SOLID" Id="{561e333b-299e-48a9-b3d7-0ab307fede83}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_AT3K2_SOLID
+VAR
+    bInit : BOOL := TRUE;
+    fbAT3K2_SOLID_Y_01 : FB_MotionStage;
+    fbAT3K2_SOLID_Y_02 : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    Main.M39.bHardwareEnable := TRUE;
+    Main.M39.bPowerSelf := TRUE;
+
+    Main.M40.bHardwareEnable := TRUE;
+    Main.M40.bPowerSelf := TRUE;
+    bInit := FALSE;
+END_IF
+
+fbAT3K2_SOLID_Y_01(stMotionStage:=Main.M39);
+fbAT3K2_SOLID_Y_02(stMotionStage:=Main.M40);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

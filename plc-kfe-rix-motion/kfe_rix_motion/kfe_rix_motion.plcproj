@@ -55,6 +55,9 @@
     <Compile Include="POUs\PRG_AT2K2_SOLID.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_AT3K2_SOLID.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_IM6K2_PPM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +98,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_SP1K2_PAX.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_SP2K2_TXAS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_TM1K2_ATM.TcPOU">

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="Main" Id="{fff0648d-526a-4895-b18d-41e28b717bbc}">
     <Declaration><![CDATA[ {attribute 'qualified_only'}
 VAR_GLOBAL
@@ -269,6 +269,25 @@ VAR_GLOBAL
                               .nRawEncoderULINT     := TIIB[PAX-EL5042-E16]^FB Inputs Channel 2^Position'}
     M37: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:02');
 
+
+    // TXAS Motors
+    {attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:RX:01'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E8 (EL5112)]^ENC Status Channel 1^Counter value'}
+    M38: ST_MotionStage := (sName := 'SP2K2:TXAS:MMS:RX:01');
+
+    {attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:01'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E6 (EL7047)]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-02-E6 (EL7047)]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E5 (EL5042)]^ENC Status Channel 2^Position'}
+    M39: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:01');
+
+    {attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:02'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E8 (EL5042)]^ENC Status Channel 1^Position'}
+    M40: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:02');
 
 END_VAR]]></Declaration>
   </GVL>
