@@ -87,6 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-al1k2-l2si">PRG_AL1K2_L2SI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-at1k2-solid">PRG_AT1K2_SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-at2k2-solid">PRG_AT2K2_SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-at3k2-solid">PRG_AT3K2_SOLID</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k1-ppm">PRG_IM1K1_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im1k2-ppm">PRG_IM1K2_PPM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-im2k1-ppm">PRG_IM2K1_PPM</a></li>
@@ -100,6 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf1k2-wfs">PRG_PF1K2_WFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pf2k2-wfs">PRG_PF2K2_WFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-sp1k2-pax">PRG_SP1K2_PAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-sp2k2-txas">PRG_SP2K2_TXAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-tm1k2-atm">PRG_TM1K2_ATM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-tm2k2-atm">PRG_TM2K2_ATM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tc-event-classes">TC_EVENT_CLASSES</a></li>
@@ -165,7 +167,7 @@
 </section>
 <section id="pragmas">
 <span id="kfe-rix-motion-pragmas"></span><h1>Pragmas<a class="headerlink" href="#pragmas" title="Link to this heading"></a></h1>
-<p>Total pragmas found: 144
+<p>Total pragmas found: 150
 Total linter errors: 0</p>
 </section>
 <section id="libraries">
@@ -6275,7 +6277,7 @@ Total linter errors: 0</p>
 <section id="main">
 <h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <details>
-    <summary>407 Symbols</summary><table class="docutils align-center">
+    <summary>440 Symbols</summary><table class="docutils align-center">
 <thead>
 <tr class="row-odd"><th class="head"><p>Symbol</p></th>
 <th class="head"><p>Type</p></th>
@@ -7647,6 +7649,94 @@ Total linter errors: 0</p>
 <td><p>ULINT</p></td>
 <td><p>685484736 (64)</p></td>
 </tr>
+<tr class="row-odd"><td><p>Main.M38</p></td>
+<td><p>ST_MotionStage</p></td>
+<td><p>695800832 (25984)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M38.Axis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>695801920 (2048)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M38.Axis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>695800896 (1024)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M38.bBrakeRelease</p></td>
+<td><p>BOOL</p></td>
+<td><p>695809944 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M38.bHardwareEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>695809952 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M38.bHome</p></td>
+<td><p>BOOL</p></td>
+<td><p>695809936 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M38.bLimitBackwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>695809928 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M38.bLimitForwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>695809920 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M38.nRawEncoderINT</p></td>
+<td><p>INT</p></td>
+<td><p>695810064 (16)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M38.nRawEncoderUINT</p></td>
+<td><p>UINT</p></td>
+<td><p>695810048 (16)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M38.nRawEncoderULINT</p></td>
+<td><p>ULINT</p></td>
+<td><p>695809984 (64)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39</p></td>
+<td><p>ST_MotionStage</p></td>
+<td><p>694954944 (25984)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M39.Axis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>694956032 (2048)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39.Axis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>694955008 (1024)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M39.bBrakeRelease</p></td>
+<td><p>BOOL</p></td>
+<td><p>694964056 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39.bHardwareEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694964064 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M39.bHome</p></td>
+<td><p>BOOL</p></td>
+<td><p>694964048 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39.bLimitBackwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694964040 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M39.bLimitForwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694964032 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39.nRawEncoderINT</p></td>
+<td><p>INT</p></td>
+<td><p>694964176 (16)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M39.nRawEncoderUINT</p></td>
+<td><p>UINT</p></td>
+<td><p>694964160 (16)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M39.nRawEncoderULINT</p></td>
+<td><p>ULINT</p></td>
+<td><p>694964096 (64)</p></td>
+</tr>
 <tr class="row-odd"><td><p>Main.M4</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684618112 (25984)</p></td>
@@ -7691,223 +7781,267 @@ Total linter errors: 0</p>
 <td><p>ULINT</p></td>
 <td><p>684627264 (64)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5</p></td>
+<tr class="row-even"><td><p>Main.M40</p></td>
+<td><p>ST_MotionStage</p></td>
+<td><p>694980928 (25984)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M40.Axis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>694982016 (2048)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M40.Axis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>694980992 (1024)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M40.bBrakeRelease</p></td>
+<td><p>BOOL</p></td>
+<td><p>694990040 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M40.bHardwareEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694990048 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M40.bHome</p></td>
+<td><p>BOOL</p></td>
+<td><p>694990032 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M40.bLimitBackwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694990024 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M40.bLimitForwardEnable</p></td>
+<td><p>BOOL</p></td>
+<td><p>694990016 (8)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M40.nRawEncoderINT</p></td>
+<td><p>INT</p></td>
+<td><p>694990160 (16)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M40.nRawEncoderUINT</p></td>
+<td><p>UINT</p></td>
+<td><p>694990144 (16)</p></td>
+</tr>
+<tr class="row-even"><td><p>Main.M40.nRawEncoderULINT</p></td>
+<td><p>ULINT</p></td>
+<td><p>694990080 (64)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main.M5</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684644096 (25984)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M5.Axis.NcToPlc</p></td>
+<tr class="row-even"><td><p>Main.M5.Axis.NcToPlc</p></td>
 <td><p>NCTOPLC_AXIS_REF</p></td>
 <td><p>684645184 (2048)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5.Axis.PlcToNc</p></td>
+<tr class="row-odd"><td><p>Main.M5.Axis.PlcToNc</p></td>
 <td><p>PLCTONC_AXIS_REF</p></td>
 <td><p>684644160 (1024)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M5.bBrakeRelease</p></td>
+<tr class="row-even"><td><p>Main.M5.bBrakeRelease</p></td>
 <td><p>BOOL</p></td>
 <td><p>684653208 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5.bHardwareEnable</p></td>
+<tr class="row-odd"><td><p>Main.M5.bHardwareEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684653216 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M5.bHome</p></td>
+<tr class="row-even"><td><p>Main.M5.bHome</p></td>
 <td><p>BOOL</p></td>
 <td><p>684653200 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5.bLimitBackwardEnable</p></td>
+<tr class="row-odd"><td><p>Main.M5.bLimitBackwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684653192 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M5.bLimitForwardEnable</p></td>
+<tr class="row-even"><td><p>Main.M5.bLimitForwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684653184 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5.nRawEncoderINT</p></td>
+<tr class="row-odd"><td><p>Main.M5.nRawEncoderINT</p></td>
 <td><p>INT</p></td>
 <td><p>684653328 (16)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M5.nRawEncoderUINT</p></td>
+<tr class="row-even"><td><p>Main.M5.nRawEncoderUINT</p></td>
 <td><p>UINT</p></td>
 <td><p>684653312 (16)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M5.nRawEncoderULINT</p></td>
+<tr class="row-odd"><td><p>Main.M5.nRawEncoderULINT</p></td>
 <td><p>ULINT</p></td>
 <td><p>684653248 (64)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6</p></td>
+<tr class="row-even"><td><p>Main.M6</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684670080 (25984)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M6.Axis.NcToPlc</p></td>
+<tr class="row-odd"><td><p>Main.M6.Axis.NcToPlc</p></td>
 <td><p>NCTOPLC_AXIS_REF</p></td>
 <td><p>684671168 (2048)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6.Axis.PlcToNc</p></td>
+<tr class="row-even"><td><p>Main.M6.Axis.PlcToNc</p></td>
 <td><p>PLCTONC_AXIS_REF</p></td>
 <td><p>684670144 (1024)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M6.bBrakeRelease</p></td>
+<tr class="row-odd"><td><p>Main.M6.bBrakeRelease</p></td>
 <td><p>BOOL</p></td>
 <td><p>684679192 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6.bHardwareEnable</p></td>
+<tr class="row-even"><td><p>Main.M6.bHardwareEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684679200 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M6.bHome</p></td>
+<tr class="row-odd"><td><p>Main.M6.bHome</p></td>
 <td><p>BOOL</p></td>
 <td><p>684679184 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6.bLimitBackwardEnable</p></td>
+<tr class="row-even"><td><p>Main.M6.bLimitBackwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684679176 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M6.bLimitForwardEnable</p></td>
+<tr class="row-odd"><td><p>Main.M6.bLimitForwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684679168 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6.nRawEncoderINT</p></td>
+<tr class="row-even"><td><p>Main.M6.nRawEncoderINT</p></td>
 <td><p>INT</p></td>
 <td><p>684679312 (16)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M6.nRawEncoderUINT</p></td>
+<tr class="row-odd"><td><p>Main.M6.nRawEncoderUINT</p></td>
 <td><p>UINT</p></td>
 <td><p>684679296 (16)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M6.nRawEncoderULINT</p></td>
+<tr class="row-even"><td><p>Main.M6.nRawEncoderULINT</p></td>
 <td><p>ULINT</p></td>
 <td><p>684679232 (64)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7</p></td>
+<tr class="row-odd"><td><p>Main.M7</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684696064 (25984)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M7.Axis.NcToPlc</p></td>
+<tr class="row-even"><td><p>Main.M7.Axis.NcToPlc</p></td>
 <td><p>NCTOPLC_AXIS_REF</p></td>
 <td><p>684697152 (2048)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7.Axis.PlcToNc</p></td>
+<tr class="row-odd"><td><p>Main.M7.Axis.PlcToNc</p></td>
 <td><p>PLCTONC_AXIS_REF</p></td>
 <td><p>684696128 (1024)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M7.bBrakeRelease</p></td>
+<tr class="row-even"><td><p>Main.M7.bBrakeRelease</p></td>
 <td><p>BOOL</p></td>
 <td><p>684705176 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7.bHardwareEnable</p></td>
+<tr class="row-odd"><td><p>Main.M7.bHardwareEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684705184 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M7.bHome</p></td>
+<tr class="row-even"><td><p>Main.M7.bHome</p></td>
 <td><p>BOOL</p></td>
 <td><p>684705168 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7.bLimitBackwardEnable</p></td>
+<tr class="row-odd"><td><p>Main.M7.bLimitBackwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684705160 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M7.bLimitForwardEnable</p></td>
+<tr class="row-even"><td><p>Main.M7.bLimitForwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684705152 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7.nRawEncoderINT</p></td>
+<tr class="row-odd"><td><p>Main.M7.nRawEncoderINT</p></td>
 <td><p>INT</p></td>
 <td><p>684705296 (16)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M7.nRawEncoderUINT</p></td>
+<tr class="row-even"><td><p>Main.M7.nRawEncoderUINT</p></td>
 <td><p>UINT</p></td>
 <td><p>684705280 (16)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M7.nRawEncoderULINT</p></td>
+<tr class="row-odd"><td><p>Main.M7.nRawEncoderULINT</p></td>
 <td><p>ULINT</p></td>
 <td><p>684705216 (64)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8</p></td>
+<tr class="row-even"><td><p>Main.M8</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684722048 (25984)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M8.Axis.NcToPlc</p></td>
+<tr class="row-odd"><td><p>Main.M8.Axis.NcToPlc</p></td>
 <td><p>NCTOPLC_AXIS_REF</p></td>
 <td><p>684723136 (2048)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8.Axis.PlcToNc</p></td>
+<tr class="row-even"><td><p>Main.M8.Axis.PlcToNc</p></td>
 <td><p>PLCTONC_AXIS_REF</p></td>
 <td><p>684722112 (1024)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M8.bBrakeRelease</p></td>
+<tr class="row-odd"><td><p>Main.M8.bBrakeRelease</p></td>
 <td><p>BOOL</p></td>
 <td><p>684731160 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8.bHardwareEnable</p></td>
+<tr class="row-even"><td><p>Main.M8.bHardwareEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684731168 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M8.bHome</p></td>
+<tr class="row-odd"><td><p>Main.M8.bHome</p></td>
 <td><p>BOOL</p></td>
 <td><p>684731152 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8.bLimitBackwardEnable</p></td>
+<tr class="row-even"><td><p>Main.M8.bLimitBackwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684731144 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M8.bLimitForwardEnable</p></td>
+<tr class="row-odd"><td><p>Main.M8.bLimitForwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684731136 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8.nRawEncoderINT</p></td>
+<tr class="row-even"><td><p>Main.M8.nRawEncoderINT</p></td>
 <td><p>INT</p></td>
 <td><p>684731280 (16)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M8.nRawEncoderUINT</p></td>
+<tr class="row-odd"><td><p>Main.M8.nRawEncoderUINT</p></td>
 <td><p>UINT</p></td>
 <td><p>684731264 (16)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M8.nRawEncoderULINT</p></td>
+<tr class="row-even"><td><p>Main.M8.nRawEncoderULINT</p></td>
 <td><p>ULINT</p></td>
 <td><p>684731200 (64)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9</p></td>
+<tr class="row-odd"><td><p>Main.M9</p></td>
 <td><p>ST_MotionStage</p></td>
 <td><p>684748032 (25984)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M9.Axis.NcToPlc</p></td>
+<tr class="row-even"><td><p>Main.M9.Axis.NcToPlc</p></td>
 <td><p>NCTOPLC_AXIS_REF</p></td>
 <td><p>684749120 (2048)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9.Axis.PlcToNc</p></td>
+<tr class="row-odd"><td><p>Main.M9.Axis.PlcToNc</p></td>
 <td><p>PLCTONC_AXIS_REF</p></td>
 <td><p>684748096 (1024)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M9.bBrakeRelease</p></td>
+<tr class="row-even"><td><p>Main.M9.bBrakeRelease</p></td>
 <td><p>BOOL</p></td>
 <td><p>684757144 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9.bHardwareEnable</p></td>
+<tr class="row-odd"><td><p>Main.M9.bHardwareEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684757152 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M9.bHome</p></td>
+<tr class="row-even"><td><p>Main.M9.bHome</p></td>
 <td><p>BOOL</p></td>
 <td><p>684757136 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9.bLimitBackwardEnable</p></td>
+<tr class="row-odd"><td><p>Main.M9.bLimitBackwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684757128 (8)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M9.bLimitForwardEnable</p></td>
+<tr class="row-even"><td><p>Main.M9.bLimitForwardEnable</p></td>
 <td><p>BOOL</p></td>
 <td><p>684757120 (8)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9.nRawEncoderINT</p></td>
+<tr class="row-odd"><td><p>Main.M9.nRawEncoderINT</p></td>
 <td><p>INT</p></td>
 <td><p>684757264 (16)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main.M9.nRawEncoderUINT</p></td>
+<tr class="row-even"><td><p>Main.M9.nRawEncoderUINT</p></td>
 <td><p>UINT</p></td>
 <td><p>684757248 (16)</p></td>
 </tr>
-<tr class="row-even"><td><p>Main.M9.nRawEncoderULINT</p></td>
+<tr class="row-odd"><td><p>Main.M9.nRawEncoderULINT</p></td>
 <td><p>ULINT</p></td>
 <td><p>684757184 (64)</p></td>
 </tr>
@@ -8983,6 +9117,47 @@ Total linter errors: 0</p>
 </table>
 </details>
 <br /></section>
+<section id="prg-at3k2-solid">
+<h2>PRG_AT3K2_SOLID<a class="headerlink" href="#prg-at3k2-solid" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Offset/Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PRG_AT3K2_SOLID.bInit</p></td>
+<td><p>BOOL</p></td>
+<td><p>635245192 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01</p></td>
+<td><p>FB_MotionStage</p></td>
+<td><p>694155904 (328512)</p></td>
+</tr>
+<tr class="row-even"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>694158528 (2048)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>694157504 (1024)</p></td>
+</tr>
+<tr class="row-even"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02</p></td>
+<td><p>FB_MotionStage</p></td>
+<td><p>694484416 (328512)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>694487040 (2048)</p></td>
+</tr>
+<tr class="row-even"><td><p>PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>694486016 (1024)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="prg-im1k1-ppm">
 <h2>PRG_IM1K1_PPM<a class="headerlink" href="#prg-im1k1-ppm" title="Link to this heading"></a></h2>
 <details>
@@ -10618,6 +10793,35 @@ Total linter errors: 0</p>
 </table>
 </details>
 <br /></section>
+<section id="prg-sp2k2-txas">
+<h2>PRG_SP2K2_TXAS<a class="headerlink" href="#prg-sp2k2-txas" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Offset/Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PRG_SP2K2_TXAS.bInit</p></td>
+<td><p>BOOL</p></td>
+<td><p>635244376 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_SP2K2_TXAS.fbTXAS_TAR_RX</p></td>
+<td><p>FB_MotionStage</p></td>
+<td><p>695472320 (328512)</p></td>
+</tr>
+<tr class="row-even"><td><p>PRG_SP2K2_TXAS.fbTXAS_TAR_RX.fbDriveVirtual.MasterAxis.NcToPlc</p></td>
+<td><p>NCTOPLC_AXIS_REF</p></td>
+<td><p>695474944 (2048)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_SP2K2_TXAS.fbTXAS_TAR_RX.fbDriveVirtual.MasterAxis.PlcToNc</p></td>
+<td><p>PLCTONC_AXIS_REF</p></td>
+<td><p>695473920 (1024)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="prg-tm1k2-atm">
 <h2>PRG_TM1K2_ATM<a class="headerlink" href="#prg-tm1k2-atm" title="Link to this heading"></a></h2>
 <details>

@@ -429,6 +429,25 @@ Main
         M37: ST_MotionStage := (sName := 'SP1K2:PAX:BB:Y:02');
 
 
+        // TXAS Motors
+        {attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:RX:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E7 (EL7047)]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E8 (EL5112)]^ENC Status Channel 1^Counter value'}
+        M38: ST_MotionStage := (sName := 'SP2K2:TXAS:MMS:RX:01');
+
+        {attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:01'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E6 (EL7047)]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[K2S18-DRL-02-E6 (EL7047)]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E5 (EL5042)]^ENC Status Channel 2^Position'}
+        M39: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:01');
+
+        {attribute 'pytmc' := 'pv: AT3K2:SOLID:MMS:Y:02'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E8 (EL5042)]^ENC Status Channel 1^Position'}
+        M40: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:02');
+
     END_VAR
 
 
@@ -860,6 +879,8 @@ PRG_1_PlcTask
     PRG_IM6K2_PPM();
 
     PRG_SP1K2_PAX();
+    PRG_SP2K2_TXAS();
+    PRG_AT3K2_SOLID();
 
     PRG_3_PMPS_POST();
     PRG_4_LOG();
@@ -875,6 +896,7 @@ Related:
     * `PRG_AL1K2_L2SI`_
     * `PRG_AT1K2_SOLID`_
     * `PRG_AT2K2_SOLID`_
+    * `PRG_AT3K2_SOLID`_
     * `PRG_IM1K1_PPM`_
     * `PRG_IM1K2_PPM`_
     * `PRG_IM2K1_PPM`_
@@ -888,6 +910,7 @@ Related:
     * `PRG_PF1K2_WFS`_
     * `PRG_PF2K2_WFS`_
     * `PRG_SP1K2_PAX`_
+    * `PRG_SP2K2_TXAS`_
     * `PRG_TM1K2_ATM`_
     * `PRG_TM2K2_ATM`_
 
@@ -1540,6 +1563,36 @@ PRG_AT2K2_SOLID
 
 Related:
     * `GVL`_
+    * `Main`_
+
+
+PRG_AT3K2_SOLID
+^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_AT3K2_SOLID
+    VAR
+        bInit : BOOL := TRUE;
+        fbAT3K2_SOLID_Y_01 : FB_MotionStage;
+        fbAT3K2_SOLID_Y_02 : FB_MotionStage;
+    END_VAR
+    IF bInit THEN
+        Main.M39.bHardwareEnable := TRUE;
+        Main.M39.bPowerSelf := TRUE;
+
+        Main.M40.bHardwareEnable := TRUE;
+        Main.M40.bPowerSelf := TRUE;
+        bInit := FALSE;
+    END_IF
+
+    fbAT3K2_SOLID_Y_01(stMotionStage:=Main.M39);
+    fbAT3K2_SOLID_Y_02(stMotionStage:=Main.M40);
+
+    END_PROGRAM
+
+
+Related:
     * `Main`_
 
 
@@ -2285,6 +2338,34 @@ PRG_SP1K2_PAX
     fbPAX_FRAME_Y_01(stMotionStage:= Main.M28);
     fbPAX_FRAME_Y_02(stMotionStage:= Main.M29);
     fbPAX_FRAME_Y_03(stMotionStage:= Main.M30);
+
+    END_PROGRAM
+
+
+Related:
+    * `Main`_
+
+
+PRG_SP2K2_TXAS
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_SP2K2_TXAS
+    VAR
+        bInit : BOOL := TRUE;
+        fbTXAS_TAR_RX : FB_MotionStage;
+    END_VAR
+    IF bInit THEN
+        Main.M38.bHardwareEnable := TRUE;
+        Main.M38.bPowerSelf := TRUE;
+        bInit := FALSE;
+    END_IF
+
+    Main.M38.bLimitBackwardEnable := TRUE;
+    Main.M38.bLimitForwardEnable := TRUE;
+
+    fbTXAS_TAR_RX(stMotionStage:=Main.M38);
 
     END_PROGRAM
 

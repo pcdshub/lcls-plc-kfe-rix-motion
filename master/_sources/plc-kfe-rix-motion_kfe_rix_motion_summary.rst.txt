@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 144
+Total pragmas found: 150
 Total linter errors: 0
 
 
@@ -1704,7 +1704,7 @@ Main
 .. raw:: html
 
    <details>
-       <summary>407 Symbols</summary>
+       <summary>440 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
@@ -2051,6 +2051,28 @@ Main
         Main.M37.nRawEncoderINT, INT, 685484816 (16)
         Main.M37.nRawEncoderUINT, UINT, 685484800 (16)
         Main.M37.nRawEncoderULINT, ULINT, 685484736 (64)
+        Main.M38, ST_MotionStage, 695800832 (25984)
+        Main.M38.Axis.NcToPlc, NCTOPLC_AXIS_REF, 695801920 (2048)
+        Main.M38.Axis.PlcToNc, PLCTONC_AXIS_REF, 695800896 (1024)
+        Main.M38.bBrakeRelease, BOOL, 695809944 (8)
+        Main.M38.bHardwareEnable, BOOL, 695809952 (8)
+        Main.M38.bHome, BOOL, 695809936 (8)
+        Main.M38.bLimitBackwardEnable, BOOL, 695809928 (8)
+        Main.M38.bLimitForwardEnable, BOOL, 695809920 (8)
+        Main.M38.nRawEncoderINT, INT, 695810064 (16)
+        Main.M38.nRawEncoderUINT, UINT, 695810048 (16)
+        Main.M38.nRawEncoderULINT, ULINT, 695809984 (64)
+        Main.M39, ST_MotionStage, 694954944 (25984)
+        Main.M39.Axis.NcToPlc, NCTOPLC_AXIS_REF, 694956032 (2048)
+        Main.M39.Axis.PlcToNc, PLCTONC_AXIS_REF, 694955008 (1024)
+        Main.M39.bBrakeRelease, BOOL, 694964056 (8)
+        Main.M39.bHardwareEnable, BOOL, 694964064 (8)
+        Main.M39.bHome, BOOL, 694964048 (8)
+        Main.M39.bLimitBackwardEnable, BOOL, 694964040 (8)
+        Main.M39.bLimitForwardEnable, BOOL, 694964032 (8)
+        Main.M39.nRawEncoderINT, INT, 694964176 (16)
+        Main.M39.nRawEncoderUINT, UINT, 694964160 (16)
+        Main.M39.nRawEncoderULINT, ULINT, 694964096 (64)
         Main.M4, ST_MotionStage, 684618112 (25984)
         Main.M4.Axis.NcToPlc, NCTOPLC_AXIS_REF, 684619200 (2048)
         Main.M4.Axis.PlcToNc, PLCTONC_AXIS_REF, 684618176 (1024)
@@ -2062,6 +2084,17 @@ Main
         Main.M4.nRawEncoderINT, INT, 684627344 (16)
         Main.M4.nRawEncoderUINT, UINT, 684627328 (16)
         Main.M4.nRawEncoderULINT, ULINT, 684627264 (64)
+        Main.M40, ST_MotionStage, 694980928 (25984)
+        Main.M40.Axis.NcToPlc, NCTOPLC_AXIS_REF, 694982016 (2048)
+        Main.M40.Axis.PlcToNc, PLCTONC_AXIS_REF, 694980992 (1024)
+        Main.M40.bBrakeRelease, BOOL, 694990040 (8)
+        Main.M40.bHardwareEnable, BOOL, 694990048 (8)
+        Main.M40.bHome, BOOL, 694990032 (8)
+        Main.M40.bLimitBackwardEnable, BOOL, 694990024 (8)
+        Main.M40.bLimitForwardEnable, BOOL, 694990016 (8)
+        Main.M40.nRawEncoderINT, INT, 694990160 (16)
+        Main.M40.nRawEncoderUINT, UINT, 694990144 (16)
+        Main.M40.nRawEncoderULINT, ULINT, 694990080 (64)
         Main.M5, ST_MotionStage, 684644096 (25984)
         Main.M5.Axis.NcToPlc, NCTOPLC_AXIS_REF, 684645184 (2048)
         Main.M5.Axis.PlcToNc, PLCTONC_AXIS_REF, 684644160 (1024)
@@ -2496,6 +2529,22 @@ PRG_AT2K2_SOLID
 
    </details>
    <br />
+
+
+PRG_AT3K2_SOLID
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_AT3K2_SOLID.bInit, BOOL, 635245192 (8)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01, FB_MotionStage, 694155904 (328512)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 694158528 (2048)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_01.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 694157504 (1024)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02, FB_MotionStage, 694484416 (328512)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 694487040 (2048)
+        PRG_AT3K2_SOLID.fbAT3K2_SOLID_Y_02.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 694486016 (1024)
 
 
 PRG_IM1K1_PPM
@@ -3103,6 +3152,19 @@ PRG_SP1K2_PAX
 
    </details>
    <br />
+
+
+PRG_SP2K2_TXAS
+^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_SP2K2_TXAS.bInit, BOOL, 635244376 (8)
+        PRG_SP2K2_TXAS.fbTXAS_TAR_RX, FB_MotionStage, 695472320 (328512)
+        PRG_SP2K2_TXAS.fbTXAS_TAR_RX.fbDriveVirtual.MasterAxis.NcToPlc, NCTOPLC_AXIS_REF, 695474944 (2048)
+        PRG_SP2K2_TXAS.fbTXAS_TAR_RX.fbDriveVirtual.MasterAxis.PlcToNc, PLCTONC_AXIS_REF, 695473920 (1024)
 
 
 PRG_TM1K2_ATM

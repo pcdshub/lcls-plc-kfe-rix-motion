@@ -43,6 +43,9 @@ NC Settings
         35, Axis 35 SP1K2-PAX-TAR-MMS-RY
         36, Axis 36 SP1K2-PAX-BB-MMS-Y-01
         37, Axis 37 SP1K2-PAX-BB-MMS-Y-02
+        38, Axis 38 SP2K2-TXAS-TAR-MMS-RX
+        39, Axis 39 AT3K2-SOLID-MMS-Y-01
+        40, Axis 40 AT3K2-SOLID-MMS-Y-02
 
 
 
@@ -1225,5 +1228,97 @@ Axis 37: Axis 37 SP1K2-PAX-BB-MMS-Y-02
     Velo:FastManual, 1
     Velo:Maximum, 1.5
     Velo:SlowManual, 0.5
+
+
+
+Axis 38: Axis 38 SP2K2-TXAS-TAR-MMS-RX
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 38
+    Name, Axis 38 SP2K2-TXAS-TAR-MMS-RX
+    AxisFolder, SP2K2-TXAS
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 83.0317
+    Dynamic:Deceleration, 83.0317
+    Dynamic:Jerk, 1378.85
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 0.0128
+    General:UnitName, Degree
+    Id, 38
+    OtherSettings:AllowMotionCmdToSlave, true
+    OtherSettings:PulseDistanceNeg, 1
+    OtherSettings:PulseDistancePos, 1
+    PositionAreaControl:Range, 1
+    TargetPosControl:Range, 1
+    Velo:FastManual, 5
+    Velo:Maximum, 5
+    Velo:RefSearch, 1
+    Velo:RefSync, 1
+    Velo:SlowManual, 0.5
+
+
+
+Axis 39: Axis 39 AT3K2-SOLID-MMS-Y-01
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 39
+    Name, Axis 39 AT3K2-SOLID-MMS-Y-01
+    AxisFolder, AT3K2
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Id, 39
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 10
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
+
+
+
+Axis 40: Axis 40 AT3K2-SOLID-MMS-Y-02
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 40
+    Name, Axis 40 AT3K2-SOLID-MMS-Y-02
+    AxisFolder, AT3K2
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 160
+    Dynamic:AccelerationMaximum, 400
+    Dynamic:Deceleration, 160
+    Dynamic:DecelerationMaximum, 400
+    Dynamic:Jerk, 80
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Id, 40
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:FastManual, 10
+    Velo:Maximum, 80
+    Velo:SlowManual, 1
 
 
