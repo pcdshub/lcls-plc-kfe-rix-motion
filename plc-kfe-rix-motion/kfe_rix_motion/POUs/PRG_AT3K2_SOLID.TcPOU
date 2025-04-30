@@ -4,22 +4,159 @@
     <Declaration><![CDATA[PROGRAM PRG_AT3K2_SOLID
 VAR
     bInit : BOOL := TRUE;
-    fbAT3K2_SOLID_Y_01 : FB_MotionStage;
-    fbAT3K2_SOLID_Y_02 : FB_MotionStage;
+	bDebug : BOOL := FALSE;
+	nEnableMode : E_StageEnableMode;
+	
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01'}
+    {attribute 'TcLinkTo' := '
+        .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^error;
+        .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^error;
+        .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
+
+    '}
+    fbStage1: FB_SXR_SATT_Stage;
+	
+	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^error;
+        .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^error;
+        .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
+
+    '}
+    fbStage2: FB_SXR_SATT_Stage;
+	
+	fbStateSetup: FB_StateSetupHelper;
+    stDefaultGood: ST_PositionState := (
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+    fbBadStateSetup: FB_StateSetupHelper;
+    stDefaultBad: ST_PositionState := (
+        fPosition := 500,
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := FALSE,
+        bValid := FALSE
+    );
+(*
+    {attribute 'pytmc' :='pv: AT2K2:L2SI:FWM'}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[TM2K2-EL3052-E6]^AI Standard Channel 1^Value'} // AT2K2 shares flow meter with TM2K2
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+	*)
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF bInit THEN
-    Main.M39.bHardwareEnable := TRUE;
-    Main.M39.bPowerSelf := TRUE;
-
-    Main.M40.bHardwareEnable := TRUE;
-    Main.M40.bPowerSelf := TRUE;
-    bInit := FALSE;
+      <ST><![CDATA[IF bDebug THEN
+    // NEVER: checkouts with the TwinCAT NC GUI.
+    nEnableMode := E_StageEnableMode.NEVER;
+ELSE
+    // ALWAYS: want active position correction at all times
+    nEnableMode := E_StageEnableMode.ALWAYS;
 END_IF
 
-fbAT3K2_SOLID_Y_01(stMotionStage:=Main.M39);
-fbAT3K2_SOLID_Y_02(stMotionStage:=Main.M40);]]></ST>
+fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+(* State setup - stage 1 *)
+fbStateSetup(stPositionState:=fbStage1.stFilter1, sName:='1 um Co', fPosition:= 30.0);
+fbStage1.arrFilters[1].fFilterThickness_um := 1;
+fbStage1.arrFilters[1].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter2, sName:='2 um Co', fPosition:= 60.0);
+fbStage1.arrFilters[2].fFilterThickness_um := 2;
+fbStage1.arrFilters[2].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter3, sName:='3 um Co', fposition:= 90.0);
+fbStage1.arrFilters[3].fFilterThickness_um := 3;
+fbStage1.arrFilters[3].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter4, sName:='4 um Co', fPosition:= 120);
+fbStage1.arrFilters[4].fFilterThickness_um := 4;
+fbStage1.arrFilters[4].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='5 um Co', fPosition:= 150.0);
+fbStage1.arrFilters[5].fFilterThickness_um := 5;
+fbStage1.arrFilters[5].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='10 um Co', fPosition:= 180.0);
+fbStage1.arrFilters[6].fFilterThickness_um := 10;
+fbStage1.arrFilters[6].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='15 um Co', fPosition:=210.0);
+fbStage1.arrFilters[7].fFilterThickness_um := 15;
+fbStage1.arrFilters[7].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='20 um Co', fPosition:=240.0);
+fbStage1.arrFilters[8].fFilterThickness_um := 20;
+fbStage1.arrFilters[8].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=270.00);
+
+fbStage1(stAxis:=Main.M39,sDeviceName:='AT3K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+
+(* State setup - stage 2 *)
+
+fbStateSetup(stPositionState:=fbStage2.stFilter1, sName:='0.2 um Co', fPosition:=35);
+fbStage2.arrFilters[1].fFilterThickness_um := 0.2;
+fbStage2.arrFilters[1].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter2, sName:='0.4 um Co', fPosition:= 65);
+fbStage2.arrFilters[2].fFilterThickness_um := 0.4;
+fbStage2.arrFilters[2].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter3, sName:='0.6 um Co', fPosition:= 95);
+fbStage2.arrFilters[3].fFilterThickness_um := 0.6;
+fbStage2.arrFilters[3].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter4, sName:='0.8 um Co', fPosition:= 125);
+fbStage2.arrFilters[4].fFilterThickness_um := 0.8;
+fbStage2.arrFilters[4].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='1.0 um Co', fPosition:=155.0);
+fbStage2.arrFilters[5].fFilterThickness_um := 1.0;
+fbStage2.arrFilters[5].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='1.5 um Co', fPosition:=185.0);
+fbStage2.arrFilters[6].fFilterThickness_um := 1.5;
+fbStage2.arrFilters[6].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='2.0 um Co', fPosition:=215.0);
+fbStage2.arrFilters[7].fFilterThickness_um := 2.0;
+fbStage2.arrFilters[7].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='3.0 um Co', fPosition:=245.0);
+fbStage2.arrFilters[8].fFilterThickness_um := 3.0;
+fbStage2.arrFilters[8].sFilterMaterial     := 'Co';
+
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=260.0);
+
+fbStage2(stAxis:=Main.M40,sDeviceName:='AT3K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+// GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+//PMPS.K_Attenuators.AT2K2; TODO: ADD TO ENUM?
+GVL.rCurTrans[6].nTran := LREAL_TO_REAL(
+    fbStage1.fTransmission *
+    fbStage2.fTransmission 
+);
+
+//fbFlowMeter();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
