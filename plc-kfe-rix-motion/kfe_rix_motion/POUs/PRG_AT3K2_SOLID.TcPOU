@@ -7,7 +7,7 @@ VAR
 	bDebug : BOOL := FALSE;
 	nEnableMode : E_StageEnableMode;
 	
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:01'}
+	{attribute 'pytmc' := 'pv: AT3K2:L2SI:MMS:01'}
     {attribute 'TcLinkTo' := '
         .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Value;
         .fbRTD_1.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^error;
@@ -22,7 +22,7 @@ VAR
     '}
     fbStage1: FB_SXR_SATT_Stage;
 	
-	{attribute 'pytmc' := 'pv: AT2K2:L2SI:MMS:02'}
+	{attribute 'pytmc' := 'pv: AT3K2:L2SI:MMS:02'}
     {attribute 'TcLinkTo' := '
 
         .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Value;

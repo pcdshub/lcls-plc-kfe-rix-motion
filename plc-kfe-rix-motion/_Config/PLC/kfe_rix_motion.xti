@@ -1269,7 +1269,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{C31F67CF-3F03-4F49-935F-2494FCDDA958}" Name="kfe_rix_motion" PrjFilePath="..\..\kfe_rix_motion\kfe_rix_motion.plcproj" TmcFilePath="..\..\kfe_rix_motion\kfe_rix_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{D1A012C6-DEC8-ACAC-0EE5-992AF24D5171}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="kfe_rix_motion\kfe_rix_motion.tmc" TmcHash="{27E60B81-60B2-32D4-E99D-173765356236}">
 			<Name>kfe_rix_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -3196,11 +3196,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_AT3K2_SOLID.fbStage2.fbRTD_2.iRaw</Name>
 					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_AT3K2_SOLID.fbFlowMeter.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>DINT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_3_PMPS_POST.fbArbiterIO.i_stCurrentBP</Name>
@@ -5830,7 +5825,6 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^TM2K2-K2B (EK1100)^TM2K2-EL3052-E6">
 				<Link VarA="PlcTask Inputs^PRG_AT2K2_SOLID.fbFlowMeter.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true" Size="16"/>
-				<Link VarA="PlcTask Inputs^PRG_AT3K2_SOLID.fbFlowMeter.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true" Size="16"/>
 				<Link VarA="PlcTask Inputs^PRG_TM2K2_ATM.fbTM2K2.fbFlowMeter.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true" Size="16"/>
 			</OwnerB>
 			<OwnerB Name="TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 140 (EK1122)^TM2K2-K2B (EK1100)^TM2K2-EL3314-E5">
