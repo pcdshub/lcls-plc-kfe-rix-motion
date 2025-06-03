@@ -1286,6 +1286,10 @@ Axis 39: Axis 39 AT3K2-SOLID-MMS-Y-01
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
     Enc:MaxCountHighDWord, #x0000001f
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 300
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 38
     Id, 39
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:FastManual, 10
@@ -1315,6 +1319,10 @@ Axis 40: Axis 40 AT3K2-SOLID-MMS-Y-02
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
     Enc:MaxCountHighDWord, #x0000001f
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 299
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 39
     Id, 40
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:FastManual, 10

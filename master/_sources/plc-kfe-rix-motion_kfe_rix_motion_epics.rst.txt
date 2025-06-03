@@ -120614,7 +120614,7 @@ Database Records
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bError_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bError_RBV
       - bi
       - TRUE if we are in an error state
       - | field: ONAM TRUE
@@ -120623,7 +120623,7 @@ Database Records
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHardwareEnable_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bHardwareEnable_RBV
       - bi
       - TRUE if STO not hit
       - | field: ONAM TRUE
@@ -120631,19 +120631,19 @@ Database Records
         | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHomeCmd_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bHomeCmd_RBV
       - bi
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHomeCmd
+    * - AT3K2:L2SI:MMS:01:PLC:bHomeCmd
       - bo
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bReset_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bReset_RBV
       - bi
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -120651,7 +120651,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bReset
+    * - AT3K2:L2SI:MMS:01:PLC:bReset
       - bo
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -120659,7 +120659,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bUserEnable_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bUserEnable_RBV
       - bi
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -120667,7 +120667,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bUserEnable
+    * - AT3K2:L2SI:MMS:01:PLC:bUserEnable
       - bo
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -120675,183 +120675,183 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fHomePosition_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:fHomePosition_RBV
       - ai
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fHomePosition
+    * - AT3K2:L2SI:MMS:01:PLC:fHomePosition
       - ao
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fPosDiff_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:fPosDiff_RBV
       - ai
       - Position lag difference
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:nEncoderCount_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:nEncoderCount_RBV
       - longin
       - Count from encoder hardware
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:nErrorId_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:nErrorId_RBV
       - longin
       - Error code if nonzero
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:sErrorMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:sErrorMessage_RBV
       - waveform
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagEn_RBV
       - longin
       - TRUE if position lag monitor (also known as stall monitor) is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMaxEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMaxEn_RBV
       - longin
       - TRUE if controller static maximum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMinEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMinEn_RBV
       - longin
       - TRUE if controller static minimum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxAccel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxAccel_RBV
       - ai
       - Maximum rate of increase in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagVal_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagVal_RBV
       - ai
       - Maximum magnitude of position lag in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagTime_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagTime_RBV
       - ai
       - Maximum allowable duration outside of maximum position lag value in seconds.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxDecel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxDecel_RBV
       - ai
       - Maximum rate of decrease in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:EncOffset_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:EncOffset_RBV
       - ai
       - Encoder offset in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:EncScaling_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:EncScaling_RBV
       - ai
       - Encoder scaling numerator / denominator in EU/COUNT.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMax_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMax_RBV
       - ai
       - Maximum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMin_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMin_RBV
       - ai
       - Minimum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxVel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxVel_RBV
       - ai
       - Maximum commandable speed of the axis in EU/s.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
@@ -121100,7 +121100,7 @@ Database Records
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bError_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bError_RBV
       - bi
       - TRUE if we are in an error state
       - | field: ONAM TRUE
@@ -121109,7 +121109,7 @@ Database Records
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHardwareEnable_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bHardwareEnable_RBV
       - bi
       - TRUE if STO not hit
       - | field: ONAM TRUE
@@ -121117,19 +121117,19 @@ Database Records
         | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHomeCmd_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bHomeCmd_RBV
       - bi
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHomeCmd
+    * - AT3K2:L2SI:MMS:02:PLC:bHomeCmd
       - bo
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bReset_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bReset_RBV
       - bi
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -121137,7 +121137,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bReset
+    * - AT3K2:L2SI:MMS:02:PLC:bReset
       - bo
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -121145,7 +121145,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bUserEnable_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bUserEnable_RBV
       - bi
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -121153,7 +121153,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bUserEnable
+    * - AT3K2:L2SI:MMS:02:PLC:bUserEnable
       - bo
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -121161,183 +121161,183 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fHomePosition_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:fHomePosition_RBV
       - ai
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fHomePosition
+    * - AT3K2:L2SI:MMS:02:PLC:fHomePosition
       - ao
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fPosDiff_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:fPosDiff_RBV
       - ai
       - Position lag difference
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:nEncoderCount_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:nEncoderCount_RBV
       - longin
       - Count from encoder hardware
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:nErrorId_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:nErrorId_RBV
       - longin
       - Error code if nonzero
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:sErrorMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:sErrorMessage_RBV
       - waveform
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagEn_RBV
       - longin
       - TRUE if position lag monitor (also known as stall monitor) is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMaxEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMaxEn_RBV
       - longin
       - TRUE if controller static maximum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMinEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMinEn_RBV
       - longin
       - TRUE if controller static minimum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxAccel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxAccel_RBV
       - ai
       - Maximum rate of increase in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagVal_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagVal_RBV
       - ai
       - Maximum magnitude of position lag in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagTime_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagTime_RBV
       - ai
       - Maximum allowable duration outside of maximum position lag value in seconds.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxDecel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxDecel_RBV
       - ai
       - Maximum rate of decrease in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:EncOffset_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:EncOffset_RBV
       - ai
       - Encoder offset in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:EncScaling_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:EncScaling_RBV
       - ai
       - Encoder scaling numerator / denominator in EU/COUNT.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMax_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMax_RBV
       - ai
       - Maximum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMin_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMin_RBV
       - ai
       - Minimum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxVel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxVel_RBV
       - ai
       - Maximum commandable speed of the axis in EU/s.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
@@ -129504,6 +129504,1736 @@ Database Records
     * - AT2K2:L2SI:MMS:04:MATERIAL_RBV
       - waveform
       - PRG_AT2K2_SOLID.fbStage4.sActiveFilterMaterial
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:GET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage1.eEnumGet
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:SET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage1.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:SET
+      - mbbo
+      - PRG_AT3K2_SOLID.fbStage1.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:THICKNESS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:RESET_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:RESET
+      - bo
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:BUSY_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:DONE_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERRID_RBV
+      - longin
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:MATERIAL_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage1.sActiveFilterMaterial
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:GET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage2.eEnumGet
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:SET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage2.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:SET
+      - mbbo
+      - PRG_AT3K2_SOLID.fbStage2.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:THICKNESS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:RESET_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:RESET
+      - bo
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:BUSY_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:DONE_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERRID_RBV
+      - longin
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:MATERIAL_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage2.sActiveFilterMaterial
       - | io: input
 
 
