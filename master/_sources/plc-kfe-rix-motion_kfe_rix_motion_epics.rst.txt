@@ -53653,6 +53653,1386 @@ PMPS.FB_HardwareFFOutput
       - | io: output
 
 
+    * - $(PREFIX):FF:0201:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[201].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[201].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[201].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[201].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[201].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[201].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[201].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[201].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[201].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[201].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[201].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[201].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[201].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[201].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0201:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[201].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[201].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Reset
+      - bo
+      - $(SYMBOL).astFF[201].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0201:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[201].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[202].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[202].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[202].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[202].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[202].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[202].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[202].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[202].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[202].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[202].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[202].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[202].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[202].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[202].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0202:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[202].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[202].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Reset
+      - bo
+      - $(SYMBOL).astFF[202].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0202:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[202].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[203].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[203].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[203].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[203].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[203].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[203].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[203].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[203].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[203].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[203].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[203].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[203].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[203].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[203].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0203:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[203].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[203].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Reset
+      - bo
+      - $(SYMBOL).astFF[203].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0203:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[203].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[204].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[204].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[204].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[204].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[204].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[204].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[204].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[204].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[204].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[204].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[204].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[204].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[204].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[204].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0204:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[204].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[204].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Reset
+      - bo
+      - $(SYMBOL).astFF[204].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0204:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[204].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[205].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[205].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[205].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[205].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[205].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[205].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[205].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[205].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[205].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[205].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[205].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[205].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[205].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[205].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0205:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[205].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[205].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Reset
+      - bo
+      - $(SYMBOL).astFF[205].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0205:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[205].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[206].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[206].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[206].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[206].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[206].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[206].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[206].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[206].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[206].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[206].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[206].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[206].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[206].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[206].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0206:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[206].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[206].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Reset
+      - bo
+      - $(SYMBOL).astFF[206].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0206:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[206].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[207].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[207].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[207].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[207].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[207].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[207].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[207].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[207].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[207].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[207].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[207].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[207].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[207].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[207].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0207:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[207].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[207].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Reset
+      - bo
+      - $(SYMBOL).astFF[207].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0207:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[207].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[208].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[208].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[208].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[208].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[208].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[208].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[208].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[208].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[208].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[208].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[208].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[208].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[208].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[208].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0208:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[208].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[208].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Reset
+      - bo
+      - $(SYMBOL).astFF[208].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0208:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[208].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[209].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[209].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[209].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[209].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[209].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[209].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[209].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[209].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[209].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[209].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[209].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[209].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[209].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[209].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0209:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[209].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[209].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Reset
+      - bo
+      - $(SYMBOL).astFF[209].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0209:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[209].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:BeamPermitted_RBV
+      - bi
+      - $(SYMBOL).astFF[210].BeamPermitted
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:Desc_RBV
+      - waveform
+      - $(SYMBOL).astFF[210].Info.Desc
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:DevName_RBV
+      - waveform
+      - $(SYMBOL).astFF[210].Info.DevName
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:InfoString_RBV
+      - waveform
+      - $(SYMBOL).astFF[210].Info.InfoString
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:InUse_RBV
+      - bi
+      - $(SYMBOL).astFF[210].Info.InUse
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:Path_RBV
+      - waveform
+      - $(SYMBOL).astFF[210].Info.sPath
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Info:TypeCode_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Info.TypeCode
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:OK_RBV
+      - bi
+      - $(SYMBOL).astFF[210].OK
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Activate
+      - bo
+      - $(SYMBOL).astFF[210].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Activate_RBV
+      - bi
+      - $(SYMBOL).astFF[210].Ovrd.Activate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Active_RBV
+      - bi
+      - $(SYMBOL).astFF[210].Ovrd.Active
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Deactivate
+      - bo
+      - $(SYMBOL).astFF[210].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Deactivate_RBV
+      - bi
+      - $(SYMBOL).astFF[210].Ovrd.Deactivate
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Duration
+      - longout
+      - $(SYMBOL).astFF[210].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Duration_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Ovrd.Duration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:ElapsedTime_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Expiration
+      - longout
+      - $(SYMBOL).astFF[210].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:Expiration_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Ovrd.Expiration
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:RemainingTime_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - $(PREFIX):FF:0210:Ovrd:StartDT
+      - longout
+      - $(SYMBOL).astFF[210].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Ovrd:StartDT_RBV
+      - longin
+      - $(SYMBOL).astFF[210].Ovrd.StartDT
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Reset
+      - bo
+      - $(SYMBOL).astFF[210].Reset
+      - | io: output
+
+
+    * - $(PREFIX):FF:0210:Reset_RBV
+      - bi
+      - $(SYMBOL).astFF[210].Reset
+      - | io: output
+
+
     * - $(PREFIX):OK_RBV
       - bi
       - $(SYMBOL).xOK
@@ -100835,6 +102215,1248 @@ Database Records
       - | io: output
 
 
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[201].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[201].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[201].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[201].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[201].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[201].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0201:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[201].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[202].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[202].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[202].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[202].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[202].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[202].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0202:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[202].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[203].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[203].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[203].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[203].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[203].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[203].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0203:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[203].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[204].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[204].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[204].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[204].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[204].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[204].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0204:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[204].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[205].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[205].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[205].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[205].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[205].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[205].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0205:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[205].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[206].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[206].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[206].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[206].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[206].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[206].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0206:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[206].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[207].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[207].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[207].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[207].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[207].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[207].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0207:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[207].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[208].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[208].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[208].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[208].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[208].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[208].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0208:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[208].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[209].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[209].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[209].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[209].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[209].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[209].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0209:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[209].Reset
+      - | io: output
+
+
     * - PLC:RIX:MOTION:FFO:02:FF:0020:BeamPermitted_RBV
       - bi
       - GVL.fbFastFaultOutput2.astFF[20].BeamPermitted
@@ -100970,6 +103592,144 @@ Database Records
     * - PLC:RIX:MOTION:FFO:02:FF:0020:Reset
       - bo
       - GVL.fbFastFaultOutput2.astFF[20].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:BeamPermitted_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].BeamPermitted
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:Desc_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[210].Info.Desc
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:DevName_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[210].Info.DevName
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:InUse_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].Info.InUse
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:InfoString_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[210].Info.InfoString
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:TypeCode_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Info.TypeCode
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Info:Path_RBV
+      - waveform
+      - GVL.fbFastFaultOutput2.astFF[210].Info.sPath
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:OK_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].OK
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Activate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Activate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Activate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Active_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Active
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Deactivate_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Deactivate
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Deactivate
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Duration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Duration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Duration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:ElapsedTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.ElapsedTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Expiration_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:Expiration
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.Expiration
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:RemainingTime_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.RemainingTime
+      - | io: input
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:StartDT_RBV
+      - longin
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Ovrd:StartDT
+      - longout
+      - GVL.fbFastFaultOutput2.astFF[210].Ovrd.StartDT
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Reset_RBV
+      - bi
+      - GVL.fbFastFaultOutput2.astFF[210].Reset
+      - | io: output
+
+
+    * - PLC:RIX:MOTION:FFO:02:FF:0210:Reset
+      - bo
+      - GVL.fbFastFaultOutput2.astFF[210].Reset
       - | io: output
 
 
@@ -120614,7 +123374,7 @@ Database Records
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bError_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bError_RBV
       - bi
       - TRUE if we are in an error state
       - | field: ONAM TRUE
@@ -120623,7 +123383,7 @@ Database Records
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHardwareEnable_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bHardwareEnable_RBV
       - bi
       - TRUE if STO not hit
       - | field: ONAM TRUE
@@ -120631,19 +123391,19 @@ Database Records
         | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHomeCmd_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bHomeCmd_RBV
       - bi
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bHomeCmd
+    * - AT3K2:L2SI:MMS:01:PLC:bHomeCmd
       - bo
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bReset_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bReset_RBV
       - bi
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -120651,7 +123411,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bReset
+    * - AT3K2:L2SI:MMS:01:PLC:bReset
       - bo
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -120659,7 +123419,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bUserEnable_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:bUserEnable_RBV
       - bi
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -120667,7 +123427,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:bUserEnable
+    * - AT3K2:L2SI:MMS:01:PLC:bUserEnable
       - bo
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -120675,183 +123435,183 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fHomePosition_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:fHomePosition_RBV
       - ai
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fHomePosition
+    * - AT3K2:L2SI:MMS:01:PLC:fHomePosition
       - ao
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:fPosDiff_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:fPosDiff_RBV
       - ai
       - Position lag difference
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:nEncoderCount_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:nEncoderCount_RBV
       - longin
       - Count from encoder hardware
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:nErrorId_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:nErrorId_RBV
       - longin
       - Error code if nonzero
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:sErrorMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:sErrorMessage_RBV
       - waveform
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagEn_RBV
       - longin
       - TRUE if position lag monitor (also known as stall monitor) is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMaxEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMaxEn_RBV
       - longin
       - TRUE if controller static maximum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMinEn_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMinEn_RBV
       - longin
       - TRUE if controller static minimum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxAccel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxAccel_RBV
       - ai
       - Maximum rate of increase in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagVal_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagVal_RBV
       - ai
       - Maximum magnitude of position lag in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:PosLagTime_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:PosLagTime_RBV
       - ai
       - Maximum allowable duration outside of maximum position lag value in seconds.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxDecel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxDecel_RBV
       - ai
       - Maximum rate of decrease in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:EncOffset_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:EncOffset_RBV
       - ai
       - Encoder offset in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:EncScaling_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:EncScaling_RBV
       - ai
       - Encoder scaling numerator / denominator in EU/COUNT.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMax_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMax_RBV
       - ai
       - Maximum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:SLimMin_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:SLimMin_RBV
       - ai
       - Minimum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:AxisPar:MaxVel_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:AxisPar:MaxVel_RBV
       - ai
       - Maximum commandable speed of the axis in EU/s.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSB:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSB:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSF:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSF:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:nFlags_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:01:PLC:stEPSP:sMessage_RBV
+    * - AT3K2:L2SI:MMS:01:PLC:stEPSP:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
@@ -121100,7 +123860,7 @@ Database Records
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bError_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bError_RBV
       - bi
       - TRUE if we are in an error state
       - | field: ONAM TRUE
@@ -121109,7 +123869,7 @@ Database Records
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHardwareEnable_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bHardwareEnable_RBV
       - bi
       - TRUE if STO not hit
       - | field: ONAM TRUE
@@ -121117,19 +123877,19 @@ Database Records
         | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHomeCmd_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bHomeCmd_RBV
       - bi
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bHomeCmd
+    * - AT3K2:L2SI:MMS:02:PLC:bHomeCmd
       - bo
       - Start the homing routine
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bReset_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bReset_RBV
       - bi
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -121137,7 +123897,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bReset
+    * - AT3K2:L2SI:MMS:02:PLC:bReset
       - bo
       - Used internally to reset errors
       - | field: ONAM TRUE
@@ -121145,7 +123905,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bUserEnable_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:bUserEnable_RBV
       - bi
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -121153,7 +123913,7 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:bUserEnable
+    * - AT3K2:L2SI:MMS:02:PLC:bUserEnable
       - bo
       - Used to disable power entirely for an axis
       - | field: ONAM ENABLE
@@ -121161,183 +123921,183 @@ Database Records
         | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fHomePosition_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:fHomePosition_RBV
       - ai
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fHomePosition
+    * - AT3K2:L2SI:MMS:02:PLC:fHomePosition
       - ao
       - Used internally and by the IOC to pick home position
       - | io: output
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:fPosDiff_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:fPosDiff_RBV
       - ai
       - Position lag difference
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:nEncoderCount_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:nEncoderCount_RBV
       - longin
       - Count from encoder hardware
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:nErrorId_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:nErrorId_RBV
       - longin
       - Error code if nonzero
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:sErrorMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:sErrorMessage_RBV
       - waveform
       - Message to identify the error state
       - | io: input
         | update: 100hz notify
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagEn_RBV
       - longin
       - TRUE if position lag monitor (also known as stall monitor) is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMaxEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMaxEn_RBV
       - longin
       - TRUE if controller static maximum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMinEn_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMinEn_RBV
       - longin
       - TRUE if controller static minimum limit is enabled.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxAccel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxAccel_RBV
       - ai
       - Maximum rate of increase in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagVal_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagVal_RBV
       - ai
       - Maximum magnitude of position lag in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:PosLagTime_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:PosLagTime_RBV
       - ai
       - Maximum allowable duration outside of maximum position lag value in seconds.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxDecel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxDecel_RBV
       - ai
       - Maximum rate of decrease in speed of the axis in EU/s^2.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:EncOffset_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:EncOffset_RBV
       - ai
       - Encoder offset in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:EncScaling_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:EncScaling_RBV
       - ai
       - Encoder scaling numerator / denominator in EU/COUNT.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMax_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMax_RBV
       - ai
       - Maximum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:SLimMin_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:SLimMin_RBV
       - ai
       - Minimum commandable position of the axis in EU.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:AxisPar:MaxVel_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:AxisPar:MaxVel_RBV
       - ai
       - Maximum commandable speed of the axis in EU/s.
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSB:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSB:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSF:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSF:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:bEPS_OK_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:bEPS_OK_RBV
       - bi
       - check if nFlags are all true
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:nFlags_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:nFlags_RBV
       - longin
       - Contains EPS flags
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:sFlagDesc_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:sFlagDesc_RBV
       - waveform
       - semicolon-delimited nFlag variable
       - | io: input
 
 
-    * - AT3K2:SOLID:MMS:Y:02:PLC:stEPSP:sMessage_RBV
+    * - AT3K2:L2SI:MMS:02:PLC:stEPSP:sMessage_RBV
       - waveform
       - Message from EPS to usr
       - | io: input
@@ -129504,6 +132264,1736 @@ Database Records
     * - AT2K2:L2SI:MMS:04:MATERIAL_RBV
       - waveform
       - PRG_AT2K2_SOLID.fbStage4.sActiveFilterMaterial
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:GET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage1.eEnumGet
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:SET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage1.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:SET
+      - mbbo
+      - PRG_AT3K2_SOLID.fbStage1.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:THICKNESS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:1:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:RTD:2:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage1.fbRTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:RESET_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:RESET
+      - bo
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:BUSY_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:DONE_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERRID_RBV
+      - longin
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage1.fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:01:MATERIAL_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage1.sActiveFilterMaterial
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:01:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:01:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:02:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:02:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:03:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:03:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:04:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:04:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:05:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:05:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:06:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:06:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:07:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:07:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:08:THICKNESS_RBV
+      - ai
+      - Filter material thickness
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:FILTERS:08:MATERIAL_RBV
+      - waveform
+      - Filter material name
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:GET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage2.eEnumGet
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:SET_RBV
+      - mbbi
+      - PRG_AT3K2_SOLID.fbStage2.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:SET
+      - mbbo
+      - PRG_AT3K2_SOLID.fbStage2.eEnumSet
+      - | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:THICKNESS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fActiveFilterThickness_um
+      - | field: EGU um
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:TRANSMISSION_RBV
+      - ai
+      - Filter transmission
+      - | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:1:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:CONN_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:FAULT_SP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fFaultThreshold
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:FAULT_SP_HYS_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fHysteresis
+      - | field: EGU %
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:RTD:2:TEMP_RBV
+      - ai
+      - PRG_AT3K2_SOLID.fbStage2.fbRTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:01:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:02:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:03:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:04:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:05:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:06:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:07:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:08:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:MOVE_OK_RBV
+      - bi
+      - TRUE if the move would be safe
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:SETPOINT_RBV
+      - ai
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:SETPOINT
+      - ao
+      - Axis position associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:VELO_RBV
+      - ai
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:VELO
+      - ao
+      - Speed at which to move to this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:ENCODER_RBV
+      - longin
+      - Encoder count associated with this state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:09:NAME_RBV
+      - waveform
+      - Name of this position state
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | array: 1..9
+        | expand: :%.2d
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:RESET_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:RESET
+      - bo
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stEpicsToPlc.bReset
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: output
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:BUSY_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bBusy
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:DONE_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bDone
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERR_RBV
+      - bi
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.bError
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERRID_RBV
+      - longin
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.nErrorID
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:STATE:ERRMSG_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage2.fbStates.stPlcToEpics.sErrorMsg
+      - | _subitem_: {'astPositionState': {'_pragma_': [('array', '1..9')]}}
+        | io: input
+
+
+    * - AT3K2:L2SI:MMS:02:MATERIAL_RBV
+      - waveform
+      - PRG_AT3K2_SOLID.fbStage2.sActiveFilterMaterial
       - | io: input
 
 

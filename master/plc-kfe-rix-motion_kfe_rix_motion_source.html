@@ -16,7 +16,7 @@
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=5929fcd5"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -542,16 +542,16 @@
                               <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="n">E8</span> <span class="p">(</span><span class="n">EL5112</span><span class="p">)]</span><span class="o">^</span><span class="n">ENC</span> <span class="n">Status</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Counter</span> <span class="n">value</span><span class="s1">&#39;}</span>
     <span class="n">M38</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;SP2K2:TXAS:MMS:RX:01&#39;</span><span class="p">);</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT3K2:SOLID:MMS:Y:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT3K2:L2SI:MMS:01&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E6 (EL7047)]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E6</span> <span class="p">(</span><span class="n">EL7047</span><span class="p">)]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E5</span> <span class="p">(</span><span class="n">EL5042</span><span class="p">)]</span><span class="o">^</span><span class="n">ENC</span> <span class="n">Status</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E5</span> <span class="p">(</span><span class="n">EL5042</span><span class="p">)]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="n">M39</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT3K2:SOLID:MMS:Y:01&#39;</span><span class="p">);</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT3K2:SOLID:MMS:Y:02&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AT3K2:L2SI:MMS:02&#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable  := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 1;</span>
                               <span class="o">.</span><span class="n">bLimitBackwardEnable</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E7</span> <span class="p">(</span><span class="n">EL7047</span><span class="p">)]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
-                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E8</span> <span class="p">(</span><span class="n">EL5042</span><span class="p">)]</span><span class="o">^</span><span class="n">ENC</span> <span class="n">Status</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span>     <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">K2S18</span><span class="o">-</span><span class="n">DRL</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="n">E8</span> <span class="p">(</span><span class="n">EL5042</span><span class="p">)]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="n">M40</span><span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;AT3K2:SOLID:MMS:Y:02&#39;</span><span class="p">);</span>
 
 <span class="n">END_VAR</span>
@@ -1664,29 +1664,168 @@ END_PROGRAM
 </section>
 <section id="prg-at3k2-solid">
 <h2>PRG_AT3K2_SOLID<a class="headerlink" href="#prg-at3k2-solid" title="Link to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AT3K2_SOLID</span>
-<span class="n">VAR</span>
-    <span class="n">bInit</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">fbAT3K2_SOLID_Y_01</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
-    <span class="n">fbAT3K2_SOLID_Y_02</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">IF</span> <span class="n">bInit</span> <span class="n">THEN</span>
-    <span class="n">Main</span><span class="o">.</span><span class="n">M39</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">Main</span><span class="o">.</span><span class="n">M39</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_AT3K2_SOLID
+VAR
+    bInit : BOOL := TRUE;
+    bDebug : BOOL := FALSE;
+    nEnableMode : E_StageEnableMode;
 
-    <span class="n">Main</span><span class="o">.</span><span class="n">M40</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">Main</span><span class="o">.</span><span class="n">M40</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">bInit</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-<span class="n">END_IF</span>
+    {attribute &#39;pytmc&#39; := &#39;pv: AT3K2:L2SI:MMS:01&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+        .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Overrange;
 
-<span class="n">fbAT3K2_SOLID_Y_01</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M39</span><span class="p">);</span>
-<span class="n">fbAT3K2_SOLID_Y_02</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">Main</span><span class="o">.</span><span class="n">M40</span><span class="p">);</span>
+        .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
 
-<span class="n">END_PROGRAM</span>
+    &#39;}
+    fbStage1: FB_SXR_SATT_Stage;
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT3K2:L2SI:MMS:02&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+
+        .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
+
+    &#39;}
+    fbStage2: FB_SXR_SATT_Stage;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefaultGood: ST_PositionState := (
+        fDelta := 5,
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+
+    fbBadStateSetup: FB_StateSetupHelper;
+    stDefaultBad: ST_PositionState := (
+        fPosition := 500,
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := FALSE,
+        bValid := FALSE
+    );
+(*
+    {attribute &#39;pytmc&#39; :=&#39;pv: AT2K2:L2SI:FWM&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.iRaw := TIIB[TM2K2-EL3052-E6]^AI Standard Channel 1^Value&#39;} // AT2K2 shares flow meter with TM2K2
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+    *)
+END_VAR
+IF bDebug THEN
+    // NEVER: checkouts with the TwinCAT NC GUI.
+    nEnableMode := E_StageEnableMode.NEVER;
+ELSE
+    // ALWAYS: want active position correction at all times
+    nEnableMode := E_StageEnableMode.ALWAYS;
+END_IF
+
+fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+(* State setup - stage 1 *)
+fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:=&#39;1 um Co&#39;, fPosition:= 293, sPmpsState:=&#39;AT3K2:L2SI-RTD&#39;);
+fbStage1.arrFilters[8].fFilterThickness_um := 1;
+fbStage1.arrFilters[8].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:=&#39;2 um Co&#39;, fPosition:= 263);
+fbStage1.arrFilters[7].fFilterThickness_um := 2;
+fbStage1.arrFilters[7].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:=&#39;3 um Co&#39;, fposition:= 233);
+fbStage1.arrFilters[6].fFilterThickness_um := 3;
+fbStage1.arrFilters[6].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:=&#39;4 um Co&#39;, fPosition:= 173);
+fbStage1.arrFilters[5].fFilterThickness_um := 4;
+fbStage1.arrFilters[5].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter4, sName:=&#39;5 um Co&#39;, fPosition:= 143);
+fbStage1.arrFilters[4].fFilterThickness_um := 5;
+fbStage1.arrFilters[4].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter3, sName:=&#39;10 um Co&#39;, fPosition:= 180.0);
+fbStage1.arrFilters[3].fFilterThickness_um := 10;
+fbStage1.arrFilters[3].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter2, sName:=&#39;15 um Co&#39;, fPosition:=113);
+fbStage1.arrFilters[2].fFilterThickness_um := 15;
+fbStage1.arrFilters[2].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter1, sName:=&#39;20 um Co&#39;, fPosition:=83);
+fbStage1.arrFilters[1].fFilterThickness_um := 20;
+fbStage1.arrFilters[1].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:=&#39;Out&#39;, fPosition:=53);
+
+fbStage1(stAxis:=Main.M39,sDeviceName:=&#39;AT3K2:L2SI&#39;, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+
+(* State setup - stage 2 *)
+
+fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:=&#39;0.2 um Co&#39;, fPosition:=265, sPmpsState:=&#39;AT3K2:L2SI-RTD&#39;);
+fbStage2.arrFilters[8].fFilterThickness_um := 0.2;
+fbStage2.arrFilters[8].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:=&#39;0.4 um Co&#39;, fPosition:= 235);
+fbStage2.arrFilters[7].fFilterThickness_um := 0.4;
+fbStage2.arrFilters[7].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:=&#39;0.6 um Co&#39;, fPosition:= 205);
+fbStage2.arrFilters[6].fFilterThickness_um := 0.6;
+fbStage2.arrFilters[6].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:=&#39;0.8 um Co&#39;, fPosition:= 175);
+fbStage2.arrFilters[5].fFilterThickness_um := 0.8;
+fbStage2.arrFilters[5].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter4, sName:=&#39;1.0 um Co&#39;, fPosition:=145);
+fbStage2.arrFilters[4].fFilterThickness_um := 1.0;
+fbStage2.arrFilters[4].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter3, sName:=&#39;1.5 um Co&#39;, fPosition:=115);
+fbStage2.arrFilters[3].fFilterThickness_um := 1.5;
+fbStage2.arrFilters[3].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter2, sName:=&#39;2.0 um Co&#39;, fPosition:=85);
+fbStage2.arrFilters[2].fFilterThickness_um := 2.0;
+fbStage2.arrFilters[2].sFilterMaterial     := &#39;Co&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter1, sName:=&#39;3.0 um Co&#39;, fPosition:=55);
+fbStage2.arrFilters[1].fFilterThickness_um := 3.0;
+fbStage2.arrFilters[1].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:=&#39;Out&#39;, fPosition:=40.0);
+
+fbStage2(stAxis:=Main.M40,sDeviceName:=&#39;AT3K2:L2SI&#39;, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+
+// GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+//PMPS.K_Attenuators.AT2K2; TODO: ADD TO ENUM?
+GVL.rCurTrans[6].nTran := LREAL_TO_REAL(
+    fbStage1.fTransmission *
+    fbStage2.fTransmission
+);
+
+//fbFlowMeter();
+
+END_PROGRAM
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
 <li><p><a class="reference internal" href="#main">Main</a></p></li>
 </ul>
 </dd>
