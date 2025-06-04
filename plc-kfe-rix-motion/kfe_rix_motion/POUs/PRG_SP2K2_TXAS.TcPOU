@@ -13,6 +13,14 @@ IF bInit THEN
     Main.M38.bHardwareEnable := TRUE;
     Main.M38.bPowerSelf := TRUE;
     bInit := FALSE;
+
+    Main.M41.bHardwareEnable := TRUE;
+    Main.M41.bPowerSelf      := TRUE;
+    Main.M41.fVelocity       := 0.1;
+    Main.M41.nEnableMode     := E_StageEnableMode.DURING_MOTION;
+    Main.M41.nBrakeMode      := E_StageBrakeMode.NO_BRAKE;
+    Main.M41.nHomingMode     := E_EpicsHomeCmd.LOW_LIMIT;
+    Main.M41.fHomePosition   := 0;
 END_IF
 
 Main.M38.bLimitBackwardEnable := TRUE;
