@@ -148,7 +148,7 @@ fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
 
 fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=40.0);
 
-fbStage2(stAxis:=Main.M40,sDeviceName:='AT3K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput2, bEnable:=TRUE);
+fbStage2(stAxis:=Main.M40,sDeviceName:='AT3K2:L2SI', nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput3, bEnable:=TRUE);
 
 // GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
 //PMPS.K_Attenuators.AT2K2; TODO: ADD TO ENUM?
