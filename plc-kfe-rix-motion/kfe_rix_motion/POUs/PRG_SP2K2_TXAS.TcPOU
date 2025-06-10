@@ -5,6 +5,7 @@
 VAR
     bInit : BOOL := TRUE;
     fbTXAS_TAR_RX : FB_MotionStage;
+    fbTXAS_YAG_FOCUS : FB_MotionStage;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,7 +27,8 @@ END_IF
 Main.M38.bLimitBackwardEnable := TRUE;
 Main.M38.bLimitForwardEnable := TRUE;
 
-fbTXAS_TAR_RX(stMotionStage:=Main.M38);]]></ST>
+fbTXAS_TAR_RX(stMotionStage:=Main.M38);
+fbTXAS_YAG_FOCUS(stMotionStage:=Main.M41);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

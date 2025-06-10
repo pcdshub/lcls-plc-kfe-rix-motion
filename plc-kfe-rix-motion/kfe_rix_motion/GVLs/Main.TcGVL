@@ -288,11 +288,16 @@ VAR_GLOBAL
                               .bLimitBackwardEnable := TIIB[K2S18-DRL-02-E7 (EL7047)]^STM Status^Status^Digital input 2;
                               .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E8 (EL5042)]^FB Inputs Channel 1^Position'}
     M40: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:02');
-
+    //
+    (*
     {attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:YAG:01'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E13 (EL1124)^Channel 1^Input;
                               .bLimitBackwardEnable := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E13 (EL1124)^Channel 2^Input;
                               .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value'}
+                              *)
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 1^Input;
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 2^Input'}
+                              //.nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value'}
     M41: ST_MotionStage := (sName := 'SP2K2:TXAS:MMS:YAG:FOCUS');
 
 END_VAR]]></Declaration>

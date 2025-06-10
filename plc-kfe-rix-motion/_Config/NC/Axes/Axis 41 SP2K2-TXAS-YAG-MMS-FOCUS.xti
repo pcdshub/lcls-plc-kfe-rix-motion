@@ -1431,26 +1431,12 @@ External Setpoint Generation:
 			<Velo RefSearch="0.3125" RefSync="0.125" SlowManual="0.3125" FastManual="0.625" Maximum="6.25"/>
 			<TargetPosControl Range="0.01"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
-			<ParameterChanged>8</ParameterChanged>
-			<ParameterChanged>22</ParameterChanged>
-			<ParameterChanged>39</ParameterChanged>
-			<ParameterChanged>257</ParameterChanged>
-			<ParameterChanged>7</ParameterChanged>
-			<ParameterChanged>259</ParameterChanged>
-			<ParameterChanged>242</ParameterChanged>
-			<ParameterChanged>18</ParameterChanged>
-			<ParameterChanged>9</ParameterChanged>
-			<ParameterChanged>6</ParameterChanged>
-			<ParameterChanged>258</ParameterChanged>
-			<ParameterChanged>241</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="4">
 			<EncPara MaxCount="#x0000ffff">
 				<SoftEndMinControl Enable="true"/>
 				<SoftEndMaxControl Enable="true"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>11</ParameterChanged>
-				<ParameterChanged>12</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
