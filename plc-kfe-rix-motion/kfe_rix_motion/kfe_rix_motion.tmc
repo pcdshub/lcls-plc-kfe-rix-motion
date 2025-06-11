@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{4B462159-4E2A-84C1-1564-7000F68A3CDC}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{0D132B85-F9E8-2CE5-7731-19886DE74ED3}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -109672,13 +109672,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           </Symbol>
           <Symbol>
             <Name>Main.M41</Name>
-            <Comment>
-    {attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:YAG:01'}
-    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E13 (EL1124)^Channel 1^Input;
-                              .bLimitBackwardEnable := TIID^PLC Rail (EtherCAT)^Power (EK1200)^Fiber Coupler (EK1521-0010)^Term 123 (EK1100)^Term 73 (EK1122)^K2S18-DRL-03 (EK1100)^K2S18-DRL-03-E13 (EL1124)^Channel 2^Input;
-                              .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value'}
-							  
-.nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value'}</Comment>
             <BitSize>25984</BitSize>
             <BaseType Namespace="lcls_twincat_motion">ST_MotionStage</BaseType>
             <Default>
@@ -109691,7 +109684,8 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 1^Input;
-                              .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 2^Input</Value>
+                              .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 2^Input;
+                              .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -110505,7 +110499,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-06-10T11:48:54</Value>
+          <Value>2025-06-11T14:37:51</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
