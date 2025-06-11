@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{0D132B85-F9E8-2CE5-7731-19886DE74ED3}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{DC6860B3-3D62-7DEE-41E2-1264B47A8BD4}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -109682,6 +109682,10 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             </Default>
             <Properties>
               <Property>
+                <Name>pytmc</Name>
+                <Value>pv: SP2K2:TXAS:MMS:YAG:01</Value>
+              </Property>
+              <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 1^Input;
                               .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 2^Input;
@@ -110499,7 +110503,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-06-11T14:37:51</Value>
+          <Value>2025-06-11T16:10:20</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

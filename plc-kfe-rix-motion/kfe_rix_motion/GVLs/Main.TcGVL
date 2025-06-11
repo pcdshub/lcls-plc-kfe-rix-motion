@@ -289,6 +289,7 @@ VAR_GLOBAL
                               .nRawEncoderULINT     := TIIB[K2S18-DRL-02-E8 (EL5042)]^FB Inputs Channel 1^Position'}
     M40: ST_MotionStage := (sName := 'AT3K2:SOLID:MMS:Y:02');
 
+    {attribute 'pytmc' := 'pv: SP2K2:TXAS:MMS:YAG:01'}
     {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 1^Input;
                               .bLimitBackwardEnable := TIIB[K2S18-DRL-03-E13 (EL1124)]^Channel 2^Input;
                               .nRawEncoderULINT     := TIIB[K2S18-DRL-03-E9 (EL7037)]^ENC Status compact^Counter value'}
