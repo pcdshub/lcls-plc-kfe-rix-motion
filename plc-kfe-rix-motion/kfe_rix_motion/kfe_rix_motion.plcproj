@@ -166,9 +166,9 @@
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
       <Namespace>PMPS</Namespace>
       <Parameters>
-        <Parameter>
+        <Parameter ListName="PMPS_PARAM">
           <Key>MAX_FAST_FAULTS</Key>
-          <Value>200</Value>
+          <Value>210</Value>
         </Parameter>
         <Parameter>
           <Key>MAX_ASSERTIONS</Key>

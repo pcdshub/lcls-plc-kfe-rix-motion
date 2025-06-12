@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{6520CFFF-9030-9883-541E-8B85F1C59DBE}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8C733C40-DAAE-6F34-BD6E-5EB0E498E64E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -15317,14 +15317,14 @@
     </DataType>
     <DataType>
       <Name Namespace="PMPS">FB_HardwareFFOutput</Name>
-      <BitSize>1743552</BitSize>
+      <BitSize>1824832</BitSize>
       <SubItem>
         <Name>FF_ARRAY_UPPER_BOUND</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
         <BitOffs>64</BitOffs>
         <Default>
-          <Value>200</Value>
+          <Value>210</Value>
         </Default>
       </SubItem>
       <SubItem>
@@ -15440,9 +15440,9 @@
         <Type Namespace="PMPS">ST_FF</Type>
         <ArrayInfo>
           <LBound>1</LBound>
-          <Elements>200</Elements>
+          <Elements>210</Elements>
         </ArrayInfo>
-        <BitSize>1625600</BitSize>
+        <BitSize>1706880</BitSize>
         <BitOffs>320</BitOffs>
         <Properties>
           <Property>
@@ -15458,7 +15458,7 @@
         <Type>BOOL</Type>
         <Comment> Set true if a fast fault fails to register. Holds beam off.</Comment>
         <BitSize>8</BitSize>
-        <BitOffs>1625920</BitOffs>
+        <BitOffs>1707200</BitOffs>
         <Default>
           <Bool>false</Bool>
         </Default>
@@ -15476,13 +15476,13 @@
         <Name>tFFRegFail</Name>
         <Type Namespace="Tc2_Standard">F_TRIG</Type>
         <BitSize>128</BitSize>
-        <BitOffs>1625984</BitOffs>
+        <BitOffs>1707264</BitOffs>
       </SubItem>
       <SubItem>
         <Name>sPath</Name>
         <Type Namespace="Tc2_System">T_MaxString</Type>
         <BitSize>2048</BitSize>
-        <BitOffs>1626112</BitOffs>
+        <BitOffs>1707392</BitOffs>
         <Properties>
           <Property>
             <Name>instance-path</Name>
@@ -15497,7 +15497,7 @@
         <Type>BOOL</Type>
         <Comment> Current internal state of FFO, indicates if FFO will accept a reset</Comment>
         <BitSize>8</BitSize>
-        <BitOffs>1628160</BitOffs>
+        <BitOffs>1709440</BitOffs>
         <Default>
           <Bool>true</Bool>
         </Default>
@@ -15515,19 +15515,19 @@
         <Name>rtReset</Name>
         <Type Namespace="Tc2_Standard">R_TRIG</Type>
         <BitSize>128</BitSize>
-        <BitOffs>1628224</BitOffs>
+        <BitOffs>1709504</BitOffs>
       </SubItem>
       <SubItem>
         <Name>rtResetandOK</Name>
         <Type Namespace="Tc2_Standard">R_TRIG</Type>
         <BitSize>128</BitSize>
-        <BitOffs>1628352</BitOffs>
+        <BitOffs>1709632</BitOffs>
       </SubItem>
       <SubItem>
         <Name>nIndex</Name>
         <Type>UINT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>1628480</BitOffs>
+        <BitOffs>1709760</BitOffs>
         <Default>
           <Value>1</Value>
         </Default>
@@ -15536,14 +15536,14 @@
         <Name>IdxOK</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>1628496</BitOffs>
+        <BitOffs>1709776</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbTime</Name>
         <Type Namespace="LCLS_General.Tc2_Utilities">FB_LocalSystemTime</Type>
         <Comment>Get current system time, used for override</Comment>
         <BitSize>20800</BitSize>
-        <BitOffs>1628544</BitOffs>
+        <BitOffs>1709824</BitOffs>
         <Default>
           <SubItem>
             <Name>.bEnable</Name>
@@ -15559,26 +15559,26 @@
         <Name>fbTime_to_UTC</Name>
         <Type Namespace="LCLS_General.Tc2_Utilities">FB_TzSpecificLocalTimeToSystemTime</Type>
         <BitSize>3648</BitSize>
-        <BitOffs>1649344</BitOffs>
+        <BitOffs>1730624</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbGetTimeZone</Name>
         <Type Namespace="LCLS_General.Tc2_Utilities">FB_GetTimeZoneInformation</Type>
         <BitSize>3776</BitSize>
-        <BitOffs>1652992</BitOffs>
+        <BitOffs>1734272</BitOffs>
       </SubItem>
       <SubItem>
         <Name>fbJson</Name>
         <Type Namespace="LCLS_General.Tc3_JsonXml">FB_JsonSaxWriter</Type>
         <BitSize>384</BitSize>
-        <BitOffs>1656768</BitOffs>
+        <BitOffs>1738048</BitOffs>
       </SubItem>
       <SubItem>
         <Name>pmpsTypeCode</Name>
         <Type>UDINT</Type>
         <Comment> shows up in json as pmps_typecode</Comment>
         <BitSize>32</BitSize>
-        <BitOffs>1657152</BitOffs>
+        <BitOffs>1738432</BitOffs>
         <Default>
           <Value>0</Value>
         </Default>
@@ -15587,7 +15587,7 @@
         <Name>fbLogger</Name>
         <Type Namespace="LCLS_General">FB_LogMessage</Type>
         <BitSize>86080</BitSize>
-        <BitOffs>1657216</BitOffs>
+        <BitOffs>1738496</BitOffs>
         <Default>
           <SubItem>
             <Name>.eSevr</Name>
@@ -15599,7 +15599,7 @@
           </SubItem>
           <SubItem>
             <Name>.nMinTimeViolationAcceptable</Name>
-            <Value>200</Value>
+            <Value>210</Value>
           </SubItem>
         </Default>
       </SubItem>
@@ -15607,7 +15607,7 @@
         <Name>__FB_HARDWAREFFOUTPUT__EXECUTELOGGING__HELLOTIMER</Name>
         <Type Namespace="Tc2_Standard">TOF</Type>
         <BitSize>256</BitSize>
-        <BitOffs>1743296</BitOffs>
+        <BitOffs>1824576</BitOffs>
         <Default>
           <SubItem>
             <Name>.PT</Name>
@@ -70397,7 +70397,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87425024</ByteSize>
+          <ByteSize>87621632</ByteSize>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
             <BitSize>2048</BitSize>
@@ -81151,7 +81151,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87425024</ByteSize>
+          <ByteSize>87621632</ByteSize>
           <Symbol>
             <Name>PRG_IM1K1_PPM.fbIM1K1.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -82639,27 +82639,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>683583144</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: FaultHWO
-        io: i
-        field: DESC Hardware Output Status
-     </Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>685326696</BitOffs>
+            <BitOffs>684931944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.rCurTrans</Name>
@@ -83684,12 +83664,32 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             </Properties>
             <BitOffs>688101080</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput2.q_xFastFaultOut</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: FaultHWO
+        io: i
+        field: DESC Hardware Output Status
+     </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>698296744</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87425024</ByteSize>
+          <ByteSize>87621632</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -89907,7 +89907,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <BitSize>16</BitSize>
             <BaseType>UINT</BaseType>
             <Default>
-              <Value>200</Value>
+              <Value>210</Value>
             </Default>
             <Properties>
               <Property>
@@ -108124,12 +108124,12 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcLinkTo</Name>
                 <Value>
         .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Value;
-        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^error;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Error;
         .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
-        .fbRTD_1.bOverrange := TIIB[AT2K2-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+        .fbRTD_1.bOverrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 1^Status^Overrange;
 
         .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Value;
-        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^error;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
         .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E9 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
 
@@ -108152,12 +108152,12 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Value>
 
         .fbRTD_1.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Value;
-        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^error;
+        .fbRTD_1.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Error;
         .fbRTD_1.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Underrange;
         .fbRTD_1.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 1^Status^Overrange;
 
         .fbRTD_2.iRaw := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Value;
-        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^error;
+        .fbRTD_2.bError := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Error;
         .fbRTD_2.bUnderrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Underrange;
         .fbRTD_2.bOverrange := TIIB[K2S18-DRL-02-E10 (EL3202)]^RTD Inputs Channel 2^Status^Overrange
 
@@ -108311,7 +108311,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <Symbol>
             <Name>GVL.fbFastFaultOutput1</Name>
             <Comment> For devices between the mirror and the stopper, uses 44 FF slots as of 1/12/2024, load 75 in EPICS (skip 125 for IOC load speed)</Comment>
-            <BitSize>1743552</BitSize>
+            <BitSize>1824832</BitSize>
             <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
             <Default>
               <SubItem>
@@ -108339,39 +108339,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>683582848</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.fbFastFaultOutput2</Name>
-            <Comment> For devices after the stopper, uses 165 FF slots as of 1/12/2024, load all in EPICS</Comment>
-            <BitSize>1743552</BitSize>
-            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.bAutoReset</Name>
-                <Bool>true</Bool>
-              </SubItem>
-              <SubItem>
-                <Name>.i_sNetID</Name>
-                <String>172.21.42.126.1.1</String>
-              </SubItem>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: PLC:RIX:MOTION:FFO:02
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>685326400</BitOffs>
+            <BitOffs>684931648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.fbAtomicMass</Name>
@@ -110217,12 +110185,44 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             </Properties>
             <BitOffs>688173120</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL.fbFastFaultOutput2</Name>
+            <Comment> For devices after the stopper, uses 165 FF slots as of 1/12/2024, load all in EPICS</Comment>
+            <BitSize>1824832</BitSize>
+            <BaseType Namespace="PMPS">FB_HardwareFFOutput</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.bAutoReset</Name>
+                <Bool>true</Bool>
+              </SubItem>
+              <SubItem>
+                <Name>.i_sNetID</Name>
+                <String>172.21.42.126.1.1</String>
+              </SubItem>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: PLC:RIX:MOTION:FFO:02
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>698296448</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>87425024</ByteSize>
+          <ByteSize>87621632</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -110308,7 +110308,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-05-28T10:44:52</Value>
+          <Value>2025-06-12T08:56:37</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
@@ -110316,7 +110316,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>85667840</Value>
+          <Value>85688320</Value>
         </Property>
       </Properties>
     </Module>
